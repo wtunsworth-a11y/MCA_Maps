@@ -168,19 +168,22 @@ body.push(table(["Measure","Strict",`Beyond ${TOL} m`], [
 ], [6,2,2]));
 body.push(p(`The tolerance changes very little: ${money(sum.contested_ha - sum.contested_beyond_tol_ha)} ha of the ${money(sum.contested_ha)} ha falls away, and ${sum.clans_overlap - sum.clans_overlap_beyond_tol} clan(s) drop out of the overlapping group. ${sum.overlap_pairs - sum.overlap_pairs_beyond_tol} of the ${sum.overlap_pairs} pairs turn out to be two clans describing the same line rather than claiming the same ground. The finding survives the allowance — which is the point of making it.`, {size:21}));
 body.push(note("Read with care: most boundaries rest on inferred closures, so some overlap is an artefact of straight-line bridging rather than a competing claim. It does not disappear when only walked boundaries are counted, but the headline share is inflated by the inferred ones."));
-body.push(p("Overlaps are recorded as mapped. They are not reconciled, and clans are never merged.", {size:21}));
+body.push(p("Overlaps are recorded exactly as mapped. They are not reconciled, and clans are never merged.", {size:21}));
+body.push(h("What an overlap here is not", HeadingLevel.HEADING_3));
+body.push(p("An overlap in these figures is a statement about two surveys, not about two clans. Most boundaries here are incomplete — a quarter of the outline drawn around the mapped areas is straight line nobody walked — and where a survey is unfinished, the area attributed to it is bounded by those straight lines rather than by anything anyone walked or said.", {size:21}));
+body.push(p("So an overlap between two unfinished surveys is first of all a sign that both need finishing. It is recorded because it is what the data shows, and because the pattern across the whole area is the point; it is not evidence that anybody disputes anything, and nothing in this document should be read as saying so.", {size:21}));
 
 body.push(img("output/summary_map.png", 640, 580));
 body.push(note("Blue: boundary walked and closed. Amber: closure inferred. Red: claimed by more than one clan. Purple: walked but too open to give an area."));
 
-body.push(h("Where clans agree", HeadingLevel.HEADING_2));
-body.push(p(`The mirror image of the overlap figures, and just as important. ${sum.shared_line_pairs} pairs of clans have recorded lines that run within ${TOL} m of each other — they walked the same edge. That is agreement on a boundary, and it does not show up in an overlap table at all. Some of the pairs below share almost their whole recorded line while enclosing no contested ground whatsoever.`, {size:21}));
+body.push(h("Neighbouring clans walking the same edge", HeadingLevel.HEADING_2));
+body.push(p(`The mirror image of the overlap figures, and just as important. ${sum.shared_line_pairs} pairs of clans have recorded lines that run within ${TOL} m of each other — they walked the same edge. That is agreement on a boundary, and it does not show up in an overlap table at all. Some of the pairs below share almost their whole recorded line while sharing no ground at all.`, {size:21}));
 if (sum.shared_line_table && sum.shared_line_table.length) {
   body.push(table(["Clan","Clan","Shared line (km)","% of the first's line","% of the second's"],
     sum.shared_line_table.slice(0,15).map(r=>[r.clan_a, r.clan_b, one(r.shared_km),
       one(r.pct_of_a)+"%", one(r.pct_of_b)+"%"]), [3,3,2,2,2]));
 }
-body.push(note("Read alongside the overlap table. A pair appearing here and not there has agreed a boundary; a pair appearing in both has agreed part of one and disputes the rest."));
+body.push(note("Read alongside the overlap table. A pair appearing here and not there has walked one edge together; a pair appearing in both has walked part of an edge together and has more still to walk."));
 
 body.push(h("Sacred sites", HeadingLevel.HEADING_2));
 body.push(p("Reported by area and share of clan land only; locations are not shared. Three sites across two mapped units, covering an estimated 313–456 ha, being 16–24% of the host clan's land. The range reflects that neither walk closed, so the area can only be bracketed.", {size:21}));
@@ -199,9 +202,9 @@ body.push(table(["Term","Meaning"], [
   ["Walked and closed", "The tracks ring the land; area is measured, not assumed"],
   ["Inferred", "Open ends bridged with straight lines; area is an estimate"],
   ["No area", "Gap exceeds half the distance walked — too open to estimate honestly"],
-  ["Overlap (strict)", "Every square metre two clans both claim"],
+  ["Overlap (strict)", "Every square metre inside the area recorded for two clans"],
   ["Overlap (beyond tolerance)", `The same, with strips narrower than ${TOL} m removed`],
-  ["Shared line", `Where this clan's line runs within ${TOL} m of another clan's`],
+  ["Neighbouring clan", `A clan whose recorded line runs within ${TOL} m of this one's`],
 ], [3,7]));
 body.push(note("A clan name that appears in more than one zone carries a zone code, for example Murai (Z2) and Murai (Z7B). This is expected — language spreads between zones and clans that split may keep an ancestral name — but the two are not the same landholding group and their land is never combined."));
 
@@ -210,8 +213,7 @@ body.push(...bullets([
   "Each custodian's walk is a solid coloured line, and the area that walk gives on its own is the matching dashed outline.",
   "The survey those walks combine into is a dotted black outline, drawn underneath the walkers' lines. Where it follows a walk you see the walker's colour; where it strikes out on its own, that stretch was not walked by anyone — it is the straight line bridging a gap.",
   "Pink dashes are the stretches nobody walked: the receiver was off, and the straight line is this pipeline joining the pieces up. Do not read them as boundary.",
-  "Neighbouring clans' mapped land is pale grey and labelled. Ground both clans claim is shaded red.",
-  "Where a clan's walk does not close, and so has no area to compare, any other clan's line running alongside it is drawn in grey instead — that is the most useful context such a map can carry.",
+  "Neighbouring clans are named where they lie. Their boundaries are not drawn — this page is about one clan's survey, and what two surveys share is in the tables, not on the map.",
 ]));
 body.push(new Paragraph({ children:[new PageBreak()] }));
 
@@ -249,9 +251,10 @@ for (const c of clans) {
         money(o.beyond_tol_ha), o.verdict]), [4,2,2,2,3]));
   }
   if (c.shared_lines.length) {
-    body.push(p("Boundary walked alongside another clan", {bold:true, size:21}));
-    body.push(table(["Clan","Shared line (km)","% of this clan's line"],
+    body.push(p("Neighbouring clans", {bold:true, size:21}));
+    body.push(table(["Clan","Boundary walked alongside (km)","% of this clan's line"],
       c.shared_lines.map(s=>[s.with, one(s.km), one(s.pct)+"%"]), [5,2,3]));
+    body.push(note("Where the two clans' recorded lines run within " + TOL + " m of each other. Two neighbours walking the same edge is the ordinary case."));
   }
 
   // problems
@@ -269,17 +272,18 @@ for (const c of clans) {
   }
   const real = c.overlaps.filter(o=>o.verdict==="overlap");
   const slivers = c.overlaps.filter(o=>o.verdict!=="overlap");
+  const unfinished = c.area_ha === null || (c.basis === "inferred" && c.gap_pct > 10);
   if (real.length) {
-    const top = real.slice(0,4).map(o=>`${o.with} (${money(o.ha)} ha, ${Math.round(o.pct)}% of this clan's land)`).join("; ");
-    problems.push(`Overlaps ${real.length} other clan${real.length===1?"":"s"} by more than the ${TOL} m tolerance: ${top}.`);
+    const top = real.slice(0,4).map(o=>`${o.with} (${money(o.ha)} ha)`).join("; ");
+    problems.push(`Ground here is also inside the area recorded for ${real.length} other clan${real.length===1?"":"s"}: ${top}.` + (unfinished ? ` These figures are provisional while this boundary is incomplete: the unwalked stretches are drawn as straight lines, and those lines are what the overlap is measured against.` : ``));
   }
-  if (slivers.length) problems.push(`A further ${slivers.length} clan${slivers.length===1?"":"s"} (${slivers.map(o=>o.with).join(", ")}) share ground only in strips narrower than ${TOL} m. That is the two lines being the same line, not a competing claim, and it is not counted as overlap.`);
-  if (!real.length && !slivers.length && c.shared_lines.length) {
+  if (slivers.length) problems.push(`A further ${slivers.length} clan${slivers.length===1?"":"s"} (${slivers.map(o=>o.with).join(", ")}) ${slivers.length===1?"shares":"share"} ground only in strips narrower than ${TOL} m — the two lines being the same line, which is not counted as overlap.`);
+  if (!real.length && c.shared_lines.length) {
     const s = c.shared_lines[0];
-    problems.push(`No overlapping area, but ${Math.round(s.pct)}% of this clan's recorded line runs within ${TOL} m of ${s.with}'s. The two describe the same edge on the ground.`);
+    problems.push(`${Math.round(s.pct)}% of this clan's recorded line runs within ${TOL} m of ${s.with}'s: the two walked the same edge.`);
   }
 
-  body.push(p("Problems", {bold:true, size:21}));
+  body.push(p("What the survey shows", {bold:true, size:21}));
   body.push(...bullets(problems));
 
   // queries
@@ -289,13 +293,9 @@ for (const c of clans) {
   if (c.parcels > 1) queries.push(`This clan's land is recorded as ${c.parcels} separate pieces. Is that right, and does each piece belong to this clan?`);
   if (c.n_walkers > 1 && c.join_joined_ha < c.join_sep_ha - 1)
     queries.push(`Did the ${c.n_walkers} custodians walk the same boundary, or different parts of it? If they walked the same ring, their surveys should be treated as separate accounts rather than joined.`);
-  if (real.length)
-    queries.push(`Is the ground shared with ${real.slice(0,3).map(o=>o.with).join(", ")} disputed, shared by agreement, or recorded wrongly? No change will be made to either boundary without the community's decision.`);
-  if (c.shared_lines.length && c.shared_lines[0].pct > 50)
-    queries.push(`${Math.round(c.shared_lines[0].pct)}% of this clan's line runs alongside ${c.shared_lines[0].with}'s. Is that a boundary the two clans share and agree on?`);
   if (c.chains > 3 && c.area_ha !== null)
     queries.push(`This boundary is recorded in ${c.chains} separate pieces. Were the connecting stretches walked but not recorded, or not yet walked?`);
-  if (!queries.length) queries.push("No outstanding queries. The boundary closes and does not overlap another clan.");
+  if (!queries.length) queries.push("Nothing outstanding. The boundary closes on its own and the survey is complete.");
 
   body.push(p("Queries for the field", {bold:true, size:21}));
   body.push(...bullets(queries));
@@ -304,8 +304,8 @@ for (const c of clans) {
     body.push(p("Map", {bold:true, size:21, para:{ spacing:{ before:160 } }}));
     body.push(img(path.join("output/clans", c.map), 620, 470));
     body.push(note(c.n_walkers > 1
-      ? "Each walker's line and the area it gives alone (dashed); the survey they combine into, dotted; the stretches nobody walked in pink; neighbouring clans in grey, ground both claim in red."
-      : "The walk, the area it gives (dotted), the stretches nobody walked in pink; neighbouring clans in grey, ground both claim in red."));
+      ? "Each walker's line and the area it gives alone (dashed); the survey they combine into, dotted; the stretches nobody walked in pink. Neighbouring clans are named where they lie; their boundaries are not drawn."
+      : "The walk and the area it gives (dotted), with the stretches nobody walked in pink. Neighbouring clans are named where they lie; their boundaries are not drawn."));
   }
 }
 

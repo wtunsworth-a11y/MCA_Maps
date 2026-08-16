@@ -14,8 +14,14 @@ Each map shows:
   the receiver was switched off at the end of one walk and on again somewhere
   else; the straight line across is this pipeline's guess, not a boundary,
   and it is marked as such on every map it appears on;
-* the neighbouring clans whose land this clan's land runs into, and the
-  ground both claim.
+* the **names** of the neighbouring clans, placed where each neighbour lies.
+
+Neighbouring boundaries are named but never drawn. This page goes back to the
+clan it is about, and putting another clan's line on it — with the ground
+between shaded as claimed by both — makes a picture of a dispute out of a
+survey that is in most cases simply unfinished. What two surveys share is
+reported in a table, where it can be read with the figure for how much of
+each boundary has yet to be walked.
 
 Walkers of a clan are joined into a single survey, which is right when they
 each walked a different stretch of one boundary. Where instead they each
@@ -44,9 +50,8 @@ import pandas as pd
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
-from matplotlib.patches import Patch  # noqa: E402
-from shapely.geometry import box  # noqa: E402
-from shapely.ops import unary_union  # noqa: E402
+from shapely.geometry import Point, box  # noqa: E402
+from shapely.ops import nearest_points, unary_union  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dataio  # noqa: E402
@@ -185,22 +190,63 @@ def _buffered(clan: str, line, cache: dict, tolerance: float):
     return cache[clan]
 
 
+def _neighbour_labels(near: list[dict], alongside: dict | None, own,
+                      window) -> list[tuple]:
+    """Where to write each neighbouring clan's name on this clan's map.
+
+    At the point on the neighbour nearest this clan's own work, so the name
+    sits on the side the neighbour is actually on. Names falling outside the
+    map are pulled to the edge nearest them rather than dropped, since a
+    neighbour off the top of the page is still a neighbour.
+    """
+    minx, miny, maxx, maxy = window
+    inset_x = (maxx - minx) * 0.06
+    inset_y = (maxy - miny) * 0.06
+
+    sources = {n["clan"]: n["geometry"] for n in near}
+    for name, info in (alongside or {}).items():
+        sources.setdefault(name, info["geometry"])
+
+    placed = []
+    for name, geometry in sorted(sources.items()):
+        try:
+            point = nearest_points(geometry, own)[0]
+        except Exception:
+            continue
+        x = min(max(point.x, minx + inset_x), maxx - inset_x)
+        y = min(max(point.y, miny + inset_y), maxy - inset_y)
+        placed.append([name, x, y])
+
+    # Neighbours often meet a clan at the same corner, which stacks three
+    # names on top of each other and makes all of them unreadable. Nudge each
+    # one clear of the last.
+    gap = (maxy - miny) * 0.045
+    placed.sort(key=lambda item: item[2])
+    for index in range(1, len(placed)):
+        previous, current = placed[index - 1], placed[index]
+        if (abs(current[1] - previous[1]) < (maxx - minx) * 0.18
+                and current[2] - previous[2] < gap):
+            current[2] = previous[2] + gap
+    return [(name, Point(x, min(y, maxy - inset_y))) for name, x, y in placed]
+
+
 def _window(group: gpd.GeoDataFrame, result: dict, near: list[dict],
             alongside: dict | None) -> tuple[float, float, float, float]:
-    """The map's extent: everything it draws, plus a margin."""
+    """The map's extent: this clan's own work, plus a margin.
+
+    Neighbours no longer widen the window. Their names are placed on the map
+    but their boundaries are not drawn, so the map stays about the clan whose
+    page it is.
+    """
     frames = [tuple(group.total_bounds)]
     for info in result["separate"].values():
         if info["geometry"] is not None:
             frames.append(info["geometry"].bounds)
     if result["joined"] is not None:
         frames.append(result["joined"]["geometry"].bounds)
-    for neighbour in near:
-        frames.append(neighbour["shared"].bounds)
-    for info in (alongside or {}).values():
-        frames.append(info["geometry"].bounds)
     minx = min(b[0] for b in frames); miny = min(b[1] for b in frames)
     maxx = max(b[2] for b in frames); maxy = max(b[3] for b in frames)
-    pad = max(maxx - minx, maxy - miny, 400) * 0.15
+    pad = max(maxx - minx, maxy - miny, 400) * 0.18
     return minx - pad, miny - pad, maxx + pad, maxy + pad
 
 
@@ -223,41 +269,18 @@ def render(clan: str, group: gpd.GeoDataFrame, result: dict,
 
     handles = []
 
-    # Another clan's line running beside this one — shown for every clan, and
-    # the only context available for a clan whose walk gives no area.
-    # Drawn as a wide pale halo underneath, not a line of its own weight:
-    # where the two clans walked the same edge the coloured line sits inside
-    # the halo, which is the whole point. A same-width line underneath would
-    # simply be hidden and the map would read as "these two barely meet".
-    if alongside:
-        labelled = {n["clan"] for n in near}
-        for other, info in alongside.items():
-            gpd.GeoSeries([info["geometry"]], crs=dataio.METRIC_CRS).plot(
-                ax=axis, color="#64748b", linewidth=6.5, alpha=0.30,
-                zorder=1)
-            if other in labelled:
-                continue
-            point = info["geometry"].interpolate(0.5, normalized=True)
-            axis.annotate(other, (point.x, point.y), fontsize=7.5,
-                          color="#334155", ha="center", zorder=8)
-        handles.append(Line2D([0], [0], color="#64748b", lw=6.5, alpha=0.4,
-                              label="Another clan's line, running alongside"))
-
-    # Neighbours first, underneath everything, so they give context without
-    # competing with this clan's own lines.
-    if near:
-        gpd.GeoSeries([n["geometry"] for n in near],
-                      crs=dataio.METRIC_CRS).plot(
-            ax=axis, facecolor="#94a3b8", edgecolor="#475569", alpha=0.18,
-            linewidth=0.8, zorder=1)
-        shared = [n["shared"] for n in near]
-        gpd.GeoSeries(shared, crs=dataio.METRIC_CRS).plot(
-            ax=axis, facecolor="#dc2626", edgecolor="#7f1d1d", alpha=0.28,
-            linewidth=0.7, zorder=3)
-        for neighbour in near:
-            point = neighbour["geometry"].representative_point()
-            axis.annotate(neighbour["clan"], (point.x, point.y), fontsize=7.5,
-                          color="#334155", ha="center", zorder=8)
+    # Neighbouring clans are named, not drawn. Rendering another clan's
+    # boundary on this clan's page puts a line on paper that clan never
+    # agreed to, next to ground shaded as claimed by both — which is a
+    # picture of a dispute, and this survey is not that. The name says who
+    # the neighbour is and where; anything more is for their own page.
+    own = unary_union(list(group.geometry))
+    for name, point in _neighbour_labels(near, alongside, own,
+                                         (minx, miny, maxx, maxy)):
+        axis.annotate(name, (point.x, point.y), fontsize=8,
+                      color="#475569", ha="center", va="center", zorder=8,
+                      bbox=dict(boxstyle="round,pad=0.18", facecolor="white",
+                                edgecolor="none", alpha=0.65))
 
     # Each walk's own area, outlined so overlapping ones stay readable.
     for index, (custodian, info) in enumerate(sorted(result["separate"].items())):
@@ -298,11 +321,6 @@ def render(clan: str, group: gpd.GeoDataFrame, result: dict,
                 [0], [0], color=BRIDGE_COLOUR, lw=1.8, linestyle=(0, (5, 3)),
                 label=f"Not walked — straight line across a gap "
                       f"({result['joined']['gap_m'] / 1000:.1f} km)"))
-    if near:
-        handles.append(Patch(facecolor="#dc2626", alpha=0.3,
-                             label="Claimed by this clan and a neighbour"))
-        handles.append(Patch(facecolor="#94a3b8", alpha=0.25,
-                             label="Neighbouring clan's mapped land"))
 
     axis.set_axis_off()
     axis.set_title(
@@ -336,12 +354,20 @@ def compress(path: Path, colours: int = 192) -> Path:
 
 def _headline(result: dict, near: list[dict], overlap_tolerance: float,
               alongside: dict | None = None) -> str:
-    """The one line above the map: what it shows and what to make of it."""
+    """The one line above the map: what it shows, and what is still missing.
+
+    Deliberately plain. This page goes back to the clan it is about, and a
+    heading that counts up who else claims their ground reads as an accusation
+    before anybody has said a word. Where the survey is unfinished the heading
+    says *incomplete*, which is what it is; the neighbours' names are on the
+    map, and what the two surveys share is in the table.
+    """
     walkers = len(result["separate"])
     who = "1 walker" if walkers == 1 else f"{walkers} walkers"
+
     if not result["joined_ha"]:
-        line = (f"{who} — no area: the walk does not close, and the gap is "
-                "too wide to bridge honestly")
+        line = (f"{who} — survey incomplete: the walk does not yet close, and "
+                "too much is missing to give an area")
     elif walkers < 2:
         line = f"{who}, {result['joined_ha']:,.0f} ha"
     else:
@@ -356,18 +382,16 @@ def _headline(result: dict, near: list[dict], overlap_tolerance: float,
         line = (f"{who}\nseparately "
                 f"{result['separate_ha']:,.0f} ha, joined "
                 f"{result['joined_ha']:,.0f} ha — {verdict}")
+
     if result["joined"] and result["joined"].get("gap_m"):
         share = result["joined"]["gap_m"] / (result["joined"]["walked_km"] * 10)
-        line += (f"\n{result['joined']['gap_m'] / 1000:.1f} km of the outline "
-                 f"was not walked ({share:.0f}% — shown in pink)")
-    if near:
-        real = [n for n in near if n["beyond_tol_ha"] > 0]
-        line += (f"\nshares ground with {len(near)} clan(s); "
-                 f"{len(real)} beyond the {overlap_tolerance:.0f} m tolerance")
-    elif alongside:
-        best = max(alongside.items(), key=lambda kv: kv[1]["pct_of_own"])
-        line += (f"\n{best[1]['pct_of_own']:.0f}% of this line runs within "
-                 f"{overlap_tolerance:.0f} m of {best[0]}'s")
+        line += (f"\nincomplete: {result['joined']['gap_m'] / 1000:.1f} km of "
+                 f"the outline has not been walked ({share:.0f}%, in pink)")
+
+    names = sorted({n["clan"] for n in near} | set(alongside or {}))
+    if names:
+        shown = ", ".join(names[:5]) + (" …" if len(names) > 5 else "")
+        line += f"\nneighbouring clans: {shown}"
     return line
 
 

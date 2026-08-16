@@ -749,6 +749,35 @@ mapped area.
 Overlaps are still measured and reported (§4.9) — they are a finding worth
 having. They are no longer raised as queries.
 
+### 6.12 What goes on a clan's own page — resolved: their survey, not their neighbours'
+
+These pages are printed and taken to the clan they are about. That constrains
+what may appear on them, and the constraint is not cosmetic.
+
+**Neighbouring clans are named, never drawn.** An earlier version rendered
+each neighbour's mapped land in grey and shaded the ground both had walked
+around in red. Put in front of elders, that is a picture of a dispute — and
+in most cases the honest description is that both surveys are unfinished. The
+map now shows one clan's work, the stretches nobody has walked, and the
+neighbours' names placed where each neighbour lies.
+
+**Unfinished is not disputed.** Where a boundary does not close, the word
+used throughout is *incomplete*. Any overlap involving such a boundary is
+stated as provisional, because the overlap is measured against the straight
+lines bridging the unwalked stretches rather than against anything anyone
+walked or said.
+
+**Two queries were withdrawn.** One asked whether ground two clans had both
+walked around was "disputed, shared by agreement, or recorded wrongly"; the
+other asked whether a shared edge was agreed. Neither is answerable from this
+data, and both invite an argument the survey has no business starting. What
+remains are practical requests: walk the missing stretches, confirm the
+parcels, say what runs along a gap.
+
+The overlap figures themselves are unchanged and still reported per clan
+under "Ground also claimed by another clan". The finding is kept; the framing
+that turned it into an accusation is not.
+
 ### 6.9 How close is too close — resolved: 100 m, as a separate category
 
 Two lines recorded within **100 m** of each other are the same line as far as

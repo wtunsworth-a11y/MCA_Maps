@@ -6,6 +6,27 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.2
+
+- Clan maps no longer draw neighbouring clans' boundaries. A neighbour is
+  named where it lies, and nothing more. Drawing another clan's line on this
+  clan's page, with the ground between shaded as claimed by both, made a
+  picture of a dispute out of a survey that is in most cases simply
+  unfinished.
+- Two queries removed. Neither should have been asked: both invited clans to
+  take a position on ground their neighbours had also walked, when the data
+  supports no such question and most of the boundaries involved are simply
+  unfinished.
+- "Boundary walked alongside another clan" is now **Neighbouring clans**.
+  "Ground also claimed by another clan" stays as it was.
+- Where a boundary is unfinished it is called **incomplete**, on the map and
+  in the text, and any overlap involving it is stated as provisional — the
+  unwalked stretches are straight lines, and the overlap is measured against
+  those lines rather than against anything anyone walked.
+- New section, "What an overlap here is not": an overlap in these figures is a
+  statement about two surveys, not about two clans.
+- Per-clan heading "Problems" is now "What the survey shows".
+
 ## 1.1
 
 - Overlap between clans is now reported twice: strictly, and again with shared
