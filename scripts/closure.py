@@ -241,38 +241,99 @@ def _furthest_pair(nodes: list, positions: dict) -> list:
     return pair
 
 
+def _distance(a, b) -> float:
+    return ((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2) ** 0.5
+
+
+def _tour_cost(order: list[tuple[int, int]], ends: list) -> float:
+    """Total straight-line distance bridging an ordered, oriented ring."""
+    total = 0.0
+    for position, (index, flip) in enumerate(order):
+        exit_point = ends[index][1 - flip]
+        next_index, next_flip = order[(position + 1) % len(order)]
+        total += _distance(exit_point, ends[next_index][next_flip])
+    return total
+
+
+def order_chains(chains: list[dict], passes: int = 200) -> list[tuple[int, int]]:
+    """Decide what order to join the recorded pieces in, and which way round.
+
+    A survey arrives as several disconnected pieces, because the receiver was
+    switched off at the end of one day's walk and on again somewhere else.
+    Joining them into a ring is two decisions: the order to visit the pieces
+    in, and **which end of each piece to enter by** — that is, whether to
+    take the piece forwards or reversed.
+
+    Get the orientation wrong and the bridges cross each other, producing a
+    bow-tie: a figure-of-eight that encloses two small lobes where the real
+    boundary encloses one large area. Tuoko showed this plainly — two straight
+    lines crossing in the middle of the clan's land, and an area that was the
+    sum of two triangles rather than the ground walked around.
+
+    So this is a travelling-salesman tour over the pieces, and it is solved
+    the way those are: nearest-neighbour to start, then 2-opt, which reverses
+    a run of pieces whenever that shortens the bridging. In Euclidean space a
+    tour that crosses itself is never the shortest one, so a 2-opt local
+    optimum has no crossing bridges left — the bow-tie unties itself.
+
+    Returns `[(chain index, entered at end 0 or 1), ...]` in ring order.
+    """
+    count = len(chains)
+    ends = [c["ends"] for c in chains]
+    if count <= 1:
+        return [(0, 0)] if count else []
+
+    # Nearest open end first, which is where this started and remains a good
+    # place to begin from.
+    order = [(0, 0)]
+    used = {0}
+    while len(order) < count:
+        index, flip = order[-1]
+        cursor = ends[index][1 - flip]
+        best = None
+        for candidate in range(count):
+            if candidate in used:
+                continue
+            for entry in (0, 1):
+                distance = _distance(cursor, ends[candidate][entry])
+                if best is None or distance < best[0]:
+                    best = (distance, candidate, entry)
+        order.append((best[1], best[2]))
+        used.add(best[1])
+
+    # 2-opt: reversing a run of pieces flips each one's direction as well as
+    # their order, which is exactly the move that unties a crossing.
+    cost = _tour_cost(order, ends)
+    for _ in range(passes):
+        improved = False
+        for i in range(count):
+            for j in range(i + 1, count):
+                candidate = (order[:i]
+                             + [(k, 1 - f) for k, f in reversed(order[i:j + 1])]
+                             + order[j + 1:])
+                candidate_cost = _tour_cost(candidate, ends)
+                if candidate_cost < cost - 1e-6:
+                    order, cost, improved = candidate, candidate_cost, True
+        if not improved:
+            break
+    return order
+
+
 def _closing_gap(chains: list[dict]) -> float:
     """Straight-line distance still needed to join the pieces into one ring.
 
-    Chained greedily — nearest open end first — which is an upper bound on the
-    true minimum, so a survey is never reported as closer to closure than it
-    really is.
+    The pieces are ordered and oriented by `order_chains`, so the figure is
+    the shortest joining that ordering finds rather than the first one tried.
+    It remains an upper bound on the true minimum, so a survey is never
+    reported as closer to closure than it really is.
     """
     open_chains = [c for c in chains if not c["closed"] and c["ends"]]
     if not open_chains:
         return 0.0
     if len(open_chains) == 1:
-        (x1, y1), (x2, y2) = open_chains[0]["ends"]
-        return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
-
-    remaining = list(open_chains)
-    current = remaining.pop(0)
-    start, cursor = current["ends"][0], current["ends"][1]
-    total = 0.0
-
-    while remaining:
-        best, best_index, best_exit = None, 0, None
-        for index, chain in enumerate(remaining):
-            for entry, exit_ in ((0, 1), (1, 0)):
-                x, y = chain["ends"][entry]
-                d = ((cursor[0] - x) ** 2 + (cursor[1] - y) ** 2) ** 0.5
-                if best is None or d < best:
-                    best, best_index, best_exit = d, index, exit_
-        total += best or 0.0
-        cursor = remaining.pop(best_index)["ends"][best_exit]
-
-    total += ((cursor[0] - start[0]) ** 2 + (cursor[1] - start[1]) ** 2) ** 0.5
-    return total
+        return _distance(*open_chains[0]["ends"])
+    return _tour_cost(order_chains(open_chains),
+                      [c["ends"] for c in open_chains])
 
 
 def _count_components(edges: list[dict]) -> int:

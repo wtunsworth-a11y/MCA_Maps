@@ -17,7 +17,16 @@ carries a `basis` column so the distinction survives into QGIS, and the
 overlap report can be filtered to surveyed polygons alone.
 
 Overlaps between clans are then reported pairwise — shared area, and what
-share of each clan's own polygon that represents.
+share of each clan's own polygon that represents — under two readings:
+
+* **Strict** — every square metre two polygons share. This is the exact
+  measurement and the one the totals are built from.
+* **Beyond tolerance** — the same overlap with any strip narrower than
+  `--overlap-tolerance` (100 m by default) removed. Where two walked lines run
+  within 100 m of each other, the ground between them is not a competing claim:
+  it is GPS error, thick bush, and one walker taking the near side of a ridge
+  and another the far side. Only overlap wide enough to survive that is
+  reported as contested land.
 
 Usage:
     python scripts/polygons.py
@@ -43,6 +52,12 @@ import terrain  # noqa: E402
 import smooth_tracks  # noqa: E402
 
 DEFAULT_MAX_GAP = 0.50
+# Two lines recorded within this distance of each other are the same line as
+# far as the ground is concerned. Set from the field: GPS fixes land 10 m
+# apart, the canopy displaces them further, and a boundary followed on foot
+# wanders around terrain. The community's judgement, recorded in
+# docs/METHODS.md, is that 100 m is inconsequential here.
+OVERLAP_TOLERANCE_M = 100.0
 
 
 def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
@@ -72,7 +87,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     if primary is not None and primary.length >= min_enclosure * total:
         return {"geometry": enclosed, "basis": "surveyed", "gap_m": 0.0,
                 "gap_pct": 0.0, "walked_km": total / 1000,
-                "area_ha": enclosed.area / 1e4}
+                "area_ha": enclosed.area / 1e4, "bridges": []}
 
     # Otherwise bridge the open ends and try again.
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
@@ -92,7 +107,8 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
 
     return {"geometry": bridged, "basis": "inferred", "gap_m": gap,
             "gap_pct": gap / total * 100 if total else None,
-            "walked_km": total / 1000, "area_ha": bridged.area / 1e4}
+            "walked_km": total / 1000, "area_ha": bridged.area / 1e4,
+            "bridges": bridges}
 
 
 def _snapped_lines(parts, positions, labels) -> list:
@@ -131,8 +147,10 @@ def _enclosed(lines: list, min_share: float = 0.02):
     kept = [p for p in polygons if p.area >= largest * min_share]
     if len(kept) == 1:
         return kept[0]
-    from shapely.geometry import MultiPolygon
-    return MultiPolygon(kept)
+    # Union rather than collect: where the pieces overlap — which happens when
+    # a bridged ring still crosses itself — a MultiPolygon of them would count
+    # the shared ground twice and report an area the walk never enclosed.
+    return unary_union(kept)
 
 
 def _largest(lines: list):
@@ -147,36 +165,38 @@ def _largest(lines: list):
 
 
 def _bridges(chains: list[dict]):
-    """Straight lines joining the open pieces into one ring, and their length."""
+    """Straight lines joining the open pieces into one ring, and their length.
+
+    These lines are **not boundary**. They are where the receiver was switched
+    off at the end of one walk and on again somewhere else, and the straight
+    line across is this pipeline's guess at what lies between. They are drawn
+    apart from the walked line on every map and counted apart in every table.
+
+    The order the pieces are joined in, and which way round each one is taken,
+    comes from `closure.order_chains` — get the direction wrong and the
+    bridges cross, giving a bow-tie that encloses two slivers instead of the
+    ground actually walked around.
+    """
     open_chains = [c for c in chains if not c["closed"] and len(c["ends"]) == 2]
     if not open_chains:
         return [], 0.0
 
     if len(open_chains) == 1:
         a, b = open_chains[0]["ends"]
-        return [LineString([a, b])], LineString([a, b]).length
+        line = LineString([a, b])
+        return [line], line.length
 
-    remaining = list(open_chains)
-    current = remaining.pop(0)
-    start, cursor = current["ends"][0], current["ends"][1]
+    ends = [c["ends"] for c in open_chains]
+    order = closure.order_chains(open_chains)
+
     bridges, total = [], 0.0
-
-    while remaining:
-        best, best_index, best_exit = None, 0, None
-        for index, chain in enumerate(remaining):
-            for entry, exit_ in ((0, 1), (1, 0)):
-                x, y = chain["ends"][entry]
-                d = ((cursor[0] - x) ** 2 + (cursor[1] - y) ** 2) ** 0.5
-                if best is None or d < best:
-                    best, best_index, best_exit = d, index, exit_
-        chain = remaining.pop(best_index)
-        entry_point = chain["ends"][1 - best_exit]
-        bridges.append(LineString([cursor, entry_point]))
-        total += best or 0.0
-        cursor = chain["ends"][best_exit]
-
-    bridges.append(LineString([cursor, start]))
-    total += ((cursor[0] - start[0]) ** 2 + (cursor[1] - start[1]) ** 2) ** 0.5
+    for position, (index, flip) in enumerate(order):
+        exit_point = ends[index][1 - flip]
+        next_index, next_flip = order[(position + 1) % len(order)]
+        entry_point = ends[next_index][next_flip]
+        line = LineString([exit_point, entry_point])
+        bridges.append(line)
+        total += line.length
     return bridges, total
 
 
@@ -195,8 +215,40 @@ def clan_polygons(polygons: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     return merged
 
 
-def overlaps(frame: gpd.GeoDataFrame, label: str) -> pd.DataFrame:
-    """Pairwise shared area between every pair of polygons that touch."""
+def beyond_tolerance(shared, tolerance: float = OVERLAP_TOLERANCE_M):
+    """The part of a shared area that is wider than `tolerance` throughout.
+
+    A morphological opening: erode by half the tolerance, then dilate back.
+    What survives is every point that sits inside a disc of radius
+    `tolerance`/2 lying wholly within the shared area — that is, the ground
+    that is at least `tolerance` across. A sliver between two lines recorded
+    50 m apart disappears; a genuinely shared block comes back essentially
+    unchanged.
+
+    This is the geometric form of the field rule: if the two recorded lines
+    are less than 100 m apart, there is no overlap to discuss.
+    """
+    if shared is None or shared.is_empty or tolerance <= 0:
+        return shared
+    try:
+        opened = shared.buffer(-tolerance / 2).buffer(tolerance / 2)
+    except Exception:
+        return shared
+    if opened.is_empty:
+        return opened
+    # Dilation can push the result past the original edge on a concave corner,
+    # so clip it back — the answer must be a subset of what is actually shared.
+    return opened.intersection(shared)
+
+
+def overlaps(frame: gpd.GeoDataFrame, label: str,
+             tolerance: float = OVERLAP_TOLERANCE_M) -> pd.DataFrame:
+    """Pairwise shared area between every pair of polygons that touch.
+
+    Reported twice: strictly, and with slivers narrower than `tolerance`
+    removed. The strict figure is the exact measurement; the tolerant one is
+    what the field would recognise as two clans claiming the same ground.
+    """
     rows = []
     records = frame.reset_index(drop=True)
     for i in range(len(records)):
@@ -205,20 +257,109 @@ def overlaps(frame: gpd.GeoDataFrame, label: str) -> pd.DataFrame:
             b = records.iloc[j]
             if not a.geometry.intersects(b.geometry):
                 continue
-            shared = a.geometry.intersection(b.geometry).area
+            piece = a.geometry.intersection(b.geometry)
+            shared = piece.area
             if shared <= 0:
                 continue
+            wide = beyond_tolerance(piece, tolerance).area
             rows.append({
                 f"{label}_a": a[label],
                 f"{label}_b": b[label],
                 "shared_ha": round(shared / 1e4, 1),
                 "pct_of_a": round(shared / a.geometry.area * 100, 1),
                 "pct_of_b": round(shared / b.geometry.area * 100, 1),
+                "beyond_tol_ha": round(wide / 1e4, 1),
+                "beyond_tol_pct_of_a": round(wide / a.geometry.area * 100, 1),
+                "beyond_tol_pct_of_b": round(wide / b.geometry.area * 100, 1),
+                "verdict": "overlap" if wide > 0 else "within tolerance",
             })
     out = pd.DataFrame(rows)
     if not out.empty:
         out = out.sort_values("shared_ha", ascending=False)
     return out
+
+
+def shared_lines(tracks: gpd.GeoDataFrame,
+                 tolerance: float = OVERLAP_TOLERANCE_M) -> pd.DataFrame:
+    """Where two clans' recorded lines run along each other.
+
+    The mirror image of the overlap report. An overlap says two clans claim
+    the same ground; a shared line says they walked the same edge, and that is
+    agreement rather than dispute. Both matter for the same question, and a
+    pair can show one without the other — Deari and Nui share almost their
+    whole recorded line and enclose no contested ground at all.
+
+    Reported as the length of each clan's own line that runs within
+    `tolerance` of the other's, in each direction, because the two are rarely
+    equal: a short boundary can sit entirely along a long one.
+    """
+    named = tracks[tracks["clan"].astype(str).str.strip() != ""]
+    lines = {clan: unary_union(list(group.geometry))
+             for clan, group in named.groupby("clan")}
+
+    # Each clan's line is widened once and reused. Buffering inside the pair
+    # loop meant widening the same 45-track boundary forty times over, and on
+    # this data that alone took longer than the rest of the pipeline.
+    widened: dict = {}
+
+    def reach(clan):
+        if clan not in widened:
+            widened[clan] = lines[clan].buffer(tolerance)
+        return widened[clan]
+
+    rows = []
+    keys = sorted(lines)
+    for i, a in enumerate(keys):
+        for b in keys[i + 1:]:
+            ga, gb = lines[a], lines[b]
+            if ga.distance(gb) > tolerance:
+                continue
+            near_a = ga.intersection(reach(b)).length
+            near_b = gb.intersection(reach(a)).length
+            if near_a <= 0 and near_b <= 0:
+                continue
+            rows.append({
+                "clan_a": a, "clan_b": b,
+                "shared_km": round(max(near_a, near_b) / 1000, 2),
+                "pct_of_a": round(near_a / ga.length * 100, 1),
+                "pct_of_b": round(near_b / gb.length * 100, 1),
+            })
+    out = pd.DataFrame(rows)
+    if not out.empty:
+        out = out.sort_values("shared_km", ascending=False)
+    return out
+
+
+def contested_layer(clans: gpd.GeoDataFrame,
+                    tolerance: float = OVERLAP_TOLERANCE_M):
+    """Every piece of ground two clans both claim, as its own map layer.
+
+    Carries both readings so QGIS can style them apart: `verdict` separates
+    the pieces wide enough to be a real competing claim from the slivers that
+    are two walkers describing the same line.
+    """
+    rows = []
+    records = clans.reset_index(drop=True)
+    for i in range(len(records)):
+        a = records.iloc[i]
+        for j in range(i + 1, len(records)):
+            b = records.iloc[j]
+            if not a.geometry.intersects(b.geometry):
+                continue
+            piece = a.geometry.intersection(b.geometry)
+            if piece.is_empty or piece.area <= 0:
+                continue
+            wide = beyond_tolerance(piece, tolerance)
+            rows.append({
+                "clan_a": a.clan, "clan_b": b.clan,
+                "shared_ha": round(piece.area / 1e4, 1),
+                "beyond_tol_ha": round(wide.area / 1e4, 1),
+                "verdict": "overlap" if wide.area > 0 else "within tolerance",
+                "geometry": piece,
+            })
+    if not rows:
+        return None
+    return gpd.GeoDataFrame(rows, geometry="geometry", crs=clans.crs)
 
 
 def _render(polygons: gpd.GeoDataFrame, boundary, out_path: Path) -> None:
@@ -295,6 +436,11 @@ def main(argv: list[str] | None = None) -> int:
                              "this share of the distance walked")
     parser.add_argument("--surveyed-only", action="store_true",
                         help="keep only polygons that were actually walked")
+    parser.add_argument("--overlap-tolerance", type=float,
+                        default=OVERLAP_TOLERANCE_M,
+                        help="two recorded lines this close together are "
+                             "treated as the same line, so shared ground "
+                             "narrower than this is not counted as overlap")
     parser.add_argument("--report", type=Path, default=None)
     parser.add_argument("--map", type=Path, default=None,
                         help="render a PNG of the mapped areas")
@@ -307,7 +453,7 @@ def main(argv: list[str] | None = None) -> int:
     gdf = gpd.read_file(args.gpkg, layer=args.layer).to_crs(dataio.METRIC_CRS)
 
     gdf = gdf.assign(_unit=dataio.survey_group(gdf))
-    records = []
+    records, bridge_rows = [], []
     for source, group in gdf.groupby("_unit", sort=True):
         parts = []
         for geometry in group.geometry:
@@ -321,6 +467,13 @@ def main(argv: list[str] | None = None) -> int:
             continue
         first = group.iloc[0]
         custodians = sorted({str(c) for c in group.custodian if str(c).strip()})
+        for bridge in built.get("bridges") or []:
+            bridge_rows.append({
+                "zone": first.get("zone", ""), "clan": first.get("clan", ""),
+                "source_name": source,
+                "length_m": round(bridge.length, 1),
+                "geometry": bridge,
+            })
         records.append({
             "zone": first.get("zone", ""), "clan": first.get("clan", ""),
             "custodian": ", ".join(custodians),
@@ -332,6 +485,7 @@ def main(argv: list[str] | None = None) -> int:
             "area_ha": round(built["area_ha"], 1),
             "gap_m": round(built["gap_m"], 1),
             "gap_pct": None if built["gap_pct"] is None else round(built["gap_pct"], 1),
+            "bridges": len(built.get("bridges") or []),
             "geometry": built["geometry"],
         })
 
@@ -386,13 +540,28 @@ def main(argv: list[str] | None = None) -> int:
     clans = clan_polygons(polygons)
     print(f"\n{len(clans)} clan polygon(s) after dissolving by clan")
 
-    clan_overlaps = overlaps(clans, "clan")
+    clan_overlaps = overlaps(clans, "clan", args.overlap_tolerance)
     survey_overlaps = overlaps(polygons.assign(
         label=polygons.clan.astype(str) + " / " + polygons.custodian.astype(str)),
-        "label")
+        "label", args.overlap_tolerance)
 
-    print(f"\nClan-to-clan overlaps: {len(clan_overlaps)} pair(s)\n")
+    agreed = shared_lines(gdf, args.overlap_tolerance)
+    if not agreed.empty:
+        print(f"\nClan pairs walking the same line "
+              f"(within {args.overlap_tolerance:.0f} m): {len(agreed)}\n")
+        print(agreed.head(12).to_string(index=False))
+
+    print(f"\nClan-to-clan overlaps: {len(clan_overlaps)} pair(s)")
     if not clan_overlaps.empty:
+        real = clan_overlaps[clan_overlaps.verdict == "overlap"]
+        print(f"  strict                          "
+              f"{len(clan_overlaps):3d} pair(s), "
+              f"{clan_overlaps.shared_ha.sum():9,.0f} ha")
+        print(f"  beyond {args.overlap_tolerance:.0f} m tolerance          "
+              f"{len(real):3d} pair(s), "
+              f"{clan_overlaps.beyond_tol_ha.sum():9,.0f} ha")
+        print(f"  within tolerance (not overlap)  "
+              f"{len(clan_overlaps) - len(real):3d} pair(s)\n")
         print(clan_overlaps.head(20).to_string(index=False))
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
@@ -403,6 +572,24 @@ def main(argv: list[str] | None = None) -> int:
     if not clans.empty:
         clans.to_crs(dataio.WGS84).to_file(args.out, layer="clan_polygons",
                                            driver="GPKG")
+    # The bridges go out as their own layer, never merged into the boundary.
+    # They are where the receiver was off, not where anyone walked, and a map
+    # that cannot tell them apart from a walked line is misleading.
+    if bridge_rows:
+        bridges = gpd.GeoDataFrame(bridge_rows, geometry="geometry",
+                                   crs=dataio.METRIC_CRS)
+        bridges = bridges[bridges.source_name.isin(polygons.source_name)]
+        if not bridges.empty:
+            bridges.to_crs(dataio.WGS84).to_file(
+                args.out, layer="inferred_bridges", driver="GPKG")
+            print(f"\n  {len(bridges)} inferred bridge(s), "
+                  f"{bridges.length.sum() / 1000:,.1f} km of straight line "
+                  f"nobody walked, written as their own layer")
+
+    contested = contested_layer(clans, args.overlap_tolerance)
+    if contested is not None and not contested.empty:
+        contested.to_crs(dataio.WGS84).to_file(args.out, layer="clan_overlaps",
+                                               driver="GPKG")
     print(f"\nWrote {args.out}")
 
     if args.map:
@@ -419,7 +606,20 @@ def main(argv: list[str] | None = None) -> int:
             f"{inferred.area_ha.sum():,.1f} ha\n"
             f"- **Combined footprint:** {footprint:,.1f} ha\n\n"
             "## Mapped area by zone\n\n" + _markdown(by_zone.reset_index())
-            + "\n\n## Clan-to-clan overlaps\n\n" + _markdown(clan_overlaps)
+            + "\n\n## Clan-to-clan overlaps\n\n"
+            + f"Reported twice. `shared_ha` is the exact area two clans both "
+              f"claim. `beyond_tol_ha` is the same area with every strip "
+              f"narrower than {args.overlap_tolerance:.0f} m removed: where "
+              f"two recorded lines run closer than that, the ground between "
+              f"them is survey imprecision rather than a competing claim, and "
+              f"the pair is marked `within tolerance`.\n\n"
+            + _markdown(clan_overlaps)
+            + "\n\n## Clans walking the same line\n\n"
+            + f"Where two clans' recorded lines run within "
+              f"{args.overlap_tolerance:.0f} m of each other. This is "
+              f"agreement on a shared edge, not a dispute, and it is not "
+              f"visible in the overlap table above.\n\n"
+            + _markdown(agreed)
             + "\n\n## Survey-to-survey overlaps\n\n"
             + _markdown(survey_overlaps.head(60))
             + "\n\n## Every polygon\n\n"

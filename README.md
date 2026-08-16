@@ -16,11 +16,14 @@ at the results before moving on:
 | 3. Present it | `scripts/make_maps.py` | PNG + interactive HTML maps in `output/` |
 | 4. Open in QGIS | `scripts/export_qgis.py` | A GeoPackage and a ready-to-open `.qgs` project |
 | 5. Closure | `scripts/closure.py` | Which boundaries close into polygons |
-| 6. Areas & overlaps | `scripts/polygons.py` | Mapped-area polygons and clan overlaps |
+| 6. Areas & overlaps | `scripts/polygons.py` | Mapped-area polygons, clan overlaps, and the straight lines nobody walked |
 | 7. Sacred sites | `scripts/sacred_sites.py` | Site areas and share of clan land |
 | 8. Field queries | `scripts/queries.py` | Query pack with a map per question |
-| 9. Working project | `scripts/build_project.py` | The QGIS project to open and look at |
-| 10. Provenance | `scripts/provenance.py` | Versions, checksums and citations for every run |
+| 9. Per-clan maps | `scripts/clan_maps.py` | One map per clan, with neighbours and overlaps |
+| 10. Walker days | `scripts/walkers.py` | Who walked, on which days, how far |
+| 11. Working project | `scripts/build_project.py` | The QGIS project to open and look at |
+| 12. Provenance | `scripts/provenance.py` | Versions, checksums and citations for every run |
+| 13. Documents | `scripts/build_reports.py` | The two Word documents, versioned and dated |
 
 All stages read the same source — the zips in `data/raw` — through a shared
 loader (`scripts/dataio.py`), so they always agree on what the data is.
@@ -57,6 +60,39 @@ Then open **`data/smoothed/mca_smoothed_qgis.qgs`**. Methods, results and open
 questions are documented in **`docs/METHODS.md`**; questions for the field team
 are generated into **`output/queries/`**. Drop `--smoothed` from any
 of these to work from the raw archives instead.
+
+## The documents
+
+```bash
+python scripts/build_reports.py
+```
+
+Two Word documents, both built from `output/report/*.json` and nothing else,
+so text and maps always come from the same run:
+
+- **`Managalas_Clan_Land_Mapping_v<version>_<date>.docx`** — results, then a
+  page per clan with its own map, its problems and its queries.
+- **`Managalas_Walker_Days_v<version>_<date>.docx`** — who walked, on which
+  days, and how far.
+
+The version comes from `docs/VERSION`; bump it when the content changes
+materially. Version and date appear in the file name, on the title page and in
+the footer of every page, and **earlier builds are never overwritten** — the
+copy already in someone's inbox stays valid and findable.
+
+## The straight lines on the maps
+
+Where a boundary was walked in several pieces — the receiver switched off at
+the end of one day and on again somewhere else — the pieces are joined with
+straight lines so an area can be given at all. **Those lines are not
+boundary.** They are drawn in pink on every map, written as their own
+`inferred_bridges` layer rather than merged into the boundary, excluded from
+every distance total, and reported per clan as "not walked".
+
+Which end of each piece the ring enters by matters: take one the wrong way
+round and the joining lines cross, enclosing two slivers instead of one block.
+`closure.order_chains` orders and orients the pieces to make the joining as
+short as possible, which leaves no crossings — see `docs/METHODS.md` §4.8.
 
 ## Where the data goes
 

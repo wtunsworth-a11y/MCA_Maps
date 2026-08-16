@@ -59,11 +59,18 @@ def _load(target_crs: str):
         return _cache[key]
 
 
-def add_hillshade(axis, target_crs, alpha: float = 0.55) -> bool:
+def add_hillshade(axis, target_crs, alpha: float = 0.55,
+                  bounds=None) -> bool:
     """Draw the hillshade under everything already on the axes.
 
     Returns True if terrain was drawn. The axes limits are left untouched, so
     this can be called before or after the data is plotted.
+
+    Pass `bounds` as `(minx, miny, maxx, maxy)` for a map covering one clan
+    rather than the whole area. The raster is then cropped to that window
+    before it is drawn. Matplotlib otherwise rasterises all six million pixels
+    of the full DEM for a map showing a hundredth of it, which for a run of
+    one map per clan is most of the wall clock.
     """
     global _warned
     if not available():
@@ -80,7 +87,39 @@ def add_hillshade(axis, target_crs, alpha: float = 0.55) -> bool:
             _warned = True
         return False
 
+    if bounds is not None:
+        cropped = _crop(band, extent, bounds)
+        if cropped is not None:
+            band, extent = cropped
+
     axis.imshow(band, cmap="gray", extent=extent, origin="upper",
                 alpha=alpha, zorder=-10, interpolation="bilinear",
                 vmin=0, vmax=255)
     return True
+
+
+def _crop(band, extent, bounds, margin: float = 0.10):
+    """The window of the raster covering `bounds`, and its own extent."""
+    left, right, bottom, top = extent
+    minx, miny, maxx, maxy = bounds
+    pad_x = max(maxx - minx, 1.0) * margin
+    pad_y = max(maxy - miny, 1.0) * margin
+    minx, maxx = minx - pad_x, maxx + pad_x
+    miny, maxy = miny - pad_y, maxy + pad_y
+
+    height, width = band.shape
+    pixel_x = (right - left) / width
+    pixel_y = (top - bottom) / height
+    if pixel_x <= 0 or pixel_y <= 0:
+        return None
+
+    col0 = max(0, int((minx - left) / pixel_x))
+    col1 = min(width, int((maxx - left) / pixel_x) + 1)
+    row0 = max(0, int((top - maxy) / pixel_y))
+    row1 = min(height, int((top - miny) / pixel_y) + 1)
+    if col1 - col0 < 2 or row1 - row0 < 2:
+        return None
+
+    return (band[row0:row1, col0:col1],
+            (left + col0 * pixel_x, left + col1 * pixel_x,
+             top - row1 * pixel_y, top - row0 * pixel_y))

@@ -41,3 +41,8 @@ output/*sacred*.gpkg
 # npm working files for the Word report build
 node_modules/
 package-lock.json
+
+# Report data feeding the Word documents — small, and worth keeping so a
+# document can be traced back to the figures it was built from.
+!output/report/
+!output/walkers/

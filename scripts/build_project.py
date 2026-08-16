@@ -45,7 +45,14 @@ SOURCES = [
      "#2563eb", True),
     ("Areas — inferred (gap bridged)", "polygons_inferred", "survey_polygons",
      "#f59e0b", True),
+    # Its own layer, above the boundaries: this is the line nobody walked, and
+    # it must be switchable so a viewer can see how much of an "area" rests on
+    # it.
+    ("NOT walked — straight line across a gap", "polygons",
+     "inferred_bridges", "#db2777", True),
     ("Clan areas (dissolved)", "polygons", "clan_polygons", "#7c3aed", False),
+    ("Ground claimed by two clans", "polygons", "clan_overlaps", "#dc2626",
+     False),
     ("Modelled watercourses", "streams", "streams", "#0369a1", False),
     ("Modelled ridgelines", "ridges", "ridges", "#c2410c", False),
     ("MCA boundary", "boundary", None, "#475569", True),

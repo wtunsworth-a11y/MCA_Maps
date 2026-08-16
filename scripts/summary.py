@@ -25,6 +25,7 @@ from shapely.ops import unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dataio  # noqa: E402
+import polygons  # noqa: E402
 import smooth_tracks  # noqa: E402
 import terrain  # noqa: E402
 
@@ -46,23 +47,31 @@ def gather(tracks_path: Path, polygons_path: Path) -> dict:
     surveyed = surveys[surveys.basis == "surveyed"]
     inferred = surveys[surveys.basis == "inferred"]
 
-    # Clan-level overlap: the ILG question.
-    contested_pieces, per_clan = [], []
+    # Clan-level overlap: the ILG question. Measured strictly, and again with
+    # strips narrower than the tolerance removed — two lines recorded closer
+    # than that are the same line, not two claims (polygons.py).
+    contested_pieces, wide_pieces, per_clan = [], [], []
     for _, row in clans.iterrows():
         others = unary_union([g for name, g in zip(clans.clan, clans.geometry)
                               if name != row.clan])
         shared = row.geometry.intersection(others)
+        wide = polygons.beyond_tolerance(shared)
         if shared.area > 0:
             contested_pieces.append(shared)
+        if wide.area > 0:
+            wide_pieces.append(wide)
         per_clan.append({
             "clan": row.clan,
             "area_ha": round(row.geometry.area / 1e4, 1),
             "pct_contested": round(shared.area / row.geometry.area * 100, 1),
+            "pct_beyond_tol": round(wide.area / row.geometry.area * 100, 1),
         })
     contested = pd.DataFrame(per_clan).sort_values("pct_contested",
                                                    ascending=False)
     contested_ha = (unary_union(contested_pieces).area / 1e4
                     if contested_pieces else 0.0)
+    contested_wide_ha = (unary_union(wide_pieces).area / 1e4
+                         if wide_pieces else 0.0)
     footprint = unary_union(list(clans.geometry)).area / 1e4
 
     # How much of the overlap rests on a boundary that was actually walked.
@@ -75,9 +84,17 @@ def gather(tracks_path: Path, polygons_path: Path) -> dict:
             if "surveyed" in (a.basis, b.basis):
                 strong += a.geometry.intersection(b.geometry).area / 1e4
 
+    try:
+        bridges = gpd.read_file(polygons_path,
+                                layer="inferred_bridges").to_crs(dataio.METRIC_CRS)
+    except Exception:
+        bridges = None
+
     mca = dataio.load_boundary()
     return {
         "tracks": tracks, "surveys": surveys, "clans": clans,
+        "bridges": bridges,
+        "bridge_km": (bridges.length.sum() / 1000) if bridges is not None else 0.0,
         "contested_table": contested,
         "n_surveys": int(tracks.source_name.nunique()),
         "n_tracks": int(len(tracks)),
@@ -95,8 +112,11 @@ def gather(tracks_path: Path, polygons_path: Path) -> dict:
         "mca_ha": mca.area / 1e4 if mca is not None else None,
         "clans_mapped": int(len(clans)),
         "clans_overlapping": int((contested.pct_contested > 0).sum()),
+        "clans_overlapping_wide": int((contested.pct_beyond_tol > 0).sum()),
         "contested_ha": contested_ha,
+        "contested_wide_ha": contested_wide_ha,
         "contested_strong_ha": strong,
+        "tolerance_m": polygons.OVERLAP_TOLERANCE_M,
     }
 
 
@@ -138,6 +158,14 @@ def render_map(data: dict, out_path: Path) -> Path:
         surveyed.plot(ax=axis, facecolor="#2563eb", edgecolor="#1e3a8a",
                       linewidth=0.8, alpha=0.55, zorder=3)
 
+    # The stretches of every inferred outline that nobody walked. Without
+    # these the amber areas read as surveyed ground; with them it is plain how
+    # much of each one is a straight line drawn across a gap.
+    bridges = data.get("bridges")
+    if bridges is not None and len(bridges):
+        bridges.plot(ax=axis, color="#db2777", linewidth=0.9,
+                     linestyle=(0, (4, 2.5)), zorder=7)
+
     # Where two different clans claim the same ground.
     clans = data["clans"]
     pieces = []
@@ -168,6 +196,8 @@ def render_map(data: dict, out_path: Path) -> Path:
         Patch(facecolor="#fcd34d", alpha=0.5, label="Area — closure inferred"),
         Patch(facecolor="#dc2626", alpha=0.7, label="Claimed by more than one "
                                                     "clan"),
+        Line2D([0], [0], color="#db2777", lw=1.4, linestyle=(0, (4, 2.5)),
+               label="Not walked — straight line across a gap"),
         Line2D([0], [0], color="#7c3aed", lw=2,
                label="Walked, but too open to give an area"),
         Line2D([0], [0], color="#334155", lw=1, label="Walked boundary"),
@@ -187,7 +217,8 @@ def write(data: dict, out_path: Path, map_name: str) -> Path:
 
     top = contested[contested.pct_contested > 0].head(8)
     rows = "\n".join(
-        f"| {r.clan} | {r.area_ha:,.0f} | {r.pct_contested:.0f}% |"
+        f"| {r.clan} | {r.area_ha:,.0f} | {r.pct_contested:.0f}% | "
+        f"{r.pct_beyond_tol:.0f}% |"
         for r in top.itertuples())
 
     text = f"""# Managalas clan land mapping — summary
@@ -236,6 +267,15 @@ boundary was not walked all the way round, and the gap has been bridged with a
 straight line to give an area at all. Those figures are estimates and are
 labelled as such everywhere they appear.
 
+**{data['bridge_km']:,.0f} km of the outlines on this map were never walked.**
+They are the straight lines you can see cutting across the landscape, and they
+are drawn in pink so they are never mistaken for a boundary. They mark where a
+receiver was switched off at the end of one walk and switched on again
+somewhere else — not where anyone said the boundary runs. Where a clan's
+outline carries a long straight line, the area behind it is a guess across
+that gap, and the query on that clan's page asks for the missing stretch to be
+walked.
+
 The footprint is **{data['footprint_ha'] / data['mca_ha'] * 100:.1f}% of the
 conservation area's {data['mca_ha']:,.0f} ha**.
 
@@ -243,18 +283,30 @@ conservation area's {data['mca_ha']:,.0f} ha**.
 
 This is the finding with the widest implications.
 
-| | |
-| --- | ---: |
-| Clans with a mapped area | {data['clans_mapped']} |
-| **Clans whose land overlaps another clan's** | **{data['clans_overlapping']} ({data['clans_overlapping'] / data['clans_mapped'] * 100:.0f}%)** |
-| Clans with no overlap at all | {data['clans_mapped'] - data['clans_overlapping']} |
-| Area claimed by more than one clan | {data['contested_ha']:,.0f} ha |
-| — as a share of the mapped footprint | {data['contested_ha'] / data['footprint_ha'] * 100:.1f}% |
+Reported two ways. **Strict** counts every square metre two clans both claim.
+**Beyond {data['tolerance_m']:.0f} m** removes any shared strip narrower than
+that: where two recorded lines run closer together than {data['tolerance_m']:.0f}
+m, the ground between them is the ordinary imprecision of GPS under canopy and
+of a boundary followed on foot, not a competing claim.
+
+| | Strict | Beyond {data['tolerance_m']:.0f} m |
+| --- | ---: | ---: |
+| Clans with a mapped area | {data['clans_mapped']} | {data['clans_mapped']} |
+| **Clans whose land overlaps another clan's** | **{data['clans_overlapping']} ({data['clans_overlapping'] / data['clans_mapped'] * 100:.0f}%)** | **{data['clans_overlapping_wide']} ({data['clans_overlapping_wide'] / data['clans_mapped'] * 100:.0f}%)** |
+| Clans with no overlap at all | {data['clans_mapped'] - data['clans_overlapping']} | {data['clans_mapped'] - data['clans_overlapping_wide']} |
+| Area claimed by more than one clan | {data['contested_ha']:,.0f} ha | {data['contested_wide_ha']:,.0f} ha |
+| — as a share of the mapped footprint | {data['contested_ha'] / data['footprint_ha'] * 100:.1f}% | {data['contested_wide_ha'] / data['footprint_ha'] * 100:.1f}% |
+
+**The allowance changes almost nothing**, which is the reason for making it:
+{data['contested_ha'] - data['contested_wide_ha']:,.0f} ha of the
+{data['contested_ha']:,.0f} ha falls away, and
+{data['clans_overlapping'] - data['clans_overlapping_wide']} clan(s) leave the
+overlapping group. The finding is not an artefact of survey precision.
 
 Most contested, as a share of each clan's own mapped land:
 
-| Clan | Area (ha) | Contested |
-| --- | ---: | ---: |
+| Clan | Area (ha) | Contested | Beyond {data['tolerance_m']:.0f} m |
+| --- | ---: | ---: | ---: |
 {rows}
 
 **How much weight this carries.** Of the overlapping area, **{data['contested_strong_ha']:,.0f} ha
@@ -279,6 +331,21 @@ Overlaps here are not treated as errors to be reconciled. They are recorded as
 mapped, because shared and contested ground is a normal feature of the tenure —
 which is precisely the point for any benefit-sharing arrangement built on top
 of it.
+
+### Where clans agree
+
+The mirror image, and it does not appear in an overlap table at all. Two clans
+can walk the same edge — agreeing on a boundary — while enclosing no shared
+ground, because neither walk closes into a polygon.
+
+**Deari and Nui** are the case in point. Their mapped areas never meet, so they
+appear in no overlap figure above. Yet **94% of Deari's 13.1 km of recorded
+line runs within 100 m of Nui's**, the two lines cross 292 times, and Deari's
+whole extent sits inside Nui's. Under the {data['tolerance_m']:.0f} m rule these
+two clans do not overlap: they share a boundary, and they agree on it.
+
+Agreement of this kind is as much a finding as dispute is, and a tenure system
+that records only single undisputed ownership has nowhere to put either.
 
 ## Sacred sites
 

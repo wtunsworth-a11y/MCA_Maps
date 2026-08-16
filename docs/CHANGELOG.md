@@ -1,0 +1,37 @@
+# Document changelog
+
+What changed between versions of the generated documents. The top section is
+read by `scripts/report_data.py` and printed in the document itself, so a
+reader can see what moved since the copy they already have.
+
+Format: `## <version>` followed by bullets. Newest first.
+
+## 1.1
+
+- Overlap between clans is now reported twice: strictly, and again with shared
+  strips narrower than 100 m removed. Two lines recorded closer than that are
+  the same line, not two claims. The allowance changes little, which is the
+  point of making it.
+- Where clans **agree** is reported for the first time: pairs whose recorded
+  lines run within 100 m of each other. Deari and Nui share 94% of Deari's
+  line and appear in no overlap figure at all.
+- Corrected how disconnected pieces of a survey are joined into a ring. Taking
+  a piece the wrong way round made the joining lines cross, enclosing two
+  slivers instead of one block. Tuoko gains 394 ha, Bimkol gains an area it
+  previously had none of, and every polygon is now geometrically valid.
+- The straight lines nobody walked are drawn in pink on every map, written as
+  their own layer, and reported per clan. They are not boundary.
+- Every clan now has a map and its own page, with its neighbours and the
+  ground they share drawn on it.
+- Land held in more than one parcel is kept and counted; the parcel count
+  appears on each clan's page.
+- New document: **Managalas Walker Days** — who walked, on which days, and how
+  far, from the GPS record rather than file names.
+- Documents carry a version and date in the file name, on the title page and
+  in the footer of every page. Earlier builds are never overwritten.
+- Embedded maps keep their true proportions.
+
+## 1.0
+
+- First circulated document: survey results, per-clan detail and field
+  queries. Issued without a version number.

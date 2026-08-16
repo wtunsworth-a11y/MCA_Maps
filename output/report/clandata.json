@@ -1,0 +1,3748 @@
+[
+ {
+  "unit": "Asingi \u2014 Zone 2",
+  "clan": "Asingi",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Jethro Akse",
+    "tracks": 5,
+    "km": 6.43,
+    "days": 5,
+    "first": "2025-02-18",
+    "last": "2026-02-05",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 6.43,
+  "spur_km": 0.0,
+  "status": "closed",
+  "chains": 2,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
+  "area_ha": 166.1,
+  "basis": "surveyed",
+  "parcels": 1,
+  "bridges": 0,
+  "overlaps": [
+   {
+    "with": "Murai (Z2)",
+    "ha": 5.9,
+    "pct": 3.6,
+    "beyond_tol_ha": 5.3,
+    "beyond_tol_pct": 3.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Gariniko",
+    "ha": 4.1,
+    "pct": 2.5,
+    "beyond_tol_ha": 2.6,
+    "beyond_tol_pct": 1.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Kasaki",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Gariniko",
+    "km": 3.48,
+    "pct": 52.4
+   },
+   {
+    "with": "Murai (Z2)",
+    "km": 0.62,
+    "pct": 9.6
+   },
+   {
+    "with": "Kasaki",
+    "km": 0.55,
+    "pct": 8.0
+   },
+   {
+    "with": "Bujevi",
+    "km": 0.43,
+    "pct": 6.7
+   },
+   {
+    "with": "Tuoko",
+    "km": 0.3,
+    "pct": 3.6
+   },
+   {
+    "with": "Nituri",
+    "km": 0.62,
+    "pct": 3.5
+   },
+   {
+    "with": "Zambiko",
+    "km": 0.36,
+    "pct": 3.5
+   }
+  ],
+  "join_sep_ha": 166.1,
+  "join_joined_ha": 166.1,
+  "map": "Asingi_Zone_2.png"
+ },
+ {
+  "unit": "Asoro \u2014 Zone 2",
+  "clan": "Asoro",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Gilford Amakana",
+    "tracks": 10,
+    "km": 22.83,
+    "days": 3,
+    "first": "2026-01-29",
+    "last": "2026-01-31",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 22.83,
+  "spur_km": 3.51,
+  "status": "open",
+  "chains": 2,
+  "gap_km": 7.99,
+  "gap_pct": 37.7,
+  "area_ha": 3506.7,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 2,
+  "overlaps": [
+   {
+    "with": "Sukandi",
+    "ha": 231.8,
+    "pct": 6.6,
+    "beyond_tol_ha": 231.2,
+    "beyond_tol_pct": 6.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Juaiko",
+    "ha": 15.2,
+    "pct": 0.4,
+    "beyond_tol_ha": 14.7,
+    "beyond_tol_pct": 0.4,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Sukandi",
+    "km": 0.83,
+    "pct": 3.2
+   },
+   {
+    "with": "Juaiko",
+    "km": 0.66,
+    "pct": 1.2
+   },
+   {
+    "with": "Zambiko",
+    "km": 0.05,
+    "pct": 0.2
+   }
+  ],
+  "join_sep_ha": 3506.7,
+  "join_joined_ha": 3506.7,
+  "map": "Asoro_Zone_2.png"
+ },
+ {
+  "unit": "Bujevi \u2014 Zone 2",
+  "clan": "Bujevi",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Abel Kajari",
+    "tracks": 2,
+    "km": 5.76,
+    "days": 2,
+    "first": "2026-02-08",
+    "last": "2026-02-09",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 5.76,
+  "spur_km": 1.13,
+  "status": "open",
+  "chains": 1,
+  "gap_km": 4.47,
+  "gap_pct": 83.8,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Nituri",
+    "km": 0.89,
+    "pct": 10.4
+   },
+   {
+    "with": "Gariniko",
+    "km": 0.45,
+    "pct": 6.3
+   },
+   {
+    "with": "Asingi",
+    "km": 0.43,
+    "pct": 4.9
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Bujevi_Zone_2.png"
+ },
+ {
+  "unit": "Gariniko \u2014 Zone 2",
+  "clan": "Gariniko",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Lance Sake",
+    "tracks": 6,
+    "km": 10.08,
+    "days": 3,
+    "first": "2025-11-28",
+    "last": "2026-02-07",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 10.08,
+  "spur_km": 1.53,
+  "status": "open",
+  "chains": 4,
+  "gap_km": 4.78,
+  "gap_pct": 49.7,
+  "area_ha": 106.5,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 4,
+  "overlaps": [
+   {
+    "with": "Tuoko",
+    "ha": 6.6,
+    "pct": 6.2,
+    "beyond_tol_ha": 4.9,
+    "beyond_tol_pct": 4.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Asingi",
+    "ha": 4.1,
+    "pct": 3.9,
+    "beyond_tol_ha": 2.6,
+    "beyond_tol_pct": 2.5,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Nituri",
+    "ha": 3.3,
+    "pct": 3.1,
+    "beyond_tol_ha": 2.4,
+    "beyond_tol_pct": 2.3,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Kasaki",
+    "ha": 1.9,
+    "pct": 1.8,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Murai (Z2)",
+    "ha": 0.5,
+    "pct": 0.5,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Asingi",
+    "km": 3.48,
+    "pct": 58.5
+   },
+   {
+    "with": "Murai (Z2)",
+    "km": 1.82,
+    "pct": 30.6
+   },
+   {
+    "with": "Kasaki",
+    "km": 1.35,
+    "pct": 22.6
+   },
+   {
+    "with": "Tuoko",
+    "km": 0.61,
+    "pct": 10.2
+   },
+   {
+    "with": "Nituri",
+    "km": 0.62,
+    "pct": 8.7
+   },
+   {
+    "with": "Zambiko",
+    "km": 0.52,
+    "pct": 8.7
+   },
+   {
+    "with": "Bujevi",
+    "km": 0.45,
+    "pct": 7.6
+   }
+  ],
+  "join_sep_ha": 106.5,
+  "join_joined_ha": 106.5,
+  "map": "Gariniko_Zone_2.png"
+ },
+ {
+  "unit": "Juaiko \u2014 Zone 2",
+  "clan": "Juaiko",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Gasper K Philip J",
+    "tracks": 10,
+    "km": 24.3,
+    "days": 5,
+    "first": "2025-04-22",
+    "last": "2025-04-28",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 24.3,
+  "spur_km": 5.81,
+  "status": "near",
+  "chains": 7,
+  "gap_km": 1.88,
+  "gap_pct": 8.5,
+  "area_ha": 1292.9,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 7,
+  "overlaps": [
+   {
+    "with": "Sukandi",
+    "ha": 204.6,
+    "pct": 15.8,
+    "beyond_tol_ha": 201.5,
+    "beyond_tol_pct": 15.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Asoro",
+    "ha": 15.2,
+    "pct": 1.2,
+    "beyond_tol_ha": 14.7,
+    "beyond_tol_pct": 1.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Manoko",
+    "ha": 11.8,
+    "pct": 0.9,
+    "beyond_tol_ha": 6.8,
+    "beyond_tol_pct": 0.5,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Manoko",
+    "km": 4.93,
+    "pct": 20.3
+   },
+   {
+    "with": "Sukandi",
+    "km": 4.21,
+    "pct": 17.3
+   },
+   {
+    "with": "Zambiko",
+    "km": 2.57,
+    "pct": 10.6
+   },
+   {
+    "with": "Rumbi",
+    "km": 2.1,
+    "pct": 8.6
+   },
+   {
+    "with": "Asoro",
+    "km": 0.66,
+    "pct": 2.7
+   }
+  ],
+  "join_sep_ha": 1292.9,
+  "join_joined_ha": 1292.9,
+  "map": "Juaiko_Zone_2.png"
+ },
+ {
+  "unit": "Kasaki \u2014 Zone 2",
+  "clan": "Kasaki",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Ananias Masua",
+    "tracks": 1,
+    "km": 15.13,
+    "days": 1,
+    "first": "2026-02-05",
+    "last": "2026-02-05",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 15.13,
+  "spur_km": 3.11,
+  "status": "near",
+  "chains": 4,
+  "gap_km": 1.34,
+  "gap_pct": 9.8,
+  "area_ha": 540.8,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 4,
+  "overlaps": [
+   {
+    "with": "Tuoko",
+    "ha": 156.6,
+    "pct": 29.0,
+    "beyond_tol_ha": 154.9,
+    "beyond_tol_pct": 28.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Murai (Z2)",
+    "ha": 154.4,
+    "pct": 28.5,
+    "beyond_tol_ha": 153.7,
+    "beyond_tol_pct": 28.4,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Nituri",
+    "ha": 59.3,
+    "pct": 11.0,
+    "beyond_tol_ha": 59.0,
+    "beyond_tol_pct": 10.9,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Majanko",
+    "ha": 39.9,
+    "pct": 7.4,
+    "beyond_tol_ha": 38.9,
+    "beyond_tol_pct": 7.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Gariniko",
+    "ha": 1.9,
+    "pct": 0.3,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Asingi",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Murai (Z2)",
+    "km": 3.4,
+    "pct": 21.2
+   },
+   {
+    "with": "Tuoko",
+    "km": 1.45,
+    "pct": 9.6
+   },
+   {
+    "with": "Majanko",
+    "km": 1.23,
+    "pct": 7.8
+   },
+   {
+    "with": "Gariniko",
+    "km": 1.35,
+    "pct": 7.7
+   },
+   {
+    "with": "Nituri",
+    "km": 1.13,
+    "pct": 5.7
+   },
+   {
+    "with": "Asingi",
+    "km": 0.55,
+    "pct": 3.6
+   }
+  ],
+  "join_sep_ha": 540.8,
+  "join_joined_ha": 540.8,
+  "map": "Kasaki_Zone_2.png"
+ },
+ {
+  "unit": "Majanko \u2014 Zone 2",
+  "clan": "Majanko",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Gilford Amakana",
+    "tracks": 4,
+    "km": 7.51,
+    "days": 1,
+    "first": "2026-02-26",
+    "last": "2026-02-26",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 7.51,
+  "spur_km": 0.0,
+  "status": "closed",
+  "chains": 1,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
+  "area_ha": 275.8,
+  "basis": "surveyed",
+  "parcels": 1,
+  "bridges": 0,
+  "overlaps": [
+   {
+    "with": "Manoko",
+    "ha": 65.0,
+    "pct": 23.6,
+    "beyond_tol_ha": 64.5,
+    "beyond_tol_pct": 23.4,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Kasaki",
+    "ha": 39.9,
+    "pct": 14.5,
+    "beyond_tol_ha": 38.9,
+    "beyond_tol_pct": 14.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Tuoko",
+    "ha": 12.5,
+    "pct": 4.5,
+    "beyond_tol_ha": 12.4,
+    "beyond_tol_pct": 4.5,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Manoko",
+    "km": 1.59,
+    "pct": 20.7
+   },
+   {
+    "with": "Kasaki",
+    "km": 1.23,
+    "pct": 16.4
+   },
+   {
+    "with": "Zambiko",
+    "km": 0.64,
+    "pct": 8.5
+   },
+   {
+    "with": "Tuoko",
+    "km": 0.49,
+    "pct": 6.3
+   }
+  ],
+  "join_sep_ha": 275.8,
+  "join_joined_ha": 275.8,
+  "map": "Majanko_Zone_2.png"
+ },
+ {
+  "unit": "Manoko \u2014 Zone 2",
+  "clan": "Manoko",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Gilford Amakana",
+    "tracks": 7,
+    "km": 12.15,
+    "days": 3,
+    "first": "2025-08-31",
+    "last": "2026-02-14",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 12.15,
+  "spur_km": 1.81,
+  "status": "open",
+  "chains": 3,
+  "gap_km": 3.85,
+  "gap_pct": 32.1,
+  "area_ha": 404.0,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 3,
+  "overlaps": [
+   {
+    "with": "Majanko",
+    "ha": 65.0,
+    "pct": 16.1,
+    "beyond_tol_ha": 64.5,
+    "beyond_tol_pct": 16.0,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Juaiko",
+    "ha": 11.8,
+    "pct": 2.9,
+    "beyond_tol_ha": 6.8,
+    "beyond_tol_pct": 1.7,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Juaiko",
+    "km": 4.93,
+    "pct": 35.2
+   },
+   {
+    "with": "Majanko",
+    "km": 1.59,
+    "pct": 13.0
+   },
+   {
+    "with": "Zambiko",
+    "km": 1.12,
+    "pct": 9.2
+   },
+   {
+    "with": "Rumbi",
+    "km": 0.81,
+    "pct": 5.4
+   },
+   {
+    "with": "Tuoko",
+    "km": 0.52,
+    "pct": 4.3
+   },
+   {
+    "with": "Sukandi",
+    "km": 0.24,
+    "pct": 2.0
+   }
+  ],
+  "join_sep_ha": 404.0,
+  "join_joined_ha": 404.0,
+  "map": "Manoko_Zone_2.png"
+ },
+ {
+  "unit": "Murai (Z2) \u2014 Zone 2",
+  "clan": "Murai (Z2)",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Nehemiah Nindori",
+    "tracks": 32,
+    "km": 7.33,
+    "days": 6,
+    "first": "2025-11-27",
+    "last": "2026-02-17",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 7.33,
+  "spur_km": 0.18,
+  "status": "closed",
+  "chains": 2,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
+  "area_ha": 198.9,
+  "basis": "surveyed",
+  "parcels": 1,
+  "bridges": 0,
+  "overlaps": [
+   {
+    "with": "Kasaki",
+    "ha": 154.4,
+    "pct": 77.6,
+    "beyond_tol_ha": 153.7,
+    "beyond_tol_pct": 77.3,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Asingi",
+    "ha": 5.9,
+    "pct": 3.0,
+    "beyond_tol_ha": 5.3,
+    "beyond_tol_pct": 2.7,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Gariniko",
+    "ha": 0.5,
+    "pct": 0.3,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Kasaki",
+    "km": 3.4,
+    "pct": 46.4
+   },
+   {
+    "with": "Gariniko",
+    "km": 1.82,
+    "pct": 20.9
+   },
+   {
+    "with": "Tuoko",
+    "km": 0.99,
+    "pct": 10.8
+   },
+   {
+    "with": "Asingi",
+    "km": 0.62,
+    "pct": 7.7
+   },
+   {
+    "with": "Nituri",
+    "km": 0.62,
+    "pct": 0.4
+   },
+   {
+    "with": "Zambiko",
+    "km": 0.36,
+    "pct": 0.4
+   }
+  ],
+  "join_sep_ha": 198.9,
+  "join_joined_ha": 198.9,
+  "map": "Murai_Z2_Zone_2.png"
+ },
+ {
+  "unit": "Nituri \u2014 Zone 2",
+  "clan": "Nituri",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Graham Naopi",
+    "tracks": 7,
+    "km": 18.7,
+    "days": 3,
+    "first": "2025-11-27",
+    "last": "2026-02-09",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Christoper Visua",
+    "tracks": 19,
+    "km": 17.83,
+    "days": 7,
+    "first": "2025-05-11",
+    "last": "2026-02-11",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Newton Muraba",
+    "tracks": 13,
+    "km": 5.3,
+    "days": 6,
+    "first": "2025-11-27",
+    "last": "2026-02-16",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 3,
+  "walked_km": 41.83,
+  "spur_km": 10.45,
+  "status": "open",
+  "chains": 14,
+  "gap_km": 11.13,
+  "gap_pct": 29.4,
+  "area_ha": 5274.6,
+  "basis": "inferred",
+  "parcels": 2,
+  "bridges": 14,
+  "overlaps": [
+   {
+    "with": "Tuoko",
+    "ha": 2198.7,
+    "pct": 41.7,
+    "beyond_tol_ha": 2197.5,
+    "beyond_tol_pct": 41.7,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Kasaki",
+    "ha": 59.3,
+    "pct": 1.1,
+    "beyond_tol_ha": 59.0,
+    "beyond_tol_pct": 1.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Gariniko",
+    "ha": 3.3,
+    "pct": 0.1,
+    "beyond_tol_ha": 2.4,
+    "beyond_tol_pct": 0.0,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Tuoko",
+    "km": 14.42,
+    "pct": 24.0
+   },
+   {
+    "with": "Kasaki",
+    "km": 1.13,
+    "pct": 2.7
+   },
+   {
+    "with": "Bujevi",
+    "km": 0.89,
+    "pct": 2.1
+   },
+   {
+    "with": "Gariniko",
+    "km": 0.62,
+    "pct": 1.5
+   },
+   {
+    "with": "Zambiko",
+    "km": 0.62,
+    "pct": 1.5
+   },
+   {
+    "with": "Murai (Z2)",
+    "km": 0.62,
+    "pct": 1.5
+   },
+   {
+    "with": "Asingi",
+    "km": 0.62,
+    "pct": 1.5
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 5274.6,
+  "map": "Nituri_Zone_2.png"
+ },
+ {
+  "unit": "Rondi \u2014 Zone 2",
+  "clan": "Rondi",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Jefferson Amunisa",
+    "tracks": 28,
+    "km": 29.66,
+    "days": 5,
+    "first": "2025-04-25",
+    "last": "2025-04-29",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Humphrey Poto",
+    "tracks": 29,
+    "km": 29.31,
+    "days": 5,
+    "first": "2025-04-25",
+    "last": "2025-04-29",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 58.98,
+  "spur_km": 0.36,
+  "status": "open",
+  "chains": 14,
+  "gap_km": 12.43,
+  "gap_pct": 21.2,
+  "area_ha": 1563.4,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 14,
+  "overlaps": [
+   {
+    "with": "Sukandi",
+    "ha": 211.5,
+    "pct": 13.5,
+    "beyond_tol_ha": 210.6,
+    "beyond_tol_pct": 13.5,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Binunkol",
+    "ha": 0.8,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Rumbi",
+    "km": 10.45,
+    "pct": 17.7
+   },
+   {
+    "with": "Gumuri",
+    "km": 9.15,
+    "pct": 15.5
+   },
+   {
+    "with": "Sukandi",
+    "km": 6.98,
+    "pct": 11.8
+   },
+   {
+    "with": "Binunkol",
+    "km": 3.82,
+    "pct": 6.5
+   },
+   {
+    "with": "Deari",
+    "km": 0.35,
+    "pct": 0.6
+   },
+   {
+    "with": "Nui",
+    "km": 0.35,
+    "pct": 0.6
+   }
+  ],
+  "join_sep_ha": 1256.3,
+  "join_joined_ha": 1563.4,
+  "map": "Rondi_Zone_2.png"
+ },
+ {
+  "unit": "Rumbi \u2014 Zone 2",
+  "clan": "Rumbi",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Joel Mamata",
+    "tracks": 9,
+    "km": 15.07,
+    "days": 5,
+    "first": "2025-04-15",
+    "last": "2025-04-28",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 15.07,
+  "spur_km": 3.73,
+  "status": "open",
+  "chains": 3,
+  "gap_km": 9.94,
+  "gap_pct": 72.6,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Sukandi",
+    "km": 8.03,
+    "pct": 49.8
+   },
+   {
+    "with": "Rondi",
+    "km": 10.45,
+    "pct": 33.5
+   },
+   {
+    "with": "Juaiko",
+    "km": 2.1,
+    "pct": 11.8
+   },
+   {
+    "with": "Manoko",
+    "km": 0.81,
+    "pct": 5.4
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Rumbi_Zone_2.png"
+ },
+ {
+  "unit": "Sukandi \u2014 Zone 2",
+  "clan": "Sukandi",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Rodney Ajinko",
+    "tracks": 1,
+    "km": 29.09,
+    "days": 1,
+    "first": "2025-04-24",
+    "last": "2025-04-24",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Millinton Beso",
+    "tracks": 3,
+    "km": 10.6,
+    "days": 2,
+    "first": "2025-04-24",
+    "last": "2025-04-25",
+    "type": "Sacred Site"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 39.69,
+  "spur_km": 8.99,
+  "status": "closed",
+  "chains": 3,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
+  "area_ha": 1900.9,
+  "basis": "surveyed",
+  "parcels": 1,
+  "bridges": 0,
+  "overlaps": [
+   {
+    "with": "Asoro",
+    "ha": 231.8,
+    "pct": 12.2,
+    "beyond_tol_ha": 231.2,
+    "beyond_tol_pct": 12.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Rondi",
+    "ha": 211.5,
+    "pct": 11.1,
+    "beyond_tol_ha": 210.6,
+    "beyond_tol_pct": 11.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Juaiko",
+    "ha": 204.6,
+    "pct": 10.8,
+    "beyond_tol_ha": 201.5,
+    "beyond_tol_pct": 10.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Jariji",
+    "ha": 0.1,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Binunkol",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Rumbi",
+    "km": 8.03,
+    "pct": 20.2
+   },
+   {
+    "with": "Juaiko",
+    "km": 4.21,
+    "pct": 10.6
+   },
+   {
+    "with": "Rondi",
+    "km": 6.98,
+    "pct": 8.7
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.98,
+    "pct": 2.5
+   },
+   {
+    "with": "Asoro",
+    "km": 0.83,
+    "pct": 2.1
+   },
+   {
+    "with": "Jariji",
+    "km": 0.29,
+    "pct": 0.7
+   },
+   {
+    "with": "Manoko",
+    "km": 0.24,
+    "pct": 0.6
+   }
+  ],
+  "join_sep_ha": 2367.9,
+  "join_joined_ha": 1900.9,
+  "map": "Sukandi_Zone_2.png"
+ },
+ {
+  "unit": "Tuoko \u2014 Zone 2",
+  "clan": "Tuoko",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Terrence Dobija",
+    "tracks": 3,
+    "km": 36.51,
+    "days": 3,
+    "first": "2025-08-31",
+    "last": "2025-12-09",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Kaupa Dota",
+    "tracks": 6,
+    "km": 11.21,
+    "days": 3,
+    "first": "2025-02-24",
+    "last": "2025-12-09",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 47.72,
+  "spur_km": 9.47,
+  "status": "open",
+  "chains": 8,
+  "gap_km": 17.08,
+  "gap_pct": 37.7,
+  "area_ha": 3676.2,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 8,
+  "overlaps": [
+   {
+    "with": "Nituri",
+    "ha": 2198.7,
+    "pct": 59.8,
+    "beyond_tol_ha": 2197.5,
+    "beyond_tol_pct": 59.8,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Kasaki",
+    "ha": 156.6,
+    "pct": 4.3,
+    "beyond_tol_ha": 154.9,
+    "beyond_tol_pct": 4.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Majanko",
+    "ha": 12.5,
+    "pct": 0.3,
+    "beyond_tol_ha": 12.4,
+    "beyond_tol_pct": 0.3,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Gariniko",
+    "ha": 6.6,
+    "pct": 0.2,
+    "beyond_tol_ha": 4.9,
+    "beyond_tol_pct": 0.1,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Nituri",
+    "km": 14.42,
+    "pct": 30.2
+   },
+   {
+    "with": "Kasaki",
+    "km": 1.45,
+    "pct": 2.7
+   },
+   {
+    "with": "Murai (Z2)",
+    "km": 0.99,
+    "pct": 2.1
+   },
+   {
+    "with": "Gariniko",
+    "km": 0.61,
+    "pct": 1.1
+   },
+   {
+    "with": "Majanko",
+    "km": 0.49,
+    "pct": 1.0
+   },
+   {
+    "with": "Zambiko",
+    "km": 0.36,
+    "pct": 0.6
+   },
+   {
+    "with": "Asingi",
+    "km": 0.3,
+    "pct": 0.6
+   },
+   {
+    "with": "Manoko",
+    "km": 0.52,
+    "pct": 0.5
+   }
+  ],
+  "join_sep_ha": 1681.3,
+  "join_joined_ha": 3676.2,
+  "map": "Tuoko_Zone_2.png"
+ },
+ {
+  "unit": "Zambiko \u2014 Zone 2",
+  "clan": "Zambiko",
+  "zone": "Zone 2",
+  "walkers": [
+   {
+    "custodian": "Sylvester Anai",
+    "tracks": 8,
+    "km": 5.67,
+    "days": 3,
+    "first": "2025-11-27",
+    "last": "2026-02-12",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 5.67,
+  "spur_km": 1.17,
+  "status": "open",
+  "chains": 5,
+  "gap_km": 21.56,
+  "gap_pct": 419.9,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Juaiko",
+    "km": 2.57,
+    "pct": 26.8
+   },
+   {
+    "with": "Manoko",
+    "km": 1.12,
+    "pct": 17.4
+   },
+   {
+    "with": "Majanko",
+    "km": 0.64,
+    "pct": 8.8
+   },
+   {
+    "with": "Nituri",
+    "km": 0.62,
+    "pct": 6.4
+   },
+   {
+    "with": "Gariniko",
+    "km": 0.52,
+    "pct": 6.4
+   },
+   {
+    "with": "Tuoko",
+    "km": 0.36,
+    "pct": 6.4
+   },
+   {
+    "with": "Murai (Z2)",
+    "km": 0.36,
+    "pct": 6.4
+   },
+   {
+    "with": "Asingi",
+    "km": 0.36,
+    "pct": 6.4
+   },
+   {
+    "with": "Asoro",
+    "km": 0.05,
+    "pct": 0.6
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Zambiko_Zone_2.png"
+ },
+ {
+  "unit": "Deari \u2014 Zone 3",
+  "clan": "Deari",
+  "zone": "Zone 3",
+  "walkers": [
+   {
+    "custodian": "Patrick Dirise",
+    "tracks": 3,
+    "km": 7.79,
+    "days": 2,
+    "first": "2026-06-09",
+    "last": "2026-06-15",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Anthony Irimari",
+    "tracks": 2,
+    "km": 5.29,
+    "days": 2,
+    "first": "2026-06-09",
+    "last": "2026-06-15",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 13.09,
+  "spur_km": 2.22,
+  "status": "open",
+  "chains": 3,
+  "gap_km": 8.74,
+  "gap_pct": 70.2,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Nui",
+    "km": 14.98,
+    "pct": 94.2
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.19,
+    "pct": 1.0
+   },
+   {
+    "with": "Rondi",
+    "km": 0.35,
+    "pct": 0.7
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Deari_Zone_3.png"
+ },
+ {
+  "unit": "Giroiko \u2014 Zone 3",
+  "clan": "Giroiko",
+  "zone": "Zone 3",
+  "walkers": [
+   {
+    "custodian": "Mark Samba",
+    "tracks": 2,
+    "km": 2.76,
+    "days": 1,
+    "first": "2026-06-11",
+    "last": "2026-06-11",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Eddie Sioro",
+    "tracks": 1,
+    "km": 2.67,
+    "days": 1,
+    "first": "2026-06-11",
+    "last": "2026-06-11",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 5.43,
+  "spur_km": 0.41,
+  "status": "open",
+  "chains": 2,
+  "gap_km": 1.27,
+  "gap_pct": 25.2,
+  "area_ha": 9.5,
+  "basis": "inferred",
+  "parcels": 4,
+  "bridges": 2,
+  "overlaps": [],
+  "shared_lines": [],
+  "join_sep_ha": 78.3,
+  "join_joined_ha": 9.5,
+  "map": "Giroiko_Zone_3.png"
+ },
+ {
+  "unit": "Gumuri \u2014 Zone 3",
+  "clan": "Gumuri",
+  "zone": "Zone 3",
+  "walkers": [
+   {
+    "custodian": "Gray Saui",
+    "tracks": 1,
+    "km": 6.77,
+    "days": 1,
+    "first": "2026-06-15",
+    "last": "2026-06-15",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Monty Stanford",
+    "tracks": 1,
+    "km": 0.02,
+    "days": 0,
+    "first": null,
+    "last": null,
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 6.79,
+  "spur_km": 0.25,
+  "status": "open",
+  "chains": 1,
+  "gap_km": 5.49,
+  "gap_pct": 83.9,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Rondi",
+    "km": 9.15,
+    "pct": 63.0
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Gumuri_Zone_3.png"
+ },
+ {
+  "unit": "Nui \u2014 Zone 3",
+  "clan": "Nui",
+  "zone": "Zone 3",
+  "walkers": [
+   {
+    "custodian": "Iman Nakina",
+    "tracks": 4,
+    "km": 11.97,
+    "days": 2,
+    "first": "2026-06-09",
+    "last": "2026-06-15",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Bobby Aneba",
+    "tracks": 3,
+    "km": 11.45,
+    "days": 2,
+    "first": "2026-06-09",
+    "last": "2026-06-15",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 23.42,
+  "spur_km": 5.69,
+  "status": "open",
+  "chains": 6,
+  "gap_km": 14.73,
+  "gap_pct": 66.2,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Deari",
+    "km": 14.98,
+    "pct": 64.0
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.19,
+    "pct": 0.5
+   },
+   {
+    "with": "Rondi",
+    "km": 0.35,
+    "pct": 0.4
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Nui_Zone_3.png"
+ },
+ {
+  "unit": "Manuvoora \u2014 Zone 6",
+  "clan": "Manuvoora",
+  "zone": "Zone 6",
+  "walkers": [
+   {
+    "custodian": "Egobeyas Kuarisi",
+    "tracks": 18,
+    "km": 31.22,
+    "days": 11,
+    "first": "2026-06-18",
+    "last": "2026-07-26",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Granville Nepo",
+    "tracks": 11,
+    "km": 30.23,
+    "days": 8,
+    "first": "2026-06-18",
+    "last": "2026-07-21",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 61.45,
+  "spur_km": 10.04,
+  "status": "open",
+  "chains": 6,
+  "gap_km": 11.38,
+  "gap_pct": 20.4,
+  "area_ha": 827.7,
+  "basis": "inferred",
+  "parcels": 3,
+  "bridges": 6,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Pina Ora",
+    "km": 6.95,
+    "pct": 11.3
+   },
+   {
+    "with": "Nupa Ora",
+    "km": 0.6,
+    "pct": 1.0
+   }
+  ],
+  "join_sep_ha": 2066.1,
+  "join_joined_ha": 827.7,
+  "map": "Manuvoora_Zone_6.png"
+ },
+ {
+  "unit": "Mariura \u2014 Zone 6",
+  "clan": "Mariura",
+  "zone": "Zone 6",
+  "walkers": [
+   {
+    "custodian": "Fabian Justin",
+    "tracks": 22,
+    "km": 17.85,
+    "days": 6,
+    "first": "2026-06-26",
+    "last": "2026-07-09",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Livingstone Nisavora",
+    "tracks": 21,
+    "km": 15.86,
+    "days": 6,
+    "first": "2026-06-26",
+    "last": "2026-07-09",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 33.71,
+  "spur_km": 0.0,
+  "status": "open",
+  "chains": 13,
+  "gap_km": 14.25,
+  "gap_pct": 42.3,
+  "area_ha": 854.9,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 13,
+  "overlaps": [
+   {
+    "with": "Naharaura",
+    "ha": 148.3,
+    "pct": 17.4,
+    "beyond_tol_ha": 144.2,
+    "beyond_tol_pct": 16.9,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Borori",
+    "ha": 56.1,
+    "pct": 6.6,
+    "beyond_tol_ha": 52.4,
+    "beyond_tol_pct": 6.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Darekikol",
+    "ha": 50.3,
+    "pct": 5.9,
+    "beyond_tol_ha": 49.8,
+    "beyond_tol_pct": 5.8,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Naharaura",
+    "km": 7.9,
+    "pct": 49.8
+   },
+   {
+    "with": "Borori",
+    "km": 8.41,
+    "pct": 20.5
+   },
+   {
+    "with": "Darekikol",
+    "km": 0.71,
+    "pct": 3.0
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 854.9,
+  "map": "Mariura_Zone_6.png"
+ },
+ {
+  "unit": "Naharaura \u2014 Zone 6",
+  "clan": "Naharaura",
+  "zone": "Zone 6",
+  "walkers": [
+   {
+    "custodian": "Zechariah Sasavo",
+    "tracks": 2,
+    "km": 32.63,
+    "days": 1,
+    "first": "2026-06-26",
+    "last": "2026-06-26",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 32.63,
+  "spur_km": 0.0,
+  "status": "near",
+  "chains": 4,
+  "gap_km": 2.49,
+  "gap_pct": 7.6,
+  "area_ha": 594.0,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 4,
+  "overlaps": [
+   {
+    "with": "Mariura",
+    "ha": 148.3,
+    "pct": 25.0,
+    "beyond_tol_ha": 144.2,
+    "beyond_tol_pct": 24.3,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Pina Ora",
+    "ha": 59.6,
+    "pct": 10.0,
+    "beyond_tol_ha": 59.0,
+    "beyond_tol_pct": 9.9,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Pina Ora",
+    "km": 5.81,
+    "pct": 34.2
+   },
+   {
+    "with": "Mariura",
+    "km": 7.9,
+    "pct": 28.3
+   }
+  ],
+  "join_sep_ha": 594.0,
+  "join_joined_ha": 594.0,
+  "map": "Naharaura_Zone_6.png"
+ },
+ {
+  "unit": "Nupa Ora \u2014 Zone 6",
+  "clan": "Nupa Ora",
+  "zone": "Zone 6",
+  "walkers": [
+   {
+    "custodian": "Benjamin Marijah",
+    "tracks": 3,
+    "km": 4.94,
+    "days": 3,
+    "first": "2026-06-18",
+    "last": "2026-06-25",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 4.94,
+  "spur_km": 0.62,
+  "status": "open",
+  "chains": 2,
+  "gap_km": 3.56,
+  "gap_pct": 72.0,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Manuvoora",
+    "km": 0.6,
+    "pct": 3.3
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Nupa_Ora_Zone_6.png"
+ },
+ {
+  "unit": "Pina Ora \u2014 Zone 6",
+  "clan": "Pina Ora",
+  "zone": "Zone 6",
+  "walkers": [
+   {
+    "custodian": "Alban Ezekiel",
+    "tracks": 3,
+    "km": 18.85,
+    "days": 3,
+    "first": "2026-06-23",
+    "last": "2026-06-25",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 18.85,
+  "spur_km": 3.91,
+  "status": "near",
+  "chains": 4,
+  "gap_km": 1.43,
+  "gap_pct": 8.3,
+  "area_ha": 812.2,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 4,
+  "overlaps": [
+   {
+    "with": "Naharaura",
+    "ha": 59.6,
+    "pct": 7.3,
+    "beyond_tol_ha": 59.0,
+    "beyond_tol_pct": 7.3,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Naharaura",
+    "km": 5.81,
+    "pct": 30.8
+   },
+   {
+    "with": "Manuvoora",
+    "km": 6.95,
+    "pct": 19.0
+   }
+  ],
+  "join_sep_ha": 812.2,
+  "join_joined_ha": 812.2,
+  "map": "Pina_Ora_Zone_6.png"
+ },
+ {
+  "unit": "Bimkol \u2014 Zone 7A",
+  "clan": "Bimkol",
+  "zone": "Zone 7A",
+  "walkers": [
+   {
+    "custodian": "Kennedy Wosa",
+    "tracks": 5,
+    "km": 8.01,
+    "days": 4,
+    "first": "2026-05-25",
+    "last": "2026-08-13",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 8.01,
+  "spur_km": 1.78,
+  "status": "open",
+  "chains": 3,
+  "gap_km": 3.97,
+  "gap_pct": 54.2,
+  "area_ha": 158.4,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 3,
+  "overlaps": [
+   {
+    "with": "Darekikol",
+    "ha": 0.5,
+    "pct": 0.3,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Darekikol",
+    "km": 1.38,
+    "pct": 9.3
+   },
+   {
+    "with": "Borori",
+    "km": 0.11,
+    "pct": 1.4
+   }
+  ],
+  "join_sep_ha": 158.4,
+  "join_joined_ha": 158.4,
+  "map": "Bimkol_Zone_7A.png"
+ },
+ {
+  "unit": "Borori \u2014 Zone 7A",
+  "clan": "Borori",
+  "zone": "Zone 7A",
+  "walkers": [
+   {
+    "custodian": "John Saini",
+    "tracks": 5,
+    "km": 22.81,
+    "days": 5,
+    "first": "2026-06-10",
+    "last": "2026-07-07",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Hagahi Semo",
+    "tracks": 6,
+    "km": 9.87,
+    "days": 5,
+    "first": "2026-05-25",
+    "last": "2026-07-07",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 32.69,
+  "spur_km": 8.01,
+  "status": "open",
+  "chains": 10,
+  "gap_km": 6.97,
+  "gap_pct": 23.6,
+  "area_ha": 638.7,
+  "basis": "inferred",
+  "parcels": 2,
+  "bridges": 10,
+  "overlaps": [
+   {
+    "with": "Darekikol",
+    "ha": 332.9,
+    "pct": 52.1,
+    "beyond_tol_ha": 329.1,
+    "beyond_tol_pct": 51.5,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Mariura",
+    "ha": 56.1,
+    "pct": 8.8,
+    "beyond_tol_ha": 52.4,
+    "beyond_tol_pct": 8.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Mungaikol",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Darekikol",
+    "km": 13.87,
+    "pct": 32.0
+   },
+   {
+    "with": "Mariura",
+    "km": 8.41,
+    "pct": 25.7
+   },
+   {
+    "with": "Mungaikol",
+    "km": 0.42,
+    "pct": 1.3
+   },
+   {
+    "with": "Bimkol",
+    "km": 0.11,
+    "pct": 0.3
+   }
+  ],
+  "join_sep_ha": 676.7,
+  "join_joined_ha": 638.7,
+  "map": "Borori_Zone_7A.png"
+ },
+ {
+  "unit": "Darekikol \u2014 Zone 7A",
+  "clan": "Darekikol",
+  "zone": "Zone 7A",
+  "walkers": [
+   {
+    "custodian": "George Kopoi",
+    "tracks": 6,
+    "km": 15.36,
+    "days": 3,
+    "first": "2026-05-25",
+    "last": "2026-07-02",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Garex Sevesi",
+    "tracks": 2,
+    "km": 13.39,
+    "days": 2,
+    "first": "2026-05-25",
+    "last": "2026-06-02",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 28.76,
+  "spur_km": 6.68,
+  "status": "open",
+  "chains": 7,
+  "gap_km": 5.92,
+  "gap_pct": 22.8,
+  "area_ha": 587.5,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 7,
+  "overlaps": [
+   {
+    "with": "Borori",
+    "ha": 332.9,
+    "pct": 56.7,
+    "beyond_tol_ha": 329.1,
+    "beyond_tol_pct": 56.0,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Mariura",
+    "ha": 50.3,
+    "pct": 8.6,
+    "beyond_tol_ha": 49.8,
+    "beyond_tol_pct": 8.5,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Bimkol",
+    "ha": 0.5,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Borori",
+    "km": 13.87,
+    "pct": 48.4
+   },
+   {
+    "with": "Bimkol",
+    "km": 1.38,
+    "pct": 4.8
+   },
+   {
+    "with": "Mariura",
+    "km": 0.71,
+    "pct": 2.5
+   }
+  ],
+  "join_sep_ha": 1226.6,
+  "join_joined_ha": 587.5,
+  "map": "Darekikol_Zone_7A.png"
+ },
+ {
+  "unit": "Abuankol \u2014 Zone 7B",
+  "clan": "Abuankol",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Simeon Pasip",
+    "tracks": 4,
+    "km": 0.51,
+    "days": 3,
+    "first": "2025-10-21",
+    "last": "2025-10-28",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 0.51,
+  "spur_km": 0.0,
+  "status": "closed",
+  "chains": 3,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
+  "area_ha": 0.7,
+  "basis": "surveyed",
+  "parcels": 2,
+  "bridges": 0,
+  "overlaps": [
+   {
+    "with": "Sugulkol",
+    "ha": 0.6,
+    "pct": 92.2,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Jariji",
+    "ha": 0.0,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Wohukol",
+    "ha": 0.0,
+    "pct": 3.4,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Ambunkol",
+    "ha": 0.0,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Sugulkol",
+    "km": 1.78,
+    "pct": 100.0
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 1.03,
+    "pct": 100.0
+   },
+   {
+    "with": "Wohukol",
+    "km": 0.51,
+    "pct": 100.0
+   },
+   {
+    "with": "Ambunkol",
+    "km": 0.53,
+    "pct": 58.0
+   },
+   {
+    "with": "Jariji",
+    "km": 0.34,
+    "pct": 58.0
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.4,
+    "pct": 42.0
+   },
+   {
+    "with": "Ginangi",
+    "km": 0.35,
+    "pct": 42.0
+   },
+   {
+    "with": "Marijabimkol",
+    "km": 0.22,
+    "pct": 42.0
+   },
+   {
+    "with": "Natang",
+    "km": 0.03,
+    "pct": 1.8
+   }
+  ],
+  "join_sep_ha": 0.7,
+  "join_joined_ha": 0.7,
+  "map": "Abuankol_Zone_7B.png"
+ },
+ {
+  "unit": "Ambunkol \u2014 Zone 7B",
+  "clan": "Ambunkol",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Peter Awako",
+    "tracks": 1,
+    "km": 18.6,
+    "days": 1,
+    "first": "2025-10-28",
+    "last": "2025-10-28",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 18.6,
+  "spur_km": 4.03,
+  "status": "open",
+  "chains": 6,
+  "gap_km": 4.49,
+  "gap_pct": 26.0,
+  "area_ha": 591.8,
+  "basis": "inferred",
+  "parcels": 3,
+  "bridges": 6,
+  "overlaps": [
+   {
+    "with": "Natang",
+    "ha": 345.4,
+    "pct": 58.4,
+    "beyond_tol_ha": 339.7,
+    "beyond_tol_pct": 57.4,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Sugulkol",
+    "ha": 5.2,
+    "pct": 0.9,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Wohukol",
+    "ha": 3.1,
+    "pct": 0.5,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Jariji",
+    "ha": 0.5,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Abuankol",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Natang",
+    "km": 20.29,
+    "pct": 59.2
+   },
+   {
+    "with": "Sugulkol",
+    "km": 5.86,
+    "pct": 15.1
+   },
+   {
+    "with": "Wohukol",
+    "km": 2.15,
+    "pct": 9.4
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 1.0,
+    "pct": 3.9
+   },
+   {
+    "with": "Abuankol",
+    "km": 0.53,
+    "pct": 2.9
+   },
+   {
+    "with": "Jariji",
+    "km": 0.35,
+    "pct": 1.8
+   }
+  ],
+  "join_sep_ha": 591.8,
+  "join_joined_ha": 591.8,
+  "map": "Ambunkol_Zone_7B.png"
+ },
+ {
+  "unit": "Binunkol \u2014 Zone 7B",
+  "clan": "Binunkol",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Moses Garui",
+    "tracks": 10,
+    "km": 17.81,
+    "days": 5,
+    "first": "2026-05-23",
+    "last": "2026-06-16",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 17.81,
+  "spur_km": 4.11,
+  "status": "open",
+  "chains": 19,
+  "gap_km": 6.41,
+  "gap_pct": 40.0,
+  "area_ha": 1032.3,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 19,
+  "overlaps": [
+   {
+    "with": "Jariji",
+    "ha": 45.1,
+    "pct": 4.4,
+    "beyond_tol_ha": 42.0,
+    "beyond_tol_pct": 4.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Wohukol",
+    "ha": 29.3,
+    "pct": 2.8,
+    "beyond_tol_ha": 27.3,
+    "beyond_tol_pct": 2.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Sugulkol",
+    "ha": 1.5,
+    "pct": 0.1,
+    "beyond_tol_ha": 1.3,
+    "beyond_tol_pct": 0.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Rondi",
+    "ha": 0.8,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Ginangi",
+    "ha": 0.4,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Sukandi",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Jariji",
+    "km": 5.17,
+    "pct": 27.4
+   },
+   {
+    "with": "Rondi",
+    "km": 3.82,
+    "pct": 7.1
+   },
+   {
+    "with": "Sugulkol",
+    "km": 1.13,
+    "pct": 6.3
+   },
+   {
+    "with": "Marang",
+    "km": 1.06,
+    "pct": 6.0
+   },
+   {
+    "with": "Sukandi",
+    "km": 0.98,
+    "pct": 5.4
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 0.92,
+    "pct": 5.1
+   },
+   {
+    "with": "Wohukol",
+    "km": 0.79,
+    "pct": 4.5
+   },
+   {
+    "with": "Ginangi",
+    "km": 0.72,
+    "pct": 4.1
+   },
+   {
+    "with": "Abuankol",
+    "km": 0.4,
+    "pct": 2.3
+   },
+   {
+    "with": "Marijabimkol",
+    "km": 0.4,
+    "pct": 2.2
+   },
+   {
+    "with": "Deari",
+    "km": 0.19,
+    "pct": 1.0
+   },
+   {
+    "with": "Nui",
+    "km": 0.19,
+    "pct": 1.0
+   }
+  ],
+  "join_sep_ha": 1032.3,
+  "join_joined_ha": 1032.3,
+  "map": "Binunkol_Zone_7B.png"
+ },
+ {
+  "unit": "Ginangi \u2014 Zone 7B",
+  "clan": "Ginangi",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Job Mokondo",
+    "tracks": 7,
+    "km": 21.83,
+    "days": 3,
+    "first": "2026-05-23",
+    "last": "2026-06-22",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Joshua Mokondo",
+    "tracks": 6,
+    "km": 14.9,
+    "days": 4,
+    "first": "2026-06-03",
+    "last": "2026-06-24",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 36.73,
+  "spur_km": 4.24,
+  "status": "open",
+  "chains": 7,
+  "gap_km": 7.22,
+  "gap_pct": 21.4,
+  "area_ha": 1234.3,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 7,
+  "overlaps": [
+   {
+    "with": "Manang",
+    "ha": 311.5,
+    "pct": 25.2,
+    "beyond_tol_ha": 311.1,
+    "beyond_tol_pct": 25.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Sugulkol",
+    "ha": 51.5,
+    "pct": 4.2,
+    "beyond_tol_ha": 50.8,
+    "beyond_tol_pct": 4.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Binunkol",
+    "ha": 0.4,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Wohukol",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Murai (Z7B)",
+    "km": 1.51,
+    "pct": 5.0
+   },
+   {
+    "with": "Manang",
+    "km": 1.11,
+    "pct": 3.7
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.72,
+    "pct": 1.4
+   },
+   {
+    "with": "Sugulkol",
+    "km": 0.61,
+    "pct": 1.4
+   },
+   {
+    "with": "Abuankol",
+    "km": 0.35,
+    "pct": 1.2
+   },
+   {
+    "with": "Marijabimkol",
+    "km": 0.34,
+    "pct": 1.1
+   },
+   {
+    "with": "Wohukol",
+    "km": 0.34,
+    "pct": 1.1
+   }
+  ],
+  "join_sep_ha": 1235.9,
+  "join_joined_ha": 1234.3,
+  "map": "Ginangi_Zone_7B.png"
+ },
+ {
+  "unit": "Jariji \u2014 Zone 7B",
+  "clan": "Jariji",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Clement Viri",
+    "tracks": 1,
+    "km": 13.8,
+    "days": 1,
+    "first": "2025-11-09",
+    "last": "2025-11-09",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Newton Giwai",
+    "tracks": 3,
+    "km": 13.66,
+    "days": 2,
+    "first": "2025-11-06",
+    "last": "2025-11-09",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 27.47,
+  "spur_km": 5.77,
+  "status": "open",
+  "chains": 6,
+  "gap_km": 9.04,
+  "gap_pct": 36.6,
+  "area_ha": 696.1,
+  "basis": "inferred",
+  "parcels": 2,
+  "bridges": 6,
+  "overlaps": [
+   {
+    "with": "Wohukol",
+    "ha": 61.8,
+    "pct": 8.9,
+    "beyond_tol_ha": 59.2,
+    "beyond_tol_pct": 8.5,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Binunkol",
+    "ha": 45.1,
+    "pct": 6.5,
+    "beyond_tol_ha": 42.0,
+    "beyond_tol_pct": 6.0,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Sugulkol",
+    "ha": 7.5,
+    "pct": 1.1,
+    "beyond_tol_ha": 7.1,
+    "beyond_tol_pct": 1.0,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Ambunkol",
+    "ha": 0.5,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Sukandi",
+    "ha": 0.1,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Abuankol",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Wohukol",
+    "km": 8.6,
+    "pct": 35.6
+   },
+   {
+    "with": "Binunkol",
+    "km": 5.17,
+    "pct": 24.0
+   },
+   {
+    "with": "Sugulkol",
+    "km": 2.17,
+    "pct": 4.0
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 0.75,
+    "pct": 2.5
+   },
+   {
+    "with": "Ambunkol",
+    "km": 0.35,
+    "pct": 1.6
+   },
+   {
+    "with": "Abuankol",
+    "km": 0.34,
+    "pct": 1.6
+   },
+   {
+    "with": "Sukandi",
+    "km": 0.29,
+    "pct": 0.9
+   },
+   {
+    "with": "Natang",
+    "km": 0.18,
+    "pct": 0.5
+   }
+  ],
+  "join_sep_ha": 620.0,
+  "join_joined_ha": 696.1,
+  "map": "Jariji_Zone_7B.png"
+ },
+ {
+  "unit": "Manang \u2014 Zone 7B",
+  "clan": "Manang",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Kelly Wahamo",
+    "tracks": 1,
+    "km": 7.13,
+    "days": 1,
+    "first": "2026-07-01",
+    "last": "2026-07-01",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 7.13,
+  "spur_km": 0.0,
+  "status": "open",
+  "chains": 1,
+  "gap_km": 1.79,
+  "gap_pct": 25.1,
+  "area_ha": 353.0,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 1,
+  "overlaps": [
+   {
+    "with": "Ginangi",
+    "ha": 311.5,
+    "pct": 88.3,
+    "beyond_tol_ha": 311.1,
+    "beyond_tol_pct": 88.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Sugulkol",
+    "ha": 2.7,
+    "pct": 0.8,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Murai (Z7B)",
+    "km": 2.71,
+    "pct": 37.0
+   },
+   {
+    "with": "Sugulkol",
+    "km": 1.22,
+    "pct": 13.9
+   },
+   {
+    "with": "Marang",
+    "km": 0.56,
+    "pct": 7.9
+   },
+   {
+    "with": "Ginangi",
+    "km": 1.11,
+    "pct": 4.4
+   }
+  ],
+  "join_sep_ha": 353.0,
+  "join_joined_ha": 353.0,
+  "map": "Manang_Zone_7B.png"
+ },
+ {
+  "unit": "Marang \u2014 Zone 7B",
+  "clan": "Marang",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Henry Manderi",
+    "tracks": 2,
+    "km": 8.27,
+    "days": 2,
+    "first": "2026-06-05",
+    "last": "2026-06-06",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 8.27,
+  "spur_km": 1.33,
+  "status": "open",
+  "chains": 2,
+  "gap_km": 5.49,
+  "gap_pct": 66.7,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Marijabimkol",
+    "km": 4.14,
+    "pct": 48.5
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 1.86,
+    "pct": 14.5
+   },
+   {
+    "with": "Binunkol",
+    "km": 1.06,
+    "pct": 12.9
+   },
+   {
+    "with": "Manang",
+    "km": 0.56,
+    "pct": 6.3
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Marang_Zone_7B.png"
+ },
+ {
+  "unit": "Marijabimkol \u2014 Zone 7B",
+  "clan": "Marijabimkol",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Japhet Nagura",
+    "tracks": 7,
+    "km": 10.97,
+    "days": 4,
+    "first": "2025-10-21",
+    "last": "2025-11-05",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 10.97,
+  "spur_km": 2.49,
+  "status": "open",
+  "chains": 4,
+  "gap_km": 6.08,
+  "gap_pct": 61.1,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Marang",
+    "km": 4.14,
+    "pct": 37.7
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 1.26,
+    "pct": 11.5
+   },
+   {
+    "with": "Sugulkol",
+    "km": 0.4,
+    "pct": 1.8
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.4,
+    "pct": 1.8
+   },
+   {
+    "with": "Ginangi",
+    "km": 0.34,
+    "pct": 1.8
+   },
+   {
+    "with": "Abuankol",
+    "km": 0.22,
+    "pct": 1.8
+   },
+   {
+    "with": "Wohukol",
+    "km": 0.19,
+    "pct": 1.8
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Marijabimkol_Zone_7B.png"
+ },
+ {
+  "unit": "Murai (Z7B) \u2014 Zone 7B",
+  "clan": "Murai (Z7B)",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "James Iroti",
+    "tracks": 8,
+    "km": 12.35,
+    "days": 6,
+    "first": "2025-10-21",
+    "last": "2026-03-11",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 12.35,
+  "spur_km": 2.92,
+  "status": "open",
+  "chains": 5,
+  "gap_km": 7.15,
+  "gap_pct": 63.9,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Manang",
+    "km": 2.71,
+    "pct": 21.9
+   },
+   {
+    "with": "Marang",
+    "km": 1.86,
+    "pct": 15.1
+   },
+   {
+    "with": "Sugulkol",
+    "km": 2.97,
+    "pct": 14.1
+   },
+   {
+    "with": "Wohukol",
+    "km": 1.15,
+    "pct": 9.3
+   },
+   {
+    "with": "Marijabimkol",
+    "km": 1.26,
+    "pct": 8.9
+   },
+   {
+    "with": "Abuankol",
+    "km": 1.03,
+    "pct": 8.4
+   },
+   {
+    "with": "Ambunkol",
+    "km": 1.0,
+    "pct": 8.1
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.92,
+    "pct": 6.6
+   },
+   {
+    "with": "Jariji",
+    "km": 0.75,
+    "pct": 6.1
+   },
+   {
+    "with": "Ginangi",
+    "km": 1.51,
+    "pct": 4.4
+   },
+   {
+    "with": "Natang",
+    "km": 0.44,
+    "pct": 3.6
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Murai_Z7B_Zone_7B.png"
+ },
+ {
+  "unit": "Natang \u2014 Zone 7B",
+  "clan": "Natang",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Stafford Gidiri",
+    "tracks": 2,
+    "km": 46.5,
+    "days": 1,
+    "first": "2025-11-10",
+    "last": "2025-11-10",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Dickson Hoe",
+    "tracks": 4,
+    "km": 30.75,
+    "days": 3,
+    "first": "2025-11-06",
+    "last": "2026-02-16",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 77.25,
+  "spur_km": 3.43,
+  "status": "near",
+  "chains": 2,
+  "gap_km": 6.53,
+  "gap_pct": 8.8,
+  "area_ha": 1532.8,
+  "basis": "inferred",
+  "parcels": 2,
+  "bridges": 2,
+  "overlaps": [
+   {
+    "with": "Ambunkol",
+    "ha": 345.4,
+    "pct": 22.5,
+    "beyond_tol_ha": 339.7,
+    "beyond_tol_pct": 22.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Sugulkol",
+    "ha": 32.2,
+    "pct": 2.1,
+    "beyond_tol_ha": 28.7,
+    "beyond_tol_pct": 1.9,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Wohukol",
+    "ha": 4.2,
+    "pct": 0.3,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.1,
+    "verdict": "overlap"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Ambunkol",
+    "km": 20.29,
+    "pct": 37.6
+   },
+   {
+    "with": "Wohukol",
+    "km": 8.77,
+    "pct": 16.0
+   },
+   {
+    "with": "Sugulkol",
+    "km": 3.59,
+    "pct": 5.3
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 0.44,
+    "pct": 0.7
+   },
+   {
+    "with": "Jariji",
+    "km": 0.18,
+    "pct": 0.3
+   },
+   {
+    "with": "Abuankol",
+    "km": 0.03,
+    "pct": 0.0
+   }
+  ],
+  "join_sep_ha": 2354.8,
+  "join_joined_ha": 1532.8,
+  "map": "Natang_Zone_7B.png"
+ },
+ {
+  "unit": "Sugulkol \u2014 Zone 7B",
+  "clan": "Sugulkol",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Emmanuel Fufus",
+    "tracks": 6,
+    "km": 13.43,
+    "days": 6,
+    "first": "2025-11-06",
+    "last": "2026-03-02",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Chris Idua",
+    "tracks": 6,
+    "km": 10.56,
+    "days": 3,
+    "first": "2025-11-06",
+    "last": "2025-11-08",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 23.99,
+  "spur_km": 1.29,
+  "status": "open",
+  "chains": 6,
+  "gap_km": 3.68,
+  "gap_pct": 16.2,
+  "area_ha": 313.8,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 6,
+  "overlaps": [
+   {
+    "with": "Ginangi",
+    "ha": 51.5,
+    "pct": 16.4,
+    "beyond_tol_ha": 50.8,
+    "beyond_tol_pct": 16.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Natang",
+    "ha": 32.2,
+    "pct": 10.3,
+    "beyond_tol_ha": 28.7,
+    "beyond_tol_pct": 9.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Wohukol",
+    "ha": 21.1,
+    "pct": 6.7,
+    "beyond_tol_ha": 19.0,
+    "beyond_tol_pct": 6.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Jariji",
+    "ha": 7.5,
+    "pct": 2.4,
+    "beyond_tol_ha": 7.1,
+    "beyond_tol_pct": 2.3,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Ambunkol",
+    "ha": 5.2,
+    "pct": 1.7,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Manang",
+    "ha": 2.7,
+    "pct": 0.9,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Binunkol",
+    "ha": 1.5,
+    "pct": 0.5,
+    "beyond_tol_ha": 1.3,
+    "beyond_tol_pct": 0.4,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Abuankol",
+    "ha": 0.6,
+    "pct": 0.2,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Ambunkol",
+    "km": 5.86,
+    "pct": 24.4
+   },
+   {
+    "with": "Natang",
+    "km": 3.59,
+    "pct": 15.0
+   },
+   {
+    "with": "Wohukol",
+    "km": 3.18,
+    "pct": 13.3
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 2.97,
+    "pct": 12.4
+   },
+   {
+    "with": "Jariji",
+    "km": 2.17,
+    "pct": 9.1
+   },
+   {
+    "with": "Abuankol",
+    "km": 1.78,
+    "pct": 7.4
+   },
+   {
+    "with": "Manang",
+    "km": 1.22,
+    "pct": 5.1
+   },
+   {
+    "with": "Binunkol",
+    "km": 1.13,
+    "pct": 4.4
+   },
+   {
+    "with": "Ginangi",
+    "km": 0.61,
+    "pct": 2.5
+   },
+   {
+    "with": "Marijabimkol",
+    "km": 0.4,
+    "pct": 1.7
+   }
+  ],
+  "join_sep_ha": 630.4,
+  "join_joined_ha": 313.8,
+  "map": "Sugulkol_Zone_7B.png"
+ },
+ {
+  "unit": "Wohukol \u2014 Zone 7B",
+  "clan": "Wohukol",
+  "zone": "Zone 7B",
+  "walkers": [
+   {
+    "custodian": "Nelson Runage",
+    "tracks": 4,
+    "km": 17.81,
+    "days": 2,
+    "first": "2025-11-06",
+    "last": "2025-11-10",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Darline Walele",
+    "tracks": 5,
+    "km": 17.1,
+    "days": 4,
+    "first": "2025-10-25",
+    "last": "2025-11-10",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 34.91,
+  "spur_km": 4.87,
+  "status": "open",
+  "chains": 4,
+  "gap_km": 8.29,
+  "gap_pct": 25.2,
+  "area_ha": 701.1,
+  "basis": "inferred",
+  "parcels": 3,
+  "bridges": 4,
+  "overlaps": [
+   {
+    "with": "Jariji",
+    "ha": 61.8,
+    "pct": 8.8,
+    "beyond_tol_ha": 59.2,
+    "beyond_tol_pct": 8.4,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Binunkol",
+    "ha": 29.3,
+    "pct": 4.2,
+    "beyond_tol_ha": 27.3,
+    "beyond_tol_pct": 3.9,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Sugulkol",
+    "ha": 21.1,
+    "pct": 3.0,
+    "beyond_tol_ha": 19.0,
+    "beyond_tol_pct": 2.7,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Natang",
+    "ha": 4.2,
+    "pct": 0.6,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Ambunkol",
+    "ha": 3.1,
+    "pct": 0.4,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Abuankol",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Ginangi",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Natang",
+    "km": 8.77,
+    "pct": 25.1
+   },
+   {
+    "with": "Jariji",
+    "km": 8.6,
+    "pct": 24.6
+   },
+   {
+    "with": "Ambunkol",
+    "km": 2.15,
+    "pct": 6.2
+   },
+   {
+    "with": "Sugulkol",
+    "km": 3.18,
+    "pct": 5.3
+   },
+   {
+    "with": "Murai (Z7B)",
+    "km": 1.15,
+    "pct": 1.6
+   },
+   {
+    "with": "Abuankol",
+    "km": 0.51,
+    "pct": 0.9
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.79,
+    "pct": 0.7
+   },
+   {
+    "with": "Ginangi",
+    "km": 0.34,
+    "pct": 0.1
+   },
+   {
+    "with": "Marijabimkol",
+    "km": 0.19,
+    "pct": 0.1
+   }
+  ],
+  "join_sep_ha": 614.7,
+  "join_joined_ha": 701.1,
+  "map": "Wohukol_Zone_7B.png"
+ },
+ {
+  "unit": "Duribip \u2014 Zone 8",
+  "clan": "Duribip",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Beven Naive",
+    "tracks": 4,
+    "km": 4.46,
+    "days": 2,
+    "first": "2025-07-11",
+    "last": "2025-07-21",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 4.46,
+  "spur_km": 0.22,
+  "status": "open",
+  "chains": 3,
+  "gap_km": 5.9,
+  "gap_pct": 139.2,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Riribudeh",
+    "km": 0.47,
+    "pct": 5.4
+   },
+   {
+    "with": "Madukol",
+    "km": 0.04,
+    "pct": 0.4
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Duribip_Zone_8.png"
+ },
+ {
+  "unit": "Dusi \u2014 Zone 8",
+  "clan": "Dusi",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Max Mamo",
+    "tracks": 52,
+    "km": 32.95,
+    "days": 3,
+    "first": "2025-06-05",
+    "last": "2025-06-19",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 32.95,
+  "spur_km": 7.39,
+  "status": "near",
+  "chains": 4,
+  "gap_km": 1.89,
+  "gap_pct": 6.3,
+  "area_ha": 218.6,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 4,
+  "overlaps": [
+   {
+    "with": "Riribudeh",
+    "ha": 6.6,
+    "pct": 3.0,
+    "beyond_tol_ha": 5.7,
+    "beyond_tol_pct": 2.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Gubai",
+    "ha": 1.5,
+    "pct": 0.7,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Gubai",
+    "km": 2.35,
+    "pct": 22.4
+   },
+   {
+    "with": "Riribudeh",
+    "km": 2.97,
+    "pct": 18.4
+   }
+  ],
+  "join_sep_ha": 218.6,
+  "join_joined_ha": 218.6,
+  "map": "Dusi_Zone_8.png"
+ },
+ {
+  "unit": "Gubai \u2014 Zone 8",
+  "clan": "Gubai",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Kenny Noi",
+    "tracks": 55,
+    "km": 91.86,
+    "days": 5,
+    "first": "2025-05-22",
+    "last": "2025-07-19",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Fordy Igai",
+    "tracks": 20,
+    "km": 42.68,
+    "days": 2,
+    "first": "2025-05-22",
+    "last": "2025-06-03",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 134.54,
+  "spur_km": 0.0,
+  "status": "near",
+  "chains": 7,
+  "gap_km": 5.02,
+  "gap_pct": 3.7,
+  "area_ha": 1173.2,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 7,
+  "overlaps": [
+   {
+    "with": "Dusi",
+    "ha": 1.5,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Dusi",
+    "km": 2.35,
+    "pct": 9.2
+   }
+  ],
+  "join_sep_ha": 1666.6,
+  "join_joined_ha": 1173.2,
+  "map": "Gubai_Zone_8.png"
+ },
+ {
+  "unit": "Gumuyude \u2014 Zone 8",
+  "clan": "Gumuyude",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Philip Igai",
+    "tracks": 6,
+    "km": 16.79,
+    "days": 6,
+    "first": "2025-05-19",
+    "last": "2025-06-04",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 16.79,
+  "spur_km": 3.94,
+  "status": "open",
+  "chains": 7,
+  "gap_km": 2.28,
+  "gap_pct": 15.0,
+  "area_ha": 691.3,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 7,
+  "overlaps": [
+   {
+    "with": "Riribudeh",
+    "ha": 3.7,
+    "pct": 0.5,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Mungaikol",
+    "ha": 0.6,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Mungaikol",
+    "km": 1.79,
+    "pct": 10.7
+   },
+   {
+    "with": "Uremkol",
+    "km": 1.81,
+    "pct": 10.2
+   },
+   {
+    "with": "Riribudeh",
+    "km": 2.35,
+    "pct": 6.9
+   }
+  ],
+  "join_sep_ha": 691.3,
+  "join_joined_ha": 691.3,
+  "map": "Gumuyude_Zone_8.png"
+ },
+ {
+  "unit": "Madukol \u2014 Zone 8",
+  "clan": "Madukol",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Gibs Ginave",
+    "tracks": 5,
+    "km": 1.07,
+    "days": 3,
+    "first": "2025-07-15",
+    "last": "2025-08-04",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 1.07,
+  "spur_km": 0.0,
+  "status": "open",
+  "chains": 2,
+  "gap_km": 0.29,
+  "gap_pct": 26.7,
+  "area_ha": 1.4,
+  "basis": "inferred",
+  "parcels": 2,
+  "bridges": 2,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Duribip",
+    "km": 0.04,
+    "pct": 3.9
+   }
+  ],
+  "join_sep_ha": 1.4,
+  "join_joined_ha": 1.4,
+  "map": "Madukol_Zone_8.png"
+ },
+ {
+  "unit": "Mungaikol \u2014 Zone 8",
+  "clan": "Mungaikol",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Graham Ekiawa",
+    "tracks": 5,
+    "km": 14.75,
+    "days": 5,
+    "first": "2025-07-13",
+    "last": "2025-07-21",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 14.75,
+  "spur_km": 2.77,
+  "status": "open",
+  "chains": 3,
+  "gap_km": 2.26,
+  "gap_pct": 16.8,
+  "area_ha": 569.7,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 3,
+  "overlaps": [
+   {
+    "with": "Gumuyude",
+    "ha": 0.6,
+    "pct": 0.1,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   },
+   {
+    "with": "Borori",
+    "ha": 0.0,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Uremkol",
+    "km": 7.56,
+    "pct": 51.2
+   },
+   {
+    "with": "Gumuyude",
+    "km": 1.79,
+    "pct": 12.1
+   },
+   {
+    "with": "Borori",
+    "km": 0.42,
+    "pct": 1.5
+   }
+  ],
+  "join_sep_ha": 569.7,
+  "join_joined_ha": 569.7,
+  "map": "Mungaikol_Zone_8.png"
+ },
+ {
+  "unit": "Riribudeh \u2014 Zone 8",
+  "clan": "Riribudeh",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Prut Buitari",
+    "tracks": 7,
+    "km": 10.37,
+    "days": 3,
+    "first": "2025-07-15",
+    "last": "2025-07-23",
+    "type": "Land Boundary"
+   },
+   {
+    "custodian": "Unido Ose",
+    "tracks": 28,
+    "km": 10.01,
+    "days": 3,
+    "first": "2025-07-15",
+    "last": "2025-07-23",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 2,
+  "walked_km": 20.37,
+  "spur_km": 0.3,
+  "status": "near",
+  "chains": 3,
+  "gap_km": 1.56,
+  "gap_pct": 7.8,
+  "area_ha": 371.8,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 3,
+  "overlaps": [
+   {
+    "with": "Dusi",
+    "ha": 6.6,
+    "pct": 1.8,
+    "beyond_tol_ha": 5.7,
+    "beyond_tol_pct": 1.5,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Gumuyude",
+    "ha": 3.7,
+    "pct": 1.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Dusi",
+    "km": 2.97,
+    "pct": 14.7
+   },
+   {
+    "with": "Gumuyude",
+    "km": 2.35,
+    "pct": 11.6
+   },
+   {
+    "with": "Duribip",
+    "km": 0.47,
+    "pct": 2.3
+   }
+  ],
+  "join_sep_ha": 770.3,
+  "join_joined_ha": 371.8,
+  "map": "Riribudeh_Zone_8.png"
+ },
+ {
+  "unit": "Uremkol \u2014 Zone 8",
+  "clan": "Uremkol",
+  "zone": "Zone 8",
+  "walkers": [
+   {
+    "custodian": "Cyprian Sirami",
+    "tracks": 3,
+    "km": 11.2,
+    "days": 2,
+    "first": "2025-07-16",
+    "last": "2025-07-25",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_walkers": 1,
+  "walked_km": 11.2,
+  "spur_km": 2.42,
+  "status": "open",
+  "chains": 4,
+  "gap_km": 6.26,
+  "gap_pct": 58.0,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Mungaikol",
+    "km": 7.56,
+    "pct": 67.2
+   },
+   {
+    "with": "Gumuyude",
+    "km": 1.81,
+    "pct": 16.1
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Uremkol_Zone_8.png"
+ }
+]

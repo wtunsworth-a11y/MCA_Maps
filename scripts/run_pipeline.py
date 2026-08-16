@@ -116,6 +116,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="re-extract the archives from scratch")
     parser.add_argument("--skip-maps", action="store_true",
                         help="skip the rendering stages")
+    parser.add_argument("--skip-documents", action="store_true",
+                        help="skip building the Word documents")
     parser.add_argument("--terrain-analysis", action="store_true",
                         help="also re-derive drainage and ridgelines; slow, "
                              "and only needed when the DEM or extent changes")
@@ -147,15 +149,21 @@ def main(argv: list[str] | None = None) -> int:
                          "--map", "output/areas_mapped.png"]),
         # No --out: sacred site geometry is not written to a shareable file.
         ("sacred_sites.py", ["--report", "output/sacred_sites.md"]),
+        ("walkers.py", ["--report", "output/walkers/WALKER_DAYS.md"]),
         ("queries.py", []),
     ]
     if not args.skip_maps:
         stages += [
             ("make_maps.py", ["--smoothed", smoothed]),
+            ("clan_maps.py", []),
             ("build_project.py", [*source]),
         ("summary.py", []),
         ("provenance.py", [*source]),
         ]
+    if not args.skip_documents:
+        # Last, because the documents quote every stage above and must be
+        # built from the run that just happened rather than the one before it.
+        stages.append(("build_reports.py", []))
 
     failed = [name for name, arguments in stages if not run(name, *arguments)]
 
