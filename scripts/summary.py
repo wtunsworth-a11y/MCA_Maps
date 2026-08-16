@@ -116,6 +116,18 @@ def render_map(data: dict, out_path: Path) -> Path:
         gpd.GeoSeries([mca], crs=dataio.METRIC_CRS).boundary.plot(
             ax=axis, color="#475569", linewidth=1.4, zorder=1)
 
+    # Every walked boundary is drawn, including those that never closed. A map
+    # of areas alone renders a clan that walked 40 km as blank ground, which
+    # reads as "not mapped" when the truth is "mapped but not yet closed".
+    tracks = data["tracks"]
+    closed_surveys = set(data["surveys"].source_name)
+    unclosed = tracks[~tracks.source_name.isin(closed_surveys)]
+    if len(unclosed):
+        unclosed.plot(ax=axis, color="#7c3aed", linewidth=1.5, alpha=0.95,
+                      zorder=6)
+    tracks[tracks.source_name.isin(closed_surveys)].plot(
+        ax=axis, color="#334155", linewidth=0.7, alpha=0.8, zorder=5)
+
     surveys = data["surveys"]
     inferred = surveys[surveys.basis == "inferred"]
     surveyed = surveys[surveys.basis == "surveyed"]
@@ -145,17 +157,22 @@ def render_map(data: dict, out_path: Path) -> Path:
     axis.set_title(
         f"Clan land mapped in the Managalas Conservation Area\n"
         f"{data['n_clans']} clans, {data['n_surveys']} surveys, "
-        f"{data['boundary_km']:,.0f} km of boundary — "
-        f"{data['contested_ha']:,.0f} ha claimed by more than one clan",
+        f"{data['boundary_km']:,.0f} km of boundary walked\n"
+        f"{data['n_polygons']} surveys give an area; "
+        f"{data['n_surveys'] - data['n_polygons']} are walked but not yet "
+        f"closed — {data['contested_ha']:,.0f} ha claimed by more than one clan",
         fontsize=12, pad=14)
     axis.legend(handles=[
-        Patch(facecolor="#2563eb", alpha=0.6, label="Mapped — boundary walked "
+        Patch(facecolor="#2563eb", alpha=0.6, label="Area — boundary walked "
                                                     "and closed"),
-        Patch(facecolor="#fcd34d", alpha=0.5, label="Mapped — closure inferred"),
+        Patch(facecolor="#fcd34d", alpha=0.5, label="Area — closure inferred"),
         Patch(facecolor="#dc2626", alpha=0.7, label="Claimed by more than one "
                                                     "clan"),
+        Line2D([0], [0], color="#7c3aed", lw=2,
+               label="Walked, but too open to give an area"),
+        Line2D([0], [0], color="#334155", lw=1, label="Walked boundary"),
         Line2D([0], [0], color="#475569", lw=1.6, label="MCA boundary"),
-    ], loc="lower left", fontsize=9, frameon=True)
+    ], loc="lower left", fontsize=8.5, frameon=True)
     figure.tight_layout()
     out_path.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(out_path, bbox_inches="tight")
@@ -205,6 +222,14 @@ walked in to reach a boundary and back out again.
 | Closure inferred | {data['n_inferred']} | {data['area_inferred_ha']:,.0f} |
 | **Total mapped** | **{data['n_polygons']}** | **{total_area:,.0f}** |
 | Footprint, overlaps counted once | | {data['footprint_ha']:,.0f} |
+
+**{data['n_surveys'] - data['n_polygons']} of {data['n_surveys']} surveys give
+no area at all.** Their boundaries were walked — Nituri covers 41.8 km across
+three surveys, Tuoko 47.7 km across two — but the walks do not close, and the
+gaps are too wide to bridge honestly. They appear on the map as walked lines
+with no area behind them. **This is the single largest reason the mapped area
+is smaller than the ground actually covered**, and it is a survey-completion
+issue rather than a data one.
 
 **{inferred_share:.0f}% of the mapped area rests on an inferred closure** — the
 boundary was not walked all the way round, and the gap has been bridged with a

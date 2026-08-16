@@ -31,6 +31,14 @@ walked in to reach a boundary and back out again.
 | **Total mapped** | **42** | **26,336** |
 | Footprint, overlaps counted once | | 20,563 |
 
+**27 of 69 surveys give
+no area at all.** Their boundaries were walked — Nituri covers 41.8 km across
+three surveys, Tuoko 47.7 km across two — but the walks do not close, and the
+gaps are too wide to bridge honestly. They appear on the map as walked lines
+with no area behind them. **This is the single largest reason the mapped area
+is smaller than the ground actually covered**, and it is a survey-completion
+issue rather than a data one.
+
 **88% of the mapped area rests on an inferred closure** — the
 boundary was not walked all the way round, and the gap has been bridged with a
 straight line to give an area at all. Those figures are estimates and are
