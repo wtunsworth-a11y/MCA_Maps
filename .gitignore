@@ -1,10 +1,13 @@
 # Extracted archive contents — regenerated from data/raw on demand
 data/processed/extracted/
 
-# Derived spatial database and rendered maps
+# Derived spatial database, QGIS project and rendered maps — all rebuilt
+# from data/raw by re-running the scripts. output/data_profile.md is kept
+# deliberately, so the data review is readable without running anything.
 data/processed/*.gpkg
 data/processed/*.gpkg-shm
 data/processed/*.gpkg-wal
+data/processed/*.qgs
 output/*.png
 output/*.html
 
