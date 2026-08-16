@@ -125,6 +125,10 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     refresh = ["--refresh"] if args.refresh else []
+    # Stages that read the archives must be pointed at the same directory the
+    # audit checks, or a run against a different source would process one set
+    # of data and reconcile another.
+    source = ["--raw-dir", str(args.raw_dir)]
     smoothed = str(dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg")
 
     print("Running pipeline\n")
@@ -136,8 +140,8 @@ def main(argv: list[str] | None = None) -> int:
                    ("landform.py", ["--report", "output/landform_report.md"])]
     stages += [
         ("inspect_data.py", ["--summary", "--report", "output/data_profile.md",
-                             *refresh]),
-        ("smooth_tracks.py", [*refresh]),
+                             *source, *refresh]),
+        ("smooth_tracks.py", [*source, *refresh]),
         ("closure.py", ["--report", "output/closure_report.md"]),
         ("polygons.py", ["--report", "output/polygon_report.md",
                          "--map", "output/areas_mapped.png"]),
@@ -149,7 +153,8 @@ def main(argv: list[str] | None = None) -> int:
     if not args.skip_maps:
         stages += [
             ("make_maps.py", ["--smoothed", smoothed]),
-            ("build_project.py", []),
+            ("build_project.py", [*source]),
+        ("provenance.py", [*source]),
         ]
 
     failed = [name for name, arguments in stages if not run(name, *arguments)]

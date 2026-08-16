@@ -19,6 +19,8 @@ at the results before moving on:
 | 6. Areas & overlaps | `scripts/polygons.py` | Mapped-area polygons and clan overlaps |
 | 7. Sacred sites | `scripts/sacred_sites.py` | Site areas and share of clan land |
 | 8. Field queries | `scripts/queries.py` | Query pack with a map per question |
+| 9. Working project | `scripts/build_project.py` | The QGIS project to open and look at |
+| 10. Provenance | `scripts/provenance.py` | Versions, checksums and citations for every run |
 
 All stages read the same source — the zips in `data/raw` — through a shared
 loader (`scripts/dataio.py`), so they always agree on what the data is.

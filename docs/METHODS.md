@@ -798,7 +798,78 @@ newly flagged clan-name similarities (§6.2), and answering the new queries in
 - **Basemap tiles** could not be fetched in the processing environment, so
   static maps render without them. This does not affect any measurement.
 
-## 11. Reproducing
+## 11. Towards publication
+
+This section exists because the work is intended to become a paper. It records
+what is ready, and — more usefully — what is not.
+
+### 11.1 What is in place
+
+**Reproducibility.** `scripts/provenance.py` stamps every run into
+`output/PROVENANCE.md` and `provenance.json`: library versions down to GEOS and
+GDAL, the git commit, the SHA-256 of every input archive, the parameters in
+force, and the headline results. If a figure changes between runs, comparing
+archive digests says immediately whether the data moved or the code did.
+
+**Citations.** Data sources and their licences, and the methods papers behind
+the flow routing, depression filling and topographic position test, are held in
+`provenance.py` and reproduced in every provenance record.
+
+**Method transparency.** Every parameter has a stated default and rationale
+(§5); every threshold-dependent result is reported across a range rather than
+at one value; and the landform findings carry a null model (§4.11) without
+which they would be overstated by roughly half.
+
+**Negative and corrected results are recorded, not quietly dropped.** The
+graph-based closure test that proved wrong, the spur-pruning bug that
+manufactured false closures, the Web Mercator distances that overstated length
+by 1.2%, the silent CSV failure — all are in §3, §4.2 and §4.7. A methods paper
+is more useful for them, not less.
+
+### 11.2 What is missing, and needs a decision
+
+**Ethics and consent are not addressed at all.** This is the significant gap.
+The data records *who holds which land*, by name, for 46 clans and 67 named
+custodians, including sacred sites whose locations are given precisely. Before
+any of it is published:
+
+- On what basis was the survey data collected, and does that basis extend to
+  publication?
+- Have the clans and custodians consented to their boundaries, names and land
+  areas appearing in a paper?
+- **Sacred sites need separate consideration.** Publishing precise locations of
+  sites of cultural significance may be actively harmful, and is a different
+  question from publishing boundaries. The safe default is to report them only
+  in aggregate.
+- Are the disputed overlaps (§6.3) publishable while the dispute is live?
+- The WDPA polygon carries its own terms of use for redistribution.
+
+**None of this is a technical question and none of it is mine to answer.** No
+consent or licence information came with the data, so nothing here assumes any.
+
+**Not yet done for a paper:**
+
+- No independent validation. Nothing has been checked against a cadastral
+  record, an independent survey, or ground truth. All verification to date is
+  internal consistency (§10).
+- The area figures are 88% inferred (§4.8). That is stated everywhere it
+  appears, and would need to lead any results section rather than follow it.
+- Results live in six separate reports. A paper needs a single results table
+  with a fixed figure and table numbering.
+- The 16-month survey window (§6.5) means boundaries may have moved between
+  walks. Nothing tests for that.
+- Sample size for the closure findings is small: 7 closed boundaries out of 69.
+
+### 11.3 The claim worth making
+
+The defensible contribution is not the boundaries themselves — too much is
+inferred, and none is independently validated. It is the **method**: that
+community GPS boundary surveys can be assessed for completeness and
+corroborated against terrain automatically, and that the corroboration must be
+measured against a null model or it is largely an artefact of drainage density.
+The 2.1× and 1.6× figures (§4.11), not the 30.3%, are the result.
+
+## 12. Reproducing
 
 ```bash
 pip install -r requirements.txt

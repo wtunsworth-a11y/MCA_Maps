@@ -1,0 +1,119 @@
+{
+  "git": {
+    "branch": "claude/create-maps-86nf12",
+    "clean": false,
+    "commit": "ac568e10b0a5b6b3aaf6faaad07c2ff1d8068865"
+  },
+  "inputs": [
+    {
+      "bytes": 616399,
+      "file": "Zone 2 Clan Land Boundaries - 14July2026.zip",
+      "sha256": "c6ef79c06e57f64c"
+    },
+    {
+      "bytes": 139335,
+      "file": "Zone 3 Clan Land Boundaries - 14July2026.zip",
+      "sha256": "5272a65475b1a149"
+    },
+    {
+      "bytes": 357842,
+      "file": "Zone 6 Clan Boundaries 16Aug2026.zip",
+      "sha256": "7398122a185e8da0"
+    },
+    {
+      "bytes": 195340,
+      "file": "Zone 7A Clan Boundaries 16Aug2026.zip",
+      "sha256": "11ac0f609db1fbc3"
+    },
+    {
+      "bytes": 400152,
+      "file": "Zone 7B Clan Boundaries 14July2026.zip",
+      "sha256": "b069c6a142328c67"
+    },
+    {
+      "bytes": 150125,
+      "file": "Zone 7B Clan Boundaries 16Aug2026.zip",
+      "sha256": "8b1cb96a2efd3c81"
+    },
+    {
+      "bytes": 280372,
+      "file": "Zone 8 Clan Land Boundaries 14July2026.zip",
+      "sha256": "55c2e86da6930273"
+    }
+  ],
+  "method_citations": [
+    "O'Callaghan, J.F. & Mark, D.M. (1984). The extraction of drainage networks from digital elevation data. Computer Vision, Graphics and Image Processing 28(3), 323\u2013344. \u2014 D8 flow routing.",
+    "Barnes, R., Lehman, C. & Mulla, D. (2014). Priority-flood: an optimal depression-filling and watershed-labeling algorithm. Computers & Geosciences 62, 117\u2013127. \u2014 depression filling.",
+    "Weiss, A. (2001). Topographic position and landforms analysis. ESRI User Conference poster. \u2014 the ridge test.",
+    "Bartos, M. (2020). pysheds: simple and fast watershed delineation in Python. https://doi.org/10.5281/zenodo.3822494"
+  ],
+  "parameters": {
+    "clip_distance_km": 10.0,
+    "closure_tolerance_m": 25.0,
+    "max_inferred_gap": 0.5,
+    "metric_crs": "EPSG:32755",
+    "near_closure_threshold": 0.1,
+    "resample_spacing_m": 20.0,
+    "smoothing_window_points": 3,
+    "storage_crs": "EPSG:4326"
+  },
+  "results": {
+    "area_ha_surveyed": 3157.5,
+    "area_ha_total": 26336.3,
+    "clans": 46,
+    "custodians": 67,
+    "polygons": 42,
+    "polygons_surveyed": 7,
+    "smoothed_km": 1112.9,
+    "surveys": 69,
+    "tracks": 600,
+    "zones": [
+      "Zone 2",
+      "Zone 3",
+      "Zone 6",
+      "Zone 7A",
+      "Zone 7B",
+      "Zone 8"
+    ]
+  },
+  "sources": [
+    {
+      "access": "https://copernicus-dem-30m.s3.amazonaws.com",
+      "citation": "European Space Agency, Sinergise (2021). Copernicus Global Digital Elevation Model. Distributed by OpenTopography. https://doi.org/10.5069/G9028PQB",
+      "licence": "Free, worldwide, non-exclusive (ESA/Copernicus)",
+      "name": "Copernicus DEM GLO-30",
+      "used_for": "terrain, drainage and ridgelines"
+    },
+    {
+      "access": "supplied as KML (WDPAID 555651673, WDPA_PID 555651673)",
+      "citation": "UNEP-WCMC and IUCN. Protected Planet: The World Database on Protected Areas (WDPA). Cambridge, UK. www.protectedplanet.net",
+      "licence": "WDPA terms of use \u2014 check before republishing the polygon",
+      "name": "World Database on Protected Areas \u2014 Managalas Conservation Area",
+      "used_for": "the MCA reference boundary and the 10 km clip"
+    },
+    {
+      "access": "supplied directly as zip archives per zone",
+      "citation": "Field surveys by clan custodians, Oro Province, Papua New Guinea, 2025\u20132026",
+      "licence": "Not established \u2014 see the sensitivity note in docs/METHODS.md",
+      "name": "Clan boundary GPS surveys",
+      "used_for": "everything else"
+    }
+  ],
+  "versions": {
+    "contextily": "1.7.1",
+    "folium": "0.20.0",
+    "gdal": "3.10.3",
+    "geopandas": "1.1.4",
+    "geos": "3.13.1",
+    "matplotlib": "3.11.1",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "platform": "Linux-6.18.5-fc-v20-x86_64-with-glibc2.39",
+    "pyogrio": "0.13.0",
+    "pysheds": "0.5",
+    "python": "3.11.15",
+    "rasterio": "1.4.4",
+    "scipy": "1.17.1",
+    "shapely": "2.1.2"
+  }
+}
