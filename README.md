@@ -20,10 +20,11 @@ at the results before moving on:
 | 7. Sacred sites | `scripts/sacred_sites.py` | Site areas and share of clan land |
 | 8. Field queries | `scripts/queries.py` | Query pack with a map per question |
 | 9. Per-clan maps | `scripts/clan_maps.py` | One map per clan, with neighbours and overlaps |
-| 10. Walker days | `scripts/walkers.py` | Who walked, on which days, how far |
+| 10. Steward days | `scripts/stewards.py` | Who walked, on which days, how far |
 | 11. Working project | `scripts/build_project.py` | The QGIS project to open and look at |
 | 12. Provenance | `scripts/provenance.py` | Versions, checksums and citations for every run |
-| 13. Documents | `scripts/build_reports.py` | The two Word documents, versioned and dated |
+| 13. Give it back | `scripts/clan_gpx.py` | One GPX per clan, gaps marked, for the stewards |
+| 14. Documents | `scripts/build_reports.py` | The two Word documents, versioned and dated |
 
 All stages read the same source — the zips in `data/raw` — through a shared
 loader (`scripts/dataio.py`), so they always agree on what the data is.
@@ -72,13 +73,32 @@ so text and maps always come from the same run:
 
 - **`Managalas_Clan_Land_Mapping_v<version>_<date>.docx`** — results, then a
   page per clan with its own map, its problems and its queries.
-- **`Managalas_Walker_Days_v<version>_<date>.docx`** — who walked, on which
+- **`Managalas_Steward_Days_v<version>_<date>.docx`** — who walked, on which
   days, and how far.
 
 The version comes from `docs/VERSION`; bump it when the content changes
 materially. Version and date appear in the file name, on the title page and in
 the footer of every page, and **earlier builds are never overwritten** — the
 copy already in someone's inbox stays valid and findable.
+
+## Giving the survey back
+
+```bash
+python scripts/clan_gpx.py
+```
+
+One GPX per clan in `output/gpx/`, for the Clan Stewards who walked it to load
+onto the phone or handheld they mapped with. Each file holds:
+
+- **their own tracks**, one per steward and named for them;
+- **the gaps**, as straight lines named `GAP 3 OF 8 - NOT WALKED - 2.31 km`,
+  so a gap shows up as something on the screen rather than as an absence;
+- **a waypoint at each end of each gap** — the useful part, since a steward
+  can navigate straight to where the walking stopped and carry on.
+
+Gaps under 100 m (`--min-gap`) are not marked: two ends that close are the
+same place to anyone standing there, and flagging them buries the ones that
+matter.
 
 ## The straight lines on the maps
 
@@ -104,19 +124,19 @@ the format details.
 
 ## What the scripts do with these files
 
-**The zone, clan and custodian live in the file names, not in the data.**
+**The zone, clan and steward live in the file names, not in the data.**
 `scripts/clans.py` reads them, handling both conventions in use:
 
 ```
 Jethro_Akse_Asingi_Clan_Land_Boundary_Zone_2_14July2026
-└─ custodian ─┘ └clan┘                  └zone┘ └─ date ─┘
+└─ steward ─┘ └clan┘                  └zone┘ └─ date ─┘
 
 manuvoora_clan_egobeyas_kuarisi_tracks_zone_6
-└─ clan ─┘     └─── custodian ────┘     └zone┘
+└─ clan ─┘     └─── steward ────┘     └zone┘
 ```
 
 Files that omit the zone inherit it from the archive they came in. The parsed
-values become attributes — `clan`, `custodian`, `zone`, `feature_type`,
+values become attributes — `clan`, `steward`, `zone`, `feature_type`,
 `survey_date`, `source_name` — on every feature.
 
 **69 layers are merged into one.** Separate layers per file are unusable in

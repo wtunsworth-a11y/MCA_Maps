@@ -10,7 +10,7 @@ no editing.
 Writes into output/report/:
 
 * `summary.json`   — the headline figures, by zone and overall
-* `clandata.json`  — one record per clan: walkers, closure, overlaps, queries
+* `clandata.json`  — one record per clan: stewards, closure, overlaps, queries
 * `context.json`   — version, date, provenance, the parameters in force
 
 Usage:
@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import date
@@ -35,7 +36,7 @@ import closure  # noqa: E402
 import dataio  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
 import smooth_tracks  # noqa: E402
-import walkers as walker_tools  # noqa: E402
+import stewards as steward_tools  # noqa: E402
 
 VERSION_FILE = dataio.REPO_ROOT / "docs" / "VERSION"
 CHANGELOG_FILE = dataio.REPO_ROOT / "docs" / "CHANGELOG.md"
@@ -70,7 +71,9 @@ def changes_since(version: str) -> list[str]:
             current = ""
     if current:
         bullets.append(current)
-    return bullets
+    # These go into Word as plain runs, so Markdown emphasis would show up as
+    # literal asterisks and backticks on the page.
+    return [re.sub(r"\*\*|`", "", line) for line in bullets]
 
 
 def _json(value):
@@ -98,6 +101,27 @@ def _json(value):
     return str(value)
 
 
+def gpx_index(gpx_dir: Path) -> dict:
+    """Each clan's GPX file and how many gaps it marks, read back from it.
+
+    Read out of the files themselves rather than recomputed, so the document
+    can only ever name a file that exists and a gap count that is really in
+    it.
+    """
+    import re
+
+    out = {}
+    for path in sorted(gpx_dir.glob("*.gpx")):
+        text = path.read_text(encoding="utf-8")
+        out[path.stem] = {
+            "file": path.name,
+            "gaps": len(re.findall(r"<name>GAP \d+ OF \d+ START</name>", text)),
+            "km": round(sum(float(m) for m in re.findall(
+                r"- NOT WALKED - ([\d.]+) km</name>", text)), 2),
+        }
+    return out
+
+
 def parcel_count(geometry) -> int:
     """How many separate pieces of land a polygon describes."""
     if geometry is None or geometry.is_empty:
@@ -106,7 +130,8 @@ def parcel_count(geometry) -> int:
 
 
 def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
-           walkers_dir: Path, tolerance: float) -> dict:
+           stewards_dir: Path, tolerance: float,
+           gpx_dir: Path | None = None) -> dict:
     tracks = gpd.read_file(tracks_path,
                            layer="tracks_smoothed").to_crs(dataio.METRIC_CRS)
     surveys = gpd.read_file(polygons_path,
@@ -125,9 +150,11 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
     overlaps = polygon_tools.overlaps(clan_polygons, "clan", tolerance)
     agreed = polygon_tools.shared_lines(tracks, tolerance)
 
+    gpx = gpx_index(gpx_dir) if gpx_dir and gpx_dir.exists() else {}
+
     joining = _read_csv(clans_dir / "joining_effect.csv")
-    walker_table = _read_csv(walkers_dir / "walkers.csv")
-    walker_days = _read_csv(walkers_dir / "walker_days.csv")
+    steward_table = _read_csv(stewards_dir / "stewards.csv")
+    steward_days = _read_csv(stewards_dir / "steward_days.csv")
 
     # ---- headline ----------------------------------------------------
     boundary_only = tracks[tracks.feature_type == smooth_tracks.BOUNDARY_TYPE]
@@ -173,7 +200,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             "zone": zone,
             "clans": int(group[group.clan.astype(str).str.strip() != ""]
                          .clan.nunique()),
-            "custodians": int(group.custodian.nunique()),
+            "stewards": int(group.steward.nunique()),
             "surveys": int(group.source_name.nunique()),
             "walked_km": round(group.geometry.length.sum() / 1000, 1),
             "boundary_km": round((zone_boundary.geometry.length.sum()
@@ -187,12 +214,12 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
         for _, row in clan_polygons.iterrows()
         if parcel_count(row.geometry) > 1]
 
-    dated_days = walker_days[walker_days.date.notna()] \
-        if not walker_days.empty else walker_days
+    dated_days = steward_days[steward_days.date.notna()] \
+        if not steward_days.empty else steward_days
 
     summary = {
         "clans": int(named.clan.nunique()),
-        "custodians": int(tracks.custodian.nunique()),
+        "stewards": int(tracks.steward.nunique()),
         "surveys": int(tracks.source_name.nunique()),
         "units": int(len(surveys)),
         "tracks": int(len(tracks)),
@@ -223,8 +250,11 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
         "clans_multi_parcel": len(multi_parcel),
         "multi_parcel": multi_parcel,
         "shared_line_pairs": int(len(agreed)),
-        "walkers": int(len(walker_table)),
-        "walker_days": int(len(dated_days)),
+        "gpx_clans": len(gpx),
+        "gpx_gaps": sum(g["gaps"] for g in gpx.values()),
+        "gpx_gap_km": round(sum(g["km"] for g in gpx.values()), 1),
+        "stewards": int(len(steward_table)),
+        "steward_days": int(len(dated_days)),
         "field_days": int(dated_days.date.nunique()) if len(dated_days) else 0,
         "first_walk": str(dated_days.date.min()) if len(dated_days) else None,
         "last_walk": str(dated_days.date.max()) if len(dated_days) else None,
@@ -248,14 +278,14 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
         geometry = polygon.geometry.iloc[0] if len(polygon) else None
 
         people = []
-        for custodian, walk in group.groupby("custodian"):
-            person = walker_table[walker_table.custodian == custodian] \
-                if not walker_table.empty else pd.DataFrame()
-            days = walker_days[(walker_days.custodian == custodian)
-                               & (walker_days.clan == clan)] \
-                if not walker_days.empty else pd.DataFrame()
+        for steward, walk in group.groupby("steward"):
+            person = steward_table[steward_table.steward == steward] \
+                if not steward_table.empty else pd.DataFrame()
+            days = steward_days[(steward_days.steward == steward)
+                               & (steward_days.clan == clan)] \
+                if not steward_days.empty else pd.DataFrame()
             people.append({
-                "custodian": custodian,
+                "steward": steward,
                 "tracks": int(len(walk)),
                 "km": round(walk.geometry.length.sum() / 1000, 2),
                 "days": int(days.date.notna().sum()) if len(days) else 0,
@@ -299,8 +329,8 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
 
         records.append({
             "unit": unit, "clan": clan, "zone": zone,
-            "walkers": people,
-            "n_walkers": int(group.custodian.nunique()),
+            "stewards": people,
+            "n_stewards": int(group.steward.nunique()),
             "walked_km": round(group.geometry.length.sum() / 1000, 2),
             "spur_km": round(smooth_tracks.spur_length(group) / 1000, 2),
             "status": _json(row.status) if row is not None else None,
@@ -324,6 +354,8 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # of the file name. Every clan map went missing from the document
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
+            "gpx": gpx.get(dataio.safe_name(unit), {}).get("file"),
+            "gpx_gaps": gpx.get(dataio.safe_name(unit), {}).get("gaps", 0),
         })
 
     records.sort(key=lambda r: (r["zone"], r["clan"]))
@@ -369,8 +401,9 @@ def main(argv: list[str] | None = None) -> int:
                         default=dataio.SMOOTHED_DIR / "mca_polygons.gpkg")
     parser.add_argument("--clans-dir", type=Path,
                         default=dataio.OUT_DIR / "clans")
-    parser.add_argument("--walkers-dir", type=Path,
-                        default=dataio.OUT_DIR / "walkers")
+    parser.add_argument("--stewards-dir", type=Path,
+                        default=dataio.OUT_DIR / "stewards")
+    parser.add_argument("--gpx-dir", type=Path, default=dataio.OUT_DIR / "gpx")
     parser.add_argument("--out-dir", type=Path,
                         default=dataio.OUT_DIR / "report")
     parser.add_argument("--overlap-tolerance", type=float,
@@ -383,7 +416,8 @@ def main(argv: list[str] | None = None) -> int:
             return 1
 
     data = gather(args.tracks, args.polygons, args.clans_dir,
-                  args.walkers_dir, args.overlap_tolerance)
+                  args.stewards_dir, args.overlap_tolerance,
+                  args.gpx_dir)
     meta = context(args.overlap_tolerance)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)

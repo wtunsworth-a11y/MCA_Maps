@@ -87,10 +87,10 @@ def _overview(layer: dataio.Layer) -> list[str]:
 
     if "clan" in gdf.columns:
         clans_seen = {c for c in gdf["clan"].dropna() if str(c).strip()}
-        custodians = {c for c in gdf.get("custodian", pd.Series(dtype=str))
+        stewards = {c for c in gdf.get("steward", pd.Series(dtype=str))
                       .dropna() if str(c).strip()}
         lines += [f"- **Distinct clans:** {len(clans_seen)}",
-                  f"- **Distinct custodians:** {len(custodians)}",
+                  f"- **Distinct stewards:** {len(stewards)}",
                   f"- **Source surveys:** {gdf['source_name'].nunique()}", ""]
     return lines
 
@@ -163,7 +163,7 @@ def quality_report(layer: dataio.Layer, outlier_factor: float) -> list[str]:
 
 
 def _finding_table(rows) -> list[str]:
-    columns = [c for c in ("zone", "clan", "custodian", "name", "source_name")
+    columns = [c for c in ("zone", "clan", "steward", "name", "source_name")
                if c in rows.columns]
     if not columns:
         columns = [c for c in rows.columns if c != "geometry"][:4]

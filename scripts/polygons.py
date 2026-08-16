@@ -24,7 +24,7 @@ share of each clan's own polygon that represents — under two readings:
 * **Beyond tolerance** — the same overlap with any strip narrower than
   `--overlap-tolerance` (100 m by default) removed. Where two walked lines run
   within 100 m of each other, the ground between them is not a competing claim:
-  it is GPS error, thick bush, and one walker taking the near side of a ridge
+  it is GPS error, thick bush, and one steward taking the near side of a ridge
   and another the far side. Only overlap wide enough to survive that is
   reported as contested land.
 
@@ -125,7 +125,7 @@ def _snapped_lines(parts, positions, labels) -> list:
 def _enclosed(lines: list, min_share: float = 0.02):
     """Every substantial area the lines enclose, not just the biggest one.
 
-    A clan can hold more than one parcel, and several walkers joined into one
+    A clan can hold more than one parcel, and several stewards joined into one
     survey routinely describe two or three. Taking only the largest polygon
     silently discarded the rest — Wohukol lost an entire northern parcel that
     way, and the loss looked like joining being harmful when it was this
@@ -336,7 +336,7 @@ def contested_layer(clans: gpd.GeoDataFrame,
 
     Carries both readings so QGIS can style them apart: `verdict` separates
     the pieces wide enough to be a real competing claim from the slivers that
-    are two walkers describing the same line.
+    are two stewards describing the same line.
     """
     rows = []
     records = clans.reset_index(drop=True)
@@ -466,7 +466,7 @@ def main(argv: list[str] | None = None) -> int:
         if built is None:
             continue
         first = group.iloc[0]
-        custodians = sorted({str(c) for c in group.custodian if str(c).strip()})
+        stewards = sorted({str(c) for c in group.steward if str(c).strip()})
         for bridge in built.get("bridges") or []:
             bridge_rows.append({
                 "zone": first.get("zone", ""), "clan": first.get("clan", ""),
@@ -476,8 +476,8 @@ def main(argv: list[str] | None = None) -> int:
             })
         records.append({
             "zone": first.get("zone", ""), "clan": first.get("clan", ""),
-            "custodian": ", ".join(custodians),
-            "walkers": len(custodians),
+            "steward": ", ".join(stewards),
+            "stewards": len(stewards),
             "surveys": int(group.source_name.nunique()),
             "source_name": source,
             "basis": built["basis"],
@@ -542,7 +542,7 @@ def main(argv: list[str] | None = None) -> int:
 
     clan_overlaps = overlaps(clans, "clan", args.overlap_tolerance)
     survey_overlaps = overlaps(polygons.assign(
-        label=polygons.clan.astype(str) + " / " + polygons.custodian.astype(str)),
+        label=polygons.clan.astype(str) + " / " + polygons.steward.astype(str)),
         "label", args.overlap_tolerance)
 
     agreed = shared_lines(gdf, args.overlap_tolerance)

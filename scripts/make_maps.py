@@ -174,7 +174,7 @@ def render_zone_map(track_layers: list[dataio.Layer], out_path: Path,
         if areas is not None and not areas.empty:
             for zone, group in areas.groupby("zone", sort=True):
                 colour = zone_colour.get(dataio.safe_name(str(zone)), PALETTE[0])
-                fields = [c for c in ("clan", "custodian", "basis", "area_ha",
+                fields = [c for c in ("clan", "steward", "basis", "area_ha",
                                       "gap_pct", "walked_km")
                           if c in group.columns]
                 folium.GeoJson(
@@ -196,7 +196,7 @@ def render_zone_map(track_layers: list[dataio.Layer], out_path: Path,
     for layer in track_layers:
         colour = zone_colour[layer.name]
         gdf = _json_safe(layer.gdf)
-        fields = [c for c in ("zone", "clan", "custodian", "feature_type",
+        fields = [c for c in ("zone", "clan", "steward", "feature_type",
                               "survey_date", "name")
                   if c in gdf.columns]
         folium.GeoJson(

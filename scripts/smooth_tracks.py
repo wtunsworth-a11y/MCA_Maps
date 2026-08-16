@@ -197,7 +197,7 @@ def spur_length(frame: gpd.GeoDataFrame, tolerance: float = 25.0,
 
 
 def clans_by_zone(gdf: gpd.GeoDataFrame) -> pd.DataFrame:
-    """Clans, custodians, surveys and boundary distance per zone.
+    """Clans, stewards, surveys and boundary distance per zone.
 
     Distance counts **boundary only**: surveys that are not land boundaries are
     excluded entirely, and within each survey the dead-end legs walked to reach
@@ -224,7 +224,7 @@ def clans_by_zone(gdf: gpd.GeoDataFrame) -> pd.DataFrame:
         rows.append({
             "Zone": zone,
             "Clans": named["clan"].nunique(),
-            "Custodians": group["custodian"].nunique(),
+            "Stewards": group["steward"].nunique(),
             "Surveys": group["source_name"].nunique(),
             "Tracks": len(group),
             "Walked (km)": round(group["length_km"].sum(), 1),
@@ -237,7 +237,7 @@ def clans_by_zone(gdf: gpd.GeoDataFrame) -> pd.DataFrame:
     table.loc[len(table)] = {
         "Zone": "TOTAL",
         "Clans": named_all["clan"].nunique(),
-        "Custodians": frame["custodian"].nunique(),
+        "Stewards": frame["steward"].nunique(),
         "Surveys": frame["source_name"].nunique(),
         "Tracks": len(frame),
         "Walked (km)": round(frame["length_km"].sum(), 1),
@@ -300,7 +300,7 @@ def main(argv: list[str] | None = None) -> int:
         for index in dropped_features[:10]:
             row = metric.loc[index]
             print(f"    - {row['zone']} / {row['clan'] or '(no clan)'} / "
-                  f"{row['custodian']}: {row['name']}")
+                  f"{row['steward']}: {row['name']}")
 
     clipped_km = clipped.geometry.length.sum() / 1000
 

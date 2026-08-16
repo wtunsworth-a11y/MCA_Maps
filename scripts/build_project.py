@@ -123,7 +123,7 @@ def raw_tracks(args) -> gpd.GeoDataFrame | None:
         return None
     frame = merged.gdf
     # Keep it light: the raw tracks are only here to eyeball the smoothing.
-    keep = [c for c in ("zone", "clan", "custodian", "feature_type",
+    keep = [c for c in ("zone", "clan", "steward", "feature_type",
                         "source_name", "geometry") if c in frame.columns]
     return frame[keep]
 

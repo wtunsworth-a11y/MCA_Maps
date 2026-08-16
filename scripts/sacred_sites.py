@@ -82,7 +82,7 @@ def build(tracks: gpd.GeoDataFrame, tolerance: float,
             "n_sites": len(names),
             "walks": len(members),
             "clan": members[0].get("clan", ""),
-            "custodian": members[0].get("custodian", ""),
+            "steward": members[0].get("steward", ""),
             "zone": members[0].get("zone", ""),
             "walked_km": round(walked / 1000, 2),
             "bridged_ha": round(built["area_ha"], 1) if built else None,
@@ -219,7 +219,7 @@ def main(argv: list[str] | None = None) -> int:
             "walk, an upper bound. The true area lies between them.\n\n"
             "## Mapped units\n\n"
             + _markdown(table[[c for c in table.columns
-                               if c not in ("geometry", "sites", "custodian")]])
+                               if c not in ("geometry", "sites", "steward")]])
             + "\n\n"
             f"- **Total, bridged:** {total_bridged:,.1f} ha\n"
             f"- **Total, hull:** {total_hull:,.1f} ha\n"

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="MCA Maps — Managalas clan boundary survey"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Madukol — clan land boundary</name>
+    <desc>Madukol, Zone 8. 1.1 km walked; 0.3 km still to walk in 2 gaps</desc>
+    <time>2026-08-16T11:44:03Z</time>
+  </metadata>
+  <wpt lat="-9.1301200" lon="148.4384850">
+    <name>GAP 1 OF 2 START</name>
+    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Madukol, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1298800" lon="148.4375517">
+    <name>GAP 1 OF 2 END</name>
+    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Madukol, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1300517" lon="148.4368533">
+    <name>GAP 2 OF 2 START</name>
+    <desc>0.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Madukol, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1301200" lon="148.4384850">
+    <name>GAP 2 OF 2 END</name>
+    <desc>0.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Madukol, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <trk>
+    <name>GAP 1 OF 2 - NOT WALKED - 0.11 km</name>
+    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Madukol, Zone 8.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1301200" lon="148.4384850"/>
+      <trkpt lat="-9.1298800" lon="148.4375517"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 2 OF 2 - NOT WALKED - 0.18 km</name>
+    <desc>0.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Madukol, Zone 8.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1300517" lon="148.4368533"/>
+      <trkpt lat="-9.1301200" lon="148.4384850"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Madukol - Gibs Ginave</name>
+    <desc>Walked by Gibs Ginave. 1.1 km, 5 track(s), recorded on the ground. Madukol, Zone 8.</desc>
+    <type>walked-boundary</type>
+    <trkseg>
+      <trkpt lat="-9.1301200" lon="148.4384850"/>
+      <trkpt lat="-9.1299972" lon="148.4383710"/>
+      <trkpt lat="-9.1299144" lon="148.4382266"/>
+      <trkpt lat="-9.1298746" lon="148.4380510"/>
+      <trkpt lat="-9.1298522" lon="148.4378716"/>
+      <trkpt lat="-9.1298491" lon="148.4376909"/>
+      <trkpt lat="-9.1298688" lon="148.4375112"/>
+      <trkpt lat="-9.1299164" lon="148.4373477"/>
+      <trkpt lat="-9.1300168" lon="148.4372568"/>
+      <trkpt lat="-9.1301595" lon="148.4372489"/>
+      <trkpt lat="-9.1303184" lon="148.4373247"/>
+      <trkpt lat="-9.1304227" lon="148.4374448"/>
+      <trkpt lat="-9.1304707" lon="148.4375939"/>
+      <trkpt lat="-9.1304274" lon="148.4377416"/>
+      <trkpt lat="-9.1303349" lon="148.4378725"/>
+      <trkpt lat="-9.1302014" lon="148.4379888"/>
+      <trkpt lat="-9.1301392" lon="148.4381142"/>
+      <trkpt lat="-9.1301312" lon="148.4382583"/>
+      <trkpt lat="-9.1301610" lon="148.4384148"/>
+      <trkpt lat="-9.1301090" lon="148.4385218"/>
+      <trkpt lat="-9.1300484" lon="148.4385378"/>
+      <trkpt lat="-9.1300056" lon="148.4385044"/>
+      <trkpt lat="-9.1300333" lon="148.4384750"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1298800" lon="148.4375517"/>
+      <trkpt lat="-9.1298964" lon="148.4373773"/>
+      <trkpt lat="-9.1299409" lon="148.4372085"/>
+      <trkpt lat="-9.1299972" lon="148.4370394"/>
+      <trkpt lat="-9.1300011" lon="148.4368784"/>
+      <trkpt lat="-9.1299254" lon="148.4367437"/>
+      <trkpt lat="-9.1297840" lon="148.4366461"/>
+      <trkpt lat="-9.1296267" lon="148.4365613"/>
+      <trkpt lat="-9.1294725" lon="148.4364700"/>
+      <trkpt lat="-9.1293326" lon="148.4363578"/>
+      <trkpt lat="-9.1292096" lon="148.4362298"/>
+      <trkpt lat="-9.1291092" lon="148.4360815"/>
+      <trkpt lat="-9.1290617" lon="148.4359221"/>
+      <trkpt lat="-9.1290845" lon="148.4357708"/>
+      <trkpt lat="-9.1291643" lon="148.4356223"/>
+      <trkpt lat="-9.1292421" lon="148.4354735"/>
+      <trkpt lat="-9.1292786" lon="148.4353216"/>
+      <trkpt lat="-9.1293150" lon="148.4352734"/>
+      <trkpt lat="-9.1293801" lon="148.4353249"/>
+      <trkpt lat="-9.1294247" lon="148.4354559"/>
+      <trkpt lat="-9.1294305" lon="148.4355350"/>
+      <trkpt lat="-9.1294536" lon="148.4355858"/>
+      <trkpt lat="-9.1295336" lon="148.4356474"/>
+      <trkpt lat="-9.1296357" lon="148.4357676"/>
+      <trkpt lat="-9.1297149" lon="148.4359209"/>
+      <trkpt lat="-9.1297989" lon="148.4360770"/>
+      <trkpt lat="-9.1298971" lon="148.4362283"/>
+      <trkpt lat="-9.1299809" lon="148.4363841"/>
+      <trkpt lat="-9.1300443" lon="148.4365469"/>
+      <trkpt lat="-9.1300651" lon="148.4367035"/>
+      <trkpt lat="-9.1300517" lon="148.4368533"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1301167" lon="148.4385017"/>
+      <trkpt lat="-9.1301581" lon="148.4384945"/>
+      <trkpt lat="-9.1301447" lon="148.4384878"/>
+      <trkpt lat="-9.1300767" lon="148.4384817"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1301117" lon="148.4386300"/>
+      <trkpt lat="-9.1299797" lon="148.4385744"/>
+      <trkpt lat="-9.1299066" lon="148.4384570"/>
+      <trkpt lat="-9.1299412" lon="148.4383401"/>
+      <trkpt lat="-9.1300286" lon="148.4383206"/>
+      <trkpt lat="-9.1301244" lon="148.4384203"/>
+      <trkpt lat="-9.1301495" lon="148.4385336"/>
+      <trkpt lat="-9.1301117" lon="148.4386233"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1300683" lon="148.4384617"/>
+      <trkpt lat="-9.1300082" lon="148.4383322"/>
+      <trkpt lat="-9.1299646" lon="148.4383053"/>
+      <trkpt lat="-9.1299742" lon="148.4383678"/>
+      <trkpt lat="-9.1300102" lon="148.4384834"/>
+      <trkpt lat="-9.1300088" lon="148.4385281"/>
+      <trkpt lat="-9.1299333" lon="148.4385150"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1299267" lon="148.4384167"/>
+      <trkpt lat="-9.1300216" lon="148.4383450"/>
+      <trkpt lat="-9.1301190" lon="148.4383681"/>
+      <trkpt lat="-9.1301615" lon="148.4384690"/>
+      <trkpt lat="-9.1301167" lon="148.4385767"/>
+    </trkseg>
+  </trk>
+</gpx>

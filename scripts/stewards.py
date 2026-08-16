@@ -19,8 +19,8 @@ archive was collated and delivered, which the field team confirmed, and every
 file in a delivery carries the same one.
 
 Usage:
-    python scripts/walkers.py
-    python scripts/walkers.py --report output/walkers/WALKER_DAYS.md
+    python scripts/stewards.py
+    python scripts/stewards.py --report output/stewards/STEWARD_DAYS.md
 """
 
 from __future__ import annotations
@@ -60,27 +60,27 @@ def track_date(row: pd.Series) -> str | None:
 
 
 def build(tracks: gpd.GeoDataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Per walker-day, and per walker: distance and days on the ground."""
+    """Per steward-day, and per steward: distance and days on the ground."""
     frame = tracks.to_crs(dataio.METRIC_CRS).copy()
     frame["date"] = frame.apply(track_date, axis=1)
     frame["km"] = frame.geometry.length / 1000
-    frame["custodian"] = frame["custodian"].astype(str).str.strip()
-    frame.loc[frame.custodian.isin(["", "nan", "None"]), "custodian"] = "unnamed"
+    frame["steward"] = frame["steward"].astype(str).str.strip()
+    frame.loc[frame.steward.isin(["", "nan", "None"]), "steward"] = "unnamed"
 
-    days = (frame.groupby(["custodian", "zone", "clan", "date"], dropna=False)
+    days = (frame.groupby(["steward", "zone", "clan", "date"], dropna=False)
             .agg(tracks=("km", "size"), km=("km", "sum"))
             .reset_index()
-            .sort_values(["custodian", "date"]))
+            .sort_values(["steward", "date"]))
     days["km"] = days["km"].round(2)
 
     boundary = frame[frame.feature_type == smooth_tracks.BOUNDARY_TYPE]
-    boundary_km = boundary.groupby("custodian")["km"].sum()
+    boundary_km = boundary.groupby("steward")["km"].sum()
 
     people = []
-    for custodian, group in frame.groupby("custodian"):
+    for steward, group in frame.groupby("steward"):
         dated = group[group.date.notna()]
         people.append({
-            "custodian": custodian,
+            "steward": steward,
             "zones": ", ".join(sorted(set(group.zone.dropna()))),
             "clans": ", ".join(sorted({c for c in group.clan.astype(str)
                                        if c.strip() and c != "nan"})),
@@ -90,14 +90,14 @@ def build(tracks: gpd.GeoDataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
             "first": dated.date.min() if len(dated) else None,
             "last": dated.date.max() if len(dated) else None,
             "km": round(group.km.sum(), 2),
-            "boundary_km": round(float(boundary_km.get(custodian, 0.0)), 2),
+            "boundary_km": round(float(boundary_km.get(steward, 0.0)), 2),
             "km_per_day": round(group.km.sum() / dated.date.nunique(), 2)
             if dated.date.nunique() else None,
         })
-    walkers = (pd.DataFrame(people)
-               .sort_values(["zones", "custodian"])
+    stewards = (pd.DataFrame(people)
+               .sort_values(["zones", "steward"])
                .reset_index(drop=True))
-    return walkers, days
+    return stewards, days
 
 
 def _records(frame: pd.DataFrame) -> list[dict]:
@@ -137,7 +137,7 @@ def main(argv: list[str] | None = None) -> int:
                         default=dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg")
     parser.add_argument("--layer", default=smooth_tracks.SMOOTHED_LAYER)
     parser.add_argument("--out-dir", type=Path,
-                        default=dataio.OUT_DIR / "walkers")
+                        default=dataio.OUT_DIR / "stewards")
     parser.add_argument("--report", type=Path, default=None)
     args = parser.parse_args(argv)
 
@@ -146,37 +146,37 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     tracks = gpd.read_file(args.gpkg, layer=args.layer)
-    walkers, days = build(tracks)
+    stewards, days = build(tracks)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    walkers.to_csv(args.out_dir / "walkers.csv", index=False)
-    days.to_csv(args.out_dir / "walker_days.csv", index=False)
-    (args.out_dir / "walkers.json").write_text(
-        json.dumps({"walkers": _records(walkers), "days": _records(days)},
+    stewards.to_csv(args.out_dir / "stewards.csv", index=False)
+    days.to_csv(args.out_dir / "steward_days.csv", index=False)
+    (args.out_dir / "stewards.json").write_text(
+        json.dumps({"stewards": _records(stewards), "days": _records(days)},
                    indent=1),
         encoding="utf-8")
 
     dated = days[days.date.notna()]
-    print(f"{len(walkers)} walker(s), "
+    print(f"{len(stewards)} steward(s), "
           f"{dated.date.nunique()} distinct day(s) on the ground, "
-          f"{int(dated.groupby(['custodian', 'date']).ngroups)} walker-days")
+          f"{int(dated.groupby(['steward', 'date']).ngroups)} steward-days")
     print(f"  recorded {dated.date.min()} to {dated.date.max()}")
-    print(f"  {walkers.km.sum():,.0f} km walked, "
-          f"{walkers.boundary_km.sum():,.0f} km of it on land boundaries")
-    undated = int(walkers.undated_tracks.sum())
+    print(f"  {stewards.km.sum():,.0f} km walked, "
+          f"{stewards.boundary_km.sum():,.0f} km of it on land boundaries")
+    undated = int(stewards.undated_tracks.sum())
     if undated:
         print(f"  {undated} track(s) carry no recoverable date")
-    print(f"\nWrote {args.out_dir}/walkers.csv, walker_days.csv, walkers.json")
+    print(f"\nWrote {args.out_dir}/stewards.csv, steward_days.csv, stewards.json")
 
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(
             "# Who walked, and when\n\n"
-            f"{len(walkers)} custodians, {int(dated.groupby(['custodian', 'date']).ngroups):,} "
-            f"walker-days between {dated.date.min()} and {dated.date.max()}.\n\n"
+            f"{len(stewards)} stewards, {int(dated.groupby(['steward', 'date']).ngroups):,} "
+            f"steward-days between {dated.date.min()} and {dated.date.max()}.\n\n"
             "Dates are taken from the GPS record, not from file names.\n\n"
-            "## By walker\n\n" + _markdown(walkers)
-            + "\n\n## Every walker-day\n\n" + _markdown(days) + "\n",
+            "## By steward\n\n" + _markdown(stewards)
+            + "\n\n## Every steward-day\n\n" + _markdown(days) + "\n",
             encoding="utf-8")
         print(f"Wrote {args.report}")
     return 0

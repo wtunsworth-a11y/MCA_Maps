@@ -99,19 +99,19 @@ on the 600 features that carry it in the source.
 
 ### 4.3 Reading metadata from file names (`scripts/clans.py`)
 
-The zone, clan and custodian are encoded in file names, not in the data. Two
+The zone, clan and steward are encoded in file names, not in the data. Two
 conventions are in use, and both place the clan name beside the word "clan",
 so that word anchors the parse:
 
 ```
 Jethro_Akse_Asingi_Clan_Land_Boundary_Zone_2_14July2026
-└─ custodian ─┘ └clan┘                  └zone┘ └─ date ─┘
+└─ steward ─┘ └clan┘                  └zone┘ └─ date ─┘
 
 manuvoora_clan_egobeyas_kuarisi_tracks_zone_6
-└─ clan ─┘     └─── custodian ────┘     └zone┘
+└─ clan ─┘     └─── steward ────┘     └zone┘
 ```
 
-Which side holds the custodian is decided by whether any real name survives
+Which side holds the steward is decided by whether any real name survives
 after the anchor once structural words are removed. Clan names of two words
 ("Nupa Ora") are preserved — taking only the token adjacent to the anchor
 truncated them in an earlier version.
@@ -122,9 +122,9 @@ archive they arrived in**, which is authoritative.
 Parsing reads the *original file stem*, not the layer name. Layer names are
 truncated to 60 characters for GeoPackage table limits, which in one case cut
 `14July2026` to `14July20`; the date regex then missed it and the fragment was
-mistaken for part of a custodian's name.
+mistaken for part of a steward's name.
 
-Derived attributes on every feature: `clan`, `custodian`, `zone`,
+Derived attributes on every feature: `clan`, `steward`, `zone`,
 `feature_type`, `survey_date`, `source_name`.
 
 Dates with a two-digit year are reported as the raw text rather than having a
@@ -145,7 +145,7 @@ This takes the distinct clan count from 48 to **46**.
 
 **Survey composition after parsing:**
 
-| Zone | Clans | Custodians | Surveys | Tracks | Length (km) |
+| Zone | Clans | Clan Stewards | Surveys | Tracks | Length (km) |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Zone 2 | 15 | 18 | 20 | 203 | 320.5 |
 | Zone 3 | 4 | 8 | 8 | 17 | 48.7 |
@@ -304,7 +304,7 @@ closed boundary at this tolerance.
 
 **The seven closed boundaries:**
 
-| Zone | Clan | Custodian | Walked (km) | Area (ha) |
+| Zone | Clan | Clan Steward | Walked (km) | Area (ha) |
 | --- | --- | --- | ---: | ---: |
 | Zone 2 | Sukandi | Rodney Ajinko | 29.09 | 1,901.4 |
 | Zone 7B | Wohukol | Darline Walele | 17.10 | 308.6 |
@@ -317,7 +317,7 @@ closed boundary at this tolerance.
 **The seven near closures**, smallest gap first — these are the surveys where a
 short additional walk would complete a boundary:
 
-| Zone | Clan | Custodian | Walked (km) | Gap (m) | Gap % |
+| Zone | Clan | Clan Steward | Walked (km) | Gap (m) | Gap % |
 | --- | --- | --- | ---: | ---: | ---: |
 | Zone 8 | Gubai | Kenny Noi | 91.86 | 4,911 | 5.3 |
 | Zone 8 | Dusi | Max Mamo | 32.95 | 1,888 | 6.3 |
@@ -349,7 +349,7 @@ boundary anyone has agreed to** and must not be presented as one.
 An inferred polygon's outline is part walked line and part straight line. The
 straight parts are **not boundary and are never presented as such**. They mark
 where the receiver was switched off at the end of one walk and switched on
-again somewhere else; the walker did not fly across the landscape, they walked
+again somewhere else; the steward did not fly across the landscape, they walked
 away and came back another day.
 
 They are therefore:
@@ -419,7 +419,7 @@ sum. Each parcel is drawn on the maps and carried into QGIS.
 
 This was not free. An earlier version took the largest polygon only, and
 Wohukol lost an entire northern parcel to it. The loss looked like joining
-walkers being harmful when it was in fact this function throwing ground away.
+stewards being harmful when it was in fact this function throwing ground away.
 
 Parcels smaller than **2% of the clan's largest** are dropped: at that size a
 loop is a track crossing itself, not a holding. The threshold is a floor on
@@ -446,7 +446,7 @@ mapped area is inferred**; only 2,542 ha rests on boundaries that actually
 close, and 26% of the total outline drawn is straight line nobody walked.
 
 **Mapped area by zone**, counted per clan-within-zone (§4.7) rather than per
-file, so a clan walked by several custodians appears once:
+file, so a clan walked by several stewards appears once:
 
 | Zone | Boundaries | of which surveyed | Area (ha) |
 | --- | ---: | ---: | ---: |
@@ -665,7 +665,7 @@ This sets the rule for overlaps generally (§6.8).
 Three surveys are not clan land boundaries but are being processed as though
 they were:
 
-| Type | Zone | Custodian | Tracks | Length | Polygon built |
+| Type | Zone | Clan Steward | Tracks | Length | Polygon built |
 | --- | --- | --- | ---: | ---: | --- |
 | Road | 7A | Paul Digori | 13 | 4.3 km | none |
 | Sacred Site | 2 | Millinton Beso | 3 | 10.6 km | 466.5 ha, inferred |
@@ -867,12 +867,12 @@ lines, vegetation changes — cannot be determined from a DEM.
 
 ### 4.12 Clans tested separately and combined (`clan_combine.py`)
 
-A clan walked by several custodians may be several independent accounts of one
-boundary, or one boundary split between walkers. The two need opposite
+A clan walked by several stewards may be several independent accounts of one
+boundary, or one boundary split between stewards. The two need opposite
 treatment, so every multi-survey clan is assessed both ways.
 
 The discriminator is **duplication**: the share of walked distance running
-within 20 m of another custodian's track. It separates the two populations
+within 20 m of another steward's track. It separates the two populations
 cleanly, and the outcome follows it:
 
 | Duplication | Reading | Effect of combining |
@@ -887,7 +887,7 @@ that no separate survey yields. Mariura is a caution: 100% duplication yet
 +855 ha, which is a false positive of the kind the duplication figure exists to
 catch.
 
-### 4.13 Who walked, and when (`scripts/walkers.py`)
+### 4.13 Who walked, and when (`scripts/stewards.py`)
 
 The record of the work, kept apart from the record of the land. Every figure
 comes from the GPS, not from a file name.
@@ -908,26 +908,62 @@ carries the same one, so it says nothing about when a boundary was walked.
 Two limits worth stating. A track is dated by when it was **created**, so a
 walk running past midnight is counted entirely on the day it began. And the
 distance is measured along the smoothed track, which is the ground the
-receiver recorded, not the distance the walker's legs covered — in this
+receiver recorded, not the distance the steward's legs covered — in this
 terrain the latter is materially greater.
 
-Current record: **67 custodians, 233 walker-days across 118 distinct days on
+Current record: **67 stewards, 233 steward-days across 118 distinct days on
 the ground**, between 2025-02-18 and 2026-08-13, covering 1,113 km. Seven
-walker-days record more than 25 km, which is a long way on foot here; those
+steward-days record more than 25 km, which is a long way on foot here; those
 are listed as queries rather than assumed wrong, since the two ordinary
 explanations — a receiver left running during vehicle travel, or one track
 saved across more than one day — can only be settled on site.
 
-### 4.14 Documents, and how they are versioned (`scripts/build_reports.py`)
+### 4.14 Giving the survey back (`scripts/clan_gpx.py`)
+
+One GPX file per clan, written to `output/gpx/`, for the Clan Stewards who
+walked it to load onto the phone or handheld they mapped with. The point is
+that a steward should be able to see on the ground what the office sees.
+
+Each file holds three kinds of thing, kept apart deliberately:
+
+| In the file | Named | What it is |
+| --- | --- | --- |
+| Track per steward | `Tuoko - Kaupa Dota` | What was walked, after smoothing |
+| Track per gap | `GAP 3 OF 8 - NOT WALKED - 2.31 km` | The straight line between two loose ends |
+| Waypoint pair per gap | `GAP 3 OF 8 START` / `... END` | Where the walking stopped, to navigate to |
+
+The waypoints are the useful part. A gap drawn as a line tells a steward that
+something is missing; a waypoint lets them go to the exact spot and carry on.
+Every gap track and waypoint carries the same description in full: *this
+straight line is not a boundary — it joins the two ends so the shape can be
+closed on paper*.
+
+**Gaps under 100 m (`--min-gap`) are not marked.** Two track ends that close
+are the same place to anyone standing there, and sending a steward to walk
+30 m they have already walked wastes their time while burying the gaps that
+matter. Of 221 joins in the current data, 186 clear 100 m, and those account
+for 266.6 km of the 268.3 km.
+
+That 266.6 km is larger than the 169.7 km of bridges in the polygon layer
+(§4.8), and deliberately so: the polygon layer holds only the surveys complete
+enough to give an area, while a clan whose walk is too open for that still
+needs to know where its gaps are — arguably more than anyone.
+
+Files are GPX 1.1, element order validated (metadata, waypoints, then tracks),
+and pass through `dataio.publishable()` like every other shared output, so no
+sacred site appears in one.
+
+### 4.15 Documents, and how they are versioned (`scripts/build_reports.py`)
 
 Two Word documents are generated, both from `output/report/*.json` and
 nothing else, so a figure in the text and a figure on a map cannot drift
 apart — they come from the same run:
 
-| Document | Contents |
+| Deliverable | Contents |
 | --- | --- |
 | `Managalas_Clan_Land_Mapping_v<version>_<date>.docx` | Results, a page per clan, queries per clan |
-| `Managalas_Walker_Days_v<version>_<date>.docx` | Who walked, on which days, how far |
+| `Managalas_Steward_Days_v<version>_<date>.docx` | Who walked, on which days, how far |
+| `output/gpx/<Clan>_<Zone>.gpx` | The survey back to the clan, gaps marked (§4.14) |
 
 The version lives in `docs/VERSION` and is bumped when the content changes
 materially; the date moves on its own. Both appear in the file name, on the
@@ -1054,7 +1090,7 @@ area. Anything unexplained is reported as a **LOSS** and the run **exits
 non-zero**, so a silent drop cannot pass unnoticed between rounds. Invalid or
 null geometries in the output are treated the same way.
 
-New zones, clans and custodians need no configuration: they are read from the
+New zones, clans and stewards need no configuration: they are read from the
 file names. Two things will need a human on each new round — confirming any
 newly flagged clan-name similarities (§6.2), and answering the new queries in
 `output/queries/`.
@@ -1116,12 +1152,12 @@ is more useful for them, not less.
 
 **Ethics and consent are not addressed at all.** This is the significant gap.
 The data records *who holds which land*, by name, for 46 clans and 67 named
-custodians, including sacred sites whose locations are given precisely. Before
+stewards, including sacred sites whose locations are given precisely. Before
 any of it is published:
 
 - On what basis was the survey data collected, and does that basis extend to
   publication?
-- Have the clans and custodians consented to their boundaries, names and land
+- Have the clans and stewards consented to their boundaries, names and land
   areas appearing in a paper?
 - **Sacred sites need separate consideration.** Publishing precise locations of
   sites of cultural significance may be actively harmful, and is a different

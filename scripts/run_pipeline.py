@@ -149,7 +149,9 @@ def main(argv: list[str] | None = None) -> int:
                          "--map", "output/areas_mapped.png"]),
         # No --out: sacred site geometry is not written to a shareable file.
         ("sacred_sites.py", ["--report", "output/sacred_sites.md"]),
-        ("walkers.py", ["--report", "output/walkers/WALKER_DAYS.md"]),
+        ("stewards.py", ["--report", "output/stewards/STEWARD_DAYS.md"]),
+        # The survey going home: one GPX per clan, with its gaps marked.
+        ("clan_gpx.py", []),
         ("queries.py", []),
     ]
     if not args.skip_maps:

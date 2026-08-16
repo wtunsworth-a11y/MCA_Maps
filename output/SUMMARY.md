@@ -13,7 +13,7 @@ area aside.
 | | |
 | --- | ---: |
 | Clans with data | **47** |
-| Custodians who walked | 67 |
+| Stewards who walked | 67 |
 | Surveys | 69 |
 | Zones | 6 (2, 3, 6, 7A, 7B, 8) |
 | Distance walked | 1,113 km |

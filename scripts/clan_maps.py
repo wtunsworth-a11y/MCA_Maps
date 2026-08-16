@@ -6,10 +6,10 @@ page without a picture is not much use in a discussion under a tree.
 
 Each map shows:
 
-* every custodian's walk in its own colour, and the area that walk gives on
+* every steward's walk in its own colour, and the area that walk gives on
   its own (dashed);
 * the survey those walks combine into, outlined in a **dotted** line — dotted
-  so it never covers the walkers' own lines, which is the data;
+  so it never covers the stewards' own lines, which is the data;
 * every stretch of that outline **nobody walked**, in pink. These are where
   the receiver was switched off at the end of one walk and on again somewhere
   else; the straight line across is this pipeline's guess, not a boundary,
@@ -23,7 +23,7 @@ survey that is in most cases simply unfinished. What two surveys share is
 reported in a table, where it can be read with the figure for how much of
 each boundary has yet to be walked.
 
-Walkers of a clan are joined into a single survey, which is right when they
+Stewards of a clan are joined into a single survey, which is right when they
 each walked a different stretch of one boundary. Where instead they each
 walked the whole ring, joining can produce a *smaller* area than either walk
 gave alone — the two rings cross, and the largest polygon the combined network
@@ -34,7 +34,7 @@ Output: output/clans/<clan>.png, plus a table of what joining gained or cost.
 
 Usage:
     python scripts/clan_maps.py
-    python scripts/clan_maps.py --multi-walker-only
+    python scripts/clan_maps.py --multi-steward-only
 """
 
 from __future__ import annotations
@@ -58,18 +58,18 @@ import dataio  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
 import terrain  # noqa: E402
 
-# No red among the walkers: red is the contested ground and pink is the line
-# nobody walked, and a walker's line must not be confused with either.
-WALKER_COLOURS = ["#2563eb", "#059669", "#d97706", "#7c3aed", "#0891b2",
+# No red among the stewards: red is the contested ground and pink is the line
+# nobody walked, and a steward's line must not be confused with either.
+STEWARD_COLOURS = ["#2563eb", "#059669", "#d97706", "#7c3aed", "#0891b2",
                   "#4d7c0f"]
 BRIDGE_COLOUR = "#db2777"
-# Dotted, not solid: a solid outline at the same weight as a walker's line
-# hides the walker's line underneath it, which is exactly the data the map
+# Dotted, not solid: a solid outline at the same weight as a steward's line
+# hides the steward's line underneath it, which is exactly the data the map
 # exists to show.
 JOINED_STYLE = dict(linestyle=(0, (1.5, 3.5)), linewidth=1.7,
                     edgecolor="#111827")
-# Drawn *under* the walkers' lines: where the joined survey follows a walk,
-# the walker's colour should win, and the dotted black should only be visible
+# Drawn *under* the stewards' lines: where the joined survey follows a walk,
+# the steward's colour should win, and the dotted black should only be visible
 # where the survey bridges ground nobody walked. That is the honest reading.
 JOINED_ZORDER = 3.5
 
@@ -92,7 +92,7 @@ def assess(group: gpd.GeoDataFrame, tolerance: float, min_enclosure: float,
                                              min_enclosure, max_spur)
         usable = built and (built["basis"] == "surveyed"
                             or built["gap_pct"] <= max_gap * 100)
-        separate[walk.custodian.iloc[0]] = {
+        separate[walk.steward.iloc[0]] = {
             "geometry": built["geometry"] if usable else None,
             "area_ha": built["area_ha"] if usable else 0.0,
             "basis": built["basis"] if built else None,
@@ -283,17 +283,17 @@ def render(clan: str, group: gpd.GeoDataFrame, result: dict,
                                 edgecolor="none", alpha=0.65))
 
     # Each walk's own area, outlined so overlapping ones stay readable.
-    for index, (custodian, info) in enumerate(sorted(result["separate"].items())):
-        colour = WALKER_COLOURS[index % len(WALKER_COLOURS)]
+    for index, (steward, info) in enumerate(sorted(result["separate"].items())):
+        colour = STEWARD_COLOURS[index % len(STEWARD_COLOURS)]
         if info["geometry"] is not None:
             gpd.GeoSeries([info["geometry"]], crs=dataio.METRIC_CRS).plot(
                 ax=axis, facecolor=colour, edgecolor=colour, alpha=0.16,
                 linewidth=1.6, linestyle="--", zorder=2)
-        walk = group[group.custodian == custodian]
+        walk = group[group.steward == steward]
         walk.plot(ax=axis, color=colour, linewidth=1.6, zorder=4)
         handles.append(Line2D(
             [0], [0], color=colour, lw=2,
-            label=f"{custodian} — {info['walked_km']:.1f} km, "
+            label=f"{steward} — {info['walked_km']:.1f} km, "
                   + (f"{info['area_ha']:,.0f} ha alone"
                      if info["area_ha"] else "no area alone")))
 
@@ -362,13 +362,13 @@ def _headline(result: dict, near: list[dict], overlap_tolerance: float,
     says *incomplete*, which is what it is; the neighbours' names are on the
     map, and what the two surveys share is in the table.
     """
-    walkers = len(result["separate"])
-    who = "1 walker" if walkers == 1 else f"{walkers} walkers"
+    stewards = len(result["separate"])
+    who = "1 steward" if stewards == 1 else f"{stewards} stewards"
 
     if not result["joined_ha"]:
         line = (f"{who} — survey incomplete: the walk does not yet close, and "
                 "too much is missing to give an area")
-    elif walkers < 2:
+    elif stewards < 2:
         line = f"{who}, {result['joined_ha']:,.0f} ha"
     else:
         change = result["joined_ha"] - result["separate_ha"]
@@ -411,9 +411,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-gap", type=float, default=0.50)
     parser.add_argument("--overlap-tolerance", type=float,
                         default=polygon_tools.OVERLAP_TOLERANCE_M)
-    parser.add_argument("--multi-walker-only", action="store_true",
+    parser.add_argument("--multi-steward-only", action="store_true",
                         help="map only the clans walked by more than one "
-                             "custodian (the joining comparison alone)")
+                             "steward (the joining comparison alone)")
     args = parser.parse_args(argv)
 
     if not args.gpkg.exists():
@@ -441,8 +441,8 @@ def main(argv: list[str] | None = None) -> int:
 
     rows = []
     for unit, group in tracks.groupby("unit", sort=True):
-        walkers = group.custodian.nunique()
-        if walkers < 2 and args.multi_walker_only:
+        stewards = group.steward.nunique()
+        if stewards < 2 and args.multi_steward_only:
             continue
         clan = group.clan.iloc[0]
         result = assess(group, args.tolerance, args.min_enclosure,
@@ -455,7 +455,7 @@ def main(argv: list[str] | None = None) -> int:
         render(clan, group, result, path, near, args.overlap_tolerance,
                alongside)
         rows.append({
-            "clan": clan, "zone": group.zone.iloc[0], "walkers": walkers,
+            "clan": clan, "zone": group.zone.iloc[0], "stewards": stewards,
             "walked_km": round(group.geometry.length.sum() / 1000, 2),
             "separate_ha": round(result["separate_ha"], 1),
             "joined_ha": round(result["joined_ha"], 1),
@@ -464,16 +464,16 @@ def main(argv: list[str] | None = None) -> int:
             "alongside": ", ".join(sorted(alongside)),
             "map": path.name,
         })
-        print(f"  {clan}: {walkers} walker(s), "
+        print(f"  {clan}: {stewards} steward(s), "
               f"{result['joined_ha']:,.0f} ha, {len(near)} neighbour(s), "
               f"{len(alongside)} line(s) alongside")
 
     table = pd.DataFrame(rows).sort_values("change_ha")
     table.to_csv(args.out_dir / "joining_effect.csv", index=False)
-    multi = table[table.walkers > 1]
+    multi = table[table.stewards > 1]
     harmed = multi[multi.change_ha < -1]
     print(f"\n{len(table)} map(s) written to {args.out_dir}")
-    print(f"  {len(multi)} clan(s) walked by more than one custodian")
+    print(f"  {len(multi)} clan(s) walked by more than one steward")
     print(f"  joining costs area for {len(harmed)}, "
           f"totalling {abs(harmed.change_ha.sum()):,.0f} ha")
     print(f"  joining gains area for {(multi.change_ha > 1).sum()}")

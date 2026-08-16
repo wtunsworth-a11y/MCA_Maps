@@ -4,7 +4,7 @@ Clipped to within 10 km of the MCA boundary, resampled to one point every 20 m, 
 
 Raw length 1,327.2 km → smoothed 1,112.9 km (-16.1%).
 
-| Zone | Clans | Custodians | Surveys | Tracks | Walked (km) | Boundary (km) |
+| Zone | Clans | Stewards | Surveys | Tracks | Walked (km) | Boundary (km) |
 | --- | --- | --- | --- | --- | --- | --- |
 | Zone 2 | 15 | 18 | 20 | 203 | 320.5 | 257.4 |
 | Zone 3 | 4 | 8 | 8 | 17 | 48.7 | 42.0 |

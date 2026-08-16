@@ -1,0 +1,2749 @@
+{
+ "stewards": [
+  {
+   "steward": "Abel Kajari",
+   "zones": "Zone 2",
+   "clans": "Bujevi",
+   "tracks": 2,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-02-08",
+   "last": "2026-02-09",
+   "km": 5.76,
+   "boundary_km": 5.76,
+   "km_per_day": 2.88
+  },
+  {
+   "steward": "Ananias Masua",
+   "zones": "Zone 2",
+   "clans": "Kasaki",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2026-02-05",
+   "last": "2026-02-05",
+   "km": 15.13,
+   "boundary_km": 15.13,
+   "km_per_day": 15.13
+  },
+  {
+   "steward": "Christoper Visua",
+   "zones": "Zone 2",
+   "clans": "Nituri",
+   "tracks": 19,
+   "days": 7,
+   "undated_tracks": 0,
+   "first": "2025-05-11",
+   "last": "2026-02-11",
+   "km": 17.83,
+   "boundary_km": 17.83,
+   "km_per_day": 2.55
+  },
+  {
+   "steward": "Gasper K Philip J",
+   "zones": "Zone 2",
+   "clans": "Juaiko",
+   "tracks": 10,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2025-04-22",
+   "last": "2025-04-28",
+   "km": 24.3,
+   "boundary_km": 24.3,
+   "km_per_day": 4.86
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zones": "Zone 2",
+   "clans": "Asoro, Majanko, Manoko",
+   "tracks": 21,
+   "days": 7,
+   "undated_tracks": 0,
+   "first": "2025-08-31",
+   "last": "2026-02-26",
+   "km": 42.49,
+   "boundary_km": 42.49,
+   "km_per_day": 6.07
+  },
+  {
+   "steward": "Graham Naopi",
+   "zones": "Zone 2",
+   "clans": "Nituri",
+   "tracks": 7,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-11-27",
+   "last": "2026-02-09",
+   "km": 18.7,
+   "boundary_km": 18.7,
+   "km_per_day": 6.23
+  },
+  {
+   "steward": "Humphrey Poto",
+   "zones": "Zone 2",
+   "clans": "Rondi",
+   "tracks": 29,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2025-04-25",
+   "last": "2025-04-29",
+   "km": 29.31,
+   "boundary_km": 29.31,
+   "km_per_day": 5.86
+  },
+  {
+   "steward": "Jefferson Amunisa",
+   "zones": "Zone 2",
+   "clans": "Rondi",
+   "tracks": 28,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2025-04-25",
+   "last": "2025-04-29",
+   "km": 29.66,
+   "boundary_km": 29.66,
+   "km_per_day": 5.93
+  },
+  {
+   "steward": "Jethro Akse",
+   "zones": "Zone 2",
+   "clans": "Asingi",
+   "tracks": 5,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2025-02-18",
+   "last": "2026-02-05",
+   "km": 6.43,
+   "boundary_km": 6.43,
+   "km_per_day": 1.29
+  },
+  {
+   "steward": "Joel Mamata",
+   "zones": "Zone 2",
+   "clans": "Rumbi",
+   "tracks": 9,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2025-04-15",
+   "last": "2025-04-28",
+   "km": 15.07,
+   "boundary_km": 15.07,
+   "km_per_day": 3.01
+  },
+  {
+   "steward": "Kaupa Dota",
+   "zones": "Zone 2",
+   "clans": "Tuoko",
+   "tracks": 6,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-02-24",
+   "last": "2025-12-09",
+   "km": 11.21,
+   "boundary_km": 11.21,
+   "km_per_day": 3.74
+  },
+  {
+   "steward": "Lance Sake",
+   "zones": "Zone 2",
+   "clans": "Gariniko",
+   "tracks": 6,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-11-28",
+   "last": "2026-02-07",
+   "km": 10.08,
+   "boundary_km": 10.08,
+   "km_per_day": 3.36
+  },
+  {
+   "steward": "Millinton Beso",
+   "zones": "Zone 2",
+   "clans": "Sukandi",
+   "tracks": 3,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2025-04-24",
+   "last": "2025-04-25",
+   "km": 10.6,
+   "boundary_km": 0.0,
+   "km_per_day": 5.3
+  },
+  {
+   "steward": "Nehemiah Nindori",
+   "zones": "Zone 2",
+   "clans": "Murai (Z2)",
+   "tracks": 32,
+   "days": 6,
+   "undated_tracks": 0,
+   "first": "2025-11-27",
+   "last": "2026-02-17",
+   "km": 7.33,
+   "boundary_km": 7.33,
+   "km_per_day": 1.22
+  },
+  {
+   "steward": "Newton Muraba",
+   "zones": "Zone 2",
+   "clans": "Nituri",
+   "tracks": 13,
+   "days": 6,
+   "undated_tracks": 0,
+   "first": "2025-11-27",
+   "last": "2026-02-16",
+   "km": 5.3,
+   "boundary_km": 5.3,
+   "km_per_day": 0.88
+  },
+  {
+   "steward": "Rodney Ajinko",
+   "zones": "Zone 2",
+   "clans": "Sukandi",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2025-04-24",
+   "last": "2025-04-24",
+   "km": 29.09,
+   "boundary_km": 29.09,
+   "km_per_day": 29.09
+  },
+  {
+   "steward": "Sylvester Anai",
+   "zones": "Zone 2",
+   "clans": "Zambiko",
+   "tracks": 8,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-11-27",
+   "last": "2026-02-12",
+   "km": 5.67,
+   "boundary_km": 5.67,
+   "km_per_day": 1.89
+  },
+  {
+   "steward": "Terrence Dobija",
+   "zones": "Zone 2",
+   "clans": "Tuoko",
+   "tracks": 3,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-08-31",
+   "last": "2025-12-09",
+   "km": 36.51,
+   "boundary_km": 36.51,
+   "km_per_day": 12.17
+  },
+  {
+   "steward": "Anthony Irimari",
+   "zones": "Zone 3",
+   "clans": "Deari",
+   "tracks": 2,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-06-09",
+   "last": "2026-06-15",
+   "km": 5.29,
+   "boundary_km": 5.29,
+   "km_per_day": 2.65
+  },
+  {
+   "steward": "Bobby Aneba",
+   "zones": "Zone 3",
+   "clans": "Nui",
+   "tracks": 3,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-06-09",
+   "last": "2026-06-15",
+   "km": 11.45,
+   "boundary_km": 11.45,
+   "km_per_day": 5.73
+  },
+  {
+   "steward": "Eddie Sioro",
+   "zones": "Zone 3",
+   "clans": "Giroiko",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2026-06-11",
+   "last": "2026-06-11",
+   "km": 2.67,
+   "boundary_km": 2.67,
+   "km_per_day": 2.67
+  },
+  {
+   "steward": "Gray Saui",
+   "zones": "Zone 3",
+   "clans": "Gumuri",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2026-06-15",
+   "last": "2026-06-15",
+   "km": 6.77,
+   "boundary_km": 6.77,
+   "km_per_day": 6.77
+  },
+  {
+   "steward": "Iman Nakina",
+   "zones": "Zone 3",
+   "clans": "Nui",
+   "tracks": 4,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-06-09",
+   "last": "2026-06-15",
+   "km": 11.97,
+   "boundary_km": 11.97,
+   "km_per_day": 5.98
+  },
+  {
+   "steward": "Mark Samba",
+   "zones": "Zone 3",
+   "clans": "Giroiko",
+   "tracks": 2,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2026-06-11",
+   "last": "2026-06-11",
+   "km": 2.76,
+   "boundary_km": 2.76,
+   "km_per_day": 2.76
+  },
+  {
+   "steward": "Monty Stanford",
+   "zones": "Zone 3",
+   "clans": "Gumuri",
+   "tracks": 1,
+   "days": 0,
+   "undated_tracks": 1,
+   "first": null,
+   "last": null,
+   "km": 0.02,
+   "boundary_km": 0.02,
+   "km_per_day": null
+  },
+  {
+   "steward": "Patrick Dirise",
+   "zones": "Zone 3",
+   "clans": "Deari",
+   "tracks": 3,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-06-09",
+   "last": "2026-06-15",
+   "km": 7.79,
+   "boundary_km": 7.79,
+   "km_per_day": 3.9
+  },
+  {
+   "steward": "Alban Ezekiel",
+   "zones": "Zone 6",
+   "clans": "Pina Ora",
+   "tracks": 3,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2026-06-23",
+   "last": "2026-06-25",
+   "km": 18.85,
+   "boundary_km": 18.85,
+   "km_per_day": 6.28
+  },
+  {
+   "steward": "Benjamin Marijah",
+   "zones": "Zone 6",
+   "clans": "Nupa Ora",
+   "tracks": 3,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2026-06-18",
+   "last": "2026-06-25",
+   "km": 4.94,
+   "boundary_km": 4.94,
+   "km_per_day": 1.65
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zones": "Zone 6",
+   "clans": "Manuvoora",
+   "tracks": 18,
+   "days": 11,
+   "undated_tracks": 0,
+   "first": "2026-06-18",
+   "last": "2026-07-26",
+   "km": 31.22,
+   "boundary_km": 31.22,
+   "km_per_day": 2.84
+  },
+  {
+   "steward": "Fabian Justin",
+   "zones": "Zone 6",
+   "clans": "Mariura",
+   "tracks": 22,
+   "days": 6,
+   "undated_tracks": 0,
+   "first": "2026-06-26",
+   "last": "2026-07-09",
+   "km": 17.85,
+   "boundary_km": 17.85,
+   "km_per_day": 2.97
+  },
+  {
+   "steward": "Granville Nepo",
+   "zones": "Zone 6",
+   "clans": "Manuvoora",
+   "tracks": 11,
+   "days": 8,
+   "undated_tracks": 0,
+   "first": "2026-06-18",
+   "last": "2026-07-21",
+   "km": 30.23,
+   "boundary_km": 30.23,
+   "km_per_day": 3.78
+  },
+  {
+   "steward": "Livingstone Nisavora",
+   "zones": "Zone 6",
+   "clans": "Mariura",
+   "tracks": 21,
+   "days": 6,
+   "undated_tracks": 0,
+   "first": "2026-06-26",
+   "last": "2026-07-09",
+   "km": 15.86,
+   "boundary_km": 15.86,
+   "km_per_day": 2.64
+  },
+  {
+   "steward": "Zechariah Sasavo",
+   "zones": "Zone 6",
+   "clans": "Naharaura",
+   "tracks": 2,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2026-06-26",
+   "last": "2026-06-26",
+   "km": 32.63,
+   "boundary_km": 32.63,
+   "km_per_day": 32.63
+  },
+  {
+   "steward": "Garex Sevesi",
+   "zones": "Zone 7A",
+   "clans": "Darekikol",
+   "tracks": 2,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-05-25",
+   "last": "2026-06-02",
+   "km": 13.39,
+   "boundary_km": 13.39,
+   "km_per_day": 6.7
+  },
+  {
+   "steward": "George Kopoi",
+   "zones": "Zone 7A",
+   "clans": "Darekikol",
+   "tracks": 6,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2026-05-25",
+   "last": "2026-07-02",
+   "km": 15.36,
+   "boundary_km": 15.36,
+   "km_per_day": 5.12
+  },
+  {
+   "steward": "Hagahi Semo",
+   "zones": "Zone 7A",
+   "clans": "Borori",
+   "tracks": 6,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2026-05-25",
+   "last": "2026-07-07",
+   "km": 9.87,
+   "boundary_km": 9.87,
+   "km_per_day": 1.97
+  },
+  {
+   "steward": "John Saini",
+   "zones": "Zone 7A",
+   "clans": "Borori",
+   "tracks": 5,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2026-06-10",
+   "last": "2026-07-07",
+   "km": 22.81,
+   "boundary_km": 22.81,
+   "km_per_day": 4.56
+  },
+  {
+   "steward": "Kennedy Wosa",
+   "zones": "Zone 7A",
+   "clans": "Bimkol",
+   "tracks": 5,
+   "days": 4,
+   "undated_tracks": 0,
+   "first": "2026-05-25",
+   "last": "2026-08-13",
+   "km": 8.01,
+   "boundary_km": 8.01,
+   "km_per_day": 2.0
+  },
+  {
+   "steward": "Paul Digori",
+   "zones": "Zone 7A",
+   "clans": "",
+   "tracks": 13,
+   "days": 7,
+   "undated_tracks": 0,
+   "first": "2026-05-25",
+   "last": "2026-06-15",
+   "km": 4.29,
+   "boundary_km": 0.0,
+   "km_per_day": 0.61
+  },
+  {
+   "steward": "Chris Idua",
+   "zones": "Zone 7B",
+   "clans": "Sugulkol",
+   "tracks": 6,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-11-06",
+   "last": "2025-11-08",
+   "km": 10.56,
+   "boundary_km": 10.56,
+   "km_per_day": 3.52
+  },
+  {
+   "steward": "Clement Viri",
+   "zones": "Zone 7B",
+   "clans": "Jariji",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2025-11-09",
+   "last": "2025-11-09",
+   "km": 13.8,
+   "boundary_km": 13.8,
+   "km_per_day": 13.8
+  },
+  {
+   "steward": "Darline Walele",
+   "zones": "Zone 7B",
+   "clans": "Wohukol",
+   "tracks": 5,
+   "days": 4,
+   "undated_tracks": 0,
+   "first": "2025-10-25",
+   "last": "2025-11-10",
+   "km": 17.1,
+   "boundary_km": 17.1,
+   "km_per_day": 4.28
+  },
+  {
+   "steward": "Dickson Hoe",
+   "zones": "Zone 7B",
+   "clans": "Natang",
+   "tracks": 4,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-11-06",
+   "last": "2026-02-16",
+   "km": 30.75,
+   "boundary_km": 30.75,
+   "km_per_day": 10.25
+  },
+  {
+   "steward": "Emmanuel Fufus",
+   "zones": "Zone 7B",
+   "clans": "Sugulkol",
+   "tracks": 6,
+   "days": 6,
+   "undated_tracks": 0,
+   "first": "2025-11-06",
+   "last": "2026-03-02",
+   "km": 13.43,
+   "boundary_km": 13.43,
+   "km_per_day": 2.24
+  },
+  {
+   "steward": "Henry Manderi",
+   "zones": "Zone 7B",
+   "clans": "Marang",
+   "tracks": 2,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-06-05",
+   "last": "2026-06-06",
+   "km": 8.27,
+   "boundary_km": 8.27,
+   "km_per_day": 4.13
+  },
+  {
+   "steward": "James Iroti",
+   "zones": "Zone 7B",
+   "clans": "Murai (Z7B)",
+   "tracks": 8,
+   "days": 6,
+   "undated_tracks": 0,
+   "first": "2025-10-21",
+   "last": "2026-03-11",
+   "km": 12.35,
+   "boundary_km": 12.35,
+   "km_per_day": 2.06
+  },
+  {
+   "steward": "Japhet Nagura",
+   "zones": "Zone 7B",
+   "clans": "Marijabimkol",
+   "tracks": 7,
+   "days": 4,
+   "undated_tracks": 0,
+   "first": "2025-10-21",
+   "last": "2025-11-05",
+   "km": 10.97,
+   "boundary_km": 10.97,
+   "km_per_day": 2.74
+  },
+  {
+   "steward": "Job Mokondo",
+   "zones": "Zone 7B",
+   "clans": "Ginangi",
+   "tracks": 7,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2026-05-23",
+   "last": "2026-06-22",
+   "km": 21.83,
+   "boundary_km": 21.83,
+   "km_per_day": 7.28
+  },
+  {
+   "steward": "Joshua Mokondo",
+   "zones": "Zone 7B",
+   "clans": "Ginangi",
+   "tracks": 6,
+   "days": 4,
+   "undated_tracks": 0,
+   "first": "2026-06-03",
+   "last": "2026-06-24",
+   "km": 14.9,
+   "boundary_km": 14.9,
+   "km_per_day": 3.72
+  },
+  {
+   "steward": "Kelly Wahamo",
+   "zones": "Zone 7B",
+   "clans": "Manang",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2026-07-01",
+   "last": "2026-07-01",
+   "km": 7.13,
+   "boundary_km": 7.13,
+   "km_per_day": 7.13
+  },
+  {
+   "steward": "Moses Garui",
+   "zones": "Zone 7B",
+   "clans": "Binunkol",
+   "tracks": 10,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2026-05-23",
+   "last": "2026-06-16",
+   "km": 17.81,
+   "boundary_km": 17.81,
+   "km_per_day": 3.56
+  },
+  {
+   "steward": "Nelson Runage",
+   "zones": "Zone 7B",
+   "clans": "Wohukol",
+   "tracks": 4,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2025-11-06",
+   "last": "2025-11-10",
+   "km": 17.81,
+   "boundary_km": 17.81,
+   "km_per_day": 8.91
+  },
+  {
+   "steward": "Newton Giwai",
+   "zones": "Zone 7B",
+   "clans": "Jariji",
+   "tracks": 3,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2025-11-06",
+   "last": "2025-11-09",
+   "km": 13.66,
+   "boundary_km": 13.66,
+   "km_per_day": 6.83
+  },
+  {
+   "steward": "Peter Awako",
+   "zones": "Zone 7B",
+   "clans": "Ambunkol",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2025-10-28",
+   "last": "2025-10-28",
+   "km": 18.6,
+   "boundary_km": 18.6,
+   "km_per_day": 18.6
+  },
+  {
+   "steward": "Ruth Makisa",
+   "zones": "Zone 7B",
+   "clans": "",
+   "tracks": 1,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2026-06-22",
+   "last": "2026-06-22",
+   "km": 6.28,
+   "boundary_km": 0.0,
+   "km_per_day": 6.28
+  },
+  {
+   "steward": "Simeon Pasip",
+   "zones": "Zone 7B",
+   "clans": "Abuankol",
+   "tracks": 4,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-10-21",
+   "last": "2025-10-28",
+   "km": 0.51,
+   "boundary_km": 0.51,
+   "km_per_day": 0.17
+  },
+  {
+   "steward": "Stafford Gidiri",
+   "zones": "Zone 7B",
+   "clans": "Natang",
+   "tracks": 2,
+   "days": 1,
+   "undated_tracks": 0,
+   "first": "2025-11-10",
+   "last": "2025-11-10",
+   "km": 46.5,
+   "boundary_km": 46.5,
+   "km_per_day": 46.5
+  },
+  {
+   "steward": "Beven Naive",
+   "zones": "Zone 8",
+   "clans": "Duribip",
+   "tracks": 4,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2025-07-11",
+   "last": "2025-07-21",
+   "km": 4.46,
+   "boundary_km": 4.46,
+   "km_per_day": 2.23
+  },
+  {
+   "steward": "Cyprian Sirami",
+   "zones": "Zone 8",
+   "clans": "Uremkol",
+   "tracks": 3,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2025-07-16",
+   "last": "2025-07-25",
+   "km": 11.2,
+   "boundary_km": 11.2,
+   "km_per_day": 5.6
+  },
+  {
+   "steward": "Fordy Igai",
+   "zones": "Zone 8",
+   "clans": "Gubai",
+   "tracks": 20,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2025-05-22",
+   "last": "2025-06-03",
+   "km": 42.68,
+   "boundary_km": 42.68,
+   "km_per_day": 21.34
+  },
+  {
+   "steward": "Gibs Ginave",
+   "zones": "Zone 8",
+   "clans": "Madukol",
+   "tracks": 5,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-07-15",
+   "last": "2025-08-04",
+   "km": 1.07,
+   "boundary_km": 1.07,
+   "km_per_day": 0.36
+  },
+  {
+   "steward": "Graham Ekiawa",
+   "zones": "Zone 8",
+   "clans": "Mungaikol",
+   "tracks": 5,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2025-07-13",
+   "last": "2025-07-21",
+   "km": 14.75,
+   "boundary_km": 14.75,
+   "km_per_day": 2.95
+  },
+  {
+   "steward": "Kenny Noi",
+   "zones": "Zone 8",
+   "clans": "Gubai",
+   "tracks": 55,
+   "days": 5,
+   "undated_tracks": 0,
+   "first": "2025-05-22",
+   "last": "2025-07-19",
+   "km": 91.86,
+   "boundary_km": 91.86,
+   "km_per_day": 18.37
+  },
+  {
+   "steward": "Max Mamo",
+   "zones": "Zone 8",
+   "clans": "Dusi",
+   "tracks": 52,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-06-05",
+   "last": "2025-06-19",
+   "km": 32.95,
+   "boundary_km": 32.95,
+   "km_per_day": 10.98
+  },
+  {
+   "steward": "Philip Igai",
+   "zones": "Zone 8",
+   "clans": "Gumuyude",
+   "tracks": 6,
+   "days": 6,
+   "undated_tracks": 0,
+   "first": "2025-05-19",
+   "last": "2025-06-04",
+   "km": 16.79,
+   "boundary_km": 16.79,
+   "km_per_day": 2.8
+  },
+  {
+   "steward": "Prut Buitari",
+   "zones": "Zone 8",
+   "clans": "Riribudeh",
+   "tracks": 7,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-07-15",
+   "last": "2025-07-23",
+   "km": 10.37,
+   "boundary_km": 10.37,
+   "km_per_day": 3.46
+  },
+  {
+   "steward": "Unido Ose",
+   "zones": "Zone 8",
+   "clans": "Riribudeh",
+   "tracks": 28,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2025-07-15",
+   "last": "2025-07-23",
+   "km": 10.01,
+   "boundary_km": 10.01,
+   "km_per_day": 3.34
+  }
+ ],
+ "days": [
+  {
+   "steward": "Abel Kajari",
+   "zone": "Zone 2",
+   "clan": "Bujevi",
+   "date": "2026-02-08",
+   "tracks": 1,
+   "km": 1.82
+  },
+  {
+   "steward": "Abel Kajari",
+   "zone": "Zone 2",
+   "clan": "Bujevi",
+   "date": "2026-02-09",
+   "tracks": 1,
+   "km": 3.93
+  },
+  {
+   "steward": "Alban Ezekiel",
+   "zone": "Zone 6",
+   "clan": "Pina Ora",
+   "date": "2026-06-23",
+   "tracks": 1,
+   "km": 13.52
+  },
+  {
+   "steward": "Alban Ezekiel",
+   "zone": "Zone 6",
+   "clan": "Pina Ora",
+   "date": "2026-06-24",
+   "tracks": 1,
+   "km": 2.5
+  },
+  {
+   "steward": "Alban Ezekiel",
+   "zone": "Zone 6",
+   "clan": "Pina Ora",
+   "date": "2026-06-25",
+   "tracks": 1,
+   "km": 2.83
+  },
+  {
+   "steward": "Ananias Masua",
+   "zone": "Zone 2",
+   "clan": "Kasaki",
+   "date": "2026-02-05",
+   "tracks": 1,
+   "km": 15.13
+  },
+  {
+   "steward": "Anthony Irimari",
+   "zone": "Zone 3",
+   "clan": "Deari",
+   "date": "2026-06-09",
+   "tracks": 1,
+   "km": 0.65
+  },
+  {
+   "steward": "Anthony Irimari",
+   "zone": "Zone 3",
+   "clan": "Deari",
+   "date": "2026-06-15",
+   "tracks": 1,
+   "km": 4.65
+  },
+  {
+   "steward": "Benjamin Marijah",
+   "zone": "Zone 6",
+   "clan": "Nupa Ora",
+   "date": "2026-06-18",
+   "tracks": 1,
+   "km": 0.16
+  },
+  {
+   "steward": "Benjamin Marijah",
+   "zone": "Zone 6",
+   "clan": "Nupa Ora",
+   "date": "2026-06-23",
+   "tracks": 1,
+   "km": 0.62
+  },
+  {
+   "steward": "Benjamin Marijah",
+   "zone": "Zone 6",
+   "clan": "Nupa Ora",
+   "date": "2026-06-25",
+   "tracks": 1,
+   "km": 4.16
+  },
+  {
+   "steward": "Beven Naive",
+   "zone": "Zone 8",
+   "clan": "Duribip",
+   "date": "2025-07-11",
+   "tracks": 3,
+   "km": 3.38
+  },
+  {
+   "steward": "Beven Naive",
+   "zone": "Zone 8",
+   "clan": "Duribip",
+   "date": "2025-07-21",
+   "tracks": 1,
+   "km": 1.07
+  },
+  {
+   "steward": "Bobby Aneba",
+   "zone": "Zone 3",
+   "clan": "Nui",
+   "date": "2026-06-09",
+   "tracks": 1,
+   "km": 6.97
+  },
+  {
+   "steward": "Bobby Aneba",
+   "zone": "Zone 3",
+   "clan": "Nui",
+   "date": "2026-06-15",
+   "tracks": 2,
+   "km": 4.48
+  },
+  {
+   "steward": "Chris Idua",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2025-11-06",
+   "tracks": 4,
+   "km": 3.51
+  },
+  {
+   "steward": "Chris Idua",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2025-11-07",
+   "tracks": 1,
+   "km": 4.42
+  },
+  {
+   "steward": "Chris Idua",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2025-11-08",
+   "tracks": 1,
+   "km": 2.63
+  },
+  {
+   "steward": "Christoper Visua",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-05-11",
+   "tracks": 3,
+   "km": 0.94
+  },
+  {
+   "steward": "Christoper Visua",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-05-20",
+   "tracks": 8,
+   "km": 8.66
+  },
+  {
+   "steward": "Christoper Visua",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-05-21",
+   "tracks": 3,
+   "km": 2.86
+  },
+  {
+   "steward": "Christoper Visua",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-11-27",
+   "tracks": 1,
+   "km": 0.11
+  },
+  {
+   "steward": "Christoper Visua",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-11-28",
+   "tracks": 1,
+   "km": 0.2
+  },
+  {
+   "steward": "Christoper Visua",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2026-02-05",
+   "tracks": 1,
+   "km": 0.88
+  },
+  {
+   "steward": "Christoper Visua",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2026-02-11",
+   "tracks": 2,
+   "km": 4.19
+  },
+  {
+   "steward": "Clement Viri",
+   "zone": "Zone 7B",
+   "clan": "Jariji",
+   "date": "2025-11-09",
+   "tracks": 1,
+   "km": 13.8
+  },
+  {
+   "steward": "Cyprian Sirami",
+   "zone": "Zone 8",
+   "clan": "Uremkol",
+   "date": "2025-07-16",
+   "tracks": 1,
+   "km": 7.15
+  },
+  {
+   "steward": "Cyprian Sirami",
+   "zone": "Zone 8",
+   "clan": "Uremkol",
+   "date": "2025-07-25",
+   "tracks": 2,
+   "km": 4.05
+  },
+  {
+   "steward": "Darline Walele",
+   "zone": "Zone 7B",
+   "clan": "Wohukol",
+   "date": "2025-10-25",
+   "tracks": 1,
+   "km": 0.02
+  },
+  {
+   "steward": "Darline Walele",
+   "zone": "Zone 7B",
+   "clan": "Wohukol",
+   "date": "2025-10-28",
+   "tracks": 1,
+   "km": 0.29
+  },
+  {
+   "steward": "Darline Walele",
+   "zone": "Zone 7B",
+   "clan": "Wohukol",
+   "date": "2025-11-06",
+   "tracks": 2,
+   "km": 5.34
+  },
+  {
+   "steward": "Darline Walele",
+   "zone": "Zone 7B",
+   "clan": "Wohukol",
+   "date": "2025-11-10",
+   "tracks": 1,
+   "km": 11.45
+  },
+  {
+   "steward": "Dickson Hoe",
+   "zone": "Zone 7B",
+   "clan": "Natang",
+   "date": "2025-11-06",
+   "tracks": 2,
+   "km": 6.41
+  },
+  {
+   "steward": "Dickson Hoe",
+   "zone": "Zone 7B",
+   "clan": "Natang",
+   "date": "2025-11-10",
+   "tracks": 1,
+   "km": 22.94
+  },
+  {
+   "steward": "Dickson Hoe",
+   "zone": "Zone 7B",
+   "clan": "Natang",
+   "date": "2026-02-16",
+   "tracks": 1,
+   "km": 1.4
+  },
+  {
+   "steward": "Eddie Sioro",
+   "zone": "Zone 3",
+   "clan": "Giroiko",
+   "date": "2026-06-11",
+   "tracks": 1,
+   "km": 2.67
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-18",
+   "tracks": 1,
+   "km": 0.25
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-22",
+   "tracks": 2,
+   "km": 6.98
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-23",
+   "tracks": 3,
+   "km": 4.48
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-26",
+   "tracks": 1,
+   "km": 2.44
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-27",
+   "tracks": 2,
+   "km": 0.1
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-29",
+   "tracks": 1,
+   "km": 2.26
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-30",
+   "tracks": 1,
+   "km": 6.07
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-07-18",
+   "tracks": 1,
+   "km": 7.43
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-07-22",
+   "tracks": 4,
+   "km": 0.89
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-07-23",
+   "tracks": 1,
+   "km": 0.3
+  },
+  {
+   "steward": "Egobeyas Kuarisi",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-07-26",
+   "tracks": 1,
+   "km": 0.01
+  },
+  {
+   "steward": "Emmanuel Fufus",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2025-11-06",
+   "tracks": 1,
+   "km": 3.84
+  },
+  {
+   "steward": "Emmanuel Fufus",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2025-11-07",
+   "tracks": 1,
+   "km": 4.23
+  },
+  {
+   "steward": "Emmanuel Fufus",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2025-11-08",
+   "tracks": 1,
+   "km": 2.58
+  },
+  {
+   "steward": "Emmanuel Fufus",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2026-02-27",
+   "tracks": 1,
+   "km": 1.3
+  },
+  {
+   "steward": "Emmanuel Fufus",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2026-02-28",
+   "tracks": 1,
+   "km": 0.66
+  },
+  {
+   "steward": "Emmanuel Fufus",
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "date": "2026-03-02",
+   "tracks": 1,
+   "km": 0.83
+  },
+  {
+   "steward": "Fabian Justin",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-06-26",
+   "tracks": 6,
+   "km": 7.11
+  },
+  {
+   "steward": "Fabian Justin",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-06-29",
+   "tracks": 5,
+   "km": 3.82
+  },
+  {
+   "steward": "Fabian Justin",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-06-30",
+   "tracks": 4,
+   "km": 1.54
+  },
+  {
+   "steward": "Fabian Justin",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-07-03",
+   "tracks": 3,
+   "km": 3.33
+  },
+  {
+   "steward": "Fabian Justin",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-07-04",
+   "tracks": 1,
+   "km": 0.01
+  },
+  {
+   "steward": "Fabian Justin",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-07-09",
+   "tracks": 3,
+   "km": 2.04
+  },
+  {
+   "steward": "Fordy Igai",
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "date": "2025-05-22",
+   "tracks": 15,
+   "km": 31.23
+  },
+  {
+   "steward": "Fordy Igai",
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "date": "2025-06-03",
+   "tracks": 5,
+   "km": 11.46
+  },
+  {
+   "steward": "Garex Sevesi",
+   "zone": "Zone 7A",
+   "clan": "Darekikol",
+   "date": "2026-05-25",
+   "tracks": 1,
+   "km": 0.12
+  },
+  {
+   "steward": "Garex Sevesi",
+   "zone": "Zone 7A",
+   "clan": "Darekikol",
+   "date": "2026-06-02",
+   "tracks": 1,
+   "km": 13.28
+  },
+  {
+   "steward": "Gasper K Philip J",
+   "zone": "Zone 2",
+   "clan": "Juaiko",
+   "date": "2025-04-22",
+   "tracks": 5,
+   "km": 3.59
+  },
+  {
+   "steward": "Gasper K Philip J",
+   "zone": "Zone 2",
+   "clan": "Juaiko",
+   "date": "2025-04-23",
+   "tracks": 1,
+   "km": 7.16
+  },
+  {
+   "steward": "Gasper K Philip J",
+   "zone": "Zone 2",
+   "clan": "Juaiko",
+   "date": "2025-04-24",
+   "tracks": 2,
+   "km": 6.06
+  },
+  {
+   "steward": "Gasper K Philip J",
+   "zone": "Zone 2",
+   "clan": "Juaiko",
+   "date": "2025-04-25",
+   "tracks": 1,
+   "km": 4.0
+  },
+  {
+   "steward": "Gasper K Philip J",
+   "zone": "Zone 2",
+   "clan": "Juaiko",
+   "date": "2025-04-28",
+   "tracks": 1,
+   "km": 3.49
+  },
+  {
+   "steward": "George Kopoi",
+   "zone": "Zone 7A",
+   "clan": "Darekikol",
+   "date": "2026-05-25",
+   "tracks": 4,
+   "km": 0.18
+  },
+  {
+   "steward": "George Kopoi",
+   "zone": "Zone 7A",
+   "clan": "Darekikol",
+   "date": "2026-06-02",
+   "tracks": 1,
+   "km": 10.21
+  },
+  {
+   "steward": "George Kopoi",
+   "zone": "Zone 7A",
+   "clan": "Darekikol",
+   "date": "2026-07-02",
+   "tracks": 1,
+   "km": 4.97
+  },
+  {
+   "steward": "Gibs Ginave",
+   "zone": "Zone 8",
+   "clan": "Madukol",
+   "date": "2025-07-15",
+   "tracks": 2,
+   "km": 0.2
+  },
+  {
+   "steward": "Gibs Ginave",
+   "zone": "Zone 8",
+   "clan": "Madukol",
+   "date": "2025-07-17",
+   "tracks": 2,
+   "km": 0.37
+  },
+  {
+   "steward": "Gibs Ginave",
+   "zone": "Zone 8",
+   "clan": "Madukol",
+   "date": "2025-08-04",
+   "tracks": 1,
+   "km": 0.5
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zone": "Zone 2",
+   "clan": "Manoko",
+   "date": "2025-08-31",
+   "tracks": 2,
+   "km": 0.27
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zone": "Zone 2",
+   "clan": "Asoro",
+   "date": "2026-01-29",
+   "tracks": 2,
+   "km": 7.57
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zone": "Zone 2",
+   "clan": "Asoro",
+   "date": "2026-01-30",
+   "tracks": 5,
+   "km": 4.48
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zone": "Zone 2",
+   "clan": "Asoro",
+   "date": "2026-01-31",
+   "tracks": 3,
+   "km": 10.77
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zone": "Zone 2",
+   "clan": "Manoko",
+   "date": "2026-02-13",
+   "tracks": 3,
+   "km": 7.66
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zone": "Zone 2",
+   "clan": "Manoko",
+   "date": "2026-02-14",
+   "tracks": 2,
+   "km": 4.21
+  },
+  {
+   "steward": "Gilford Amakana",
+   "zone": "Zone 2",
+   "clan": "Majanko",
+   "date": "2026-02-26",
+   "tracks": 4,
+   "km": 7.51
+  },
+  {
+   "steward": "Graham Ekiawa",
+   "zone": "Zone 8",
+   "clan": "Mungaikol",
+   "date": "2025-07-13",
+   "tracks": 1,
+   "km": 2.6
+  },
+  {
+   "steward": "Graham Ekiawa",
+   "zone": "Zone 8",
+   "clan": "Mungaikol",
+   "date": "2025-07-15",
+   "tracks": 1,
+   "km": 1.52
+  },
+  {
+   "steward": "Graham Ekiawa",
+   "zone": "Zone 8",
+   "clan": "Mungaikol",
+   "date": "2025-07-16",
+   "tracks": 1,
+   "km": 7.06
+  },
+  {
+   "steward": "Graham Ekiawa",
+   "zone": "Zone 8",
+   "clan": "Mungaikol",
+   "date": "2025-07-20",
+   "tracks": 1,
+   "km": 2.16
+  },
+  {
+   "steward": "Graham Ekiawa",
+   "zone": "Zone 8",
+   "clan": "Mungaikol",
+   "date": "2025-07-21",
+   "tracks": 1,
+   "km": 1.42
+  },
+  {
+   "steward": "Graham Naopi",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-11-27",
+   "tracks": 4,
+   "km": 0.28
+  },
+  {
+   "steward": "Graham Naopi",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-11-28",
+   "tracks": 2,
+   "km": 0.1
+  },
+  {
+   "steward": "Graham Naopi",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2026-02-09",
+   "tracks": 1,
+   "km": 18.32
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-18",
+   "tracks": 1,
+   "km": 0.35
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-22",
+   "tracks": 2,
+   "km": 7.16
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-23",
+   "tracks": 3,
+   "km": 4.39
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-26",
+   "tracks": 1,
+   "km": 1.95
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-29",
+   "tracks": 1,
+   "km": 2.32
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-06-30",
+   "tracks": 1,
+   "km": 6.0
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-07-18",
+   "tracks": 1,
+   "km": 7.24
+  },
+  {
+   "steward": "Granville Nepo",
+   "zone": "Zone 6",
+   "clan": "Manuvoora",
+   "date": "2026-07-21",
+   "tracks": 1,
+   "km": 0.83
+  },
+  {
+   "steward": "Gray Saui",
+   "zone": "Zone 3",
+   "clan": "Gumuri",
+   "date": "2026-06-15",
+   "tracks": 1,
+   "km": 6.77
+  },
+  {
+   "steward": "Hagahi Semo",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-05-25",
+   "tracks": 1,
+   "km": 0.09
+  },
+  {
+   "steward": "Hagahi Semo",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-06-19",
+   "tracks": 1,
+   "km": 0.02
+  },
+  {
+   "steward": "Hagahi Semo",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-06-22",
+   "tracks": 1,
+   "km": 5.08
+  },
+  {
+   "steward": "Hagahi Semo",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-06-30",
+   "tracks": 1,
+   "km": 1.19
+  },
+  {
+   "steward": "Hagahi Semo",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-07-07",
+   "tracks": 2,
+   "km": 3.49
+  },
+  {
+   "steward": "Henry Manderi",
+   "zone": "Zone 7B",
+   "clan": "Marang",
+   "date": "2026-06-05",
+   "tracks": 1,
+   "km": 6.97
+  },
+  {
+   "steward": "Henry Manderi",
+   "zone": "Zone 7B",
+   "clan": "Marang",
+   "date": "2026-06-06",
+   "tracks": 1,
+   "km": 1.3
+  },
+  {
+   "steward": "Humphrey Poto",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-25",
+   "tracks": 7,
+   "km": 12.55
+  },
+  {
+   "steward": "Humphrey Poto",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-26",
+   "tracks": 3,
+   "km": 0.2
+  },
+  {
+   "steward": "Humphrey Poto",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-27",
+   "tracks": 7,
+   "km": 4.35
+  },
+  {
+   "steward": "Humphrey Poto",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-28",
+   "tracks": 8,
+   "km": 8.44
+  },
+  {
+   "steward": "Humphrey Poto",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-29",
+   "tracks": 4,
+   "km": 3.77
+  },
+  {
+   "steward": "Iman Nakina",
+   "zone": "Zone 3",
+   "clan": "Nui",
+   "date": "2026-06-09",
+   "tracks": 2,
+   "km": 6.1
+  },
+  {
+   "steward": "Iman Nakina",
+   "zone": "Zone 3",
+   "clan": "Nui",
+   "date": "2026-06-15",
+   "tracks": 2,
+   "km": 5.87
+  },
+  {
+   "steward": "James Iroti",
+   "zone": "Zone 7B",
+   "clan": "Murai (Z7B)",
+   "date": "2025-10-21",
+   "tracks": 2,
+   "km": 0.06
+  },
+  {
+   "steward": "James Iroti",
+   "zone": "Zone 7B",
+   "clan": "Murai (Z7B)",
+   "date": "2025-10-25",
+   "tracks": 1,
+   "km": 0.02
+  },
+  {
+   "steward": "James Iroti",
+   "zone": "Zone 7B",
+   "clan": "Murai (Z7B)",
+   "date": "2025-10-28",
+   "tracks": 2,
+   "km": 1.0
+  },
+  {
+   "steward": "James Iroti",
+   "zone": "Zone 7B",
+   "clan": "Murai (Z7B)",
+   "date": "2025-11-07",
+   "tracks": 1,
+   "km": 2.43
+  },
+  {
+   "steward": "James Iroti",
+   "zone": "Zone 7B",
+   "clan": "Murai (Z7B)",
+   "date": "2026-01-19",
+   "tracks": 1,
+   "km": 0.11
+  },
+  {
+   "steward": "James Iroti",
+   "zone": "Zone 7B",
+   "clan": "Murai (Z7B)",
+   "date": "2026-03-11",
+   "tracks": 1,
+   "km": 8.72
+  },
+  {
+   "steward": "Japhet Nagura",
+   "zone": "Zone 7B",
+   "clan": "Marijabimkol",
+   "date": "2025-10-21",
+   "tracks": 4,
+   "km": 0.17
+  },
+  {
+   "steward": "Japhet Nagura",
+   "zone": "Zone 7B",
+   "clan": "Marijabimkol",
+   "date": "2025-10-25",
+   "tracks": 1,
+   "km": 0.02
+  },
+  {
+   "steward": "Japhet Nagura",
+   "zone": "Zone 7B",
+   "clan": "Marijabimkol",
+   "date": "2025-10-29",
+   "tracks": 1,
+   "km": 2.28
+  },
+  {
+   "steward": "Japhet Nagura",
+   "zone": "Zone 7B",
+   "clan": "Marijabimkol",
+   "date": "2025-11-05",
+   "tracks": 1,
+   "km": 8.5
+  },
+  {
+   "steward": "Jefferson Amunisa",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-25",
+   "tracks": 7,
+   "km": 12.54
+  },
+  {
+   "steward": "Jefferson Amunisa",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-26",
+   "tracks": 3,
+   "km": 0.3
+  },
+  {
+   "steward": "Jefferson Amunisa",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-27",
+   "tracks": 7,
+   "km": 4.38
+  },
+  {
+   "steward": "Jefferson Amunisa",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-28",
+   "tracks": 7,
+   "km": 8.72
+  },
+  {
+   "steward": "Jefferson Amunisa",
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "date": "2025-04-29",
+   "tracks": 4,
+   "km": 3.73
+  },
+  {
+   "steward": "Jethro Akse",
+   "zone": "Zone 2",
+   "clan": "Asingi",
+   "date": "2025-02-18",
+   "tracks": 1,
+   "km": 1.52
+  },
+  {
+   "steward": "Jethro Akse",
+   "zone": "Zone 2",
+   "clan": "Asingi",
+   "date": "2025-02-19",
+   "tracks": 1,
+   "km": 3.82
+  },
+  {
+   "steward": "Jethro Akse",
+   "zone": "Zone 2",
+   "clan": "Asingi",
+   "date": "2025-02-21",
+   "tracks": 1,
+   "km": 0.96
+  },
+  {
+   "steward": "Jethro Akse",
+   "zone": "Zone 2",
+   "clan": "Asingi",
+   "date": "2025-12-04",
+   "tracks": 1,
+   "km": 0.09
+  },
+  {
+   "steward": "Jethro Akse",
+   "zone": "Zone 2",
+   "clan": "Asingi",
+   "date": "2026-02-05",
+   "tracks": 1,
+   "km": 0.04
+  },
+  {
+   "steward": "Job Mokondo",
+   "zone": "Zone 7B",
+   "clan": "Ginangi",
+   "date": "2026-05-23",
+   "tracks": 2,
+   "km": 0.19
+  },
+  {
+   "steward": "Job Mokondo",
+   "zone": "Zone 7B",
+   "clan": "Ginangi",
+   "date": "2026-05-24",
+   "tracks": 3,
+   "km": 1.14
+  },
+  {
+   "steward": "Job Mokondo",
+   "zone": "Zone 7B",
+   "clan": "Ginangi",
+   "date": "2026-06-22",
+   "tracks": 2,
+   "km": 20.51
+  },
+  {
+   "steward": "Joel Mamata",
+   "zone": "Zone 2",
+   "clan": "Rumbi",
+   "date": "2025-04-15",
+   "tracks": 2,
+   "km": 2.54
+  },
+  {
+   "steward": "Joel Mamata",
+   "zone": "Zone 2",
+   "clan": "Rumbi",
+   "date": "2025-04-16",
+   "tracks": 4,
+   "km": 8.26
+  },
+  {
+   "steward": "Joel Mamata",
+   "zone": "Zone 2",
+   "clan": "Rumbi",
+   "date": "2025-04-24",
+   "tracks": 1,
+   "km": 1.69
+  },
+  {
+   "steward": "Joel Mamata",
+   "zone": "Zone 2",
+   "clan": "Rumbi",
+   "date": "2025-04-26",
+   "tracks": 1,
+   "km": 1.87
+  },
+  {
+   "steward": "Joel Mamata",
+   "zone": "Zone 2",
+   "clan": "Rumbi",
+   "date": "2025-04-28",
+   "tracks": 1,
+   "km": 0.71
+  },
+  {
+   "steward": "John Saini",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-06-10",
+   "tracks": 1,
+   "km": 5.32
+  },
+  {
+   "steward": "John Saini",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-06-22",
+   "tracks": 1,
+   "km": 5.33
+  },
+  {
+   "steward": "John Saini",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-06-25",
+   "tracks": 1,
+   "km": 7.21
+  },
+  {
+   "steward": "John Saini",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-06-30",
+   "tracks": 1,
+   "km": 1.14
+  },
+  {
+   "steward": "John Saini",
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "date": "2026-07-07",
+   "tracks": 1,
+   "km": 3.81
+  },
+  {
+   "steward": "Joshua Mokondo",
+   "zone": "Zone 7B",
+   "clan": "Ginangi",
+   "date": "2026-06-03",
+   "tracks": 3,
+   "km": 0.25
+  },
+  {
+   "steward": "Joshua Mokondo",
+   "zone": "Zone 7B",
+   "clan": "Ginangi",
+   "date": "2026-06-07",
+   "tracks": 1,
+   "km": 0.11
+  },
+  {
+   "steward": "Joshua Mokondo",
+   "zone": "Zone 7B",
+   "clan": "Ginangi",
+   "date": "2026-06-22",
+   "tracks": 1,
+   "km": 6.56
+  },
+  {
+   "steward": "Joshua Mokondo",
+   "zone": "Zone 7B",
+   "clan": "Ginangi",
+   "date": "2026-06-24",
+   "tracks": 1,
+   "km": 7.98
+  },
+  {
+   "steward": "Kaupa Dota",
+   "zone": "Zone 2",
+   "clan": "Tuoko",
+   "date": "2025-02-24",
+   "tracks": 3,
+   "km": 0.3
+  },
+  {
+   "steward": "Kaupa Dota",
+   "zone": "Zone 2",
+   "clan": "Tuoko",
+   "date": "2025-03-08",
+   "tracks": 2,
+   "km": 2.24
+  },
+  {
+   "steward": "Kaupa Dota",
+   "zone": "Zone 2",
+   "clan": "Tuoko",
+   "date": "2025-12-09",
+   "tracks": 1,
+   "km": 8.67
+  },
+  {
+   "steward": "Kelly Wahamo",
+   "zone": "Zone 7B",
+   "clan": "Manang",
+   "date": "2026-07-01",
+   "tracks": 1,
+   "km": 7.13
+  },
+  {
+   "steward": "Kennedy Wosa",
+   "zone": "Zone 7A",
+   "clan": "Bimkol",
+   "date": "2026-05-25",
+   "tracks": 2,
+   "km": 0.11
+  },
+  {
+   "steward": "Kennedy Wosa",
+   "zone": "Zone 7A",
+   "clan": "Bimkol",
+   "date": "2026-06-08",
+   "tracks": 1,
+   "km": 3.64
+  },
+  {
+   "steward": "Kennedy Wosa",
+   "zone": "Zone 7A",
+   "clan": "Bimkol",
+   "date": "2026-06-15",
+   "tracks": 1,
+   "km": 3.16
+  },
+  {
+   "steward": "Kennedy Wosa",
+   "zone": "Zone 7A",
+   "clan": "Bimkol",
+   "date": "2026-08-13",
+   "tracks": 1,
+   "km": 1.1
+  },
+  {
+   "steward": "Kenny Noi",
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "date": "2025-05-22",
+   "tracks": 15,
+   "km": 30.78
+  },
+  {
+   "steward": "Kenny Noi",
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "date": "2025-06-03",
+   "tracks": 6,
+   "km": 15.11
+  },
+  {
+   "steward": "Kenny Noi",
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "date": "2025-07-15",
+   "tracks": 13,
+   "km": 15.68
+  },
+  {
+   "steward": "Kenny Noi",
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "date": "2025-07-18",
+   "tracks": 18,
+   "km": 27.25
+  },
+  {
+   "steward": "Kenny Noi",
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "date": "2025-07-19",
+   "tracks": 3,
+   "km": 3.04
+  },
+  {
+   "steward": "Lance Sake",
+   "zone": "Zone 2",
+   "clan": "Gariniko",
+   "date": "2025-11-28",
+   "tracks": 3,
+   "km": 0.3
+  },
+  {
+   "steward": "Lance Sake",
+   "zone": "Zone 2",
+   "clan": "Gariniko",
+   "date": "2025-12-02",
+   "tracks": 2,
+   "km": 8.26
+  },
+  {
+   "steward": "Lance Sake",
+   "zone": "Zone 2",
+   "clan": "Gariniko",
+   "date": "2026-02-07",
+   "tracks": 1,
+   "km": 1.53
+  },
+  {
+   "steward": "Livingstone Nisavora",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-06-26",
+   "tracks": 5,
+   "km": 5.12
+  },
+  {
+   "steward": "Livingstone Nisavora",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-06-29",
+   "tracks": 5,
+   "km": 3.82
+  },
+  {
+   "steward": "Livingstone Nisavora",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-06-30",
+   "tracks": 4,
+   "km": 1.54
+  },
+  {
+   "steward": "Livingstone Nisavora",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-07-03",
+   "tracks": 3,
+   "km": 3.33
+  },
+  {
+   "steward": "Livingstone Nisavora",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-07-04",
+   "tracks": 1,
+   "km": 0.01
+  },
+  {
+   "steward": "Livingstone Nisavora",
+   "zone": "Zone 6",
+   "clan": "Mariura",
+   "date": "2026-07-09",
+   "tracks": 3,
+   "km": 2.04
+  },
+  {
+   "steward": "Mark Samba",
+   "zone": "Zone 3",
+   "clan": "Giroiko",
+   "date": "2026-06-11",
+   "tracks": 2,
+   "km": 2.76
+  },
+  {
+   "steward": "Max Mamo",
+   "zone": "Zone 8",
+   "clan": "Dusi",
+   "date": "2025-06-05",
+   "tracks": 23,
+   "km": 20.02
+  },
+  {
+   "steward": "Max Mamo",
+   "zone": "Zone 8",
+   "clan": "Dusi",
+   "date": "2025-06-12",
+   "tracks": 21,
+   "km": 7.8
+  },
+  {
+   "steward": "Max Mamo",
+   "zone": "Zone 8",
+   "clan": "Dusi",
+   "date": "2025-06-19",
+   "tracks": 8,
+   "km": 5.13
+  },
+  {
+   "steward": "Millinton Beso",
+   "zone": "Zone 2",
+   "clan": "Sukandi",
+   "date": "2025-04-24",
+   "tracks": 2,
+   "km": 4.58
+  },
+  {
+   "steward": "Millinton Beso",
+   "zone": "Zone 2",
+   "clan": "Sukandi",
+   "date": "2025-04-25",
+   "tracks": 1,
+   "km": 6.02
+  },
+  {
+   "steward": "Monty Stanford",
+   "zone": "Zone 3",
+   "clan": "Gumuri",
+   "date": null,
+   "tracks": 1,
+   "km": 0.02
+  },
+  {
+   "steward": "Moses Garui",
+   "zone": "Zone 7B",
+   "clan": "Binunkol",
+   "date": "2026-05-23",
+   "tracks": 3,
+   "km": 0.64
+  },
+  {
+   "steward": "Moses Garui",
+   "zone": "Zone 7B",
+   "clan": "Binunkol",
+   "date": "2026-05-24",
+   "tracks": 3,
+   "km": 2.41
+  },
+  {
+   "steward": "Moses Garui",
+   "zone": "Zone 7B",
+   "clan": "Binunkol",
+   "date": "2026-05-25",
+   "tracks": 1,
+   "km": 0.03
+  },
+  {
+   "steward": "Moses Garui",
+   "zone": "Zone 7B",
+   "clan": "Binunkol",
+   "date": "2026-05-27",
+   "tracks": 1,
+   "km": 0.35
+  },
+  {
+   "steward": "Moses Garui",
+   "zone": "Zone 7B",
+   "clan": "Binunkol",
+   "date": "2026-06-16",
+   "tracks": 2,
+   "km": 14.38
+  },
+  {
+   "steward": "Nehemiah Nindori",
+   "zone": "Zone 2",
+   "clan": "Murai (Z2)",
+   "date": "2025-11-27",
+   "tracks": 1,
+   "km": 0.03
+  },
+  {
+   "steward": "Nehemiah Nindori",
+   "zone": "Zone 2",
+   "clan": "Murai (Z2)",
+   "date": "2025-11-28",
+   "tracks": 1,
+   "km": 0.18
+  },
+  {
+   "steward": "Nehemiah Nindori",
+   "zone": "Zone 2",
+   "clan": "Murai (Z2)",
+   "date": "2026-02-09",
+   "tracks": 5,
+   "km": 2.88
+  },
+  {
+   "steward": "Nehemiah Nindori",
+   "zone": "Zone 2",
+   "clan": "Murai (Z2)",
+   "date": "2026-02-10",
+   "tracks": 16,
+   "km": 2.31
+  },
+  {
+   "steward": "Nehemiah Nindori",
+   "zone": "Zone 2",
+   "clan": "Murai (Z2)",
+   "date": "2026-02-12",
+   "tracks": 8,
+   "km": 1.76
+  },
+  {
+   "steward": "Nehemiah Nindori",
+   "zone": "Zone 2",
+   "clan": "Murai (Z2)",
+   "date": "2026-02-17",
+   "tracks": 1,
+   "km": 0.17
+  },
+  {
+   "steward": "Nelson Runage",
+   "zone": "Zone 7B",
+   "clan": "Wohukol",
+   "date": "2025-11-06",
+   "tracks": 3,
+   "km": 6.29
+  },
+  {
+   "steward": "Nelson Runage",
+   "zone": "Zone 7B",
+   "clan": "Wohukol",
+   "date": "2025-11-10",
+   "tracks": 1,
+   "km": 11.52
+  },
+  {
+   "steward": "Newton Giwai",
+   "zone": "Zone 7B",
+   "clan": "Jariji",
+   "date": "2025-11-06",
+   "tracks": 1,
+   "km": 1.75
+  },
+  {
+   "steward": "Newton Giwai",
+   "zone": "Zone 7B",
+   "clan": "Jariji",
+   "date": "2025-11-09",
+   "tracks": 2,
+   "km": 11.92
+  },
+  {
+   "steward": "Newton Muraba",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-11-27",
+   "tracks": 1,
+   "km": 0.13
+  },
+  {
+   "steward": "Newton Muraba",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2025-11-28",
+   "tracks": 1,
+   "km": 1.07
+  },
+  {
+   "steward": "Newton Muraba",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2026-02-02",
+   "tracks": 2,
+   "km": 0.48
+  },
+  {
+   "steward": "Newton Muraba",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2026-02-03",
+   "tracks": 1,
+   "km": 0.31
+  },
+  {
+   "steward": "Newton Muraba",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2026-02-09",
+   "tracks": 7,
+   "km": 2.34
+  },
+  {
+   "steward": "Newton Muraba",
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "date": "2026-02-16",
+   "tracks": 1,
+   "km": 0.97
+  },
+  {
+   "steward": "Patrick Dirise",
+   "zone": "Zone 3",
+   "clan": "Deari",
+   "date": "2026-06-09",
+   "tracks": 1,
+   "km": 1.7
+  },
+  {
+   "steward": "Patrick Dirise",
+   "zone": "Zone 3",
+   "clan": "Deari",
+   "date": "2026-06-15",
+   "tracks": 2,
+   "km": 6.09
+  },
+  {
+   "steward": "Paul Digori",
+   "zone": "Zone 7A",
+   "clan": "",
+   "date": "2026-05-25",
+   "tracks": 2,
+   "km": 0.08
+  },
+  {
+   "steward": "Paul Digori",
+   "zone": "Zone 7A",
+   "clan": "",
+   "date": "2026-05-26",
+   "tracks": 2,
+   "km": 0.03
+  },
+  {
+   "steward": "Paul Digori",
+   "zone": "Zone 7A",
+   "clan": "",
+   "date": "2026-05-29",
+   "tracks": 2,
+   "km": 0.3
+  },
+  {
+   "steward": "Paul Digori",
+   "zone": "Zone 7A",
+   "clan": "",
+   "date": "2026-06-01",
+   "tracks": 4,
+   "km": 2.26
+  },
+  {
+   "steward": "Paul Digori",
+   "zone": "Zone 7A",
+   "clan": "",
+   "date": "2026-06-03",
+   "tracks": 1,
+   "km": 0.24
+  },
+  {
+   "steward": "Paul Digori",
+   "zone": "Zone 7A",
+   "clan": "",
+   "date": "2026-06-07",
+   "tracks": 1,
+   "km": 1.01
+  },
+  {
+   "steward": "Paul Digori",
+   "zone": "Zone 7A",
+   "clan": "",
+   "date": "2026-06-15",
+   "tracks": 1,
+   "km": 0.38
+  },
+  {
+   "steward": "Peter Awako",
+   "zone": "Zone 7B",
+   "clan": "Ambunkol",
+   "date": "2025-10-28",
+   "tracks": 1,
+   "km": 18.6
+  },
+  {
+   "steward": "Philip Igai",
+   "zone": "Zone 8",
+   "clan": "Gumuyude",
+   "date": "2025-05-19",
+   "tracks": 1,
+   "km": 0.25
+  },
+  {
+   "steward": "Philip Igai",
+   "zone": "Zone 8",
+   "clan": "Gumuyude",
+   "date": "2025-05-20",
+   "tracks": 1,
+   "km": 4.89
+  },
+  {
+   "steward": "Philip Igai",
+   "zone": "Zone 8",
+   "clan": "Gumuyude",
+   "date": "2025-05-21",
+   "tracks": 1,
+   "km": 2.12
+  },
+  {
+   "steward": "Philip Igai",
+   "zone": "Zone 8",
+   "clan": "Gumuyude",
+   "date": "2025-05-22",
+   "tracks": 1,
+   "km": 5.02
+  },
+  {
+   "steward": "Philip Igai",
+   "zone": "Zone 8",
+   "clan": "Gumuyude",
+   "date": "2025-05-28",
+   "tracks": 1,
+   "km": 2.5
+  },
+  {
+   "steward": "Philip Igai",
+   "zone": "Zone 8",
+   "clan": "Gumuyude",
+   "date": "2025-06-04",
+   "tracks": 1,
+   "km": 2.01
+  },
+  {
+   "steward": "Prut Buitari",
+   "zone": "Zone 8",
+   "clan": "Riribudeh",
+   "date": "2025-07-15",
+   "tracks": 4,
+   "km": 3.55
+  },
+  {
+   "steward": "Prut Buitari",
+   "zone": "Zone 8",
+   "clan": "Riribudeh",
+   "date": "2025-07-19",
+   "tracks": 2,
+   "km": 4.67
+  },
+  {
+   "steward": "Prut Buitari",
+   "zone": "Zone 8",
+   "clan": "Riribudeh",
+   "date": "2025-07-23",
+   "tracks": 1,
+   "km": 2.14
+  },
+  {
+   "steward": "Rodney Ajinko",
+   "zone": "Zone 2",
+   "clan": "Sukandi",
+   "date": "2025-04-24",
+   "tracks": 1,
+   "km": 29.09
+  },
+  {
+   "steward": "Ruth Makisa",
+   "zone": "Zone 7B",
+   "clan": "",
+   "date": "2026-06-22",
+   "tracks": 1,
+   "km": 6.28
+  },
+  {
+   "steward": "Simeon Pasip",
+   "zone": "Zone 7B",
+   "clan": "Abuankol",
+   "date": "2025-10-21",
+   "tracks": 2,
+   "km": 0.09
+  },
+  {
+   "steward": "Simeon Pasip",
+   "zone": "Zone 7B",
+   "clan": "Abuankol",
+   "date": "2025-10-22",
+   "tracks": 1,
+   "km": 0.12
+  },
+  {
+   "steward": "Simeon Pasip",
+   "zone": "Zone 7B",
+   "clan": "Abuankol",
+   "date": "2025-10-28",
+   "tracks": 1,
+   "km": 0.3
+  },
+  {
+   "steward": "Stafford Gidiri",
+   "zone": "Zone 7B",
+   "clan": "Natang",
+   "date": "2025-11-10",
+   "tracks": 2,
+   "km": 46.5
+  },
+  {
+   "steward": "Sylvester Anai",
+   "zone": "Zone 2",
+   "clan": "Zambiko",
+   "date": "2025-11-27",
+   "tracks": 5,
+   "km": 1.15
+  },
+  {
+   "steward": "Sylvester Anai",
+   "zone": "Zone 2",
+   "clan": "Zambiko",
+   "date": "2026-02-03",
+   "tracks": 2,
+   "km": 3.46
+  },
+  {
+   "steward": "Sylvester Anai",
+   "zone": "Zone 2",
+   "clan": "Zambiko",
+   "date": "2026-02-12",
+   "tracks": 1,
+   "km": 1.06
+  },
+  {
+   "steward": "Terrence Dobija",
+   "zone": "Zone 2",
+   "clan": "Tuoko",
+   "date": "2025-08-31",
+   "tracks": 1,
+   "km": 3.53
+  },
+  {
+   "steward": "Terrence Dobija",
+   "zone": "Zone 2",
+   "clan": "Tuoko",
+   "date": "2025-09-17",
+   "tracks": 1,
+   "km": 29.2
+  },
+  {
+   "steward": "Terrence Dobija",
+   "zone": "Zone 2",
+   "clan": "Tuoko",
+   "date": "2025-12-09",
+   "tracks": 1,
+   "km": 3.78
+  },
+  {
+   "steward": "Unido Ose",
+   "zone": "Zone 8",
+   "clan": "Riribudeh",
+   "date": "2025-07-15",
+   "tracks": 11,
+   "km": 3.28
+  },
+  {
+   "steward": "Unido Ose",
+   "zone": "Zone 8",
+   "clan": "Riribudeh",
+   "date": "2025-07-19",
+   "tracks": 9,
+   "km": 4.62
+  },
+  {
+   "steward": "Unido Ose",
+   "zone": "Zone 8",
+   "clan": "Riribudeh",
+   "date": "2025-07-23",
+   "tracks": 8,
+   "km": 2.11
+  },
+  {
+   "steward": "Zechariah Sasavo",
+   "zone": "Zone 6",
+   "clan": "Naharaura",
+   "date": "2026-06-26",
+   "tracks": 2,
+   "km": 32.63
+  }
+ ]
+}

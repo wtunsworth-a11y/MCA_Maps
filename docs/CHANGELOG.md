@@ -6,6 +6,20 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.3
+
+- The people who walked these boundaries are **Clan Stewards**, and are named
+  so throughout — in both documents, on every map, and in the data itself.
+  The GeoPackage and CSV field is now `steward` rather than `custodian`, so
+  QGIS projects and saved filters keyed on the old name will need repointing
+  once.
+- New: **a GPX file for each clan**, in `output/gpx/`, to give back to the
+  stewards who walked it. Each holds the tracks they recorded, the gaps drawn
+  as clearly-named straight lines, and a START and END waypoint at every gap
+  so a steward can navigate to where the walking stopped and carry on. 186
+  gaps are marked across 47 clans — 266.6 km still to walk.
+- The companion document is now **Managalas Steward Days**.
+
 ## 1.2
 
 - Clan maps no longer draw neighbouring clans' boundaries. A neighbour is

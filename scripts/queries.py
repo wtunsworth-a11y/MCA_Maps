@@ -208,10 +208,10 @@ def near_closure_queries(tracks: gpd.GeoDataFrame, table: pd.DataFrame,
         subject = tracks[tracks.unit == row.source_name]
         out.append({
             "category": "Boundaries close to completion",
-            "title": f"{row.clan} ({row.custodian}) — {row.gap_m:,.0f} m from "
+            "title": f"{row.clan} ({row.steward}) — {row.gap_m:,.0f} m from "
                      "closing",
             "question":
-                f"**{row.clan}**, walked by **{row.custodian}** in "
+                f"**{row.clan}**, walked by **{row.steward}** in "
                 f"{row.zone}, covers {row.length_km:,.1f} km but the ends do "
                 f"not meet: **{row.gap_m:,.0f} m apart**, "
                 f"{row.gap_pct}% of the distance walked.\n\n"
@@ -235,11 +235,11 @@ def unclosed_queries(tracks: gpd.GeoDataFrame, table: pd.DataFrame,
         subject = tracks[tracks.unit == row.source_name]
         out.append({
             "category": "Boundaries that cannot yet give an area",
-            "title": f"{row.clan or '(no clan recorded)'} ({row.custodian}) — "
+            "title": f"{row.clan or '(no clan recorded)'} ({row.steward}) — "
                      f"recorded in {row.chains} separate pieces",
             "question":
                 f"**{row.clan or 'This survey'}**, walked by "
-                f"**{row.custodian}** in {row.zone}, covers "
+                f"**{row.steward}** in {row.zone}, covers "
                 f"{row.length_km:,.1f} km but is recorded as "
                 f"**{row.chains} disconnected pieces**, needing "
                 f"{row.gap_m:,.0f} m of straight-line joins to form a ring "
@@ -265,13 +265,13 @@ def feature_type_queries(tracks: gpd.GeoDataFrame) -> list[dict]:
         subject = tracks[tracks.feature_type == feature_type]
         clan = ", ".join(sorted({c for c in subject.clan if str(c).strip()})) \
             or "no clan recorded"
-        custodian = ", ".join(sorted(set(subject.custodian)))
+        steward = ", ".join(sorted(set(subject.steward)))
         out.append({
             "category": "Surveys that are not clan land boundaries",
-            "title": f"{feature_type}: {custodian}",
+            "title": f"{feature_type}: {steward}",
             "question":
                 f"This survey is recorded as a **{feature_type}**, not a clan "
-                f"land boundary — walked by **{custodian}** "
+                f"land boundary — walked by **{steward}** "
                 f"({subject.zone.iloc[0]}), {len(subject)} track(s), "
                 f"{subject.geometry.length.sum() / 1000:,.1f} km, "
                 f"attributed to **{clan}**.\n\n"

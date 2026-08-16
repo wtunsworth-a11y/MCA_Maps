@@ -4,13 +4,13 @@ The survey exports carry their attributes in the file name rather than in the
 GeoPackage fields, in two conventions that appear across the zones:
 
     Jethro_Akse_Asingi_Clan_Land_Boundary_Zone_2_14July2026
-    └─ custodian ─┘ └clan┘                  └zone┘ └─ date ─┘
+    └─ steward ─┘ └clan┘                  └zone┘ └─ date ─┘
 
     manuvoora_clan_egobeyas_kuarisi_tracks_zone_6
-    └─ clan ─┘     └─── custodian ────┘     └zone┘
+    └─ clan ─┘     └─── steward ────┘     └zone┘
 
 Both put the clan name next to the word "clan", so that word anchors the
-parse: whichever side holds the leftover tokens is the custodian. Everything
+parse: whichever side holds the leftover tokens is the steward. Everything
 here is a best-effort read of a human naming habit — `parse` never raises, and
 falls back to leaving fields empty.
 """
@@ -47,7 +47,7 @@ class ClanRecord:
     """What a source file name tells us about the survey it holds."""
 
     clan: str = ""
-    custodian: str = ""
+    steward: str = ""
     zone: str = ""
     feature_type: str = "Land Boundary"
     survey_date: str = ""
@@ -58,7 +58,7 @@ class ClanRecord:
 
 
 def parse(name: str, source_path: "os.PathLike | str | None" = None) -> ClanRecord:
-    """Pull clan, custodian, zone, type and date out of a layer name.
+    """Pull clan, steward, zone, type and date out of a layer name.
 
     Some files omit the zone from their own name, so ``source_path`` is used as
     a fallback: they still sit inside a "Zone 2 Clan Land Boundaries" archive,
@@ -91,24 +91,24 @@ def parse(name: str, source_path: "os.PathLike | str | None" = None) -> ClanReco
                        if t.lower() == "clan"), None)
 
     if clan_index is None:
-        record.custodian = _titlecase(_drop_noise(tokens))
+        record.steward = _titlecase(_drop_noise(tokens))
         record.clan = CLAN_ALIASES.get(record.clan.lower(), record.clan)
         return record
 
     before = _drop_noise(tokens[:clan_index])
     after = _drop_noise(tokens[clan_index + 1:])
 
-    # Which side of the anchor the custodian sits on is decided by whether any
-    # real name survives after it: "<clan> Clan <custodian>" keeps names on the
-    # right, "<custodian> <clan> Clan Land Boundary" has only noise there.
+    # Which side of the anchor the steward sits on is decided by whether any
+    # real name survives after it: "<clan> Clan <steward>" keeps names on the
+    # right, "<steward> <clan> Clan Land Boundary" has only noise there.
     if after:
         # Everything before the anchor is the clan — clan names run to two
         # words ("Nupa Ora"), so taking only the last token would truncate them.
         record.clan = _titlecase(before)
-        record.custodian = _titlecase(after)
+        record.steward = _titlecase(after)
     elif len(before) >= 2:
         record.clan = _titlecase([before[-1]])
-        record.custodian = _titlecase(before[:-1])
+        record.steward = _titlecase(before[:-1])
     else:
         record.clan = _titlecase(before)
 

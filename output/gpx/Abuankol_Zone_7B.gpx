@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="MCA Maps — Managalas clan boundary survey"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Abuankol — clan land boundary</name>
+    <desc>Abuankol, Zone 7B. 0.5 km walked; the boundary closes</desc>
+    <time>2026-08-16T11:44:03Z</time>
+  </metadata>
+  <trk>
+    <name>Abuankol - Simeon Pasip</name>
+    <desc>Walked by Simeon Pasip. 0.5 km, 4 track(s), recorded on the ground. Abuankol, Zone 7B.</desc>
+    <type>walked-boundary</type>
+    <trkseg>
+      <trkpt lat="-9.1389517" lon="148.3875067"/>
+      <trkpt lat="-9.1389442" lon="148.3873785"/>
+      <trkpt lat="-9.1389712" lon="148.3873564"/>
+      <trkpt lat="-9.1390182" lon="148.3873966"/>
+      <trkpt lat="-9.1390217" lon="148.3874617"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1389700" lon="148.3874933"/>
+      <trkpt lat="-9.1388241" lon="148.3875508"/>
+      <trkpt lat="-9.1387408" lon="148.3875247"/>
+      <trkpt lat="-9.1387599" lon="148.3874495"/>
+      <trkpt lat="-9.1388536" lon="148.3874146"/>
+      <trkpt lat="-9.1389567" lon="148.3874583"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1383833" lon="148.3880017"/>
+      <trkpt lat="-9.1384928" lon="148.3880229"/>
+      <trkpt lat="-9.1385453" lon="148.3880375"/>
+      <trkpt lat="-9.1385828" lon="148.3879989"/>
+      <trkpt lat="-9.1386601" lon="148.3879183"/>
+      <trkpt lat="-9.1387042" lon="148.3878647"/>
+      <trkpt lat="-9.1386695" lon="148.3878986"/>
+      <trkpt lat="-9.1385875" lon="148.3879655"/>
+      <trkpt lat="-9.1385410" lon="148.3880565"/>
+      <trkpt lat="-9.1385281" lon="148.3880686"/>
+      <trkpt lat="-9.1385364" lon="148.3881159"/>
+      <trkpt lat="-9.1385359" lon="148.3881080"/>
+      <trkpt lat="-9.1385280" lon="148.3881366"/>
+      <trkpt lat="-9.1385190" lon="148.3881349"/>
+      <trkpt lat="-9.1385207" lon="148.3881059"/>
+      <trkpt lat="-9.1385245" lon="148.3880793"/>
+      <trkpt lat="-9.1385147" lon="148.3880661"/>
+      <trkpt lat="-9.1385068" lon="148.3880728"/>
+      <trkpt lat="-9.1385129" lon="148.3881053"/>
+      <trkpt lat="-9.1385263" lon="148.3880951"/>
+      <trkpt lat="-9.1385400" lon="148.3880617"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1390200" lon="148.3874700"/>
+      <trkpt lat="-9.1389671" lon="148.3873791"/>
+      <trkpt lat="-9.1389544" lon="148.3873641"/>
+      <trkpt lat="-9.1389817" lon="148.3874250"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1425867" lon="148.3907650"/>
+      <trkpt lat="-9.1427010" lon="148.3908584"/>
+      <trkpt lat="-9.1427677" lon="148.3909928"/>
+      <trkpt lat="-9.1427877" lon="148.3911680"/>
+      <trkpt lat="-9.1427988" lon="148.3913494"/>
+      <trkpt lat="-9.1428116" lon="148.3915256"/>
+      <trkpt lat="-9.1428250" lon="148.3916967"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1427400" lon="148.3917533"/>
+      <trkpt lat="-9.1425919" lon="148.3917456"/>
+      <trkpt lat="-9.1424787" lon="148.3916660"/>
+      <trkpt lat="-9.1423867" lon="148.3915224"/>
+      <trkpt lat="-9.1422944" lon="148.3913688"/>
+      <trkpt lat="-9.1422182" lon="148.3912595"/>
+      <trkpt lat="-9.1421717" lon="148.3911867"/>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-9.1421517" lon="148.3910967"/>
+      <trkpt lat="-9.1420593" lon="148.3909614"/>
+      <trkpt lat="-9.1420645" lon="148.3908458"/>
+      <trkpt lat="-9.1421726" lon="148.3907734"/>
+      <trkpt lat="-9.1423445" lon="148.3907364"/>
+      <trkpt lat="-9.1424877" lon="148.3907442"/>
+      <trkpt lat="-9.1425967" lon="148.3907733"/>
+    </trkseg>
+  </trk>
+</gpx>

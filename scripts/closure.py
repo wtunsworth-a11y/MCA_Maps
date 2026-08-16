@@ -433,12 +433,12 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
             outcome["status"] = "too short"
             outcome["detail"] = f"only {outcome['length_m']:.0f} m walked"
         first = group.iloc[0]
-        custodians = sorted({str(c) for c in group.custodian if str(c).strip()})
+        stewards = sorted({str(c) for c in group.steward if str(c).strip()})
         rows.append({
             "zone": first.get("zone", ""),
             "clan": first.get("clan", ""),
-            "custodian": ", ".join(custodians),
-            "walkers": len(custodians),
+            "steward": ", ".join(stewards),
+            "stewards": len(stewards),
             "source_name": source,
             "tracks": outcome["parts"],
             "length_km": round(outcome["length_m"] / 1000, 2),
@@ -449,7 +449,7 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
             "status": outcome["status"],
             "detail": outcome.get("detail", ""),
         })
-    return pd.DataFrame(rows).sort_values(["zone", "clan", "custodian"])
+    return pd.DataFrame(rows).sort_values(["zone", "clan", "steward"])
 
 
 def _markdown(frame: pd.DataFrame) -> str:
@@ -545,7 +545,7 @@ def main(argv: list[str] | None = None) -> int:
         print("\nNear closure — smallest gaps first:\n")
         near_rows = (table[table.status == "near"]
                      .sort_values("gap_pct")
-                     [["zone", "clan", "custodian", "length_km", "gap_m",
+                     [["zone", "clan", "steward", "length_km", "gap_m",
                        "gap_pct"]])
         print(near_rows.to_string(index=False))
 

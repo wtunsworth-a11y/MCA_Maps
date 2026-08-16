@@ -1,6 +1,6 @@
 {
  "clans": 47,
- "custodians": 67,
+ "stewards": 67,
  "surveys": 69,
  "units": 36,
  "tracks": 600,
@@ -77,8 +77,10 @@
   }
  ],
  "shared_line_pairs": 112,
- "walkers": 67,
- "walker_days": 233,
+ "gpx_clans": 47,
+ "gpx_gaps": 186,
+ "gpx_gap_km": 266.6,
+ "steward_days": 233,
  "field_days": 118,
  "first_walk": "2025-02-18",
  "last_walk": "2026-08-13",
@@ -86,7 +88,7 @@
   {
    "zone": "Zone 2",
    "clans": 15,
-   "custodians": 18,
+   "stewards": 18,
    "surveys": 20,
    "walked_km": 320.5,
    "boundary_km": 257.4,
@@ -95,7 +97,7 @@
   {
    "zone": "Zone 3",
    "clans": 4,
-   "custodians": 8,
+   "stewards": 8,
    "surveys": 8,
    "walked_km": 48.7,
    "boundary_km": 42.0,
@@ -104,7 +106,7 @@
   {
    "zone": "Zone 6",
    "clans": 5,
-   "custodians": 7,
+   "stewards": 7,
    "surveys": 7,
    "walked_km": 151.6,
    "boundary_km": 125.9,
@@ -113,7 +115,7 @@
   {
    "zone": "Zone 7A",
    "clans": 3,
-   "custodians": 6,
+   "stewards": 6,
    "surveys": 6,
    "walked_km": 73.7,
    "boundary_km": 53.9,
@@ -122,7 +124,7 @@
   {
    "zone": "Zone 7B",
    "clans": 12,
-   "custodians": 18,
+   "stewards": 18,
    "surveys": 18,
    "walked_km": 282.3,
    "boundary_km": 230.6,
@@ -131,7 +133,7 @@
   {
    "zone": "Zone 8",
    "clans": 8,
-   "custodians": 10,
+   "stewards": 10,
    "surveys": 10,
    "walked_km": 236.1,
    "boundary_km": 214.8,

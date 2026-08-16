@@ -3,9 +3,9 @@
   "unit": "Asingi \u2014 Zone 2",
   "clan": "Asingi",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Jethro Akse",
+    "steward": "Jethro Akse",
     "tracks": 5,
     "km": 6.43,
     "days": 5,
@@ -14,7 +14,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 6.43,
   "spur_km": 0.0,
   "status": "closed",
@@ -90,15 +90,17 @@
   ],
   "join_sep_ha": 166.1,
   "join_joined_ha": 166.1,
-  "map": "Asingi_Zone_2.png"
+  "map": "Asingi_Zone_2.png",
+  "gpx": "Asingi_Zone_2.gpx",
+  "gpx_gaps": 0
  },
  {
   "unit": "Asoro \u2014 Zone 2",
   "clan": "Asoro",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Gilford Amakana",
+    "steward": "Gilford Amakana",
     "tracks": 10,
     "km": 22.83,
     "days": 3,
@@ -107,7 +109,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 22.83,
   "spur_km": 3.51,
   "status": "open",
@@ -155,15 +157,17 @@
   ],
   "join_sep_ha": 3506.7,
   "join_joined_ha": 3506.7,
-  "map": "Asoro_Zone_2.png"
+  "map": "Asoro_Zone_2.png",
+  "gpx": "Asoro_Zone_2.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Bujevi \u2014 Zone 2",
   "clan": "Bujevi",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Abel Kajari",
+    "steward": "Abel Kajari",
     "tracks": 2,
     "km": 5.76,
     "days": 2,
@@ -172,7 +176,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 5.76,
   "spur_km": 1.13,
   "status": "open",
@@ -203,15 +207,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Bujevi_Zone_2.png"
+  "map": "Bujevi_Zone_2.png",
+  "gpx": "Bujevi_Zone_2.gpx",
+  "gpx_gaps": 1
  },
  {
   "unit": "Gariniko \u2014 Zone 2",
   "clan": "Gariniko",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Lance Sake",
+    "steward": "Lance Sake",
     "tracks": 6,
     "km": 10.08,
     "days": 3,
@@ -220,7 +226,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 10.08,
   "spur_km": 1.53,
   "status": "open",
@@ -312,15 +318,17 @@
   ],
   "join_sep_ha": 106.5,
   "join_joined_ha": 106.5,
-  "map": "Gariniko_Zone_2.png"
+  "map": "Gariniko_Zone_2.png",
+  "gpx": "Gariniko_Zone_2.gpx",
+  "gpx_gaps": 4
  },
  {
   "unit": "Juaiko \u2014 Zone 2",
   "clan": "Juaiko",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Gasper K Philip J",
+    "steward": "Gasper K Philip J",
     "tracks": 10,
     "km": 24.3,
     "days": 5,
@@ -329,7 +337,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 24.3,
   "spur_km": 5.81,
   "status": "near",
@@ -395,15 +403,17 @@
   ],
   "join_sep_ha": 1292.9,
   "join_joined_ha": 1292.9,
-  "map": "Juaiko_Zone_2.png"
+  "map": "Juaiko_Zone_2.png",
+  "gpx": "Juaiko_Zone_2.gpx",
+  "gpx_gaps": 6
  },
  {
   "unit": "Kasaki \u2014 Zone 2",
   "clan": "Kasaki",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Ananias Masua",
+    "steward": "Ananias Masua",
     "tracks": 1,
     "km": 15.13,
     "days": 1,
@@ -412,7 +422,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 15.13,
   "spur_km": 3.11,
   "status": "near",
@@ -507,15 +517,17 @@
   ],
   "join_sep_ha": 540.8,
   "join_joined_ha": 540.8,
-  "map": "Kasaki_Zone_2.png"
+  "map": "Kasaki_Zone_2.png",
+  "gpx": "Kasaki_Zone_2.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Majanko \u2014 Zone 2",
   "clan": "Majanko",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Gilford Amakana",
+    "steward": "Gilford Amakana",
     "tracks": 4,
     "km": 7.51,
     "days": 1,
@@ -524,7 +536,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 7.51,
   "spur_km": 0.0,
   "status": "closed",
@@ -585,15 +597,17 @@
   ],
   "join_sep_ha": 275.8,
   "join_joined_ha": 275.8,
-  "map": "Majanko_Zone_2.png"
+  "map": "Majanko_Zone_2.png",
+  "gpx": "Majanko_Zone_2.gpx",
+  "gpx_gaps": 0
  },
  {
   "unit": "Manoko \u2014 Zone 2",
   "clan": "Manoko",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Gilford Amakana",
+    "steward": "Gilford Amakana",
     "tracks": 7,
     "km": 12.15,
     "days": 3,
@@ -602,7 +616,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 12.15,
   "spur_km": 1.81,
   "status": "open",
@@ -665,15 +679,17 @@
   ],
   "join_sep_ha": 404.0,
   "join_joined_ha": 404.0,
-  "map": "Manoko_Zone_2.png"
+  "map": "Manoko_Zone_2.png",
+  "gpx": "Manoko_Zone_2.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Murai (Z2) \u2014 Zone 2",
   "clan": "Murai (Z2)",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Nehemiah Nindori",
+    "steward": "Nehemiah Nindori",
     "tracks": 32,
     "km": 7.33,
     "days": 6,
@@ -682,7 +698,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 7.33,
   "spur_km": 0.18,
   "status": "closed",
@@ -753,15 +769,17 @@
   ],
   "join_sep_ha": 198.9,
   "join_joined_ha": 198.9,
-  "map": "Murai_Z2_Zone_2.png"
+  "map": "Murai_Z2_Zone_2.png",
+  "gpx": "Murai_Z2_Zone_2.gpx",
+  "gpx_gaps": 0
  },
  {
   "unit": "Nituri \u2014 Zone 2",
   "clan": "Nituri",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Graham Naopi",
+    "steward": "Graham Naopi",
     "tracks": 7,
     "km": 18.7,
     "days": 3,
@@ -770,7 +788,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Christoper Visua",
+    "steward": "Christoper Visua",
     "tracks": 19,
     "km": 17.83,
     "days": 7,
@@ -779,7 +797,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Newton Muraba",
+    "steward": "Newton Muraba",
     "tracks": 13,
     "km": 5.3,
     "days": 6,
@@ -788,7 +806,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 3,
+  "n_stewards": 3,
   "walked_km": 41.83,
   "spur_km": 10.45,
   "status": "open",
@@ -864,15 +882,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 5274.6,
-  "map": "Nituri_Zone_2.png"
+  "map": "Nituri_Zone_2.png",
+  "gpx": "Nituri_Zone_2.gpx",
+  "gpx_gaps": 12
  },
  {
   "unit": "Rondi \u2014 Zone 2",
   "clan": "Rondi",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Jefferson Amunisa",
+    "steward": "Jefferson Amunisa",
     "tracks": 28,
     "km": 29.66,
     "days": 5,
@@ -881,7 +901,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Humphrey Poto",
+    "steward": "Humphrey Poto",
     "tracks": 29,
     "km": 29.31,
     "days": 5,
@@ -890,7 +910,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 58.98,
   "spur_km": 0.36,
   "status": "open",
@@ -953,15 +973,17 @@
   ],
   "join_sep_ha": 1256.3,
   "join_joined_ha": 1563.4,
-  "map": "Rondi_Zone_2.png"
+  "map": "Rondi_Zone_2.png",
+  "gpx": "Rondi_Zone_2.gpx",
+  "gpx_gaps": 14
  },
  {
   "unit": "Rumbi \u2014 Zone 2",
   "clan": "Rumbi",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Joel Mamata",
+    "steward": "Joel Mamata",
     "tracks": 9,
     "km": 15.07,
     "days": 5,
@@ -970,7 +992,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 15.07,
   "spur_km": 3.73,
   "status": "open",
@@ -1006,15 +1028,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Rumbi_Zone_2.png"
+  "map": "Rumbi_Zone_2.png",
+  "gpx": "Rumbi_Zone_2.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Sukandi \u2014 Zone 2",
   "clan": "Sukandi",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Rodney Ajinko",
+    "steward": "Rodney Ajinko",
     "tracks": 1,
     "km": 29.09,
     "days": 1,
@@ -1023,7 +1047,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Millinton Beso",
+    "steward": "Millinton Beso",
     "tracks": 3,
     "km": 10.6,
     "days": 2,
@@ -1032,7 +1056,7 @@
     "type": "Sacred Site"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 39.69,
   "spur_km": 8.99,
   "status": "closed",
@@ -1124,15 +1148,17 @@
   ],
   "join_sep_ha": 2367.9,
   "join_joined_ha": 1900.9,
-  "map": "Sukandi_Zone_2.png"
+  "map": "Sukandi_Zone_2.png",
+  "gpx": "Sukandi_Zone_2.gpx",
+  "gpx_gaps": 0
  },
  {
   "unit": "Tuoko \u2014 Zone 2",
   "clan": "Tuoko",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Terrence Dobija",
+    "steward": "Terrence Dobija",
     "tracks": 3,
     "km": 36.51,
     "days": 3,
@@ -1141,7 +1167,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Kaupa Dota",
+    "steward": "Kaupa Dota",
     "tracks": 6,
     "km": 11.21,
     "days": 3,
@@ -1150,7 +1176,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 47.72,
   "spur_km": 9.47,
   "status": "open",
@@ -1239,15 +1265,17 @@
   ],
   "join_sep_ha": 1681.3,
   "join_joined_ha": 3676.2,
-  "map": "Tuoko_Zone_2.png"
+  "map": "Tuoko_Zone_2.png",
+  "gpx": "Tuoko_Zone_2.gpx",
+  "gpx_gaps": 7
  },
  {
   "unit": "Zambiko \u2014 Zone 2",
   "clan": "Zambiko",
   "zone": "Zone 2",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Sylvester Anai",
+    "steward": "Sylvester Anai",
     "tracks": 8,
     "km": 5.67,
     "days": 3,
@@ -1256,7 +1284,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 5.67,
   "spur_km": 1.17,
   "status": "open",
@@ -1317,15 +1345,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Zambiko_Zone_2.png"
+  "map": "Zambiko_Zone_2.png",
+  "gpx": "Zambiko_Zone_2.gpx",
+  "gpx_gaps": 5
  },
  {
   "unit": "Deari \u2014 Zone 3",
   "clan": "Deari",
   "zone": "Zone 3",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Patrick Dirise",
+    "steward": "Patrick Dirise",
     "tracks": 3,
     "km": 7.79,
     "days": 2,
@@ -1334,7 +1364,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Anthony Irimari",
+    "steward": "Anthony Irimari",
     "tracks": 2,
     "km": 5.29,
     "days": 2,
@@ -1343,7 +1373,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 13.09,
   "spur_km": 2.22,
   "status": "open",
@@ -1374,15 +1404,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Deari_Zone_3.png"
+  "map": "Deari_Zone_3.png",
+  "gpx": "Deari_Zone_3.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Giroiko \u2014 Zone 3",
   "clan": "Giroiko",
   "zone": "Zone 3",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Mark Samba",
+    "steward": "Mark Samba",
     "tracks": 2,
     "km": 2.76,
     "days": 1,
@@ -1391,7 +1423,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Eddie Sioro",
+    "steward": "Eddie Sioro",
     "tracks": 1,
     "km": 2.67,
     "days": 1,
@@ -1400,7 +1432,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 5.43,
   "spur_km": 0.41,
   "status": "open",
@@ -1415,15 +1447,17 @@
   "shared_lines": [],
   "join_sep_ha": 78.3,
   "join_joined_ha": 9.5,
-  "map": "Giroiko_Zone_3.png"
+  "map": "Giroiko_Zone_3.png",
+  "gpx": "Giroiko_Zone_3.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Gumuri \u2014 Zone 3",
   "clan": "Gumuri",
   "zone": "Zone 3",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Gray Saui",
+    "steward": "Gray Saui",
     "tracks": 1,
     "km": 6.77,
     "days": 1,
@@ -1432,7 +1466,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Monty Stanford",
+    "steward": "Monty Stanford",
     "tracks": 1,
     "km": 0.02,
     "days": 0,
@@ -1441,7 +1475,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 6.79,
   "spur_km": 0.25,
   "status": "open",
@@ -1462,15 +1496,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Gumuri_Zone_3.png"
+  "map": "Gumuri_Zone_3.png",
+  "gpx": "Gumuri_Zone_3.gpx",
+  "gpx_gaps": 1
  },
  {
   "unit": "Nui \u2014 Zone 3",
   "clan": "Nui",
   "zone": "Zone 3",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Iman Nakina",
+    "steward": "Iman Nakina",
     "tracks": 4,
     "km": 11.97,
     "days": 2,
@@ -1479,7 +1515,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Bobby Aneba",
+    "steward": "Bobby Aneba",
     "tracks": 3,
     "km": 11.45,
     "days": 2,
@@ -1488,7 +1524,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 23.42,
   "spur_km": 5.69,
   "status": "open",
@@ -1519,15 +1555,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Nui_Zone_3.png"
+  "map": "Nui_Zone_3.png",
+  "gpx": "Nui_Zone_3.gpx",
+  "gpx_gaps": 5
  },
  {
   "unit": "Manuvoora \u2014 Zone 6",
   "clan": "Manuvoora",
   "zone": "Zone 6",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Egobeyas Kuarisi",
+    "steward": "Egobeyas Kuarisi",
     "tracks": 18,
     "km": 31.22,
     "days": 11,
@@ -1536,7 +1574,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Granville Nepo",
+    "steward": "Granville Nepo",
     "tracks": 11,
     "km": 30.23,
     "days": 8,
@@ -1545,7 +1583,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 61.45,
   "spur_km": 10.04,
   "status": "open",
@@ -1571,15 +1609,17 @@
   ],
   "join_sep_ha": 2066.1,
   "join_joined_ha": 827.7,
-  "map": "Manuvoora_Zone_6.png"
+  "map": "Manuvoora_Zone_6.png",
+  "gpx": "Manuvoora_Zone_6.gpx",
+  "gpx_gaps": 6
  },
  {
   "unit": "Mariura \u2014 Zone 6",
   "clan": "Mariura",
   "zone": "Zone 6",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Fabian Justin",
+    "steward": "Fabian Justin",
     "tracks": 22,
     "km": 17.85,
     "days": 6,
@@ -1588,7 +1628,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Livingstone Nisavora",
+    "steward": "Livingstone Nisavora",
     "tracks": 21,
     "km": 15.86,
     "days": 6,
@@ -1597,7 +1637,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 33.71,
   "spur_km": 0.0,
   "status": "open",
@@ -1653,15 +1693,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 854.9,
-  "map": "Mariura_Zone_6.png"
+  "map": "Mariura_Zone_6.png",
+  "gpx": "Mariura_Zone_6.gpx",
+  "gpx_gaps": 11
  },
  {
   "unit": "Naharaura \u2014 Zone 6",
   "clan": "Naharaura",
   "zone": "Zone 6",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Zechariah Sasavo",
+    "steward": "Zechariah Sasavo",
     "tracks": 2,
     "km": 32.63,
     "days": 1,
@@ -1670,7 +1712,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 32.63,
   "spur_km": 0.0,
   "status": "near",
@@ -1713,15 +1755,17 @@
   ],
   "join_sep_ha": 594.0,
   "join_joined_ha": 594.0,
-  "map": "Naharaura_Zone_6.png"
+  "map": "Naharaura_Zone_6.png",
+  "gpx": "Naharaura_Zone_6.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Nupa Ora \u2014 Zone 6",
   "clan": "Nupa Ora",
   "zone": "Zone 6",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Benjamin Marijah",
+    "steward": "Benjamin Marijah",
     "tracks": 3,
     "km": 4.94,
     "days": 3,
@@ -1730,7 +1774,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 4.94,
   "spur_km": 0.62,
   "status": "open",
@@ -1751,15 +1795,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Nupa_Ora_Zone_6.png"
+  "map": "Nupa_Ora_Zone_6.png",
+  "gpx": "Nupa_Ora_Zone_6.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Pina Ora \u2014 Zone 6",
   "clan": "Pina Ora",
   "zone": "Zone 6",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Alban Ezekiel",
+    "steward": "Alban Ezekiel",
     "tracks": 3,
     "km": 18.85,
     "days": 3,
@@ -1768,7 +1814,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 18.85,
   "spur_km": 3.91,
   "status": "near",
@@ -1803,15 +1849,17 @@
   ],
   "join_sep_ha": 812.2,
   "join_joined_ha": 812.2,
-  "map": "Pina_Ora_Zone_6.png"
+  "map": "Pina_Ora_Zone_6.png",
+  "gpx": "Pina_Ora_Zone_6.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Bimkol \u2014 Zone 7A",
   "clan": "Bimkol",
   "zone": "Zone 7A",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Kennedy Wosa",
+    "steward": "Kennedy Wosa",
     "tracks": 5,
     "km": 8.01,
     "days": 4,
@@ -1820,7 +1868,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 8.01,
   "spur_km": 1.78,
   "status": "open",
@@ -1855,15 +1903,17 @@
   ],
   "join_sep_ha": 158.4,
   "join_joined_ha": 158.4,
-  "map": "Bimkol_Zone_7A.png"
+  "map": "Bimkol_Zone_7A.png",
+  "gpx": "Bimkol_Zone_7A.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Borori \u2014 Zone 7A",
   "clan": "Borori",
   "zone": "Zone 7A",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "John Saini",
+    "steward": "John Saini",
     "tracks": 5,
     "km": 22.81,
     "days": 5,
@@ -1872,7 +1922,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Hagahi Semo",
+    "steward": "Hagahi Semo",
     "tracks": 6,
     "km": 9.87,
     "days": 5,
@@ -1881,7 +1931,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 32.69,
   "spur_km": 8.01,
   "status": "open",
@@ -1942,15 +1992,17 @@
   ],
   "join_sep_ha": 676.7,
   "join_joined_ha": 638.7,
-  "map": "Borori_Zone_7A.png"
+  "map": "Borori_Zone_7A.png",
+  "gpx": "Borori_Zone_7A.gpx",
+  "gpx_gaps": 7
  },
  {
   "unit": "Darekikol \u2014 Zone 7A",
   "clan": "Darekikol",
   "zone": "Zone 7A",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "George Kopoi",
+    "steward": "George Kopoi",
     "tracks": 6,
     "km": 15.36,
     "days": 3,
@@ -1959,7 +2011,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Garex Sevesi",
+    "steward": "Garex Sevesi",
     "tracks": 2,
     "km": 13.39,
     "days": 2,
@@ -1968,7 +2020,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 28.76,
   "spur_km": 6.68,
   "status": "open",
@@ -2024,15 +2076,17 @@
   ],
   "join_sep_ha": 1226.6,
   "join_joined_ha": 587.5,
-  "map": "Darekikol_Zone_7A.png"
+  "map": "Darekikol_Zone_7A.png",
+  "gpx": "Darekikol_Zone_7A.gpx",
+  "gpx_gaps": 6
  },
  {
   "unit": "Abuankol \u2014 Zone 7B",
   "clan": "Abuankol",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Simeon Pasip",
+    "steward": "Simeon Pasip",
     "tracks": 4,
     "km": 0.51,
     "days": 3,
@@ -2041,7 +2095,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 0.51,
   "spur_km": 0.0,
   "status": "closed",
@@ -2135,15 +2189,17 @@
   ],
   "join_sep_ha": 0.7,
   "join_joined_ha": 0.7,
-  "map": "Abuankol_Zone_7B.png"
+  "map": "Abuankol_Zone_7B.png",
+  "gpx": "Abuankol_Zone_7B.gpx",
+  "gpx_gaps": 0
  },
  {
   "unit": "Ambunkol \u2014 Zone 7B",
   "clan": "Ambunkol",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Peter Awako",
+    "steward": "Peter Awako",
     "tracks": 1,
     "km": 18.6,
     "days": 1,
@@ -2152,7 +2208,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 18.6,
   "spur_km": 4.03,
   "status": "open",
@@ -2239,15 +2295,17 @@
   ],
   "join_sep_ha": 591.8,
   "join_joined_ha": 591.8,
-  "map": "Ambunkol_Zone_7B.png"
+  "map": "Ambunkol_Zone_7B.png",
+  "gpx": "Ambunkol_Zone_7B.gpx",
+  "gpx_gaps": 5
  },
  {
   "unit": "Binunkol \u2014 Zone 7B",
   "clan": "Binunkol",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Moses Garui",
+    "steward": "Moses Garui",
     "tracks": 10,
     "km": 17.81,
     "days": 5,
@@ -2256,7 +2314,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 17.81,
   "spur_km": 4.11,
   "status": "open",
@@ -2381,15 +2439,17 @@
   ],
   "join_sep_ha": 1032.3,
   "join_joined_ha": 1032.3,
-  "map": "Binunkol_Zone_7B.png"
+  "map": "Binunkol_Zone_7B.png",
+  "gpx": "Binunkol_Zone_7B.gpx",
+  "gpx_gaps": 15
  },
  {
   "unit": "Ginangi \u2014 Zone 7B",
   "clan": "Ginangi",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Job Mokondo",
+    "steward": "Job Mokondo",
     "tracks": 7,
     "km": 21.83,
     "days": 3,
@@ -2398,7 +2458,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Joshua Mokondo",
+    "steward": "Joshua Mokondo",
     "tracks": 6,
     "km": 14.9,
     "days": 4,
@@ -2407,7 +2467,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 36.73,
   "spur_km": 4.24,
   "status": "open",
@@ -2491,15 +2551,17 @@
   ],
   "join_sep_ha": 1235.9,
   "join_joined_ha": 1234.3,
-  "map": "Ginangi_Zone_7B.png"
+  "map": "Ginangi_Zone_7B.png",
+  "gpx": "Ginangi_Zone_7B.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Jariji \u2014 Zone 7B",
   "clan": "Jariji",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Clement Viri",
+    "steward": "Clement Viri",
     "tracks": 1,
     "km": 13.8,
     "days": 1,
@@ -2508,7 +2570,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Newton Giwai",
+    "steward": "Newton Giwai",
     "tracks": 3,
     "km": 13.66,
     "days": 2,
@@ -2517,7 +2579,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 27.47,
   "spur_km": 5.77,
   "status": "open",
@@ -2622,15 +2684,17 @@
   ],
   "join_sep_ha": 620.0,
   "join_joined_ha": 696.1,
-  "map": "Jariji_Zone_7B.png"
+  "map": "Jariji_Zone_7B.png",
+  "gpx": "Jariji_Zone_7B.gpx",
+  "gpx_gaps": 5
  },
  {
   "unit": "Manang \u2014 Zone 7B",
   "clan": "Manang",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Kelly Wahamo",
+    "steward": "Kelly Wahamo",
     "tracks": 1,
     "km": 7.13,
     "days": 1,
@@ -2639,7 +2703,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 7.13,
   "spur_km": 0.0,
   "status": "open",
@@ -2692,15 +2756,17 @@
   ],
   "join_sep_ha": 353.0,
   "join_joined_ha": 353.0,
-  "map": "Manang_Zone_7B.png"
+  "map": "Manang_Zone_7B.png",
+  "gpx": "Manang_Zone_7B.gpx",
+  "gpx_gaps": 1
  },
  {
   "unit": "Marang \u2014 Zone 7B",
   "clan": "Marang",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Henry Manderi",
+    "steward": "Henry Manderi",
     "tracks": 2,
     "km": 8.27,
     "days": 2,
@@ -2709,7 +2775,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 8.27,
   "spur_km": 1.33,
   "status": "open",
@@ -2745,15 +2811,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Marang_Zone_7B.png"
+  "map": "Marang_Zone_7B.png",
+  "gpx": "Marang_Zone_7B.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Marijabimkol \u2014 Zone 7B",
   "clan": "Marijabimkol",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Japhet Nagura",
+    "steward": "Japhet Nagura",
     "tracks": 7,
     "km": 10.97,
     "days": 4,
@@ -2762,7 +2830,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 10.97,
   "spur_km": 2.49,
   "status": "open",
@@ -2813,15 +2881,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Marijabimkol_Zone_7B.png"
+  "map": "Marijabimkol_Zone_7B.png",
+  "gpx": "Marijabimkol_Zone_7B.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Murai (Z7B) \u2014 Zone 7B",
   "clan": "Murai (Z7B)",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "James Iroti",
+    "steward": "James Iroti",
     "tracks": 8,
     "km": 12.35,
     "days": 6,
@@ -2830,7 +2900,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 12.35,
   "spur_km": 2.92,
   "status": "open",
@@ -2901,15 +2971,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Murai_Z7B_Zone_7B.png"
+  "map": "Murai_Z7B_Zone_7B.png",
+  "gpx": "Murai_Z7B_Zone_7B.gpx",
+  "gpx_gaps": 5
  },
  {
   "unit": "Natang \u2014 Zone 7B",
   "clan": "Natang",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Stafford Gidiri",
+    "steward": "Stafford Gidiri",
     "tracks": 2,
     "km": 46.5,
     "days": 1,
@@ -2918,7 +2990,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Dickson Hoe",
+    "steward": "Dickson Hoe",
     "tracks": 4,
     "km": 30.75,
     "days": 3,
@@ -2927,7 +2999,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 77.25,
   "spur_km": 3.43,
   "status": "near",
@@ -2998,15 +3070,17 @@
   ],
   "join_sep_ha": 2354.8,
   "join_joined_ha": 1532.8,
-  "map": "Natang_Zone_7B.png"
+  "map": "Natang_Zone_7B.png",
+  "gpx": "Natang_Zone_7B.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Sugulkol \u2014 Zone 7B",
   "clan": "Sugulkol",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Emmanuel Fufus",
+    "steward": "Emmanuel Fufus",
     "tracks": 6,
     "km": 13.43,
     "days": 6,
@@ -3015,7 +3089,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Chris Idua",
+    "steward": "Chris Idua",
     "tracks": 6,
     "km": 10.56,
     "days": 3,
@@ -3024,7 +3098,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 23.99,
   "spur_km": 1.29,
   "status": "open",
@@ -3155,15 +3229,17 @@
   ],
   "join_sep_ha": 630.4,
   "join_joined_ha": 313.8,
-  "map": "Sugulkol_Zone_7B.png"
+  "map": "Sugulkol_Zone_7B.png",
+  "gpx": "Sugulkol_Zone_7B.gpx",
+  "gpx_gaps": 5
  },
  {
   "unit": "Wohukol \u2014 Zone 7B",
   "clan": "Wohukol",
   "zone": "Zone 7B",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Nelson Runage",
+    "steward": "Nelson Runage",
     "tracks": 4,
     "km": 17.81,
     "days": 2,
@@ -3172,7 +3248,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Darline Walele",
+    "steward": "Darline Walele",
     "tracks": 5,
     "km": 17.1,
     "days": 4,
@@ -3181,7 +3257,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 34.91,
   "spur_km": 4.87,
   "status": "open",
@@ -3299,15 +3375,17 @@
   ],
   "join_sep_ha": 614.7,
   "join_joined_ha": 701.1,
-  "map": "Wohukol_Zone_7B.png"
+  "map": "Wohukol_Zone_7B.png",
+  "gpx": "Wohukol_Zone_7B.gpx",
+  "gpx_gaps": 4
  },
  {
   "unit": "Duribip \u2014 Zone 8",
   "clan": "Duribip",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Beven Naive",
+    "steward": "Beven Naive",
     "tracks": 4,
     "km": 4.46,
     "days": 2,
@@ -3316,7 +3394,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 4.46,
   "spur_km": 0.22,
   "status": "open",
@@ -3342,15 +3420,17 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Duribip_Zone_8.png"
+  "map": "Duribip_Zone_8.png",
+  "gpx": "Duribip_Zone_8.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Dusi \u2014 Zone 8",
   "clan": "Dusi",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Max Mamo",
+    "steward": "Max Mamo",
     "tracks": 52,
     "km": 32.95,
     "days": 3,
@@ -3359,7 +3439,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 32.95,
   "spur_km": 7.39,
   "status": "near",
@@ -3402,15 +3482,17 @@
   ],
   "join_sep_ha": 218.6,
   "join_joined_ha": 218.6,
-  "map": "Dusi_Zone_8.png"
+  "map": "Dusi_Zone_8.png",
+  "gpx": "Dusi_Zone_8.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Gubai \u2014 Zone 8",
   "clan": "Gubai",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Kenny Noi",
+    "steward": "Kenny Noi",
     "tracks": 55,
     "km": 91.86,
     "days": 5,
@@ -3419,7 +3501,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Fordy Igai",
+    "steward": "Fordy Igai",
     "tracks": 20,
     "km": 42.68,
     "days": 2,
@@ -3428,7 +3510,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 134.54,
   "spur_km": 0.0,
   "status": "near",
@@ -3458,15 +3540,17 @@
   ],
   "join_sep_ha": 1666.6,
   "join_joined_ha": 1173.2,
-  "map": "Gubai_Zone_8.png"
+  "map": "Gubai_Zone_8.png",
+  "gpx": "Gubai_Zone_8.gpx",
+  "gpx_gaps": 6
  },
  {
   "unit": "Gumuyude \u2014 Zone 8",
   "clan": "Gumuyude",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Philip Igai",
+    "steward": "Philip Igai",
     "tracks": 6,
     "km": 16.79,
     "days": 6,
@@ -3475,7 +3559,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 16.79,
   "spur_km": 3.94,
   "status": "open",
@@ -3523,15 +3607,17 @@
   ],
   "join_sep_ha": 691.3,
   "join_joined_ha": 691.3,
-  "map": "Gumuyude_Zone_8.png"
+  "map": "Gumuyude_Zone_8.png",
+  "gpx": "Gumuyude_Zone_8.gpx",
+  "gpx_gaps": 5
  },
  {
   "unit": "Madukol \u2014 Zone 8",
   "clan": "Madukol",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Gibs Ginave",
+    "steward": "Gibs Ginave",
     "tracks": 5,
     "km": 1.07,
     "days": 3,
@@ -3540,7 +3626,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 1.07,
   "spur_km": 0.0,
   "status": "open",
@@ -3561,15 +3647,17 @@
   ],
   "join_sep_ha": 1.4,
   "join_joined_ha": 1.4,
-  "map": "Madukol_Zone_8.png"
+  "map": "Madukol_Zone_8.png",
+  "gpx": "Madukol_Zone_8.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Mungaikol \u2014 Zone 8",
   "clan": "Mungaikol",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Graham Ekiawa",
+    "steward": "Graham Ekiawa",
     "tracks": 5,
     "km": 14.75,
     "days": 5,
@@ -3578,7 +3666,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 14.75,
   "spur_km": 2.77,
   "status": "open",
@@ -3626,15 +3714,17 @@
   ],
   "join_sep_ha": 569.7,
   "join_joined_ha": 569.7,
-  "map": "Mungaikol_Zone_8.png"
+  "map": "Mungaikol_Zone_8.png",
+  "gpx": "Mungaikol_Zone_8.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Riribudeh \u2014 Zone 8",
   "clan": "Riribudeh",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Prut Buitari",
+    "steward": "Prut Buitari",
     "tracks": 7,
     "km": 10.37,
     "days": 3,
@@ -3643,7 +3733,7 @@
     "type": "Land Boundary"
    },
    {
-    "custodian": "Unido Ose",
+    "steward": "Unido Ose",
     "tracks": 28,
     "km": 10.01,
     "days": 3,
@@ -3652,7 +3742,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 2,
+  "n_stewards": 2,
   "walked_km": 20.37,
   "spur_km": 0.3,
   "status": "near",
@@ -3700,15 +3790,17 @@
   ],
   "join_sep_ha": 770.3,
   "join_joined_ha": 371.8,
-  "map": "Riribudeh_Zone_8.png"
+  "map": "Riribudeh_Zone_8.png",
+  "gpx": "Riribudeh_Zone_8.gpx",
+  "gpx_gaps": 2
  },
  {
   "unit": "Uremkol \u2014 Zone 8",
   "clan": "Uremkol",
   "zone": "Zone 8",
-  "walkers": [
+  "stewards": [
    {
-    "custodian": "Cyprian Sirami",
+    "steward": "Cyprian Sirami",
     "tracks": 3,
     "km": 11.2,
     "days": 2,
@@ -3717,7 +3809,7 @@
     "type": "Land Boundary"
    }
   ],
-  "n_walkers": 1,
+  "n_stewards": 1,
   "walked_km": 11.2,
   "spur_km": 2.42,
   "status": "open",
@@ -3743,6 +3835,8 @@
   ],
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
-  "map": "Uremkol_Zone_8.png"
+  "map": "Uremkol_Zone_8.png",
+  "gpx": "Uremkol_Zone_8.gpx",
+  "gpx_gaps": 3
  }
 ]

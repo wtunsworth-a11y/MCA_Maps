@@ -64,7 +64,7 @@ SOURCES = [
         "access": "supplied directly as zip archives per zone",
         "licence": "Not established — see the sensitivity note in "
                    "docs/METHODS.md",
-        "citation": "Field surveys by clan custodians, Oro Province, Papua "
+        "citation": "Field surveys by clan stewards, Oro Province, Papua "
                     "New Guinea, 2025–2026",
     },
 ]
@@ -149,7 +149,7 @@ def results() -> dict:
         out["tracks"] = int(len(frame))
         out["clans"] = int(frame[frame.clan.astype(str).str.strip() != ""]
                            .clan.nunique())
-        out["custodians"] = int(frame.custodian.nunique())
+        out["stewards"] = int(frame.steward.nunique())
         out["zones"] = sorted(set(frame.zone.dropna()))
         out["smoothed_km"] = round(frame.geometry.length.sum() / 1000, 1)
 

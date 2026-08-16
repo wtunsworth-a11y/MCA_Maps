@@ -46,3 +46,6 @@ package-lock.json
 # document can be traced back to the figures it was built from.
 !output/report/
 !output/walkers/
+
+# GPX going back to the Clan Stewards — a deliverable, kept tracked
+!output/gpx/

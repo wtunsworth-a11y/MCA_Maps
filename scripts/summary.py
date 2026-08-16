@@ -99,7 +99,7 @@ def gather(tracks_path: Path, polygons_path: Path) -> dict:
         "n_surveys": int(tracks.source_name.nunique()),
         "n_tracks": int(len(tracks)),
         "n_clans": int(named.clan.nunique()),
-        "n_custodians": int(tracks.custodian.nunique()),
+        "n_stewards": int(tracks.steward.nunique()),
         "zones": sorted(set(tracks.zone.dropna())),
         "walked_km": tracks.geometry.length.sum() / 1000,
         "boundary_km": (boundary_only.geometry.length.sum() - spurs) / 1000,
@@ -236,7 +236,7 @@ area aside.
 | | |
 | --- | ---: |
 | Clans with data | **{data['n_clans']}** |
-| Custodians who walked | {data['n_custodians']} |
+| Stewards who walked | {data['n_stewards']} |
 | Surveys | {data['n_surveys']} |
 | Zones | {len(data['zones'])} ({', '.join(z.replace('Zone ', '') for z in data['zones'])}) |
 | Distance walked | {data['walked_km']:,.0f} km |

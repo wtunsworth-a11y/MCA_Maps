@@ -469,13 +469,13 @@ RESTRICTED_TYPES = {"Sacred Site"}
 def survey_group(gdf: gpd.GeoDataFrame) -> pd.Series:
     """The unit a boundary is assessed as: one clan's walk within one zone.
 
-    A clan is often walked by several custodians, each taking the stretch
+    A clan is often walked by several stewards, each taking the stretch
     nearest them, so their tracks are parts of one boundary and are joined.
     Different clans are never joined — the overlaps between them are the
     finding, not an error.
 
     Zone still separates: Murai holds land in Zone 2 and Zone 7B, walked by
-    different custodians in places far apart, and joining those would invent a
+    different stewards in places far apart, and joining those would invent a
     boundary spanning both. Anything without a clan name stays on its own.
     """
     clan = gdf["clan"].astype(str).str.strip()
@@ -513,7 +513,7 @@ def load_boundary(path: Path = MCA_BOUNDARY):
 def load_prepared(gpkg_path: Path, layer_name: str) -> Layer | None:
     """Read back a layer this pipeline already wrote, attributes and all.
 
-    Used for the smoothed output: its zone/clan/custodian columns are already
+    Used for the smoothed output: its zone/clan/steward columns are already
     present, so it must skip the file-name parsing that raw sources go through.
     """
     if not gpkg_path.exists():
@@ -531,7 +531,7 @@ def combine(layers: list[Layer], name: str = "clan_boundaries") -> Layer | None:
     """Merge every layer into one, tagged with what its file name encodes.
 
     69 near-identical layers are unusable in QGIS; one layer carrying zone,
-    clan and custodian as attributes can be categorised and filtered instead.
+    clan and steward as attributes can be categorised and filtered instead.
     The original per-file identity survives in the `source_name` column.
     """
     import clans

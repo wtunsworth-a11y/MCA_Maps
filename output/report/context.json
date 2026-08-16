@@ -1,16 +1,13 @@
 {
- "version": "1.2",
+ "version": "1.3",
  "changes": [
-  "Clan maps no longer draw neighbouring clans' boundaries. A neighbour is named where it lies, and nothing more. Drawing another clan's line on this clan's page, with the ground between shaded as claimed by both, made a picture of a dispute out of a survey that is in most cases simply unfinished.",
-  "Two queries removed. Neither should have been asked: both invited clans to take a position on ground their neighbours had also walked, when the data supports no such question and most of the boundaries involved are simply unfinished.",
-  "\"Boundary walked alongside another clan\" is now **Neighbouring clans**. \"Ground also claimed by another clan\" stays as it was.",
-  "Where a boundary is unfinished it is called **incomplete**, on the map and in the text, and any overlap involving it is stated as provisional \u2014 the unwalked stretches are straight lines, and the overlap is measured against those lines rather than against anything anyone walked.",
-  "New section, \"What an overlap here is not\": an overlap in these figures is a statement about two surveys, not about two clans.",
-  "Per-clan heading \"Problems\" is now \"What the survey shows\"."
+  "The people who walked these boundaries are Clan Stewards, and are named so throughout \u2014 in both documents, on every map, and in the data itself. The GeoPackage and CSV field is now steward rather than custodian, so QGIS projects and saved filters keyed on the old name will need repointing once.",
+  "New: a GPX file for each clan, in output/gpx/, to give back to the stewards who walked it. Each holds the tracks they recorded, the gaps drawn as clearly-named straight lines, and a START and END waypoint at every gap so a steward can navigate to where the walking stopped and carry on. 186 gaps are marked across 47 clans \u2014 266.6 km still to walk.",
+  "The companion document is now Managalas Steward Days."
  ],
  "date": "2026-08-16",
  "date_long": "16 August 2026",
- "commit": "3ce018c",
+ "commit": "0439275",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

@@ -161,7 +161,7 @@ def boundary_agreement(tracks: gpd.GeoDataFrame, streams: gpd.GeoDataFrame,
         rows.append({
             "zone": first.get("zone", ""),
             "clan": first.get("clan", ""),
-            "custodian": first.get("custodian", ""),
+            "steward": first.get("steward", ""),
             "source_name": source,
             "walked_km": round(walked / 1000, 2),
             "along_water_km": round(along / 1000, 2),
@@ -190,7 +190,7 @@ def bridge_check(polygons: gpd.GeoDataFrame, streams: gpd.GeoDataFrame,
             crossings = (len(intersection.geoms)
                          if hasattr(intersection, "geoms") else 1)
         rows.append({
-            "zone": row.zone, "clan": row.clan, "custodian": row.custodian,
+            "zone": row.zone, "clan": row.clan, "steward": row.steward,
             "area_ha": row.area_ha, "gap_pct": row.gap_pct,
             "stream_crossings": crossings,
         })

@@ -5,7 +5,7 @@ Two documents come out of here:
 
 * **Managalas Clan Land Mapping** — the survey results, a page per clan, and
   the queries for each clan.
-* **Managalas Walker Days** — who walked, on which days, and how far.
+* **Managalas Steward Days** — who walked, on which days, and how far.
 
 Both are named `<title>_v<version>_<date>.docx`, so a new build never
 overwrites the copy already in someone's inbox and nobody has to guess which
@@ -34,7 +34,7 @@ SCRIPTS = Path(__file__).resolve().parent
 
 DOCUMENTS = [
     ("build_report_docx.js", "Managalas_Clan_Land_Mapping"),
-    ("build_walkers_docx.js", "Managalas_Walker_Days"),
+    ("build_stewards_docx.js", "Managalas_Steward_Days"),
 ]
 
 
@@ -44,8 +44,8 @@ def main(argv: list[str] | None = None) -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--json-dir", type=Path,
                         default=dataio.OUT_DIR / "report")
-    parser.add_argument("--walkers-dir", type=Path,
-                        default=dataio.OUT_DIR / "walkers")
+    parser.add_argument("--stewards-dir", type=Path,
+                        default=dataio.OUT_DIR / "stewards")
     parser.add_argument("--out-dir", type=Path, default=dataio.OUT_DIR)
     parser.add_argument("--skip-data", action="store_true",
                         help="reuse the JSON already in --json-dir")
@@ -70,10 +70,10 @@ def main(argv: list[str] | None = None) -> int:
     for script, stem in DOCUMENTS:
         name = f"{stem}_v{version}_{day}.docx"
         target = args.out_dir / name
-        source = (args.walkers_dir if "walkers" in script else args.json_dir)
+        source = (args.stewards_dir if "stewards" in script else args.json_dir)
         result = subprocess.run(
             ["node", str(SCRIPTS / script), str(source),
-             str(args.json_dir if "walkers" in script else dataio.REPO_ROOT),
+             str(args.json_dir if "stewards" in script else dataio.REPO_ROOT),
              str(target)],
             capture_output=True, text=True, cwd=dataio.REPO_ROOT)
         if result.returncode != 0:

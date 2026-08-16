@@ -160,7 +160,7 @@ def classify(tracks: gpd.GeoDataFrame, streams: gpd.GeoDataFrame,
         rows.append({
             "zone": first.get("zone", ""),
             "clan": first.get("clan", ""),
-            "custodian": first.get("custodian", ""),
+            "steward": first.get("steward", ""),
             "walked_km": round(walked / 1000, 2),
             "pct_water": round(on_water / walked * 100, 1),
             "pct_ridge": round(on_ridge / walked * 100, 1),

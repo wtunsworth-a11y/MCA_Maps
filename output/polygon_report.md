@@ -257,7 +257,7 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 
 ## Every polygon
 
-| zone | clan | custodian | walkers | surveys | source_name | basis | walked_km | area_ha | gap_m | gap_pct | bridges |
+| zone | clan | steward | stewards | surveys | source_name | basis | walked_km | area_ha | gap_m | gap_pct | bridges |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Zone 7B | Abuankol | Simeon Pasip | 1 | 1 | Abuankol — Zone 7B | surveyed | 0.51 | 0.7 | 0.0 | 0.0 | 0 |
 | Zone 7B | Ambunkol | Peter Awako | 1 | 1 | Ambunkol — Zone 7B | inferred | 18.6 | 591.8 | 4489.1 | 24.1 | 6 |
