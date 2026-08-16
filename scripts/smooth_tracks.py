@@ -348,7 +348,11 @@ def main(argv: list[str] | None = None) -> int:
 
     out = smoothed.to_crs(dataio.WGS84)
     _write(out, gpkg, SMOOTHED_LAYER)
-    for zone, group in out.groupby("zone", sort=True):
+    # Per-zone layers are the ones opened and shared, so restricted features
+    # are withheld from them. The full layer above stays complete for analysis
+    # inside the project; `dataio.publishable` gates anything leaving it.
+    shareable = dataio.publishable(out)
+    for zone, group in shareable.groupby("zone", sort=True):
         _write(group, gpkg, dataio.safe_name(str(zone)))
     print(f"\nWrote {gpkg}")
 

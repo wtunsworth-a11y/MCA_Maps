@@ -1,6 +1,6 @@
 # Field queries — MCA clan boundary mapping
 
-**14 queries** raised from the current data (69 surveys). Each has a map showing the ground in question.
+**13 queries** raised from the current data (69 surveys). Each has a map showing the ground in question.
 
 These are questions the data cannot answer on its own. Please mark each one resolved with a short note, and return the pack.
 
@@ -216,9 +216,9 @@ Should it count towards that clan's mapped land area, be reported separately, or
 
 ---
 
-### Q12. Sacred Site: Millinton Beso
+### Q12. Steward Block: Ruth Makisa
 
-This survey is recorded as a **Sacred Site**, not a clan land boundary — walked by **Millinton Beso** (Zone 2), 3 track(s), 10.6 km, attributed to **Sukandi**.
+This survey is recorded as a **Steward Block**, not a clan land boundary — walked by **Ruth Makisa** (Zone 7B), 1 track(s), 6.3 km, attributed to **no clan recorded**.
 
 Should it count towards that clan's mapped land area, be reported separately, or be excluded from the boundary figures altogether?
 
@@ -234,27 +234,9 @@ Should it count towards that clan's mapped land area, be reported separately, or
 
 ---
 
-### Q13. Steward Block: Ruth Makisa
-
-This survey is recorded as a **Steward Block**, not a clan land boundary — walked by **Ruth Makisa** (Zone 7B), 1 track(s), 6.3 km, attributed to **no clan recorded**.
-
-Should it count towards that clan's mapped land area, be reported separately, or be excluded from the boundary figures altogether?
-
-> Currently included in the totals. It is tagged by type and can be filtered out in one step once decided.
-
-![Q13](Q13.png)
-
-**Response:**
-
-```
-
-```
-
----
-
 ## Zones returning little mapped area
 
-### Q14. Zone 3 — 48.7 km walked, only 76.2 ha mapped
+### Q13. Zone 3 — 48.7 km walked, only 76.2 ha mapped
 
 **Zone 3** has 8.0 surveys and 17.0 tracks covering 48.7 km, but yields only **76.2 ha** of mapped area — far less per kilometre walked than the other zones.
 
@@ -262,7 +244,7 @@ Is this the full set of surveys for this zone, or is more still to come? Were th
 
 > Median tracks per survey across all zones is 5; in Zone 3 it is 2.
 
-![Q14](Q14.png)
+![Q13](Q13.png)
 
 **Response:**
 

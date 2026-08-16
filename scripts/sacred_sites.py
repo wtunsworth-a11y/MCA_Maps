@@ -44,8 +44,9 @@ SACRED_TAIL = re.compile(r"\bsacred\b.*", re.IGNORECASE | re.DOTALL)
 def site_names(track_name: str) -> list[str]:
     """The sacred site names a track claims to cover.
 
-    "2025-04-25 09:01Birezama and Bijanuri sacred sites" names two sites in one
-    walk; those cannot be told apart afterwards and are reported jointly.
+    A track named "<date> <site> and <site> sacred sites" covers two sites in
+    one walk; those cannot be told apart afterwards and are reported jointly.
+    Names are parsed only to group the walks — they are not published.
     """
     text = TIMESTAMP.sub("", str(track_name or ""))
     text = SACRED_TAIL.sub("", text)
@@ -118,7 +119,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--min-enclosure", type=float, default=0.50)
     parser.add_argument("--max-spur", type=float, default=0.10)
     parser.add_argument("--out", type=Path, default=None,
-                        help="write the site hulls to this GeoPackage")
+                        help="write the site hulls to a GeoPackage. Off by "
+                             "default and normally left off: the community's "
+                             "decision is that sacred sites are reported by "
+                             "area only and their locations are not shared.")
+    parser.add_argument("--name-sites", action="store_true",
+                        help="include individual site names in the report; "
+                             "off by default for the same reason")
     parser.add_argument("--report", type=Path, default=None)
     args = parser.parse_args(argv)
 
@@ -140,10 +147,14 @@ def main(argv: list[str] | None = None) -> int:
     total_hull = table["hull_ha"].sum()
     footprint = unary_union(table.geometry).area / 1e4
 
-    print(f"\n{len(named)} named sacred site(s) across {len(table)} mapped "
+    print(f"\n{len(named)} sacred site(s) across {len(table)} mapped "
           f"unit(s), {int(table.walks.sum())} walk(s)")
-    print(f"  named: {', '.join(named)}\n")
-    print(table.drop(columns="geometry").to_string(index=False))
+    if args.name_sites:
+        print(f"  named: {', '.join(named)}")
+    columns = [c for c in table.columns
+               if c not in ("geometry",) + (() if args.name_sites else ("sites",))]
+    print()
+    print(table[columns].to_string(index=False))
 
     print(f"\n  total, bridged estimate : {total_bridged:9,.1f} ha")
     print(f"  total, hull upper bound : {total_hull:9,.1f} ha")
@@ -186,23 +197,30 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
-        out = table.copy()
-        out["geometry"] = out.geometry
-        out.to_crs(dataio.WGS84).to_file(args.out, layer="sacred_site_hulls",
-                                         driver="GPKG")
+        table.to_crs(dataio.WGS84).to_file(args.out, layer="sacred_site_hulls",
+                                           driver="GPKG")
         print(f"\nWrote {args.out}")
+        print("  NOTE: this file holds sacred site locations. It is "
+              "git-ignored and must not be shared.")
 
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(
             "# Sacred sites\n\n"
-            f"{len(named)} named site(s) — {', '.join(named)} — across "
-            f"{len(table)} mapped unit(s) and {int(table.walks.sum())} walk(s).\n\n"
+            "**Locations are not shared.** At the community's decision, sacred "
+            "sites are reported by area and share of clan land only. This "
+            "report carries no coordinates, no map and no site geometry, and "
+            "they are withheld from every project file and exported layer.\n\n"
+            f"{len(named)} site(s) across {len(table)} mapped unit(s) and "
+            f"{int(table.walks.sum())} walk(s).\n\n"
             "Every area is an estimate: none of these walks closes into a ring. "
             "**Bridged** joins the open ends with straight lines (comparable "
             "with the clan boundary figures); **hull** is the convex hull of the "
             "walk, an upper bound. The true area lies between them.\n\n"
-            "## Mapped units\n\n" + _markdown(table) + "\n\n"
+            "## Mapped units\n\n"
+            + _markdown(table[[c for c in table.columns
+                               if c not in ("geometry", "sites", "custodian")]])
+            + "\n\n"
             f"- **Total, bridged:** {total_bridged:,.1f} ha\n"
             f"- **Total, hull:** {total_hull:,.1f} ha\n"
             f"- **Average per unit:** {total_bridged / len(table):,.1f} ha "

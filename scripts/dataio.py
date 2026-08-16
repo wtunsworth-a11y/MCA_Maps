@@ -458,6 +458,32 @@ def _unique(name: str, used: set[str]) -> str:
     return candidate
 
 
+# Feature types whose locations are not shared. Sacred sites are reported by
+# area and share of clan land only — the community's decision, recorded in
+# docs/METHODS.md §11.2. Every shared spatial output passes through
+# `publishable()`, so the rule is applied in one place rather than remembered
+# in nine.
+RESTRICTED_TYPES = {"Sacred Site"}
+
+
+def publishable(gdf: gpd.GeoDataFrame, quiet: bool = False):
+    """Drop features whose locations must not be shared.
+
+    Applies to anything written for someone else to open — project files, maps,
+    exported layers. Aggregate statistics computed *before* this filter are
+    fine; geometry that survives it is not.
+    """
+    if gdf is None or "feature_type" not in getattr(gdf, "columns", []):
+        return gdf
+    mask = gdf["feature_type"].isin(RESTRICTED_TYPES)
+    if not mask.any():
+        return gdf
+    if not quiet:
+        print(f"  withheld {int(mask.sum())} restricted feature(s) "
+              f"({', '.join(sorted(RESTRICTED_TYPES))})")
+    return gdf[~mask]
+
+
 def load_boundary(path: Path = MCA_BOUNDARY):
     """Load the MCA reference boundary as a single metric-CRS geometry."""
     if not path.exists():

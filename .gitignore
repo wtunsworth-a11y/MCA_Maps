@@ -33,3 +33,7 @@ venv/
 # OS cruft
 .DS_Store
 Thumbs.db
+
+# Sacred site locations are never shared — reported by area only.
+data/smoothed/*sacred*
+output/*sacred*.gpkg

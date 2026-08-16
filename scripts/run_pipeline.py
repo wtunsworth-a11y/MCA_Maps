@@ -145,15 +145,15 @@ def main(argv: list[str] | None = None) -> int:
         ("closure.py", ["--report", "output/closure_report.md"]),
         ("polygons.py", ["--report", "output/polygon_report.md",
                          "--map", "output/areas_mapped.png"]),
-        ("sacred_sites.py", ["--report", "output/sacred_sites.md",
-                             "--out", str(dataio.SMOOTHED_DIR
-                                          / "mca_sacred_sites.gpkg")]),
+        # No --out: sacred site geometry is not written to a shareable file.
+        ("sacred_sites.py", ["--report", "output/sacred_sites.md"]),
         ("queries.py", []),
     ]
     if not args.skip_maps:
         stages += [
             ("make_maps.py", ["--smoothed", smoothed]),
             ("build_project.py", [*source]),
+        ("summary.py", []),
         ("provenance.py", [*source]),
         ]
 

@@ -416,13 +416,16 @@ joined with straight lines, the same method as clan boundaries, so the figures
 are comparable) and **hull** (the convex hull of the walk, an upper bound). The
 true area lies between them.
 
-**3 named sites across 2 mapped units and 3 walks**, all Sukandi clan, walked by
-Millinton Beso in Zone 2:
+**Locations, names and geometry are not shared** (§11.2). Sacred sites are
+reported by area and share of clan land only, and are withheld from every
+project file, exported layer and map by `dataio.publishable`.
 
-| Sites | Named | Walks | Walked (km) | Bridged (ha) | Hull (ha) | Bridged gap |
+**3 sites across 2 mapped units and 3 walks**, all within one clan's land:
+
+| Unit | Sites | Walks | Walked (km) | Bridged (ha) | Hull (ha) | Bridged gap |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Birezama + Bijanuri | 2 | 1 | 6.02 | 296.9 | 343.2 | 41% |
-| Mitakin | 1 | 2 | 4.58 | 16.0 | 112.8 | 60% |
+| A | 2 | 1 | 6.02 | 296.9 | 343.2 | 41% |
+| B | 1 | 2 | 4.58 | 16.0 | 112.8 | 60% |
 | **Total** | **3** | **3** | **10.60** | **312.9** | **456.0** | |
 
 | Measure | Bridged | Hull |
@@ -431,10 +434,10 @@ Millinton Beso in Zone 2:
 | Average per mapped unit | 156.4 ha | 228.0 ha |
 | Share of Sukandi's 1,903 ha clan land | **16.4%** | **24.0%** |
 
-Birezama and Bijanuri were walked together in one track and cannot be separated
-afterwards, so they are reported as a single unit. The gap between the two
-estimates for Mitakin — 16 ha bridged against 113 ha hull — shows how little the
-walk constrains its area; that figure should not be quoted without the range.
+Unit A covers two sites walked together in one track, which cannot be separated
+afterwards. The gap between the two estimates for unit B — 16 ha bridged against
+113 ha hull — shows how little the walk constrains its area; that figure should
+not be quoted without the range.
 
 ## 5. Parameters
 

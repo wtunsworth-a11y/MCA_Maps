@@ -248,7 +248,11 @@ def unclosed_queries(tracks: gpd.GeoDataFrame, table: pd.DataFrame,
 def feature_type_queries(tracks: gpd.GeoDataFrame) -> list[dict]:
     """Surveys that are not clan land boundaries but sit in the totals."""
     out = []
-    for feature_type in sorted(set(tracks.feature_type) - {"Land Boundary"}):
+    # Restricted types are reported in aggregate only and never mapped, so no
+    # query is raised for them — a query map would show exactly the locations
+    # that are being withheld.
+    kinds = set(tracks.feature_type) - {"Land Boundary"} - dataio.RESTRICTED_TYPES
+    for feature_type in sorted(kinds):
         subject = tracks[tracks.feature_type == feature_type]
         clan = ", ".join(sorted({c for c in subject.clan if str(c).strip()})) \
             or "no clan recorded"

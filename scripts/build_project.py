@@ -46,8 +46,6 @@ SOURCES = [
     ("Areas — inferred (gap bridged)", "polygons_inferred", "survey_polygons",
      "#f59e0b", True),
     ("Clan areas (dissolved)", "polygons", "clan_polygons", "#7c3aed", False),
-    ("Sacred site extents (estimated)", "sacred", "sacred_site_hulls",
-     "#be185d", False),
     ("Modelled watercourses", "streams", "streams", "#0369a1", False),
     ("Modelled ridgelines", "ridges", "ridges", "#c2410c", False),
     ("MCA boundary", "boundary", None, "#475569", True),
@@ -98,6 +96,10 @@ def collect(args) -> list[tuple[str, gpd.GeoDataFrame, str, bool]]:
 
         if frame is None or frame.empty:
             print(f"  - {label}: not available")
+            continue
+        frame = dataio.publishable(frame, quiet=True)
+        if frame is None or frame.empty:
+            print(f"  - {label}: nothing shareable")
             continue
         out.append((label, frame.to_crs(dataio.WGS84), colour, visible))
         print(f"  + {label}: {len(frame):,} features")
