@@ -1,0 +1,50 @@
+# Raw data profile
+
+69 layer(s), 601 features in total.
+
+## Overview
+
+| Zone | Features | Surveys |
+| --- | ---: | ---: |
+| Zone 2 | 203 | 20 |
+| Zone 3 | 17 | 8 |
+| Zone 6 | 80 | 7 |
+| Zone 7A | 37 | 6 |
+| Zone 7B | 79 | 18 |
+| Zone 8 | 185 | 10 |
+
+| Type | Features | Surveys |
+| --- | ---: | ---: |
+| Land Boundary | 584 | 66 |
+| Road | 13 | 1 |
+| Sacred Site | 3 | 1 |
+| Steward Block | 1 | 1 |
+
+- **Distinct clans:** 48
+- **Distinct custodians:** 67
+- **Source surveys:** 69
+
+## Data quality checks
+
+**1 feature(s) named as test data.** Likely worth excluding before publishing:
+
+| zone | clan | custodian | name | source_name |
+| --- | --- | --- | --- | --- |
+| Zone 7B | Ginangi | Joshua Mokondo | 2026-06-11 18:50 test | ginangi_clan_joshua_mokondo_land_boundary_zon |
+
+
+**1 feature(s) far from the main survey area** (more than 3× the median distance from its centre):
+
+| zone | clan | custodian | name | source_name |
+| --- | --- | --- | --- | --- |
+| Zone 7B | Ginangi | Joshua Mokondo | 2026-06-11 18:50 test | ginangi_clan_joshua_mokondo_land_boundary_zon |
+
+
+**4 pair(s) of similar clan names.** These may be spelling variants of one clan, or genuinely distinct — worth confirming:
+
+| | |
+| --- | --- |
+| `Abuankol` | `Ambunkol` |
+| `Manang` | `Marang` |
+| `Manuvoora` | `Manuvuoora` |
+| `Sugulkol` | `Sungulkol` |

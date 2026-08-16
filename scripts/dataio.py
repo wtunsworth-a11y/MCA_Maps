@@ -18,6 +18,8 @@ from pathlib import Path
 import geopandas as gpd
 import pandas as pd
 
+import geomfix
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = REPO_ROOT / "data" / "raw"
 CACHE_DIR = REPO_ROOT / "data" / "processed" / "extracted"
@@ -162,7 +164,15 @@ def load_layer(path: Path, lat_col: str | None = None, lon_col: str | None = Non
         except Exception:
             return None  # a plain JSON sidecar, not GeoJSON
     else:
-        gdf = gpd.read_file(path)
+        try:
+            gdf = gpd.read_file(path)
+        except Exception as exc:
+            # GPS exports often carry single-point track segments, which GEOS
+            # rejects outright — taking the whole file down with them. Rebuild
+            # the geometries without those parts rather than lose the file.
+            gdf = _read_repaired(path, exc)
+            if gdf is None:
+                raise
 
     if gdf is None or gdf.empty or "geometry" not in gdf:
         return None
@@ -170,6 +180,8 @@ def load_layer(path: Path, lat_col: str | None = None, lon_col: str | None = Non
     gdf = gdf[gdf.geometry.notna() & ~gdf.geometry.is_empty]
     if gdf.empty:
         return None
+
+    gdf = _repair_invalid(gdf, path)
 
     source_crs = str(gdf.crs) if gdf.crs is not None else None
     if gdf.crs is None:
@@ -212,6 +224,133 @@ def load_all(raw_dir: Path = RAW_DIR, cache_dir: Path = CACHE_DIR,
         _say(quiet, f"  + {layer.name}: {len(layer.gdf):,} features "
                     f"({', '.join(layer.geom_types)})")
     return layers
+
+
+def _repair_invalid(gdf: gpd.GeoDataFrame, path: Path) -> gpd.GeoDataFrame:
+    """Strip degenerate parts from geometries that loaded but are invalid.
+
+    A track part with no points is legal enough for GEOS to construct but
+    leaves the feature invalid, which quietly breaks buffers and overlays
+    later. Only replacements that actually come back valid are kept, so a
+    genuinely self-intersecting polygon is left alone for a human to judge.
+    """
+    try:
+        invalid = ~gdf.geometry.is_valid
+    except Exception:
+        return gdf
+    if not invalid.any():
+        return gdf
+
+    import shapely
+
+    fixed_count = 0
+    geometries = gdf.geometry.copy()
+    for position in gdf.index[invalid]:
+        geometry = geometries.loc[position]
+        rebuilt = None
+        try:
+            candidate, removed = geomfix.repair(shapely.to_wkb(geometry))
+            if candidate is not None and removed:
+                rebuilt = shapely.from_wkb(candidate)
+        except Exception:
+            rebuilt = None
+        if rebuilt is None or not rebuilt.is_valid:
+            rebuilt = _drop_stationary_parts(geometry)
+        if rebuilt is not None and rebuilt.is_valid and not rebuilt.is_empty:
+            geometries.loc[position] = rebuilt
+            fixed_count += 1
+
+    if fixed_count:
+        print(f"  ~ {path.name}: repaired {fixed_count} invalid geometry(ies) "
+              "by dropping parts that record no line")
+        gdf = gdf.set_geometry(geometries)
+    return gdf
+
+
+def _drop_stationary_parts(geometry):
+    """Remove track parts that never moved.
+
+    A receiver left running in one spot logs many points at a single
+    coordinate. Structurally that part is a fine LineString, but every point
+    is the same, so GEOS reduces it to under two distinct vertices and calls
+    the whole feature invalid. The part records no line, so dropping it loses
+    nothing. Comparison is on X/Y only, matching how GEOS judges validity.
+    """
+    parts = getattr(geometry, "geoms", None)
+    if parts is None:
+        return None
+
+    kept = [part for part in parts if _has_extent(part)]
+    if not kept or len(kept) == len(geometry.geoms):
+        return None
+    try:
+        return type(geometry)(kept)
+    except Exception:
+        return None
+
+
+def _has_extent(part) -> bool:
+    coordinates = getattr(part, "coords", None)
+    if coordinates is None:
+        return not part.is_empty
+    return len({(x, y) for x, y, *_ in coordinates}) >= 2
+
+
+def _read_repaired(path: Path, original: Exception) -> gpd.GeoDataFrame | None:
+    """Re-read a file that GEOS refused, dropping only the illegal parts.
+
+    Falls back to None if the failure was something other than bad geometry,
+    so the caller can re-raise the original error.
+    """
+    try:
+        import shapely
+        from pyogrio.raw import read as raw_read
+
+        meta, _index, geometries, field_data = raw_read(str(path))
+    except Exception:
+        return None
+
+    repaired: list = []
+    dropped_parts = 0
+    dropped_features = 0
+
+    for blob in geometries:
+        if blob is None:
+            repaired.append(None)
+            continue
+        raw = bytes(blob)
+        try:
+            repaired.append(shapely.from_wkb(raw))
+            continue
+        except Exception:
+            pass
+        try:
+            fixed, removed = geomfix.repair(raw)
+        except geomfix.WkbError:
+            repaired.append(None)
+            dropped_features += 1
+            continue
+        dropped_parts += removed
+        if fixed is None:
+            repaired.append(None)
+            dropped_features += 1
+            continue
+        try:
+            repaired.append(shapely.from_wkb(fixed))
+        except Exception:
+            repaired.append(None)
+            dropped_features += 1
+
+    if all(geom is None for geom in repaired):
+        return None  # not a geometry problem we can solve
+
+    note = f"  ~ {path.name}: repaired — dropped {dropped_parts} single-point part(s)"
+    if dropped_features:
+        note += f", {dropped_features} feature(s) unrecoverable"
+    print(note)
+
+    frame = pd.DataFrame(dict(zip(meta["fields"], field_data)))
+    return gpd.GeoDataFrame(frame, geometry=repaired, crs=meta["crs"])
 
 
 def _load_table(path: Path, lat_col: str | None, lon_col: str | None,
@@ -309,6 +448,93 @@ def _unique(name: str, used: set[str]) -> str:
         suffix += 1
     used.add(candidate)
     return candidate
+
+
+def combine(layers: list[Layer], name: str = "clan_boundaries") -> Layer | None:
+    """Merge every layer into one, tagged with what its file name encodes.
+
+    69 near-identical layers are unusable in QGIS; one layer carrying zone,
+    clan and custodian as attributes can be categorised and filtered instead.
+    The original per-file identity survives in the `source_name` column.
+    """
+    import clans
+
+    if not layers:
+        return None
+
+    frames = []
+    for layer in layers:
+        gdf = layer.gdf.copy()
+        # Parse the file's own stem, not layer.name — the latter is truncated
+        # to fit GeoPackage table limits, which can cut a trailing date in half
+        # and leave the fragment looking like part of somebody's name.
+        stem = layer.source.stem if layer.source.suffix else layer.name
+        record = clans.parse(stem or layer.name, layer.source)
+        # Provenance first, so it reads left-to-right in the attribute table.
+        for column, value in reversed(record.as_dict().items()):
+            gdf.insert(0, column, value)
+        frames.append(gdf)
+
+    merged = pd.concat(frames, ignore_index=True)
+    merged = gpd.GeoDataFrame(merged, geometry="geometry", crs=layers[0].gdf.crs)
+
+    merged = _merge_case_variants(merged)
+
+    # The sources carry different schemas, so the union has columns that are
+    # empty for every row. They only clutter the QGIS attribute table.
+    empty = [c for c in merged.columns
+             if c != "geometry" and merged[c].isna().all()]
+    if empty:
+        merged = merged.drop(columns=empty)
+        print(f"  dropped {len(empty)} empty column(s) from the merge")
+
+    return Layer(name=name, gdf=merged, source=layers[0].source.parent,
+                 source_crs=layers[0].source_crs)
+
+
+def _merge_case_variants(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Reconcile columns that differ only in case, e.g. `name` and `Name`.
+
+    GeoPackage field names are case-insensitive, so these collide on write.
+    Where the variants never both hold a value for the same row they are the
+    same field arriving from two source schemas (GPX vs KML here), and are
+    coalesced. Where they genuinely overlap, the extras are suffixed instead,
+    because merging would silently discard one of two real values.
+    """
+    groups: dict[str, list[str]] = {}
+    for column in gdf.columns:
+        if column != "geometry":
+            groups.setdefault(column.lower(), []).append(column)
+
+    for variants in groups.values():
+        if len(variants) < 2:
+            continue
+        keep, extras = variants[0], variants[1:]
+        overlapping = (gdf[variants].notna().sum(axis=1) > 1).any()
+        if overlapping:
+            for index, column in enumerate(extras, start=2):
+                gdf = gdf.rename(columns={column: f"{column}_{index}"})
+            print(f"  kept {len(variants)} overlapping variants of "
+                  f"'{keep}' under suffixed names")
+            continue
+        for column in extras:
+            gdf[keep] = gdf[keep].where(gdf[keep].notna(), gdf[column])
+        gdf = gdf.drop(columns=extras)
+        print(f"  merged {', '.join(extras)} into '{keep}' "
+              "(same field, different source schemas)")
+    return gdf
+
+
+def split_by(layer: Layer, column: str) -> list[Layer]:
+    """Break one layer into several, one per distinct value of a column."""
+    if column not in layer.gdf.columns:
+        return [layer]
+    out: list[Layer] = []
+    for value, group in layer.gdf.groupby(column, sort=True):
+        label = safe_name(str(value)) or "unknown"
+        out.append(Layer(name=label, gdf=group.reset_index(drop=True),
+                         source=layer.source, source_crs=layer.source_crs))
+    return out
 
 
 def combined_bounds(layers: list[Layer]) -> tuple[float, float, float, float]:

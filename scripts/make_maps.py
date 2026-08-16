@@ -157,20 +157,41 @@ def main(argv: list[str] | None = None) -> int:
                         help="skip the PNG renders")
     parser.add_argument("--no-combined", action="store_true",
                         help="skip the all-layers combined map")
+    parser.add_argument("--separate", action="store_true",
+                        help="render one map per source file instead of "
+                             "merging them into a single attributed layer")
+    parser.add_argument("--group-by", default="zone",
+                        help="attribute used to split the merged layer "
+                             "(default: zone)")
     args = parser.parse_args(argv)
 
     if not args.raw_dir.exists():
         print(f"No raw data directory at {args.raw_dir}")
         return 1
 
-    layers = dataio.load_from_args(args)
-    if not layers:
+    sources = dataio.load_from_args(args)
+    if not sources:
         print(f"\nNothing to map yet — no readable data under {args.raw_dir}.\n"
               "Copy your zip archives in there and re-run this script.")
         return 0
 
+    if args.separate:
+        layers, overview = sources, None
+    else:
+        overview = dataio.combine(sources)
+        layers = dataio.split_by(overview, args.group_by)
+        args.colour_by = args.colour_by or args.group_by
+        print(f"\nMerged {len(sources)} source layer(s) into "
+              f"{len(layers)} by {args.group_by}")
+
     args.out_dir.mkdir(parents=True, exist_ok=True)
     print(f"\nWriting maps to {args.out_dir}")
+
+    if overview is not None:
+        if not args.no_static:
+            print(f"  {render_static(overview, args.out_dir, args.colour_by).name}")
+        print(f"  {render_interactive(layers, args.out_dir / 'overview.html', 'All zones').name}")
+
     for layer in layers:
         if not args.no_static:
             print(f"  {render_static(layer, args.out_dir, args.colour_by).name}")
@@ -178,7 +199,7 @@ def main(argv: list[str] | None = None) -> int:
                                   layer.name)
         print(f"  {html.name}")
 
-    if len(layers) > 1 and not args.no_combined:
+    if overview is None and len(layers) > 1 and not args.no_combined:
         combined = render_interactive(layers, args.out_dir / "all_layers.html",
                                       "All layers")
         print(f"  {combined.name}")

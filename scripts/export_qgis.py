@@ -99,29 +99,76 @@ def _gpkg_safe(gdf):
 
 def build_project(layers: list[dataio.Layer], gpkg_path: Path,
                   project_path: Path, qgis_version: str,
-                  basemap: bool, title: str) -> Path:
-    """Generate a .qgs referencing the GeoPackage layers, zoomed to the data."""
+                  basemap: bool, title: str,
+                  categorize_by: str | None = None,
+                  group: str | None = None,
+                  lead: dataio.Layer | None = None) -> Path:
+    """Generate a .qgs referencing the GeoPackage layers, zoomed to the data.
+
+    ``lead`` is drawn on top and checked on; the rest go into a collapsed
+    ``group`` and start unchecked, so a project with many layers opens showing
+    one map rather than 70 stacked ones.
+    """
     relative_gpkg = _relative_to(gpkg_path, project_path.parent)
-    entries = [
-        {
+
+    # One colour per category across the whole project, so a zone keeps the
+    # same colour whether it is seen in the merged layer or on its own.
+    colour_map: dict[str, str] = {}
+    if categorize_by:
+        universe = [lead] if lead is not None else layers
+        seen = sorted({str(value)
+                       for layer in universe
+                       if categorize_by in layer.gdf.columns
+                       for value in layer.gdf[categorize_by].dropna()})
+        colour_map = {value: PALETTE[i % len(PALETTE)]
+                      for i, value in enumerate(seen)}
+
+    def entry(layer: dataio.Layer, index: int) -> dict:
+        values = []
+        if categorize_by and categorize_by in layer.gdf.columns:
+            values = sorted({str(v) for v in layer.gdf[categorize_by].dropna()})
+        return {
             "id": f"{layer.name}_{index:03d}",
             "name": layer.name,
             "source": f"{relative_gpkg}|layername={layer.name}",
             "geometry": layer.qgis_geometry,
             "colour": PALETTE[index % len(PALETTE)],
+            "categorize_by": categorize_by if values else None,
+            "values": values,
+            "colour_map": colour_map,
         }
-        for index, layer in enumerate(layers)
-    ]
 
-    minx, miny, maxx, maxy = dataio.combined_bounds(layers)
+    lead_entry = entry(lead, 0) if lead is not None else None
+    entries = [entry(layer, index) for index, layer in enumerate(layers, start=1)]
+    all_entries = ([lead_entry] if lead_entry else []) + entries
+
+    extent_layers = [lead] if lead is not None else layers
+    minx, miny, maxx, maxy = dataio.combined_bounds(extent_layers)
     pad_x = (maxx - minx) * 0.05
     pad_y = (maxy - miny) * 0.05
     extent = (minx - pad_x, miny - pad_y, maxx + pad_x, maxy + pad_y)
 
     # QGIS draws the tree top-down, so the basemap belongs at the bottom.
-    tree = "\n".join(_tree_entry(e["id"], e["name"], e["source"]) for e in entries)
-    maplayers = "\n".join(_vector_maplayer(e) for e in entries)
-    order = "\n".join(f'    <layer id={quoteattr(e["id"])}/>' for e in entries)
+    tree_parts = []
+    if lead_entry:
+        tree_parts.append(_tree_entry(lead_entry["id"], lead_entry["name"],
+                                      lead_entry["source"]))
+    if entries:
+        inner = "\n".join(_tree_entry(e["id"], e["name"], e["source"],
+                                      checked=False, indent=6)
+                          for e in entries)
+        if group:
+            tree_parts.append(
+                f'    <layer-tree-group name={quoteattr(group)} '
+                f'checked="Qt::Unchecked" expanded="0">\n{inner}\n'
+                f'      <customproperties/>\n    </layer-tree-group>')
+        else:
+            tree_parts.append(inner)
+
+    tree = "\n".join(tree_parts)
+    maplayers = "\n".join(_vector_maplayer(e) for e in all_entries)
+    order = "\n".join(f'    <layer id={quoteattr(e["id"])}/>'
+                      for e in all_entries)
 
     if basemap:
         tree += "\n" + _tree_entry("osm_basemap", "OpenStreetMap", OSM_XYZ,
@@ -176,11 +223,14 @@ def build_project(layers: list[dataio.Layer], gpkg_path: Path,
 
 
 def _tree_entry(layer_id: str, name: str, source: str,
-                provider: str = "ogr") -> str:
-    return (f'    <layer-tree-layer id={quoteattr(layer_id)} '
+                provider: str = "ogr", checked: bool = True,
+                indent: int = 4) -> str:
+    state = "Qt::Checked" if checked else "Qt::Unchecked"
+    pad = " " * indent
+    return (f'{pad}<layer-tree-layer id={quoteattr(layer_id)} '
             f'name={quoteattr(name)} source={quoteattr(source)} '
-            f'providerKey={quoteattr(provider)} checked="Qt::Checked" '
-            f'expanded="1" patch_size="-1,-1"><customproperties/>'
+            f'providerKey={quoteattr(provider)} checked={quoteattr(state)} '
+            f'expanded="0" patch_size="-1,-1"><customproperties/>'
             f'</layer-tree-layer>')
 
 
@@ -193,14 +243,48 @@ def _vector_maplayer(entry: dict) -> str:
         {CRS_BLOCKS["EPSG:4326"]}
       </srs>
       <provider encoding="UTF-8">ogr</provider>
-      {_renderer(entry["geometry"], entry["colour"])}
+      {_categorized_renderer(entry["geometry"], entry["categorize_by"], entry["values"], entry.get("colour_map"))
+       if entry.get("categorize_by") else _renderer(entry["geometry"], entry["colour"])}
       <blendMode>0</blendMode>
       <layerOpacity>1</layerOpacity>
     </maplayer>"""
 
 
+def _categorized_renderer(geometry: str, attribute: str, values: list[str],
+                          colour_map: dict[str, str] | None = None) -> str:
+    """Colour features by the value of one attribute, one colour per value."""
+    colour_map = colour_map or {}
+    categories, symbols = [], []
+    for index, value in enumerate(values):
+        label = value if value else "(none)"
+        colour = colour_map.get(value, PALETTE[index % len(PALETTE)])
+        categories.append(
+            f'          <category render="true" value={quoteattr(value)} '
+            f'symbol="{index}" label={quoteattr(label)}/>'
+        )
+        symbols.append(_symbol(geometry, colour, name=str(index)))
+    newline = "\n"
+    return f"""<renderer-v2 type="categorizedSymbol" attr={quoteattr(attribute)} forceraster="0" symbollevels="0" enableorderby="0">
+        <categories>
+{newline.join(categories)}
+        </categories>
+        <symbols>
+{newline.join(symbols)}
+        </symbols>
+      </renderer-v2>"""
+
+
 def _renderer(geometry: str, colour: str) -> str:
     """A single-symbol renderer appropriate to the geometry family."""
+    return f"""<renderer-v2 type="singleSymbol" forceraster="0" symbollevels="0" enableorderby="0">
+        <symbols>
+{_symbol(geometry, colour)}
+        </symbols>
+      </renderer-v2>"""
+
+
+def _symbol(geometry: str, colour: str, name: str = "0") -> str:
+    """One QGIS symbol definition, matched to the geometry family."""
     rgb = _to_rgba(colour)
     if geometry == "Point":
         symbol_type, layer_class = "marker", "SimpleMarker"
@@ -229,17 +313,13 @@ def _renderer(geometry: str, colour: str) -> str:
         f'value={quoteattr(v)}/>'
         for k, v in options.items()
     )
-    return f"""<renderer-v2 type="singleSymbol" forceraster="0" symbollevels="0" enableorderby="0">
-        <symbols>
-          <symbol type={quoteattr(symbol_type)} name="0" alpha="1" force_rhr="0" frame_rate="10" is_animated="0" clip_to_extent="1">
+    return f"""          <symbol type={quoteattr(symbol_type)} name={quoteattr(name)} alpha="1" force_rhr="0" frame_rate="10" is_animated="0" clip_to_extent="1">
             <layer class={quoteattr(layer_class)} enabled="1" pass="0" locked="0">
               <Option type="Map">
 {props}
               </Option>
             </layer>
-          </symbol>
-        </symbols>
-      </renderer-v2>"""
+          </symbol>"""
 
 
 def _raster_maplayer() -> str:
@@ -297,27 +377,48 @@ def main(argv: list[str] | None = None) -> int:
                         help="QGIS version stamped into the project file")
     parser.add_argument("--no-basemap", action="store_true",
                         help="omit the OpenStreetMap XYZ basemap layer")
+    parser.add_argument("--separate", action="store_true",
+                        help="export one layer per source file instead of "
+                             "merging them into a single attributed layer")
+    parser.add_argument("--group-by", default="zone",
+                        help="attribute used to split and colour the merged "
+                             "layer (default: zone)")
     args = parser.parse_args(argv)
 
     if not args.raw_dir.exists():
         print(f"No raw data directory at {args.raw_dir}")
         return 1
 
-    layers = dataio.load_from_args(args)
-    if not layers:
+    sources = dataio.load_from_args(args)
+    if not sources:
         print(f"\nNothing to export — no readable data under {args.raw_dir}.")
         return 0
 
     project_path = args.project or args.gpkg.with_suffix(".qgs")
 
+    if args.separate:
+        lead, layers, categorize_by, group = None, sources, None, "Layers"
+    else:
+        lead = dataio.combine(sources)
+        layers = dataio.split_by(lead, args.group_by)
+        categorize_by = args.group_by
+        group = f"By {args.group_by}"
+        print(f"\nMerged {len(sources)} source layer(s) into "
+              f"'{lead.name}' ({len(lead.gdf):,} features), "
+              f"split into {len(layers)} by {args.group_by}")
+
     print(f"\nWriting GeoPackage to {args.gpkg}")
-    write_geopackage(layers, args.gpkg)
+    write_geopackage(([lead] if lead else []) + layers, args.gpkg)
 
     build_project(layers, args.gpkg, project_path, args.qgis_version,
-                  basemap=not args.no_basemap, title=args.title)
+                  basemap=not args.no_basemap, title=args.title,
+                  categorize_by=categorize_by, group=group, lead=lead)
+
     print(f"\nWrote QGIS project: {project_path}")
-    print(f"Open it in QGIS {args.qgis_version.split('-')[0]} or newer — "
-          f"{len(layers)} layer(s) load styled and zoomed to the data.")
+    print(f"Open it in QGIS {args.qgis_version.split('-')[0]} or newer.")
+    if lead is not None:
+        print(f"  '{lead.name}' opens on, coloured by {args.group_by}; "
+              f"the '{group}' group holds each {args.group_by} separately.")
     return 0
 
 

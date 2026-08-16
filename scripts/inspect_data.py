@@ -69,6 +69,115 @@ def profile_layer(layer: dataio.Layer, max_columns: int) -> list[str]:
     return lines
 
 
+def _overview(layer: dataio.Layer) -> list[str]:
+    """Cross-layer counts, from the attributes the file names encode."""
+    gdf = layer.gdf
+    lines = ["## Overview", ""]
+
+    for column, title in (("zone", "Zone"), ("feature_type", "Type")):
+        if column not in gdf.columns:
+            continue
+        counts = gdf[column].fillna("(none)").value_counts().sort_index()
+        lines += [f"| {title} | Features | Surveys |", "| --- | ---: | ---: |"]
+        for value, count in counts.items():
+            surveys = gdf.loc[gdf[column].fillna("(none)") == value,
+                              "source_name"].nunique()
+            lines.append(f"| {value} | {count:,} | {surveys} |")
+        lines.append("")
+
+    if "clan" in gdf.columns:
+        clans_seen = {c for c in gdf["clan"].dropna() if str(c).strip()}
+        custodians = {c for c in gdf.get("custodian", pd.Series(dtype=str))
+                      .dropna() if str(c).strip()}
+        lines += [f"- **Distinct clans:** {len(clans_seen)}",
+                  f"- **Distinct custodians:** {len(custodians)}",
+                  f"- **Source surveys:** {gdf['source_name'].nunique()}", ""]
+    return lines
+
+
+def quality_report(layer: dataio.Layer, outlier_factor: float) -> list[str]:
+    """Flag the things worth a human look before any of this becomes a map.
+
+    None of these are corrected automatically — whether a stray track is a
+    test recording or a real remote parcel is a judgement for whoever knows
+    the survey, not for this script.
+    """
+    import difflib
+
+    gdf = layer.gdf
+    lines = ["## Data quality checks", ""]
+    findings = 0
+
+    # Features whose own name says they are not real survey records.
+    name_columns = [c for c in ("name", "cmt", "desc") if c in gdf.columns]
+    if name_columns:
+        joined = pd.Series("", index=gdf.index)
+        for column in name_columns:
+            joined = joined + " " + gdf[column].fillna("").astype(str)
+        suspect = gdf[joined.str.contains(r"\btest\b|\bdemo\b|\bdummy\b",
+                                          case=False, na=False)]
+        if len(suspect):
+            findings += 1
+            lines += [f"**{len(suspect)} feature(s) named as test data.** "
+                      "Likely worth excluding before publishing:", ""]
+            lines += _finding_table(suspect)
+
+    # Features sitting far from everything else. Measured in Web Mercator so
+    # the distances are metres and no "centroid of a geographic CRS" warning
+    # is raised; at this scale the projection distortion is irrelevant.
+    centroids = gdf.geometry.to_crs(dataio.WEB_MERCATOR).centroid
+    mid_x, mid_y = centroids.x.median(), centroids.y.median()
+    distance = ((centroids.x - mid_x) ** 2 + (centroids.y - mid_y) ** 2) ** 0.5
+    typical = distance.median()
+    if typical > 0:
+        outliers = gdf[distance > typical * outlier_factor]
+        if len(outliers):
+            findings += 1
+            lines += ["", f"**{len(outliers)} feature(s) far from the main "
+                      f"survey area** (more than {outlier_factor:g}× the "
+                      "median distance from its centre):", ""]
+            lines += _finding_table(outliers)
+
+    # Clan names that look like spellings of each other.
+    if "clan" in gdf.columns:
+        names = sorted({str(c) for c in gdf["clan"].dropna() if str(c).strip()})
+        pairs, seen = [], set()
+        for name in names:
+            for other in difflib.get_close_matches(name, names, n=3, cutoff=0.8):
+                key = tuple(sorted((name, other)))
+                if other != name and key not in seen:
+                    seen.add(key)
+                    pairs.append(key)
+        if pairs:
+            findings += 1
+            lines += ["", f"**{len(pairs)} pair(s) of similar clan names.** "
+                      "These may be spelling variants of one clan, or genuinely "
+                      "distinct — worth confirming:", "",
+                      "| | |", "| --- | --- |"]
+            lines += [f"| `{a}` | `{b}` |" for a, b in pairs]
+
+    if not findings:
+        lines += ["Nothing flagged.", ""]
+    lines.append("")
+    return lines
+
+
+def _finding_table(rows) -> list[str]:
+    columns = [c for c in ("zone", "clan", "custodian", "name", "source_name")
+               if c in rows.columns]
+    if not columns:
+        columns = [c for c in rows.columns if c != "geometry"][:4]
+    out = ["| " + " | ".join(columns) + " |",
+           "| " + " | ".join("---" for _ in columns) + " |"]
+    for _, row in rows.head(15).iterrows():
+        cells = [str(row[c]).replace("|", "\\|")[:45] for c in columns]
+        out.append("| " + " | ".join(cells) + " |")
+    if len(rows) > 15:
+        out.append(f"| _… {len(rows) - 15} more_ |" + " |" * (len(columns) - 1))
+    out.append("")
+    return out
+
+
 def _example(series: pd.Series) -> str:
     non_null = series.dropna()
     if non_null.empty:
@@ -93,6 +202,11 @@ def main(argv: list[str] | None = None) -> int:
                         help="how many attribute columns to profile per layer")
     parser.add_argument("--report", type=Path, default=None,
                         help="also write the profile to this markdown file")
+    parser.add_argument("--summary", action="store_true",
+                        help="only the cross-layer summary and quality checks")
+    parser.add_argument("--outlier-factor", type=float, default=3.0,
+                        help="how far from the survey centre counts as an "
+                             "outlier, as a multiple of the median distance")
     args = parser.parse_args(argv)
 
     if not args.raw_dir.exists():
@@ -108,8 +222,15 @@ def main(argv: list[str] | None = None) -> int:
     total = sum(len(layer.gdf) for layer in layers)
     lines = ["# Raw data profile", "",
              f"{len(layers)} layer(s), {total:,} features in total.", ""]
-    for layer in layers:
-        lines += profile_layer(layer, args.max_columns)
+
+    combined = dataio.combine(layers)
+    if combined is not None:
+        lines += _overview(combined)
+        lines += quality_report(combined, args.outlier_factor)
+
+    if not args.summary:
+        for layer in layers:
+            lines += profile_layer(layer, args.max_columns)
 
     report = "\n".join(lines)
     print("\n" + report)
