@@ -29,6 +29,15 @@ NOISE = {"land", "boundary", "boundaries", "tracks", "track", "site", "sites",
 DATE_PATTERN = re.compile(r"(\d{1,2})([A-Za-z]{3,9})(\d{2,4})")
 ZONE_PATTERN = re.compile(r"(?:zone|zn)[_\s-]*(\d+\s*[ab]?)", re.IGNORECASE)
 
+# Clan names confirmed by the survey team as spelling variants of one clan.
+# Both pairs below were flagged first by name similarity and then corroborated
+# by near-total polygon overlap (99%/78% and 71%/97%), and confirmed as typos.
+# The value is the spelling kept; change it here and it changes everywhere.
+CLAN_ALIASES = {
+    "manuvuoora": "Manuvoora",
+    "sungulkol": "Sugulkol",
+}
+
 MONTHS = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
           "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
 
@@ -83,6 +92,7 @@ def parse(name: str, source_path: "os.PathLike | str | None" = None) -> ClanReco
 
     if clan_index is None:
         record.custodian = _titlecase(_drop_noise(tokens))
+        record.clan = CLAN_ALIASES.get(record.clan.lower(), record.clan)
         return record
 
     before = _drop_noise(tokens[:clan_index])
@@ -102,6 +112,7 @@ def parse(name: str, source_path: "os.PathLike | str | None" = None) -> ClanReco
     else:
         record.clan = _titlecase(before)
 
+    record.clan = CLAN_ALIASES.get(record.clan.lower(), record.clan)
     return record
 
 

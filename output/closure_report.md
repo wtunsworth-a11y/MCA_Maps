@@ -49,7 +49,7 @@
 | Zone 3 | Nui | Bobby Aneba | Bobby_Aneba_Nui_Clan_Land_Boundary_Zone_3_14July2026 | 6 | 11.45 | 7464.2 | 71.3 |  | 4 | open | 4 disconnected pieces |
 | Zone 3 | Nui | Iman Nakina | Iman_Nakina_Nui_Clan_Land_Boundary_Zone_3_14July2026 | 9 | 11.97 | 17729.0 | 159.9 |  | 5 | open | 5 disconnected pieces |
 | Zone 6 | Manuvoora | Egobeyas Kuarisi | manuvoora_clan_egobeyas_kuarisi_tracks_zone_6 | 18 | 31.22 | 7599.8 | 26.4 |  | 7 | open | 7 disconnected pieces |
-| Zone 6 | Manuvuoora | Granville Nepo | manuvuoora_clan_granville_nepo_zone_6 | 11 | 30.23 | 3785.8 | 13.6 |  | 2 | open | 2 disconnected pieces |
+| Zone 6 | Manuvoora | Granville Nepo | manuvuoora_clan_granville_nepo_zone_6 | 11 | 30.23 | 3785.8 | 13.6 |  | 2 | open | 2 disconnected pieces |
 | Zone 6 | Mariura | Fabian Justin | mariura_clan_fabian_justin_zone_6 | 23 | 17.85 | 13377.3 | 80.8 |  | 9 | open | 9 disconnected pieces |
 | Zone 6 | Mariura | Livingstone Nisavora | mariura_clan_livingstone_nisavora_zone_6 | 22 | 15.86 | 18885.5 | 129.7 |  | 9 | open | 9 disconnected pieces |
 | Zone 6 | Naharaura | Zechariah Sasavo | naharaura_clan_zechariah_sasavo_tracks_zone_6 | 18 | 32.63 | 2489.9 | 7.6 |  | 4 | near | 4 disconnected pieces |
@@ -76,7 +76,7 @@
 | Zone 7B | Natang | Dickson Hoe | Dickson_Hoe_Natang_Clan_Land_Boundary_Zone_7B_14July2026 | 43 | 30.75 | 2866.0 | 10.3 |  | 3 | open | 3 disconnected pieces |
 | Zone 7B | Natang | Stafford Gidiri | Stafford_Gidiri_Natang_Clan_Land_Boundary_Zone_7B_14July2026 | 50 | 46.5 | 3392.4 | 7.3 |  | 3 | near | 3 disconnected pieces |
 | Zone 7B | Sugulkol | Chris Idua | Chris_Idua_Sugulkol_Clan_Land_Boundary_Zone_7B_14July2026 | 29 | 10.56 | 3727.9 | 38.4 |  | 3 | open | 3 disconnected pieces |
-| Zone 7B | Sungulkol | Emmanuel Fufus | Emmanuel_Fufus_Sungulkol_Clan_Land_Boundary_Zone_7B_14July2026 | 33 | 13.43 | 3320.0 | 26.8 |  | 6 | open | 6 disconnected pieces |
+| Zone 7B | Sugulkol | Emmanuel Fufus | Emmanuel_Fufus_Sungulkol_Clan_Land_Boundary_Zone_7B_14July2026 | 33 | 13.43 | 3320.0 | 26.8 |  | 6 | open | 6 disconnected pieces |
 | Zone 7B | Wohukol | Darline Walele | Darline_Walele_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | 18 | 17.1 | 0.0 | 0.0 | 308.6 | 5 | closed |  |
 | Zone 7B | Wohukol | Nelson Runage | Nelson_Runage_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | 9 | 17.81 | 0.0 | 0.0 | 306.1 | 3 | closed |  |
 | Zone 8 | Duribip | Beven Naive | Beven_Naive_Duribip_Clan_Land_Boundary_Zone_8_14July2026 | 4 | 4.46 | 5900.3 | 139.2 |  | 3 | open | 3 disconnected pieces |

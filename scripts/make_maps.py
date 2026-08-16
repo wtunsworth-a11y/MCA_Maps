@@ -131,12 +131,116 @@ def render_interactive(layers: list[dataio.Layer], out_path: Path,
     return out_path
 
 
-def _json_safe(gdf):
-    """Cast dates and objects to strings so folium can serialise them."""
+def render_zone_map(track_layers: list[dataio.Layer], out_path: Path,
+                    polygons_gpkg: Path | None = None,
+                    boundary_path: Path | None = None,
+                    title: str = "MCA clan boundaries") -> Path:
+    """An interactive map with every zone switchable on and off.
+
+    Tracks and mapped areas are separate overlays per zone, so a zone can be
+    shown as lines, as area, or both. Areas are drawn under the tracks and the
+    MCA boundary under everything.
+    """
+    import folium
+    import geopandas as gpd
+
+    minx, miny, maxx, maxy = dataio.combined_bounds(track_layers)
+    fmap = folium.Map(location=[(miny + maxy) / 2, (minx + maxx) / 2],
+                      zoom_start=10, tiles="CartoDB positron",
+                      control_scale=True)
+    folium.TileLayer("OpenStreetMap", name="OpenStreetMap",
+                     show=False).add_to(fmap)
+
+    zone_colour = {layer.name: PALETTE[i % len(PALETTE)]
+                   for i, layer in enumerate(track_layers)}
+
+    if boundary_path and Path(boundary_path).exists():
+        boundary = gpd.read_file(boundary_path).to_crs(dataio.WGS84)
+        folium.GeoJson(
+            boundary.to_json(), name="MCA boundary",
+            style_function=lambda _f: {"color": "#475569", "weight": 2,
+                                       "fillColor": "#94a3b8",
+                                       "fillOpacity": 0.10},
+        ).add_to(fmap)
+
+    if polygons_gpkg and Path(polygons_gpkg).exists():
+        try:
+            areas = gpd.read_file(polygons_gpkg,
+                                  layer="survey_polygons").to_crs(dataio.WGS84)
+        except Exception:
+            areas = None
+        if areas is not None and not areas.empty:
+            for zone, group in areas.groupby("zone", sort=True):
+                colour = zone_colour.get(dataio.safe_name(str(zone)), PALETTE[0])
+                fields = [c for c in ("clan", "custodian", "basis", "area_ha",
+                                      "gap_pct", "walked_km")
+                          if c in group.columns]
+                folium.GeoJson(
+                    _json_safe(group).to_json(),
+                    name=f"{zone} — area ({len(group)})",
+                    show=False,
+                    style_function=lambda f, c=colour: {
+                        "color": c, "weight": 1,
+                        "fillColor": c,
+                        "fillOpacity": 0.45 if f["properties"].get("basis")
+                        == "surveyed" else 0.20,
+                        "dashArray": "" if f["properties"].get("basis")
+                        == "surveyed" else "4,3",
+                    },
+                    tooltip=folium.GeoJsonTooltip(fields=fields),
+                    popup=folium.GeoJsonPopup(fields=fields),
+                ).add_to(fmap)
+
+    for layer in track_layers:
+        colour = zone_colour[layer.name]
+        gdf = _json_safe(layer.gdf)
+        fields = [c for c in ("zone", "clan", "custodian", "feature_type",
+                              "survey_date", "name")
+                  if c in gdf.columns]
+        folium.GeoJson(
+            gdf.to_json(),
+            name=f"{layer.name.replace('_', ' ')} — tracks ({len(gdf):,})",
+            style_function=lambda _f, c=colour: {"color": c, "weight": 2},
+            highlight_function=lambda _f: {"weight": 5},
+            tooltip=folium.GeoJsonTooltip(fields=fields) if fields else None,
+            popup=folium.GeoJsonPopup(fields=fields) if fields else None,
+        ).add_to(fmap)
+
+    folium.LayerControl(collapsed=False).add_to(fmap)
+    fmap.fit_bounds([[miny, minx], [maxy, maxx]])
+
+    legend = "".join(
+        f"<div style='display:flex;align-items:center;gap:6px;margin:2px 0'>"
+        f"<span style='width:14px;height:3px;background:{c};display:inline-block'></span>"
+        f"<span>{n.replace('_', ' ')}</span></div>"
+        for n, c in zone_colour.items())
+    fmap.get_root().html.add_child(folium.Element(
+        "<div style=\"position:fixed;bottom:22px;left:12px;z-index:9999;"
+        "background:rgba(255,255,255,.94);padding:10px 12px;border-radius:6px;"
+        "font:12px/1.45 system-ui;box-shadow:0 1px 4px rgba(0,0,0,.25)\">"
+        f"<div style='font-weight:600;margin-bottom:4px'>{title}</div>{legend}"
+        "<div style='margin-top:6px;color:#475569'>Solid fill = surveyed<br>"
+        "Hatched fill = inferred</div></div>"))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fmap.save(str(out_path))
+    return out_path
+
+
+def _json_safe(gdf, precision: int | None = 6):
+    """Cast dates and objects to strings so folium can serialise them.
+
+    Coordinates are also rounded, by default to 6 decimal places — about 11 cm
+    at this latitude, far finer than a handheld GPS fix. Full float precision
+    would roughly treble the size of the HTML for no visible gain.
+    """
     out = gdf.copy()
     for column in out.columns:
         if column != "geometry" and not pd.api.types.is_numeric_dtype(out[column]):
             out[column] = out[column].astype(str)
+    if precision is not None:
+        import shapely
+        out["geometry"] = shapely.set_precision(
+            out.geometry.values, 10 ** -precision)
     return out
 
 
@@ -185,7 +289,12 @@ def main(argv: list[str] | None = None) -> int:
               f"to {args.out_dir}")
         if not args.no_static:
             print(f"  {render_static(prepared, args.out_dir, args.colour_by).name}")
-        print(f"  {render_interactive(layers, args.out_dir / 'overview_smoothed.html', 'Smoothed tracks by zone').name}")
+        zone_map = render_zone_map(
+            layers, args.out_dir / "zones_interactive.html",
+            polygons_gpkg=dataio.SMOOTHED_DIR / "mca_polygons.gpkg",
+            boundary_path=dataio.MCA_BOUNDARY,
+            title="MCA clan boundaries by zone")
+        print(f"  {zone_map.name}")
         return 0
 
     if not args.raw_dir.exists():
