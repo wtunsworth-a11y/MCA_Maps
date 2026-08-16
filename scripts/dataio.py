@@ -8,6 +8,7 @@ set of layers.
 from __future__ import annotations
 
 import argparse
+import csv
 import re
 import shutil
 import zipfile
@@ -215,31 +216,72 @@ def load_all(raw_dir: Path = RAW_DIR, cache_dir: Path = CACHE_DIR,
 
 def _load_table(path: Path, lat_col: str | None, lon_col: str | None,
                 assume_crs: str) -> gpd.GeoDataFrame | None:
-    """Turn a delimited text file into points using its lat/lon columns."""
-    sep = "\t" if path.suffix.lower() == ".tsv" else None
-    try:
-        df = pd.read_csv(path, sep=sep, engine="python", low_memory=False)
-    except Exception:
-        return None
-    if df.empty:
+    """Turn a delimited text file into points using its lat/lon columns.
+
+    Reasons for skipping are printed rather than swallowed — a CSV that
+    quietly vanishes from the output is far worse than a noisy one.
+    """
+    df = _read_table(path)
+    if df is None or df.empty:
         return None
 
     lat_col = lat_col or _match_column(df.columns, LAT_NAMES)
     lon_col = lon_col or _match_column(df.columns, LON_NAMES)
     if not lat_col or not lon_col or lat_col not in df or lon_col not in df:
+        print(f"  - {path.name}: no latitude/longitude columns found "
+              f"(has: {', '.join(map(str, df.columns[:8]))}) — "
+              "pass --lat-col/--lon-col to map it")
         return None
 
     lat = pd.to_numeric(df[lat_col], errors="coerce")
     lon = pd.to_numeric(df[lon_col], errors="coerce")
     keep = lat.notna() & lon.notna()
     if not keep.any():
+        print(f"  - {path.name}: '{lat_col}'/'{lon_col}' hold no usable numbers")
         return None
+    if (dropped := int((~keep).sum())):
+        print(f"  - {path.name}: dropped {dropped:,} row(s) without coordinates")
 
     return gpd.GeoDataFrame(
         df[keep].reset_index(drop=True),
         geometry=gpd.points_from_xy(lon[keep], lat[keep]),
         crs=assume_crs,
     )
+
+
+def _read_table(path: Path) -> pd.DataFrame | None:
+    """Read a delimited file, sniffing its separator and encoding."""
+    for encoding in ("utf-8", "utf-8-sig", "cp1252", "latin-1"):
+        try:
+            sep = _sniff_separator(path, encoding)
+        except (UnicodeDecodeError, OSError):
+            continue
+        if sep is None:
+            return None  # empty file
+        try:
+            return pd.read_csv(path, sep=sep, encoding=encoding,
+                               low_memory=False)
+        except UnicodeDecodeError:
+            continue
+        except Exception as exc:
+            print(f"  ! {path.name}: could not be parsed ({exc})")
+            return None
+    print(f"  ! {path.name}: no supported text encoding")
+    return None
+
+
+def _sniff_separator(path: Path, encoding: str) -> str | None:
+    """Detect the delimiter from a sample; .tsv is taken at its word."""
+    if path.suffix.lower() == ".tsv":
+        return "\t"
+    with path.open("r", encoding=encoding, newline="") as handle:
+        sample = handle.read(64 * 1024)
+    if not sample.strip():
+        return None
+    try:
+        return csv.Sniffer().sniff(sample, delimiters=",;\t|").delimiter
+    except csv.Error:
+        return ","
 
 
 def _match_column(columns, candidates: tuple[str, ...]) -> str | None:
