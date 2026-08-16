@@ -116,13 +116,19 @@ def main(argv: list[str] | None = None) -> int:
                         help="re-extract the archives from scratch")
     parser.add_argument("--skip-maps", action="store_true",
                         help="skip the rendering stages")
+    parser.add_argument("--fetch-dem", action="store_true",
+                        help="re-fetch the terrain DEM first; needed when new "
+                             "surveys fall outside the area already covered")
     args = parser.parse_args(argv)
 
     refresh = ["--refresh"] if args.refresh else []
     smoothed = str(dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg")
 
     print("Running pipeline\n")
-    stages = [
+    stages = []
+    if args.fetch_dem:
+        stages.append(("fetch_dem.py", []))
+    stages += [
         ("inspect_data.py", ["--summary", "--report", "output/data_profile.md",
                              *refresh]),
         ("smooth_tracks.py", [*refresh]),
@@ -138,7 +144,7 @@ def main(argv: list[str] | None = None) -> int:
         stages += [
             ("make_maps.py", ["--smoothed", smoothed]),
             ("export_qgis.py", ["--smoothed", smoothed, "--with-boundary",
-                                "--with-polygons", "--gpkg",
+                                "--with-polygons", "--with-terrain", "--gpkg",
                                 str(dataio.SMOOTHED_DIR
                                     / "mca_smoothed_qgis.gpkg")]),
         ]

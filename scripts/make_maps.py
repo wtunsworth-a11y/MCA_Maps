@@ -25,6 +25,7 @@ import pandas as pd  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dataio  # noqa: E402
+import terrain  # noqa: E402
 
 PALETTE = ["#2563eb", "#dc2626", "#059669", "#d97706", "#7c3aed",
            "#0891b2", "#be185d", "#4d7c0f", "#b45309", "#1e40af"]
@@ -55,7 +56,8 @@ def render_static(layer: dataio.Layer, out_dir: Path,
     else:
         gdf.plot(edgecolor="#1e3a8a", linewidth=0.5, **shared)
 
-    _add_basemap(ax, gdf)
+    if not terrain.add_hillshade(ax, gdf.crs):
+        _add_basemap(ax, gdf)
     ax.set_axis_off()
     ax.set_title(f"{layer.name}  ({len(gdf):,} features)", fontsize=13, pad=12)
     fig.tight_layout()

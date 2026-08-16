@@ -36,6 +36,7 @@ from matplotlib.patches import Patch  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import closure  # noqa: E402
 import dataio  # noqa: E402
+import terrain  # noqa: E402
 
 HIGHLIGHT = ["#dc2626", "#2563eb", "#059669", "#d97706", "#7c3aed"]
 CONTEXT = "#cbd5e1"
@@ -51,6 +52,7 @@ def render(subject_layers: list[tuple[str, gpd.GeoDataFrame]],
            pad_fraction: float = 0.35) -> Path:
     """Draw one query map: the subject in colour, everything else muted."""
     figure, axis = plt.subplots(figsize=(9, 8), dpi=140)
+    terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.45)
 
     if boundary is not None:
         gpd.GeoSeries([boundary], crs=dataio.METRIC_CRS).boundary.plot(

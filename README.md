@@ -34,6 +34,7 @@ pip install -r requirements.txt
 Run everything, with an audit that no data was lost:
 
 ```bash
+python scripts/fetch_dem.py        # once — Copernicus 30 m terrain
 python scripts/run_pipeline.py
 ```
 
@@ -93,6 +94,19 @@ WKB without those parts, copying every surviving part byte-for-byte, so a
 boundary is never lost over two stray points. Parts logged while the receiver
 sat still (every point identical) are dropped the same way. Every repair is
 reported as it happens.
+
+## Terrain
+
+`scripts/fetch_dem.py` pulls the Copernicus GLO-30 DEM from AWS S3 (open data,
+no credentials) and crops it to the data extent using HTTP range requests, so
+only the needed window transfers. It writes `mca_dem.tif` and a derived
+`mca_hillshade.tif` into `data/reference/dem/`, both git-ignored and rebuilt on
+demand.
+
+Terrain then backs the static maps, the query maps and the QGIS project. Nothing
+depends on it — without the DEM the maps just draw without it. Re-fetch with
+`python scripts/run_pipeline.py --fetch-dem` when new surveys extend beyond the
+area already covered.
 
 ## Clipping and smoothing
 

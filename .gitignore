@@ -10,6 +10,9 @@ data/processed/*.gpkg-wal
 data/processed/*.qgs
 data/smoothed/*.gpkg
 data/smoothed/*.qgs
+
+# Copernicus DEM — re-fetched by scripts/fetch_dem.py
+data/reference/dem/
 output/*.png
 # Query pack is a deliverable that goes to the field — keep it tracked
 !output/queries/

@@ -586,13 +586,33 @@ the Protected Planet API, Overpass, OpenTopography and GADM. This is why the
 static maps carry no aerial or street background — it is an environment limit,
 not a choice, and it affects no measurement.
 
-**Reachable:** the Copernicus 30 m DEM on AWS S3
-(`copernicus-dem-30m.s3.amazonaws.com`), as cloud-optimised GeoTIFF with HTTP
-range requests. Tile `S09/E148` covers this survey area. That makes terrain
-available if wanted: hillshade under the maps, elevation along each boundary,
-and — most useful here — a check of whether boundaries follow ridgelines or
-watercourses, which would corroborate them independently of any survey. **Not
-yet used; say the word.**
+**Reachable, and now in use:** the Copernicus GLO-30 DEM on AWS S3
+(`copernicus-dem-30m.s3.amazonaws.com`), open data needing no credentials.
+
+`scripts/fetch_dem.py` reads it. Because the tiles are cloud-optimised GeoTIFF,
+only the window covering the data is transferred rather than whole degrees —
+tiles `S09/E148` and `S10/E148` are cropped and mosaicked to a single raster of
+2,193 × 2,427 px covering **−1 m to 3,044 m** of elevation. A shaded-relief
+render is derived from it (default light from the north-west at 45°, 1.5×
+vertical exaggeration).
+
+Both are written to `data/reference/dem/` and are **git-ignored**: they are
+re-fetchable, and nothing in the pipeline requires them. A run without network
+access still completes; the maps simply draw without terrain behind them.
+
+Terrain now backs every static map, every query map, and the QGIS project (as
+`Terrain hillshade`, on by default, with `Elevation (m)` available beneath it).
+It is not merely decorative — it shows that mapped areas sit in the valleys
+while the unmapped north and west of the MCA is rugged mountain, and it lets a
+field discussion about an unclosed boundary refer to the ground between the two
+open ends.
+
+Re-fetch when new surveys fall outside the area already covered:
+`python scripts/run_pipeline.py --fetch-dem`.
+
+**Not yet done:** using the DEM analytically — checking whether boundaries
+follow ridgelines or watercourses, which would corroborate them independently
+of the surveys.
 
 **In QGIS on your own machine** none of these restrictions apply. The generated
 project already carries an OpenStreetMap XYZ layer, and any other XYZ or WMS

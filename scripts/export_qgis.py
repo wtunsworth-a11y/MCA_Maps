@@ -102,7 +102,8 @@ def build_project(layers: list[dataio.Layer], gpkg_path: Path,
                   basemap: bool, title: str,
                   categorize_by: str | None = None,
                   group: str | None = None,
-                  lead: dataio.Layer | None = None) -> Path:
+                  lead: dataio.Layer | None = None,
+                  terrain_layers: list[tuple[Path, str]] | None = None) -> Path:
     """Generate a .qgs referencing the GeoPackage layers, zoomed to the data.
 
     ``lead`` is drawn on top and checked on; the rest go into a collapsed
@@ -169,6 +170,15 @@ def build_project(layers: list[dataio.Layer], gpkg_path: Path,
     maplayers = "\n".join(_vector_maplayer(e) for e in all_entries)
     order = "\n".join(f'    <layer id={quoteattr(e["id"])}/>'
                       for e in all_entries)
+
+    for index, (path, label) in enumerate(terrain_layers or []):
+        layer_id = f"terrain_{index:02d}"
+        tree += "\n" + _tree_entry(layer_id, label,
+                                   _relative_to(path, project_path.parent),
+                                   provider="gdal", checked=(index == 0))
+        maplayers += "\n" + _local_raster_maplayer(
+            path, project_path.parent, layer_id, label)
+        order += f'\n    <layer id={quoteattr(layer_id)}/>'
 
     if basemap:
         tree += "\n" + _tree_entry("osm_basemap", "OpenStreetMap", OSM_XYZ,
@@ -322,6 +332,36 @@ def _symbol(geometry: str, colour: str, name: str = "0") -> str:
           </symbol>"""
 
 
+def _local_raster_maplayer(path: Path, project_dir: Path, layer_id: str,
+                           name: str, gray: bool = True) -> str:
+    """A raster layer read from a file on disk, referenced relatively."""
+    source = _relative_to(path, project_dir)
+    renderer = ('<rasterrenderer type="singlebandgray" band="1" opacity="1" '
+                'alphaBand="-1" gradient="BlackToWhite" nodataColor="">'
+                '<rasterTransparency/><contrastEnhancement>'
+                '<minValue>0</minValue><maxValue>255</maxValue>'
+                '<algorithm>StretchToMinimumMaximum</algorithm>'
+                '</contrastEnhancement></rasterrenderer>') if gray else (
+                '<rasterrenderer type="singlebandpseudocolor" band="1" '
+                'opacity="1" alphaBand="-1" nodataColor=""/>')
+    return f"""    <maplayer type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>{escape(layer_id)}</id>
+      <datasource>{escape(source)}</datasource>
+      <layername>{escape(name)}</layername>
+      <srs>
+        {CRS_BLOCKS["EPSG:4326"]}
+      </srs>
+      <provider>gdal</provider>
+      <pipe>
+        {renderer}
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>"""
+
+
 def _raster_maplayer() -> str:
     return f"""    <maplayer type="raster" hasScaleBasedVisibilityFlag="0">
       <id>osm_basemap</id>
@@ -391,6 +431,9 @@ def main(argv: list[str] | None = None) -> int:
                             dataio.SMOOTHED_DIR / "mca_polygons.gpkg"),
                         default=None,
                         help="include the mapped-area polygons as layers")
+    parser.add_argument("--with-terrain", action="store_true",
+                        help="include the Copernicus DEM hillshade and "
+                             "elevation as background raster layers")
     parser.add_argument("--with-boundary", action="store_true",
                         help="include the MCA reference boundary as a layer")
     parser.add_argument("--group-by", default="zone",
@@ -460,9 +503,20 @@ def main(argv: list[str] | None = None) -> int:
     print(f"\nWriting GeoPackage to {args.gpkg}")
     write_geopackage(([lead] if lead else []) + layers, args.gpkg)
 
+    terrain_layers = []
+    if args.with_terrain:
+        import terrain as terrain_module
+        for path, label in ((terrain_module.HILLSHADE_PATH, "Terrain hillshade"),
+                            (terrain_module.DEM_PATH, "Elevation (m)")):
+            if path.exists():
+                terrain_layers.append((path, label))
+        if not terrain_layers:
+            print("  (no terrain: run scripts/fetch_dem.py)")
+
     build_project(layers, args.gpkg, project_path, args.qgis_version,
                   basemap=not args.no_basemap, title=args.title,
-                  categorize_by=categorize_by, group=group, lead=lead)
+                  categorize_by=categorize_by, group=group, lead=lead,
+                  terrain_layers=terrain_layers)
 
     print(f"\nWrote QGIS project: {project_path}")
     print(f"Open it in QGIS {args.qgis_version.split('-')[0]} or newer.")

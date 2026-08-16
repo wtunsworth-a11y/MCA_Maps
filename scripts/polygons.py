@@ -39,6 +39,7 @@ from shapely.ops import polygonize, unary_union
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import closure  # noqa: E402
 import dataio  # noqa: E402
+import terrain  # noqa: E402
 import smooth_tracks  # noqa: E402
 
 DEFAULT_MAX_GAP = 0.50
@@ -195,11 +196,13 @@ def _render(polygons: gpd.GeoDataFrame, boundary, out_path: Path) -> None:
     from matplotlib.patches import Patch
 
     figure, axis = plt.subplots(figsize=(11, 10), dpi=150)
+    has_terrain = terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.5)
 
     if boundary is not None:
         gpd.GeoSeries([boundary], crs=dataio.METRIC_CRS).plot(
-            ax=axis, facecolor="#f1f5f9", edgecolor="#94a3b8",
-            linewidth=1.0, zorder=0)
+            ax=axis, facecolor="none" if has_terrain else "#f1f5f9",
+            edgecolor="#475569" if has_terrain else "#94a3b8",
+            linewidth=1.2, zorder=0)
 
     inferred = polygons[polygons.basis == "inferred"]
     surveyed = polygons[polygons.basis == "surveyed"]
@@ -221,8 +224,7 @@ def _render(polygons: gpd.GeoDataFrame, boundary, out_path: Path) -> None:
               label="Surveyed — tracks close the ring"),
         Patch(facecolor="#fbbf24", alpha=0.45, edgecolor="#b45309",
               label="Inferred — open ends bridged"),
-        Patch(facecolor="#f1f5f9", edgecolor="#94a3b8",
-              label="MCA boundary"),
+        Patch(facecolor="none", edgecolor="#475569", label="MCA boundary"),
     ], loc="lower left", fontsize=9, frameon=True)
     figure.tight_layout()
     out_path.parent.mkdir(parents=True, exist_ok=True)
