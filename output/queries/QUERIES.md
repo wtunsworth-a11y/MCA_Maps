@@ -14,9 +14,9 @@ Maps carry no aerial background — they show the recorded walks only, with a sc
 
 ## Boundaries close to completion
 
-### Q01. Gubai (Kenny Noi) — 4,911 m from closing
+### Q01. Gubai (Fordy Igai, Kenny Noi) — 5,019 m from closing
 
-**Gubai**, walked by **Kenny Noi** in Zone 8, covers 91.9 km but the ends do not meet: **4,911 m apart**, 5.3% of the distance walked.
+**Gubai**, walked by **Fordy Igai, Kenny Noi** in Zone 8, covers 134.5 km but the ends do not meet: **5,019 m apart**, 3.7% of the distance walked.
 
 Can the remaining stretch be walked to close the boundary? If the gap is deliberate — a river, a road, an agreed open edge — please say what runs along it.
 
@@ -50,9 +50,9 @@ Can the remaining stretch be walked to close the boundary? If the gap is deliber
 
 ---
 
-### Q03. Natang (Stafford Gidiri) — 3,392 m from closing
+### Q03. Naharaura (Zechariah Sasavo) — 2,490 m from closing
 
-**Natang**, walked by **Stafford Gidiri** in Zone 7B, covers 46.5 km but the ends do not meet: **3,392 m apart**, 7.3% of the distance walked.
+**Naharaura**, walked by **Zechariah Sasavo** in Zone 6, covers 32.6 km but the ends do not meet: **2,490 m apart**, 7.6% of the distance walked.
 
 Can the remaining stretch be walked to close the boundary? If the gap is deliberate — a river, a road, an agreed open edge — please say what runs along it.
 
@@ -68,9 +68,9 @@ Can the remaining stretch be walked to close the boundary? If the gap is deliber
 
 ---
 
-### Q04. Naharaura (Zechariah Sasavo) — 2,490 m from closing
+### Q04. Riribudeh (Prut Buitari, Unido Ose) — 1,561 m from closing
 
-**Naharaura**, walked by **Zechariah Sasavo** in Zone 6, covers 32.6 km but the ends do not meet: **2,490 m apart**, 7.6% of the distance walked.
+**Riribudeh**, walked by **Prut Buitari, Unido Ose** in Zone 8, covers 20.4 km but the ends do not meet: **1,561 m apart**, 7.8% of the distance walked.
 
 Can the remaining stretch be walked to close the boundary? If the gap is deliberate — a river, a road, an agreed open edge — please say what runs along it.
 
@@ -142,9 +142,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q08. Nituri (Newton Muraba) — recorded in 9 separate pieces
+### Q08. Duribip (Beven Naive) — recorded in 3 separate pieces
 
-**Nituri**, walked by **Newton Muraba** in Zone 2, covers 5.3 km but is recorded as **9 disconnected pieces**, needing 11,440 m of straight-line joins to form a ring (229.2% of the distance walked).
+**Duribip**, walked by **Beven Naive** in Zone 8, covers 4.5 km but is recorded as **3 disconnected pieces**, needing 5,900 m of straight-line joins to form a ring (139.2% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 
@@ -160,9 +160,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q09. Tuoko (Kaupa Dota) — recorded in 7 separate pieces
+### Q09. Gumuri (Gray Saui, Monty Stanford) — recorded in 1 separate pieces
 
-**Tuoko**, walked by **Kaupa Dota** in Zone 2, covers 11.2 km but is recorded as **7 disconnected pieces**, needing 21,040 m of straight-line joins to form a ring (202.0% of the distance walked).
+**Gumuri**, walked by **Gray Saui, Monty Stanford** in Zone 3, covers 6.8 km but is recorded as **1 disconnected pieces**, needing 5,489 m of straight-line joins to form a ring (83.9% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 
@@ -178,9 +178,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q10. Deari (Anthony Irimari) — recorded in 2 separate pieces
+### Q10. Bujevi (Abel Kajari) — recorded in 1 separate pieces
 
-**Deari**, walked by **Anthony Irimari** in Zone 3, covers 5.3 km but is recorded as **2 disconnected pieces**, needing 9,944 m of straight-line joins to form a ring (197.8% of the distance walked).
+**Bujevi**, walked by **Abel Kajari** in Zone 2, covers 5.8 km but is recorded as **1 disconnected pieces**, needing 4,474 m of straight-line joins to form a ring (83.8% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 
@@ -236,9 +236,9 @@ Should it count towards that clan's mapped land area, be reported separately, or
 
 ## Zones returning little mapped area
 
-### Q13. Zone 3 — 48.7 km walked, only 76.2 ha mapped
+### Q13. Zone 3 — 48.7 km walked, only 9.5 ha mapped
 
-**Zone 3** has 8.0 surveys and 17.0 tracks covering 48.7 km, but yields only **76.2 ha** of mapped area — far less per kilometre walked than the other zones.
+**Zone 3** has 8.0 surveys and 17.0 tracks covering 48.7 km, but yields only **9.5 ha** of mapped area — far less per kilometre walked than the other zones.
 
 Is this the full set of surveys for this zone, or is more still to come? Were these boundaries walked in full?
 

@@ -357,8 +357,9 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
                 min_length: float = 100.0,
                 min_enclosure: float = 0.50) -> pd.DataFrame:
     """Run the closure test over every survey in the layer."""
+    gdf = gdf.assign(_unit=dataio.survey_group(gdf))
     rows = []
-    for source, group in gdf.groupby("source_name", sort=True):
+    for source, group in gdf.groupby("_unit", sort=True):
         parts = []
         for geometry in group.geometry:
             if geometry is None:
@@ -371,10 +372,12 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
             outcome["status"] = "too short"
             outcome["detail"] = f"only {outcome['length_m']:.0f} m walked"
         first = group.iloc[0]
+        custodians = sorted({str(c) for c in group.custodian if str(c).strip()})
         rows.append({
             "zone": first.get("zone", ""),
             "clan": first.get("clan", ""),
-            "custodian": first.get("custodian", ""),
+            "custodian": ", ".join(custodians),
+            "walkers": len(custodians),
             "source_name": source,
             "tracks": outcome["parts"],
             "length_km": round(outcome["length_m"] / 1000, 2),

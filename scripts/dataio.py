@@ -466,6 +466,24 @@ def _unique(name: str, used: set[str]) -> str:
 RESTRICTED_TYPES = {"Sacred Site"}
 
 
+def survey_group(gdf: gpd.GeoDataFrame) -> pd.Series:
+    """The unit a boundary is assessed as: one clan's walk within one zone.
+
+    A clan is often walked by several custodians, each taking the stretch
+    nearest them, so their tracks are parts of one boundary and are joined.
+    Different clans are never joined — the overlaps between them are the
+    finding, not an error.
+
+    Zone still separates: Murai holds land in Zone 2 and Zone 7B, walked by
+    different custodians in places far apart, and joining those would invent a
+    boundary spanning both. Anything without a clan name stays on its own.
+    """
+    clan = gdf["clan"].astype(str).str.strip()
+    zone = gdf["zone"].astype(str).str.strip()
+    joined = clan + " — " + zone
+    return joined.where(clan != "", gdf["source_name"])
+
+
 def publishable(gdf: gpd.GeoDataFrame, quiet: bool = False):
     """Drop features whose locations must not be shared.
 
@@ -537,6 +555,7 @@ def combine(layers: list[Layer], name: str = "clan_boundaries") -> Layer | None:
     merged = pd.concat(frames, ignore_index=True)
     merged = gpd.GeoDataFrame(merged, geometry="geometry", crs=layers[0].gdf.crs)
 
+    merged = _qualify_cross_zone_clans(merged)
     merged = _merge_case_variants(merged)
 
     # The sources carry different schemas, so the union has columns that are
@@ -549,6 +568,48 @@ def combine(layers: list[Layer], name: str = "clan_boundaries") -> Layer | None:
 
     return Layer(name=name, gdf=merged, source=layers[0].source.parent,
                  source_crs=layers[0].source_crs)
+
+
+def zone_code(zone: str) -> str:
+    """"Zone 7B" -> "Z7B", for use as a short qualifier on a clan name."""
+    return "Z" + str(zone).replace("Zone", "").replace(" ", "").strip()
+
+
+def _qualify_cross_zone_clans(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Append a zone code to any clan name that appears in more than one zone.
+
+    A clan name recurring across zones is expected rather than suspicious:
+    language spreads between zones, and a clan that split and moved may keep
+    the ancestral name. But the two are not the same landholding group, and
+    leaving both as one name would merge their land — exactly what must never
+    happen. Qualifying the name keeps them apart and makes the recurrence
+    visible: `Murai` becomes `Murai (Z2)` and `Murai (Z7B)`.
+
+    Whether such a pair is one clan that spread or two unrelated clans sharing
+    a name is a question for the field, not for the geometry.
+    """
+    if "clan" not in gdf.columns or "zone" not in gdf.columns:
+        return gdf
+
+    named = gdf[gdf["clan"].astype(str).str.strip() != ""]
+    spread = (named.groupby("clan")["zone"].nunique()
+              .pipe(lambda s: s[s > 1]).index.tolist())
+    if not spread:
+        return gdf
+
+    for clan in sorted(spread):
+        zones = sorted(set(named.loc[named["clan"] == clan, "zone"]))
+        print(f"  '{clan}' appears in {len(zones)} zones "
+              f"({', '.join(zones)}) — qualifying the name in each")
+        for zone in zones:
+            mask = (gdf["clan"] == clan) & (gdf["zone"] == zone)
+            gdf.loc[mask, "clan"] = f"{clan} ({zone_code(zone)})"
+            gdf.loc[mask, "clan_base"] = clan
+    if "clan_base" not in gdf.columns:
+        gdf["clan_base"] = gdf["clan"]
+    else:
+        gdf["clan_base"] = gdf["clan_base"].fillna(gdf["clan"])
+    return gdf
 
 
 def _merge_case_variants(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:

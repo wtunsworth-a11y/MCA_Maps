@@ -37,3 +37,7 @@ Thumbs.db
 # Sacred site locations are never shared — reported by area only.
 data/smoothed/*sacred*
 output/*sacred*.gpkg
+
+# npm working files for the Word report build
+node_modules/
+package-lock.json

@@ -64,9 +64,12 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
 
     snapped = _snapped_lines(parts, positions, labels)
 
-    # Already a ring?
-    enclosed = _largest(snapped)
-    if enclosed is not None and enclosed.length >= min_enclosure * total:
+    # Already a ring? Judge that on the primary ring alone — a multipolygon's
+    # perimeters sum, so a mesh of slivers would clear the threshold on total
+    # perimeter while enclosing almost nothing.
+    primary = _largest(snapped)
+    enclosed = _enclosed(snapped)
+    if primary is not None and primary.length >= min_enclosure * total:
         return {"geometry": enclosed, "basis": "surveyed", "gap_m": 0.0,
                 "gap_pct": 0.0, "walked_km": total / 1000,
                 "area_ha": enclosed.area / 1e4}
@@ -83,7 +86,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     if not bridges:
         return None
 
-    bridged = _largest(snapped + bridges)
+    bridged = _enclosed(snapped + bridges)
     if bridged is None:
         return None
 
@@ -103,7 +106,37 @@ def _snapped_lines(parts, positions, labels) -> list:
     return out
 
 
+def _enclosed(lines: list, min_share: float = 0.02):
+    """Every substantial area the lines enclose, not just the biggest one.
+
+    A clan can hold more than one parcel, and several walkers joined into one
+    survey routinely describe two or three. Taking only the largest polygon
+    silently discarded the rest — Wohukol lost an entire northern parcel that
+    way, and the loss looked like joining being harmful when it was this
+    function throwing ground away.
+
+    Slivers below `min_share` of the largest are dropped: those are the small
+    incidental loops where a track crosses itself, not parcels.
+    """
+    if not lines:
+        return None
+    try:
+        polygons = [p for p in polygonize(unary_union(lines)) if p.area > 0]
+    except Exception:
+        return None
+    if not polygons:
+        return None
+
+    largest = max(p.area for p in polygons)
+    kept = [p for p in polygons if p.area >= largest * min_share]
+    if len(kept) == 1:
+        return kept[0]
+    from shapely.geometry import MultiPolygon
+    return MultiPolygon(kept)
+
+
 def _largest(lines: list):
+    """The single biggest enclosed polygon — used where one ring is meant."""
     if not lines:
         return None
     try:
@@ -273,8 +306,9 @@ def main(argv: list[str] | None = None) -> int:
 
     gdf = gpd.read_file(args.gpkg, layer=args.layer).to_crs(dataio.METRIC_CRS)
 
+    gdf = gdf.assign(_unit=dataio.survey_group(gdf))
     records = []
-    for source, group in gdf.groupby("source_name", sort=True):
+    for source, group in gdf.groupby("_unit", sort=True):
         parts = []
         for geometry in group.geometry:
             if geometry is None:
@@ -286,9 +320,13 @@ def main(argv: list[str] | None = None) -> int:
         if built is None:
             continue
         first = group.iloc[0]
+        custodians = sorted({str(c) for c in group.custodian if str(c).strip()})
         records.append({
             "zone": first.get("zone", ""), "clan": first.get("clan", ""),
-            "custodian": first.get("custodian", ""), "source_name": source,
+            "custodian": ", ".join(custodians),
+            "walkers": len(custodians),
+            "surveys": int(group.source_name.nunique()),
+            "source_name": source,
             "basis": built["basis"],
             "walked_km": round(built["walked_km"], 2),
             "area_ha": round(built["area_ha"], 1),

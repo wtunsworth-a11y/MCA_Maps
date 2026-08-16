@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `7c54b05052d21d489bc6804d91389e297ddd7f06`
+- **Commit:** `ca6131c105eca0fb56a7409d3a9c99f95f45ecc0`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 
@@ -61,14 +61,14 @@ If a figure changes between runs, compare these digests first: they say immediat
 | --- | --- |
 | surveys | 69 |
 | tracks | 600 |
-| clans | 46 |
+| clans | 47 |
 | custodians | 67 |
 | zones | Zone 2, Zone 3, Zone 6, Zone 7A, Zone 7B, Zone 8 |
 | smoothed_km | 1112.9 |
-| polygons | 42 |
-| polygons_surveyed | 7 |
-| area_ha_total | 26336.3 |
-| area_ha_surveyed | 3157.5 |
+| polygons | 35 |
+| polygons_surveyed | 5 |
+| area_ha_total | 32531.2 |
+| area_ha_surveyed | 2542.4 |
 
 ## Data sources
 

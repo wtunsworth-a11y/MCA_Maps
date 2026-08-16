@@ -1,159 +1,167 @@
 # Mapped areas and clan overlaps
 
-- **Surveyed polygons:** 7, 3,157.5 ha
-- **Inferred polygons:** 35, 23,178.8 ha
-- **Combined footprint:** 20,789.8 ha
+- **Surveyed polygons:** 5, 2,542.4 ha
+- **Inferred polygons:** 30, 29,988.8 ha
+- **Combined footprint:** 27,940.3 ha
 
 ## Mapped area by zone
 
 | zone | polygons | area_ha |
 | --- | --- | --- |
-| Zone 2 | 12 | 10962.7 |
-| Zone 3 | 2 | 76.2 |
-| Zone 6 | 4 | 3320.7 |
-| Zone 7A | 3 | 1656.6 |
-| Zone 7B | 13 | 6402.8 |
-| Zone 8 | 8 | 3917.3 |
+| Zone 2 | 12 | 18582.7 |
+| Zone 3 | 1 | 9.5 |
+| Zone 6 | 4 | 3088.8 |
+| Zone 7A | 2 | 1166.9 |
+| Zone 7B | 10 | 6657.3 |
+| Zone 8 | 6 | 3026.0 |
 
 ## Clan-to-clan overlaps
 
 | clan_a | clan_b | shared_ha | pct_of_a | pct_of_b |
 | --- | --- | --- | --- | --- |
-| Borori | Darekikol | 286.8 | 49.3 | 46.5 |
-| Asoro | Sukandi | 233.2 | 6.6 | 12.3 |
+| Nituri | Tuoko | 1999.5 | 37.6 | 60.9 |
+| Ambunkol | Natang | 345.4 | 58.4 | 22.5 |
+| Ginangi | Manang | 311.2 | 25.4 | 88.2 |
+| Borori | Darekikol | 283.1 | 44.3 | 53.6 |
+| Asoro | Sukandi | 231.8 | 6.6 | 12.2 |
+| Rondi | Sukandi | 211.5 | 13.5 | 11.1 |
 | Juaiko | Sukandi | 204.6 | 15.8 | 10.8 |
-| Rondi | Sukandi | 185.9 | 27.7 | 9.8 |
-| Kasaki | Murai | 154.4 | 28.5 | 77.6 |
-| Majanko | Manoko | 64.8 | 23.5 | 17.4 |
+| Kasaki | Murai (Z2) | 154.4 | 28.5 | 77.6 |
+| Mariura | Naharaura | 148.3 | 17.4 | 25.0 |
+| Kasaki | Tuoko | 147.0 | 27.2 | 4.5 |
+| Kasaki | Nituri | 70.6 | 13.1 | 1.3 |
+| Majanko | Manoko | 65.0 | 23.6 | 16.1 |
 | Naharaura | Pina Ora | 59.6 | 10.0 | 7.3 |
-| Binunkol | Jariji | 44.3 | 4.4 | 7.1 |
+| Natang | Sugulkol | 56.7 | 3.7 | 16.2 |
+| Borori | Mariura | 56.1 | 8.8 | 6.6 |
+| Jariji | Wohukol | 54.9 | 7.9 | 8.3 |
+| Ginangi | Sugulkol | 51.0 | 4.2 | 14.6 |
+| Darekikol | Mariura | 50.3 | 9.5 | 5.9 |
+| Binunkol | Jariji | 44.3 | 4.4 | 6.4 |
 | Kasaki | Majanko | 39.9 | 7.4 | 14.5 |
-| Ambunkol | Natang | 21.4 | 7.3 | 1.8 |
+| Binunkol | Wohukol | 19.7 | 2.0 | 3.0 |
+| Sugulkol | Wohukol | 18.1 | 5.2 | 2.7 |
 | Asoro | Juaiko | 15.2 | 0.4 | 1.2 |
-| Manuvoora | Pina Ora | 14.2 | 1.3 | 1.8 |
-| Kasaki | Tuoko | 12.3 | 2.3 | 0.9 |
-| Juaiko | Manoko | 11.3 | 0.9 | 3.0 |
-| Dusi | Riribudeh | 6.8 | 3.1 | 1.7 |
-| Asingi | Murai | 5.9 | 3.6 | 3.0 |
-| Gumuyude | Riribudeh | 4.1 | 0.6 | 1.0 |
+| Majanko | Tuoko | 12.5 | 4.5 | 0.4 |
+| Juaiko | Manoko | 11.8 | 0.9 | 2.9 |
+| Ambunkol | Sugulkol | 6.8 | 1.1 | 1.9 |
+| Dusi | Riribudeh | 6.6 | 3.0 | 1.8 |
+| Asingi | Murai (Z2) | 5.9 | 3.6 | 3.0 |
+| Natang | Wohukol | 4.2 | 0.3 | 0.6 |
 | Asingi | Gariniko | 4.1 | 2.5 | 3.2 |
-| Manang | Sugulkol | 2.9 | 0.8 | 0.8 |
+| Gumuyude | Riribudeh | 3.7 | 0.5 | 1.0 |
+| Manang | Sugulkol | 2.7 | 0.8 | 0.8 |
+| Ambunkol | Wohukol | 1.9 | 0.3 | 0.3 |
 | Gariniko | Kasaki | 1.7 | 1.3 | 0.3 |
 | Dusi | Gubai | 1.5 | 0.7 | 0.1 |
 | Binunkol | Sugulkol | 1.5 | 0.2 | 0.4 |
-| Jariji | Wohukol | 1.1 | 0.2 | 0.3 |
-| Ambunkol | Sugulkol | 0.9 | 0.3 | 0.3 |
-| Natang | Wohukol | 0.8 | 0.1 | 0.3 |
-| Abuankol | Sugulkol | 0.6 | 100.0 | 0.2 |
+| Gariniko | Tuoko | 1.2 | 1.0 | 0.0 |
+| Binunkol | Rondi | 0.8 | 0.1 | 0.0 |
 | Gumuyude | Mungaikol | 0.6 | 0.1 | 0.1 |
-| Gariniko | Murai | 0.5 | 0.4 | 0.3 |
+| Gariniko | Nituri | 0.6 | 0.5 | 0.0 |
+| Gariniko | Murai (Z2) | 0.5 | 0.4 | 0.3 |
+| Ambunkol | Jariji | 0.5 | 0.1 | 0.1 |
+| Abuankol | Sugulkol | 0.4 | 54.6 | 0.1 |
+| Jariji | Sugulkol | 0.1 | 0.0 | 0.0 |
 | Jariji | Sukandi | 0.1 | 0.0 | 0.0 |
+| Abuankol | Jariji | 0.0 | 0.1 | 0.0 |
 | Binunkol | Sukandi | 0.0 | 0.0 | 0.0 |
 | Asingi | Kasaki | 0.0 | 0.0 | 0.0 |
+| Abuankol | Ambunkol | 0.0 | 0.1 | 0.0 |
+| Borori | Mungaikol | 0.0 | 0.0 | 0.0 |
 
 ## Survey-to-survey overlaps
 
 | label_a | label_b | shared_ha | pct_of_a | pct_of_b |
 | --- | --- | --- | --- | --- |
-| Natang / Dickson Hoe | Natang / Stafford Gidiri | 942.8 | 82.5 | 96.0 |
-| Manuvoora / Egobeyas Kuarisi | Manuvoora / Granville Nepo | 834.6 | 99.0 | 77.9 |
-| Gubai / Fordy Igai | Gubai / Kenny Noi | 487.8 | 98.3 | 41.7 |
-| Sukandi / Millinton Beso | Sukandi / Rodney Ajinko | 464.9 | 99.6 | 24.4 |
-| Darekikol / Garex Sevesi | Darekikol / George Kopoi | 458.4 | 97.6 | 75.8 |
-| Riribudeh / Prut Buitari | Riribudeh / Unido Ose | 366.1 | 99.6 | 90.9 |
-| Wohukol / Darline Walele | Wohukol / Nelson Runage | 304.5 | 98.7 | 99.5 |
-| Borori / John Saini | Darekikol / George Kopoi | 276.2 | 47.5 | 45.7 |
-| Sugulkol / Chris Idua | Sugulkol / Emmanuel Fufus | 258.7 | 71.3 | 96.7 |
-| Asoro / Gilford Amakana | Sukandi / Rodney Ajinko | 232.2 | 6.6 | 12.2 |
-| Borori / John Saini | Darekikol / Garex Sevesi | 224.1 | 38.5 | 47.7 |
-| Asoro / Gilford Amakana | Sukandi / Millinton Beso | 211.1 | 6.0 | 45.2 |
-| Juaiko / Gasper K Philip J | Sukandi / Rodney Ajinko | 204.6 | 15.8 | 10.8 |
-| Rondi / Humphrey Poto | Sukandi / Rodney Ajinko | 185.9 | 27.7 | 9.8 |
-| Kasaki / Ananias Masua | Murai / Nehemiah Nindori | 154.4 | 28.5 | 77.6 |
-| Majanko / Gilford Amakana | Manoko / Gilford Amakana | 64.8 | 23.5 | 17.4 |
+| Nituri / Christoper Visua, Graham Naopi, Newton Muraba | Tuoko / Kaupa Dota, Terrence Dobija | 1999.5 | 37.6 | 60.9 |
+| Ambunkol / Peter Awako | Natang / Dickson Hoe, Stafford Gidiri | 345.4 | 58.4 | 22.5 |
+| Ginangi / Job Mokondo, Joshua Mokondo | Manang / Kelly Wahamo | 311.2 | 25.4 | 88.2 |
+| Borori / Hagahi Semo, John Saini | Darekikol / Garex Sevesi, George Kopoi | 283.1 | 44.3 | 53.6 |
+| Asoro / Gilford Amakana | Sukandi / Millinton Beso, Rodney Ajinko | 231.8 | 6.6 | 12.2 |
+| Rondi / Humphrey Poto, Jefferson Amunisa | Sukandi / Millinton Beso, Rodney Ajinko | 211.5 | 13.5 | 11.1 |
+| Juaiko / Gasper K Philip J | Sukandi / Millinton Beso, Rodney Ajinko | 204.6 | 15.8 | 10.8 |
+| Kasaki / Ananias Masua | Murai (Z2) / Nehemiah Nindori | 154.4 | 28.5 | 77.6 |
+| Mariura / Fabian Justin, Livingstone Nisavora | Naharaura / Zechariah Sasavo | 148.3 | 17.4 | 25.0 |
+| Kasaki / Ananias Masua | Tuoko / Kaupa Dota, Terrence Dobija | 147.0 | 27.2 | 4.5 |
+| Kasaki / Ananias Masua | Nituri / Christoper Visua, Graham Naopi, Newton Muraba | 70.6 | 13.1 | 1.3 |
+| Majanko / Gilford Amakana | Manoko / Gilford Amakana | 65.0 | 23.6 | 16.1 |
 | Naharaura / Zechariah Sasavo | Pina Ora / Alban Ezekiel | 59.6 | 10.0 | 7.3 |
-| Jariji / Clement Viri | Binunkol / Moses Garui | 44.3 | 7.1 | 4.4 |
+| Natang / Dickson Hoe, Stafford Gidiri | Sugulkol / Chris Idua, Emmanuel Fufus | 56.7 | 3.7 | 16.2 |
+| Borori / Hagahi Semo, John Saini | Mariura / Fabian Justin, Livingstone Nisavora | 56.1 | 8.8 | 6.6 |
+| Jariji / Clement Viri, Newton Giwai | Wohukol / Darline Walele, Nelson Runage | 54.9 | 7.9 | 8.3 |
+| Ginangi / Job Mokondo, Joshua Mokondo | Sugulkol / Chris Idua, Emmanuel Fufus | 51.0 | 4.2 | 14.6 |
+| Darekikol / Garex Sevesi, George Kopoi | Mariura / Fabian Justin, Livingstone Nisavora | 50.3 | 9.5 | 5.9 |
+| Binunkol / Moses Garui | Jariji / Clement Viri, Newton Giwai | 44.3 | 4.4 | 6.4 |
 | Kasaki / Ananias Masua | Majanko / Gilford Amakana | 39.9 | 7.4 | 14.5 |
-| Giroiko / Eddie Sioro | Giroiko / Mark Samba | 37.5 | 98.8 | 97.8 |
-| Ambunkol / Peter Awako | Natang / Stafford Gidiri | 20.8 | 7.1 | 2.1 |
-| Juaiko / Gasper K Philip J | Asoro / Gilford Amakana | 15.2 | 1.2 | 0.4 |
-| Manuvoora / Granville Nepo | Pina Ora / Alban Ezekiel | 14.2 | 1.3 | 1.8 |
-| Kasaki / Ananias Masua | Tuoko / Terrence Dobija | 12.3 | 2.3 | 0.9 |
-| Juaiko / Gasper K Philip J | Manoko / Gilford Amakana | 11.3 | 0.9 | 3.0 |
-| Sugulkol / Chris Idua |  / Ruth Makisa | 10.6 | 2.9 | 4.5 |
-| Sugulkol / Emmanuel Fufus |  / Ruth Makisa | 10.1 | 3.8 | 4.3 |
-| Dusi / Max Mamo | Riribudeh / Unido Ose | 6.7 | 3.1 | 1.7 |
-| Asingi / Jethro Akse | Murai / Nehemiah Nindori | 5.9 | 3.6 | 3.0 |
-| Dusi / Max Mamo | Riribudeh / Prut Buitari | 4.3 | 2.0 | 1.2 |
+| Binunkol / Moses Garui | Wohukol / Darline Walele, Nelson Runage | 19.7 | 2.0 | 3.0 |
+| Sugulkol / Chris Idua, Emmanuel Fufus | Wohukol / Darline Walele, Nelson Runage | 18.1 | 5.2 | 2.7 |
+| Asoro / Gilford Amakana | Juaiko / Gasper K Philip J | 15.2 | 0.4 | 1.2 |
+| Majanko / Gilford Amakana | Tuoko / Kaupa Dota, Terrence Dobija | 12.5 | 4.5 | 0.4 |
+| Juaiko / Gasper K Philip J | Manoko / Gilford Amakana | 11.8 | 0.9 | 2.9 |
+| Sugulkol / Chris Idua, Emmanuel Fufus |  / Ruth Makisa | 10.1 | 2.9 | 4.3 |
+| Ambunkol / Peter Awako | Sugulkol / Chris Idua, Emmanuel Fufus | 6.8 | 1.1 | 1.9 |
+| Dusi / Max Mamo | Riribudeh / Prut Buitari, Unido Ose | 6.6 | 3.0 | 1.8 |
+| Asingi / Jethro Akse | Murai (Z2) / Nehemiah Nindori | 5.9 | 3.6 | 3.0 |
+| Natang / Dickson Hoe, Stafford Gidiri | Wohukol / Darline Walele, Nelson Runage | 4.2 | 0.3 | 0.6 |
 | Asingi / Jethro Akse | Gariniko / Lance Sake | 4.1 | 2.5 | 3.2 |
-| Gumuyude / Philip Igai | Riribudeh / Prut Buitari | 4.1 | 0.6 | 1.1 |
-| Gumuyude / Philip Igai | Riribudeh / Unido Ose | 3.8 | 0.5 | 0.9 |
-| Sugulkol / Emmanuel Fufus | Manang / Kelly Wahamo | 2.9 | 1.1 | 0.8 |
-| Sugulkol / Chris Idua | Manang / Kelly Wahamo | 2.0 | 0.6 | 0.6 |
-| Kasaki / Ananias Masua | Gariniko / Lance Sake | 1.7 | 0.3 | 1.3 |
-| Sugulkol / Emmanuel Fufus | Binunkol / Moses Garui | 1.5 | 0.6 | 0.2 |
-| Sugulkol / Chris Idua | Binunkol / Moses Garui | 1.5 | 0.4 | 0.2 |
-| Gubai / Kenny Noi | Dusi / Max Mamo | 1.5 | 0.1 | 0.7 |
-| Jariji / Clement Viri | Wohukol / Darline Walele | 1.0 | 0.2 | 0.3 |
-| Sugulkol / Chris Idua | Ambunkol / Peter Awako | 0.9 | 0.3 | 0.3 |
-| Natang / Dickson Hoe | Ambunkol / Peter Awako | 0.8 | 0.1 | 0.3 |
-| Sugulkol / Emmanuel Fufus | Abuankol / Simeon Pasip | 0.6 | 0.2 | 95.1 |
-| Sugulkol / Chris Idua | Abuankol / Simeon Pasip | 0.6 | 0.2 | 100.0 |
-| Mungaikol / Graham Ekiawa | Gumuyude / Philip Igai | 0.6 | 0.1 | 0.1 |
-| Gariniko / Lance Sake | Murai / Nehemiah Nindori | 0.5 | 0.4 | 0.3 |
-| Wohukol / Darline Walele | Natang / Dickson Hoe | 0.5 | 0.2 | 0.0 |
-| Natang / Dickson Hoe | Wohukol / Nelson Runage | 0.4 | 0.0 | 0.1 |
-| Jariji / Clement Viri | Wohukol / Nelson Runage | 0.4 | 0.1 | 0.1 |
-| Sugulkol / Emmanuel Fufus | Ambunkol / Peter Awako | 0.2 | 0.1 | 0.1 |
-| Jariji / Clement Viri | Sukandi / Rodney Ajinko | 0.1 | 0.0 | 0.0 |
-| Wohukol / Darline Walele | Natang / Stafford Gidiri | 0.0 | 0.0 | 0.0 |
-| Kasaki / Ananias Masua | Asingi / Jethro Akse | 0.0 | 0.0 | 0.0 |
-| Sukandi / Rodney Ajinko | Binunkol / Moses Garui | 0.0 | 0.0 | 0.0 |
-| Manuvoora / Egobeyas Kuarisi | Pina Ora / Alban Ezekiel | 0.0 | 0.0 | 0.0 |
+| Gumuyude / Philip Igai | Riribudeh / Prut Buitari, Unido Ose | 3.7 | 0.5 | 1.0 |
+| Manang / Kelly Wahamo | Sugulkol / Chris Idua, Emmanuel Fufus | 2.7 | 0.8 | 0.8 |
+| Ambunkol / Peter Awako | Wohukol / Darline Walele, Nelson Runage | 1.9 | 0.3 | 0.3 |
+| Gariniko / Lance Sake | Kasaki / Ananias Masua | 1.7 | 1.3 | 0.3 |
+| Dusi / Max Mamo | Gubai / Fordy Igai, Kenny Noi | 1.5 | 0.7 | 0.1 |
+| Binunkol / Moses Garui | Sugulkol / Chris Idua, Emmanuel Fufus | 1.5 | 0.2 | 0.4 |
+| Gariniko / Lance Sake | Tuoko / Kaupa Dota, Terrence Dobija | 1.2 | 1.0 | 0.0 |
+| Binunkol / Moses Garui | Rondi / Humphrey Poto, Jefferson Amunisa | 0.8 | 0.1 | 0.0 |
+| Gumuyude / Philip Igai | Mungaikol / Graham Ekiawa | 0.6 | 0.1 | 0.1 |
+| Gariniko / Lance Sake | Nituri / Christoper Visua, Graham Naopi, Newton Muraba | 0.6 | 0.5 | 0.0 |
+| Gariniko / Lance Sake | Murai (Z2) / Nehemiah Nindori | 0.5 | 0.4 | 0.3 |
+| Ambunkol / Peter Awako | Jariji / Clement Viri, Newton Giwai | 0.5 | 0.1 | 0.1 |
+| Abuankol / Simeon Pasip | Sugulkol / Chris Idua, Emmanuel Fufus | 0.4 | 54.6 | 0.1 |
+| Jariji / Clement Viri, Newton Giwai | Sukandi / Millinton Beso, Rodney Ajinko | 0.1 | 0.0 | 0.0 |
+| Jariji / Clement Viri, Newton Giwai | Sugulkol / Chris Idua, Emmanuel Fufus | 0.1 | 0.0 | 0.0 |
+| Abuankol / Simeon Pasip | Jariji / Clement Viri, Newton Giwai | 0.0 | 0.1 | 0.0 |
+| Binunkol / Moses Garui | Sukandi / Millinton Beso, Rodney Ajinko | 0.0 | 0.0 | 0.0 |
+| Asingi / Jethro Akse | Kasaki / Ananias Masua | 0.0 | 0.0 | 0.0 |
+| Abuankol / Simeon Pasip | Ambunkol / Peter Awako | 0.0 | 0.1 | 0.0 |
+| Borori / Hagahi Semo, John Saini | Mungaikol / Graham Ekiawa | 0.0 | 0.0 | 0.0 |
 
 ## Every polygon
 
-| zone | clan | custodian | source_name | basis | walked_km | area_ha | gap_m | gap_pct |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Zone 2 | Kasaki | Ananias Masua | Ananias_Masua_Kasaki_Clan_Land_Boundary_Zone_2_14July2026 | inferred | 15.13 | 540.8 | 1344.6 | 8.9 |
-| Zone 7B | Sugulkol | Chris Idua | Chris_Idua_Sugulkol_Clan_Land_Boundary_Zone_7B_14July2026 | inferred | 10.56 | 362.7 | 3727.9 | 35.3 |
-| Zone 7B | Jariji | Clement Viri | Clement_Viri_Jariji_Clan_Land_Boundary_Zone_7B_14July26 | inferred | 13.8 | 620.0 | 3677.5 | 26.6 |
-| Zone 7B | Wohukol | Darline Walele | Darline_Walele_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | surveyed | 17.1 | 308.6 | 0.0 | 0.0 |
-| Zone 7B | Natang | Dickson Hoe | Dickson_Hoe_Natang_Clan_Land_Boundary_Zone_7B_14July2026 | inferred | 30.75 | 1142.8 | 2866.0 | 9.3 |
-| Zone 3 | Giroiko | Eddie Sioro | Eddie_Sioro_Giroiko_Clan_Land_Boundary_Zone_3_14July2026 | inferred | 2.67 | 37.9 | 952.6 | 35.7 |
-| Zone 7B | Sugulkol | Emmanuel Fufus | Emmanuel_Fufus_Sungulkol_Clan_Land_Boundary_Zone_7B_14July2026 | inferred | 13.43 | 267.7 | 3320.0 | 24.7 |
-| Zone 8 | Gubai | Fordy Igai | Fordy_Igai_Gubai_Clan_Land_Boundary_Zone_8_14July2026 | inferred | 42.68 | 496.0 | 5185.5 | 12.1 |
-| Zone 2 | Juaiko | Gasper K Philip J | Gasper_K_Philip_J_Juaiko_Clan_Land_Boundary_Zone_2_14July2026 | inferred | 24.3 | 1292.9 | 1882.9 | 7.7 |
-| Zone 8 | Madukol | Gibs Ginave | Gibs_Ginave_Madukol_Clan_Land_Boundary_Zone_8_14July2026 | inferred | 1.07 | 0.9 | 285.5 | 26.7 |
-| Zone 2 | Asoro | Gilford Amakana | Gilford_Amakana_Asoro_Clan_Land_Boundary_Zone_2_14July2026 | inferred | 22.83 | 3506.7 | 7989.0 | 35.0 |
-| Zone 2 | Majanko | Gilford Amakana | Gilford_Amakana_Majanko_Clan_Land_Boundary_Zone_2_14July2026 | surveyed | 7.51 | 275.8 | 0.0 | 0.0 |
-| Zone 2 | Manoko | Gilford Amakana | Gilford_Amakana_Manoko_Clan_Land_Boundary_Zone_2_14July206 | inferred | 12.15 | 371.6 | 3847.5 | 31.7 |
-| Zone 8 | Mungaikol | Graham Ekiawa | Graham_Ekiawa_Mungaikol_Clan_Land_Boundary_Zone_8_14July2026 | inferred | 14.75 | 569.7 | 2263.5 | 15.3 |
-| Zone 2 | Rondi | Humphrey Poto | Humphrey_Poto_Rondi_Clan_Boundary_Zone_2_14July2026 | inferred | 29.31 | 670.4 | 12267.1 | 41.8 |
-| Zone 2 | Asingi | Jethro Akse | Jethro_Akse_Asingi_Clan_Land_Boundary_Zone_2_14July2026 | surveyed | 6.43 | 166.1 | 0.0 | 0.0 |
-| Zone 8 | Gubai | Kenny Noi | Kenny_Noi_Gubai_Clan_Land_Boundary_Zone_8_14July2026 | inferred | 91.86 | 1170.5 | 4911.3 | 5.3 |
-| Zone 2 | Gariniko | Lance Sake | Lance_Sake_Gariniko_Clan_Land_Boundary_Zone_2_14July2026 | inferred | 10.08 | 127.8 | 4987.6 | 49.5 |
-| Zone 7B | Manang | Kelly Wahamo | Manang_Clan_Kelly_Wahamo_Land_Boundary_Zone_7B | inferred | 7.13 | 353.0 | 1788.3 | 25.1 |
-| Zone 3 | Giroiko | Mark Samba | Mark_Samba_Giroiko_Clan_Land_Boundary_Zone_3_14July2026 | inferred | 2.76 | 38.3 | 1020.0 | 36.9 |
-| Zone 8 | Dusi | Max Mamo | Max_Mamo_Dusi_Clan_Land_Boundary_Zone_8_14July2026 | inferred | 32.95 | 218.6 | 1888.3 | 5.7 |
-| Zone 2 | Sukandi | Millinton Beso | Millinton_Beso_Sukandi_Clan_Sacred_Site_Zone_2_14July2026 | inferred | 10.6 | 466.5 | 1723.2 | 16.3 |
-| Zone 2 | Murai | Nehemiah Nindori | Nehemiah_Nindori_Murai_Clan_Zn_2_Land_Boundary_14July2026 | surveyed | 7.33 | 198.9 | 0.0 | 0.0 |
-| Zone 7B | Wohukol | Nelson Runage | Nelson_Runage_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | surveyed | 17.81 | 306.1 | 0.0 | 0.0 |
-| Zone 7B | Ambunkol | Peter Awako | Peter_Awako_Ambunkol_Clan_Land_Boundary_Zone_7B_14July2026 | inferred | 18.6 | 293.4 | 4489.1 | 24.1 |
-| Zone 8 | Gumuyude | Philip Igai | Philip_Igai_Gumuyude_Clan_Land_Boundary_Zone_8_14July2026 | inferred | 16.79 | 691.3 | 2284.5 | 13.6 |
-| Zone 8 | Riribudeh | Prut Buitari | Prut_Buitari_Riribudeh_Clan_Land_Boundary_Zone_8_14July2026 | inferred | 10.37 | 367.7 | 1640.0 | 15.8 |
-| Zone 2 | Sukandi | Rodney Ajinko | Rodney_Ajinko_Sukandi_Clan_Land_Boundary_Zone_2_14July2026 | surveyed | 29.09 | 1901.4 | 0.0 | 0.0 |
-| Zone 7B | Abuankol | Simeon Pasip | Simeon_Pasip_Abuankol_Clan_Land_Boundary_Zone_7B_14July2026 | surveyed | 0.51 | 0.6 | 0.0 | 0.0 |
-| Zone 7B | Natang | Stafford Gidiri | Stafford_Gidiri_Natang_Clan_Land_Boundary_Zone_7B_14July2026 | inferred | 46.5 | 982.0 | 3392.4 | 7.3 |
-| Zone 2 | Tuoko | Terrence Dobija | Terrence_Dobija_Tuoko_Clan_Land_Boundary_14July2026 | inferred | 36.51 | 1443.8 | 15585.8 | 42.7 |
-| Zone 8 | Riribudeh | Unido Ose | Unido_Ose_Riribudeh_Clan_Zone_8_14July2026 | inferred | 10.01 | 402.6 | 963.5 | 9.6 |
-| Zone 7B | Binunkol | Moses Garui | binunkol_clan_moses_garui_land_boundary_zone_7b | inferred | 17.81 | 1007.9 | 7149.3 | 40.1 |
-| Zone 7A | Borori | John Saini | borori_clan_john_saini__zone_7a | inferred | 22.81 | 582.0 | 3414.2 | 15.0 |
-| Zone 7A | Darekikol | Garex Sevesi | darekikol_clan_garex_sevesi_tracks_zone_7a | inferred | 13.39 | 469.9 | 6632.8 | 49.5 |
-| Zone 7A | Darekikol | George Kopoi | darekikol_clan_george_kopoi_tracks_zone_7a | inferred | 15.36 | 604.7 | 4595.9 | 29.9 |
-| Zone 7B | Ginangi | Job Mokondo | job_mokondo_ginangi_clan_land_boundary_zone_7b | inferred | 21.83 | 520.7 | 9795.0 | 44.9 |
-| Zone 6 | Manuvoora | Egobeyas Kuarisi | manuvoora_clan_egobeyas_kuarisi_tracks_zone_6 | inferred | 31.22 | 843.1 | 7599.8 | 24.3 |
-| Zone 6 | Manuvoora | Granville Nepo | manuvuoora_clan_granville_nepo_zone_6 | inferred | 30.23 | 1071.4 | 3785.8 | 12.5 |
-| Zone 6 | Naharaura | Zechariah Sasavo | naharaura_clan_zechariah_sasavo_tracks_zone_6 | inferred | 32.63 | 594.0 | 2489.9 | 7.6 |
-| Zone 6 | Pina Ora | Alban Ezekiel | pina_ora_clan_alban_and_ezekiel_tracks_zone_6 | inferred | 18.85 | 812.2 | 1429.9 | 7.6 |
-| Zone 7B |  | Ruth Makisa | ruth_makisa_land_steward_block_1_land_boundary | inferred | 6.28 | 237.3 | 821.5 | 13.1 |
+| zone | clan | custodian | walkers | surveys | source_name | basis | walked_km | area_ha | gap_m | gap_pct |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Zone 7B | Abuankol | Simeon Pasip | 1 | 1 | Abuankol — Zone 7B | surveyed | 0.51 | 0.7 | 0.0 | 0.0 |
+| Zone 7B | Ambunkol | Peter Awako | 1 | 1 | Ambunkol — Zone 7B | inferred | 18.6 | 591.8 | 4489.1 | 24.1 |
+| Zone 2 | Asingi | Jethro Akse | 1 | 1 | Asingi — Zone 2 | surveyed | 6.43 | 166.1 | 0.0 | 0.0 |
+| Zone 2 | Asoro | Gilford Amakana | 1 | 1 | Asoro — Zone 2 | inferred | 22.83 | 3506.7 | 7989.0 | 35.0 |
+| Zone 7B | Binunkol | Moses Garui | 1 | 1 | Binunkol — Zone 7B | inferred | 17.81 | 1007.9 | 7149.3 | 40.1 |
+| Zone 7A | Borori | Hagahi Semo, John Saini | 2 | 2 | Borori — Zone 7A | inferred | 32.69 | 638.7 | 6965.3 | 21.3 |
+| Zone 7A | Darekikol | Garex Sevesi, George Kopoi | 2 | 2 | Darekikol — Zone 7A | inferred | 28.76 | 528.2 | 7068.1 | 24.6 |
+| Zone 8 | Dusi | Max Mamo | 1 | 1 | Dusi — Zone 8 | inferred | 32.95 | 218.6 | 1888.3 | 5.7 |
+| Zone 2 | Gariniko | Lance Sake | 1 | 1 | Gariniko — Zone 2 | inferred | 10.08 | 127.8 | 4987.6 | 49.5 |
+| Zone 7B | Ginangi | Job Mokondo, Joshua Mokondo | 2 | 2 | Ginangi — Zone 7B | inferred | 36.73 | 1224.2 | 7281.4 | 19.8 |
+| Zone 3 | Giroiko | Eddie Sioro, Mark Samba | 2 | 2 | Giroiko — Zone 3 | inferred | 5.43 | 9.5 | 1266.3 | 23.3 |
+| Zone 8 | Gubai | Fordy Igai, Kenny Noi | 2 | 2 | Gubai — Zone 8 | inferred | 134.54 | 1173.2 | 5019.2 | 3.7 |
+| Zone 8 | Gumuyude | Philip Igai | 1 | 1 | Gumuyude — Zone 8 | inferred | 16.79 | 691.3 | 2284.5 | 13.6 |
+| Zone 7B | Jariji | Clement Viri, Newton Giwai | 2 | 2 | Jariji — Zone 7B | inferred | 27.47 | 695.9 | 9041.7 | 32.9 |
+| Zone 2 | Juaiko | Gasper K Philip J | 1 | 1 | Juaiko — Zone 2 | inferred | 24.3 | 1292.9 | 1882.9 | 7.7 |
+| Zone 2 | Kasaki | Ananias Masua | 1 | 1 | Kasaki — Zone 2 | inferred | 15.13 | 540.8 | 1344.6 | 8.9 |
+| Zone 8 | Madukol | Gibs Ginave | 1 | 1 | Madukol — Zone 8 | inferred | 1.07 | 1.4 | 285.5 | 26.7 |
+| Zone 2 | Majanko | Gilford Amakana | 1 | 1 | Majanko — Zone 2 | surveyed | 7.51 | 275.8 | 0.0 | 0.0 |
+| Zone 7B | Manang | Kelly Wahamo | 1 | 1 | Manang — Zone 7B | inferred | 7.13 | 353.0 | 1788.3 | 25.1 |
+| Zone 2 | Manoko | Gilford Amakana | 1 | 1 | Manoko — Zone 2 | inferred | 12.15 | 404.0 | 3847.5 | 31.7 |
+| Zone 6 | Manuvoora | Egobeyas Kuarisi, Granville Nepo | 2 | 2 | Manuvoora — Zone 6 | inferred | 61.45 | 827.7 | 11380.6 | 18.5 |
+| Zone 6 | Mariura | Fabian Justin, Livingstone Nisavora | 2 | 2 | Mariura — Zone 6 | inferred | 33.71 | 854.9 | 14245.4 | 42.3 |
+| Zone 8 | Mungaikol | Graham Ekiawa | 1 | 1 | Mungaikol — Zone 8 | inferred | 14.75 | 569.7 | 2263.5 | 15.3 |
+| Zone 2 | Murai (Z2) | Nehemiah Nindori | 1 | 1 | Murai (Z2) — Zone 2 | surveyed | 7.33 | 198.9 | 0.0 | 0.0 |
+| Zone 6 | Naharaura | Zechariah Sasavo | 1 | 1 | Naharaura — Zone 6 | inferred | 32.63 | 594.0 | 2489.9 | 7.6 |
+| Zone 7B | Natang | Dickson Hoe, Stafford Gidiri | 2 | 2 | Natang — Zone 7B | inferred | 77.25 | 1532.8 | 6532.0 | 8.5 |
+| Zone 2 | Nituri | Christoper Visua, Graham Naopi, Newton Muraba | 3 | 3 | Nituri — Zone 2 | inferred | 41.83 | 5322.9 | 17518.6 | 41.9 |
+| Zone 6 | Pina Ora | Alban Ezekiel | 1 | 1 | Pina Ora — Zone 6 | inferred | 18.85 | 812.2 | 1429.9 | 7.6 |
+| Zone 8 | Riribudeh | Prut Buitari, Unido Ose | 2 | 2 | Riribudeh — Zone 8 | inferred | 20.37 | 371.8 | 1561.2 | 7.7 |
+| Zone 2 | Rondi | Humphrey Poto, Jefferson Amunisa | 2 | 2 | Rondi — Zone 2 | inferred | 58.98 | 1563.4 | 13220.1 | 22.4 |
+| Zone 7B | Sugulkol | Chris Idua, Emmanuel Fufus | 2 | 2 | Sugulkol — Zone 7B | inferred | 23.99 | 349.9 | 4290.4 | 17.9 |
+| Zone 2 | Sukandi | Millinton Beso, Rodney Ajinko | 2 | 2 | Sukandi — Zone 2 | surveyed | 39.69 | 1900.9 | 0.0 | 0.0 |
+| Zone 2 | Tuoko | Kaupa Dota, Terrence Dobija | 2 | 2 | Tuoko — Zone 2 | inferred | 47.72 | 3282.5 | 21520.8 | 45.1 |
+| Zone 7B | Wohukol | Darline Walele, Nelson Runage | 2 | 2 | Wohukol — Zone 7B | inferred | 34.91 | 663.8 | 8698.8 | 24.9 |
+| Zone 7B |  | Ruth Makisa | 1 | 1 | ruth_makisa_land_steward_block_1_land_boundary | inferred | 6.28 | 237.3 | 821.5 | 13.1 |

@@ -12,7 +12,7 @@ area aside.
 
 | | |
 | --- | ---: |
-| Clans with data | **46** |
+| Clans with data | **47** |
 | Custodians who walked | 67 |
 | Surveys | 69 |
 | Zones | 6 (2, 3, 6, 7A, 7B, 8) |
@@ -26,12 +26,12 @@ walked in to reach a boundary and back out again.
 
 | | Areas | Hectares |
 | --- | ---: | ---: |
-| Boundary walked and closed | 7 | 3,158 |
-| Closure inferred | 35 | 23,179 |
-| **Total mapped** | **42** | **26,336** |
-| Footprint, overlaps counted once | | 20,563 |
+| Boundary walked and closed | 5 | 2,542 |
+| Closure inferred | 30 | 29,989 |
+| **Total mapped** | **35** | **32,531** |
+| Footprint, overlaps counted once | | 27,713 |
 
-**27 of 69 surveys give
+**34 of 69 surveys give
 no area at all.** Their boundaries were walked — Nituri covers 41.8 km across
 three surveys, Tuoko 47.7 km across two — but the walks do not close, and the
 gaps are too wide to bridge honestly. They appear on the map as walked lines
@@ -39,12 +39,12 @@ with no area behind them. **This is the single largest reason the mapped area
 is smaller than the ground actually covered**, and it is a survey-completion
 issue rather than a data one.
 
-**88% of the mapped area rests on an inferred closure** — the
+**92% of the mapped area rests on an inferred closure** — the
 boundary was not walked all the way round, and the gap has been bridged with a
 straight line to give an area at all. Those figures are estimates and are
 labelled as such everywhere they appear.
 
-The footprint is **9.6% of the
+The footprint is **13.0% of the
 conservation area's 213,269 ha**.
 
 ## Overlap between clans
@@ -53,26 +53,26 @@ This is the finding with the widest implications.
 
 | | |
 | --- | ---: |
-| Clans with a mapped area | 32 |
-| **Clans whose land overlaps another clan's** | **29 (91%)** |
+| Clans with a mapped area | 34 |
+| **Clans whose land overlaps another clan's** | **31 (91%)** |
 | Clans with no overlap at all | 3 |
-| Area claimed by more than one clan | 1,380 ha |
-| — as a share of the mapped footprint | 6.7% |
+| Area claimed by more than one clan | 4,454 ha |
+| — as a share of the mapped footprint | 16.1% |
 
 Most contested, as a share of each clan's own mapped land:
 
 | Clan | Area (ha) | Contested |
 | --- | ---: | ---: |
-| Abuankol | 1 | 100% |
-| Murai | 199 | 81% |
-| Borori | 582 | 49% |
-| Darekikol | 616 | 46% |
-| Kasaki | 541 | 38% |
-| Majanko | 276 | 38% |
-| Sukandi | 1,903 | 33% |
-| Rondi | 670 | 28% |
+| Manang | 353 | 88% |
+| Murai (Z2) | 199 | 81% |
+| Kasaki | 541 | 64% |
+| Tuoko | 3,282 | 64% |
+| Ambunkol | 592 | 60% |
+| Abuankol | 1 | 55% |
+| Darekikol | 528 | 54% |
+| Borori | 639 | 45% |
 
-**How much weight this carries.** Of the overlapping area, **896 ha
+**How much weight this carries.** Of the overlapping area, **931 ha
 involves at least one boundary that was walked the whole way round**, and the
 rest lies between two inferred closures where the overlap may be an artefact of
 the straight lines rather than a real competing claim. The strongest case is
@@ -88,7 +88,7 @@ throughout, and it does not disappear when only walked boundaries are counted.
 The PNG Incorporated Land Group system rests on land being held by a single
 clan, undisputed. On this evidence that assumption does not describe the
 Managalas: only **3 of
-32 mapped clans** have land that no other clan also claims.
+34 mapped clans** have land that no other clan also claims.
 
 Overlaps here are not treated as errors to be reconciled. They are recorded as
 mapped, because shared and contested ground is a normal feature of the tenure —
@@ -109,10 +109,10 @@ that neither walk closed, so the area can only be bracketed.
 
 - Nothing here has been checked against an independent survey or a cadastral
   record. All verification is internal consistency.
-- 88% of the area is inferred, so area figures should be read
+- 92% of the area is inferred, so area figures should be read
   as estimates with a wide margin.
-- Only 7 of 69 surveys close into a
-  boundary on their own; 27 yield no area
+- Only 5 of 69 surveys close into a
+  boundary on their own; 34 yield no area
   at all.
 - The surveys span 16 months, so a boundary walked early and one walked late
   are not necessarily contemporaneous.

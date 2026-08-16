@@ -59,6 +59,11 @@ def render(subject_layers: list[tuple[str, gpd.GeoDataFrame]],
             ax=axis, color="#94a3b8", linewidth=1.0, zorder=0)
 
     subject = pd.concat([frame for _, frame in subject_layers])
+    if subject.empty or not all(map(_finite, subject.total_bounds)):
+        # Nothing to frame the view on. Better to skip the map than to raise
+        # from deep inside the spatial index on a NaN bounding box.
+        plt.close(figure)
+        return out_path
     minx, miny, maxx, maxy = subject.total_bounds
     span = max(maxx - minx, maxy - miny, 500)
     pad = span * pad_fraction
@@ -131,6 +136,10 @@ def render_index(numbered: list, tracks: gpd.GeoDataFrame, boundary,
     return out_path
 
 
+def _finite(value) -> bool:
+    return value == value and abs(value) != float("inf")
+
+
 def _scale_bar(axis, view) -> None:
     """A simple metric scale bar — these maps carry no basemap for scale."""
     width = view[2] - view[0]
@@ -196,7 +205,7 @@ def near_closure_queries(tracks: gpd.GeoDataFrame, table: pd.DataFrame,
     near = table[table.status == "near"].sort_values("gap_pct").head(limit)
     out = []
     for _, row in near.iterrows():
-        subject = tracks[tracks.source_name == row.source_name]
+        subject = tracks[tracks.unit == row.source_name]
         out.append({
             "category": "Boundaries close to completion",
             "title": f"{row.clan} ({row.custodian}) — {row.gap_m:,.0f} m from "
@@ -223,7 +232,7 @@ def unclosed_queries(tracks: gpd.GeoDataFrame, table: pd.DataFrame,
         "gap_pct", ascending=False).head(limit)
     out = []
     for _, row in worst.iterrows():
-        subject = tracks[tracks.source_name == row.source_name]
+        subject = tracks[tracks.unit == row.source_name]
         out.append({
             "category": "Boundaries that cannot yet give an area",
             "title": f"{row.clan or '(no clan recorded)'} ({row.custodian}) — "
@@ -405,6 +414,9 @@ def main(argv: list[str] | None = None) -> int:
 
     tracks = gpd.read_file(args.tracks,
                            layer="tracks_smoothed").to_crs(dataio.METRIC_CRS)
+    # closure and polygons are keyed on the joined unit (one clan in one zone),
+    # so the tracks need the same key or every lookup here returns nothing.
+    tracks["unit"] = dataio.survey_group(tracks)
     polys = gpd.read_file(args.polygons,
                           layer="survey_polygons").to_crs(dataio.METRIC_CRS)
     clans = gpd.read_file(args.polygons,
