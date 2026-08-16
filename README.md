@@ -17,6 +17,8 @@ at the results before moving on:
 | 4. Open in QGIS | `scripts/export_qgis.py` | A GeoPackage and a ready-to-open `.qgs` project |
 | 5. Closure | `scripts/closure.py` | Which boundaries close into polygons |
 | 6. Areas & overlaps | `scripts/polygons.py` | Mapped-area polygons and clan overlaps |
+| 7. Sacred sites | `scripts/sacred_sites.py` | Site areas and share of clan land |
+| 8. Field queries | `scripts/queries.py` | Query pack with a map per question |
 
 All stages read the same source — the zips in `data/raw` — through a shared
 loader (`scripts/dataio.py`), so they always agree on what the data is.
@@ -29,6 +31,14 @@ pip install -r requirements.txt
 
 ## Running it
 
+Run everything, with an audit that no data was lost:
+
+```bash
+python scripts/run_pipeline.py
+```
+
+Or a stage at a time:
+
 ```bash
 python scripts/inspect_data.py --summary     # what have we got?
 python scripts/smooth_tracks.py              # clip to the MCA, smooth the bounce
@@ -40,7 +50,9 @@ python scripts/polygons.py --report output/polygon_report.md \
     --map output/areas_mapped.png
 ```
 
-Then open **`data/smoothed/mca_smoothed_qgis.qgs`**. Drop `--smoothed` from any
+Then open **`data/smoothed/mca_smoothed_qgis.qgs`**. Methods, results and open
+questions are documented in **`docs/METHODS.md`**; questions for the field team
+are generated into **`output/queries/`**. Drop `--smoothed` from any
 of these to work from the raw archives instead.
 
 ## Where the data goes

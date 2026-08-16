@@ -20,7 +20,7 @@
 | Sacred Site | 3 | 1 |
 | Steward Block | 1 | 1 |
 
-- **Distinct clans:** 48
+- **Distinct clans:** 46
 - **Distinct custodians:** 67
 - **Source surveys:** 69
 
@@ -40,11 +40,9 @@
 | Zone 7B | Ginangi | Joshua Mokondo | 2026-06-11 18:50 test | ginangi_clan_joshua_mokondo_land_boundary_zon |
 
 
-**4 pair(s) of similar clan names.** These may be spelling variants of one clan, or genuinely distinct — worth confirming:
+**2 pair(s) of similar clan names.** These may be spelling variants of one clan, or genuinely distinct — worth confirming:
 
 | | |
 | --- | --- |
 | `Abuankol` | `Ambunkol` |
 | `Manang` | `Marang` |
-| `Manuvoora` | `Manuvuoora` |
-| `Sugulkol` | `Sungulkol` |

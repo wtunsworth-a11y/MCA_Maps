@@ -403,6 +403,39 @@ polygons, so this may be an artefact of bridging rather than a real dispute.
 The full pairwise tables, at both clan and survey level, are in
 `output/polygon_report.md`.
 
+### 4.10 Sacred sites (`scripts/sacred_sites.py`)
+
+Sacred sites are recorded differently from land boundaries and are reported
+separately. The site name is written on the **track**, not the file name; one
+walk can cover more than one site; and one site can be walked more than once.
+Sites are therefore grouped by the name on the track.
+
+None of these walks closes — every one has open ends across 40–60% of its
+length — so every area is an estimate, and two are given: **bridged** (open ends
+joined with straight lines, the same method as clan boundaries, so the figures
+are comparable) and **hull** (the convex hull of the walk, an upper bound). The
+true area lies between them.
+
+**3 named sites across 2 mapped units and 3 walks**, all Sukandi clan, walked by
+Millinton Beso in Zone 2:
+
+| Sites | Named | Walks | Walked (km) | Bridged (ha) | Hull (ha) | Bridged gap |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Birezama + Bijanuri | 2 | 1 | 6.02 | 296.9 | 343.2 | 41% |
+| Mitakin | 1 | 2 | 4.58 | 16.0 | 112.8 | 60% |
+| **Total** | **3** | **3** | **10.60** | **312.9** | **456.0** | |
+
+| Measure | Bridged | Hull |
+| --- | ---: | ---: |
+| Total area | 312.9 ha | 456.0 ha |
+| Average per mapped unit | 156.4 ha | 228.0 ha |
+| Share of Sukandi's 1,903 ha clan land | **16.4%** | **24.0%** |
+
+Birezama and Bijanuri were walked together in one track and cannot be separated
+afterwards, so they are reported as a single unit. The gap between the two
+estimates for Mitakin — 16 ha bridged against 113 ha hull — shows how little the
+walk constrains its area; that figure should not be quoted without the range.
+
 ## 5. Parameters
 
 All defaults, all overridable at the command line.
@@ -419,6 +452,8 @@ All defaults, all overridable at the command line.
 | `--min-length` | 100 m | closure | Too short to assess |
 | `--max-gap` | 50% | polygons | Inferred polygon rejected beyond this |
 | `--outlier-factor` | 3× | inspect_data | Distance from survey centre to flag |
+| `--min-overlap-pct` | 20% | queries | Overlap large enough to query |
+| `--max-per-category` | 5 | queries | Queries raised per category |
 
 ## 6. Open questions for domain review
 
@@ -435,24 +470,32 @@ clip and no further action is required.
 
 ### 6.2 Similar clan names
 
-Four pairs were flagged by name similarity; polygon overlap then resolved three
-of them:
+**Closed 2026-08-16. All four flagged pairs are resolved.**
 
-| Pair | Overlap | Reading |
+Automated name comparison flagged four pairs of clan names as similar enough to
+be possible duplicates. Each was then tested against polygon overlap and put to
+the survey team:
+
+| Pair | Overlap | Outcome |
 | --- | --- | --- |
-| Manuvoora / Manuvuoora | 834.6 ha — 99.0% / 77.9% | Near-coincident: almost certainly **one clan, two spellings** |
-| Sugulkol / Sungulkol | 258.7 ha — 71.3% / 96.7% | Near-coincident: almost certainly **one clan, two spellings** |
-| Abuankol / Ambunkol | none | Both mapped, no shared ground: **different clans** |
-| Manang / Marang | — | Unresolved; Marang's survey does not close, so no polygon exists to compare |
+| Manuvoora / Manuvuoora | 834.6 ha — 99.0% / 77.9% | **One clan.** Confirmed typo — merged, keeping *Manuvoora* |
+| Sugulkol / Sungulkol | 258.7 ha — 71.3% / 96.7% | **One clan.** Confirmed typo — merged, keeping *Sugulkol* |
+| Abuankol / Ambunkol | none | **Different clans.** Both mapped, no shared ground |
+| Manang / Marang | not comparable | **Different clans.** Confirmed by the survey team |
 
-**Resolved 2026-08-16:** the survey team confirmed Manuvoora/Manuvuoora and
-Sugulkol/Sungulkol are each one clan, the second spelling being a typo. Both are
-now merged via the alias table in §4.3, taking the distinct clan count to **46**
-(zone 6: 6→5 clans, zone 7B: 13→12).
+The two confirmed typos are merged through the alias table in §4.3, taking the
+distinct clan count from 48 to **46** (zone 6: 6→5, zone 7B: 13→12). The two
+confirmed-distinct pairs are left exactly as recorded.
 
-**Still open:** Manang / Marang. Marang's survey does not close, so no polygon
-exists to compare against Manang's. This needs a direct answer from the survey
-team rather than more analysis.
+Worth noting how the two kinds of evidence combined. Name similarity alone
+would have been wrong twice out of four — Abuankol/Ambunkol and Manang/Marang
+are genuinely separate clans despite looking like typos. Overlap alone could
+not settle Manang/Marang at all, because Marang's survey does not close and so
+has no polygon to compare. Only the survey team could close that one, which is
+why §2 treats name matching as a flagging step and never as a correction.
+
+Any future pair should go the same route: flag by similarity, test by overlap,
+confirm with the team before merging.
 
 ### 6.3 Borori / Darekikol
 
@@ -480,7 +523,22 @@ The sacred site is currently attributed to the Sukandi clan and contributes
 boundary and area figures at all. They are tagged with `feature_type` and can
 be excluded with a filter at any point.
 
-### 6.5 Zone 3 is an outlier
+### 6.5 Survey dates in file names are not survey dates
+
+**None** of the 52 surveys carrying GPS timestamps has a file-name date that
+matches the tracks inside it. File names give `14July2026` (48 surveys) while
+the tracks themselves were recorded between **2025-04 and 2026-08**, and 20
+surveys contain tracks spanning more than one month.
+
+The reading is that the file-name date is when the files were compiled or
+submitted, not when the boundary was walked. Until confirmed, the `survey_date`
+attribute should not be relied on. Nothing downstream uses it, so no figure in
+this document changes either way — but it is wrong as recorded, and it means
+**the data covers a 16-month survey campaign, not a single July 2026 round**.
+
+Raised as query Q19.
+
+### 6.6 Zone 3 is an outlier
 
 Zone 3 has 8 surveys and 48.7 km walked but yields only **2 polygons and
 76.2 ha** — by far the lowest return of any zone. Per-survey track counts are
@@ -488,14 +546,102 @@ Zone 3 has 8 surveys and 48.7 km walked but yields only **2 polygons and
 delivery or an incomplete survey round rather than a processing artefact, but
 it should be checked against what was expected for that zone.
 
-### 6.6 Smoothing is a judgement call
+### 6.7 Smoothing is a judgement call
 
 The 20 m resampling was specified. The 3-point moving average on top was not —
 it removes a further 7.8% of total length. If the intent is to report distance
 walked, that is arguably over-corrected; if the intent is to report boundary
 length, it is closer to right. `--no-smooth` gives resampling only.
 
-## 7. Not yet verified
+## 7. Raising queries with the field team
+
+`scripts/queries.py` turns everything the data cannot settle into a numbered
+query pack at `output/queries/`, each with its own map so the discussion on site
+is about specific ground rather than a general concern.
+
+Queries are **regenerated from the current data on every run**. A query the data
+no longer supports simply stops being produced, so the pack never carries a
+stale question, and a new round of surveys raises new queries automatically.
+Resolved queries are recorded in §6 and their generator removed.
+
+Categories raised, capped at five each so the pack stays answerable:
+overlapping clan areas, boundaries close to completion, boundaries too open to
+give an area, surveys that are not clan land boundaries, dates that disagree,
+and zones returning little mapped area.
+
+One rule matters more than the rest: **a systemic issue is one query, not many.**
+The date discrepancy (§6.5) affects 52 surveys identically; raised per survey it
+produced 40 near-identical queries and buried the five that needed a person to
+think. It is now a single query with a summary.
+
+The current pack holds **20 queries**.
+
+## 8. Background data layers
+
+What is available depends on where the work runs.
+
+**In this processing environment**, outbound access is restricted. Tested and
+blocked: OpenStreetMap tiles, Carto, ESRI World Imagery and Topo, OpenTopoMap,
+the Protected Planet API, Overpass, OpenTopography and GADM. This is why the
+static maps carry no aerial or street background — it is an environment limit,
+not a choice, and it affects no measurement.
+
+**Reachable:** the Copernicus 30 m DEM on AWS S3
+(`copernicus-dem-30m.s3.amazonaws.com`), as cloud-optimised GeoTIFF with HTTP
+range requests. Tile `S09/E148` covers this survey area. That makes terrain
+available if wanted: hillshade under the maps, elevation along each boundary,
+and — most useful here — a check of whether boundaries follow ridgelines or
+watercourses, which would corroborate them independently of any survey. **Not
+yet used; say the word.**
+
+**In QGIS on your own machine** none of these restrictions apply. The generated
+project already carries an OpenStreetMap XYZ layer, and any other XYZ or WMS
+source can be added normally — ESRI World Imagery is the usual choice for
+checking a boundary against visible ground features.
+
+The MCA boundary itself is held locally at `data/reference/mca_boundary.kml`, so
+nothing in the pipeline depends on a network at all.
+
+## 9. Repeat runs
+
+The work is expected to repeat as more surveys arrive. Drop new archives into
+`data/raw/` and run:
+
+```bash
+python scripts/run_pipeline.py
+```
+
+Every stage rebuilds from the raw archives. No stage keeps state between runs
+and none writes back to `data/raw/`, so a later round cannot be contaminated by
+an earlier one and re-running is always safe.
+
+**The audit is the safeguard against silent loss.** Each run reconciles counts
+from the archives through to the polygons:
+
+| Checked | Current |
+| --- | ---: |
+| Archives | 7 |
+| Source layers found | 69 |
+| Raw features | 601 |
+| Features after merge | 601 |
+| Features after clipping | 600 |
+| Clipped out | 1 |
+| Surveys in / out | 69 / 69 |
+| Polygons built | 42 |
+| Surveys without an area | 27 |
+
+Any difference must be explained by a rule the pipeline states — an unreadable
+archive, a track outside the clip distance, a survey too open to enclose an
+area. Anything unexplained is reported as a **LOSS** and the run **exits
+non-zero**, so a silent drop cannot pass unnoticed between rounds. Invalid or
+null geometries in the output are treated the same way.
+
+New zones, clans and custodians need no configuration: they are read from the
+file names. Two things will need a human on each new round — confirming any
+newly flagged clan-name similarities (§6.2), and answering the new queries in
+`output/queries/`.
+
+## 10. Not yet verified
 
 - **The QGIS project has never been opened in QGIS.** No QGIS is available in
   the environment used for processing. The project file is validated
@@ -508,17 +654,24 @@ length, it is closer to right. `--no-smooth` gives resampling only.
 - **Basemap tiles** could not be fetched in the processing environment, so
   static maps render without them. This does not affect any measurement.
 
-## 8. Reproducing
+## 11. Reproducing
 
 ```bash
 pip install -r requirements.txt
+python scripts/run_pipeline.py
+```
 
+That runs every stage in order and audits the result. To run a stage alone:
+
+```bash
 python scripts/inspect_data.py --summary --report output/data_profile.md
 python scripts/smooth_tracks.py
-python scripts/make_maps.py --smoothed
-python scripts/closure.py --report output/closure_report.md
+python scripts/closure.py  --report output/closure_report.md
 python scripts/polygons.py --report output/polygon_report.md \
     --map output/areas_mapped.png
+python scripts/sacred_sites.py --report output/sacred_sites.md
+python scripts/queries.py
+python scripts/make_maps.py  --smoothed
 python scripts/export_qgis.py --smoothed --with-boundary --with-polygons \
     --gpkg data/smoothed/mca_smoothed_qgis.gpkg
 ```

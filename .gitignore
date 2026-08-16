@@ -11,6 +11,8 @@ data/processed/*.qgs
 data/smoothed/*.gpkg
 data/smoothed/*.qgs
 output/*.png
+# Query pack is a deliverable that goes to the field — keep it tracked
+!output/queries/
 output/*.html
 
 # QGIS working files
