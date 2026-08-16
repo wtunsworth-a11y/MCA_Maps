@@ -1,0 +1,25 @@
+# Extracted archive contents — regenerated from data/raw on demand
+data/processed/extracted/
+
+# Derived spatial database and rendered maps
+data/processed/*.gpkg
+data/processed/*.gpkg-shm
+data/processed/*.gpkg-wal
+output/*.png
+output/*.html
+
+# QGIS working files
+*.qgs~
+*.qgz~
+*.qgd
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS cruft
+.DS_Store
+Thumbs.db

@@ -1,0 +1,7 @@
+geopandas>=0.14
+pandas>=2.0
+matplotlib>=3.7
+folium>=0.15
+shapely>=2.0
+pyogrio>=0.7
+contextily>=1.4
