@@ -185,7 +185,12 @@ def main(argv: list[str] | None = None) -> int:
     for old in args.out_dir.glob("*.gpx"):
         old.unlink()
 
-    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    # Dated to the day, not the second. GPX wants a full timestamp, but a
+    # clock time makes every one of these files differ from the last run even
+    # when not a coordinate has moved, which buries a real change in 47 files
+    # of noise. The day the survey was processed is the provenance that
+    # matters; the run that produced it is in output/PROVENANCE.md.
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT00:00:00Z")
     written, total_gaps, total_gap_km, total_skipped = 0, 0, 0.0, 0
 
     for unit, group in tracks.groupby("_unit", sort=True):
