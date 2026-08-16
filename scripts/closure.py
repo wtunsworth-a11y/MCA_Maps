@@ -128,7 +128,7 @@ def analyse_survey(parts: list, tolerance: float, threshold: float,
     result = {"length_m": total_length, "parts": len(parts),
               "ring_m": ring_length, "spur_m": round(spur_m, 1),
               "components": len(chains), "gap_m": None, "ratio": None,
-              "area_km2": None}
+              "area_ha": None}
 
     # Whether the walk encloses ground is a geometric question, not a
     # connectivity one: walking a line out and back makes a cycle in the graph
@@ -141,7 +141,7 @@ def analyse_survey(parts: list, tolerance: float, threshold: float,
         result["status"] = "closed"
         result["gap_m"] = 0.0
         result["ratio"] = 0.0
-        result["area_km2"] = round(enclosed.area / 1e6, 3)
+        result["area_ha"] = round(enclosed.area / 1e4, 1)
         return result
 
     # The gap to close is the straight-line distance still to be walked to
@@ -380,7 +380,7 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
             "length_km": round(outcome["length_m"] / 1000, 2),
             "gap_m": None if outcome["gap_m"] is None else round(outcome["gap_m"], 1),
             "gap_pct": None if outcome["ratio"] is None else round(outcome["ratio"] * 100, 1),
-            "area_km2": outcome.get("area_km2"),
+            "area_ha": outcome.get("area_ha"),
             "chains": outcome.get("components", 1),
             "status": outcome["status"],
             "detail": outcome.get("detail", ""),

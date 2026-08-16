@@ -18,17 +18,17 @@
 
 ## Every survey
 
-| zone | clan | custodian | source_name | tracks | length_km | gap_m | gap_pct | area_km2 | chains | status | detail |
+| zone | clan | custodian | source_name | tracks | length_km | gap_m | gap_pct | area_ha | chains | status | detail |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Zone 2 | Asingi | Jethro Akse | Jethro_Akse_Asingi_Clan_Land_Boundary_Zone_2_14July2026 | 5 | 6.43 | 0.0 | 0.0 | 1.661 | 2 | closed |  |
+| Zone 2 | Asingi | Jethro Akse | Jethro_Akse_Asingi_Clan_Land_Boundary_Zone_2_14July2026 | 5 | 6.43 | 0.0 | 0.0 | 166.1 | 2 | closed |  |
 | Zone 2 | Asoro | Gilford Amakana | Gilford_Amakana_Asoro_Clan_Land_Boundary_Zone_2_14July2026 | 10 | 22.83 | 7989.0 | 37.7 |  | 2 | open | 2 disconnected pieces |
 | Zone 2 | Bujevi | Abel Kajari | Abel_Kajari_Bujevi_Clan_Land_Boundary_Zone_2_14July2026 | 13 | 5.76 | 4473.7 | 83.8 |  | 1 | open |  |
 | Zone 2 | Gariniko | Lance Sake | Lance_Sake_Gariniko_Clan_Land_Boundary_Zone_2_14July2026 | 12 | 10.08 | 4987.6 | 51.9 |  | 4 | open | 4 disconnected pieces |
 | Zone 2 | Juaiko | Gasper K Philip J | Gasper_K_Philip_J_Juaiko_Clan_Land_Boundary_Zone_2_14July2026 | 39 | 24.3 | 1882.9 | 8.5 |  | 7 | near | 7 disconnected pieces |
 | Zone 2 | Kasaki | Ananias Masua | Ananias_Masua_Kasaki_Clan_Land_Boundary_Zone_2_14July2026 | 33 | 15.13 | 1344.6 | 9.8 |  | 4 | near | 4 disconnected pieces |
-| Zone 2 | Majanko | Gilford Amakana | Gilford_Amakana_Majanko_Clan_Land_Boundary_Zone_2_14July2026 | 4 | 7.51 | 0.0 | 0.0 | 2.758 | 1 | closed |  |
+| Zone 2 | Majanko | Gilford Amakana | Gilford_Amakana_Majanko_Clan_Land_Boundary_Zone_2_14July2026 | 4 | 7.51 | 0.0 | 0.0 | 275.8 | 1 | closed |  |
 | Zone 2 | Manoko | Gilford Amakana | Gilford_Amakana_Manoko_Clan_Land_Boundary_Zone_2_14July206 | 20 | 12.15 | 3847.5 | 32.1 |  | 3 | open | 3 disconnected pieces |
-| Zone 2 | Murai | Nehemiah Nindori | Nehemiah_Nindori_Murai_Clan_Zn_2_Land_Boundary_14July2026 | 35 | 7.33 | 0.0 | 0.0 | 1.989 | 2 | closed |  |
+| Zone 2 | Murai | Nehemiah Nindori | Nehemiah_Nindori_Murai_Clan_Zn_2_Land_Boundary_14July2026 | 35 | 7.33 | 0.0 | 0.0 | 198.9 | 2 | closed |  |
 | Zone 2 | Nituri | Christoper Visua | Christoper_visua_Nituri_Clan_Land_Boundary_Zone_2_14July2026 | 25 | 17.83 | 19224.6 | 117.6 |  | 8 | open | 8 disconnected pieces |
 | Zone 2 | Nituri | Graham Naopi | Graham_Naopi_Nituri_Clan_Land_Boundary_Zone_2_14July2026 | 31 | 18.7 | 15371.9 | 89.4 |  | 5 | open | 5 disconnected pieces |
 | Zone 2 | Nituri | Newton Muraba | Newton_Muraba_Nituri_Clan_Land_Boundary_Zone_2_14July2026 | 16 | 5.3 | 11439.8 | 229.2 |  | 9 | open | 9 disconnected pieces |
@@ -36,7 +36,7 @@
 | Zone 2 | Rondi | Jefferson Amunisa | Jefferson_Amunisa_Rondi_Clan_Boundary_Zone_2_14July2026 | 31 | 29.66 | 19934.9 | 72.5 |  | 11 | open | 11 disconnected pieces |
 | Zone 2 | Rumbi | Joel Mamata | Joel_Mamata_Rumbi_Clan_Land_Boundary_Zone_2_14July2026 | 15 | 15.07 | 10063.2 | 73.4 |  | 3 | open | 3 disconnected pieces |
 | Zone 2 | Sukandi | Millinton Beso | Millinton_Beso_Sukandi_Clan_Sacred_Site_Zone_2_14July2026 | 16 | 10.6 | 1723.2 | 17.2 |  | 3 | open | 3 disconnected pieces |
-| Zone 2 | Sukandi | Rodney Ajinko | Rodney_Ajinko_Sukandi_Clan_Land_Boundary_Zone_2_14July2026 | 18 | 29.09 | 0.0 | 0.0 | 19.014 | 1 | closed |  |
+| Zone 2 | Sukandi | Rodney Ajinko | Rodney_Ajinko_Sukandi_Clan_Land_Boundary_Zone_2_14July2026 | 18 | 29.09 | 0.0 | 0.0 | 1901.4 | 1 | closed |  |
 | Zone 2 | Tuoko | Kaupa Dota | Kaupa_Dota_Tuoko_Clan_Land_Boundary_14July2026 | 16 | 11.21 | 21039.8 | 202.0 |  | 7 | open | 7 disconnected pieces |
 | Zone 2 | Tuoko | Terrence Dobija | Terrence_Dobija_Tuoko_Clan_Land_Boundary_14July2026 | 22 | 36.51 | 15585.8 | 46.8 |  | 6 | open | 6 disconnected pieces |
 | Zone 2 | Zambiko | Sylvester Anai | Sylvester_Anai_Zambiko_Clan_Land_Boundary_Zone_2_14July2026 | 13 | 5.67 | 24373.7 | 474.7 |  | 5 | open | 5 disconnected pieces |
@@ -62,7 +62,7 @@
 | Zone 7A | Darekikol | Garex Sevesi | darekikol_clan_garex_sevesi_tracks_zone_7a | 22 | 13.39 | 6632.8 | 54.9 |  | 9 | open | 9 disconnected pieces |
 | Zone 7A | Darekikol | George Kopoi | darekikol_clan_george_kopoi_tracks_zone_7a | 34 | 15.36 | 4595.9 | 32.8 |  | 9 | open | 9 disconnected pieces |
 | Zone 7B |  | Ruth Makisa | ruth_makisa_land_steward_block_1_land_boundary | 28 | 6.28 | 821.5 | 14.2 |  | 6 | open | 6 disconnected pieces |
-| Zone 7B | Abuankol | Simeon Pasip | Simeon_Pasip_Abuankol_Clan_Land_Boundary_Zone_7B_14July2026 | 7 | 0.51 | 0.0 | 0.0 | 0.006 | 3 | closed |  |
+| Zone 7B | Abuankol | Simeon Pasip | Simeon_Pasip_Abuankol_Clan_Land_Boundary_Zone_7B_14July2026 | 7 | 0.51 | 0.0 | 0.0 | 0.6 | 3 | closed |  |
 | Zone 7B | Ambunkol | Peter Awako | Peter_Awako_Ambunkol_Clan_Land_Boundary_Zone_7B_14July2026 | 37 | 18.6 | 4489.1 | 26.0 |  | 6 | open | 6 disconnected pieces |
 | Zone 7B | Binunkol | Moses Garui | binunkol_clan_moses_garui_land_boundary_zone_7b | 45 | 17.81 | 7149.3 | 44.6 |  | 19 | open | 19 disconnected pieces |
 | Zone 7B | Ginangi | Job Mokondo | job_mokondo_ginangi_clan_land_boundary_zone_7b | 27 | 21.83 | 9795.0 | 49.5 |  | 9 | open | 9 disconnected pieces |
@@ -77,8 +77,8 @@
 | Zone 7B | Natang | Stafford Gidiri | Stafford_Gidiri_Natang_Clan_Land_Boundary_Zone_7B_14July2026 | 50 | 46.5 | 3392.4 | 7.3 |  | 3 | near | 3 disconnected pieces |
 | Zone 7B | Sugulkol | Chris Idua | Chris_Idua_Sugulkol_Clan_Land_Boundary_Zone_7B_14July2026 | 29 | 10.56 | 3727.9 | 38.4 |  | 3 | open | 3 disconnected pieces |
 | Zone 7B | Sungulkol | Emmanuel Fufus | Emmanuel_Fufus_Sungulkol_Clan_Land_Boundary_Zone_7B_14July2026 | 33 | 13.43 | 3320.0 | 26.8 |  | 6 | open | 6 disconnected pieces |
-| Zone 7B | Wohukol | Darline Walele | Darline_Walele_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | 18 | 17.1 | 0.0 | 0.0 | 3.086 | 5 | closed |  |
-| Zone 7B | Wohukol | Nelson Runage | Nelson_Runage_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | 9 | 17.81 | 0.0 | 0.0 | 3.061 | 3 | closed |  |
+| Zone 7B | Wohukol | Darline Walele | Darline_Walele_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | 18 | 17.1 | 0.0 | 0.0 | 308.6 | 5 | closed |  |
+| Zone 7B | Wohukol | Nelson Runage | Nelson_Runage_Wohukol_Clan_Land_Boundary_Zone_7B_14July2026 | 9 | 17.81 | 0.0 | 0.0 | 306.1 | 3 | closed |  |
 | Zone 8 | Duribip | Beven Naive | Beven_Naive_Duribip_Clan_Land_Boundary_Zone_8_14July2026 | 4 | 4.46 | 5900.3 | 139.2 |  | 3 | open | 3 disconnected pieces |
 | Zone 8 | Dusi | Max Mamo | Max_Mamo_Dusi_Clan_Land_Boundary_Zone_8_14July2026 | 77 | 32.95 | 1888.3 | 6.3 |  | 4 | near | 4 disconnected pieces |
 | Zone 8 | Gubai | Fordy Igai | Fordy_Igai_Gubai_Clan_Land_Boundary_Zone_8_14July2026 | 140 | 42.68 | 5185.5 | 12.3 |  | 4 | open | 4 disconnected pieces |

@@ -100,7 +100,7 @@ All lengths are computed in **EPSG:32755** (UTM zone 55S). Web Mercator would
 overstate distances here by about 1.2%.
 
 The MCA boundary itself lives in `data/reference/mca_boundary.kml` — the WDPA
-Managalas Conservation Area polygon, 2,133 km².
+Managalas Conservation Area polygon, 213,269 ha.
 
 ## Closure
 
@@ -139,7 +139,7 @@ An inferred polygon is a working estimate of area mapped — not a boundary
 anyone has agreed.
 
 Overlaps are reported pairwise, as shared area and as a share of each clan's own
-polygon. Two uses: finding where clans genuinely contest ground, and confirming
+polygon, in hectares. Two uses: finding where clans genuinely contest ground, and confirming
 whether two similar clan names are one clan recorded twice.
 
 ## QGIS

@@ -68,7 +68,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     if enclosed is not None and enclosed.length >= min_enclosure * total:
         return {"geometry": enclosed, "basis": "surveyed", "gap_m": 0.0,
                 "gap_pct": 0.0, "walked_km": total / 1000,
-                "area_km2": enclosed.area / 1e6}
+                "area_ha": enclosed.area / 1e4}
 
     # Otherwise bridge the open ends and try again.
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
@@ -88,7 +88,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
 
     return {"geometry": bridged, "basis": "inferred", "gap_m": gap,
             "gap_pct": gap / total * 100 if total else None,
-            "walked_km": total / 1000, "area_km2": bridged.area / 1e6}
+            "walked_km": total / 1000, "area_ha": bridged.area / 1e4}
 
 
 def _snapped_lines(parts, positions, labels) -> list:
@@ -155,9 +155,9 @@ def clan_polygons(polygons: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     named = polygons[polygons["clan"].astype(str).str.strip() != ""].copy()
     if named.empty:
         return named
-    merged = named.dissolve(by="clan", aggfunc={"area_km2": "sum"},
+    merged = named.dissolve(by="clan", aggfunc={"area_ha": "sum"},
                             as_index=False)
-    merged["area_km2"] = (merged.geometry.area / 1e6).round(3)
+    merged["area_ha"] = (merged.geometry.area / 1e4).round(1)
     return merged
 
 
@@ -177,13 +177,13 @@ def overlaps(frame: gpd.GeoDataFrame, label: str) -> pd.DataFrame:
             rows.append({
                 f"{label}_a": a[label],
                 f"{label}_b": b[label],
-                "shared_km2": round(shared / 1e6, 3),
+                "shared_ha": round(shared / 1e4, 1),
                 "pct_of_a": round(shared / a.geometry.area * 100, 1),
                 "pct_of_b": round(shared / b.geometry.area * 100, 1),
             })
     out = pd.DataFrame(rows)
     if not out.empty:
-        out = out.sort_values("shared_km2", ascending=False)
+        out = out.sort_values("shared_ha", ascending=False)
     return out
 
 
@@ -214,7 +214,7 @@ def _render(polygons: gpd.GeoDataFrame, boundary, out_path: Path) -> None:
     axis.set_title(
         f"Areas mapped from clan boundary walks\n"
         f"{len(surveyed)} walked rings, {len(inferred)} inferred "
-        f"({polygons.area_km2.sum():,.0f} km² total)",
+        f"({polygons.area_ha.sum():,.0f} ha total)",
         fontsize=13, pad=14)
     axis.legend(handles=[
         Patch(facecolor="#2563eb", alpha=0.6, edgecolor="#1e3a8a",
@@ -289,7 +289,7 @@ def main(argv: list[str] | None = None) -> int:
             "custodian": first.get("custodian", ""), "source_name": source,
             "basis": built["basis"],
             "walked_km": round(built["walked_km"], 2),
-            "area_km2": round(built["area_km2"], 3),
+            "area_ha": round(built["area_ha"], 1),
             "gap_m": round(built["gap_m"], 1),
             "gap_pct": None if built["gap_pct"] is None else round(built["gap_pct"], 1),
             "geometry": built["geometry"],
@@ -314,31 +314,31 @@ def main(argv: list[str] | None = None) -> int:
     print(f"\nBuilt {len(polygons)} polygon(s) from {gdf.source_name.nunique()} "
           f"surveys")
     print(f"  surveyed (walked ring)  {len(surveyed):3d}  "
-          f"{surveyed.area_km2.sum():9,.1f} km²")
+          f"{surveyed.area_ha.sum():11,.1f} ha")
     print(f"  inferred (gap bridged)  {len(inferred):3d}  "
-          f"{inferred.area_km2.sum():9,.1f} km²")
+          f"{inferred.area_ha.sum():11,.1f} ha")
     if len(dropped):
         print(f"  dropped, gap too wide   {len(dropped):3d}  "
               f"(over {args.max_gap:.0%} of the walk)")
 
-    footprint = unary_union(polygons.geometry).area / 1e6
-    print(f"\n  combined footprint (overlaps counted once): {footprint:,.1f} km²")
+    footprint = unary_union(polygons.geometry).area / 1e4
+    print(f"\n  combined footprint (overlaps counted once): {footprint:,.1f} ha")
     print(f"  sum of polygons                            : "
-          f"{polygons.area_km2.sum():,.1f} km²")
+          f"{polygons.area_ha.sum():,.1f} ha")
     print(f"  → overlap between polygons                 : "
-          f"{polygons.area_km2.sum() - footprint:,.1f} km²")
+          f"{polygons.area_ha.sum() - footprint:,.1f} ha")
 
     boundary = dataio.load_boundary()
     if boundary is not None:
-        inside = unary_union(polygons.geometry).intersection(boundary).area / 1e6
+        inside = unary_union(polygons.geometry).intersection(boundary).area / 1e4
         print(f"\n  of that footprint, inside the MCA          : "
-              f"{inside:,.1f} km² "
-              f"({inside / (boundary.area / 1e6) * 100:.1f}% of the MCA's "
-              f"{boundary.area / 1e6:,.0f} km²)")
+              f"{inside:,.1f} ha "
+              f"({inside / (boundary.area / 1e4) * 100:.1f}% of the MCA's "
+              f"{boundary.area / 1e4:,.0f} ha)")
 
     by_zone = (polygons.groupby("zone")
-               .agg(polygons=("area_km2", "size"),
-                    area_km2=("area_km2", "sum"))
+               .agg(polygons=("area_ha", "size"),
+                    area_ha=("area_ha", "sum"))
                .round(1))
     print("\nMapped area by zone:\n")
     print(by_zone.to_string())
@@ -374,10 +374,10 @@ def main(argv: list[str] | None = None) -> int:
         args.report.write_text(
             "# Mapped areas and clan overlaps\n\n"
             f"- **Surveyed polygons:** {len(surveyed)}, "
-            f"{surveyed.area_km2.sum():,.1f} km²\n"
+            f"{surveyed.area_ha.sum():,.1f} ha\n"
             f"- **Inferred polygons:** {len(inferred)}, "
-            f"{inferred.area_km2.sum():,.1f} km²\n"
-            f"- **Combined footprint:** {footprint:,.1f} km²\n\n"
+            f"{inferred.area_ha.sum():,.1f} ha\n"
+            f"- **Combined footprint:** {footprint:,.1f} ha\n\n"
             "## Mapped area by zone\n\n" + _markdown(by_zone.reset_index())
             + "\n\n## Clan-to-clan overlaps\n\n" + _markdown(clan_overlaps)
             + "\n\n## Survey-to-survey overlaps\n\n"
