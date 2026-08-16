@@ -387,6 +387,10 @@ def main(argv: list[str] | None = None) -> int:
                              "archives")
     parser.add_argument("--layer", default="tracks_smoothed",
                         help="layer to read when --smoothed is used")
+    parser.add_argument("--with-polygons", nargs="?", const=str(
+                            dataio.SMOOTHED_DIR / "mca_polygons.gpkg"),
+                        default=None,
+                        help="include the mapped-area polygons as layers")
     parser.add_argument("--with-boundary", action="store_true",
                         help="include the MCA reference boundary as a layer")
     parser.add_argument("--group-by", default="zone",
@@ -429,6 +433,22 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\nMerged {len(sources)} source layer(s) into "
               f"'{lead.name}' ({len(lead.gdf):,} features), "
               f"split into {len(layers)} by {args.group_by}")
+
+    if args.with_polygons:
+        import geopandas as gpd
+        source = Path(args.with_polygons)
+        if source.exists():
+            for layer_name in ("survey_polygons", "clan_polygons"):
+                try:
+                    frame = gpd.read_file(source, layer=layer_name)
+                except Exception:
+                    continue
+                if not frame.empty:
+                    layers = layers + [dataio.Layer(
+                        name=layer_name,
+                        gdf=frame.to_crs(dataio.WGS84), source=source)]
+        else:
+            print(f"  (no polygons at {source} — run scripts/polygons.py)")
 
     if args.with_boundary:
         import geopandas as gpd

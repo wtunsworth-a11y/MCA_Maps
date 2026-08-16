@@ -16,6 +16,7 @@ at the results before moving on:
 | 3. Present it | `scripts/make_maps.py` | PNG + interactive HTML maps in `output/` |
 | 4. Open in QGIS | `scripts/export_qgis.py` | A GeoPackage and a ready-to-open `.qgs` project |
 | 5. Closure | `scripts/closure.py` | Which boundaries close into polygons |
+| 6. Areas & overlaps | `scripts/polygons.py` | Mapped-area polygons and clan overlaps |
 
 All stages read the same source — the zips in `data/raw` — through a shared
 loader (`scripts/dataio.py`), so they always agree on what the data is.
@@ -35,6 +36,8 @@ python scripts/make_maps.py --smoothed       # draw the smoothed tracks
 python scripts/export_qgis.py --smoothed --with-boundary \
     --gpkg data/smoothed/mca_smoothed_qgis.gpkg
 python scripts/closure.py --report output/closure_report.md
+python scripts/polygons.py --report output/polygon_report.md \
+    --map output/areas_mapped.png
 ```
 
 Then open **`data/smoothed/mca_smoothed_qgis.qgs`**. Drop `--smoothed` from any
@@ -118,6 +121,26 @@ counts as near closure.
 
 Because the answer moves with the joining tolerance, the report always prints
 the totals at 10 m, 25 m, 50 m and 100 m.
+
+## Mapped areas and overlaps
+
+`polygons.py` turns the walks into areas, keeping two kinds strictly apart:
+
+- **Surveyed** — the tracks already ring the land, so the polygon is exactly
+  what was walked.
+- **Inferred** — the tracks stop short, the open ends are bridged with straight
+  lines, and the result is an *estimate*. Every one carries `gap_pct`, the share
+  of the perimeter that was bridged rather than walked. Anything bridged across
+  more than half its walk (`--max-gap`) is dropped as too speculative.
+
+The distinction lives in a `basis` column so it survives into QGIS, and
+`--surveyed-only` restricts everything to polygons that were actually walked.
+An inferred polygon is a working estimate of area mapped — not a boundary
+anyone has agreed.
+
+Overlaps are reported pairwise, as shared area and as a share of each clan's own
+polygon. Two uses: finding where clans genuinely contest ground, and confirming
+whether two similar clan names are one clan recorded twice.
 
 ## QGIS
 
