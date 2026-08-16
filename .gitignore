@@ -49,3 +49,7 @@ package-lock.json
 
 # GPX going back to the Clan Stewards — a deliverable, kept tracked
 !output/gpx/
+
+# The GPX bundle is a zip of output/gpx/, rebuilt by scripts/clan_gpx.py.
+# Tracking it would store the same data twice, once per version.
+output/*.zip

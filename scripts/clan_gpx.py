@@ -37,7 +37,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import sys
+import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -166,6 +168,8 @@ def main(argv: list[str] | None = None) -> int:
                              "to anyone standing there")
     parser.add_argument("--only", default=None,
                         help="only write files for clans matching this text")
+    parser.add_argument("--no-bundle", action="store_true",
+                        help="skip the versioned zip of all the GPX files")
     args = parser.parse_args(argv)
 
     if not args.gpkg.exists():
@@ -222,7 +226,40 @@ def main(argv: list[str] | None = None) -> int:
     # are — arguably more than anyone.
     print("  (includes surveys too open to give an area, which the polygon "
           "layer excludes)")
+
+    if not args.no_bundle and written and not args.only:
+        bundle = _bundle(args.out_dir)
+        print(f"\nWrote {bundle.name} "
+              f"({bundle.stat().st_size / 1e6:.1f} MB) — the set as one file "
+              f"to send")
     return 0
+
+
+def _bundle(gpx_dir: Path) -> Path:
+    """All the GPX files as one versioned zip, for sending in one go.
+
+    Named by version and date like the documents are, so a set of files on
+    somebody's desk can always be traced to the run that produced it. Built
+    here rather than by hand, so it can never fall out of step with the files
+    it contains.
+    """
+    version, day = "0", datetime.now(timezone.utc).date().isoformat()
+    version_file = dataio.REPO_ROOT / "docs" / "VERSION"
+    if version_file.exists():
+        version = version_file.read_text(encoding="utf-8").strip()
+    context = dataio.OUT_DIR / "report" / "context.json"
+    if context.exists():
+        try:
+            stored = json.loads(context.read_text(encoding="utf-8"))
+            version, day = stored.get("version", version), stored.get("date", day)
+        except Exception:
+            pass
+
+    target = dataio.OUT_DIR / f"Managalas_Clan_GPX_v{version}_{day}.zip"
+    with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted(gpx_dir.glob("*.gpx")):
+            archive.write(path, f"gpx/{path.name}")
+    return target
 
 
 if __name__ == "__main__":
