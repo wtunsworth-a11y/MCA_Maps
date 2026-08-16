@@ -8,6 +8,8 @@ data/processed/*.gpkg
 data/processed/*.gpkg-shm
 data/processed/*.gpkg-wal
 data/processed/*.qgs
+data/smoothed/*.gpkg
+data/smoothed/*.qgs
 output/*.png
 output/*.html
 

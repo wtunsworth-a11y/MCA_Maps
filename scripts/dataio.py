@@ -38,6 +38,14 @@ LON_NAMES = ("lon", "long", "lng", "longitude", "x", "lon_dd", "xcoord",
 
 WGS84 = "EPSG:4326"
 WEB_MERCATOR = "EPSG:3857"
+# UTM zone 55S covers 144–150°E, which holds all of this survey area. Web
+# Mercator would overstate distances by ~1.2% at this latitude, so every
+# length, spacing and buffer in metres is measured here instead.
+METRIC_CRS = "EPSG:32755"
+
+REFERENCE_DIR = REPO_ROOT / "data" / "reference"
+SMOOTHED_DIR = REPO_ROOT / "data" / "smoothed"
+MCA_BOUNDARY = REFERENCE_DIR / "mca_boundary.kml"
 
 
 @dataclass
@@ -448,6 +456,31 @@ def _unique(name: str, used: set[str]) -> str:
         suffix += 1
     used.add(candidate)
     return candidate
+
+
+def load_boundary(path: Path = MCA_BOUNDARY):
+    """Load the MCA reference boundary as a single metric-CRS geometry."""
+    if not path.exists():
+        return None
+    boundary = gpd.read_file(path).to_crs(METRIC_CRS)
+    return boundary.geometry.union_all()
+
+
+def load_prepared(gpkg_path: Path, layer_name: str) -> Layer | None:
+    """Read back a layer this pipeline already wrote, attributes and all.
+
+    Used for the smoothed output: its zone/clan/custodian columns are already
+    present, so it must skip the file-name parsing that raw sources go through.
+    """
+    if not gpkg_path.exists():
+        return None
+    gdf = gpd.read_file(gpkg_path, layer=layer_name)
+    if gdf.empty:
+        return None
+    if gdf.crs is None:
+        gdf = gdf.set_crs(WGS84)
+    return Layer(name=layer_name, gdf=gdf.to_crs(WGS84), source=gpkg_path,
+                 source_crs=str(gdf.crs))
 
 
 def combine(layers: list[Layer], name: str = "clan_boundaries") -> Layer | None:

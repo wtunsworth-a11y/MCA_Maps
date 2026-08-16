@@ -380,6 +380,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--separate", action="store_true",
                         help="export one layer per source file instead of "
                              "merging them into a single attributed layer")
+    parser.add_argument("--smoothed", nargs="?", const=str(
+                            dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg"),
+                        default=None,
+                        help="export the smoothed tracks instead of the raw "
+                             "archives")
+    parser.add_argument("--layer", default="tracks_smoothed",
+                        help="layer to read when --smoothed is used")
+    parser.add_argument("--with-boundary", action="store_true",
+                        help="include the MCA reference boundary as a layer")
     parser.add_argument("--group-by", default="zone",
                         help="attribute used to split and colour the merged "
                              "layer (default: zone)")
@@ -389,7 +398,15 @@ def main(argv: list[str] | None = None) -> int:
         print(f"No raw data directory at {args.raw_dir}")
         return 1
 
-    sources = dataio.load_from_args(args)
+    if args.smoothed:
+        prepared = dataio.load_prepared(Path(args.smoothed), args.layer)
+        if prepared is None:
+            print(f"No smoothed data at {args.smoothed} — "
+                  "run scripts/smooth_tracks.py first.")
+            return 1
+        sources = [prepared]
+    else:
+        sources = dataio.load_from_args(args)
     if not sources:
         print(f"\nNothing to export — no readable data under {args.raw_dir}.")
         return 0
@@ -398,6 +415,12 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.separate:
         lead, layers, categorize_by, group = None, sources, None, "Layers"
+    elif args.smoothed:
+        lead = sources[0]
+        layers = dataio.split_by(lead, args.group_by)
+        categorize_by, group = args.group_by, f"By {args.group_by}"
+        print(f"\nSmoothed tracks: {len(lead.gdf):,} features, "
+              f"split into {len(layers)} by {args.group_by}")
     else:
         lead = dataio.combine(sources)
         layers = dataio.split_by(lead, args.group_by)
@@ -406,6 +429,13 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\nMerged {len(sources)} source layer(s) into "
               f"'{lead.name}' ({len(lead.gdf):,} features), "
               f"split into {len(layers)} by {args.group_by}")
+
+    if args.with_boundary:
+        import geopandas as gpd
+        boundary = gpd.read_file(dataio.MCA_BOUNDARY).to_crs(dataio.WGS84)
+        boundary = boundary[["geometry"]].assign(name="MCA boundary")
+        layers = layers + [dataio.Layer(name="mca_boundary", gdf=boundary,
+                                        source=dataio.MCA_BOUNDARY)]
 
     print(f"\nWriting GeoPackage to {args.gpkg}")
     write_geopackage(([lead] if lead else []) + layers, args.gpkg)

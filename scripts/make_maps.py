@@ -163,7 +163,30 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--group-by", default="zone",
                         help="attribute used to split the merged layer "
                              "(default: zone)")
+    parser.add_argument("--smoothed", nargs="?", const=str(
+                            dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg"),
+                        default=None,
+                        help="map the smoothed tracks instead of the raw "
+                             "archives")
+    parser.add_argument("--layer", default="tracks_smoothed",
+                        help="layer to read when --smoothed is used")
     args = parser.parse_args(argv)
+
+    if args.smoothed:
+        prepared = dataio.load_prepared(Path(args.smoothed), args.layer)
+        if prepared is None:
+            print(f"No smoothed data at {args.smoothed} — "
+                  "run scripts/smooth_tracks.py first.")
+            return 1
+        layers = dataio.split_by(prepared, args.group_by)
+        args.colour_by = args.colour_by or args.group_by
+        args.out_dir.mkdir(parents=True, exist_ok=True)
+        print(f"Mapping smoothed tracks ({len(prepared.gdf):,} features) "
+              f"to {args.out_dir}")
+        if not args.no_static:
+            print(f"  {render_static(prepared, args.out_dir, args.colour_by).name}")
+        print(f"  {render_interactive(layers, args.out_dir / 'overview_smoothed.html', 'Smoothed tracks by zone').name}")
+        return 0
 
     if not args.raw_dir.exists():
         print(f"No raw data directory at {args.raw_dir}")

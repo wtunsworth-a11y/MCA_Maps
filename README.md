@@ -3,19 +3,21 @@
 Clan land boundary surveys from Oro Province, Papua New Guinea — turned into
 maps you can look at, share, and open in QGIS.
 
-The current data is **69 GPS surveys across 6 zones, 601 tracks, ~1,349 km**,
+The current data is **69 GPS surveys across 6 zones, 601 raw tracks, 1,327 km**,
 recorded July–August 2026 and supplied as one zip per zone.
 
-The workflow has three stages, each a separate script so you can stop and look
+The workflow runs in stages, each a separate script so you can stop and look
 at the results before moving on:
 
 | Stage | Script | Produces |
 | --- | --- | --- |
 | 1. Look at the data | `scripts/inspect_data.py` | Layer profiles, cross-zone summary, quality checks |
-| 2. Present it | `scripts/make_maps.py` | PNG + interactive HTML maps in `output/` |
-| 3. Open in QGIS | `scripts/export_qgis.py` | A GeoPackage and a ready-to-open `.qgs` project |
+| 2. Clip and smooth | `scripts/smooth_tracks.py` | Clipped, resampled tracks in `data/smoothed/` |
+| 3. Present it | `scripts/make_maps.py` | PNG + interactive HTML maps in `output/` |
+| 4. Open in QGIS | `scripts/export_qgis.py` | A GeoPackage and a ready-to-open `.qgs` project |
+| 5. Closure | `scripts/closure.py` | Which boundaries close into polygons |
 
-All three read the same source — the zips in `data/raw` — through a shared
+All stages read the same source — the zips in `data/raw` — through a shared
 loader (`scripts/dataio.py`), so they always agree on what the data is.
 
 ## Setup
@@ -28,11 +30,15 @@ pip install -r requirements.txt
 
 ```bash
 python scripts/inspect_data.py --summary     # what have we got?
-python scripts/make_maps.py                  # draw it
-python scripts/export_qgis.py                # hand it to QGIS
+python scripts/smooth_tracks.py              # clip to the MCA, smooth the bounce
+python scripts/make_maps.py --smoothed       # draw the smoothed tracks
+python scripts/export_qgis.py --smoothed --with-boundary \
+    --gpkg data/smoothed/mca_smoothed_qgis.gpkg
+python scripts/closure.py --report output/closure_report.md
 ```
 
-Then open **`data/processed/mca_maps.qgs`**.
+Then open **`data/smoothed/mca_smoothed_qgis.qgs`**. Drop `--smoothed` from any
+of these to work from the raw archives instead.
 
 ## Where the data goes
 
@@ -73,6 +79,46 @@ boundary is never lost over two stray points. Parts logged while the receiver
 sat still (every point identical) are dropped the same way. Every repair is
 reported as it happens.
 
+## Clipping and smoothing
+
+`smooth_tracks.py` never touches `data/raw`. It reads the archives, and writes
+a separate `data/smoothed/mca_tracks_smoothed.gpkg`. Three steps, in order:
+
+1. **Clip** — drop track parts more than 10 km from the MCA boundary
+   (`--max-distance-km`). Distance is measured to the conservation *area*, so
+   anything inside it is zero away; only genuinely outside data goes.
+2. **Resample** — one point every 20 m (`--spacing`), so every track is
+   described at the same resolution regardless of how fast the surveyor walked.
+3. **Smooth** — a 3-point moving average (`--window`, or `--no-smooth`) to take
+   out the remaining GPS jitter. Track endpoints are held in place, because
+   they are exactly what the closure analysis measures.
+
+All lengths are computed in **EPSG:32755** (UTM zone 55S). Web Mercator would
+overstate distances here by about 1.2%.
+
+The MCA boundary itself lives in `data/reference/mca_boundary.kml` — the WDPA
+Managalas Conservation Area polygon, 2,133 km².
+
+## Closure
+
+`closure.py` asks whether each survey's tracks ring the land. Closure is judged
+per survey, not per track, since a boundary is walked in several sessions.
+
+Track ends within 25 m (`--tolerance`) are treated as joined, then the tracks
+are **polygonized**: a boundary counts as closed when the polygon it encloses
+has a perimeter of at least half the distance walked (`--min-enclosure`). This
+is a geometric test on purpose — walking a line out and back makes a loop in a
+connectivity graph but encloses nothing.
+
+For the rest, the **gap to close** is the straight-line distance still needed to
+join the pieces into one ring. For a survey recorded in one piece that is
+exactly the distance between its two open ends; for one recorded in several
+pieces, every join counts. Under 10% of the distance walked (`--threshold`)
+counts as near closure.
+
+Because the answer moves with the joining tolerance, the report always prints
+the totals at 10 m, 25 m, 50 m and 100 m.
+
 ## QGIS
 
 Targets **QGIS 3.28 LTR (Firenze)**; the project format is forward-compatible
@@ -97,7 +143,7 @@ the next export overwrites it, so save under a new name if it's worth keeping.
 
 ## Useful flags
 
-Shared by all three scripts:
+Shared by the loading scripts:
 
 | Flag | Effect |
 | --- | --- |
@@ -115,7 +161,9 @@ Shared by all three scripts:
 ## Layout
 
 ```
-data/raw/                    ← zip archives (committed)
+data/raw/                    ← zip archives, never edited (committed)
+data/reference/              ← MCA boundary KML (committed)
+data/smoothed/               ← clipped + smoothed output (git-ignored)
 data/processed/extracted/    ← unpacked archives (git-ignored, regenerated)
 data/processed/mca_maps.gpkg ← merged + per-zone layers (git-ignored)
 data/processed/mca_maps.qgs  ← QGIS project
