@@ -159,30 +159,89 @@ def drop_z(geometry):
 # Reporting
 # --------------------------------------------------------------------------
 
+BOUNDARY_TYPE = "Land Boundary"
+
+
+def spur_length(frame: gpd.GeoDataFrame, tolerance: float = 25.0,
+                budget_fraction: float = 0.25) -> float:
+    """Length of dead-end branches within one survey — the walk to and from it.
+
+    A surveyor walks in to where the boundary starts and out again at the end.
+    Those legs are real distance covered but they are not boundary, so they are
+    measured here and taken out of the boundary total. The budget is wider than
+    the closure test's because this is only measuring, not deciding a shape.
+    """
+    import closure
+
+    parts = []
+    for geometry in frame.geometry:
+        if geometry is None:
+            continue
+        parts.extend(geometry.geoms if hasattr(geometry, "geoms")
+                     else [geometry])
+    parts = [p for p in parts if p.length > 0]
+    if not parts:
+        return 0.0
+
+    endpoints = []
+    for part in parts:
+        endpoints.append(part.coords[0][:2])
+        endpoints.append(part.coords[-1][:2])
+    labels = closure._cluster_endpoints(endpoints, tolerance)
+    edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
+              "length": parts[i].length, "live": True}
+             for i in range(len(parts))]
+    total = sum(p.length for p in parts)
+    closure._prune_spurs(edges, budget_fraction * total)
+    return sum(e["length"] for e in edges if not e["live"])
+
+
 def clans_by_zone(gdf: gpd.GeoDataFrame) -> pd.DataFrame:
-    """Distinct clans, custodians, surveys and track length per zone."""
+    """Clans, custodians, surveys and boundary distance per zone.
+
+    Distance counts **boundary only**: surveys that are not land boundaries are
+    excluded entirely, and within each survey the dead-end legs walked to reach
+    the boundary are taken out.
+    """
     frame = gdf.copy()
     frame["length_km"] = frame.geometry.length / 1000
+    boundary = frame[frame.get("feature_type", BOUNDARY_TYPE) == BOUNDARY_TYPE]
+
+    spurs = {source: spur_length(group)
+             for source, group in boundary.groupby("source_name")}
+
+    def measure(subset: gpd.GeoDataFrame) -> tuple[float, float]:
+        walked = subset["length_km"].sum()
+        removed = sum(spurs.get(source, 0.0) / 1000
+                      for source in subset["source_name"].unique())
+        return walked, max(walked - removed, 0.0)
+
     rows = []
     for zone, group in frame.groupby("zone", sort=True):
         named = group[group["clan"].astype(str).str.strip() != ""]
+        in_zone = boundary[boundary.zone == zone]
+        walked, net = measure(in_zone)
         rows.append({
             "Zone": zone,
             "Clans": named["clan"].nunique(),
             "Custodians": group["custodian"].nunique(),
             "Surveys": group["source_name"].nunique(),
             "Tracks": len(group),
-            "Length (km)": round(group["length_km"].sum(), 1),
+            "Walked (km)": round(group["length_km"].sum(), 1),
+            "Boundary (km)": round(net, 1),
         })
+
     table = pd.DataFrame(rows)
     named_all = frame[frame["clan"].astype(str).str.strip() != ""]
+    walked_all, net_all = measure(boundary)
     table.loc[len(table)] = {
         "Zone": "TOTAL",
         "Clans": named_all["clan"].nunique(),
         "Custodians": frame["custodian"].nunique(),
         "Surveys": frame["source_name"].nunique(),
         "Tracks": len(frame),
-        "Length (km)": round(frame["length_km"].sum(), 1),
+        "Walked (km)": round(frame["length_km"].sum(), 1),
+        "Boundary (km)": round(net_all, 1),
     }
     return table
 

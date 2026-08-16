@@ -497,16 +497,18 @@ why §2 treats name matching as a flagging step and never as a correction.
 Any future pair should go the same route: flag by similarity, test by overlap,
 confirm with the team before merging.
 
-### 6.3 Borori / Darekikol
+### 6.3 Borori / Darekikol — resolved: a dispute, mapped as recorded
 
 Two differently-named Zone 7A clans share **286.8 ha — 49.3% of one and 46.5%
-of the other**. This is not a spelling artefact: both names are distinct and
-both are separately mapped. It is either a genuine boundary dispute or a survey
-error, and it is the single largest overlap between clans that are not
-suspected duplicates. **This one needs a decision from someone who knows the
-ground.**
+of the other**.
 
-### 6.4 Non-boundary surveys are currently included
+**Resolved 2026-08-16: this is a genuine dispute, and both boundaries are
+mapped exactly as recorded.** Neither is adjusted, clipped or reconciled. The
+overlap is the finding, not an error to remove.
+
+This sets the rule for overlaps generally (§6.8).
+
+### 6.4 Non-boundary surveys — resolved: out of the distance totals
 
 Three surveys are not clan land boundaries but are being processed as though
 they were:
@@ -517,26 +519,53 @@ they were:
 | Sacred Site | 2 | Millinton Beso | 3 | 10.6 km | 466.5 ha, inferred |
 | Steward Block | 7B | Ruth Makisa | 1 | 6.3 km | 237.3 ha, inferred |
 
-The sacred site is currently attributed to the Sukandi clan and contributes
-466.5 ha to that clan's mapped area; the steward block has no clan and adds
-237.3 ha to the Zone 7B total. **Decision needed:** whether these belong in the
-boundary and area figures at all. They are tagged with `feature_type` and can
-be excluded with a filter at any point.
+**Resolved 2026-08-16: excluded from the boundary distance totals.** Distance
+now counts land boundary only. The three keep their own reporting — sacred sites
+in §4.10, the road and steward block in the layers and query pack — but they no
+longer inflate the boundary figures.
 
-### 6.5 Survey dates in file names are not survey dates
+The same decision removes the **walk to the boundary**. A surveyor walks in to
+where the boundary starts and out again at the end; those dead-end legs are
+real distance covered but they are not boundary. `smooth_tracks.spur_length`
+measures them per survey and takes them out.
+
+Both together change the headline distance:
+
+| Measure | Distance |
+| --- | ---: |
+| Raw, as recorded | 1,327.2 km |
+| Smoothed | 1,112.9 km |
+| **Boundary — non-boundary surveys and access legs removed** | **924.5 km** |
+
+| Zone | Walked (km) | Boundary (km) |
+| --- | ---: | ---: |
+| Zone 2 | 320.5 | 257.4 |
+| Zone 3 | 48.7 | 42.0 |
+| Zone 6 | 151.6 | 125.9 |
+| Zone 7A | 73.7 | 53.9 |
+| Zone 7B | 282.3 | 230.6 |
+| Zone 8 | 236.1 | 214.8 |
+| **Total** | **1,112.9** | **924.5** |
+
+### 6.5 Survey dates — resolved: two different dates, both correct
 
 **None** of the 52 surveys carrying GPS timestamps has a file-name date that
 matches the tracks inside it. File names give `14July2026` (48 surveys) while
 the tracks themselves were recorded between **2025-04 and 2026-08**, and 20
 surveys contain tracks spanning more than one month.
 
-The reading is that the file-name date is when the files were compiled or
-submitted, not when the boundary was walked. Until confirmed, the `survey_date`
-attribute should not be relied on. Nothing downstream uses it, so no figure in
-this document changes either way — but it is wrong as recorded, and it means
-**the data covers a 16-month survey campaign, not a single July 2026 round**.
+**Resolved 2026-08-16: both dates are right, they just mean different things.**
+The GPS timestamp is when the ground was walked; the file-name date is when the
+archive was collated and delivered. Neither is an error and no correction is
+needed.
 
-Raised as query Q19.
+Two things follow. The `survey_date` attribute is a **delivery** date, not a
+survey date, and should be read that way. And the data covers a **16-month
+survey campaign** running 2025-04 to 2026-08, not a single July 2026 round —
+which is worth knowing when comparing boundaries that may have moved between
+walks.
+
+The query is withdrawn from the pack.
 
 ### 6.6 Zone 3 is an outlier
 
@@ -546,12 +575,29 @@ Zone 3 has 8 surveys and 48.7 km walked but yields only **2 polygons and
 delivery or an incomplete survey round rather than a processing artefact, but
 it should be checked against what was expected for that zone.
 
-### 6.7 Smoothing is a judgement call
+### 6.7 Smoothing — resolved: keep it
 
-The 20 m resampling was specified. The 3-point moving average on top was not —
-it removes a further 7.8% of total length. If the intent is to report distance
-walked, that is arguably over-corrected; if the intent is to report boundary
-length, it is closer to right. `--no-smooth` gives resampling only.
+The 20 m resampling was specified; the 3-point moving average on top was not,
+and removes a further 7.8% of length. **Confirmed 2026-08-16 as correct to
+keep.** Distances in this document are therefore smoothed throughout.
+
+### 6.8 Overlapping clan areas — resolved: never combined, never reconciled
+
+**Clans are never merged and their surveys are never combined.** Overlaps
+between clan areas are a permanent feature of the tenure here, not an error to
+resolve, and every boundary is mapped as recorded.
+
+This reverses an earlier line of analysis. A `clan_combine` step had been built
+to test whether a clan's several surveys were complementary arcs of one
+boundary — it found that combining Nituri's three surveys would yield 5,124 ha
+where separately they yield none. That step is **removed**, and the consequence
+is accepted: a clan whose surveys do not individually close simply has no
+mapped area.
+
+Overlaps are still measured and reported (§4.9) — they are a finding worth
+having. They are no longer raised as queries.
+
+
 
 ### 4.11 Landform: watercourses and ridgelines (`hydrology.py`, `landform.py`)
 
@@ -646,7 +692,13 @@ The date discrepancy (§6.5) affects 52 surveys identically; raised per survey i
 produced 40 near-identical queries and buried the five that needed a person to
 think. It is now a single query with a summary.
 
-The current pack holds **20 queries**.
+Two categories were **retired** once settled: overlapping clan areas (§6.8, a
+fact of the tenure rather than a question) and the file-name dates (§6.5, two
+different dates both correct). Removing them took the pack from 20 queries to
+**14**, which is the point — a pack carrying settled questions gets skimmed.
+
+The pack opens with an index map, `Q00_index.png`, numbering every query on one
+sheet so a reader can see where the work is before reading any of it.
 
 ## 8. Background data layers
 

@@ -98,6 +98,39 @@ def render(subject_layers: list[tuple[str, gpd.GeoDataFrame]],
     return out_path
 
 
+def render_index(numbered: list, tracks: gpd.GeoDataFrame, boundary,
+                 out_path: Path) -> Path:
+    """One map showing where every query sits, numbered to match the pack."""
+    figure, axis = plt.subplots(figsize=(10, 9), dpi=140)
+    terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.4)
+
+    if boundary is not None:
+        gpd.GeoSeries([boundary], crs=dataio.METRIC_CRS).boundary.plot(
+            ax=axis, color="#475569", linewidth=1.2, zorder=1)
+    tracks.plot(ax=axis, color=CONTEXT, linewidth=0.7, zorder=2)
+
+    for number, query in numbered:
+        subject = pd.concat([frame for _, frame in query["layers"]])
+        if subject.empty:
+            continue
+        centre = subject.union_all().centroid
+        axis.plot(centre.x, centre.y, marker="o", markersize=13,
+                  markerfacecolor="#fef3c7", markeredgecolor="#b45309",
+                  markeredgewidth=1.2, zorder=5)
+        axis.annotate(str(number), (centre.x, centre.y), ha="center",
+                      va="center", fontsize=7.5, fontweight="bold",
+                      color="#7c2d12", zorder=6)
+
+    axis.set_axis_off()
+    axis.set_title(f"Where the {len(numbered)} queries are", fontsize=12,
+                   pad=10)
+    figure.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    figure.savefig(out_path, bbox_inches="tight")
+    plt.close(figure)
+    return out_path
+
+
 def _scale_bar(axis, view) -> None:
     """A simple metric scale bar — these maps carry no basemap for scale."""
     width = view[2] - view[0]
@@ -375,13 +408,15 @@ def main(argv: list[str] | None = None) -> int:
     boundary = dataio.load_boundary()
     table = closure.analyse_all(tracks, 25.0, 0.10, 0.10, 100.0, 0.50)
 
+    # Overlapping clan areas and the file-name dates are both settled, so
+    # neither is raised any more. Overlaps between clans are a fact of the
+    # tenure here, not an error to resolve; and the file-name date is the date
+    # the archive was collated and delivered, while the GPS timestamps are when
+    # the ground was walked. Both are recorded in docs/METHODS.md §6.
     queries: list[dict] = []
-    queries += overlap_queries(polys, clans, args.min_overlap_pct,
-                               args.max_per_category)
     queries += near_closure_queries(tracks, table, args.max_per_category)
     queries += unclosed_queries(tracks, table, args.max_per_category)
     queries += feature_type_queries(tracks)
-    queries += date_queries(tracks)
     queries += zone_coverage_queries(tracks, polys)
 
     if not queries:
@@ -425,6 +460,13 @@ def main(argv: list[str] | None = None) -> int:
             "**Response:**", "", "```", "", "```", "", "---", "",
         ]
         print(f"  Q{index:02d}  {query['title'][:66]}")
+
+    index_map = args.out_dir / "Q00_index.png"
+    render_index([(i, q) for i, q in enumerate(queries, start=1)], tracks,
+                 boundary, index_map)
+    lines.insert(8, f"![Query locations]({index_map.name})\n")
+    lines.insert(8, "## Where the queries are\n")
+    print(f"  index map: {index_map.name}")
 
     report = args.out_dir / "QUERIES.md"
     report.write_text("\n".join(lines), encoding="utf-8")

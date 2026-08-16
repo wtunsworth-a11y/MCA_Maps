@@ -144,16 +144,12 @@ def main(argv: list[str] | None = None) -> int:
         ("sacred_sites.py", ["--report", "output/sacred_sites.md",
                              "--out", str(dataio.SMOOTHED_DIR
                                           / "mca_sacred_sites.gpkg")]),
-        ("clan_combine.py", ["--report", "output/clan_combine_report.md"]),
         ("queries.py", []),
     ]
     if not args.skip_maps:
         stages += [
             ("make_maps.py", ["--smoothed", smoothed]),
-            ("export_qgis.py", ["--smoothed", smoothed, "--with-boundary",
-                                "--with-polygons", "--with-terrain", "--gpkg",
-                                str(dataio.SMOOTHED_DIR
-                                    / "mca_smoothed_qgis.gpkg")]),
+            ("build_project.py", []),
         ]
 
     failed = [name for name, arguments in stages if not run(name, *arguments)]
