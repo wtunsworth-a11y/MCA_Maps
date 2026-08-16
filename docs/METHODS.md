@@ -553,6 +553,78 @@ it removes a further 7.8% of total length. If the intent is to report distance
 walked, that is arguably over-corrected; if the intent is to report boundary
 length, it is closer to right. `--no-smooth` gives resampling only.
 
+### 4.11 Landform: watercourses and ridgelines (`hydrology.py`, `landform.py`)
+
+No hydrology dataset is reachable (§8), so both networks are derived from the
+Copernicus DEM. Streams: depressions filled, D8 routing, channels above 1,000
+upstream cells (~0.9 km² of drainage). Ridges use the same machinery on the
+**inverted** surface — invert the elevation and crests become the channels of
+the inverted DEM — then keep only lines with positive topographic position
+index, since inverted routing will otherwise trace a line down an even slope
+where no ridge exists.
+
+Two artefacts had to be handled in both. The DEM window reaches the Solomon
+Sea, where flat zero elevation gives D8 no gradient and it fans into parallel
+diagonal lines; the sea is masked before routing. Flow still escapes along the
+masked edge, so a second pass drops channels sampling at sea level —
+unmistakable once measured, sinuosity 1.00 against a real-channel median of
+1.23.
+
+Result: **2,178 stream segments (3,527 km)** and **1,773 ridge segments**,
+clipped to the MCA + 10 km.
+
+Each survey's walk is then split by what it runs within 50 m of:
+
+| Follows | Share of 1,113 km |
+| --- | ---: |
+| Watercourses | 18.8% |
+| Ridgelines | 11.7% |
+| Both at once | 0.2% |
+| **Either** | **30.3%** |
+| Neither | 69.7% |
+
+**These shares must be read against chance, not on their own.** Drainage here
+is dense enough that any line picks up correspondence for free. Displacing the
+same tracks 400 m and re-measuring gives the chance rate:
+
+| Follows | Real | By chance | Ratio |
+| --- | ---: | ---: | ---: |
+| Watercourses | 19.8% | 9.5% | **2.1×** |
+| Ridgelines | 12.2% | 7.8% | **1.6×** |
+
+So the correspondence is real but roughly half the headline figure is what any
+line would score. The genuine signal is about **10 points of water-following
+and 4 points of ridge-following**, not 30%.
+
+The unmatched majority is not following some other landform: its topographic
+position index is a median −1.9 m against a landscape median of −0.3 m, and
+22.5% of it sits within 5 m of the local mean against 22.0% for the landscape
+as a whole. In other words it sits mid-slope, statistically indistinguishable
+from arbitrary ground. What it actually follows — paths, garden edges, agreed
+lines, vegetation changes — cannot be determined from a DEM.
+
+### 4.12 Clans tested separately and combined (`clan_combine.py`)
+
+A clan walked by several custodians may be several independent accounts of one
+boundary, or one boundary split between walkers. The two need opposite
+treatment, so every multi-survey clan is assessed both ways.
+
+The discriminator is **duplication**: the share of walked distance running
+within 20 m of another custodian's track. It separates the two populations
+cleanly, and the outcome follows it:
+
+| Duplication | Reading | Effect of combining |
+| --- | --- | --- |
+| Low (Nituri 2.3%, Gumuri 1.3%, Murai 0.0%) | Complementary arcs of one boundary | Large gains — Nituri +5,124 ha |
+| High (Rondi 99.2%, Riribudeh 98.8%, Wohukol 94.8%) | Independent accounts of the same ring | Combining *loses* area — merging two accounts confuses the geometry |
+
+**Nothing is combined automatically.** Whether several surveys describe one
+boundary is a question about the clan, not the geometry. 20 clans have more
+than one survey; combining changes the area for 5, and would add **7,216 ha**
+that no separate survey yields. Mariura is a caution: 100% duplication yet
++855 ha, which is a false positive of the kind the duplication figure exists to
+catch.
+
 ## 7. Raising queries with the field team
 
 `scripts/queries.py` turns everything the data cannot settle into a numbered

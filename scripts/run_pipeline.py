@@ -116,6 +116,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="re-extract the archives from scratch")
     parser.add_argument("--skip-maps", action="store_true",
                         help="skip the rendering stages")
+    parser.add_argument("--terrain-analysis", action="store_true",
+                        help="also re-derive drainage and ridgelines; slow, "
+                             "and only needed when the DEM or extent changes")
     parser.add_argument("--fetch-dem", action="store_true",
                         help="re-fetch the terrain DEM first; needed when new "
                              "surveys fall outside the area already covered")
@@ -128,6 +131,9 @@ def main(argv: list[str] | None = None) -> int:
     stages = []
     if args.fetch_dem:
         stages.append(("fetch_dem.py", []))
+    if args.terrain_analysis:
+        stages += [("hydrology.py", ["--report", "output/hydrology_report.md"]),
+                   ("landform.py", ["--report", "output/landform_report.md"])]
     stages += [
         ("inspect_data.py", ["--summary", "--report", "output/data_profile.md",
                              *refresh]),
@@ -138,6 +144,7 @@ def main(argv: list[str] | None = None) -> int:
         ("sacred_sites.py", ["--report", "output/sacred_sites.md",
                              "--out", str(dataio.SMOOTHED_DIR
                                           / "mca_sacred_sites.gpkg")]),
+        ("clan_combine.py", ["--report", "output/clan_combine_report.md"]),
         ("queries.py", []),
     ]
     if not args.skip_maps:
