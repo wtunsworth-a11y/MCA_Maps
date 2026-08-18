@@ -4,7 +4,7 @@
 updated as steps change. Every figure quoted here is reproducible by running
 the scripts in `scripts/` against the archives in `data/raw/`.
 
-Last updated: 2026-08-16.
+Last updated: 2026-08-18.
 
 ---
 
@@ -130,6 +130,26 @@ Derived attributes on every feature: `clan`, `steward`, `zone`,
 Dates with a two-digit year are reported as the raw text rather than having a
 century invented for them. One source file name contains a typo, `14July206`,
 which is passed through unaltered.
+
+A second date form is in use, `Aug_26` — a month and a two-digit number, with
+no day. It must be recognised even though it cannot be resolved: left
+unmatched, the month name survives into the token list and gets read as part
+of somebody's name. `Lenard_Urami_Sahirut_Clan_Boundary_Zone_6_Aug_26` parsed
+as clan "Lenard Urami Sahirut", steward "Aug", until `MONTH_YEAR_PATTERN` was
+added. The text is kept as written: the trailing number could be a day or a
+year, and §6.5 settled that the file-name date is when the archive was
+collated, so nothing downstream depends on resolving it.
+
+**Where a track disagrees with its file about who walked it.** The steward
+comes from the file name, which for most surveys is the only place it is
+recorded. Some devices also write a name onto each track, and
+`stewards.name_mismatches()` reports every case where the two disagree —
+currently four tracks, 15.2 km, inside
+`solomon_makanisa_sahirut_clan_boundary_aug_26.gpkg` that credit Lenard Urami.
+**Nothing is reassigned.** Who walked which track is a question for the field,
+and guessing would put a day's work against the wrong person's name. It is
+listed in *Managalas Steward Days* and in
+`output/stewards/name_mismatches.csv`.
 
 **Confirmed spelling corrections.** Two clan-name pairs were flagged by name
 similarity, corroborated by near-total polygon overlap, and confirmed by the

@@ -404,6 +404,19 @@
    "km_per_day": 3.78
   },
   {
+   "steward": "Lenard Urami",
+   "zones": "Zone 6",
+   "clans": "Sahirut",
+   "tracks": 2,
+   "days": 2,
+   "undated_tracks": 0,
+   "first": "2026-06-22",
+   "last": "2026-06-23",
+   "km": 4.9,
+   "boundary_km": 4.9,
+   "km_per_day": 2.45
+  },
+  {
    "steward": "Livingstone Nisavora",
    "zones": "Zone 6",
    "clans": "Mariura",
@@ -415,6 +428,19 @@
    "km": 15.86,
    "boundary_km": 15.86,
    "km_per_day": 2.64
+  },
+  {
+   "steward": "Solomon Makanisa",
+   "zones": "Zone 6",
+   "clans": "Sahirut",
+   "tracks": 5,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2026-06-22",
+   "last": "2026-06-25",
+   "km": 18.07,
+   "boundary_km": 18.07,
+   "km_per_day": 6.02
   },
   {
    "steward": "Zechariah Sasavo",
@@ -2194,6 +2220,22 @@
    "km": 1.53
   },
   {
+   "steward": "Lenard Urami",
+   "zone": "Zone 6",
+   "clan": "Sahirut",
+   "date": "2026-06-22",
+   "tracks": 1,
+   "km": 0.01
+  },
+  {
+   "steward": "Lenard Urami",
+   "zone": "Zone 6",
+   "clan": "Sahirut",
+   "date": "2026-06-23",
+   "tracks": 1,
+   "km": 4.89
+  },
+  {
    "steward": "Livingstone Nisavora",
    "zone": "Zone 6",
    "clan": "Mariura",
@@ -2658,6 +2700,30 @@
    "km": 0.3
   },
   {
+   "steward": "Solomon Makanisa",
+   "zone": "Zone 6",
+   "clan": "Sahirut",
+   "date": "2026-06-22",
+   "tracks": 2,
+   "km": 10.0
+  },
+  {
+   "steward": "Solomon Makanisa",
+   "zone": "Zone 6",
+   "clan": "Sahirut",
+   "date": "2026-06-23",
+   "tracks": 1,
+   "km": 5.08
+  },
+  {
+   "steward": "Solomon Makanisa",
+   "zone": "Zone 6",
+   "clan": "Sahirut",
+   "date": "2026-06-25",
+   "tracks": 2,
+   "km": 2.99
+  },
+  {
    "steward": "Stafford Gidiri",
    "zone": "Zone 7B",
    "clan": "Natang",
@@ -2744,6 +2810,44 @@
    "date": "2026-06-26",
    "tracks": 2,
    "km": 32.63
+  }
+ ],
+ "mismatches": [
+  {
+   "source_name": "solomon_makanisa_sahirut_clan_boundary_aug_26",
+   "file_steward": "Solomon Makanisa",
+   "track_name": "Lenard Urami. Sahirut clan",
+   "credits": "Lenard Urami",
+   "clan": "Sahirut",
+   "zone": "Zone 6",
+   "km": 5.0
+  },
+  {
+   "source_name": "solomon_makanisa_sahirut_clan_boundary_aug_26",
+   "file_steward": "Solomon Makanisa",
+   "track_name": "Lenard Urami. Sahirut clan",
+   "credits": "Lenard Urami",
+   "clan": "Sahirut",
+   "zone": "Zone 6",
+   "km": 5.08
+  },
+  {
+   "source_name": "solomon_makanisa_sahirut_clan_boundary_aug_26",
+   "file_steward": "Solomon Makanisa",
+   "track_name": "Lenard Urami.Sahirut clan",
+   "credits": "Lenard Urami",
+   "clan": "Sahirut",
+   "zone": "Zone 6",
+   "km": 5.0
+  },
+  {
+   "source_name": "solomon_makanisa_sahirut_clan_boundary_aug_26",
+   "file_steward": "Solomon Makanisa",
+   "track_name": "Lenard Urami.Sahirut clan",
+   "credits": "Lenard Urami",
+   "clan": "Sahirut",
+   "zone": "Zone 6",
+   "km": 0.12
   }
  ]
 }

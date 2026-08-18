@@ -26,7 +26,18 @@ NOISE = {"land", "boundary", "boundaries", "tracks", "track", "site", "sites",
          "sacred", "zone", "zn", "clan", "and", "the", "of", "road", "roads",
          "block", "blocks", "steward", "stewardship"}
 
+# Two shapes are in use. `14July2026` puts the day first; `Aug_26` gives only
+# a month and a two-digit number, which the field uses for the month the
+# archive was collated. The second must be recognised even though it cannot be
+# resolved to a day: left unmatched, its month name survives into the token
+# list and gets read as somebody's name — `Lenard_Urami_Sahirut_Clan_Boundary_
+# Zone_6_Aug_26` parsed as clan "Lenard Urami Sahirut", steward "Aug".
 DATE_PATTERN = re.compile(r"(\d{1,2})([A-Za-z]{3,9})(\d{2,4})")
+MONTH_YEAR_PATTERN = re.compile(
+    r"(?:^|[_\s-])(" + "|".join(
+        m + "[a-z]*" for m in ("jan", "feb", "mar", "apr", "may", "jun",
+                               "jul", "aug", "sep", "oct", "nov", "dec"))
+    + r")[_\s-]*(\d{2,4})(?=$|[_\s-])", re.IGNORECASE)
 ZONE_PATTERN = re.compile(r"(?:zone|zn)[_\s-]*(\d+\s*[ab]?)", re.IGNORECASE)
 
 # Clan names confirmed by the survey team as spelling variants of one clan.
@@ -76,6 +87,14 @@ def parse(name: str, source_path: "os.PathLike | str | None" = None) -> ClanReco
     if (date_match := DATE_PATTERN.search(working)):
         record.survey_date = _tidy_date(date_match)
         working = working[:date_match.start()] + " " + working[date_match.end():]
+    elif (month_match := MONTH_YEAR_PATTERN.search(working)):
+        # No day, and a two-digit number that could be a day or a year. Kept as
+        # written rather than resolved — §6.5 settled that the file-name date
+        # is when the archive was collated, and the GPS timestamps are what
+        # every figure actually uses.
+        record.survey_date = re.sub(r"[_-]+", " ", month_match.group(0)).strip()
+        working = (working[:month_match.start()] + " "
+                   + working[month_match.end():])
 
     # Underscores are word characters, so \b never fires at a token edge here.
     if re.search(r"sacred", name, re.IGNORECASE):

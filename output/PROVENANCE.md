@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `ca6131c105eca0fb56a7409d3a9c99f95f45ecc0`
+- **Commit:** `e07c0e28d36b63babf03579017f9bdc83ba4cc57`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 
@@ -35,6 +35,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 | Zone 2 Clan Land Boundaries - 14July2026.zip | 616,399 | `c6ef79c06e57f64c` |
 | Zone 3 Clan Land Boundaries - 14July2026.zip | 139,335 | `5272a65475b1a149` |
 | Zone 6 Clan Boundaries 16Aug2026.zip | 357,842 | `7398122a185e8da0` |
+| Zone 6 Sahirut Clan Boundaries Aug2026.zip | 45,686 | `d336c88018e244c2` |
 | Zone 7A Clan Boundaries 16Aug2026.zip | 195,340 | `11ac0f609db1fbc3` |
 | Zone 7B Clan Boundaries 14July2026.zip | 400,152 | `b069c6a142328c67` |
 | Zone 7B Clan Boundaries 16Aug2026.zip | 150,125 | `8b1cb96a2efd3c81` |
@@ -59,15 +60,15 @@ If a figure changes between runs, compare these digests first: they say immediat
 
 | Measure | Value |
 | --- | --- |
-| surveys | 69 |
-| tracks | 600 |
-| clans | 47 |
-| custodians | 67 |
+| surveys | 71 |
+| tracks | 607 |
+| clans | 48 |
+| stewards | 69 |
 | zones | Zone 2, Zone 3, Zone 6, Zone 7A, Zone 7B, Zone 8 |
-| smoothed_km | 1112.9 |
-| polygons | 35 |
+| smoothed_km | 1135.9 |
+| polygons | 37 |
 | polygons_surveyed | 5 |
-| area_ha_total | 32531.2 |
+| area_ha_total | 33453.9 |
 | area_ha_surveyed | 2542.4 |
 
 ## Data sources
@@ -91,7 +92,7 @@ If a figure changes between runs, compare these digests first: they say immediat
 - Used for: everything else
 - Access: supplied directly as zip archives per zone
 - Licence: Not established — see the sensitivity note in docs/METHODS.md
-- Cite as: Field surveys by clan custodians, Oro Province, Papua New Guinea, 2025–2026
+- Cite as: Field surveys by clan stewards, Oro Province, Papua New Guinea, 2025–2026
 
 ## Methods to cite
 

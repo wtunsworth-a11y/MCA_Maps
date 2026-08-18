@@ -100,6 +100,44 @@ def build(tracks: gpd.GeoDataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     return stewards, days
 
 
+def name_mismatches(tracks: gpd.GeoDataFrame) -> pd.DataFrame:
+    """Tracks whose own name credits a different steward from the file's.
+
+    The steward comes from the file name (§4.3), which is the only place it is
+    recorded for most surveys. Some devices also write a name onto each track,
+    and when the two disagree the file name is not obviously the right one:
+    it can mean one steward sent in another's recordings along with their own.
+
+    Nothing is reassigned here. Who walked which track is a question for the
+    field, and getting it wrong would put a day's work against the wrong
+    person's name. It is reported so it can be asked.
+    """
+    frame = tracks.to_crs(dataio.METRIC_CRS).copy()
+    known = sorted({str(s).strip() for s in frame.steward if str(s).strip()},
+                   key=len, reverse=True)
+    rows = []
+    for _, row in frame.iterrows():
+        label = str(row.get("name") or "")
+        if not label.strip():
+            continue
+        mine = str(row.steward).strip()
+        for other in known:
+            if other == mine or len(other) < 6:
+                continue
+            if other.lower() in label.lower():
+                rows.append({
+                    "source_name": row.source_name,
+                    "file_steward": mine,
+                    "track_name": label.strip(),
+                    "credits": other,
+                    "clan": row.clan,
+                    "zone": row.zone,
+                    "km": round(row.geometry.length / 1000, 2),
+                })
+                break
+    return pd.DataFrame(rows)
+
+
 def _records(frame: pd.DataFrame) -> list[dict]:
     """Rows as plain dicts, with every missing value as null.
 
@@ -149,11 +187,15 @@ def main(argv: list[str] | None = None) -> int:
     stewards, days = build(tracks)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
+    mismatched = name_mismatches(tracks)
+    if not mismatched.empty:
+        mismatched.to_csv(args.out_dir / "name_mismatches.csv", index=False)
+
     stewards.to_csv(args.out_dir / "stewards.csv", index=False)
     days.to_csv(args.out_dir / "steward_days.csv", index=False)
     (args.out_dir / "stewards.json").write_text(
-        json.dumps({"stewards": _records(stewards), "days": _records(days)},
-                   indent=1),
+        json.dumps({"stewards": _records(stewards), "days": _records(days),
+                    "mismatches": _records(mismatched)}, indent=1),
         encoding="utf-8")
 
     dated = days[days.date.notna()]
@@ -166,6 +208,10 @@ def main(argv: list[str] | None = None) -> int:
     undated = int(stewards.undated_tracks.sum())
     if undated:
         print(f"  {undated} track(s) carry no recoverable date")
+    if not mismatched.empty:
+        print(f"  {len(mismatched)} track(s) name a different steward from "
+              f"their file — {mismatched.km.sum():.1f} km, see "
+              f"name_mismatches.csv")
     print(f"\nWrote {args.out_dir}/stewards.csv, steward_days.csv, stewards.json")
 
     if args.report:
@@ -176,6 +222,14 @@ def main(argv: list[str] | None = None) -> int:
             f"steward-days between {dated.date.min()} and {dated.date.max()}.\n\n"
             "Dates are taken from the GPS record, not from file names.\n\n"
             "## By steward\n\n" + _markdown(stewards)
+            + "\n\n## Tracks crediting a different steward\n\n"
+            + ("None.\n" if mismatched.empty else
+               "The steward comes from the file name, which for most surveys "
+               "is the only place it is recorded. Where a track's own name "
+               "credits somebody else, both are shown here and neither is "
+               "changed: who walked which track is a question for the field, "
+               "and guessing would put a day's work against the wrong "
+               "person's name.\n\n" + _markdown(mismatched))
             + "\n\n## Every steward-day\n\n" + _markdown(days) + "\n",
             encoding="utf-8")
         print(f"Wrote {args.report}")

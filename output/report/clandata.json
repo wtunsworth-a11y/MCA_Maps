@@ -860,17 +860,17 @@
     "pct": 2.1
    },
    {
+    "with": "Murai (Z2)",
+    "km": 0.62,
+    "pct": 1.5
+   },
+   {
     "with": "Gariniko",
     "km": 0.62,
     "pct": 1.5
    },
    {
     "with": "Zambiko",
-    "km": 0.62,
-    "pct": 1.5
-   },
-   {
-    "with": "Murai (Z2)",
     "km": 0.62,
     "pct": 1.5
    },
@@ -961,12 +961,12 @@
     "pct": 6.5
    },
    {
-    "with": "Deari",
+    "with": "Nui",
     "km": 0.35,
     "pct": 0.6
    },
    {
-    "with": "Nui",
+    "with": "Deari",
     "km": 0.35,
     "pct": 0.6
    }
@@ -1323,17 +1323,17 @@
     "pct": 6.4
    },
    {
+    "with": "Asingi",
+    "km": 0.36,
+    "pct": 6.4
+   },
+   {
     "with": "Tuoko",
     "km": 0.36,
     "pct": 6.4
    },
    {
     "with": "Murai (Z2)",
-    "km": 0.36,
-    "pct": 6.4
-   },
-   {
-    "with": "Asingi",
     "km": 0.36,
     "pct": 6.4
    },
@@ -1594,8 +1594,22 @@
   "basis": "inferred",
   "parcels": 3,
   "bridges": 6,
-  "overlaps": [],
+  "overlaps": [
+   {
+    "with": "Sahirut",
+    "ha": 6.8,
+    "pct": 0.8,
+    "beyond_tol_ha": 6.6,
+    "beyond_tol_pct": 0.8,
+    "verdict": "overlap"
+   }
+  ],
   "shared_lines": [
+   {
+    "with": "Sahirut",
+    "km": 12.61,
+    "pct": 20.5
+   },
    {
     "with": "Pina Ora",
     "km": 6.95,
@@ -1672,6 +1686,14 @@
     "beyond_tol_ha": 49.8,
     "beyond_tol_pct": 5.8,
     "verdict": "overlap"
+   },
+   {
+    "with": "Sahirut",
+    "ha": 1.7,
+    "pct": 0.2,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
    }
   ],
   "shared_lines": [
@@ -1689,6 +1711,11 @@
     "with": "Darekikol",
     "km": 0.71,
     "pct": 3.0
+   },
+   {
+    "with": "Sahirut",
+    "km": 0.2,
+    "pct": 0.0
    }
   ],
   "join_sep_ha": 0.0,
@@ -1833,6 +1860,14 @@
     "beyond_tol_ha": 59.0,
     "beyond_tol_pct": 7.3,
     "verdict": "overlap"
+   },
+   {
+    "with": "Sahirut",
+    "ha": 14.5,
+    "pct": 1.8,
+    "beyond_tol_ha": 13.0,
+    "beyond_tol_pct": 1.6,
+    "verdict": "overlap"
    }
   ],
   "shared_lines": [
@@ -1840,6 +1875,11 @@
     "with": "Naharaura",
     "km": 5.81,
     "pct": 30.8
+   },
+   {
+    "with": "Sahirut",
+    "km": 6.37,
+    "pct": 20.5
    },
    {
     "with": "Manuvoora",
@@ -1852,6 +1892,90 @@
   "map": "Pina_Ora_Zone_6.png",
   "gpx": "Pina_Ora_Zone_6.gpx",
   "gpx_gaps": 3
+ },
+ {
+  "unit": "Sahirut \u2014 Zone 6",
+  "clan": "Sahirut",
+  "zone": "Zone 6",
+  "stewards": [
+   {
+    "steward": "Solomon Makanisa",
+    "tracks": 5,
+    "km": 18.07,
+    "days": 3,
+    "first": "2026-06-22",
+    "last": "2026-06-25",
+    "type": "Land Boundary"
+   },
+   {
+    "steward": "Lenard Urami",
+    "tracks": 2,
+    "km": 4.9,
+    "days": 2,
+    "first": "2026-06-22",
+    "last": "2026-06-23",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_stewards": 2,
+  "walked_km": 22.97,
+  "spur_km": 2.99,
+  "status": "near",
+  "chains": 1,
+  "gap_km": 0.22,
+  "gap_pct": 0.9,
+  "area_ha": 345.0,
+  "basis": "inferred",
+  "parcels": 1,
+  "bridges": 1,
+  "overlaps": [
+   {
+    "with": "Pina Ora",
+    "ha": 14.5,
+    "pct": 4.2,
+    "beyond_tol_ha": 13.0,
+    "beyond_tol_pct": 3.8,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Manuvoora",
+    "ha": 6.8,
+    "pct": 2.0,
+    "beyond_tol_ha": 6.6,
+    "beyond_tol_pct": 1.9,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Mariura",
+    "ha": 1.7,
+    "pct": 0.5,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
+   }
+  ],
+  "shared_lines": [
+   {
+    "with": "Manuvoora",
+    "km": 12.61,
+    "pct": 50.5
+   },
+   {
+    "with": "Pina Ora",
+    "km": 6.37,
+    "pct": 35.4
+   },
+   {
+    "with": "Mariura",
+    "km": 0.2,
+    "pct": 1.1
+   }
+  ],
+  "join_sep_ha": 458.0,
+  "join_joined_ha": 345.0,
+  "map": "Sahirut_Zone_6.png",
+  "gpx": "Sahirut_Zone_6.gpx",
+  "gpx_gaps": 1
  },
  {
   "unit": "Bimkol \u2014 Zone 7A",

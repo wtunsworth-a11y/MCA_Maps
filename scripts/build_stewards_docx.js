@@ -14,6 +14,7 @@ const S = process.argv[3];
 const data = JSON.parse(fs.readFileSync(path.join(W,'stewards.json'),'utf8'));
 const ctx = JSON.parse(fs.readFileSync(path.join(S,'context.json'),'utf8'));
 const stewards = data.stewards, days = data.days;
+const mismatches = data.mismatches || [];
 
 const DXA = WidthType.DXA;
 const FULL = 10080;
@@ -140,6 +141,17 @@ if (undated) {
   body.push(table(["Clan Steward","Zone","Clan(s)","Undated tracks"],
     stewards.filter(w=>w.undated_tracks).map(w=>[w.steward, w.zones, w.clans || "—",
       money(w.undated_tracks)]), [4,3,4,2]));
+}
+
+if (mismatches.length) {
+  const km = mismatches.reduce((a,r)=>a+r.km, 0);
+  body.push(h("Tracks crediting a different Clan Steward", HeadingLevel.HEADING_2));
+  body.push(p(`${mismatches.length} track${mismatches.length===1?"":"s"}, ${one(km)} km, carry a name of their own that credits a different steward from the one on the file. The steward is taken from the file name, which for most surveys is the only place it is recorded — so where the track itself says otherwise, the file name is not obviously right.`, {size:21}));
+  body.push(p("Nothing has been reassigned. Who walked which track is a question for the field, and guessing would put a day's work against the wrong person's name. Until it is settled, the days and distances in the tables above credit the steward named on the file.", {size:21}));
+  body.push(table(["File","Credited to (file)","Track's own name","Clan","Distance (km)"],
+    mismatches.map(r=>[r.source_name, r.file_steward, r.track_name, r.clan, one(r.km)]),
+    [5,3,4,2,2]));
+  body.push(p("Query for the field: who walked these tracks, and should they be credited to the steward named on each one?", {size:21, bold:true}));
 }
 
 body.push(h("How to read these figures", HeadingLevel.HEADING_2));

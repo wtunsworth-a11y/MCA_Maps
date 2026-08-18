@@ -6,6 +6,23 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.4
+
+- New survey included: **Sahirut**, Zone 6, walked by Lenard Urami and Solomon
+  Makanisa. Two files, seven tracks, 23.3 km. Sahirut is one clan with two
+  stewards, not two clans.
+- Flagged, not fixed: four tracks in Solomon Makanisa's file carry names
+  crediting Lenard Urami — 15.2 km. The steward is taken from the file name,
+  which is the only place most surveys record it, so where a track says
+  otherwise the file name is not obviously right. Nothing has been reassigned;
+  the question is listed in Managalas Steward Days for the field to settle.
+- The file-name date parser now recognises the `Aug_26` form. Left unmatched,
+  the month name survived into the parse and was read as somebody's name —
+  `Lenard_Urami_Sahirut_Clan_Boundary_Zone_6_Aug_26` came out as clan "Lenard
+  Urami Sahirut", steward "Aug". The date is kept as written, since a
+  two-digit number after a month could be a day or a year and inventing either
+  would be worse than reporting the text.
+
 ## 1.3
 
 - The people who walked these boundaries are **Clan Stewards**, and are named

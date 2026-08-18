@@ -1,9 +1,9 @@
 # Boundary closure
 
-49 surveys, parts joined at 25 m, near-closure threshold 10%.
+50 surveys, parts joined at 25 m, near-closure threshold 10%.
 
 - **Closed polygons:** 5
-- **Near closure:** 8
+- **Near closure:** 9
 - **Open:** 36
 - **Fragmented:** 0
 
@@ -11,10 +11,10 @@
 
 | tolerance_m | closed | near | open | fragmented |
 | --- | --- | --- | --- | --- |
-| 10.0 | 0.0 | 7.0 | 42.0 | 0.0 |
-| 25.0 | 5.0 | 8.0 | 36.0 | 0.0 |
-| 50.0 | 7.0 | 7.0 | 35.0 | 0.0 |
-| 100.0 | 9.0 | 5.0 | 35.0 | 0.0 |
+| 10.0 | 0.0 | 7.0 | 43.0 | 0.0 |
+| 25.0 | 5.0 | 9.0 | 36.0 | 0.0 |
+| 50.0 | 8.0 | 7.0 | 35.0 | 0.0 |
+| 100.0 | 10.0 | 5.0 | 35.0 | 0.0 |
 
 ## Every survey
 
@@ -44,6 +44,7 @@
 | Zone 6 | Naharaura | Zechariah Sasavo | 1 | Naharaura — Zone 6 | 18 | 32.63 | 2489.9 | 7.6 |  | 4 | near | 4 disconnected pieces |
 | Zone 6 | Nupa Ora | Benjamin Marijah | 1 | Nupa Ora — Zone 6 | 3 | 4.94 | 3560.7 | 72.0 |  | 2 | open | 2 disconnected pieces |
 | Zone 6 | Pina Ora | Alban Ezekiel | 1 | Pina Ora — Zone 6 | 14 | 18.85 | 1429.9 | 8.3 |  | 4 | near | 4 disconnected pieces |
+| Zone 6 | Sahirut | Lenard Urami, Solomon Makanisa | 2 | Sahirut — Zone 6 | 9 | 22.97 | 216.6 | 0.9 |  | 1 | near |  |
 | Zone 7A |  | Paul Digori | 1 | road_3_and_4_paul_digori_tracks_zone_7a | 49 | 4.29 | 10275.3 | 262.6 |  | 9 | open | 9 disconnected pieces |
 | Zone 7A | Bimkol | Kennedy Wosa | 1 | Bimkol — Zone 7A | 7 | 8.01 | 3971.6 | 54.2 |  | 3 | open | 3 disconnected pieces |
 | Zone 7A | Borori | Hagahi Semo, John Saini | 2 | Borori — Zone 7A | 64 | 32.69 | 6965.3 | 23.6 |  | 10 | open | 10 disconnected pieces |

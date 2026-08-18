@@ -1,6 +1,6 @@
 # Who walked, and when
 
-67 stewards, 233 steward-days between 2025-02-18 and 2026-08-13.
+69 stewards, 238 steward-days between 2025-02-18 and 2026-08-13.
 
 Dates are taken from the GPS record, not from file names.
 
@@ -39,7 +39,9 @@ Dates are taken from the GPS record, not from file names.
 | Egobeyas Kuarisi | Zone 6 | Manuvoora | 18 | 11 | 0 | 2026-06-18 | 2026-07-26 | 31.22 | 31.22 | 2.84 |
 | Fabian Justin | Zone 6 | Mariura | 22 | 6 | 0 | 2026-06-26 | 2026-07-09 | 17.85 | 17.85 | 2.97 |
 | Granville Nepo | Zone 6 | Manuvoora | 11 | 8 | 0 | 2026-06-18 | 2026-07-21 | 30.23 | 30.23 | 3.78 |
+| Lenard Urami | Zone 6 | Sahirut | 2 | 2 | 0 | 2026-06-22 | 2026-06-23 | 4.9 | 4.9 | 2.45 |
 | Livingstone Nisavora | Zone 6 | Mariura | 21 | 6 | 0 | 2026-06-26 | 2026-07-09 | 15.86 | 15.86 | 2.64 |
+| Solomon Makanisa | Zone 6 | Sahirut | 5 | 3 | 0 | 2026-06-22 | 2026-06-25 | 18.07 | 18.07 | 6.02 |
 | Zechariah Sasavo | Zone 6 | Naharaura | 2 | 1 | 0 | 2026-06-26 | 2026-06-26 | 32.63 | 32.63 | 32.63 |
 | Garex Sevesi | Zone 7A | Darekikol | 2 | 2 | 0 | 2026-05-25 | 2026-06-02 | 13.39 | 13.39 | 6.7 |
 | George Kopoi | Zone 7A | Darekikol | 6 | 3 | 0 | 2026-05-25 | 2026-07-02 | 15.36 | 15.36 | 5.12 |
@@ -75,6 +77,17 @@ Dates are taken from the GPS record, not from file names.
 | Philip Igai | Zone 8 | Gumuyude | 6 | 6 | 0 | 2025-05-19 | 2025-06-04 | 16.79 | 16.79 | 2.8 |
 | Prut Buitari | Zone 8 | Riribudeh | 7 | 3 | 0 | 2025-07-15 | 2025-07-23 | 10.37 | 10.37 | 3.46 |
 | Unido Ose | Zone 8 | Riribudeh | 28 | 3 | 0 | 2025-07-15 | 2025-07-23 | 10.01 | 10.01 | 3.34 |
+
+## Tracks crediting a different steward
+
+The steward comes from the file name, which for most surveys is the only place it is recorded. Where a track's own name credits somebody else, both are shown here and neither is changed: who walked which track is a question for the field, and guessing would put a day's work against the wrong person's name.
+
+| source_name | file_steward | track_name | credits | clan | zone | km |
+| --- | --- | --- | --- | --- | --- | --- |
+| solomon_makanisa_sahirut_clan_boundary_aug_26 | Solomon Makanisa | Lenard Urami. Sahirut clan | Lenard Urami | Sahirut | Zone 6 | 5.0 |
+| solomon_makanisa_sahirut_clan_boundary_aug_26 | Solomon Makanisa | Lenard Urami. Sahirut clan | Lenard Urami | Sahirut | Zone 6 | 5.08 |
+| solomon_makanisa_sahirut_clan_boundary_aug_26 | Solomon Makanisa | Lenard Urami.Sahirut clan | Lenard Urami | Sahirut | Zone 6 | 5.0 |
+| solomon_makanisa_sahirut_clan_boundary_aug_26 | Solomon Makanisa | Lenard Urami.Sahirut clan | Lenard Urami | Sahirut | Zone 6 | 0.12 |
 
 ## Every steward-day
 
@@ -245,6 +258,8 @@ Dates are taken from the GPS record, not from file names.
 | Lance Sake | Zone 2 | Gariniko | 2025-11-28 | 3 | 0.3 |
 | Lance Sake | Zone 2 | Gariniko | 2025-12-02 | 2 | 8.26 |
 | Lance Sake | Zone 2 | Gariniko | 2026-02-07 | 1 | 1.53 |
+| Lenard Urami | Zone 6 | Sahirut | 2026-06-22 | 1 | 0.01 |
+| Lenard Urami | Zone 6 | Sahirut | 2026-06-23 | 1 | 4.89 |
 | Livingstone Nisavora | Zone 6 | Mariura | 2026-06-26 | 5 | 5.12 |
 | Livingstone Nisavora | Zone 6 | Mariura | 2026-06-29 | 5 | 3.82 |
 | Livingstone Nisavora | Zone 6 | Mariura | 2026-06-30 | 4 | 1.54 |
@@ -303,6 +318,9 @@ Dates are taken from the GPS record, not from file names.
 | Simeon Pasip | Zone 7B | Abuankol | 2025-10-21 | 2 | 0.09 |
 | Simeon Pasip | Zone 7B | Abuankol | 2025-10-22 | 1 | 0.12 |
 | Simeon Pasip | Zone 7B | Abuankol | 2025-10-28 | 1 | 0.3 |
+| Solomon Makanisa | Zone 6 | Sahirut | 2026-06-22 | 2 | 10.0 |
+| Solomon Makanisa | Zone 6 | Sahirut | 2026-06-23 | 1 | 5.08 |
+| Solomon Makanisa | Zone 6 | Sahirut | 2026-06-25 | 2 | 2.99 |
 | Stafford Gidiri | Zone 7B | Natang | 2025-11-10 | 2 | 46.5 |
 | Sylvester Anai | Zone 2 | Zambiko | 2025-11-27 | 5 | 1.15 |
 | Sylvester Anai | Zone 2 | Zambiko | 2026-02-03 | 2 | 3.46 |

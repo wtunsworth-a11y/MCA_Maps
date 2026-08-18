@@ -2,7 +2,7 @@
   "git": {
     "branch": "claude/create-maps-86nf12",
     "clean": false,
-    "commit": "ca6131c105eca0fb56a7409d3a9c99f95f45ecc0"
+    "commit": "e07c0e28d36b63babf03579017f9bdc83ba4cc57"
   },
   "inputs": [
     {
@@ -19,6 +19,11 @@
       "bytes": 357842,
       "file": "Zone 6 Clan Boundaries 16Aug2026.zip",
       "sha256": "7398122a185e8da0"
+    },
+    {
+      "bytes": 45686,
+      "file": "Zone 6 Sahirut Clan Boundaries Aug2026.zip",
+      "sha256": "d336c88018e244c2"
     },
     {
       "bytes": 195340,
@@ -59,14 +64,14 @@
   },
   "results": {
     "area_ha_surveyed": 2542.4,
-    "area_ha_total": 32531.2,
-    "clans": 47,
-    "custodians": 67,
-    "polygons": 35,
+    "area_ha_total": 33453.9,
+    "clans": 48,
+    "polygons": 37,
     "polygons_surveyed": 5,
-    "smoothed_km": 1112.9,
-    "surveys": 69,
-    "tracks": 600,
+    "smoothed_km": 1135.9,
+    "stewards": 69,
+    "surveys": 71,
+    "tracks": 607,
     "zones": [
       "Zone 2",
       "Zone 3",
@@ -93,7 +98,7 @@
     },
     {
       "access": "supplied directly as zip archives per zone",
-      "citation": "Field surveys by clan custodians, Oro Province, Papua New Guinea, 2025\u20132026",
+      "citation": "Field surveys by clan stewards, Oro Province, Papua New Guinea, 2025\u20132026",
       "licence": "Not established \u2014 see the sensitivity note in docs/METHODS.md",
       "name": "Clan boundary GPS surveys",
       "used_for": "everything else"
