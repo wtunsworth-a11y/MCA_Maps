@@ -29,6 +29,14 @@ import polygons  # noqa: E402
 import smooth_tracks  # noqa: E402
 import terrain  # noqa: E402
 
+# One wash for mapped land, at an alpha low enough that two of them stacking
+# is clearly darker and three darker still.
+AREA_FILL = "#1d4ed8"
+AREA_EDGE = "#1e3a8a"
+AREA_ALPHA = 0.22
+OPEN_LINE = "#ea580c"      # walked, but not yet closed
+BRIDGE_LINE = "#db2777"    # nobody walked this
+
 
 def gather(tracks_path: Path, polygons_path: Path) -> dict:
     """Every number the summary quotes, computed in one place."""
@@ -136,54 +144,33 @@ def render_map(data: dict, out_path: Path) -> Path:
         gpd.GeoSeries([mca], crs=dataio.METRIC_CRS).boundary.plot(
             ax=axis, color="#475569", linewidth=1.4, zorder=1)
 
-    # Every walked boundary is drawn, including those that never closed. A map
-    # of areas alone renders a clan that walked 40 km as blank ground, which
-    # reads as "not mapped" when the truth is "mapped but not yet closed".
-    # Matched on the survey unit — one clan's walk within one zone — because
-    # that is what the polygon layer is keyed on. Matching on the file name
-    # instead put 606 of 607 tracks in the "not closed" pile, purple over the
-    # whole map, including the 534 belonging to boundaries that do close.
+    # One colour for every mapped area, closed or inferred alike, drawn
+    # semi-transparent and NOT dissolved. Where two clans have recorded the
+    # same ground the two washes stack and it simply reads darker — the
+    # overlap draws itself, with no third colour and no separate layer, and
+    # ground claimed by three clans is darker again. That is the honest
+    # rendering: the strength of the colour is the number of claims.
+    surveys = data["surveys"]
+    if len(surveys):
+        surveys.plot(ax=axis, facecolor=AREA_FILL, edgecolor=AREA_EDGE,
+                     linewidth=0.7, alpha=AREA_ALPHA, zorder=3)
+
+    # The boundaries walked but still too open to give an area. A different
+    # colour because they are a different kind of thing: a line on the ground,
+    # not a claim to a piece of it.
     tracks = data["tracks"].assign(_unit=dataio.survey_group(data["tracks"]))
-    closed_surveys = set(data["surveys"].source_name)
+    closed_surveys = set(surveys.source_name)
     unclosed = tracks[~tracks._unit.isin(closed_surveys)]
     if len(unclosed):
-        unclosed.plot(ax=axis, color="#7c3aed", linewidth=1.4, alpha=0.95,
+        unclosed.plot(ax=axis, color=OPEN_LINE, linewidth=1.5, alpha=0.95,
                       zorder=6)
-    tracks[tracks._unit.isin(closed_surveys)].plot(
-        ax=axis, color="#1f2937", linewidth=0.6, alpha=0.85, zorder=5)
 
-    surveys = data["surveys"]
-    inferred = surveys[surveys.basis == "inferred"]
-    surveyed = surveys[surveys.basis == "surveyed"]
-    if len(inferred):
-        inferred.plot(ax=axis, facecolor="#fcd34d", edgecolor="#b45309",
-                      linewidth=0.5, alpha=0.40, zorder=2)
-    if len(surveyed):
-        surveyed.plot(ax=axis, facecolor="#2563eb", edgecolor="#1e3a8a",
-                      linewidth=0.8, alpha=0.55, zorder=3)
-
-    # The stretches of every inferred outline that nobody walked. Without
-    # these the amber areas read as surveyed ground; with them it is plain how
-    # much of each one is a straight line drawn across a gap.
+    # Kept, because it is the one thing a reader cannot infer from the shape:
+    # which parts of an outline nobody walked.
     bridges = data.get("bridges")
     if bridges is not None and len(bridges):
-        bridges.plot(ax=axis, color="#db2777", linewidth=0.9,
+        bridges.plot(ax=axis, color=BRIDGE_LINE, linewidth=0.9,
                      linestyle=(0, (4, 2.5)), zorder=7)
-
-    # Where two different clans claim the same ground.
-    clans = data["clans"]
-    pieces = []
-    for i in range(len(clans)):
-        for j in range(i + 1, len(clans)):
-            a, b = clans.geometry.iloc[i], clans.geometry.iloc[j]
-            if a.intersects(b):
-                shared = a.intersection(b)
-                if shared.area > 0:
-                    pieces.append(shared)
-    if pieces:
-        gpd.GeoSeries(pieces, crs=dataio.METRIC_CRS).plot(
-            ax=axis, facecolor="#dc2626", edgecolor="#7f1d1d",
-            linewidth=0.7, alpha=0.70, zorder=4)
 
     axis.set_axis_off()
     axis.set_title(
@@ -195,16 +182,15 @@ def render_map(data: dict, out_path: Path) -> Path:
         f"closed — {data['contested_ha']:,.0f} ha claimed by more than one clan",
         fontsize=12, pad=14)
     axis.legend(handles=[
-        Patch(facecolor="#2563eb", alpha=0.6, label="Area — boundary walked "
-                                                    "and closed"),
-        Patch(facecolor="#fcd34d", alpha=0.5, label="Area — closure inferred"),
-        Patch(facecolor="#dc2626", alpha=0.7, label="Claimed by more than one "
-                                                    "clan"),
-        Line2D([0], [0], color="#db2777", lw=1.4, linestyle=(0, (4, 2.5)),
-               label="Not walked — straight line across a gap"),
-        Line2D([0], [0], color="#7c3aed", lw=2,
+        Patch(facecolor=AREA_FILL, alpha=AREA_ALPHA, edgecolor=AREA_EDGE,
+              label="Clan land mapped"),
+        Patch(facecolor=AREA_FILL, alpha=min(1.0, AREA_ALPHA * 2.2),
+              edgecolor=AREA_EDGE,
+              label="Darker — recorded by more than one clan"),
+        Line2D([0], [0], color=OPEN_LINE, lw=2,
                label="Walked, but too open to give an area"),
-        Line2D([0], [0], color="#334155", lw=1, label="Walked boundary"),
+        Line2D([0], [0], color=BRIDGE_LINE, lw=1.4, linestyle=(0, (4, 2.5)),
+               label="Not walked — straight line across a gap"),
         Line2D([0], [0], color="#475569", lw=1.6, label="MCA boundary"),
     ], loc="lower left", fontsize=8.5, frameon=True)
     figure.tight_layout()

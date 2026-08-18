@@ -1,11 +1,11 @@
 {
- "version": "1.5",
+ "version": "1.6",
  "changes": [
-  "Corrected the overview map. It matched tracks to closed boundaries on the file name while the polygon layer is keyed on the survey unit \u2014 one clan's walk within one zone \u2014 so 606 of 607 tracks were drawn purple as \"walked but too open to give an area\", including the 534 belonging to boundaries that do close. The map read as far more incomplete than the survey is. No figure was affected, only the map."
+  "Simplified the overview map to three things. Every mapped area is now one transparent wash, whether the boundary closed on its own or the closure was inferred; the washes are not merged, so ground recorded by two clans reads darker and by three darker still. The overlap draws itself, with no separate colour for it. Boundaries walked but still too open to give an area are orange, and the stretches nobody walked stay as pink dashes."
  ],
  "date": "2026-08-18",
  "date_long": "18 August 2026",
- "commit": "ff941ff",
+ "commit": "dd1404e",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

@@ -174,7 +174,7 @@ body.push(p("An overlap in these figures is a statement about two surveys, not a
 body.push(p("So an overlap between two unfinished surveys is first of all a sign that both need finishing. It is recorded because it is what the data shows, and because the pattern across the whole area is the point; it is not evidence that anybody disputes anything, and nothing in this document should be read as saying so.", {size:21}));
 
 body.push(img("output/summary_map.png", 640, 580));
-body.push(note("Blue: boundary walked and closed. Amber: closure inferred. Red: claimed by more than one clan. Purple: walked but too open to give an area."));
+body.push(note("One wash for every mapped area, whether the boundary closed on its own or the closure was inferred. The washes are transparent and are not merged, so where two clans have recorded the same ground it simply reads darker, and darker again where three have. Orange: walked, but still too open to give an area. Pink dashes: nobody walked this — a straight line across a gap."));
 
 body.push(h("Neighbouring clans walking the same edge", HeadingLevel.HEADING_2));
 body.push(p(`The mirror image of the overlap figures, and just as important. ${sum.shared_line_pairs} pairs of clans have recorded lines that run within ${TOL} m of each other — they walked the same edge. That is agreement on a boundary, and it does not show up in an overlap table at all. Some of the pairs below share almost their whole recorded line while sharing no ground at all.`, {size:21}));

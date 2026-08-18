@@ -6,6 +6,15 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.6
+
+- Simplified the overview map to three things. Every mapped area is now one
+  transparent wash, whether the boundary closed on its own or the closure was
+  inferred; the washes are not merged, so ground recorded by two clans reads
+  darker and by three darker still. The overlap draws itself, with no separate
+  colour for it. Boundaries walked but still too open to give an area are
+  orange, and the stretches nobody walked stay as pink dashes.
+
 ## 1.5
 
 - Corrected the overview map. It matched tracks to closed boundaries on the
