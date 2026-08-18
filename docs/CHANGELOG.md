@@ -6,6 +6,15 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.5
+
+- Corrected the overview map. It matched tracks to closed boundaries on the
+  file name while the polygon layer is keyed on the survey unit — one clan's
+  walk within one zone — so 606 of 607 tracks were drawn purple as "walked but
+  too open to give an area", including the 534 belonging to boundaries that do
+  close. The map read as far more incomplete than the survey is. No figure was
+  affected, only the map.
+
 ## 1.4
 
 - New survey included: **Sahirut**, Zone 6, walked by Lenard Urami and Solomon

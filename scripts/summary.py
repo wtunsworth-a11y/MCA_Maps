@@ -139,14 +139,18 @@ def render_map(data: dict, out_path: Path) -> Path:
     # Every walked boundary is drawn, including those that never closed. A map
     # of areas alone renders a clan that walked 40 km as blank ground, which
     # reads as "not mapped" when the truth is "mapped but not yet closed".
-    tracks = data["tracks"]
+    # Matched on the survey unit — one clan's walk within one zone — because
+    # that is what the polygon layer is keyed on. Matching on the file name
+    # instead put 606 of 607 tracks in the "not closed" pile, purple over the
+    # whole map, including the 534 belonging to boundaries that do close.
+    tracks = data["tracks"].assign(_unit=dataio.survey_group(data["tracks"]))
     closed_surveys = set(data["surveys"].source_name)
-    unclosed = tracks[~tracks.source_name.isin(closed_surveys)]
+    unclosed = tracks[~tracks._unit.isin(closed_surveys)]
     if len(unclosed):
-        unclosed.plot(ax=axis, color="#7c3aed", linewidth=1.5, alpha=0.95,
+        unclosed.plot(ax=axis, color="#7c3aed", linewidth=1.4, alpha=0.95,
                       zorder=6)
-    tracks[tracks.source_name.isin(closed_surveys)].plot(
-        ax=axis, color="#334155", linewidth=0.7, alpha=0.8, zorder=5)
+    tracks[tracks._unit.isin(closed_surveys)].plot(
+        ax=axis, color="#1f2937", linewidth=0.6, alpha=0.85, zorder=5)
 
     surveys = data["surveys"]
     inferred = surveys[surveys.basis == "inferred"]

@@ -1,13 +1,11 @@
 {
- "version": "1.4",
+ "version": "1.5",
  "changes": [
-  "New survey included: Sahirut, Zone 6, walked by Lenard Urami and Solomon Makanisa. Two files, seven tracks, 23.3 km. Sahirut is one clan with two stewards, not two clans.",
-  "Flagged, not fixed: four tracks in Solomon Makanisa's file carry names crediting Lenard Urami \u2014 15.2 km. The steward is taken from the file name, which is the only place most surveys record it, so where a track says otherwise the file name is not obviously right. Nothing has been reassigned; the question is listed in Managalas Steward Days for the field to settle.",
-  "The file-name date parser now recognises the Aug_26 form. Left unmatched, the month name survived into the parse and was read as somebody's name \u2014 Lenard_Urami_Sahirut_Clan_Boundary_Zone_6_Aug_26 came out as clan \"Lenard Urami Sahirut\", steward \"Aug\". The date is kept as written, since a two-digit number after a month could be a day or a year and inventing either would be worse than reporting the text."
+  "Corrected the overview map. It matched tracks to closed boundaries on the file name while the polygon layer is keyed on the survey unit \u2014 one clan's walk within one zone \u2014 so 606 of 607 tracks were drawn purple as \"walked but too open to give an area\", including the 534 belonging to boundaries that do close. The map read as far more incomplete than the survey is. No figure was affected, only the map."
  ],
  "date": "2026-08-18",
  "date_long": "18 August 2026",
- "commit": "e07c0e2",
+ "commit": "ff941ff",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,
