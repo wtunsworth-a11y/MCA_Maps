@@ -605,6 +605,46 @@ afterwards. The gap between the two estimates for unit B — 16 ha bridged again
 113 ha hull — shows how little the walk constrains its area; that figure should
 not be quoted without the range.
 
+#### Reading for the write-up
+
+Two Papua New Guinean papers on customary restricted areas, both from Manus,
+both in *Pacific Conservation Biology*. Neither is a method used here; both
+bear directly on how these sites should be described.
+
+- **Whitmore, N., Lamaris, J., Takendu, W., Charles, D., Chuwek, T., Mohe, B.,
+  Kanau, L. & Pe-eu, S. (2016).** The context and potential sustainability of
+  traditional terrestrial periodic *tambu* areas: insights from Manus Island,
+  Papua New Guinea. *Pacific Conservation Biology* **22**(2), 151–158.
+  [doi:10.1071/PC15036](https://doi.org/10.1071/PC15036)
+
+  Periodic *tambu* — closure followed by harvest — treated as a clan
+  institution rather than a folk analogue of a protected area. Its most
+  useful finding for this work is that the three clans studied differed in
+  purpose, in adherence to tradition, and in how far the practice had
+  hybridised with modern land governance. Customary management is **not
+  uniform across clans**, which is exactly the pattern the boundary data shows
+  for tenure (§4.9), and it argues against writing up the Managalas sacred
+  sites as a single category with a single rule.
+
+- **Lamaris, J. & Whitmore, N. (2018).** Forest connectivity is important for
+  sustaining Admiralty cuscus (*Spilocuscus kraemeri*) in traditional
+  terrestrial no-take areas on Manus Island, Papua New Guinea. *Pacific
+  Conservation Biology* **24**(1), 55–62.
+  [doi:10.1071/PC17030](https://doi.org/10.1071/PC17030)
+
+  Radio-tracking in and around a 21 ha *tambu* area: the animals' ranging
+  crossed the boundary, so the area's value depended on the forest around it
+  rather than on its own extent. The bearing on this survey is direct. The
+  sacred sites recorded here are **313–456 ha** on a bracketed estimate, and
+  that number on its own says little about what they conserve; what surrounds
+  them, and whether it stays forested, matters more. It also gives a defensible
+  reason to report the sites by **area and share of clan land** without
+  locations — the ecological argument does not need coordinates.
+
+Both are worth citing in the benefit-sharing argument too: they are evidence
+from PNG that clan-governed restriction already functions as conservation, and
+that its terms differ clan by clan.
+
 ## 5. Parameters
 
 All defaults, all overridable at the command line.
@@ -1143,7 +1183,10 @@ archive digests says immediately whether the data moved or the code did.
 
 **Citations.** Data sources and their licences, and the methods papers behind
 the flow routing, depression filling and topographic position test, are held in
-`provenance.py` and reproduced in every provenance record.
+`provenance.py` and reproduced in every provenance record. Background reading
+for the write-up sits alongside them — currently the two Manus *tambu* papers
+(§4.10), which are the closest published precedent for treating clan-governed
+restricted areas as conservation in Papua New Guinea.
 
 **Method transparency.** Every parameter has a stated default and rationale
 (§5); every threshold-dependent result is reported across a range rather than

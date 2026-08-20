@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `e07c0e28d36b63babf03579017f9bdc83ba4cc57`
+- **Commit:** `cf2d7006492e1c8af75c4bc72a9dd75182628c6d`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 
@@ -100,3 +100,10 @@ If a figure changes between runs, compare these digests first: they say immediat
 - Barnes, R., Lehman, C. & Mulla, D. (2014). Priority-flood: an optimal depression-filling and watershed-labeling algorithm. Computers & Geosciences 62, 117–127. — depression filling.
 - Weiss, A. (2001). Topographic position and landforms analysis. ESRI User Conference poster. — the ridge test.
 - Bartos, M. (2020). pysheds: simple and fast watershed delineation in Python. https://doi.org/10.5281/zenodo.3822494
+
+## Background reading
+
+Context for writing up the sacred sites; not methods used here.
+
+- Whitmore, N., Lamaris, J., Takendu, W., Charles, D., Chuwek, T., Mohe, B., Kanau, L. & Pe-eu, S. (2016). The context and potential sustainability of traditional terrestrial periodic tambu areas: insights from Manus Island, Papua New Guinea. Pacific Conservation Biology 22(2), 151–158. https://doi.org/10.1071/PC15036 — customary closures as clan-governed conservation; how they vary between clans.
+- Lamaris, J. & Whitmore, N. (2018). Forest connectivity is important for sustaining Admiralty cuscus (Spilocuscus kraemeri) in traditional terrestrial no-take areas on Manus Island, Papua New Guinea. Pacific Conservation Biology 24(1), 55–62. https://doi.org/10.1071/PC17030 — a restricted area's conservation value depends on what surrounds it, not on its own extent.

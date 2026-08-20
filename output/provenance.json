@@ -1,8 +1,12 @@
 {
+  "background_citations": [
+    "Whitmore, N., Lamaris, J., Takendu, W., Charles, D., Chuwek, T., Mohe, B., Kanau, L. & Pe-eu, S. (2016). The context and potential sustainability of traditional terrestrial periodic tambu areas: insights from Manus Island, Papua New Guinea. Pacific Conservation Biology 22(2), 151\u2013158. https://doi.org/10.1071/PC15036 \u2014 customary closures as clan-governed conservation; how they vary between clans.",
+    "Lamaris, J. & Whitmore, N. (2018). Forest connectivity is important for sustaining Admiralty cuscus (Spilocuscus kraemeri) in traditional terrestrial no-take areas on Manus Island, Papua New Guinea. Pacific Conservation Biology 24(1), 55\u201362. https://doi.org/10.1071/PC17030 \u2014 a restricted area's conservation value depends on what surrounds it, not on its own extent."
+  ],
   "git": {
     "branch": "claude/create-maps-86nf12",
     "clean": false,
-    "commit": "e07c0e28d36b63babf03579017f9bdc83ba4cc57"
+    "commit": "cf2d7006492e1c8af75c4bc72a9dd75182628c6d"
   },
   "inputs": [
     {

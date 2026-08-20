@@ -82,6 +82,24 @@ METHOD_CITATIONS = [
     "Python. https://doi.org/10.5281/zenodo.3822494",
 ]
 
+# Not methods this pipeline uses — context for writing the results up. Both
+# are Papua New Guinean, peer-reviewed, and about customary restricted areas
+# managed by clans, which is what the sacred sites here are.
+BACKGROUND_CITATIONS = [
+    "Whitmore, N., Lamaris, J., Takendu, W., Charles, D., Chuwek, T., "
+    "Mohe, B., Kanau, L. & Pe-eu, S. (2016). The context and potential "
+    "sustainability of traditional terrestrial periodic tambu areas: "
+    "insights from Manus Island, Papua New Guinea. Pacific Conservation "
+    "Biology 22(2), 151–158. https://doi.org/10.1071/PC15036 — customary "
+    "closures as clan-governed conservation; how they vary between clans.",
+    "Lamaris, J. & Whitmore, N. (2018). Forest connectivity is important "
+    "for sustaining Admiralty cuscus (Spilocuscus kraemeri) in traditional "
+    "terrestrial no-take areas on Manus Island, Papua New Guinea. Pacific "
+    "Conservation Biology 24(1), 55–62. https://doi.org/10.1071/PC17030 — "
+    "a restricted area's conservation value depends on what surrounds it, "
+    "not on its own extent.",
+]
+
 
 def versions() -> dict:
     out = {"python": sys.version.split()[0], "platform": platform.platform()}
@@ -200,6 +218,7 @@ def main(argv: list[str] | None = None) -> int:
         "results": results(),
         "sources": SOURCES,
         "method_citations": METHOD_CITATIONS,
+        "background_citations": BACKGROUND_CITATIONS,
     }
 
     args.json.parent.mkdir(parents=True, exist_ok=True)
@@ -255,6 +274,10 @@ def main(argv: list[str] | None = None) -> int:
 
     lines += ["## Methods to cite", ""]
     lines += [f"- {c}" for c in record["method_citations"]]
+    lines += ["", "## Background reading", "",
+              "Context for writing up the sacred sites; not methods used "
+              "here.", ""]
+    lines += [f"- {c}" for c in record.get("background_citations", [])]
     lines.append("")
 
     args.out.write_text("\n".join(lines), encoding="utf-8")
