@@ -37,6 +37,13 @@ AREA_ALPHA = 0.22
 OPEN_LINE = "#ea580c"      # walked, but not yet closed
 BRIDGE_LINE = "#db2777"    # nobody walked this
 
+# One colour per zone, for the zone view. Assigned in sorted order so a zone
+# added in a later data drop simply takes the next colour rather than
+# reshuffling the ones already in circulation.
+ZONE_COLOURS = ["#1d4ed8", "#15803d", "#ea580c", "#7c3aed", "#db2777",
+                "#0e7490", "#a16207", "#be123c", "#4d7c0f", "#0369a1"]
+ZONE_ALPHA = 0.32
+
 
 def gather(tracks_path: Path, polygons_path: Path) -> dict:
     """Every number the summary quotes, computed in one place."""
@@ -193,6 +200,86 @@ def render_map(data: dict, out_path: Path) -> Path:
                label="Not walked — straight line across a gap"),
         Line2D([0], [0], color="#475569", lw=1.6, label="MCA boundary"),
     ], loc="lower left", fontsize=8.5, frameon=True)
+    figure.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    figure.savefig(out_path, bbox_inches="tight")
+    plt.close(figure)
+    return out_path
+
+
+def zone_palette(zones: list) -> dict:
+    """A colour for each zone, stable against zones being added later."""
+    return {zone: ZONE_COLOURS[i % len(ZONE_COLOURS)]
+            for i, zone in enumerate(sorted(zones))}
+
+
+def render_zone_map(data: dict, out_path: Path) -> Path:
+    """The same survey, coloured by zone rather than by what it tells us.
+
+    Every zone gets one colour, used twice: a transparent wash for the land
+    mapped, and the same colour opaque for the boundaries walked but not yet
+    closed. So a zone reads as one thing whether its surveys finished or not,
+    and the question the map answers is "how far has each zone got", which is
+    the question anyone planning the next round of walking is asking.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
+    from matplotlib.patches import Patch
+
+    figure, axis = plt.subplots(figsize=(11, 10), dpi=150)
+    terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.45)
+
+    mca = dataio.load_boundary()
+    if mca is not None:
+        gpd.GeoSeries([mca], crs=dataio.METRIC_CRS).boundary.plot(
+            ax=axis, color="#475569", linewidth=1.4, zorder=1)
+
+    surveys = data["surveys"]
+    tracks = data["tracks"].assign(_unit=dataio.survey_group(data["tracks"]))
+    closed = set(surveys.source_name)
+    unclosed = tracks[~tracks._unit.isin(closed)]
+
+    zones = sorted(set(surveys.zone.dropna()) | set(tracks.zone.dropna()))
+    palette = zone_palette(zones)
+
+    handles = []
+    for zone in zones:
+        colour = palette[zone]
+        area = surveys[surveys.zone == zone]
+        open_lines = unclosed[unclosed.zone == zone]
+        if len(area):
+            area.plot(ax=axis, facecolor=colour, edgecolor=colour,
+                      linewidth=0.7, alpha=ZONE_ALPHA, zorder=3)
+        if len(open_lines):
+            open_lines.plot(ax=axis, color=colour, linewidth=1.5, alpha=1.0,
+                            zorder=6)
+        hectares = area.area_ha.sum() if len(area) else 0.0
+        clans = int(tracks[(tracks.zone == zone)
+                           & (tracks.clan.astype(str).str.strip() != "")]
+                    .clan.nunique())
+        handles.append(Patch(
+            facecolor=colour, alpha=ZONE_ALPHA, edgecolor=colour,
+            label=f"{zone} — {clans} clans, {hectares:,.0f} ha"))
+
+    # An explainer, not a colour key: the real lines are in each zone's own
+    # colour, which is the whole point of the map.
+    handles.append(Line2D([0], [0], color="#94a3b8", lw=2,
+                          label="Solid line, in the zone's colour — walked, "
+                                "not yet closed"))
+    handles.append(Line2D([0], [0], color="#475569", lw=1.6,
+                          label="MCA boundary"))
+
+    axis.set_axis_off()
+    axis.set_title(
+        f"Clan land mapped, by zone\n"
+        f"{data['n_clans']} clans across {len(zones)} zones, "
+        f"{data['boundary_km']:,.0f} km of boundary walked\n"
+        f"each zone one colour: the wash is land mapped, the solid line is "
+        f"walked but not yet closed",
+        fontsize=12, pad=14)
+    axis.legend(handles=handles, loc="lower left", fontsize=8.5, frameon=True)
     figure.tight_layout()
     out_path.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(out_path, bbox_inches="tight")
@@ -379,6 +466,8 @@ def main(argv: list[str] | None = None) -> int:
                         default=dataio.OUT_DIR / "SUMMARY.md")
     parser.add_argument("--map", type=Path,
                         default=dataio.OUT_DIR / "summary_map.png")
+    parser.add_argument("--zone-map", type=Path,
+                        default=dataio.OUT_DIR / "zone_map.png")
     args = parser.parse_args(argv)
 
     if not args.tracks.exists() or not args.polygons.exists():
@@ -387,6 +476,7 @@ def main(argv: list[str] | None = None) -> int:
 
     data = gather(args.tracks, args.polygons)
     render_map(data, args.map)
+    render_zone_map(data, args.zone_map)
     write(data, args.out, args.map.name)
 
     print(f"{data['n_clans']} clans, {data['n_surveys']} surveys, "
@@ -396,6 +486,7 @@ def main(argv: list[str] | None = None) -> int:
           f"{data['contested_ha']:,.0f} ha contested")
     print(f"\nWrote {args.out}")
     print(f"Wrote {args.map}")
+    print(f"Wrote {args.zone_map}")
     return 0
 
 

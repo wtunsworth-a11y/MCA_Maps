@@ -1,11 +1,11 @@
 {
- "version": "1.6",
+ "version": "1.7",
  "changes": [
-  "Simplified the overview map to three things. Every mapped area is now one transparent wash, whether the boundary closed on its own or the closure was inferred; the washes are not merged, so ground recorded by two clans reads darker and by three darker still. The overlap draws itself, with no separate colour for it. Boundaries walked but still too open to give an area are orange, and the stretches nobody walked stay as pink dashes."
+  "New map: the same survey coloured by zone. Each zone gets one colour, used twice \u2014 a transparent wash for the land mapped and the same colour solid for the boundaries walked but not yet closed \u2014 so a zone reads as one thing whether its surveys finished or not. It answers how far each zone has got, which is the question anyone planning the next round of walking is asking."
  ],
- "date": "2026-08-18",
- "date_long": "18 August 2026",
- "commit": "dd1404e",
+ "date": "2026-08-20",
+ "date_long": "20 August 2026",
+ "commit": "6c3e2d7",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

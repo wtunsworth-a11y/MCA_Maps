@@ -6,6 +6,14 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.7
+
+- New map: the same survey coloured by zone. Each zone gets one colour, used
+  twice — a transparent wash for the land mapped and the same colour solid for
+  the boundaries walked but not yet closed — so a zone reads as one thing
+  whether its surveys finished or not. It answers how far each zone has got,
+  which is the question anyone planning the next round of walking is asking.
+
 ## 1.6
 
 - Simplified the overview map to three things. Every mapped area is now one
