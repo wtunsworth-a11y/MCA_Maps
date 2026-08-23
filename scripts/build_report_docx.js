@@ -176,8 +176,9 @@ body.push(p("So an overlap between two unfinished surveys is first of all a sign
 body.push(img("output/summary_map.png", 640, 580));
 body.push(note("One wash for every mapped area, whether the boundary closed on its own or the closure was inferred. The washes are transparent and are not merged, so where two clans have recorded the same ground it simply reads darker, and darker again where three have. Orange: walked, but still too open to give an area. Pink dashes: nobody walked this — a straight line across a gap."));
 
-body.push(h("The same survey, by zone", HeadingLevel.HEADING_2));
+body.push(h("Zone Boundaries based on clan boundary mapping", HeadingLevel.HEADING_2));
 body.push(p("Each zone in one colour, used twice: a wash for the land mapped, and the same colour solid for the boundaries walked but not yet closed. It answers a different question from the map above — not what the survey shows, but how far each zone has got.", {size:21}));
+body.push(note("These are not surveyed zone boundaries. Nobody walked one. What a zone covers here is the sum of the clan surveys inside it, so its edge moves every time a clan finishes a boundary — the shape is a record of mapping progress, not a line anyone has agreed."));
 body.push(img("output/zone_map.png", 640, 580));
 body.push(note("Zone 2 has by far the most land mapped; Zone 3 has walked 42 km of boundary and closed almost none of it, which is why it appears as lines with no wash behind them."));
 

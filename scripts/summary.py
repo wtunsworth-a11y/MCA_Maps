@@ -214,7 +214,11 @@ def zone_palette(zones: list) -> dict:
 
 
 def render_zone_map(data: dict, out_path: Path) -> Path:
-    """The same survey, coloured by zone rather than by what it tells us.
+    """Zone boundaries, as they fall out of the clan boundary mapping.
+
+    Not a surveyed zone boundary — nobody walked one. What a zone looks like
+    here is simply the sum of the clan surveys inside it, so its edge moves
+    every time a clan finishes a boundary. Titled to say so.
 
     Every zone gets one colour, used twice: a transparent wash for the land
     mapped, and the same colour opaque for the boundaries walked but not yet
@@ -273,7 +277,7 @@ def render_zone_map(data: dict, out_path: Path) -> Path:
 
     axis.set_axis_off()
     axis.set_title(
-        f"Clan land mapped, by zone\n"
+        f"Zone Boundaries based on clan boundary mapping\n"
         f"{data['n_clans']} clans across {len(zones)} zones, "
         f"{data['boundary_km']:,.0f} km of boundary walked\n"
         f"each zone one colour: the wash is land mapped, the solid line is "
