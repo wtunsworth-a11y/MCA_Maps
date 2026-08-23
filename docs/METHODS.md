@@ -1026,7 +1026,17 @@ apart — they come from the same run:
 | `output/gpx/<Clan>_<Zone>.gpx` | The survey back to the clan, gaps marked (§4.14) |
 
 The version lives in `docs/VERSION` and is bumped when the content changes
-materially; the date moves on its own. Both appear in the file name, on the
+materially; the date moves on its own.
+
+**The build refuses to reissue a version under changed data.** A version
+number is a promise that two files with the same name hold the same thing,
+and the pipeline rebuilds the documents as its last stage — so a new data drop
+regenerates an already-issued version under its own name and breaks that
+promise silently. It nearly did: the Savasi drop rebuilt v1.8 with 49 clans in
+it while a 48-clan v1.8 was already circulating. `build_reports.py` now
+records what each build rested on in `output/report/built.json` (clans,
+surveys, units, boundary km, last walk) and stops with a diff if those move
+without the version moving. `--force` overrides it. Both appear in the file name, on the
 title page, and in the footer of every page, so a page photographed or
 photocopied on its own still says which version it came from. **Earlier
 builds are never overwritten** — that is the point of versioning the name.
