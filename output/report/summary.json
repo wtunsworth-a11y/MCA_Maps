@@ -1,11 +1,11 @@
 {
- "clans": 48,
- "stewards": 69,
- "surveys": 71,
+ "clans": 49,
+ "stewards": 70,
+ "surveys": 72,
  "units": 37,
- "tracks": 607,
- "walked_km": 1135.9,
- "boundary_km": 944.4,
+ "tracks": 610,
+ "walked_km": 1139.9,
+ "boundary_km": 948.5,
  "surveyed_n": 5,
  "inferred_n": 32,
  "surveyed_ha": 2542.0,
@@ -76,12 +76,12 @@
    "area_ha": 701.1
   }
  ],
- "shared_line_pairs": 115,
- "gpx_clans": 48,
- "gpx_gaps": 187,
- "gpx_gap_km": 266.8,
- "steward_days": 238,
- "field_days": 118,
+ "shared_line_pairs": 117,
+ "gpx_clans": 49,
+ "gpx_gaps": 190,
+ "gpx_gap_km": 271.9,
+ "steward_days": 241,
+ "field_days": 119,
  "first_walk": "2025-02-18",
  "last_walk": "2026-08-13",
  "zones": [
@@ -96,11 +96,11 @@
   },
   {
    "zone": "Zone 3",
-   "clans": 4,
-   "stewards": 8,
-   "surveys": 8,
-   "walked_km": 48.7,
-   "boundary_km": 42.0,
+   "clans": 5,
+   "stewards": 9,
+   "surveys": 9,
+   "walked_km": 52.8,
+   "boundary_km": 46.0,
    "area_ha": 10.0
   },
   {
@@ -1278,11 +1278,11 @@
    "pct_of_b": 26.8
   },
   {
-   "clan_a": "Dusi",
-   "clan_b": "Gubai",
-   "shared_km": 2.35,
-   "pct_of_a": 22.4,
-   "pct_of_b": 9.2
+   "clan_a": "Giroiko",
+   "clan_b": "Savasi",
+   "shared_km": 2.56,
+   "pct_of_a": 47.2,
+   "pct_of_b": 30.7
   },
   {
    "clan_a": "Gumuyude",
@@ -1290,6 +1290,13 @@
    "shared_km": 2.35,
    "pct_of_a": 6.9,
    "pct_of_b": 11.6
+  },
+  {
+   "clan_a": "Dusi",
+   "clan_b": "Gubai",
+   "shared_km": 2.35,
+   "pct_of_a": 22.4,
+   "pct_of_b": 9.2
   },
   {
    "clan_a": "Jariji",
@@ -1544,17 +1551,24 @@
    "pct_of_b": 8.8
   },
   {
-   "clan_a": "Murai (Z2)",
-   "clan_b": "Nituri",
-   "shared_km": 0.62,
-   "pct_of_a": 0.4,
-   "pct_of_b": 1.5
-  },
-  {
    "clan_a": "Gariniko",
    "clan_b": "Nituri",
    "shared_km": 0.62,
    "pct_of_a": 8.7,
+   "pct_of_b": 1.5
+  },
+  {
+   "clan_a": "Asingi",
+   "clan_b": "Murai (Z2)",
+   "shared_km": 0.62,
+   "pct_of_a": 9.6,
+   "pct_of_b": 7.7
+  },
+  {
+   "clan_a": "Murai (Z2)",
+   "clan_b": "Nituri",
+   "shared_km": 0.62,
+   "pct_of_a": 0.4,
    "pct_of_b": 1.5
   },
   {
@@ -1570,13 +1584,6 @@
    "shared_km": 0.62,
    "pct_of_a": 3.5,
    "pct_of_b": 1.5
-  },
-  {
-   "clan_a": "Asingi",
-   "clan_b": "Murai (Z2)",
-   "shared_km": 0.62,
-   "pct_of_a": 9.6,
-   "pct_of_b": 7.7
   },
   {
    "clan_a": "Gariniko",
@@ -1684,13 +1691,6 @@
    "pct_of_b": 1.5
   },
   {
-   "clan_a": "Abuankol",
-   "clan_b": "Binunkol",
-   "shared_km": 0.4,
-   "pct_of_a": 42.0,
-   "pct_of_b": 2.3
-  },
-  {
    "clan_a": "Marijabimkol",
    "clan_b": "Sugulkol",
    "shared_km": 0.4,
@@ -1703,6 +1703,13 @@
    "shared_km": 0.4,
    "pct_of_a": 2.2,
    "pct_of_b": 1.8
+  },
+  {
+   "clan_a": "Abuankol",
+   "clan_b": "Binunkol",
+   "shared_km": 0.4,
+   "pct_of_a": 42.0,
+   "pct_of_b": 2.3
   },
   {
    "clan_a": "Asingi",
@@ -1726,18 +1733,18 @@
    "pct_of_b": 6.4
   },
   {
-   "clan_a": "Nui",
-   "clan_b": "Rondi",
-   "shared_km": 0.35,
-   "pct_of_a": 0.4,
-   "pct_of_b": 0.6
-  },
-  {
    "clan_a": "Ambunkol",
    "clan_b": "Jariji",
    "shared_km": 0.35,
    "pct_of_a": 1.8,
    "pct_of_b": 1.6
+  },
+  {
+   "clan_a": "Abuankol",
+   "clan_b": "Ginangi",
+   "shared_km": 0.35,
+   "pct_of_a": 42.0,
+   "pct_of_b": 1.2
   },
   {
    "clan_a": "Deari",
@@ -1747,11 +1754,11 @@
    "pct_of_b": 0.6
   },
   {
-   "clan_a": "Abuankol",
-   "clan_b": "Ginangi",
+   "clan_a": "Nui",
+   "clan_b": "Rondi",
    "shared_km": 0.35,
-   "pct_of_a": 42.0,
-   "pct_of_b": 1.2
+   "pct_of_a": 0.4,
+   "pct_of_b": 0.6
   },
   {
    "clan_a": "Abuankol",
@@ -1811,17 +1818,17 @@
   },
   {
    "clan_a": "Binunkol",
-   "clan_b": "Deari",
-   "shared_km": 0.19,
-   "pct_of_a": 1.0,
-   "pct_of_b": 1.0
-  },
-  {
-   "clan_a": "Binunkol",
    "clan_b": "Nui",
    "shared_km": 0.19,
    "pct_of_a": 1.0,
    "pct_of_b": 0.5
+  },
+  {
+   "clan_a": "Binunkol",
+   "clan_b": "Deari",
+   "shared_km": 0.19,
+   "pct_of_a": 1.0,
+   "pct_of_b": 1.0
   },
   {
    "clan_a": "Marijabimkol",
@@ -1843,6 +1850,13 @@
    "shared_km": 0.11,
    "pct_of_a": 1.4,
    "pct_of_b": 0.3
+  },
+  {
+   "clan_a": "Ginangi",
+   "clan_b": "Savasi",
+   "shared_km": 0.11,
+   "pct_of_a": 0.4,
+   "pct_of_b": 2.4
   },
   {
    "clan_a": "Asoro",

@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `cf2d7006492e1c8af75c4bc72a9dd75182628c6d`
+- **Commit:** `4eb362b7b0a25dda1690604b74af19c813eda9f3`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 
@@ -13,7 +13,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 | Component | Version |
 | --- | --- |
 | python | 3.11.15 |
-| platform | Linux-6.18.5-fc-v20-x86_64-with-glibc2.39 |
+| platform | Linux-6.18.44-fc-v21-x86_64-with-glibc2.39 |
 | geopandas | 1.1.4 |
 | shapely | 2.1.2 |
 | pyogrio | 0.13.0 |
@@ -34,6 +34,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 | --- | ---: | --- |
 | Zone 2 Clan Land Boundaries - 14July2026.zip | 616,399 | `c6ef79c06e57f64c` |
 | Zone 3 Clan Land Boundaries - 14July2026.zip | 139,335 | `5272a65475b1a149` |
+| Zone 3 Savasi Clan Boundary Aug2026.zip | 14,504 | `e3fda15f0d595adb` |
 | Zone 6 Clan Boundaries 16Aug2026.zip | 357,842 | `7398122a185e8da0` |
 | Zone 6 Sahirut Clan Boundaries Aug2026.zip | 45,686 | `d336c88018e244c2` |
 | Zone 7A Clan Boundaries 16Aug2026.zip | 195,340 | `11ac0f609db1fbc3` |
@@ -60,12 +61,12 @@ If a figure changes between runs, compare these digests first: they say immediat
 
 | Measure | Value |
 | --- | --- |
-| surveys | 71 |
-| tracks | 607 |
-| clans | 48 |
-| stewards | 69 |
+| surveys | 72 |
+| tracks | 610 |
+| clans | 49 |
+| stewards | 70 |
 | zones | Zone 2, Zone 3, Zone 6, Zone 7A, Zone 7B, Zone 8 |
-| smoothed_km | 1135.9 |
+| smoothed_km | 1139.9 |
 | polygons | 37 |
 | polygons_surveyed | 5 |
 | area_ha_total | 33453.9 |

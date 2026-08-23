@@ -860,12 +860,12 @@
     "pct": 2.1
    },
    {
-    "with": "Murai (Z2)",
+    "with": "Gariniko",
     "km": 0.62,
     "pct": 1.5
    },
    {
-    "with": "Gariniko",
+    "with": "Murai (Z2)",
     "km": 0.62,
     "pct": 1.5
    },
@@ -961,12 +961,12 @@
     "pct": 6.5
    },
    {
-    "with": "Nui",
+    "with": "Deari",
     "km": 0.35,
     "pct": 0.6
    },
    {
-    "with": "Deari",
+    "with": "Nui",
     "km": 0.35,
     "pct": 0.6
    }
@@ -1444,7 +1444,13 @@
   "parcels": 4,
   "bridges": 2,
   "overlaps": [],
-  "shared_lines": [],
+  "shared_lines": [
+   {
+    "with": "Savasi",
+    "km": 2.56,
+    "pct": 47.2
+   }
+  ],
   "join_sep_ha": 78.3,
   "join_joined_ha": 9.5,
   "map": "Giroiko_Zone_3.png",
@@ -1558,6 +1564,51 @@
   "map": "Nui_Zone_3.png",
   "gpx": "Nui_Zone_3.gpx",
   "gpx_gaps": 5
+ },
+ {
+  "unit": "Savasi \u2014 Zone 3",
+  "clan": "Savasi",
+  "zone": "Zone 3",
+  "stewards": [
+   {
+    "steward": "Oscar Isuni",
+    "tracks": 3,
+    "km": 4.03,
+    "days": 3,
+    "first": "2026-05-27",
+    "last": "2026-07-01",
+    "type": "Land Boundary"
+   }
+  ],
+  "n_stewards": 1,
+  "walked_km": 4.03,
+  "spur_km": 0.0,
+  "status": "open",
+  "chains": 3,
+  "gap_km": 5.11,
+  "gap_pct": 126.7,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
+  "bridges": 0,
+  "overlaps": [],
+  "shared_lines": [
+   {
+    "with": "Giroiko",
+    "km": 2.56,
+    "pct": 30.7
+   },
+   {
+    "with": "Ginangi",
+    "km": 0.11,
+    "pct": 2.4
+   }
+  ],
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
+  "map": "Savasi_Zone_3.png",
+  "gpx": "Savasi_Zone_3.gpx",
+  "gpx_gaps": 3
  },
  {
   "unit": "Manuvoora \u2014 Zone 6",
@@ -2551,12 +2602,12 @@
     "pct": 2.2
    },
    {
-    "with": "Deari",
+    "with": "Nui",
     "km": 0.19,
     "pct": 1.0
    },
    {
-    "with": "Nui",
+    "with": "Deari",
     "km": 0.19,
     "pct": 1.0
    }
@@ -2671,6 +2722,11 @@
     "with": "Wohukol",
     "km": 0.34,
     "pct": 1.1
+   },
+   {
+    "with": "Savasi",
+    "km": 0.11,
+    "pct": 0.4
    }
   ],
   "join_sep_ha": 1235.9,

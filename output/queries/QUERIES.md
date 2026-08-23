@@ -1,6 +1,6 @@
 # Field queries — MCA clan boundary mapping
 
-**13 queries** raised from the current data (71 surveys). Each has a map showing the ground in question.
+**13 queries** raised from the current data (72 surveys). Each has a map showing the ground in question.
 
 These are questions the data cannot answer on its own. Please mark each one resolved with a short note, and return the pack.
 
@@ -160,9 +160,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q09. Gumuri (Gray Saui, Monty Stanford) — recorded in 1 separate pieces
+### Q09. Savasi (Oscar Isuni) — recorded in 3 separate pieces
 
-**Gumuri**, walked by **Gray Saui, Monty Stanford** in Zone 3, covers 6.8 km but is recorded as **1 disconnected pieces**, needing 5,489 m of straight-line joins to form a ring (83.9% of the distance walked).
+**Savasi**, walked by **Oscar Isuni** in Zone 3, covers 4.0 km but is recorded as **3 disconnected pieces**, needing 5,106 m of straight-line joins to form a ring (126.7% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 
@@ -178,9 +178,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q10. Bujevi (Abel Kajari) — recorded in 1 separate pieces
+### Q10. Gumuri (Gray Saui, Monty Stanford) — recorded in 1 separate pieces
 
-**Bujevi**, walked by **Abel Kajari** in Zone 2, covers 5.8 km but is recorded as **1 disconnected pieces**, needing 4,474 m of straight-line joins to form a ring (83.8% of the distance walked).
+**Gumuri**, walked by **Gray Saui, Monty Stanford** in Zone 3, covers 6.8 km but is recorded as **1 disconnected pieces**, needing 5,489 m of straight-line joins to form a ring (83.9% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 
@@ -236,9 +236,9 @@ Should it count towards that clan's mapped land area, be reported separately, or
 
 ## Zones returning little mapped area
 
-### Q13. Zone 3 — 48.7 km walked, only 9.5 ha mapped
+### Q13. Zone 3 — 52.8 km walked, only 9.5 ha mapped
 
-**Zone 3** has 8.0 surveys and 17.0 tracks covering 48.7 km, but yields only **9.5 ha** of mapped area — far less per kilometre walked than the other zones.
+**Zone 3** has 9.0 surveys and 20.0 tracks covering 52.8 km, but yields only **9.5 ha** of mapped area — far less per kilometre walked than the other zones.
 
 Is this the full set of surveys for this zone, or is more still to come? Were these boundaries walked in full?
 

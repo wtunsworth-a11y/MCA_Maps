@@ -1,6 +1,6 @@
 # Who walked, and when
 
-69 stewards, 238 steward-days between 2025-02-18 and 2026-08-13.
+70 stewards, 241 steward-days between 2025-02-18 and 2026-08-13.
 
 Dates are taken from the GPS record, not from file names.
 
@@ -33,6 +33,7 @@ Dates are taken from the GPS record, not from file names.
 | Iman Nakina | Zone 3 | Nui | 4 | 2 | 0 | 2026-06-09 | 2026-06-15 | 11.97 | 11.97 | 5.98 |
 | Mark Samba | Zone 3 | Giroiko | 2 | 1 | 0 | 2026-06-11 | 2026-06-11 | 2.76 | 2.76 | 2.76 |
 | Monty Stanford | Zone 3 | Gumuri | 1 | 0 | 1 |  |  | 0.02 | 0.02 |  |
+| Oscar Isuni | Zone 3 | Savasi | 3 | 3 | 0 | 2026-05-27 | 2026-07-01 | 4.03 | 4.03 | 1.34 |
 | Patrick Dirise | Zone 3 | Deari | 3 | 2 | 0 | 2026-06-09 | 2026-06-15 | 7.79 | 7.79 | 3.9 |
 | Alban Ezekiel | Zone 6 | Pina Ora | 3 | 3 | 0 | 2026-06-23 | 2026-06-25 | 18.85 | 18.85 | 6.28 |
 | Benjamin Marijah | Zone 6 | Nupa Ora | 3 | 3 | 0 | 2026-06-18 | 2026-06-25 | 4.94 | 4.94 | 1.65 |
@@ -294,6 +295,9 @@ The steward comes from the file name, which for most surveys is the only place i
 | Newton Muraba | Zone 2 | Nituri | 2026-02-03 | 1 | 0.31 |
 | Newton Muraba | Zone 2 | Nituri | 2026-02-09 | 7 | 2.34 |
 | Newton Muraba | Zone 2 | Nituri | 2026-02-16 | 1 | 0.97 |
+| Oscar Isuni | Zone 3 | Savasi | 2026-05-27 | 1 | 0.16 |
+| Oscar Isuni | Zone 3 | Savasi | 2026-05-31 | 1 | 0.13 |
+| Oscar Isuni | Zone 3 | Savasi | 2026-07-01 | 1 | 3.74 |
 | Patrick Dirise | Zone 3 | Deari | 2026-06-09 | 1 | 1.7 |
 | Patrick Dirise | Zone 3 | Deari | 2026-06-15 | 2 | 6.09 |
 | Paul Digori | Zone 7A |  | 2026-05-25 | 2 | 0.08 |

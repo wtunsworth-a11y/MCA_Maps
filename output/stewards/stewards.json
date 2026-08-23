@@ -326,6 +326,19 @@
    "km_per_day": null
   },
   {
+   "steward": "Oscar Isuni",
+   "zones": "Zone 3",
+   "clans": "Savasi",
+   "tracks": 3,
+   "days": 3,
+   "undated_tracks": 0,
+   "first": "2026-05-27",
+   "last": "2026-07-01",
+   "km": 4.03,
+   "boundary_km": 4.03,
+   "km_per_day": 1.34
+  },
+  {
    "steward": "Patrick Dirise",
    "zones": "Zone 3",
    "clans": "Deari",
@@ -2506,6 +2519,30 @@
    "date": "2026-02-16",
    "tracks": 1,
    "km": 0.97
+  },
+  {
+   "steward": "Oscar Isuni",
+   "zone": "Zone 3",
+   "clan": "Savasi",
+   "date": "2026-05-27",
+   "tracks": 1,
+   "km": 0.16
+  },
+  {
+   "steward": "Oscar Isuni",
+   "zone": "Zone 3",
+   "clan": "Savasi",
+   "date": "2026-05-31",
+   "tracks": 1,
+   "km": 0.13
+  },
+  {
+   "steward": "Oscar Isuni",
+   "zone": "Zone 3",
+   "clan": "Savasi",
+   "date": "2026-07-01",
+   "tracks": 1,
+   "km": 3.74
   },
   {
    "steward": "Patrick Dirise",

@@ -1,11 +1,12 @@
 {
- "version": "1.8",
+ "version": "1.9",
  "changes": [
-  "The zone map is now titled Zone Boundaries based on clan boundary mapping, on the map itself and in the report. The previous name invited the reading that these are zone boundaries somebody surveyed. They are not: what a zone covers here is the sum of the clan surveys inside it, so its edge moves every time a clan finishes a boundary. A note under the map says so."
+  "New survey included: Savasi, Zone 3, walked by Oscar Isuni. Three tracks, 4.0 km. It gives no area yet \u2014 the tracks are in three separate pieces with 5.1 km of straight line needed to join them, more than was walked \u2014 so it appears as an unclosed line and its page says incomplete. The three gaps are marked in Savasi_Zone_3.gpx with waypoints at each end.",
+  "Zone 3 now has 5 clans and 9 Clan Stewards across 52.8 km walked."
  ],
  "date": "2026-08-23",
  "date_long": "23 August 2026",
- "commit": "e549935",
+ "commit": "4eb362b",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

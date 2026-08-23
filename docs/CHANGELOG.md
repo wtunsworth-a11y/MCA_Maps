@@ -6,6 +6,15 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.9
+
+- New survey included: **Savasi**, Zone 3, walked by Oscar Isuni. Three tracks,
+  4.0 km. It gives no area yet — the tracks are in three separate pieces with
+  5.1 km of straight line needed to join them, more than was walked — so it
+  appears as an unclosed line and its page says incomplete. The three gaps are
+  marked in `Savasi_Zone_3.gpx` with waypoints at each end.
+- Zone 3 now has 5 clans and 9 Clan Stewards across 52.8 km walked.
+
 ## 1.8
 
 - The zone map is now titled **Zone Boundaries based on clan boundary

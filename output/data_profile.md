@@ -1,13 +1,13 @@
 # Raw data profile
 
-71 layer(s), 608 features in total.
+72 layer(s), 611 features in total.
 
 ## Overview
 
 | Zone | Features | Surveys |
 | --- | ---: | ---: |
 | Zone 2 | 203 | 20 |
-| Zone 3 | 17 | 8 |
+| Zone 3 | 20 | 9 |
 | Zone 6 | 87 | 9 |
 | Zone 7A | 37 | 6 |
 | Zone 7B | 79 | 18 |
@@ -15,14 +15,14 @@
 
 | Type | Features | Surveys |
 | --- | ---: | ---: |
-| Land Boundary | 591 | 68 |
+| Land Boundary | 594 | 69 |
 | Road | 13 | 1 |
 | Sacred Site | 3 | 1 |
 | Steward Block | 1 | 1 |
 
-- **Distinct clans:** 48
-- **Distinct stewards:** 69
-- **Source surveys:** 71
+- **Distinct clans:** 49
+- **Distinct stewards:** 70
+- **Source surveys:** 72
 
 ## Data quality checks
 

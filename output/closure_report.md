@@ -1,20 +1,20 @@
 # Boundary closure
 
-50 surveys, parts joined at 25 m, near-closure threshold 10%.
+51 surveys, parts joined at 25 m, near-closure threshold 10%.
 
 - **Closed polygons:** 5
 - **Near closure:** 9
-- **Open:** 36
+- **Open:** 37
 - **Fragmented:** 0
 
 ## Sensitivity to joining tolerance
 
 | tolerance_m | closed | near | open | fragmented |
 | --- | --- | --- | --- | --- |
-| 10.0 | 0.0 | 7.0 | 43.0 | 0.0 |
-| 25.0 | 5.0 | 9.0 | 36.0 | 0.0 |
-| 50.0 | 8.0 | 7.0 | 35.0 | 0.0 |
-| 100.0 | 10.0 | 5.0 | 35.0 | 0.0 |
+| 10.0 | 0.0 | 7.0 | 44.0 | 0.0 |
+| 25.0 | 5.0 | 9.0 | 37.0 | 0.0 |
+| 50.0 | 8.0 | 7.0 | 36.0 | 0.0 |
+| 100.0 | 10.0 | 5.0 | 36.0 | 0.0 |
 
 ## Every survey
 
@@ -39,6 +39,7 @@
 | Zone 3 | Giroiko | Eddie Sioro, Mark Samba | 2 | Giroiko — Zone 3 | 5 | 5.43 | 1266.3 | 25.2 |  | 2 | open | 2 disconnected pieces |
 | Zone 3 | Gumuri | Gray Saui, Monty Stanford | 2 | Gumuri — Zone 3 | 3 | 6.79 | 5488.8 | 83.9 |  | 1 | open |  |
 | Zone 3 | Nui | Bobby Aneba, Iman Nakina | 2 | Nui — Zone 3 | 15 | 23.42 | 14726.6 | 66.2 |  | 6 | open | 6 disconnected pieces |
+| Zone 3 | Savasi | Oscar Isuni | 1 | Savasi — Zone 3 | 3 | 4.03 | 5106.3 | 126.7 |  | 3 | open | 3 disconnected pieces |
 | Zone 6 | Manuvoora | Egobeyas Kuarisi, Granville Nepo | 2 | Manuvoora — Zone 6 | 29 | 61.45 | 11380.6 | 20.4 |  | 6 | open | 6 disconnected pieces |
 | Zone 6 | Mariura | Fabian Justin, Livingstone Nisavora | 2 | Mariura — Zone 6 | 45 | 33.71 | 14245.4 | 42.3 |  | 13 | open | 13 disconnected pieces |
 | Zone 6 | Naharaura | Zechariah Sasavo | 1 | Naharaura — Zone 6 | 18 | 32.63 | 2489.9 | 7.6 |  | 4 | near | 4 disconnected pieces |

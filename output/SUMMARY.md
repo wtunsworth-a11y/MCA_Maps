@@ -12,12 +12,12 @@ area aside.
 
 | | |
 | --- | ---: |
-| Clans with data | **48** |
-| Stewards who walked | 69 |
-| Surveys | 71 |
+| Clans with data | **49** |
+| Stewards who walked | 70 |
+| Surveys | 72 |
 | Zones | 6 (2, 3, 6, 7A, 7B, 8) |
-| Distance walked | 1,136 km |
-| **Boundary walked** | **944 km** |
+| Distance walked | 1,140 km |
+| **Boundary walked** | **948 km** |
 
 Boundary distance excludes surveys that are not land boundaries, and the legs
 walked in to reach a boundary and back out again.
@@ -31,7 +31,7 @@ walked in to reach a boundary and back out again.
 | **Total mapped** | **37** | **33,454** |
 | Footprint, overlaps counted once | | 28,354 |
 
-**34 of 71 surveys give
+**35 of 72 surveys give
 no area at all.** Their boundaries were walked — Nituri covers 41.8 km across
 three surveys, Tuoko 47.7 km across two — but the walks do not close, and the
 gaps are too wide to bridge honestly. They appear on the map as walked lines
@@ -147,8 +147,8 @@ that neither walk closed, so the area can only be bracketed.
   record. All verification is internal consistency.
 - 92% of the area is inferred, so area figures should be read
   as estimates with a wide margin.
-- Only 5 of 71 surveys close into a
-  boundary on their own; 34 yield no area
+- Only 5 of 72 surveys close into a
+  boundary on their own; 35 yield no area
   at all.
 - The surveys span 16 months, so a boundary walked early and one walked late
   are not necessarily contemporaneous.

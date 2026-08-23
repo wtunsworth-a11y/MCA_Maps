@@ -116,8 +116,9 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Dusi | Riribudeh | 2.97 | 18.4 | 14.7 |
 | Manang | Murai (Z7B) | 2.71 | 37.0 | 21.9 |
 | Juaiko | Zambiko | 2.57 | 10.6 | 26.8 |
-| Dusi | Gubai | 2.35 | 22.4 | 9.2 |
+| Giroiko | Savasi | 2.56 | 47.2 | 30.7 |
 | Gumuyude | Riribudeh | 2.35 | 6.9 | 11.6 |
+| Dusi | Gubai | 2.35 | 22.4 | 9.2 |
 | Jariji | Sugulkol | 2.17 | 4.0 | 9.1 |
 | Ambunkol | Wohukol | 2.15 | 9.4 | 6.2 |
 | Juaiko | Rumbi | 2.1 | 8.6 | 11.8 |
@@ -154,11 +155,11 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Darekikol | Mariura | 0.71 | 2.5 | 3.0 |
 | Asoro | Juaiko | 0.66 | 1.2 | 2.7 |
 | Majanko | Zambiko | 0.64 | 8.5 | 8.8 |
-| Murai (Z2) | Nituri | 0.62 | 0.4 | 1.5 |
 | Gariniko | Nituri | 0.62 | 8.7 | 1.5 |
+| Asingi | Murai (Z2) | 0.62 | 9.6 | 7.7 |
+| Murai (Z2) | Nituri | 0.62 | 0.4 | 1.5 |
 | Nituri | Zambiko | 0.62 | 1.5 | 6.4 |
 | Asingi | Nituri | 0.62 | 3.5 | 1.5 |
-| Asingi | Murai (Z2) | 0.62 | 9.6 | 7.7 |
 | Gariniko | Tuoko | 0.61 | 10.2 | 1.1 |
 | Ginangi | Sugulkol | 0.61 | 1.4 | 2.5 |
 | Manuvoora | Nupa Ora | 0.6 | 1.0 | 3.3 |
@@ -174,16 +175,16 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Murai (Z7B) | Natang | 0.44 | 3.6 | 0.7 |
 | Asingi | Bujevi | 0.43 | 6.7 | 4.9 |
 | Borori | Mungaikol | 0.42 | 1.3 | 1.5 |
-| Abuankol | Binunkol | 0.4 | 42.0 | 2.3 |
 | Marijabimkol | Sugulkol | 0.4 | 1.8 | 1.7 |
 | Binunkol | Marijabimkol | 0.4 | 2.2 | 1.8 |
+| Abuankol | Binunkol | 0.4 | 42.0 | 2.3 |
 | Asingi | Zambiko | 0.36 | 3.5 | 6.4 |
 | Tuoko | Zambiko | 0.36 | 0.6 | 6.4 |
 | Murai (Z2) | Zambiko | 0.36 | 0.4 | 6.4 |
-| Nui | Rondi | 0.35 | 0.4 | 0.6 |
 | Ambunkol | Jariji | 0.35 | 1.8 | 1.6 |
-| Deari | Rondi | 0.35 | 0.7 | 0.6 |
 | Abuankol | Ginangi | 0.35 | 42.0 | 1.2 |
+| Deari | Rondi | 0.35 | 0.7 | 0.6 |
+| Nui | Rondi | 0.35 | 0.4 | 0.6 |
 | Abuankol | Jariji | 0.34 | 58.0 | 1.6 |
 | Ginangi | Marijabimkol | 0.34 | 1.1 | 1.8 |
 | Ginangi | Wohukol | 0.34 | 1.1 | 0.1 |
@@ -192,11 +193,12 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Manoko | Sukandi | 0.24 | 2.0 | 0.6 |
 | Abuankol | Marijabimkol | 0.22 | 42.0 | 1.8 |
 | Mariura | Sahirut | 0.2 | 0.0 | 1.1 |
-| Binunkol | Deari | 0.19 | 1.0 | 1.0 |
 | Binunkol | Nui | 0.19 | 1.0 | 0.5 |
+| Binunkol | Deari | 0.19 | 1.0 | 1.0 |
 | Marijabimkol | Wohukol | 0.19 | 1.8 | 0.1 |
 | Jariji | Natang | 0.18 | 0.5 | 0.3 |
 | Bimkol | Borori | 0.11 | 1.4 | 0.3 |
+| Ginangi | Savasi | 0.11 | 0.4 | 2.4 |
 | Asoro | Zambiko | 0.05 | 0.2 | 0.6 |
 | Duribip | Madukol | 0.04 | 0.4 | 3.9 |
 | Abuankol | Natang | 0.03 | 1.8 | 0.0 |
