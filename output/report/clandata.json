@@ -93,6 +93,7 @@
   "map": "Asingi_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Asingi_Zone_2.gpx",
   "gpx_gaps": 0
  },
@@ -162,6 +163,7 @@
   "map": "Asoro_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Asoro_Zone_2.gpx",
   "gpx_gaps": 2
  },
@@ -214,6 +216,7 @@
   "map": "Bujevi_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Bujevi_Zone_2.gpx",
   "gpx_gaps": 1
  },
@@ -327,6 +330,7 @@
   "map": "Gariniko_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Gariniko_Zone_2.gpx",
   "gpx_gaps": 4
  },
@@ -414,6 +418,7 @@
   "map": "Juaiko_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Juaiko_Zone_2.gpx",
   "gpx_gaps": 6
  },
@@ -530,6 +535,7 @@
   "map": "Kasaki_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Kasaki_Zone_2.gpx",
   "gpx_gaps": 2
  },
@@ -612,6 +618,7 @@
   "map": "Majanko_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Majanko_Zone_2.gpx",
   "gpx_gaps": 0
  },
@@ -696,6 +703,7 @@
   "map": "Manoko_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Manoko_Zone_2.gpx",
   "gpx_gaps": 3
  },
@@ -788,6 +796,7 @@
   "map": "Murai_Z2_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Murai_Z2_Zone_2.gpx",
   "gpx_gaps": 0
  },
@@ -903,6 +912,7 @@
   "map": "Nituri_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Nituri_Zone_2.gpx",
   "gpx_gaps": 12
  },
@@ -996,6 +1006,7 @@
   "map": "Rondi_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Rondi_Zone_2.gpx",
   "gpx_gaps": 14
  },
@@ -1053,6 +1064,7 @@
   "map": "Rumbi_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Rumbi_Zone_2.gpx",
   "gpx_gaps": 3
  },
@@ -1175,6 +1187,7 @@
   "map": "Sukandi_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Sukandi_Zone_2.gpx",
   "gpx_gaps": 0
  },
@@ -1294,6 +1307,7 @@
   "map": "Tuoko_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Tuoko_Zone_2.gpx",
   "gpx_gaps": 7
  },
@@ -1376,6 +1390,7 @@
   "map": "Zambiko_Zone_2.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Zambiko_Zone_2.gpx",
   "gpx_gaps": 5
  },
@@ -1437,6 +1452,7 @@
   "map": "Deari_Zone_3.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Deari_Zone_3.gpx",
   "gpx_gaps": 3
  },
@@ -1488,6 +1504,7 @@
   "map": "Giroiko_Zone_3.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Giroiko_Zone_3.gpx",
   "gpx_gaps": 2
  },
@@ -1539,6 +1556,7 @@
   "map": "Gumuri_Zone_3.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Gumuri_Zone_3.gpx",
   "gpx_gaps": 1
  },
@@ -1600,6 +1618,7 @@
   "map": "Nui_Zone_3.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Nui_Zone_3.gpx",
   "gpx_gaps": 5
  },
@@ -1650,6 +1669,7 @@
    "The mapping is not finished: the northern and southern ends have yet to be closed off."
   ],
   "field_source": "Field advice, 23 August 2026",
+  "river_boundary": true,
   "gpx": "Savasi_Zone_3.gpx",
   "gpx_gaps": 3
  },
@@ -1720,6 +1740,7 @@
   "map": "Manuvoora_Zone_6.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Manuvoora_Zone_6.gpx",
   "gpx_gaps": 6
  },
@@ -1819,6 +1840,7 @@
   "map": "Mariura_Zone_6.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Mariura_Zone_6.gpx",
   "gpx_gaps": 11
  },
@@ -1883,6 +1905,7 @@
   "map": "Naharaura_Zone_6.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Naharaura_Zone_6.gpx",
   "gpx_gaps": 2
  },
@@ -1925,6 +1948,7 @@
   "map": "Nupa_Ora_Zone_6.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Nupa_Ora_Zone_6.gpx",
   "gpx_gaps": 2
  },
@@ -1994,6 +2018,7 @@
   "map": "Pina_Ora_Zone_6.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Pina_Ora_Zone_6.gpx",
   "gpx_gaps": 3
  },
@@ -2080,6 +2105,7 @@
   "map": "Sahirut_Zone_6.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Sahirut_Zone_6.gpx",
   "gpx_gaps": 1
  },
@@ -2136,6 +2162,7 @@
   "map": "Bimkol_Zone_7A.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Bimkol_Zone_7A.gpx",
   "gpx_gaps": 3
  },
@@ -2227,6 +2254,7 @@
   "map": "Borori_Zone_7A.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Borori_Zone_7A.gpx",
   "gpx_gaps": 7
  },
@@ -2313,6 +2341,7 @@
   "map": "Darekikol_Zone_7A.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Darekikol_Zone_7A.gpx",
   "gpx_gaps": 6
  },
@@ -2428,6 +2457,7 @@
   "map": "Abuankol_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Abuankol_Zone_7B.gpx",
   "gpx_gaps": 0
  },
@@ -2536,6 +2566,7 @@
   "map": "Ambunkol_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Ambunkol_Zone_7B.gpx",
   "gpx_gaps": 5
  },
@@ -2682,6 +2713,7 @@
   "map": "Binunkol_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Binunkol_Zone_7B.gpx",
   "gpx_gaps": 15
  },
@@ -2801,6 +2833,7 @@
   "map": "Ginangi_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Ginangi_Zone_7B.gpx",
   "gpx_gaps": 3
  },
@@ -2936,6 +2969,7 @@
   "map": "Jariji_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Jariji_Zone_7B.gpx",
   "gpx_gaps": 5
  },
@@ -3010,6 +3044,7 @@
   "map": "Manang_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Manang_Zone_7B.gpx",
   "gpx_gaps": 1
  },
@@ -3067,6 +3102,7 @@
   "map": "Marang_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Marang_Zone_7B.gpx",
   "gpx_gaps": 2
  },
@@ -3139,6 +3175,7 @@
   "map": "Marijabimkol_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Marijabimkol_Zone_7B.gpx",
   "gpx_gaps": 3
  },
@@ -3231,6 +3268,7 @@
   "map": "Murai_Z7B_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Murai_Z7B_Zone_7B.gpx",
   "gpx_gaps": 5
  },
@@ -3332,6 +3370,7 @@
   "map": "Natang_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Natang_Zone_7B.gpx",
   "gpx_gaps": 2
  },
@@ -3493,6 +3532,7 @@
   "map": "Sugulkol_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Sugulkol_Zone_7B.gpx",
   "gpx_gaps": 5
  },
@@ -3641,6 +3681,7 @@
   "map": "Wohukol_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Wohukol_Zone_7B.gpx",
   "gpx_gaps": 4
  },
@@ -3688,6 +3729,7 @@
   "map": "Duribip_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Duribip_Zone_8.gpx",
   "gpx_gaps": 3
  },
@@ -3752,6 +3794,7 @@
   "map": "Dusi_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Dusi_Zone_8.gpx",
   "gpx_gaps": 3
  },
@@ -3812,6 +3855,7 @@
   "map": "Gubai_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Gubai_Zone_8.gpx",
   "gpx_gaps": 6
  },
@@ -3881,6 +3925,7 @@
   "map": "Gumuyude_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Gumuyude_Zone_8.gpx",
   "gpx_gaps": 5
  },
@@ -3923,6 +3968,7 @@
   "map": "Madukol_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Madukol_Zone_8.gpx",
   "gpx_gaps": 2
  },
@@ -3992,6 +4038,7 @@
   "map": "Mungaikol_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Mungaikol_Zone_8.gpx",
   "gpx_gaps": 2
  },
@@ -4070,6 +4117,7 @@
   "map": "Riribudeh_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Riribudeh_Zone_8.gpx",
   "gpx_gaps": 2
  },
@@ -4117,6 +4165,7 @@
   "map": "Uremkol_Zone_8.png",
   "field_notes": [],
   "field_source": null,
+  "river_boundary": false,
   "gpx": "Uremkol_Zone_8.gpx",
   "gpx_gaps": 3
  }

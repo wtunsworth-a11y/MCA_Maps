@@ -978,6 +978,43 @@ are listed as queries rather than assumed wrong, since the two ordinary
 explanations — a receiver left running during vehicle travel, or one track
 saved across more than one day — can only be settled on site.
 
+### 4.13b What the field tells us (`data/reference/field_notes.json`)
+
+The stewards know things no receiver records. This file is where those
+accounts live, keyed by survey unit, carried onto the clan's page under "From
+the field" and into the clan's GPX so the steward reads it on the handheld.
+
+**Nothing here changes a geometry or a figure.** A river named as a boundary
+is knowledge; drawing it would be this pipeline inventing a boundary rather
+than recording one.
+
+Two kinds of entry:
+
+- **Per clan** — what the field says about that clan's boundary. Savasi's
+  eastern border is the Baraje river, and the mapping is unfinished at both
+  ends. The recorded line supports the first: Savasi's main 3.74 km piece runs
+  40% along a watercourse in the terrain model at a 50 m tolerance.
+- **Standing** (`_standing`) — advice that constrains what the pipeline may
+  ask for, and therefore has to reach the query generator rather than just the
+  page.
+
+#### Large rivers are not walkable, so nobody is asked to walk one
+
+The first standing entry. Boulders, rapids and steep drops make a large river
+physically difficult and unsafe to follow on foot, so a gap along one is not a
+gap anyone should be asked to close by walking. Where the boundary is a large
+river the survey team will complete that stretch by editing, and **how to draw
+a robust river boundary is an open decision, not yet made**.
+
+A clan marked `"river_boundary": true` therefore gets a different query. The
+generator would otherwise have asked Savasi to walk a set of rapids, which it
+did in v1.10 before this was recorded. What it asks instead is the thing that
+would actually help: where the river stops being the boundary, at each end.
+
+This is the second time an auto-generated query had to be withdrawn for asking
+something the data could not support (§6.12 was the first). Both came from the
+field looking at the document, which is the argument for sending it.
+
 ### 4.14 Giving the survey back (`scripts/clan_gpx.py`)
 
 One GPX file per clan, written to `output/gpx/`, for the Clan Stewards who

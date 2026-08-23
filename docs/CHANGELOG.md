@@ -6,6 +6,19 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.11
+
+- **Nobody is asked to walk a river.** Large rivers are physically difficult
+  and unsafe to follow — boulders, rapids, steep drops — so a gap along one is
+  not a gap anyone should close on foot. Where the boundary is a large river
+  the survey team will complete that stretch by editing, and how to draw a
+  robust river boundary is an open decision, not yet made. Recorded as
+  standing field advice and shown in "How to read the clan entries".
+- Savasi's query changes accordingly. Version 1.10 asked whether the missing
+  stretches could be walked; that stretch is the Baraje. It now asks the thing
+  that would help instead — where the river stops being the boundary, at each
+  end.
+
 ## 1.10
 
 - New: **From the field** on a clan's page, for what the stewards tell us that

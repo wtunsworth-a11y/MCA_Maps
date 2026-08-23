@@ -219,6 +219,12 @@ body.push(table(["Term","Meaning"], [
 ], [3,7]));
 body.push(note("A clan name that appears in more than one zone carries a zone code, for example Murai (Z2) and Murai (Z7B). This is expected — language spreads between zones and clans that split may keep an ancestral name — but the two are not the same landholding group and their land is never combined."));
 
+if (sum.standing_notes && sum.standing_notes.length) {
+  body.push(h("What the field has told us about all of this", HeadingLevel.HEADING_2));
+  body.push(...bullets(sum.standing_notes));
+  body.push(note((sum.standing_notes_source ? sum.standing_notes_source + ". " : "") + `Where a clan's boundary is known to follow a large river, this document does not ask for that stretch to be walked, and says so on the clan's page. ${money(sum.clans_river_boundary)} clan(s) are marked that way so far.`));
+}
+
 body.push(h("Reading the map on each clan's page", HeadingLevel.HEADING_2));
 body.push(...bullets([
   "Each steward's walk is a solid coloured line, and the area that walk gives on its own is the matching dashed outline.",
@@ -305,7 +311,10 @@ for (const c of clans) {
 
   // queries
   const queries = [];
-  if (c.area_ha === null) queries.push(`Can the missing stretches be walked so this boundary closes? If any gap is deliberate — a river, a road, an agreed open edge — please say what runs along it.`);
+  if (c.river_boundary) {
+    queries.push(`No stretch of this boundary should be walked to close it where it follows a large river. That stretch will be completed by editing, once it is decided how a river boundary is to be drawn. What would help instead: where does the river stop being the boundary, at each end?`);
+  }
+  else if (c.area_ha === null) queries.push(`Can the missing stretches be walked so this boundary closes? If any gap is deliberate — a river, a road, an agreed open edge — please say what runs along it.`);
   else if (c.basis === "inferred" && c.gap_pct > 25) queries.push(`${Math.round(c.gap_pct)}% of this outline was not walked — ${one(c.gap_km)} km of straight line, shown in pink. Does the boundary in fact run along those straight lines, or somewhere else? Can the missing stretches be walked?`);
   if (c.parcels > 1) queries.push(`This clan's land is recorded as ${c.parcels} separate pieces. Is that right, and does each piece belong to this clan?`);
   if (c.n_stewards > 1 && c.join_joined_ha < c.join_sep_ha - 1)

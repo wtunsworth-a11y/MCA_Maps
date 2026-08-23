@@ -1,12 +1,12 @@
 {
- "version": "1.10",
+ "version": "1.11",
  "changes": [
-  "New: From the field on a clan's page, for what the stewards tell us that the GPS cannot. It is kept in data/reference/field_notes.json, appears on the clan's page and in the clan's GPX so the steward sees it on the device, and changes no geometry and no figure.",
-  "First entries, for Savasi: the eastern border of Savasi's clan land is along the Baraje river, and the mapping is unfinished at the northern and southern ends. The recorded line supports the first \u2014 the main 3.74 km piece runs 40% along a watercourse in the terrain model \u2014 but the river is not drawn as a boundary. Naming a river is knowledge; turning it into a line would be this pipeline inventing a boundary rather than recording one."
+  "Nobody is asked to walk a river. Large rivers are physically difficult and unsafe to follow \u2014 boulders, rapids, steep drops \u2014 so a gap along one is not a gap anyone should close on foot. Where the boundary is a large river the survey team will complete that stretch by editing, and how to draw a robust river boundary is an open decision, not yet made. Recorded as standing field advice and shown in \"How to read the clan entries\".",
+  "Savasi's query changes accordingly. Version 1.10 asked whether the missing stretches could be walked; that stretch is the Baraje. It now asks the thing that would help instead \u2014 where the river stops being the boundary, at each end."
  ],
  "date": "2026-08-23",
  "date_long": "23 August 2026",
- "commit": "09b63cf",
+ "commit": "226d0c5",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

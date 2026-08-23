@@ -78,6 +78,12 @@
  ],
  "shared_line_pairs": 117,
  "clans_with_field_notes": 1,
+ "standing_notes": [
+  "Large rivers cannot reasonably be walked. Boulders, rapids and steep drops make it physically difficult and unsafe, so a gap that follows one is not a gap anybody should be asked to close on foot.",
+  "Where a boundary is a large river, the survey team will complete that stretch themselves by editing. How to draw a robust river boundary is an open decision, not yet made."
+ ],
+ "standing_notes_source": "Field advice, 23 August 2026",
+ "clans_river_boundary": 1,
  "gpx_clans": 49,
  "gpx_gaps": 190,
  "gpx_gap_km": 271.9,

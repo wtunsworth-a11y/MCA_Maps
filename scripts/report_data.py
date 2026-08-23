@@ -61,6 +61,22 @@ def field_notes() -> dict:
     return {k: v for k, v in stored.items() if not k.startswith("_")}
 
 
+def standing_notes() -> dict:
+    """Field advice that applies everywhere, not to one clan.
+
+    Kept apart from the per-clan notes because it constrains what the pipeline
+    may ask for: a rule like "large rivers cannot reasonably be walked" has to
+    reach the query generator, not just the page.
+    """
+    if not FIELD_NOTES_FILE.exists():
+        return {}
+    try:
+        return json.loads(
+            FIELD_NOTES_FILE.read_text(encoding="utf-8")).get("_standing", {})
+    except Exception:
+        return {}
+
+
 def changes_since(version: str) -> list[str]:
     """The bullets under this version's heading in docs/CHANGELOG.md.
 
@@ -271,6 +287,10 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
         "multi_parcel": multi_parcel,
         "shared_line_pairs": int(len(agreed)),
         "clans_with_field_notes": len(notes),
+        "standing_notes": standing_notes().get("notes", []),
+        "standing_notes_source": standing_notes().get("source"),
+        "clans_river_boundary": sum(1 for v in notes.values()
+                                    if v.get("river_boundary")),
         "gpx_clans": len(gpx),
         "gpx_gaps": sum(g["gaps"] for g in gpx.values()),
         "gpx_gap_km": round(sum(g["km"] for g in gpx.values()), 1),
@@ -377,6 +397,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             "map": _json(join_row["map"]) if join_row is not None else None,
             "field_notes": notes.get(unit, {}).get("notes", []),
             "field_source": notes.get(unit, {}).get("source"),
+            "river_boundary": bool(notes.get(unit, {}).get("river_boundary")),
             "gpx": gpx.get(dataio.safe_name(unit), {}).get("file"),
             "gpx_gaps": gpx.get(dataio.safe_name(unit), {}).get("gaps", 0),
         })

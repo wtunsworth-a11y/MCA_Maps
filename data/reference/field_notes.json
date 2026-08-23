@@ -5,13 +5,26 @@
     "is somebody's account, not a measurement, and it is reproduced as such:",
     "on the clan's page under 'From the field', and in the clan's GPX so the",
     "steward sees it on the device. Nothing here changes a geometry or a",
-    "figure. Add to it whenever the field answers a query."
+    "figure. Add to it whenever the field answers a query.",
+    "",
+    "Set 'river_boundary': true where a gap follows a large river. It stops",
+    "the pipeline asking the clan to walk it."
   ],
+
+  "_standing": {
+    "notes": [
+      "Large rivers cannot reasonably be walked. Boulders, rapids and steep drops make it physically difficult and unsafe, so a gap that follows one is not a gap anybody should be asked to close on foot.",
+      "Where a boundary is a large river, the survey team will complete that stretch themselves by editing. How to draw a robust river boundary is an open decision, not yet made."
+    ],
+    "source": "Field advice, 23 August 2026"
+  },
+
   "Savasi — Zone 3": {
     "notes": [
       "The eastern border of Savasi's clan land is along the Baraje river.",
       "The mapping is not finished: the northern and southern ends have yet to be closed off."
     ],
+    "river_boundary": true,
     "source": "Field advice, 23 August 2026"
   }
 }
