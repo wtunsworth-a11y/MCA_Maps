@@ -6,6 +6,15 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.8
+
+- The zone map is now titled **Zone Boundaries based on clan boundary
+  mapping**, on the map itself and in the report. The previous name invited
+  the reading that these are zone boundaries somebody surveyed. They are not:
+  what a zone covers here is the sum of the clan surveys inside it, so its
+  edge moves every time a clan finishes a boundary. A note under the map says
+  so.
+
 ## 1.7
 
 - New map: the same survey coloured by zone. Each zone gets one colour, used

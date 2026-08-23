@@ -1,11 +1,11 @@
 {
- "version": "1.7",
+ "version": "1.8",
  "changes": [
-  "New map: the same survey coloured by zone. Each zone gets one colour, used twice \u2014 a transparent wash for the land mapped and the same colour solid for the boundaries walked but not yet closed \u2014 so a zone reads as one thing whether its surveys finished or not. It answers how far each zone has got, which is the question anyone planning the next round of walking is asking."
+  "The zone map is now titled Zone Boundaries based on clan boundary mapping, on the map itself and in the report. The previous name invited the reading that these are zone boundaries somebody surveyed. They are not: what a zone covers here is the sum of the clan surveys inside it, so its edge moves every time a clan finishes a boundary. A note under the map says so."
  ],
- "date": "2026-08-20",
- "date_long": "20 August 2026",
- "commit": "6c3e2d7",
+ "date": "2026-08-23",
+ "date_long": "23 August 2026",
+ "commit": "e549935",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,
