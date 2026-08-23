@@ -1,12 +1,12 @@
 {
- "version": "1.9",
+ "version": "1.10",
  "changes": [
-  "New survey included: Savasi, Zone 3, walked by Oscar Isuni. Three tracks, 4.0 km. It gives no area yet \u2014 the tracks are in three separate pieces with 5.1 km of straight line needed to join them, more than was walked \u2014 so it appears as an unclosed line and its page says incomplete. The three gaps are marked in Savasi_Zone_3.gpx with waypoints at each end.",
-  "Zone 3 now has 5 clans and 9 Clan Stewards across 52.8 km walked."
+  "New: From the field on a clan's page, for what the stewards tell us that the GPS cannot. It is kept in data/reference/field_notes.json, appears on the clan's page and in the clan's GPX so the steward sees it on the device, and changes no geometry and no figure.",
+  "First entries, for Savasi: the eastern border of Savasi's clan land is along the Baraje river, and the mapping is unfinished at the northern and southern ends. The recorded line supports the first \u2014 the main 3.74 km piece runs 40% along a watercourse in the terrain model \u2014 but the river is not drawn as a boundary. Naming a river is knowledge; turning it into a line would be this pipeline inventing a boundary rather than recording one."
  ],
  "date": "2026-08-23",
  "date_long": "23 August 2026",
- "commit": "a13bcb3",
+ "commit": "09b63cf",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

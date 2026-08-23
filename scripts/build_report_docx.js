@@ -268,6 +268,12 @@ for (const c of clans) {
     body.push(note("Where the two clans' recorded lines run within " + TOL + " m of each other. Two neighbours walking the same edge is the ordinary case."));
   }
 
+  if (c.field_notes && c.field_notes.length) {
+    body.push(p("From the field", {bold:true, size:21}));
+    body.push(...bullets(c.field_notes));
+    body.push(note((c.field_source ? c.field_source + ". " : "") + "Recorded as told to us. Nothing here has been turned into a line or an area — a river named as a boundary is knowledge the GPS cannot supply, and drawing it would be this pipeline inventing a boundary rather than recording one."));
+  }
+
   // problems
   const problems = [];
   if (c.area_ha === null) problems.push(`No area can be given. The tracks are in ${c.chains} disconnected piece${c.chains===1?"":"s"} and ${one(c.gap_km)} km of straight-line joining would be needed to make a ring${c.gap_pct?` — ${Math.round(c.gap_pct)}% of the distance walked`:""}. That is beyond the 50% limit, above which an area would be more assumption than survey.`);

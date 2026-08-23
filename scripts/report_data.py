@@ -40,6 +40,25 @@ import stewards as steward_tools  # noqa: E402
 
 VERSION_FILE = dataio.REPO_ROOT / "docs" / "VERSION"
 CHANGELOG_FILE = dataio.REPO_ROOT / "docs" / "CHANGELOG.md"
+FIELD_NOTES_FILE = (dataio.REPO_ROOT / "data" / "reference"
+                    / "field_notes.json")
+
+
+def field_notes() -> dict:
+    """What the field has told us, keyed by survey unit.
+
+    Accounts, not measurements. They are reproduced on the clan's page and in
+    the clan's GPX, and they change no geometry and no figure — a river named
+    as a boundary is knowledge the GPS cannot supply and must not be turned
+    into a line by this pipeline.
+    """
+    if not FIELD_NOTES_FILE.exists():
+        return {}
+    try:
+        stored = json.loads(FIELD_NOTES_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    return {k: v for k, v in stored.items() if not k.startswith("_")}
 
 
 def changes_since(version: str) -> list[str]:
@@ -151,6 +170,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
     agreed = polygon_tools.shared_lines(tracks, tolerance)
 
     gpx = gpx_index(gpx_dir) if gpx_dir and gpx_dir.exists() else {}
+    notes = field_notes()
 
     joining = _read_csv(clans_dir / "joining_effect.csv")
     steward_table = _read_csv(stewards_dir / "stewards.csv")
@@ -250,6 +270,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
         "clans_multi_parcel": len(multi_parcel),
         "multi_parcel": multi_parcel,
         "shared_line_pairs": int(len(agreed)),
+        "clans_with_field_notes": len(notes),
         "gpx_clans": len(gpx),
         "gpx_gaps": sum(g["gaps"] for g in gpx.values()),
         "gpx_gap_km": round(sum(g["km"] for g in gpx.values()), 1),
@@ -354,6 +375,8 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # of the file name. Every clan map went missing from the document
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
+            "field_notes": notes.get(unit, {}).get("notes", []),
+            "field_source": notes.get(unit, {}).get("source"),
             "gpx": gpx.get(dataio.safe_name(unit), {}).get("file"),
             "gpx_gaps": gpx.get(dataio.safe_name(unit), {}).get("gaps", 0),
         })

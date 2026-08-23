@@ -6,6 +6,19 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.10
+
+- New: **From the field** on a clan's page, for what the stewards tell us that
+  the GPS cannot. It is kept in `data/reference/field_notes.json`, appears on
+  the clan's page and in the clan's GPX so the steward sees it on the device,
+  and changes no geometry and no figure.
+- First entries, for **Savasi**: the eastern border of Savasi's clan land is
+  along the Baraje river, and the mapping is unfinished at the northern and
+  southern ends. The recorded line supports the first — the main 3.74 km piece
+  runs 40% along a watercourse in the terrain model — but the river is not
+  drawn as a boundary. Naming a river is knowledge; turning it into a line
+  would be this pipeline inventing a boundary rather than recording one.
+
 ## 1.9
 
 - New survey included: **Savasi**, Zone 3, walked by Oscar Isuni. Three tracks,

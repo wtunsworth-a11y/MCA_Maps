@@ -50,6 +50,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import closure  # noqa: E402
 import dataio  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
+import report_data  # noqa: E402
 
 CREATOR = "MCA Maps — Managalas clan boundary survey"
 
@@ -90,7 +91,7 @@ def _waypoint(name: str, description: str, x: float, y: float,
 
 
 def build(clan: str, zone: str, group: gpd.GeoDataFrame, bridges: list,
-          stamp: str, skipped: int = 0) -> str:
+          stamp: str, skipped: int = 0, notes: list | None = None) -> str:
     """The GPX document for one clan, as text.
 
     Waypoints come first, then tracks: GPX 1.1 fixes that order, and readers
@@ -105,7 +106,8 @@ def build(clan: str, zone: str, group: gpd.GeoDataFrame, bridges: list,
                   f"{'' if len(bridges) == 1 else 's'}" if bridges
                   else "; the boundary closes")
                + (f". {skipped} join(s) under the marking threshold are not "
-                  f"shown." if skipped else ""))
+                  f"shown." if skipped else "")
+               + ("".join(f" {n}" for n in notes) if notes else ""))
 
     wgs = group.to_crs(dataio.WGS84)
     gap_lines = (gpd.GeoSeries(bridges, crs=dataio.METRIC_CRS)
@@ -191,6 +193,7 @@ def main(argv: list[str] | None = None) -> int:
     # of noise. The day the survey was processed is the provenance that
     # matters; the run that produced it is in output/PROVENANCE.md.
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT00:00:00Z")
+    notes = report_data.field_notes()
     written, total_gaps, total_gap_km, total_skipped = 0, 0, 0.0, 0
 
     for unit, group in tracks.groupby("_unit", sort=True):
@@ -207,7 +210,8 @@ def main(argv: list[str] | None = None) -> int:
         bridges = [b for b in found if b.length >= args.min_gap]
         skipped = len(found) - len(bridges)
 
-        text = build(clan, zone, group, bridges, stamp, skipped)
+        text = build(clan, zone, group, bridges, stamp, skipped,
+                     notes.get(unit, {}).get("notes"))
         path = args.out_dir / f"{dataio.safe_name(unit)}.gpx"
         path.write_text(text, encoding="utf-8")
 

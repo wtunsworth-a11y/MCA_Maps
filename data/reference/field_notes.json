@@ -1,0 +1,17 @@
+{
+  "_README": [
+    "What the field tells us that the GPS cannot. Keyed by survey unit —",
+    "'<Clan> — <Zone>', the same key the polygon layer uses. Everything here",
+    "is somebody's account, not a measurement, and it is reproduced as such:",
+    "on the clan's page under 'From the field', and in the clan's GPX so the",
+    "steward sees it on the device. Nothing here changes a geometry or a",
+    "figure. Add to it whenever the field answers a query."
+  ],
+  "Savasi — Zone 3": {
+    "notes": [
+      "The eastern border of Savasi's clan land is along the Baraje river.",
+      "The mapping is not finished: the northern and southern ends have yet to be closed off."
+    ],
+    "source": "Field advice, 23 August 2026"
+  }
+}
