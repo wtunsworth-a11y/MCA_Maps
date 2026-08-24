@@ -136,6 +136,11 @@ def main(argv: list[str] | None = None) -> int:
                         help="which numbered gap, as shown by gap_map.py")
     parser.add_argument("--gpkg", type=Path,
                         default=dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg")
+    parser.add_argument("--adopt", action="store_true",
+                        help="keep the routed line as a derived segment of "
+                             "this clan's boundary")
+    parser.add_argument("--note", default=None,
+                        help="what this stretch is, in the field's words")
     args = parser.parse_args(argv)
 
     tracks = gpd.read_file(args.gpkg,
@@ -173,7 +178,26 @@ def main(argv: list[str] | None = None) -> int:
     for key, value in detail.items():
         print(f"  {key:14s} {value}")
     print("\nThis line is modelled from the 30 m DEM, not surveyed.")
+
+    if args.adopt:
+        unit = match._unit.iloc[0]
+        path = adopt(unit, line, args.note or "Boundary follows the river; "
+                                              "the river cannot be walked.",
+                     detail)
+        print(f"\nAdopted into {path}.")
+        print("It is added to this clan's boundary network as a derived "
+              "segment, so the polygon follows the river however the survey "
+              "is assembled — one steward's walk or several joined. It adds "
+              "no walked distance, because nobody walked it.")
     return 0
+
+
+def adopt(unit: str, line, note: str, detail: dict) -> Path:
+    """Keep a routed line as a derived segment of that clan's boundary."""
+    detail = dict(detail)
+    detail["source"] = ("modelled from the 30 m Copernicus DEM, not surveyed")
+    return polygon_tools.adopt_segment(unit, line, "river_routed", note,
+                                       detail)
 
 
 if __name__ == "__main__":

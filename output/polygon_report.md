@@ -1,8 +1,8 @@
 # Mapped areas and clan overlaps
 
 - **Surveyed polygons:** 5, 2,542.4 ha
-- **Inferred polygons:** 32, 30,911.5 ha
-- **Combined footprint:** 28,581.3 ha
+- **Inferred polygons:** 32, 30,639.7 ha
+- **Combined footprint:** 28,308.1 ha
 
 ## Mapped area by zone
 
@@ -10,7 +10,7 @@
 | --- | --- | --- |
 | Zone 2 | 12 | 18906.8 |
 | Zone 3 | 1 | 9.5 |
-| Zone 6 | 5 | 3433.8 |
+| Zone 6 | 5 | 3162.0 |
 | Zone 7A | 3 | 1384.6 |
 | Zone 7B | 10 | 6693.2 |
 | Zone 8 | 6 | 3026.0 |
@@ -47,8 +47,8 @@ Reported twice. `shared_ha` is the exact area two clans both claim. `beyond_tol_
 | Pina Ora | Sahirut | 14.5 | 1.8 | 4.2 | 13.0 | 1.6 | 3.8 | overlap |
 | Majanko | Tuoko | 12.5 | 4.5 | 0.3 | 12.4 | 4.5 | 0.3 | overlap |
 | Juaiko | Manoko | 11.8 | 0.9 | 2.9 | 6.8 | 0.5 | 1.7 | overlap |
+| Manuvoora | Sahirut | 8.1 | 1.5 | 2.3 | 7.7 | 1.4 | 2.2 | overlap |
 | Jariji | Sugulkol | 7.5 | 1.1 | 2.4 | 7.1 | 1.0 | 2.3 | overlap |
-| Manuvoora | Sahirut | 6.8 | 0.8 | 2.0 | 6.6 | 0.8 | 1.9 | overlap |
 | Dusi | Riribudeh | 6.6 | 3.0 | 1.8 | 5.7 | 2.6 | 1.5 | overlap |
 | Gariniko | Tuoko | 6.6 | 6.2 | 0.2 | 4.9 | 4.6 | 0.1 | overlap |
 | Asingi | Murai (Z2) | 5.9 | 3.6 | 3.0 | 5.3 | 3.2 | 2.7 | overlap |
@@ -234,8 +234,8 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Majanko / Gilford Amakana | Tuoko / Kaupa Dota, Terrence Dobija | 12.5 | 4.5 | 0.3 | 12.4 | 4.5 | 0.3 | overlap |
 | Juaiko / Gasper K Philip J | Manoko / Gilford Amakana | 11.8 | 0.9 | 2.9 | 6.8 | 0.5 | 1.7 | overlap |
 | Sugulkol / Chris Idua, Emmanuel Fufus |  / Ruth Makisa | 10.1 | 3.2 | 4.3 | 8.9 | 2.8 | 3.7 | overlap |
+| Manuvoora / Egobeyas Kuarisi, Granville Nepo | Sahirut / Lenard Urami, Solomon Makanisa | 8.1 | 1.5 | 2.3 | 7.7 | 1.4 | 2.2 | overlap |
 | Jariji / Clement Viri, Newton Giwai | Sugulkol / Chris Idua, Emmanuel Fufus | 7.5 | 1.1 | 2.4 | 7.1 | 1.0 | 2.3 | overlap |
-| Manuvoora / Egobeyas Kuarisi, Granville Nepo | Sahirut / Lenard Urami, Solomon Makanisa | 6.8 | 0.8 | 2.0 | 6.6 | 0.8 | 1.9 | overlap |
 | Dusi / Max Mamo | Riribudeh / Prut Buitari, Unido Ose | 6.6 | 3.0 | 1.8 | 5.7 | 2.6 | 1.5 | overlap |
 | Gariniko / Lance Sake | Tuoko / Kaupa Dota, Terrence Dobija | 6.6 | 6.2 | 0.2 | 4.9 | 4.6 | 0.1 | overlap |
 | Asingi / Jethro Akse | Murai (Z2) / Nehemiah Nindori | 5.9 | 3.6 | 3.0 | 5.3 | 3.2 | 2.7 | overlap |
@@ -268,42 +268,42 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 
 ## Every polygon
 
-| zone | clan | steward | stewards | surveys | source_name | basis | walked_km | area_ha | gap_m | gap_pct | bridges |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Zone 7B | Abuankol | Simeon Pasip | 1 | 1 | Abuankol — Zone 7B | surveyed | 0.51 | 0.7 | 0.0 | 0.0 | 0 |
-| Zone 7B | Ambunkol | Peter Awako | 1 | 1 | Ambunkol — Zone 7B | inferred | 18.6 | 591.8 | 4489.1 | 24.1 | 6 |
-| Zone 2 | Asingi | Jethro Akse | 1 | 1 | Asingi — Zone 2 | surveyed | 6.43 | 166.1 | 0.0 | 0.0 | 0 |
-| Zone 2 | Asoro | Gilford Amakana | 1 | 1 | Asoro — Zone 2 | inferred | 22.83 | 3506.7 | 7989.0 | 35.0 | 2 |
-| Zone 7A | Bimkol | Kennedy Wosa | 1 | 1 | Bimkol — Zone 7A | inferred | 8.01 | 158.4 | 3971.6 | 49.6 | 3 |
-| Zone 7B | Binunkol | Moses Garui | 1 | 1 | Binunkol — Zone 7B | inferred | 17.81 | 1032.3 | 6412.9 | 36.0 | 19 |
-| Zone 7A | Borori | Hagahi Semo, John Saini | 2 | 2 | Borori — Zone 7A | inferred | 32.69 | 638.7 | 6965.3 | 21.3 | 10 |
-| Zone 7A | Darekikol | Garex Sevesi, George Kopoi | 2 | 2 | Darekikol — Zone 7A | inferred | 28.76 | 587.5 | 5921.1 | 20.6 | 7 |
-| Zone 8 | Dusi | Max Mamo | 1 | 1 | Dusi — Zone 8 | inferred | 32.95 | 218.6 | 1888.3 | 5.7 | 4 |
-| Zone 2 | Gariniko | Lance Sake | 1 | 1 | Gariniko — Zone 2 | inferred | 10.08 | 106.5 | 4780.9 | 47.4 | 4 |
-| Zone 7B | Ginangi | Job Mokondo, Joshua Mokondo | 2 | 2 | Ginangi — Zone 7B | inferred | 36.73 | 1234.3 | 7221.8 | 19.7 | 7 |
-| Zone 3 | Giroiko | Eddie Sioro, Mark Samba | 2 | 2 | Giroiko — Zone 3 | inferred | 5.43 | 9.5 | 1266.3 | 23.3 | 2 |
-| Zone 8 | Gubai | Fordy Igai, Kenny Noi | 2 | 2 | Gubai — Zone 8 | inferred | 134.54 | 1173.2 | 5019.2 | 3.7 | 7 |
-| Zone 8 | Gumuyude | Philip Igai | 1 | 1 | Gumuyude — Zone 8 | inferred | 16.79 | 691.3 | 2284.5 | 13.6 | 7 |
-| Zone 7B | Jariji | Clement Viri, Newton Giwai | 2 | 2 | Jariji — Zone 7B | inferred | 27.47 | 696.1 | 9040.5 | 32.9 | 6 |
-| Zone 2 | Juaiko | Gasper K Philip J | 1 | 1 | Juaiko — Zone 2 | inferred | 24.3 | 1292.9 | 1882.9 | 7.7 | 7 |
-| Zone 2 | Kasaki | Ananias Masua | 1 | 1 | Kasaki — Zone 2 | inferred | 15.13 | 540.8 | 1344.6 | 8.9 | 4 |
-| Zone 8 | Madukol | Gibs Ginave | 1 | 1 | Madukol — Zone 8 | inferred | 1.07 | 1.4 | 285.5 | 26.7 | 2 |
-| Zone 2 | Majanko | Gilford Amakana | 1 | 1 | Majanko — Zone 2 | surveyed | 7.51 | 275.8 | 0.0 | 0.0 | 0 |
-| Zone 7B | Manang | Kelly Wahamo | 1 | 1 | Manang — Zone 7B | inferred | 7.13 | 353.0 | 1788.3 | 25.1 | 1 |
-| Zone 2 | Manoko | Gilford Amakana | 1 | 1 | Manoko — Zone 2 | inferred | 12.15 | 404.0 | 3847.5 | 31.7 | 3 |
-| Zone 6 | Manuvoora | Egobeyas Kuarisi, Granville Nepo | 2 | 2 | Manuvoora — Zone 6 | inferred | 61.45 | 827.7 | 11380.6 | 18.5 | 6 |
-| Zone 6 | Mariura | Fabian Justin, Livingstone Nisavora | 2 | 2 | Mariura — Zone 6 | inferred | 33.71 | 854.9 | 14245.4 | 42.3 | 13 |
-| Zone 8 | Mungaikol | Graham Ekiawa | 1 | 1 | Mungaikol — Zone 8 | inferred | 14.75 | 569.7 | 2263.5 | 15.3 | 3 |
-| Zone 2 | Murai (Z2) | Nehemiah Nindori | 1 | 1 | Murai (Z2) — Zone 2 | surveyed | 7.33 | 198.9 | 0.0 | 0.0 | 0 |
-| Zone 6 | Naharaura | Zechariah Sasavo | 1 | 1 | Naharaura — Zone 6 | inferred | 32.63 | 594.0 | 2489.9 | 7.6 | 4 |
-| Zone 7B | Natang | Dickson Hoe, Stafford Gidiri | 2 | 2 | Natang — Zone 7B | inferred | 77.25 | 1532.8 | 6532.0 | 8.5 | 2 |
-| Zone 2 | Nituri | Christoper Visua, Graham Naopi, Newton Muraba | 3 | 3 | Nituri — Zone 2 | inferred | 41.83 | 5274.6 | 11128.5 | 26.6 | 14 |
-| Zone 6 | Pina Ora | Alban Ezekiel | 1 | 1 | Pina Ora — Zone 6 | inferred | 18.85 | 812.2 | 1429.9 | 7.6 | 4 |
-| Zone 8 | Riribudeh | Prut Buitari, Unido Ose | 2 | 2 | Riribudeh — Zone 8 | inferred | 20.37 | 371.8 | 1561.2 | 7.7 | 3 |
-| Zone 2 | Rondi | Humphrey Poto, Jefferson Amunisa | 2 | 2 | Rondi — Zone 2 | inferred | 58.98 | 1563.4 | 12430.8 | 21.1 | 14 |
-| Zone 6 | Sahirut | Lenard Urami, Solomon Makanisa | 2 | 2 | Sahirut — Zone 6 | inferred | 22.97 | 345.0 | 216.6 | 0.9 | 1 |
-| Zone 7B | Sugulkol | Chris Idua, Emmanuel Fufus | 2 | 2 | Sugulkol — Zone 7B | inferred | 23.99 | 313.8 | 3682.6 | 15.4 | 6 |
-| Zone 2 | Sukandi | Millinton Beso, Rodney Ajinko | 2 | 2 | Sukandi — Zone 2 | surveyed | 39.69 | 1900.9 | 0.0 | 0.0 | 0 |
-| Zone 2 | Tuoko | Kaupa Dota, Terrence Dobija | 2 | 2 | Tuoko — Zone 2 | inferred | 47.72 | 3676.2 | 17075.2 | 35.8 | 8 |
-| Zone 7B | Wohukol | Darline Walele, Nelson Runage | 2 | 2 | Wohukol — Zone 7B | inferred | 34.91 | 701.1 | 8294.0 | 23.8 | 4 |
-| Zone 7B |  | Ruth Makisa | 1 | 1 | ruth_makisa_land_steward_block_1_land_boundary | inferred | 6.28 | 237.3 | 821.5 | 13.1 | 6 |
+| zone | clan | steward | stewards | surveys | source_name | basis | walked_km | area_ha | gap_m | gap_pct | bridges | derived_km |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Zone 7B | Abuankol | Simeon Pasip | 1 | 1 | Abuankol — Zone 7B | surveyed | 0.51 | 0.7 | 0.0 | 0.0 | 0 | 0.0 |
+| Zone 7B | Ambunkol | Peter Awako | 1 | 1 | Ambunkol — Zone 7B | inferred | 18.6 | 591.8 | 4489.1 | 24.1 | 6 | 0.0 |
+| Zone 2 | Asingi | Jethro Akse | 1 | 1 | Asingi — Zone 2 | surveyed | 6.43 | 166.1 | 0.0 | 0.0 | 0 | 0.0 |
+| Zone 2 | Asoro | Gilford Amakana | 1 | 1 | Asoro — Zone 2 | inferred | 22.83 | 3506.7 | 7989.0 | 35.0 | 2 | 0.0 |
+| Zone 7A | Bimkol | Kennedy Wosa | 1 | 1 | Bimkol — Zone 7A | inferred | 8.01 | 158.4 | 3971.6 | 49.6 | 3 | 0.0 |
+| Zone 7B | Binunkol | Moses Garui | 1 | 1 | Binunkol — Zone 7B | inferred | 17.81 | 1032.3 | 6412.9 | 36.0 | 19 | 0.0 |
+| Zone 7A | Borori | Hagahi Semo, John Saini | 2 | 2 | Borori — Zone 7A | inferred | 32.69 | 638.7 | 6965.3 | 21.3 | 10 | 0.0 |
+| Zone 7A | Darekikol | Garex Sevesi, George Kopoi | 2 | 2 | Darekikol — Zone 7A | inferred | 28.76 | 587.5 | 5921.1 | 20.6 | 7 | 0.0 |
+| Zone 8 | Dusi | Max Mamo | 1 | 1 | Dusi — Zone 8 | inferred | 32.95 | 218.6 | 1888.3 | 5.7 | 4 | 0.0 |
+| Zone 2 | Gariniko | Lance Sake | 1 | 1 | Gariniko — Zone 2 | inferred | 10.08 | 106.5 | 4780.9 | 47.4 | 4 | 0.0 |
+| Zone 7B | Ginangi | Job Mokondo, Joshua Mokondo | 2 | 2 | Ginangi — Zone 7B | inferred | 36.73 | 1234.3 | 7221.8 | 19.7 | 7 | 0.0 |
+| Zone 3 | Giroiko | Eddie Sioro, Mark Samba | 2 | 2 | Giroiko — Zone 3 | inferred | 5.43 | 9.5 | 1266.3 | 23.3 | 2 | 0.0 |
+| Zone 8 | Gubai | Fordy Igai, Kenny Noi | 2 | 2 | Gubai — Zone 8 | inferred | 134.54 | 1173.2 | 5019.2 | 3.7 | 7 | 0.0 |
+| Zone 8 | Gumuyude | Philip Igai | 1 | 1 | Gumuyude — Zone 8 | inferred | 16.79 | 691.3 | 2284.5 | 13.6 | 7 | 0.0 |
+| Zone 7B | Jariji | Clement Viri, Newton Giwai | 2 | 2 | Jariji — Zone 7B | inferred | 27.47 | 696.1 | 9040.5 | 32.9 | 6 | 0.0 |
+| Zone 2 | Juaiko | Gasper K Philip J | 1 | 1 | Juaiko — Zone 2 | inferred | 24.3 | 1292.9 | 1882.9 | 7.7 | 7 | 0.0 |
+| Zone 2 | Kasaki | Ananias Masua | 1 | 1 | Kasaki — Zone 2 | inferred | 15.13 | 540.8 | 1344.6 | 8.9 | 4 | 0.0 |
+| Zone 8 | Madukol | Gibs Ginave | 1 | 1 | Madukol — Zone 8 | inferred | 1.07 | 1.4 | 285.5 | 26.7 | 2 | 0.0 |
+| Zone 2 | Majanko | Gilford Amakana | 1 | 1 | Majanko — Zone 2 | surveyed | 7.51 | 275.8 | 0.0 | 0.0 | 0 | 0.0 |
+| Zone 7B | Manang | Kelly Wahamo | 1 | 1 | Manang — Zone 7B | inferred | 7.13 | 353.0 | 1788.3 | 25.1 | 1 | 0.0 |
+| Zone 2 | Manoko | Gilford Amakana | 1 | 1 | Manoko — Zone 2 | inferred | 12.15 | 404.0 | 3847.5 | 31.7 | 3 | 0.0 |
+| Zone 6 | Manuvoora | Egobeyas Kuarisi, Granville Nepo | 2 | 2 | Manuvoora — Zone 6 | inferred | 63.93 | 555.9 | 11272.0 | 17.6 | 5 | 2.48 |
+| Zone 6 | Mariura | Fabian Justin, Livingstone Nisavora | 2 | 2 | Mariura — Zone 6 | inferred | 33.71 | 854.9 | 14245.4 | 42.3 | 13 | 0.0 |
+| Zone 8 | Mungaikol | Graham Ekiawa | 1 | 1 | Mungaikol — Zone 8 | inferred | 14.75 | 569.7 | 2263.5 | 15.3 | 3 | 0.0 |
+| Zone 2 | Murai (Z2) | Nehemiah Nindori | 1 | 1 | Murai (Z2) — Zone 2 | surveyed | 7.33 | 198.9 | 0.0 | 0.0 | 0 | 0.0 |
+| Zone 6 | Naharaura | Zechariah Sasavo | 1 | 1 | Naharaura — Zone 6 | inferred | 32.63 | 594.0 | 2489.9 | 7.6 | 4 | 0.0 |
+| Zone 7B | Natang | Dickson Hoe, Stafford Gidiri | 2 | 2 | Natang — Zone 7B | inferred | 77.25 | 1532.8 | 6532.0 | 8.5 | 2 | 0.0 |
+| Zone 2 | Nituri | Christoper Visua, Graham Naopi, Newton Muraba | 3 | 3 | Nituri — Zone 2 | inferred | 41.83 | 5274.6 | 11128.5 | 26.6 | 14 | 0.0 |
+| Zone 6 | Pina Ora | Alban Ezekiel | 1 | 1 | Pina Ora — Zone 6 | inferred | 18.85 | 812.2 | 1429.9 | 7.6 | 4 | 0.0 |
+| Zone 8 | Riribudeh | Prut Buitari, Unido Ose | 2 | 2 | Riribudeh — Zone 8 | inferred | 20.37 | 371.8 | 1561.2 | 7.7 | 3 | 0.0 |
+| Zone 2 | Rondi | Humphrey Poto, Jefferson Amunisa | 2 | 2 | Rondi — Zone 2 | inferred | 58.98 | 1563.4 | 12430.8 | 21.1 | 14 | 0.0 |
+| Zone 6 | Sahirut | Lenard Urami, Solomon Makanisa | 2 | 2 | Sahirut — Zone 6 | inferred | 22.97 | 345.0 | 216.6 | 0.9 | 1 | 0.0 |
+| Zone 7B | Sugulkol | Chris Idua, Emmanuel Fufus | 2 | 2 | Sugulkol — Zone 7B | inferred | 23.99 | 313.8 | 3682.6 | 15.4 | 6 | 0.0 |
+| Zone 2 | Sukandi | Millinton Beso, Rodney Ajinko | 2 | 2 | Sukandi — Zone 2 | surveyed | 39.69 | 1900.9 | 0.0 | 0.0 | 0 | 0.0 |
+| Zone 2 | Tuoko | Kaupa Dota, Terrence Dobija | 2 | 2 | Tuoko — Zone 2 | inferred | 47.72 | 3676.2 | 17075.2 | 35.8 | 8 | 0.0 |
+| Zone 7B | Wohukol | Darline Walele, Nelson Runage | 2 | 2 | Wohukol — Zone 7B | inferred | 34.91 | 701.1 | 8294.0 | 23.8 | 4 | 0.0 |
+| Zone 7B |  | Ruth Makisa | 1 | 1 | ruth_makisa_land_steward_block_1_land_boundary | inferred | 6.28 | 237.3 | 821.5 | 13.1 | 6 | 0.0 |

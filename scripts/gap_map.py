@@ -38,6 +38,8 @@ import terrain  # noqa: E402
 
 WALK_COLOUR = "#334155"
 GAP_COLOUR = "#db2777"
+RIVER_COLOUR = "#0e7490"
+AGREED_COLOUR = "#15803d"
 
 
 def parts_of(frame: gpd.GeoDataFrame) -> list:
@@ -62,7 +64,7 @@ def water_share(line, streams, tolerance: float = 100.0) -> float:
 
 
 def render(clan: str, zone: str, group: gpd.GeoDataFrame, bridges: list,
-           streams, out_path: Path) -> Path:
+           streams, out_path: Path, derived=None) -> Path:
     figure, axis = plt.subplots(figsize=(10, 8.5), dpi=130)
 
     own = unary_union(list(group.geometry))
@@ -74,6 +76,15 @@ def render(clan: str, zone: str, group: gpd.GeoDataFrame, bridges: list,
     axis.set_ylim(window[1], window[3])
 
     group.plot(ax=axis, color=WALK_COLOUR, linewidth=1.3, zorder=4)
+    kinds = set()
+    if derived is not None and len(derived):
+        for kind, colour in (("river_routed", RIVER_COLOUR),
+                             ("agreed_straight", AGREED_COLOUR)):
+            rows = derived[derived["kind"] == kind]
+            if rows.empty:
+                continue
+            kinds.add(kind)
+            rows.plot(ax=axis, color=colour, linewidth=1.8, zorder=5)
 
     ordered = sorted(bridges, key=lambda b: -b.length)
     rows = []
@@ -99,9 +110,16 @@ def render(clan: str, zone: str, group: gpd.GeoDataFrame, bridges: list,
         f"{total:.1f} km in {len(rows)} gaps nobody walked",
         fontsize=12, pad=10)
 
-    legend = [Line2D([0], [0], color=WALK_COLOUR, lw=2, label="Walked"),
-              Line2D([0], [0], color=GAP_COLOUR, lw=2, linestyle=(0, (5, 3)),
-                     label="Gap — nobody walked this")]
+    legend = [Line2D([0], [0], color=WALK_COLOUR, lw=2, label="Walked")]
+    if "river_routed" in kinds:
+        legend.append(Line2D([0], [0], color=RIVER_COLOUR, lw=2,
+                             label="River line — from the terrain model, "
+                                   "not walked"))
+    if "agreed_straight" in kinds:
+        legend.append(Line2D([0], [0], color=AGREED_COLOUR, lw=2,
+                             label="Straight line the clan agrees to"))
+    legend.append(Line2D([0], [0], color=GAP_COLOUR, lw=2, linestyle=(0, (5, 3)),
+                         label="Gap — nobody walked this"))
     for number, km, share in rows:
         legend.append(Line2D([0], [0], color="none",
                              label=f"  {number}.  {km:.2f} km"
@@ -155,7 +173,11 @@ def main(argv: list[str] | None = None) -> int:
             print(f"No steward matching {args.steward!r} in {unit}.")
             return 1
         unit = f"{unit} — {group.steward.iloc[0]}"
-    built = polygon_tools.survey_polygon(parts_of(group), args.tolerance,
+    derived = polygon_tools.adopted_frame(match._unit.iloc[0])
+    derived_lines = (list(derived.geometry) if derived is not None
+                     and not derived.empty else [])
+    built = polygon_tools.survey_polygon(parts_of(group) + derived_lines,
+                                         args.tolerance,
                                          args.min_enclosure, args.max_spur)
     bridges = (built.get("bridges") or []) if built else []
     if not bridges:
@@ -174,7 +196,7 @@ def main(argv: list[str] | None = None) -> int:
     path, rows = render(group.clan.iloc[0],
                         (group.zone.iloc[0] if not args.steward
                          else f"{group.zone.iloc[0]}, {group.steward.iloc[0]}"),
-                        group, bridges, streams, out)
+                        group, bridges, streams, out, derived)
 
     print(f"{unit}: {len(rows)} gaps, "
           f"{sum(r[1] for r in rows):.2f} km nobody walked\n")

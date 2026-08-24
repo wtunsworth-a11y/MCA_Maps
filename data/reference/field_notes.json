@@ -34,9 +34,11 @@
       "Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari.",
       "The river line itself is impassable because of those waterfalls, but the boundary follows the river line. That stretch is not to be walked; it will be completed by editing.",
       "The smaller gap is a gorge at the Jarahe waterfall, and the two ends may be joined by a straight line. The straight line there is the boundary, not an assumption.",
-      "Annotations supplied on a printed map of Egobeyas Kuarisi's walk. Which numbered gap is which has not yet been confirmed — see output/queries/Manuvoora_Zone_6_Egobeyas_Kuarisi_gaps.png."
+      "Both stretches are now resolved. The river runs along the modelled drainage (2.48 km, kind river_routed); the Jarahe gorge is the agreed straight line (1.86 km, kind agreed_straight). Both are held in data/reference/gap_resolutions.gpkg against the survey unit, not against a gap number.",
+      "Egobeyas Kuarisi and Granville Nepo walked this boundary together, both recording: 98% of each line runs within 50 m of the other. It is one walk recorded twice, not two walks to be joined. Joined, the linework doubles and the survey encloses 556 ha; taken as Granville Nepo recorded it, it encloses 1,099 ha and is closed but for 40 m."
     ],
     "river_boundary": true,
-    "source": "Field advice, 24 August 2026, on an annotated printout"
+    "source": "Field advice, 24 August 2026, on an annotated printout",
+    "resolved": true
   }
 }

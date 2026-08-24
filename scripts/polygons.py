@@ -60,6 +60,95 @@ DEFAULT_MAX_GAP = 0.50
 OVERLAP_TOLERANCE_M = 100.0
 
 
+RESOLUTIONS_PATH = (dataio.REPO_ROOT / "data" / "reference"
+                    / "gap_resolutions.gpkg")
+
+
+def adopted_segments(unit: str | None = None):
+    """Boundary segments derived rather than walked, by survey unit.
+
+    Two kinds, and the difference matters:
+
+    `river_routed` — the field says the boundary follows a river that cannot
+    be walked, so the line is traced along the modelled drainage (§4.13b). The
+    shape is as good as a 30 m DEM and no better.
+
+    `agreed_straight` — the field says this stretch is a straight line and the
+    clan is content with it. That is not an inference the pipeline made; it is
+    an answer the clan gave, and it is boundary.
+
+    Both are added to the network before the enclosed area is worked out, so
+    the boundary takes the right shape however the survey is assembled and the
+    remaining bridging is computed around lines that are already in place.
+
+    Neither is ever counted as walked distance. Nobody walked them.
+    """
+    if not RESOLUTIONS_PATH.exists():
+        return {} if unit is None else []
+    try:
+        frame = gpd.read_file(RESOLUTIONS_PATH).to_crs(dataio.METRIC_CRS)
+    except Exception:
+        return {} if unit is None else []
+    if unit is not None:
+        return [g for u, g in zip(frame.unit, frame.geometry) if u == unit]
+    out: dict = {}
+    for key, geometry in zip(frame.unit, frame.geometry):
+        out.setdefault(key, []).append(geometry)
+    return out
+
+
+def adopted_frame(unit: str | None = None):
+    """The adopted segments with their kind and note, for maps and tables."""
+    if not RESOLUTIONS_PATH.exists():
+        return None
+    try:
+        frame = gpd.read_file(RESOLUTIONS_PATH).to_crs(dataio.METRIC_CRS)
+    except Exception:
+        return None
+    return frame if unit is None else frame[frame.unit == unit]
+
+
+def adopt_segment(unit: str, line, kind: str, note: str,
+                  detail: dict | None = None):
+    """Keep a derived line as part of that clan's boundary.
+
+    Stored as geometry against the survey unit, not against a gap number.
+    Numbering is a property of one assembly of the survey — Manuvoora's gaps
+    are numbered differently for one steward's walk and for two joined — so a
+    number would stop meaning what it meant as soon as another steward's
+    tracks arrived. The line itself does not move.
+
+    One resolution per stretch: a line adopted over ground already resolved
+    replaces what was there, or a re-run would stack two copies of the same
+    river on top of itself.
+    """
+    import pandas as pd
+
+    detail = detail or {}
+    row = gpd.GeoDataFrame(
+        [{"unit": unit, "kind": kind, "note": note,
+          "straight_km": detail.get("straight_km"),
+          "routed_km": detail.get("routed_km"),
+          "snap_start_m": detail.get("snap_start_m"),
+          "snap_end_m": detail.get("snap_end_m"),
+          "source": detail.get("source", ""),
+          "geometry": line}],
+        geometry="geometry", crs=dataio.METRIC_CRS)
+
+    if RESOLUTIONS_PATH.exists():
+        existing = gpd.read_file(RESOLUTIONS_PATH).to_crs(dataio.METRIC_CRS)
+        keep = existing[~(
+            (existing.unit == unit)
+            & existing.geometry.apply(lambda g: g.distance(line) < 50))]
+        row = gpd.GeoDataFrame(pd.concat([keep, row], ignore_index=True),
+                               geometry="geometry", crs=dataio.METRIC_CRS)
+
+    RESOLUTIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    row.to_crs(dataio.WGS84).to_file(RESOLUTIONS_PATH,
+                                     layer="gap_resolutions", driver="GPKG")
+    return RESOLUTIONS_PATH
+
+
 def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
                    max_spur: float) -> dict | None:
     """Build the best polygon available for one survey's tracks."""
@@ -453,6 +542,11 @@ def main(argv: list[str] | None = None) -> int:
     gdf = gpd.read_file(args.gpkg, layer=args.layer).to_crs(dataio.METRIC_CRS)
 
     gdf = gdf.assign(_unit=dataio.survey_group(gdf))
+    resolutions = adopted_segments()
+    if resolutions:
+        print(f"\n  {sum(len(v) for v in resolutions.values())} derived "
+              f"segment(s) adopted for {len(resolutions)} clan(s) — river "
+              f"lines the field says the boundary follows but nobody can walk")
     records, bridge_rows = [], []
     for source, group in gdf.groupby("_unit", sort=True):
         parts = []
@@ -461,8 +555,12 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             parts.extend(geometry.geoms if hasattr(geometry, "geoms")
                          else [geometry])
-        built = survey_polygon(parts, args.tolerance, args.min_enclosure,
-                               args.max_spur)
+        derived = resolutions.get(source, [])
+        built = survey_polygon(parts + derived, args.tolerance,
+                               args.min_enclosure, args.max_spur)
+        if derived:
+            built["derived_km"] = round(
+                sum(d.length for d in derived) / 1000, 2)
         if built is None:
             continue
         first = group.iloc[0]
@@ -486,6 +584,7 @@ def main(argv: list[str] | None = None) -> int:
             "gap_m": round(built["gap_m"], 1),
             "gap_pct": None if built["gap_pct"] is None else round(built["gap_pct"], 1),
             "bridges": len(built.get("bridges") or []),
+            "derived_km": built.get("derived_km", 0.0),
             "geometry": built["geometry"],
         })
 
