@@ -40,6 +40,7 @@ WALK_COLOUR = "#334155"
 GAP_COLOUR = "#db2777"
 RIVER_COLOUR = "#0e7490"
 AGREED_COLOUR = "#15803d"
+JOINED_COLOUR = "#7c3aed"
 
 
 def parts_of(frame: gpd.GeoDataFrame) -> list:
@@ -79,7 +80,8 @@ def render(clan: str, zone: str, group: gpd.GeoDataFrame, bridges: list,
     kinds = set()
     if derived is not None and len(derived):
         for kind, colour in (("river_routed", RIVER_COLOUR),
-                             ("agreed_straight", AGREED_COLOUR)):
+                             ("agreed_straight", AGREED_COLOUR),
+                             ("end_joined", JOINED_COLOUR)):
             rows = derived[derived["kind"] == kind]
             if rows.empty:
                 continue
@@ -118,6 +120,9 @@ def render(clan: str, zone: str, group: gpd.GeoDataFrame, bridges: list,
     if "agreed_straight" in kinds:
         legend.append(Line2D([0], [0], color=AGREED_COLOUR, lw=2,
                              label="Straight line the clan agrees to"))
+    if "end_joined" in kinds:
+        legend.append(Line2D([0], [0], color=JOINED_COLOUR, lw=2,
+                             label="Open ends joined by hand — not walked"))
     legend.append(Line2D([0], [0], color=GAP_COLOUR, lw=2, linestyle=(0, (5, 3)),
                          label="Gap — nobody walked this"))
     for number, km, share in rows:
