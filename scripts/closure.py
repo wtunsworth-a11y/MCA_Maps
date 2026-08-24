@@ -319,6 +319,125 @@ def order_chains(chains: list[dict], passes: int = 200) -> list[tuple[int, int]]
     return order
 
 
+def loose_end_bridges(parts: list, tolerance: float, max_spur: float = 0.10):
+    """Join the recorded pieces by their nearest open ends.
+
+    The earlier method reduced each connected piece to two designated ends and
+    then toured between those. That joins pieces in the order they were
+    *recorded* rather than by what is closest on the ground, and where a piece
+    has more than two loose ends it took the furthest-apart pair — so a 21 km
+    piece of Manuvoora was presented to the tour as something with ends 8.3 km
+    apart, and the ring had to bridge accordingly.
+
+    This works on the loose ends themselves. Every end that nothing else joins
+    is a candidate, and the shortest available join is taken first: pieces are
+    connected to their nearest neighbour until the network is in one piece,
+    then the remaining ends are paired nearest-first to close the ring.
+
+    Direction stops mattering, which is the other half of the problem. There
+    is no "start" and "end" to get backwards — an end is an end, and a line
+    recorded in reverse joins exactly as well as one recorded forwards.
+
+    **This is not what the pipeline uses, and the measurements say why.**
+    Tested across all 49 surveys it more than halves the bridging — 273.6 km
+    down to 127.2 km — and destroys the boundary doing it. It encloses less
+    ground on 48 of the 49, and Egobeyas Kuarisi's walk goes from 968 ha to
+    nothing at all.
+
+    The reason is that the nearest pair of open ends is usually the two ends
+    of the same out-and-back leg. Joining those closes a small loop and leaves
+    the outer ring open, so the walk rings nothing: Rondi came out as 428
+    slivers totalling 5 ha in place of 1,563 ha. Shortest total bridging and a
+    boundary that encloses the land are different objectives, and where they
+    disagree the long joins are the ones doing the work.
+
+    Kept because the result is worth having on the record, and because the
+    defect it was written to fix is real — see `_chains`, which hands the tour
+    the *furthest-apart* pair of a component's loose ends.
+
+    Returns `(bridges, total_length)`.
+    """
+    from shapely.geometry import LineString
+
+    parts = [p for p in parts if p is not None and p.length > 0]
+    if len(parts) < 2:
+        return [], 0.0
+
+    endpoints = []
+    for part in parts:
+        endpoints.append(part.coords[0][:2])
+        endpoints.append(part.coords[-1][:2])
+    labels = _cluster_endpoints(endpoints, tolerance)
+    positions: dict = {}
+    for index, label in enumerate(labels):
+        positions.setdefault(label, endpoints[index])
+
+    edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
+              "length": parts[i].length, "live": True}
+             for i in range(len(parts))]
+    _prune_spurs(edges, max_spur * sum(p.length for p in parts))
+    live = [e for e in edges if e["live"]] or edges
+
+    groups = _Groups()
+    for edge in live:
+        groups.add(edge["a"])
+        groups.add(edge["b"])
+        groups.union(edge["a"], edge["b"])
+
+    degree: dict = {}
+    for edge in live:
+        degree[edge["a"]] = degree.get(edge["a"], 0) + 1
+        degree[edge["b"]] = degree.get(edge["b"], 0) + 1
+    open_ends = [node for node, count in degree.items() if count == 1]
+
+    bridges, total = [], 0.0
+
+    def join(first, second):
+        nonlocal total
+        line = LineString([positions[first], positions[second]])
+        bridges.append(line)
+        total += line.length
+        groups.union(first, second)
+        degree[first] = degree.get(first, 0) + 1
+        degree[second] = degree.get(second, 0) + 1
+
+    # Shortest join first, always between pieces that are not yet connected.
+    while True:
+        available = [n for n in open_ends if degree.get(n, 0) == 1]
+        best = None
+        for i in range(len(available)):
+            for j in range(i + 1, len(available)):
+                first, second = available[i], available[j]
+                if groups.find(first) == groups.find(second):
+                    continue
+                x1, y1 = positions[first]
+                x2, y2 = positions[second]
+                distance = ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+                if best is None or distance < best[0]:
+                    best = (distance, first, second)
+        if best is None:
+            break
+        join(best[1], best[2])
+
+    # One piece now. Close the ring on whatever ends are still open, again
+    # taking the shortest join each time.
+    while True:
+        available = [n for n in open_ends if degree.get(n, 0) == 1]
+        if len(available) < 2:
+            break
+        best = None
+        for i in range(len(available)):
+            for j in range(i + 1, len(available)):
+                x1, y1 = positions[available[i]]
+                x2, y2 = positions[available[j]]
+                distance = ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+                if best is None or distance < best[0]:
+                    best = (distance, available[i], available[j])
+        join(best[1], best[2])
+
+    return bridges, total
+
+
 def _closing_gap(chains: list[dict]) -> float:
     """Straight-line distance still needed to join the pieces into one ring.
 

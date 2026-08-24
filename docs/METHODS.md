@@ -430,6 +430,42 @@ wrong on a map, and the question asked was "what would the polygon look like
 if you reversed the directionality of one of the polylines". That is exactly
 what the 2-opt move does.
 
+#### Joining by the shortest gap — tested, and rejected
+
+The field's observation, on seeing a gap map: the joins looked like they were
+made between lines *in the order recorded* rather than between the ends that
+are actually closest, and some lines might be read backwards.
+
+Both halves of that are fair. `_chains` reduces each connected piece to two
+designated ends and, where a piece has more than two loose ends, takes the
+**furthest-apart pair** — which is arbitrary. Manuvoora's 21 km piece was
+handed to the tour as something with ends 8.3 km apart.
+
+So `closure.loose_end_bridges()` was written to do it the other way: treat
+every loose end as a candidate and always take the shortest available join.
+Direction stops mattering entirely, which answers the second half.
+
+It more than halves the bridging and ruins the boundary.
+
+| | Chain tour (kept) | Nearest open end |
+| --- | ---: | ---: |
+| Total bridging, 49 surveys | 273.6 km | **127.2 km** |
+| Surveys enclosing more ground | **48** | 0 |
+| Egobeyas Kuarisi's walk | **968 ha** | 0 ha |
+| Rondi | **1,563 ha** | 5 ha in 428 slivers |
+
+The nearest pair of open ends is usually the two ends of the same out-and-back
+leg. Joining those closes a small loop and leaves the outer ring open, so the
+walk encloses nothing. **Shortest bridging and an enclosing boundary are
+different objectives**, and where they disagree it is the long joins that do
+the work.
+
+The function is kept, unused, with the numbers in its docstring. The
+underlying defect — the furthest-apart pair — is real and still open; fixing
+it means letting the tour choose which of a piece's loose ends to enter by,
+which is a larger change than this one and needs the same area check before it
+goes anywhere near a figure.
+
 #### Land held in more than one piece
 
 A clan's land does not have to be one block, and the pipeline does not assume
@@ -1038,6 +1074,26 @@ and those are not features on the ground. Manuvoora shows why: the joined
 survey has 11.4 km of gap, but 7.9 km of that is two long diagonals tying
 Egobeyas Kuarisi's walk to Granville Nepo's. His own walk has 7.6 km of gap in
 seven pieces, and those are the ones his annotations describe.
+
+#### Following a river instead of crossing it (`scripts/river_route.py`)
+
+Where the field says a boundary follows a river that cannot be walked, a
+straight line between the two ends is wrong twice over: it claims ground
+nobody walked, and it claims a shape the river does not have. This traces the
+modelled drainage (§4.11) between the two ends instead — a shortest path along
+the stream network, with each end snapped to the nearest channel.
+
+Manuvoora's gap 1, the stretch carrying the Ija, Taram, Pururi and Parari
+waterfalls, is the first case: **1.94 km straight becomes 2.48 km following
+the river**, 1.28 times longer, with the walked ends already within 56 m and
+21 m of the modelled channel — which is itself corroboration that the field's
+account and the terrain model agree about where the river is.
+
+**The result is modelled, not surveyed.** It is as good as a 30 m DEM and no
+better: close to the true channel on a well-incised river, liable to wander on
+flat ground, and visibly stair-stepped at pixel scale. It is written as its
+own kind, `river_routed`, kept apart from walked line and from straight-line
+inference alike, so no map or table can present it as either.
 
 ### 4.14 Giving the survey back (`scripts/clan_gpx.py`)
 
