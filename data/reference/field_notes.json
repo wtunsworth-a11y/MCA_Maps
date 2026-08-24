@@ -8,9 +8,12 @@
     "figure. Add to it whenever the field answers a query.",
     "",
     "Set 'river_boundary': true where a gap follows a large river. It stops",
-    "the pipeline asking the clan to walk it."
+    "the pipeline asking the clan to walk it.",
+    "",
+    "Named features are recorded only as the field spells them. Where a",
+    "name was read off handwriting it is confirmed before use, because a",
+    "misread river name propagates into every document and GPX after it."
   ],
-
   "_standing": {
     "notes": [
       "Large rivers cannot reasonably be walked. Boulders, rapids and steep drops make it physically difficult and unsafe, so a gap that follows one is not a gap anybody should be asked to close on foot.",
@@ -18,7 +21,6 @@
     ],
     "source": "Field advice, 23 August 2026"
   },
-
   "Savasi — Zone 3": {
     "notes": [
       "The eastern border of Savasi's clan land is along the Baraje river.",
@@ -26,5 +28,15 @@
     ],
     "river_boundary": true,
     "source": "Field advice, 23 August 2026"
+  },
+  "Manuvoora — Zone 6": {
+    "notes": [
+      "Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari.",
+      "The river line itself is impassable because of those waterfalls, but the boundary follows the river line. That stretch is not to be walked; it will be completed by editing.",
+      "The smaller gap is a gorge at the Jarahe waterfall, and the two ends may be joined by a straight line. The straight line there is the boundary, not an assumption.",
+      "Annotations supplied on a printed map of Egobeyas Kuarisi's walk. Which numbered gap is which has not yet been confirmed — see output/queries/Manuvoora_Zone_6_Egobeyas_Kuarisi_gaps.png."
+    ],
+    "river_boundary": true,
+    "source": "Field advice, 24 August 2026, on an annotated printout"
   }
 }

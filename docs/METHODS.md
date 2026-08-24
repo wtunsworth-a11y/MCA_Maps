@@ -1015,6 +1015,30 @@ This is the second time an auto-generated query had to be withdrawn for asking
 something the data could not support (§6.12 was the first). Both came from the
 field looking at the document, which is the argument for sending it.
 
+#### Asking what a gap is (`scripts/gap_map.py`)
+
+A gap can be three different things and only the field knows which: ground not
+yet walked, ground that **cannot** be walked, or a straight line the clan is
+content with. They need opposite treatment — a job for a steward, a job for an
+editor, or nothing at all — and until they are told apart the pipeline calls
+them all unfinished survey.
+
+`gap_map.py` puts the question in an answerable form: the walked line in grey,
+every gap in pink and **numbered**, with lengths and how much of each follows
+a watercourse in the terrain model. The reply comes back as "gap 3 is the
+Jarahe gorge, join it straight" and is recorded against that number.
+
+The water share is corroboration only. The drainage is modelled from a 30 m
+DEM, not surveyed, so a high share is a reason to ask whether a gap is a river
+and never a reason to assert that it is.
+
+**Use `--steward` when the field annotated one steward's printout.** The gaps
+in a joined survey include the lines joining one steward's walk to another's,
+and those are not features on the ground. Manuvoora shows why: the joined
+survey has 11.4 km of gap, but 7.9 km of that is two long diagonals tying
+Egobeyas Kuarisi's walk to Granville Nepo's. His own walk has 7.6 km of gap in
+seven pieces, and those are the ones his annotations describe.
+
 ### 4.14 Giving the survey back (`scripts/clan_gpx.py`)
 
 One GPX file per clan, written to `output/gpx/`, for the Clan Stewards who
