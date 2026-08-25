@@ -27,9 +27,9 @@ walked in to reach a boundary and back out again.
 | | Areas | Hectares |
 | --- | ---: | ---: |
 | Boundary walked and closed | 5 | 2,542 |
-| Closure inferred | 32 | 30,912 |
-| **Total mapped** | **37** | **33,454** |
-| Footprint, overlaps counted once | | 28,354 |
+| Closure inferred | 32 | 30,640 |
+| **Total mapped** | **37** | **33,182** |
+| Footprint, overlaps counted once | | 28,081 |
 
 **35 of 72 surveys give
 no area at all.** Their boundaries were walked — Nituri covers 41.8 km across
@@ -53,7 +53,7 @@ outline carries a long straight line, the area behind it is a guess across
 that gap, and the query on that clan's page asks for the missing stretch to be
 walked.
 
-The footprint is **13.3% of the
+The footprint is **13.2% of the
 conservation area's 213,269 ha**.
 
 ## Overlap between clans
@@ -71,12 +71,12 @@ of a boundary followed on foot, not a competing claim.
 | Clans with a mapped area | 36 | 36 |
 | **Clans whose land overlaps another clan's** | **34 (94%)** | **29 (81%)** |
 | Clans with no overlap at all | 2 | 7 |
-| Area claimed by more than one clan | 4,735 ha | 4,669 ha |
-| — as a share of the mapped footprint | 16.7% | 16.5% |
+| Area claimed by more than one clan | 4,736 ha | 4,670 ha |
+| — as a share of the mapped footprint | 16.9% | 16.6% |
 
 **The allowance changes almost nothing**, which is the reason for making it:
 66 ha of the
-4,735 ha falls away, and
+4,736 ha falls away, and
 5 clan(s) leave the
 overlapping group. The finding is not an artefact of survey precision.
 
