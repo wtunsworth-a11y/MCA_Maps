@@ -118,9 +118,12 @@ def adopt_segment(unit: str, line, kind: str, note: str,
     number would stop meaning what it meant as soon as another steward's
     tracks arrived. The line itself does not move.
 
-    One resolution per stretch: a line adopted over ground already resolved
-    replaces what was there, or a re-run would stack two copies of the same
-    river on top of itself.
+    One resolution per stretch: re-adopting the same stretch replaces what was
+    there, or a re-run would stack two copies of the same river on top of
+    itself. Sameness is judged by Hausdorff distance, not by proximity — a
+    44 m join that starts at the end of a 2.5 km river route sits zero metres
+    from it and is not remotely the same line. Proximity deleted that river
+    route once.
     """
     import pandas as pd
 
@@ -139,7 +142,9 @@ def adopt_segment(unit: str, line, kind: str, note: str,
         existing = gpd.read_file(RESOLUTIONS_PATH).to_crs(dataio.METRIC_CRS)
         keep = existing[~(
             (existing.unit == unit)
-            & existing.geometry.apply(lambda g: g.distance(line) < 50))]
+            & (existing.kind == kind)
+            & existing.geometry.apply(
+                lambda g: g.hausdorff_distance(line) < 50))]
         row = gpd.GeoDataFrame(pd.concat([keep, row], ignore_index=True),
                                geometry="geometry", crs=dataio.METRIC_CRS)
 
