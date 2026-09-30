@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Manuvoora — clan land boundary</name>
-    <desc>Manuvoora, Zone 6. 61.4 km walked; 11.4 km still to walk in 6 gaps</desc>
-    <time>2026-08-23T00:00:00Z</time>
+    <desc>Manuvoora, Zone 6. 61.4 km walked; 11.4 km still to walk in 6 gaps Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari. The river line itself is impassable because of those waterfalls, but the boundary follows the river line. That stretch is not to be walked; it will be completed by editing. The smaller gap is a gorge at the Jarahe waterfall, and the two ends may be joined by a straight line. The straight line there is the boundary, not an assumption. The river is resolved: it runs along the modelled drainage (2.48 km, kind river_routed). The Jarahe gorge is NOT resolved. A 1.86 km line adopted for it was withdrawn: it was not a break in the walk at all, but the span the closing step drew between two arbitrary points, running past all four open ends without joining any of them. The real open ends in Granville Nepo's walk are 44 m at the river, four ends 117-342 m apart where the western and north-eastern pieces fail to meet, and a 52 m stub. Egobeyas Kuarisi and Granville Nepo walked this boundary together, both recording: 98% of each line runs within 50 m of the other. It is one walk recorded twice, not two walks to be joined. Joined, the linework doubles and the survey encloses 556 ha; taken as Granville Nepo recorded it, it encloses 1,099 ha and is closed but for 40 m.</desc>
+    <time>2026-09-30T00:00:00Z</time>
   </metadata>
   <wpt lat="-8.9886112" lon="148.4145253">
     <name>GAP 1 OF 6 START</name>

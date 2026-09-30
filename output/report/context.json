@@ -1,12 +1,12 @@
 {
- "version": "1.11",
+ "version": "1.12",
  "changes": [
-  "Nobody is asked to walk a river. Large rivers are physically difficult and unsafe to follow \u2014 boulders, rapids, steep drops \u2014 so a gap along one is not a gap anyone should close on foot. Where the boundary is a large river the survey team will complete that stretch by editing, and how to draw a robust river boundary is an open decision, not yet made. Recorded as standing field advice and shown in \"How to read the clan entries\".",
-  "Savasi's query changes accordingly. Version 1.10 asked whether the missing stretches could be walked; that stretch is the Baraje. It now asks the thing that would help instead \u2014 where the river stops being the boundary, at each end."
+  "The closure test now asks whether the tracks enclose the ground. It used to ask whether the main ring's perimeter was at least half the distance walked, which punished thorough work: Rondi's steward walked 59 km in 62 pieces to map a 29.5 km boundary, the test wanted 29.49 km of ring, the ring was 29.47 km, and a survey that encloses 1,563 ha unaided was reported as inferred \u2014 with 12.43 km of straight line drawn across it that changed the area by nothing. Rondi is now reported as surveyed. Abuankol no longer is: its 0.5 km of track rings 1 ha where the inference rings 4.",
+  "Manuvoora \u2014 Zone 6 is closed. The field told us the boundary follows a river with four waterfalls along it \u2014 Ija, Taram, Pururi and Parari \u2014 which cannot be walked; that stretch is traced along the modelled drainage. Four breaks in the recording, 443 m in all, are joined by hand. Both kinds of line are recorded apart from walked line and add no walked distance, because nobody walked them."
  ],
- "date": "2026-08-23",
- "date_long": "23 August 2026",
- "commit": "226d0c5",
+ "date": "2026-09-30",
+ "date_long": "30 September 2026",
+ "commit": "6d0b428",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

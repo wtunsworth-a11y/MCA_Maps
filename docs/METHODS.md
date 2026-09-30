@@ -261,17 +261,43 @@ several sessions, so a single track says nothing about whether the land is
 ringed.
 
 Track ends within **25 m** (`--tolerance`) are treated as joined. Then the
-tracks are **polygonized**, and a boundary counts as closed when the polygon it
-encloses has a perimeter of at least **50%** of the distance walked
-(`--min-enclosure`).
+tracks are **polygonized**, and the question asked is whether **the tracks
+enclose the ground**: how much a survey rings on its own is compared with how
+much it rings once the closing step has drawn its straight lines across the
+gaps. Where those lines add no more than **10%** of the ground
+(`--min-enclosure`, and `closure.CLOSED_TOLERANCE`), they were not carrying
+the boundary and the survey counts as closed. The polygon kept is the one the
+tracks enclose; nothing inferred goes into it.
 
-**This test is geometric on purpose.** An earlier version chained endpoints and
-asked whether the graph formed a loop. That was wrong: walking a line out and
-back closes a connectivity graph while enclosing nothing. It misclassified real
-cases in both directions. The geometric test separates the two populations
-cleanly — genuine closures enclose 166–1,901 ha with a perimeter of 99–100% of
-the walk, everything else encloses near-zero area at under 5%. There is no
-ambiguous middle, which is why a 50% threshold is safe.
+**Two earlier versions of this test were wrong, in opposite ways.** The first
+chained endpoints and asked whether the graph formed a loop: walking a line
+out and back closes a connectivity graph while enclosing nothing.
+
+The second — the one this replaces — asked whether the largest ring's
+perimeter was at least half the distance walked. That is a question about
+distance, and it **failed closed surveys for being thoroughly walked**.
+Rondi's tracks enclose 1,563 ha in a single ring of 29.47 km; the pipeline
+called it inferred and drew 12.43 km of line across it that changed the area
+by nothing at all. It failed because the steward walked 59.0 km in 62 pieces
+to map that 29.5 km boundary, and half of 59.0 km is 29.49 km. **It missed by
+twenty metres, and it missed because the steward had walked their own land.**
+The more ground a steward covers inside their boundary, the further that rule
+pushed their survey from being called closed.
+
+Asking about ground has no such penalty, and the populations separate at least
+as cleanly. Measured across all 51 surveys, six ring 93% or more of their
+ground unaided — four of them 98% or more — and the next one down rings 43%.
+Nothing sits between, so the exact threshold decides no case in this dataset;
+10% is chosen to state the intent rather than to place the boundary. A mesh of
+slivers, where a track crosses itself, fails the test as it should: there the
+drawn lines supply nearly all the area.
+
+The share can exceed 100%, because a bridge that cuts a corner encloses less
+than the tracks do on their own. Asingi comes out at 101.4%.
+
+One consequence of the change: **Rondi is now reported as surveyed, and
+Abuankol is not.** Abuankol's 0.5 km of track rings 1 ha where the closing
+step's lines ring 4, so three quarters of it was inference.
 
 For surveys that do not close, the **gap to close** is the straight-line
 distance still needed to join the recorded pieces into one ring. For a survey
@@ -297,54 +323,48 @@ manufactured by pruning a survey down.
 
 Surveys under 100 m (`--min-length`) are reported as too short to assess.
 
-**Result at the default 25 m tolerance:** 7 closed, 7 near closure, 54 open,
-1 too short. Because the answer moves with the tolerance, it is always reported
-across a range:
+**Result at the default 25 m tolerance:** 6 closed, 9 near closure, 36 open,
+of 51 surveys. Because the answer moves with the tolerance, it is always
+reported across a range:
 
 | Tolerance | Closed | Near | Open |
 | ---: | ---: | ---: | ---: |
-| 10 m | 0 | 6 | 62 |
-| **25 m** | **7** | **7** | **54** |
-| 50 m | 10 | 6 | 52 |
-| 100 m | 13 | 4 | 51 |
+| 10 m | 1 | 7 | 43 |
+| **25 m** | **6** | **9** | **36** |
+| 50 m | 7 | 7 | 37 |
+| 100 m | 11 | 5 | 35 |
 
-**By zone (at 25 m):**
+**By zone (at 25 m):** closure is concentrated in Zone 2, which holds five of
+the six; Manuvoora is the sixth and the only one outside it.
 
-| Zone | Closed | Near | Open | Too short |
-| --- | ---: | ---: | ---: | ---: |
-| Zone 2 | 4 | 2 | 14 | 0 |
-| Zone 3 | 0 | 0 | 7 | 1 |
-| Zone 6 | 0 | 2 | 5 | 0 |
-| Zone 7A | 0 | 0 | 6 | 0 |
-| Zone 7B | 3 | 1 | 14 | 0 |
-| Zone 8 | 0 | 2 | 8 | 0 |
-
-Closure is concentrated in zones 2 and 7B; zones 3, 6, 7A and 8 have no fully
-closed boundary at this tolerance.
-
-**The seven closed boundaries:**
+**The six closed boundaries**, as surveys (stewards of one clan joined):
 
 | Zone | Clan | Clan Steward | Walked (km) | Area (ha) |
 | --- | --- | --- | ---: | ---: |
-| Zone 2 | Sukandi | Rodney Ajinko | 29.09 | 1,901.4 |
-| Zone 7B | Wohukol | Darline Walele | 17.10 | 308.6 |
-| Zone 7B | Wohukol | Nelson Runage | 17.81 | 306.1 |
+| Zone 2 | Rondi | Humphrey Poto, Jefferson Amunisa | 58.98 | 1,563.4 |
+| Zone 2 | Sukandi | Millinton Beso, Rodney Ajinko | 39.69 | 1,900.9 |
+| Zone 6 | Manuvoora | Egobeyas Kuarisi, Granville Nepo | 61.45 | 1,058.0 |
 | Zone 2 | Majanko | Gilford Amakana | 7.51 | 275.8 |
-| Zone 2 | Murai | Nehemiah Nindori | 7.33 | 198.9 |
+| Zone 2 | Murai (Z2) | Nehemiah Nindori | 7.33 | 198.9 |
 | Zone 2 | Asingi | Jethro Akse | 6.43 | 166.1 |
-| Zone 7B | Abuankol | Simeon Pasip | 0.51 | 0.6 |
 
-**The seven near closures**, smallest gap first — these are the surveys where a
-short additional walk would complete a boundary:
+Manuvoora closes on 2.93 km of derived line — a river traced along the
+modelled drainage and four hand joins totalling 443 m — which is reported
+apart from the 61.45 km walked, because nobody walked it.
+
+**The 9 near closures**, smallest gap first — these are the surveys
+where a short additional walk would complete a boundary:
 
 | Zone | Clan | Clan Steward | Walked (km) | Gap (m) | Gap % |
 | --- | --- | --- | ---: | ---: | ---: |
-| Zone 8 | Gubai | Kenny Noi | 91.86 | 4,911 | 5.3 |
+| Zone 6 | Sahirut | Lenard Urami, Solomon Makanisa | 22.97 | 217 | 0.9 |
+| Zone 8 | Gubai | Fordy Igai, Kenny Noi | 134.54 | 5,019 | 3.7 |
 | Zone 8 | Dusi | Max Mamo | 32.95 | 1,888 | 6.3 |
-| Zone 7B | Natang | Stafford Gidiri | 46.50 | 3,392 | 7.3 |
 | Zone 6 | Naharaura | Zechariah Sasavo | 32.63 | 2,490 | 7.6 |
+| Zone 8 | Riribudeh | Prut Buitari, Unido Ose | 20.37 | 1,561 | 7.8 |
 | Zone 6 | Pina Ora | Alban Ezekiel | 18.85 | 1,430 | 8.3 |
 | Zone 2 | Juaiko | Gasper K Philip J | 24.30 | 1,883 | 8.5 |
+| Zone 7B | Natang | Dickson Hoe, Stafford Gidiri | 77.25 | 6,532 | 8.8 |
 | Zone 2 | Kasaki | Ananias Masua | 15.13 | 1,345 | 9.8 |
 
 ### 4.8 Building area polygons (`scripts/polygons.py`)
@@ -491,14 +511,13 @@ and the query asks which it is.
 
 | | Boundaries | Area |
 | --- | ---: | ---: |
-| Surveyed | 5 | 2,541.7 ha |
-| Inferred | 31 | 30,566.5 ha |
-| Dropped (gap > 50%) | 13 | — |
-| Sum | 36 | 33,108.9 ha |
-| Combined footprint (overlaps counted once) | | 28,032 ha |
+| Surveyed | 6 | 5,163.1 ha |
+| Inferred | 30 | 28,520.4 ha |
+| Sum | 36 | 33,683.5 ha |
+| Combined footprint (overlaps counted once) | | 28,736 ha |
 
-The footprint is **13.1% of the MCA's 213,269 ha**. Note that **92% of the
-mapped area is inferred**; only 2,542 ha rests on boundaries that actually
+The footprint is **13.5% of the MCA's 213,269 ha**. Note that **85% of the
+mapped area is inferred**; only 5,163 ha rests on boundaries that actually
 close, and 26% of the total outline drawn is straight line nobody walked.
 
 **Mapped area by zone**, counted per clan-within-zone (§4.7) rather than per
@@ -506,13 +525,13 @@ file, so a clan walked by several stewards appears once:
 
 | Zone | Boundaries | of which surveyed | Area (ha) |
 | --- | ---: | ---: | ---: |
-| Zone 2 | 12 | 4 | 18,906.8 |
+| Zone 2 | 12 | 5 | 18,906.8 |
 | Zone 3 | 1 | 0 | 9.5 |
-| Zone 6 | 4 | 0 | 3,088.8 |
+| Zone 6 | 5 | 1 | 3,664.1 |
 | Zone 7A | 3 | 0 | 1,384.6 |
-| Zone 7B | 10 | 1 | 6,693.2 |
+| Zone 7B | 9 | 0 | 6,692.5 |
 | Zone 8 | 6 | 0 | 3,026.0 |
-| **Total** | **36** | **5** | **33,108.9** |
+| **Total** | **36** | **6** | **33,683.5** |
 
 Areas sum to more than the 28,032 ha footprint because polygons overlap
 (§4.9); the difference is counted once in the footprint.
@@ -693,7 +712,7 @@ All defaults, all overridable at the command line.
 | `--tolerance` | 25 m | closure, polygons | Track ends treated as joined |
 | `--threshold` | 10% | closure | Gap counted as near closure |
 | `--max-spur` | 10% | closure, polygons | Cumulative spur-pruning budget |
-| `--min-enclosure` | 50% | closure, polygons | Perimeter share to count as closed |
+| `--min-enclosure` | 50% | closure, polygons | Floor on the share of ground the tracks must ring unaided; the test itself is tighter (§ closure) |
 | `--min-length` | 100 m | closure | Too short to assess |
 | `passes` (in code) | 200 | closure | 2-opt improvement passes when ordering the pieces |
 | `--max-gap` | 50% | polygons | Inferred polygon rejected beyond this |
@@ -1364,7 +1383,7 @@ consent or licence information came with the data, so nothing here assumes any.
 - No independent validation. Nothing has been checked against a cadastral
   record, an independent survey, or ground truth. All verification to date is
   internal consistency (§10).
-- The area figures are 88% inferred (§4.8). That is stated everywhere it
+- The area figures are 85% inferred (§4.8). That is stated everywhere it
   appears, and would need to lead any results section rather than follow it.
 - Results live in six separate reports. A paper needs a single results table
   with a fixed figure and table numbering.

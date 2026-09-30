@@ -85,7 +85,8 @@ def _cluster_endpoints(endpoints: list[tuple[float, float]], tolerance: float):
 
 def analyse_survey(parts: list, tolerance: float, threshold: float,
                    max_spur: float = 0.10,
-                   min_enclosure: float = 0.50) -> dict:
+                   min_enclosure: float = 0.50,
+                   derived: list | None = None) -> dict:
     """Classify one survey's track parts as closed, near, open or fragmented.
 
     Surveyors walk in to where the boundary starts and out again at the end,
@@ -94,11 +95,16 @@ def analyse_survey(parts: list, tolerance: float, threshold: float,
     distance — otherwise every one of them would read as an extra "open end"
     and hide the shape underneath.
     """
-    parts = [p for p in parts if p is not None and p.length > 0]
+    walked = [p for p in parts if p is not None and p.length > 0]
+    derived = [d for d in (derived or []) if d is not None and d.length > 0]
+    parts = walked + derived
     if not parts:
         return {"status": "empty", "length_m": 0.0, "gap_m": None,
                 "ratio": None, "parts": 0, "components": 0}
 
+    # Derived segments shape the boundary but are not walked distance, so the
+    # length reported is the walk and the geometry worked on is everything.
+    walked_length = sum(p.length for p in walked)
     total_length = sum(p.length for p in parts)
 
     # Every part contributes its two ends; clustering them tells us which parts
@@ -125,19 +131,25 @@ def analyse_survey(parts: list, tolerance: float, threshold: float,
     ring_length = sum(e["length"] for e in live)
 
     chains = _chains(live, positions)
-    result = {"length_m": total_length, "parts": len(parts),
+    result = {"length_m": walked_length, "parts": len(walked),
+              "derived_m": round(total_length - walked_length, 1),
               "ring_m": ring_length, "spur_m": round(spur_m, 1),
               "components": len(chains), "gap_m": None, "ratio": None,
               "area_ha": None}
 
     # Whether the walk encloses ground is a geometric question, not a
     # connectivity one: walking a line out and back makes a cycle in the graph
-    # but rings nothing. Snap the ends together and see what area the tracks
-    # actually enclose.
-    # Measured against everything walked, not the post-pruning remainder, so
-    # the verdict cannot be manufactured by pruning the survey down to a stub.
-    enclosed = _enclosed_polygon(parts, positions, labels)
-    if enclosed is not None and enclosed.length >= min_enclosure * total_length:
+    # but rings nothing. Snap the ends together, see what area the tracks
+    # actually enclose, and compare it with what they enclose once the closing
+    # step has drawn its lines. If those lines add nothing, they were not
+    # carrying the boundary. `closes_on_its_own` has the reasoning and the
+    # measurements; the same call decides the polygon layer's `surveyed`, so
+    # this report and that layer cannot disagree.
+    snapped = _snapped_lines(parts, positions, labels)
+    enclosed = _enclosed_shape(snapped)
+    bridges, _ = bridges_for(chains)
+    bridged = _enclosed_shape(snapped + bridges) if bridges else enclosed
+    if closes_on_its_own(enclosed, bridged, min_enclosure):
         result["status"] = "closed"
         result["gap_m"] = 0.0
         result["ratio"] = 0.0
@@ -211,8 +223,8 @@ def _chains(edges: list[dict], positions: dict) -> list[dict]:
     return chains
 
 
-def _enclosed_polygon(parts: list, positions: dict, labels: list):
-    """The largest polygon the tracks enclose once their ends are snapped."""
+def _snapped_lines(parts: list, positions: dict, labels: list) -> list:
+    """The tracks with their ends pulled onto the clustered nodes."""
     snapped = []
     for index, part in enumerate(parts):
         coordinates = [tuple(c[:2]) for c in part.coords]
@@ -220,13 +232,27 @@ def _enclosed_polygon(parts: list, positions: dict, labels: list):
         coordinates[-1] = positions[labels[2 * index + 1]]
         if len({coordinates[0], *coordinates}) >= 2:
             snapped.append(LineString(coordinates))
-    if not snapped:
+    return snapped
+
+
+def _enclosed_shape(lines: list, min_share: float = 0.02):
+    """Every substantial area the lines enclose, not just the biggest one.
+
+    All of them, because a clan can hold more than one parcel and the question
+    here is how much ground the tracks ring in total. Slivers below
+    `min_share` of the largest are the incidental loops where a track crosses
+    itself, and are dropped.
+    """
+    if not lines:
         return None
     try:
-        polygons = list(polygonize(unary_union(snapped)))
+        rings = [p for p in polygonize(unary_union(lines)) if p.area > 0]
     except Exception:
         return None
-    return max(polygons, key=lambda p: p.area) if polygons else None
+    if not rings:
+        return None
+    largest = max(p.area for p in rings)
+    return unary_union([p for p in rings if p.area >= largest * min_share])
 
 
 def _furthest_pair(nodes: list, positions: dict) -> list:
@@ -438,6 +464,96 @@ def loose_end_bridges(parts: list, tolerance: float, max_spur: float = 0.10):
     return bridges, total
 
 
+def bridges_for(chains: list[dict]):
+    """Straight lines joining the open pieces into one ring, and their length.
+
+    The order the pieces are joined in, and which way round each one is taken,
+    comes from `order_chains` — get the direction wrong and the bridges cross,
+    giving a bow-tie that encloses two slivers instead of the ground actually
+    walked around.
+    """
+    open_chains = [c for c in chains if not c["closed"] and len(c["ends"]) == 2]
+    if not open_chains:
+        return [], 0.0
+
+    if len(open_chains) == 1:
+        a, b = open_chains[0]["ends"]
+        line = LineString([a, b])
+        return [line], line.length
+
+    ends = [c["ends"] for c in open_chains]
+    order = order_chains(open_chains)
+
+    bridges, total = [], 0.0
+    for position, (index, flip) in enumerate(order):
+        exit_point = ends[index][1 - flip]
+        next_index, next_flip = order[(position + 1) % len(order)]
+        entry_point = ends[next_index][next_flip]
+        line = LineString([exit_point, entry_point])
+        bridges.append(line)
+        total += line.length
+    return bridges, total
+
+
+
+
+# A survey counts as closed when the closing step's lines add no more than
+# this share of the ground to what the tracks enclose by themselves.
+#
+# The exact value decides nothing in this dataset. Measured across all 51
+# surveys the shares are sharply split: six sit at 0.93 or above (four of them
+# at 0.98+), and the next one down is 0.43. Anything between those two would
+# sort the surveys identically. 0.10 is chosen to say what is meant — that the
+# drawn lines added next to nothing — rather than to place the boundary.
+CLOSED_TOLERANCE = 0.10
+
+
+def closes_on_its_own(enclosed, bridged, min_enclosure: float) -> bool:
+    """Do the tracks enclose the ground, or does the inference supply it?
+
+    The test this replaces asked a different question: is the largest ring's
+    perimeter at least half of everything walked? That is a question about
+    distance, and it gets the answer wrong in both directions.
+
+    It fails a closed survey for being thoroughly walked. Rondi's tracks
+    enclose 1,563 ha in a single ring of 29.47 km, and the pipeline called it
+    inferred and drew 12.43 km of line across it that changed the area by
+    nothing at all — the bridged figure is 1,563 ha too. It failed because the
+    steward walked 59 km in 62 pieces to map that 29.5 km boundary, and half
+    of 59 km is 29.49 km. It missed by twenty metres, and it missed because
+    the steward had walked their own land. The more ground a steward covers
+    inside the boundary, the further the old rule pushed their survey from
+    being called closed.
+
+    It can also pass a survey that encloses nothing, which is why the rule it
+    replaces looked at one ring rather than all of them: a mesh of slivers
+    where a track crosses itself has a long perimeter and no area.
+
+    So ask about ground instead. `enclosed` is what the tracks ring unaided;
+    `bridged` is what they ring once the closing step has drawn its lines. If
+    the drawn lines add no more than `CLOSED_TOLERANCE` of the ground, they
+    were not carrying the boundary, and the survey is closed however the
+    closing step chose to describe it. A sliver mesh fails the same test,
+    because there the drawn lines supply nearly all of it.
+
+    The share can exceed 1: a bridge that cuts a corner encloses less than the
+    tracks do on their own. Asingi comes out at 1.014.
+
+    Where a survey passes, the polygon returned is the one the tracks enclose,
+    not the bridged one. Nothing inferred is kept in it.
+
+    `min_enclosure` is honoured as a floor and can only tighten this, never
+    loosen it, so a caller cannot ask for a survey to be called closed on less
+    ground than the tracks actually ring.
+    """
+    if enclosed is None or enclosed.area <= 0:
+        return False
+    if bridged is None or bridged.area <= 0:
+        return True
+    share = enclosed.area / bridged.area
+    return share >= max(1.0 - CLOSED_TOLERANCE, min_enclosure)
+
+
 def _closing_gap(chains: list[dict]) -> float:
     """Straight-line distance still needed to join the pieces into one ring.
 
@@ -547,7 +663,8 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
             parts.extend(geometry.geoms if hasattr(geometry, "geoms")
                          else [geometry])
         outcome = analyse_survey(parts, tolerance, threshold, max_spur,
-                                 min_enclosure)
+                                 min_enclosure,
+                                 derived=dataio.adopted_segments(source))
         if outcome["length_m"] < min_length:
             outcome["status"] = "too short"
             outcome["detail"] = f"only {outcome['length_m']:.0f} m walked"
@@ -561,6 +678,7 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
             "source_name": source,
             "tracks": outcome["parts"],
             "length_km": round(outcome["length_m"] / 1000, 2),
+            "derived_km": round(outcome.get("derived_m", 0.0) / 1000, 2),
             "gap_m": None if outcome["gap_m"] is None else round(outcome["gap_m"], 1),
             "gap_pct": None if outcome["ratio"] is None else round(outcome["ratio"] * 100, 1),
             "area_ha": outcome.get("area_ha"),

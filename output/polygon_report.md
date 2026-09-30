@@ -1,8 +1,8 @@
 # Mapped areas and clan overlaps
 
-- **Surveyed polygons:** 5, 2,542.4 ha
-- **Inferred polygons:** 32, 30,639.7 ha
-- **Combined footprint:** 28,308.1 ha
+- **Surveyed polygons:** 6, 5,163.1 ha
+- **Inferred polygons:** 30, 28,520.4 ha
+- **Combined footprint:** 28,736.1 ha
 
 ## Mapped area by zone
 
@@ -10,9 +10,9 @@
 | --- | --- | --- |
 | Zone 2 | 12 | 18906.8 |
 | Zone 3 | 1 | 9.5 |
-| Zone 6 | 5 | 3162.0 |
+| Zone 6 | 5 | 3664.1 |
 | Zone 7A | 3 | 1384.6 |
-| Zone 7B | 10 | 6693.2 |
+| Zone 7B | 9 | 6692.5 |
 | Zone 8 | 6 | 3026.0 |
 
 ## Clan-to-clan overlaps
@@ -31,6 +31,7 @@ Reported twice. `shared_ha` is the exact area two clans both claim. `beyond_tol_
 | Kasaki | Tuoko | 156.6 | 29.0 | 4.3 | 154.9 | 28.6 | 4.2 | overlap |
 | Kasaki | Murai (Z2) | 154.4 | 28.5 | 77.6 | 153.7 | 28.4 | 77.3 | overlap |
 | Mariura | Naharaura | 148.3 | 17.4 | 25.0 | 144.2 | 16.9 | 24.3 | overlap |
+| Manuvoora | Sahirut | 79.6 | 7.5 | 23.1 | 74.6 | 7.1 | 21.6 | overlap |
 | Majanko | Manoko | 65.0 | 23.6 | 16.1 | 64.5 | 23.4 | 16.0 | overlap |
 | Jariji | Wohukol | 61.8 | 8.9 | 8.8 | 59.2 | 8.5 | 8.4 | overlap |
 | Naharaura | Pina Ora | 59.6 | 10.0 | 7.3 | 59.0 | 9.9 | 7.3 | overlap |
@@ -45,12 +46,12 @@ Reported twice. `shared_ha` is the exact area two clans both claim. `beyond_tol_
 | Sugulkol | Wohukol | 21.1 | 6.7 | 3.0 | 19.0 | 6.1 | 2.7 | overlap |
 | Asoro | Juaiko | 15.2 | 0.4 | 1.2 | 14.7 | 0.4 | 1.1 | overlap |
 | Pina Ora | Sahirut | 14.5 | 1.8 | 4.2 | 13.0 | 1.6 | 3.8 | overlap |
+| Manuvoora | Pina Ora | 14.1 | 1.3 | 1.7 | 10.4 | 1.0 | 1.3 | overlap |
 | Majanko | Tuoko | 12.5 | 4.5 | 0.3 | 12.4 | 4.5 | 0.3 | overlap |
 | Juaiko | Manoko | 11.8 | 0.9 | 2.9 | 6.8 | 0.5 | 1.7 | overlap |
-| Manuvoora | Sahirut | 8.1 | 1.5 | 2.3 | 7.7 | 1.4 | 2.2 | overlap |
 | Jariji | Sugulkol | 7.5 | 1.1 | 2.4 | 7.1 | 1.0 | 2.3 | overlap |
-| Dusi | Riribudeh | 6.6 | 3.0 | 1.8 | 5.7 | 2.6 | 1.5 | overlap |
 | Gariniko | Tuoko | 6.6 | 6.2 | 0.2 | 4.9 | 4.6 | 0.1 | overlap |
+| Dusi | Riribudeh | 6.6 | 3.0 | 1.8 | 5.7 | 2.6 | 1.5 | overlap |
 | Asingi | Murai (Z2) | 5.9 | 3.6 | 3.0 | 5.3 | 3.2 | 2.7 | overlap |
 | Ambunkol | Sugulkol | 5.2 | 0.9 | 1.7 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Natang | Wohukol | 4.2 | 0.3 | 0.6 | 1.4 | 0.1 | 0.2 | overlap |
@@ -65,17 +66,13 @@ Reported twice. `shared_ha` is the exact area two clans both claim. `beyond_tol_
 | Binunkol | Sugulkol | 1.5 | 0.1 | 0.5 | 1.3 | 0.1 | 0.4 | overlap |
 | Binunkol | Rondi | 0.8 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Gumuyude | Mungaikol | 0.6 | 0.1 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol | Sugulkol | 0.6 | 92.2 | 0.2 | 0.0 | 0.0 | 0.0 | within tolerance |
+| Bimkol | Darekikol | 0.5 | 0.3 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Ambunkol | Jariji | 0.5 | 0.1 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Gariniko | Murai (Z2) | 0.5 | 0.5 | 0.3 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Bimkol | Darekikol | 0.5 | 0.3 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Binunkol | Ginangi | 0.4 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Jariji | Sukandi | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Binunkol | Sukandi | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Borori | Mungaikol | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol | Jariji | 0.0 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol | Wohukol | 0.0 | 3.4 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol | Ambunkol | 0.0 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
+| Binunkol | Sukandi | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Asingi | Kasaki | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Ginangi | Wohukol | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 
@@ -217,6 +214,7 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Kasaki / Ananias Masua | Tuoko / Kaupa Dota, Terrence Dobija | 156.6 | 29.0 | 4.3 | 154.9 | 28.6 | 4.2 | overlap |
 | Kasaki / Ananias Masua | Murai (Z2) / Nehemiah Nindori | 154.4 | 28.5 | 77.6 | 153.7 | 28.4 | 77.3 | overlap |
 | Mariura / Fabian Justin, Livingstone Nisavora | Naharaura / Zechariah Sasavo | 148.3 | 17.4 | 25.0 | 144.2 | 16.9 | 24.3 | overlap |
+| Manuvoora / Egobeyas Kuarisi, Granville Nepo | Sahirut / Lenard Urami, Solomon Makanisa | 79.6 | 7.5 | 23.1 | 74.6 | 7.1 | 21.6 | overlap |
 | Majanko / Gilford Amakana | Manoko / Gilford Amakana | 65.0 | 23.6 | 16.1 | 64.5 | 23.4 | 16.0 | overlap |
 | Jariji / Clement Viri, Newton Giwai | Wohukol / Darline Walele, Nelson Runage | 61.8 | 8.9 | 8.8 | 59.2 | 8.5 | 8.4 | overlap |
 | Naharaura / Zechariah Sasavo | Pina Ora / Alban Ezekiel | 59.6 | 10.0 | 7.3 | 59.0 | 9.9 | 7.3 | overlap |
@@ -231,13 +229,13 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Sugulkol / Chris Idua, Emmanuel Fufus | Wohukol / Darline Walele, Nelson Runage | 21.1 | 6.7 | 3.0 | 19.0 | 6.1 | 2.7 | overlap |
 | Asoro / Gilford Amakana | Juaiko / Gasper K Philip J | 15.2 | 0.4 | 1.2 | 14.7 | 0.4 | 1.1 | overlap |
 | Pina Ora / Alban Ezekiel | Sahirut / Lenard Urami, Solomon Makanisa | 14.5 | 1.8 | 4.2 | 13.0 | 1.6 | 3.8 | overlap |
+| Manuvoora / Egobeyas Kuarisi, Granville Nepo | Pina Ora / Alban Ezekiel | 14.1 | 1.3 | 1.7 | 10.4 | 1.0 | 1.3 | overlap |
 | Majanko / Gilford Amakana | Tuoko / Kaupa Dota, Terrence Dobija | 12.5 | 4.5 | 0.3 | 12.4 | 4.5 | 0.3 | overlap |
 | Juaiko / Gasper K Philip J | Manoko / Gilford Amakana | 11.8 | 0.9 | 2.9 | 6.8 | 0.5 | 1.7 | overlap |
 | Sugulkol / Chris Idua, Emmanuel Fufus |  / Ruth Makisa | 10.1 | 3.2 | 4.3 | 8.9 | 2.8 | 3.7 | overlap |
-| Manuvoora / Egobeyas Kuarisi, Granville Nepo | Sahirut / Lenard Urami, Solomon Makanisa | 8.1 | 1.5 | 2.3 | 7.7 | 1.4 | 2.2 | overlap |
 | Jariji / Clement Viri, Newton Giwai | Sugulkol / Chris Idua, Emmanuel Fufus | 7.5 | 1.1 | 2.4 | 7.1 | 1.0 | 2.3 | overlap |
-| Dusi / Max Mamo | Riribudeh / Prut Buitari, Unido Ose | 6.6 | 3.0 | 1.8 | 5.7 | 2.6 | 1.5 | overlap |
 | Gariniko / Lance Sake | Tuoko / Kaupa Dota, Terrence Dobija | 6.6 | 6.2 | 0.2 | 4.9 | 4.6 | 0.1 | overlap |
+| Dusi / Max Mamo | Riribudeh / Prut Buitari, Unido Ose | 6.6 | 3.0 | 1.8 | 5.7 | 2.6 | 1.5 | overlap |
 | Asingi / Jethro Akse | Murai (Z2) / Nehemiah Nindori | 5.9 | 3.6 | 3.0 | 5.3 | 3.2 | 2.7 | overlap |
 | Ambunkol / Peter Awako | Sugulkol / Chris Idua, Emmanuel Fufus | 5.2 | 0.9 | 1.7 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Natang / Dickson Hoe, Stafford Gidiri | Wohukol / Darline Walele, Nelson Runage | 4.2 | 0.3 | 0.6 | 1.4 | 0.1 | 0.2 | overlap |
@@ -248,29 +246,24 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Manang / Kelly Wahamo | Sugulkol / Chris Idua, Emmanuel Fufus | 2.7 | 0.8 | 0.9 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Gariniko / Lance Sake | Kasaki / Ananias Masua | 1.9 | 1.8 | 0.3 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Mariura / Fabian Justin, Livingstone Nisavora | Sahirut / Lenard Urami, Solomon Makanisa | 1.7 | 0.2 | 0.5 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Dusi / Max Mamo | Gubai / Fordy Igai, Kenny Noi | 1.5 | 0.7 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Binunkol / Moses Garui | Sugulkol / Chris Idua, Emmanuel Fufus | 1.5 | 0.1 | 0.5 | 1.3 | 0.1 | 0.4 | overlap |
+| Dusi / Max Mamo | Gubai / Fordy Igai, Kenny Noi | 1.5 | 0.7 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Binunkol / Moses Garui | Rondi / Humphrey Poto, Jefferson Amunisa | 0.8 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Gumuyude / Philip Igai | Mungaikol / Graham Ekiawa | 0.6 | 0.1 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol / Simeon Pasip | Sugulkol / Chris Idua, Emmanuel Fufus | 0.6 | 92.2 | 0.2 | 0.0 | 0.0 | 0.0 | within tolerance |
+| Bimkol / Kennedy Wosa | Darekikol / Garex Sevesi, George Kopoi | 0.5 | 0.3 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Ambunkol / Peter Awako | Jariji / Clement Viri, Newton Giwai | 0.5 | 0.1 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Gariniko / Lance Sake | Murai (Z2) / Nehemiah Nindori | 0.5 | 0.5 | 0.3 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Bimkol / Kennedy Wosa | Darekikol / Garex Sevesi, George Kopoi | 0.5 | 0.3 | 0.1 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Binunkol / Moses Garui | Ginangi / Job Mokondo, Joshua Mokondo | 0.4 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Jariji / Clement Viri, Newton Giwai | Sukandi / Millinton Beso, Rodney Ajinko | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Binunkol / Moses Garui | Sukandi / Millinton Beso, Rodney Ajinko | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Borori / Hagahi Semo, John Saini | Mungaikol / Graham Ekiawa | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
+| Binunkol / Moses Garui | Sukandi / Millinton Beso, Rodney Ajinko | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Asingi / Jethro Akse | Kasaki / Ananias Masua | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol / Simeon Pasip | Jariji / Clement Viri, Newton Giwai | 0.0 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol / Simeon Pasip | Ambunkol / Peter Awako | 0.0 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
-| Abuankol / Simeon Pasip | Wohukol / Darline Walele, Nelson Runage | 0.0 | 3.4 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 | Ginangi / Job Mokondo, Joshua Mokondo | Wohukol / Darline Walele, Nelson Runage | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | within tolerance |
 
 ## Every polygon
 
 | zone | clan | steward | stewards | surveys | source_name | basis | walked_km | area_ha | gap_m | gap_pct | bridges | derived_km |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Zone 7B | Abuankol | Simeon Pasip | 1 | 1 | Abuankol — Zone 7B | surveyed | 0.51 | 0.7 | 0.0 | 0.0 | 0 | 0.0 |
 | Zone 7B | Ambunkol | Peter Awako | 1 | 1 | Ambunkol — Zone 7B | inferred | 18.6 | 591.8 | 4489.1 | 24.1 | 6 | 0.0 |
 | Zone 2 | Asingi | Jethro Akse | 1 | 1 | Asingi — Zone 2 | surveyed | 6.43 | 166.1 | 0.0 | 0.0 | 0 | 0.0 |
 | Zone 2 | Asoro | Gilford Amakana | 1 | 1 | Asoro — Zone 2 | inferred | 22.83 | 3506.7 | 7989.0 | 35.0 | 2 | 0.0 |
@@ -291,7 +284,7 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Zone 2 | Majanko | Gilford Amakana | 1 | 1 | Majanko — Zone 2 | surveyed | 7.51 | 275.8 | 0.0 | 0.0 | 0 | 0.0 |
 | Zone 7B | Manang | Kelly Wahamo | 1 | 1 | Manang — Zone 7B | inferred | 7.13 | 353.0 | 1788.3 | 25.1 | 1 | 0.0 |
 | Zone 2 | Manoko | Gilford Amakana | 1 | 1 | Manoko — Zone 2 | inferred | 12.15 | 404.0 | 3847.5 | 31.7 | 3 | 0.0 |
-| Zone 6 | Manuvoora | Egobeyas Kuarisi, Granville Nepo | 2 | 2 | Manuvoora — Zone 6 | inferred | 63.93 | 555.9 | 11272.0 | 17.6 | 5 | 2.48 |
+| Zone 6 | Manuvoora | Egobeyas Kuarisi, Granville Nepo | 2 | 2 | Manuvoora — Zone 6 | surveyed | 61.45 | 1058.0 | 0.0 | 0.0 | 0 | 2.93 |
 | Zone 6 | Mariura | Fabian Justin, Livingstone Nisavora | 2 | 2 | Mariura — Zone 6 | inferred | 33.71 | 854.9 | 14245.4 | 42.3 | 13 | 0.0 |
 | Zone 8 | Mungaikol | Graham Ekiawa | 1 | 1 | Mungaikol — Zone 8 | inferred | 14.75 | 569.7 | 2263.5 | 15.3 | 3 | 0.0 |
 | Zone 2 | Murai (Z2) | Nehemiah Nindori | 1 | 1 | Murai (Z2) — Zone 2 | surveyed | 7.33 | 198.9 | 0.0 | 0.0 | 0 | 0.0 |
@@ -300,7 +293,7 @@ Where two clans' recorded lines run within 100 m of each other. This is agreemen
 | Zone 2 | Nituri | Christoper Visua, Graham Naopi, Newton Muraba | 3 | 3 | Nituri — Zone 2 | inferred | 41.83 | 5274.6 | 11128.5 | 26.6 | 14 | 0.0 |
 | Zone 6 | Pina Ora | Alban Ezekiel | 1 | 1 | Pina Ora — Zone 6 | inferred | 18.85 | 812.2 | 1429.9 | 7.6 | 4 | 0.0 |
 | Zone 8 | Riribudeh | Prut Buitari, Unido Ose | 2 | 2 | Riribudeh — Zone 8 | inferred | 20.37 | 371.8 | 1561.2 | 7.7 | 3 | 0.0 |
-| Zone 2 | Rondi | Humphrey Poto, Jefferson Amunisa | 2 | 2 | Rondi — Zone 2 | inferred | 58.98 | 1563.4 | 12430.8 | 21.1 | 14 | 0.0 |
+| Zone 2 | Rondi | Humphrey Poto, Jefferson Amunisa | 2 | 2 | Rondi — Zone 2 | surveyed | 58.98 | 1563.4 | 0.0 | 0.0 | 0 | 0.0 |
 | Zone 6 | Sahirut | Lenard Urami, Solomon Makanisa | 2 | 2 | Sahirut — Zone 6 | inferred | 22.97 | 345.0 | 216.6 | 0.9 | 1 | 0.0 |
 | Zone 7B | Sugulkol | Chris Idua, Emmanuel Fufus | 2 | 2 | Sugulkol — Zone 7B | inferred | 23.99 | 313.8 | 3682.6 | 15.4 | 6 | 0.0 |
 | Zone 2 | Sukandi | Millinton Beso, Rodney Ajinko | 2 | 2 | Sukandi — Zone 2 | surveyed | 39.69 | 1900.9 | 0.0 | 0.0 | 0 | 0.0 |

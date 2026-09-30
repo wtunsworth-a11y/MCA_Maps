@@ -6,6 +6,23 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.12
+
+- **The closure test now asks whether the tracks enclose the ground.** It used
+  to ask whether the main ring's perimeter was at least half the distance
+  walked, which punished thorough work: Rondi's steward walked 59 km in 62
+  pieces to map a 29.5 km boundary, the test wanted 29.49 km of ring, the ring
+  was 29.47 km, and a survey that encloses 1,563 ha unaided was reported as
+  inferred — with 12.43 km of straight line drawn across it that changed the
+  area by nothing. Rondi is now reported as surveyed. Abuankol no longer is:
+  its 0.5 km of track rings 1 ha where the inference rings 4.
+- **Manuvoora — Zone 6 is closed.** The field told us the boundary follows a
+  river with four waterfalls along it — Ija, Taram, Pururi and Parari — which
+  cannot be walked; that stretch is traced along the modelled drainage. Four
+  breaks in the recording, 443 m in all, are joined by hand. Both kinds of
+  line are recorded apart from walked line and add no walked distance, because
+  nobody walked them.
+
 ## 1.11
 
 - **Nobody is asked to walk a river.** Large rivers are physically difficult

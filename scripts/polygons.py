@@ -60,107 +60,31 @@ DEFAULT_MAX_GAP = 0.50
 OVERLAP_TOLERANCE_M = 100.0
 
 
-RESOLUTIONS_PATH = (dataio.REPO_ROOT / "data" / "reference"
-                    / "gap_resolutions.gpkg")
-
-
-def adopted_segments(unit: str | None = None):
-    """Boundary segments derived rather than walked, by survey unit.
-
-    Two kinds, and the difference matters:
-
-    `river_routed` — the field says the boundary follows a river that cannot
-    be walked, so the line is traced along the modelled drainage (§4.13b). The
-    shape is as good as a 30 m DEM and no better.
-
-    `agreed_straight` — the field says this stretch is a straight line and the
-    clan is content with it. That is not an inference the pipeline made; it is
-    an answer the clan gave, and it is boundary.
-
-    Both are added to the network before the enclosed area is worked out, so
-    the boundary takes the right shape however the survey is assembled and the
-    remaining bridging is computed around lines that are already in place.
-
-    Neither is ever counted as walked distance. Nobody walked them.
-    """
-    if not RESOLUTIONS_PATH.exists():
-        return {} if unit is None else []
-    try:
-        frame = gpd.read_file(RESOLUTIONS_PATH).to_crs(dataio.METRIC_CRS)
-    except Exception:
-        return {} if unit is None else []
-    if unit is not None:
-        return [g for u, g in zip(frame.unit, frame.geometry) if u == unit]
-    out: dict = {}
-    for key, geometry in zip(frame.unit, frame.geometry):
-        out.setdefault(key, []).append(geometry)
-    return out
-
-
-def adopted_frame(unit: str | None = None):
-    """The adopted segments with their kind and note, for maps and tables."""
-    if not RESOLUTIONS_PATH.exists():
-        return None
-    try:
-        frame = gpd.read_file(RESOLUTIONS_PATH).to_crs(dataio.METRIC_CRS)
-    except Exception:
-        return None
-    return frame if unit is None else frame[frame.unit == unit]
-
-
-def adopt_segment(unit: str, line, kind: str, note: str,
-                  detail: dict | None = None):
-    """Keep a derived line as part of that clan's boundary.
-
-    Stored as geometry against the survey unit, not against a gap number.
-    Numbering is a property of one assembly of the survey — Manuvoora's gaps
-    are numbered differently for one steward's walk and for two joined — so a
-    number would stop meaning what it meant as soon as another steward's
-    tracks arrived. The line itself does not move.
-
-    One resolution per stretch: re-adopting the same stretch replaces what was
-    there, or a re-run would stack two copies of the same river on top of
-    itself. Sameness is judged by Hausdorff distance, not by proximity — a
-    44 m join that starts at the end of a 2.5 km river route sits zero metres
-    from it and is not remotely the same line. Proximity deleted that river
-    route once.
-    """
-    import pandas as pd
-
-    detail = detail or {}
-    row = gpd.GeoDataFrame(
-        [{"unit": unit, "kind": kind, "note": note,
-          "straight_km": detail.get("straight_km"),
-          "routed_km": detail.get("routed_km"),
-          "snap_start_m": detail.get("snap_start_m"),
-          "snap_end_m": detail.get("snap_end_m"),
-          "source": detail.get("source", ""),
-          "geometry": line}],
-        geometry="geometry", crs=dataio.METRIC_CRS)
-
-    if RESOLUTIONS_PATH.exists():
-        existing = gpd.read_file(RESOLUTIONS_PATH).to_crs(dataio.METRIC_CRS)
-        keep = existing[~(
-            (existing.unit == unit)
-            & (existing.kind == kind)
-            & existing.geometry.apply(
-                lambda g: g.hausdorff_distance(line) < 50))]
-        row = gpd.GeoDataFrame(pd.concat([keep, row], ignore_index=True),
-                               geometry="geometry", crs=dataio.METRIC_CRS)
-
-    RESOLUTIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    row.to_crs(dataio.WGS84).to_file(RESOLUTIONS_PATH,
-                                     layer="gap_resolutions", driver="GPKG")
-    return RESOLUTIONS_PATH
+# The store of derived boundary segments lives in dataio, so the closure
+# report reads the same lines the polygon layer is built from and the two
+# cannot disagree about whether a survey is closed.
+RESOLUTIONS_PATH = dataio.RESOLUTIONS_PATH
+adopted_segments = dataio.adopted_segments
+adopted_frame = dataio.adopted_frame
+adopt_segment = dataio.adopt_segment
 
 
 def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
-                   max_spur: float) -> dict | None:
-    """Build the best polygon available for one survey's tracks."""
-    parts = [p for p in parts if p is not None and p.length > 0]
+                   max_spur: float, derived: list | None = None) -> dict | None:
+    """Build the best polygon available for one survey's tracks.
+
+    `derived` are boundary segments nobody walked — a river traced along the
+    modelled drainage, open ends joined by hand. They shape the polygon like
+    any other line, but they are kept out of `walked_km`, because the walked
+    distance is a record of what a steward did on the ground.
+    """
+    walked = [p for p in parts if p is not None and p.length > 0]
+    derived = [d for d in (derived or []) if d is not None and d.length > 0]
+    parts = walked + derived
     if not parts:
         return None
 
+    walked_m = sum(p.length for p in walked)
     total = sum(p.length for p in parts)
     endpoints = []
     for part in parts:
@@ -172,18 +96,9 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
         positions.setdefault(label, endpoints[index])
 
     snapped = _snapped_lines(parts, positions, labels)
-
-    # Already a ring? Judge that on the primary ring alone — a multipolygon's
-    # perimeters sum, so a mesh of slivers would clear the threshold on total
-    # perimeter while enclosing almost nothing.
-    primary = _largest(snapped)
     enclosed = _enclosed(snapped)
-    if primary is not None and primary.length >= min_enclosure * total:
-        return {"geometry": enclosed, "basis": "surveyed", "gap_m": 0.0,
-                "gap_pct": 0.0, "walked_km": total / 1000,
-                "area_ha": enclosed.area / 1e4, "bridges": []}
 
-    # Otherwise bridge the open ends and try again.
+    # Bridge the open ends, so the two can be compared.
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
               "length": parts[i].length, "live": True}
              for i in range(len(parts))]
@@ -192,16 +107,28 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
 
     chains = closure._chains(live, positions)
     bridges, gap = _bridges(chains)
-    if not bridges:
-        return None
 
-    bridged = _enclosed(snapped + bridges)
-    if bridged is None:
+    bridged = _enclosed(snapped + bridges) if bridges else enclosed
+
+    # Is the survey closed? Ask whether the tracks enclose the ground, by
+    # comparing what they enclose on their own with what they enclose once
+    # the closing step has drawn its lines. If the drawn lines add nothing,
+    # they were not needed, and the survey is closed however the closing step
+    # chose to describe it.
+    if closure.closes_on_its_own(enclosed, bridged, min_enclosure):
+        return {"geometry": enclosed, "basis": "surveyed", "gap_m": 0.0,
+                "gap_pct": 0.0, "walked_km": walked_m / 1000,
+                "derived_km": (total - walked_m) / 1000,
+                "area_ha": enclosed.area / 1e4, "bridges": []}
+
+    if not bridges or bridged is None:
         return None
 
     return {"geometry": bridged, "basis": "inferred", "gap_m": gap,
             "gap_pct": gap / total * 100 if total else None,
-            "walked_km": total / 1000, "area_ha": bridged.area / 1e4,
+            "walked_km": walked_m / 1000,
+            "derived_km": (total - walked_m) / 1000,
+            "area_ha": bridged.area / 1e4,
             "bridges": bridges}
 
 
@@ -266,32 +193,10 @@ def _bridges(chains: list[dict]):
     line across is this pipeline's guess at what lies between. They are drawn
     apart from the walked line on every map and counted apart in every table.
 
-    The order the pieces are joined in, and which way round each one is taken,
-    comes from `closure.order_chains` — get the direction wrong and the
-    bridges cross, giving a bow-tie that encloses two slivers instead of the
-    ground actually walked around.
+    Built by `closure.bridges_for`, which is also what the closure report
+    uses, so the two cannot disagree about what a survey's gaps are.
     """
-    open_chains = [c for c in chains if not c["closed"] and len(c["ends"]) == 2]
-    if not open_chains:
-        return [], 0.0
-
-    if len(open_chains) == 1:
-        a, b = open_chains[0]["ends"]
-        line = LineString([a, b])
-        return [line], line.length
-
-    ends = [c["ends"] for c in open_chains]
-    order = closure.order_chains(open_chains)
-
-    bridges, total = [], 0.0
-    for position, (index, flip) in enumerate(order):
-        exit_point = ends[index][1 - flip]
-        next_index, next_flip = order[(position + 1) % len(order)]
-        entry_point = ends[next_index][next_flip]
-        line = LineString([exit_point, entry_point])
-        bridges.append(line)
-        total += line.length
-    return bridges, total
+    return closure.bridges_for(chains)
 
 
 # --------------------------------------------------------------------------
@@ -560,12 +465,9 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             parts.extend(geometry.geoms if hasattr(geometry, "geoms")
                          else [geometry])
-        derived = resolutions.get(source, [])
-        built = survey_polygon(parts + derived, args.tolerance,
-                               args.min_enclosure, args.max_spur)
-        if derived:
-            built["derived_km"] = round(
-                sum(d.length for d in derived) / 1000, 2)
+        built = survey_polygon(parts, args.tolerance, args.min_enclosure,
+                               args.max_spur,
+                               derived=resolutions.get(source, []))
         if built is None:
             continue
         first = group.iloc[0]
@@ -589,7 +491,7 @@ def main(argv: list[str] | None = None) -> int:
             "gap_m": round(built["gap_m"], 1),
             "gap_pct": None if built["gap_pct"] is None else round(built["gap_pct"], 1),
             "bridges": len(built.get("bridges") or []),
-            "derived_km": built.get("derived_km", 0.0),
+            "derived_km": round(built.get("derived_km", 0.0), 2),
             "geometry": built["geometry"],
         })
 

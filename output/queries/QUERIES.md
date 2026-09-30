@@ -142,9 +142,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q08. Duribip (Beven Naive) — recorded in 3 separate pieces
+### Q08. Abuankol (Simeon Pasip) — recorded in 3 separate pieces
 
-**Duribip**, walked by **Beven Naive** in Zone 8, covers 4.5 km but is recorded as **3 disconnected pieces**, needing 5,900 m of straight-line joins to form a ring (139.2% of the distance walked).
+**Abuankol**, walked by **Simeon Pasip** in Zone 7B, covers 0.5 km but is recorded as **3 disconnected pieces**, needing 1,259 m of straight-line joins to form a ring (245.3% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 
@@ -160,9 +160,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q09. Savasi (Oscar Isuni) — recorded in 3 separate pieces
+### Q09. Duribip (Beven Naive) — recorded in 3 separate pieces
 
-**Savasi**, walked by **Oscar Isuni** in Zone 3, covers 4.0 km but is recorded as **3 disconnected pieces**, needing 5,106 m of straight-line joins to form a ring (126.7% of the distance walked).
+**Duribip**, walked by **Beven Naive** in Zone 8, covers 4.5 km but is recorded as **3 disconnected pieces**, needing 5,900 m of straight-line joins to form a ring (139.2% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 
@@ -178,9 +178,9 @@ Are the missing stretches still to be walked, or were they walked and not record
 
 ---
 
-### Q10. Gumuri (Gray Saui, Monty Stanford) — recorded in 1 separate pieces
+### Q10. Savasi (Oscar Isuni) — recorded in 3 separate pieces
 
-**Gumuri**, walked by **Gray Saui, Monty Stanford** in Zone 3, covers 6.8 km but is recorded as **1 disconnected pieces**, needing 5,489 m of straight-line joins to form a ring (83.9% of the distance walked).
+**Savasi**, walked by **Oscar Isuni** in Zone 3, covers 4.0 km but is recorded as **3 disconnected pieces**, needing 5,106 m of straight-line joins to form a ring (126.7% of the distance walked).
 
 Are the missing stretches still to be walked, or were they walked and not recorded? Should these pieces be treated as one boundary at all?
 

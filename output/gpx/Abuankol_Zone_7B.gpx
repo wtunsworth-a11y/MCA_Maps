@@ -5,9 +5,47 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Abuankol — clan land boundary</name>
-    <desc>Abuankol, Zone 7B. 0.5 km walked; the boundary closes</desc>
-    <time>2026-08-23T00:00:00Z</time>
+    <desc>Abuankol, Zone 7B. 0.5 km walked; 1.2 km still to walk in 2 gaps. 1 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-09-30T00:00:00Z</time>
   </metadata>
+  <wpt lat="-9.1389517" lon="148.3875067">
+    <name>GAP 1 OF 2 START</name>
+    <desc>0.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Abuankol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1425867" lon="148.3907650">
+    <name>GAP 1 OF 2 END</name>
+    <desc>0.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Abuankol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1428250" lon="148.3916967">
+    <name>GAP 2 OF 2 START</name>
+    <desc>0.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Abuankol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1383833" lon="148.3880017">
+    <name>GAP 2 OF 2 END</name>
+    <desc>0.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Abuankol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <trk>
+    <name>GAP 1 OF 2 - NOT WALKED - 0.54 km</name>
+    <desc>0.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Abuankol, Zone 7B.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1389517" lon="148.3875067"/>
+      <trkpt lat="-9.1425867" lon="148.3907650"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 2 OF 2 - NOT WALKED - 0.64 km</name>
+    <desc>0.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Abuankol, Zone 7B.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1428250" lon="148.3916967"/>
+      <trkpt lat="-9.1383833" lon="148.3880017"/>
+    </trkseg>
+  </trk>
   <trk>
     <name>Abuankol - Simeon Pasip</name>
     <desc>Walked by Simeon Pasip. 0.5 km, 4 track(s), recorded on the ground. Abuankol, Zone 7B.</desc>

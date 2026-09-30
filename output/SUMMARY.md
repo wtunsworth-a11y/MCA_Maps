@@ -26,12 +26,12 @@ walked in to reach a boundary and back out again.
 
 | | Areas | Hectares |
 | --- | ---: | ---: |
-| Boundary walked and closed | 5 | 2,542 |
-| Closure inferred | 32 | 30,640 |
-| **Total mapped** | **37** | **33,182** |
-| Footprint, overlaps counted once | | 28,081 |
+| Boundary walked and closed | 6 | 5,163 |
+| Closure inferred | 30 | 28,520 |
+| **Total mapped** | **36** | **33,683** |
+| Footprint, overlaps counted once | | 28,509 |
 
-**35 of 72 surveys give
+**36 of 72 surveys give
 no area at all.** Their boundaries were walked — Nituri covers 41.8 km across
 three surveys, Tuoko 47.7 km across two — but the walks do not close, and the
 gaps are too wide to bridge honestly. They appear on the map as walked lines
@@ -39,12 +39,12 @@ with no area behind them. **This is the single largest reason the mapped area
 is smaller than the ground actually covered**, and it is a survey-completion
 issue rather than a data one.
 
-**92% of the mapped area rests on an inferred closure** — the
+**85% of the mapped area rests on an inferred closure** — the
 boundary was not walked all the way round, and the gap has been bridged with a
 straight line to give an area at all. Those figures are estimates and are
 labelled as such everywhere they appear.
 
-**170 km of the outlines on this map were never walked.**
+**146 km of the outlines on this map were never walked.**
 They are the straight lines you can see cutting across the landscape, and they
 are drawn in pink so they are never mistaken for a boundary. They mark where a
 receiver was switched off at the end of one walk and switched on again
@@ -53,7 +53,7 @@ outline carries a long straight line, the area behind it is a guess across
 that gap, and the query on that clan's page asks for the missing stretch to be
 walked.
 
-The footprint is **13.2% of the
+The footprint is **13.4% of the
 conservation area's 213,269 ha**.
 
 ## Overlap between clans
@@ -68,23 +68,22 @@ of a boundary followed on foot, not a competing claim.
 
 | | Strict | Beyond 100 m |
 | --- | ---: | ---: |
-| Clans with a mapped area | 36 | 36 |
-| **Clans whose land overlaps another clan's** | **34 (94%)** | **29 (81%)** |
-| Clans with no overlap at all | 2 | 7 |
-| Area claimed by more than one clan | 4,736 ha | 4,670 ha |
-| — as a share of the mapped footprint | 16.9% | 16.6% |
+| Clans with a mapped area | 35 | 35 |
+| **Clans whose land overlaps another clan's** | **33 (94%)** | **29 (83%)** |
+| Clans with no overlap at all | 2 | 6 |
+| Area claimed by more than one clan | 4,798 ha | 4,726 ha |
+| — as a share of the mapped footprint | 16.8% | 16.6% |
 
 **The allowance changes almost nothing**, which is the reason for making it:
-66 ha of the
-4,736 ha falls away, and
-5 clan(s) leave the
+72 ha of the
+4,798 ha falls away, and
+4 clan(s) leave the
 overlapping group. The finding is not an artefact of survey precision.
 
 Most contested, as a share of each clan's own mapped land:
 
 | Clan | Area (ha) | Contested | Beyond 100 m |
 | --- | ---: | ---: | ---: |
-| Abuankol | 1 | 92% | 0% |
 | Manang | 353 | 88% | 88% |
 | Murai (Z2) | 199 | 81% | 80% |
 | Kasaki | 541 | 64% | 64% |
@@ -92,8 +91,9 @@ Most contested, as a share of each clan's own mapped land:
 | Ambunkol | 592 | 60% | 58% |
 | Darekikol | 588 | 57% | 56% |
 | Borori | 639 | 53% | 52% |
+| Nituri | 5,275 | 42% | 42% |
 
-**How much weight this carries.** Of the overlapping area, **931 ha
+**How much weight this carries.** Of the overlapping area, **1,025 ha
 involves at least one boundary that was walked the whole way round**, and the
 rest lies between two inferred closures where the overlap may be an artefact of
 the straight lines rather than a real competing claim. The strongest case is
@@ -109,7 +109,7 @@ throughout, and it does not disappear when only walked boundaries are counted.
 The PNG Incorporated Land Group system rests on land being held by a single
 clan, undisputed. On this evidence that assumption does not describe the
 Managalas: only **2 of
-36 mapped clans** have land that no other clan also claims.
+35 mapped clans** have land that no other clan also claims.
 
 Overlaps here are not treated as errors to be reconciled. They are recorded as
 mapped, because shared and contested ground is a normal feature of the tenure —
@@ -145,10 +145,10 @@ that neither walk closed, so the area can only be bracketed.
 
 - Nothing here has been checked against an independent survey or a cadastral
   record. All verification is internal consistency.
-- 92% of the area is inferred, so area figures should be read
+- 85% of the area is inferred, so area figures should be read
   as estimates with a wide margin.
-- Only 5 of 72 surveys close into a
-  boundary on their own; 35 yield no area
+- Only 6 of 72 surveys close into a
+  boundary on their own; 36 yield no area
   at all.
 - The surveys span 16 months, so a boundary walked early and one walked late
   are not necessarily contemporaneous.

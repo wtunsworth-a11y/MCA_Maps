@@ -693,3 +693,97 @@ def load_from_args(args: argparse.Namespace) -> list[Layer]:
                     only=args.only, refresh=args.refresh,
                     lat_col=args.lat_col, lon_col=args.lon_col,
                     assume_crs=args.crs)
+
+
+RESOLUTIONS_PATH = (REPO_ROOT / "data" / "reference"
+                    / "gap_resolutions.gpkg")
+
+
+def adopted_segments(unit: str | None = None):
+    """Boundary segments derived rather than walked, by survey unit.
+
+    Two kinds, and the difference matters:
+
+    `river_routed` — the field says the boundary follows a river that cannot
+    be walked, so the line is traced along the modelled drainage (§4.13b). The
+    shape is as good as a 30 m DEM and no better.
+
+    `agreed_straight` — the field says this stretch is a straight line and the
+    clan is content with it. That is not an inference the pipeline made; it is
+    an answer the clan gave, and it is boundary.
+
+    Both are added to the network before the enclosed area is worked out, so
+    the boundary takes the right shape however the survey is assembled and the
+    remaining bridging is computed around lines that are already in place.
+
+    Neither is ever counted as walked distance. Nobody walked them.
+    """
+    if not RESOLUTIONS_PATH.exists():
+        return {} if unit is None else []
+    try:
+        frame = gpd.read_file(RESOLUTIONS_PATH).to_crs(METRIC_CRS)
+    except Exception:
+        return {} if unit is None else []
+    if unit is not None:
+        return [g for u, g in zip(frame.unit, frame.geometry) if u == unit]
+    out: dict = {}
+    for key, geometry in zip(frame.unit, frame.geometry):
+        out.setdefault(key, []).append(geometry)
+    return out
+
+
+def adopted_frame(unit: str | None = None):
+    """The adopted segments with their kind and note, for maps and tables."""
+    if not RESOLUTIONS_PATH.exists():
+        return None
+    try:
+        frame = gpd.read_file(RESOLUTIONS_PATH).to_crs(METRIC_CRS)
+    except Exception:
+        return None
+    return frame if unit is None else frame[frame.unit == unit]
+
+
+def adopt_segment(unit: str, line, kind: str, note: str,
+                  detail: dict | None = None):
+    """Keep a derived line as part of that clan's boundary.
+
+    Stored as geometry against the survey unit, not against a gap number.
+    Numbering is a property of one assembly of the survey — Manuvoora's gaps
+    are numbered differently for one steward's walk and for two joined — so a
+    number would stop meaning what it meant as soon as another steward's
+    tracks arrived. The line itself does not move.
+
+    One resolution per stretch: re-adopting the same stretch replaces what was
+    there, or a re-run would stack two copies of the same river on top of
+    itself. Sameness is judged by Hausdorff distance, not by proximity — a
+    44 m join that starts at the end of a 2.5 km river route sits zero metres
+    from it and is not remotely the same line. Proximity deleted that river
+    route once.
+    """
+    import pandas as pd
+
+    detail = detail or {}
+    row = gpd.GeoDataFrame(
+        [{"unit": unit, "kind": kind, "note": note,
+          "straight_km": detail.get("straight_km"),
+          "routed_km": detail.get("routed_km"),
+          "snap_start_m": detail.get("snap_start_m"),
+          "snap_end_m": detail.get("snap_end_m"),
+          "source": detail.get("source", ""),
+          "geometry": line}],
+        geometry="geometry", crs=METRIC_CRS)
+
+    if RESOLUTIONS_PATH.exists():
+        existing = gpd.read_file(RESOLUTIONS_PATH).to_crs(METRIC_CRS)
+        keep = existing[~(
+            (existing.unit == unit)
+            & (existing.kind == kind)
+            & existing.geometry.apply(
+                lambda g: g.hausdorff_distance(line) < 50))]
+        row = gpd.GeoDataFrame(pd.concat([keep, row], ignore_index=True),
+                               geometry="geometry", crs=METRIC_CRS)
+
+    RESOLUTIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    row.to_crs(WGS84).to_file(RESOLUTIONS_PATH,
+                                     layer="gap_resolutions", driver="GPKG")
+    return RESOLUTIONS_PATH

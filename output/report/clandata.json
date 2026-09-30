@@ -943,14 +943,14 @@
   "n_stewards": 2,
   "walked_km": 58.98,
   "spur_km": 0.36,
-  "status": "open",
+  "status": "closed",
   "chains": 14,
-  "gap_km": 12.43,
-  "gap_pct": 21.2,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
   "area_ha": 1563.4,
-  "basis": "inferred",
+  "basis": "surveyed",
   "parcels": 1,
-  "bridges": 14,
+  "bridges": 0,
   "overlaps": [
    {
     "with": "Sukandi",
@@ -1008,7 +1008,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Rondi_Zone_2.gpx",
-  "gpx_gaps": 14
+  "gpx_gaps": 0
  },
  {
   "unit": "Rumbi \u2014 Zone 2",
@@ -1700,21 +1700,29 @@
   "n_stewards": 2,
   "walked_km": 61.45,
   "spur_km": 10.04,
-  "status": "open",
-  "chains": 6,
-  "gap_km": 11.38,
-  "gap_pct": 20.4,
-  "area_ha": 827.7,
-  "basis": "inferred",
-  "parcels": 3,
-  "bridges": 6,
+  "status": "closed",
+  "chains": 5,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
+  "area_ha": 1058.0,
+  "basis": "surveyed",
+  "parcels": 1,
+  "bridges": 0,
   "overlaps": [
    {
     "with": "Sahirut",
-    "ha": 6.8,
-    "pct": 0.8,
-    "beyond_tol_ha": 6.6,
-    "beyond_tol_pct": 0.8,
+    "ha": 79.6,
+    "pct": 7.5,
+    "beyond_tol_ha": 74.6,
+    "beyond_tol_pct": 7.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Pina Ora",
+    "ha": 14.1,
+    "pct": 1.3,
+    "beyond_tol_ha": 10.4,
+    "beyond_tol_pct": 1.0,
     "verdict": "overlap"
    }
   ],
@@ -1738,9 +1746,15 @@
   "join_sep_ha": 2066.1,
   "join_joined_ha": 827.7,
   "map": "Manuvoora_Zone_6.png",
-  "field_notes": [],
-  "field_source": null,
-  "river_boundary": false,
+  "field_notes": [
+   "Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari.",
+   "The river line itself is impassable because of those waterfalls, but the boundary follows the river line. That stretch is not to be walked; it will be completed by editing.",
+   "The smaller gap is a gorge at the Jarahe waterfall, and the two ends may be joined by a straight line. The straight line there is the boundary, not an assumption.",
+   "The river is resolved: it runs along the modelled drainage (2.48 km, kind river_routed). The Jarahe gorge is NOT resolved. A 1.86 km line adopted for it was withdrawn: it was not a break in the walk at all, but the span the closing step drew between two arbitrary points, running past all four open ends without joining any of them. The real open ends in Granville Nepo's walk are 44 m at the river, four ends 117-342 m apart where the western and north-eastern pieces fail to meet, and a 52 m stub.",
+   "Egobeyas Kuarisi and Granville Nepo walked this boundary together, both recording: 98% of each line runs within 50 m of the other. It is one walk recorded twice, not two walks to be joined. Joined, the linework doubles and the survey encloses 556 ha; taken as Granville Nepo recorded it, it encloses 1,099 ha and is closed but for 40 m."
+  ],
+  "field_source": "Field advice, 24 August 2026, on an annotated printout",
+  "river_boundary": true,
   "gpx": "Manuvoora_Zone_6.gpx",
   "gpx_gaps": 6
  },
@@ -1994,6 +2008,14 @@
     "beyond_tol_ha": 13.0,
     "beyond_tol_pct": 1.6,
     "verdict": "overlap"
+   },
+   {
+    "with": "Manuvoora",
+    "ha": 14.1,
+    "pct": 1.7,
+    "beyond_tol_ha": 10.4,
+    "beyond_tol_pct": 1.3,
+    "verdict": "overlap"
    }
   ],
   "shared_lines": [
@@ -2059,19 +2081,19 @@
   "bridges": 1,
   "overlaps": [
    {
+    "with": "Manuvoora",
+    "ha": 79.6,
+    "pct": 23.1,
+    "beyond_tol_ha": 74.6,
+    "beyond_tol_pct": 21.6,
+    "verdict": "overlap"
+   },
+   {
     "with": "Pina Ora",
     "ha": 14.5,
     "pct": 4.2,
     "beyond_tol_ha": 13.0,
     "beyond_tol_pct": 3.8,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Manuvoora",
-    "ha": 6.8,
-    "pct": 2.0,
-    "beyond_tol_ha": 6.6,
-    "beyond_tol_pct": 1.9,
     "verdict": "overlap"
    },
    {
@@ -2363,48 +2385,15 @@
   "n_stewards": 1,
   "walked_km": 0.51,
   "spur_km": 0.0,
-  "status": "closed",
+  "status": "open",
   "chains": 3,
-  "gap_km": 0.0,
-  "gap_pct": 0.0,
-  "area_ha": 0.7,
-  "basis": "surveyed",
-  "parcels": 2,
+  "gap_km": 1.26,
+  "gap_pct": 245.3,
+  "area_ha": null,
+  "basis": null,
+  "parcels": 0,
   "bridges": 0,
-  "overlaps": [
-   {
-    "with": "Sugulkol",
-    "ha": 0.6,
-    "pct": 92.2,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Jariji",
-    "ha": 0.0,
-    "pct": 0.1,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Wohukol",
-    "ha": 0.0,
-    "pct": 3.4,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Ambunkol",
-    "ha": 0.0,
-    "pct": 0.1,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   }
-  ],
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Sugulkol",
@@ -2452,14 +2441,14 @@
     "pct": 1.8
    }
   ],
-  "join_sep_ha": 0.7,
-  "join_joined_ha": 0.7,
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 0.0,
   "map": "Abuankol_Zone_7B.png",
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Abuankol_Zone_7B.gpx",
-  "gpx_gaps": 0
+  "gpx_gaps": 2
  },
  {
   "unit": "Ambunkol \u2014 Zone 7B",
@@ -2516,14 +2505,6 @@
     "with": "Jariji",
     "ha": 0.5,
     "pct": 0.1,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Abuankol",
-    "ha": 0.0,
-    "pct": 0.0,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -2908,14 +2889,6 @@
    {
     "with": "Sukandi",
     "ha": 0.1,
-    "pct": 0.0,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Abuankol",
-    "ha": 0.0,
     "pct": 0.0,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
@@ -3465,14 +3438,6 @@
     "beyond_tol_ha": 1.3,
     "beyond_tol_pct": 0.4,
     "verdict": "overlap"
-   },
-   {
-    "with": "Abuankol",
-    "ha": 0.6,
-    "pct": 0.2,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
    }
   ],
   "shared_lines": [
@@ -3613,14 +3578,6 @@
     "verdict": "overlap"
    },
    {
-    "with": "Abuankol",
-    "ha": 0.0,
-    "pct": 0.0,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
     "with": "Ginangi",
     "ha": 0.0,
     "pct": 0.0,
@@ -3676,7 +3633,7 @@
     "pct": 0.1
    }
   ],
-  "join_sep_ha": 614.7,
+  "join_sep_ha": 1275.5,
   "join_joined_ha": 701.1,
   "map": "Wohukol_Zone_7B.png",
   "field_notes": [],
