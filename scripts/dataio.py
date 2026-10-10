@@ -708,9 +708,17 @@ def adopted_segments(unit: str | None = None):
     be walked, so the line is traced along the modelled drainage (§4.13b). The
     shape is as good as a 30 m DEM and no better.
 
-    `agreed_straight` — the field says this stretch is a straight line and the
-    clan is content with it. That is not an inference the pipeline made; it is
-    an answer the clan gave, and it is boundary.
+    `agreed_straight` — the clan says this stretch is a straight line and is
+    content with it. That is not an inference the pipeline made; it is an
+    answer the clan gave, and it is boundary. **Only use this kind when the
+    clan has actually been asked.** A judgement that a map is finished is not
+    the clan agreeing to a line, and recording one as the other puts words in
+    their mouth about ground they have not seen drawn.
+
+    `accepted_complete` — the survey team judges a map finished and the
+    remaining stretch not worth a return to the field. It closes the boundary
+    on the project's authority, not the clan's, and says so wherever it is
+    reported.
 
     Both are added to the network before the enclosed area is worked out, so
     the boundary takes the right shape however the survey is assembled and the
