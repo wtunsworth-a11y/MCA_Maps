@@ -55,19 +55,23 @@
   },
   "Pina Ora — Zone 6": {
     "notes": [
+      "PRIORITY: return to the clan. Both gaps, 788 m and 397 m on the eastern edge, need walking. Real gaps need real data; neither should be closed by editing.",
       "Two real gaps, both on the eastern edge: 788 m and 397 m, where the recording stops and restarts with little or nothing walked between — only 37% and 31% of them have any walked line within 50 m. Both are easily fixed; a short walk closes them and no part of it is difficult ground.",
       "A further 245 m of what is drawn is not a gap at all. Two of the four lines lie wholly within 50 m of ground the steward already walked, so there the boundary is recorded and only the ends need tying. That has not been done yet."
     ],
-    "source": "Survey team, 10 October 2026"
+    "source": "Survey team, 10 October 2026",
+    "priority": "field return"
   },
   "Juaiko — Zone 2": {
     "notes": [
+      "PRIORITY: return to the clan. The 917 m gap needs walking, not inferring, and the four interior lines need the clan to say which are boundary along the rivers and which are named places. Nothing here should be closed by editing.",
       "One real gap, on the western edge by the Manoko boundary: 917 m, with only 12% of it having any walked line within 50 m. It needs walking.",
       "Six other drawn lines, 966 m between them, are not gaps — they lie 82-100% within 50 m of ground already walked and only need their ends tying. Not yet done.",
       "Four lines run inside the boundary rather than along it, and they are two different things. Two of them are the steward describing the boundary as following rivers — down the Salm to the Makamata fall, on to the Ujai, then up the Ujai to Sinigir. If that is the boundary, the mapped edge is in the wrong place along those stretches and the clan holds more than is shown. The other two are named places with histories attached. The clan needs to be shown the numbered map and asked which is which.",
       "See output/queries/juaiko_to_clarify.png. The numbers on that map are deliberately not labelled; what each one is came from the stewards' own notes and is not for a document."
     ],
-    "source": "Survey team, 10 October 2026"
+    "source": "Survey team, 10 October 2026",
+    "priority": "field return"
   },
   "Riribudeh — Zone 8": {
     "notes": [
