@@ -50,6 +50,7 @@ import pandas as pd
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
+from matplotlib.patches import Patch  # noqa: E402
 from shapely.geometry import Point, box  # noqa: E402
 from shapely.ops import nearest_points, unary_union  # noqa: E402
 
@@ -85,30 +86,44 @@ def parts_of(frame: gpd.GeoDataFrame) -> list:
 
 def assess(group: gpd.GeoDataFrame, tolerance: float, min_enclosure: float,
            max_spur: float, max_gap: float) -> dict:
-    """What each walk gives alone, and what the joined survey gives."""
-    separate = {}
-    for source, walk in group.groupby("source_name"):
-        built = polygon_tools.survey_polygon(parts_of(walk), tolerance,
-                                             min_enclosure, max_spur)
-        usable = built and (built["basis"] == "surveyed"
-                            or built["gap_pct"] <= max_gap * 100)
-        separate[walk.steward.iloc[0]] = {
-            "geometry": built["geometry"] if usable else None,
-            "area_ha": built["area_ha"] if usable else 0.0,
-            "basis": built["basis"] if built else None,
-            "gap_pct": built["gap_pct"] if built else None,
-            "walked_km": walk.geometry.length.sum() / 1000,
-        }
+    """The one boundary a clan's Clan Stewards produced between them.
 
-    joined = polygon_tools.survey_polygon(parts_of(group), tolerance,
-                                          min_enclosure, max_spur)
-    joined_ok = joined and (joined["basis"] == "surveyed"
-                            or joined["gap_pct"] <= max_gap * 100)
+    Stewards come in pairs, and the pair is not two surveys. They are not
+    mapping different things: together they are making one outer boundary and,
+    where the clan has them, the inner boundaries of its sacred sites. So
+    there is one polygon here, built from everything the pair recorded.
+
+    An earlier version measured each steward's walk alone and set that against
+    the joined result — "joining costs 1,236 ha". That number was never real.
+    Neither half of a pair is a survey, so neither half has an area to lose.
+    Rondi shows it plainly: Humphrey Poto's walk alone needs 11.5 km of
+    straight line to close and Jefferson Amunisa's needs 15.8 km, while the
+    two together close exactly, 1,569 ha, with nothing inferred at all.
+
+    Each steward's distance is still kept, because who walked how far is a
+    real fact and the Steward Days document rests on it.
+    """
+    unit = dataio.survey_group(group).iloc[0]
+    built = polygon_tools.survey_polygon(
+        parts_of(group), tolerance, min_enclosure, max_spur,
+        derived=dataio.adopted_segments(unit))
+    usable = built and (built["basis"] == "surveyed"
+                        or built["gap_pct"] <= max_gap * 100)
+    walked = {}
+    for steward, walk in group.groupby(group.steward.astype(str)):
+        walked[steward] = {"walked_km": walk.geometry.length.sum() / 1000}
     return {
-        "separate": separate,
-        "separate_ha": sum(v["area_ha"] for v in separate.values()),
-        "joined": joined if joined_ok else None,
-        "joined_ha": joined["area_ha"] if joined_ok else 0.0,
+        "unit": unit,
+        "stewards": walked,
+        "derived": dataio.adopted_frame(unit),
+        "joined": built if usable else None,
+        "joined_ha": built["area_ha"] if usable else 0.0,
+        # Kept so the columns other scripts read still exist; a pair has no
+        # separate areas to report, and these are no longer put on any map.
+        "separate": {k: {"geometry": None, "area_ha": 0.0, "basis": None,
+                         "gap_pct": None, "walked_km": v["walked_km"]}
+                     for k, v in walked.items()},
+        "separate_ha": 0.0,
     }
 
 
@@ -282,31 +297,50 @@ def render(clan: str, group: gpd.GeoDataFrame, result: dict,
                       bbox=dict(boxstyle="round,pad=0.18", facecolor="white",
                                 edgecolor="none", alpha=0.65))
 
-    # Each walk's own area, outlined so overlapping ones stay readable.
-    for index, (steward, info) in enumerate(sorted(result["separate"].items())):
+    # Every steward's line, in its own colour so a clan can see who walked
+    # which stretch — but no separate area per steward, because a steward's
+    # half of a pair is not a survey and has no area of its own.
+    for index, steward in enumerate(sorted(result["stewards"])):
         colour = STEWARD_COLOURS[index % len(STEWARD_COLOURS)]
-        if info["geometry"] is not None:
-            gpd.GeoSeries([info["geometry"]], crs=dataio.METRIC_CRS).plot(
-                ax=axis, facecolor=colour, edgecolor=colour, alpha=0.16,
-                linewidth=1.6, linestyle="--", zorder=2)
-        walk = group[group.steward == steward]
+        walk = group[group.steward.astype(str) == steward]
         walk.plot(ax=axis, color=colour, linewidth=1.6, zorder=4)
         handles.append(Line2D(
             [0], [0], color=colour, lw=2,
-            label=f"{steward} — {info['walked_km']:.1f} km, "
-                  + (f"{info['area_ha']:,.0f} ha alone"
-                     if info["area_ha"] else "no area alone")))
+            label=f"{steward} — "
+                  f"{result['stewards'][steward]['walked_km']:.1f} km"))
 
     if result["joined"] is not None:
         gpd.GeoSeries([result["joined"]["geometry"]],
                       crs=dataio.METRIC_CRS).plot(
+            ax=axis, facecolor="#1d4ed8", alpha=0.16, edgecolor="none",
+            zorder=2)
+        gpd.GeoSeries([result["joined"]["geometry"]],
+                      crs=dataio.METRIC_CRS).plot(
             ax=axis, facecolor="none", zorder=JOINED_ZORDER, **JOINED_STYLE)
-        label = ("Boundary taken" if len(result["separate"]) < 2
-                 else "Joined survey")
-        handles.append(Line2D([0], [0], color=JOINED_STYLE["edgecolor"],
-                              lw=JOINED_STYLE["linewidth"],
-                              linestyle=JOINED_STYLE["linestyle"],
-                              label=f"{label} — {result['joined_ha']:,.0f} ha"))
+        handles.append(Patch(facecolor="#1d4ed8", alpha=0.16,
+                             edgecolor=JOINED_STYLE["edgecolor"],
+                             label=f"Clan land as mapped — "
+                                   f"{result['joined_ha']:,.0f} ha"))
+
+        # Boundary the stewards did not walk and did not have to: a river
+        # traced along the terrain model where the water cannot be followed on
+        # foot, or open ends joined by hand. Drawn apart from walked line,
+        # because nobody walked it, and apart from the pink, because it is
+        # not a guess across a gap.
+        derived = result.get("derived")
+        if derived is not None and len(derived):
+            for kind, colour, label in (
+                    ("river_routed", "#0e7490",
+                     "River line — from the terrain model"),
+                    ("agreed_straight", "#15803d",
+                     "Straight line the clan agrees to"),
+                    ("end_joined", "#7c3aed", "Open ends joined by hand")):
+                rows = derived[derived["kind"] == kind]
+                if rows.empty:
+                    continue
+                rows.plot(ax=axis, color=colour, linewidth=1.8, zorder=6)
+                handles.append(Line2D([0], [0], color=colour, lw=1.8,
+                                      label=label))
 
         # The straight lines nobody walked, drawn on top of everything and in
         # a colour used for nothing else. A reader must never mistake one for
@@ -363,25 +397,16 @@ def _headline(result: dict, near: list[dict], overlap_tolerance: float,
     map, and what the two surveys share is in the table.
     """
     stewards = len(result["separate"])
-    who = "1 steward" if stewards == 1 else f"{stewards} stewards"
+    who = ("1 Clan Steward" if stewards == 1
+           else f"{stewards} Clan Stewards")
+    km = sum(v["walked_km"] for v in result["stewards"].values())
 
     if not result["joined_ha"]:
         line = (f"{who} — survey incomplete: the walk does not yet close, and "
                 "too much is missing to give an area")
-    elif stewards < 2:
-        line = f"{who}, {result['joined_ha']:,.0f} ha"
     else:
-        change = result["joined_ha"] - result["separate_ha"]
-        if result["separate_ha"] > 0:
-            verdict = (f"joining costs {abs(change):,.0f} ha" if change < -1
-                       else f"joining adds {change:,.0f} ha" if change > 1
-                       else "joining changes little")
-        else:
-            verdict = (f"joining yields {result['joined_ha']:,.0f} ha where no "
-                       "walk closed alone")
-        line = (f"{who}\nseparately "
-                f"{result['separate_ha']:,.0f} ha, joined "
-                f"{result['joined_ha']:,.0f} ha — {verdict}")
+        line = (f"{who}, {km:,.0f} km walked — "
+                f"{result['joined_ha']:,.0f} ha")
 
     if result["joined"] and result["joined"].get("gap_m"):
         share = result["joined"]["gap_m"] / (result["joined"]["walked_km"] * 10)

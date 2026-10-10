@@ -6,6 +6,24 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.15
+
+- **A pair of Clan Stewards is one survey, and the clan maps now say so.**
+  Stewards come in pairs and are not mapping different things: together they
+  make one outer boundary and, where the clan has them, the inner boundaries
+  of its sacred sites. The maps used to set each steward's walk against the
+  joined result — "joining costs 1,236 ha" on Manuvoora — which reported a
+  loss that never happened, because half a pair is not a survey and has no
+  area to lose. Rondi shows what the pair is worth: Humphrey Poto's walk
+  alone would need 11.5 km of straight line to close, Jefferson Amunisa's
+  15.8 km, and the two together close exactly with nothing inferred.
+- Each clan's map is now the finished thing: the land as mapped, each
+  steward's line, any boundary derived rather than walked, and the stretches
+  still not walked. Nothing else.
+- **Manuvoora's map no longer carries a straight line across it.** The clan
+  maps were built without the river route and the hand joins, so a boundary
+  that closed in the figures still showed 11.4 km of pink on the page.
+
 ## 1.14
 
 - **The land inside a sacred site's boundary goes back to the clan.** Where a

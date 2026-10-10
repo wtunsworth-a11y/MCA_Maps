@@ -309,11 +309,13 @@ for (const c of clans) {
 
   if (c.parcels > 1) problems.push(`The walks enclose ${c.parcels} separate parcels, totalling ${money(c.area_ha)} ha. All of them are counted. Whether they are all this clan's land, or whether one belongs to a neighbour, is a question for the clan.`);
 
-  if (c.n_stewards > 1 && c.join_sep_ha !== null) {
-    const change = c.join_joined_ha - c.join_sep_ha;
-    if (change < -1) problems.push(`Joining the ${c.n_stewards} stewards costs ${money(Math.abs(change))} ha: separately they give ${money(c.join_sep_ha)} ha, joined ${money(c.join_joined_ha)} ha. This happens where stewards each walked the same ring rather than different stretches — the two rings cross and the joined network encloses less than either walk did alone.`);
-    else if (change > 1) problems.push(`Joining the ${c.n_stewards} stewards adds ${money(change)} ha: separately ${money(c.join_sep_ha)} ha, joined ${money(c.join_joined_ha)} ha. The stewards covered different stretches of one boundary.`);
-  }
+  // No joining comparison. Clan Stewards come in pairs, and the pair is not
+  // two surveys: together they make one outer boundary and, where the clan
+  // has them, the inner boundaries of its sacred sites. Half a pair has no
+  // area to gain or lose, so setting one against the other reported a change
+  // that never happened — Manuvoora read as "joining costs 1,236 ha".
+  if (c.n_stewards > 1) problems.push(`Walked by ${money(c.n_stewards)} Clan Stewards working together on one boundary. Their tracks are one survey, and the area is what they enclose between them.`);
+
   const real = c.overlaps.filter(o=>o.verdict==="overlap");
   const slivers = c.overlaps.filter(o=>o.verdict!=="overlap");
   const unfinished = c.area_ha === null || (c.basis === "inferred" && c.gap_pct > 10);
@@ -338,8 +340,6 @@ for (const c of clans) {
   else if (c.area_ha === null) queries.push(`Can the missing stretches be walked so this boundary closes? If any gap is deliberate — a river, a road, an agreed open edge — please say what runs along it.`);
   else if (c.basis === "inferred" && c.gap_pct > 25) queries.push(`${Math.round(c.gap_pct)}% of this outline was not walked — ${one(c.gap_km)} km of straight line, shown in pink. Does the boundary in fact run along those straight lines, or somewhere else? Can the missing stretches be walked?`);
   if (c.parcels > 1) queries.push(`This clan's land is recorded as ${c.parcels} separate pieces. Is that right, and does each piece belong to this clan?`);
-  if (c.n_stewards > 1 && c.join_joined_ha < c.join_sep_ha - 1)
-    queries.push(`Did the ${c.n_stewards} stewards walk the same boundary, or different parts of it? If they walked the same ring, their surveys should be treated as separate accounts rather than joined.`);
   if (c.chains > 3 && c.area_ha !== null)
     queries.push(`This boundary is recorded in ${c.chains} separate pieces. Were the connecting stretches walked but not recorded, or not yet walked?`);
   if (!queries.length) queries.push("Nothing outstanding. The boundary closes on its own and the survey is complete.");
