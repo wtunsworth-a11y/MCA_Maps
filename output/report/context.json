@@ -1,12 +1,13 @@
 {
- "version": "1.13",
+ "version": "1.14",
  "changes": [
-  "Every clan's page now says whether sacred sites were recorded. The Clan Stewards were asked for the outer boundary and the sacred sites, so whether a clan recorded any is part of the answer, and \"none recorded\" is as much a finding as a count. Reported by number and area only; locations are not shared and appear on no map or layer.",
-  "Counting them meant reading what the steward wrote. Only three features in the whole dataset are tagged as a sacred site. The usual way one was recorded is the way the rest of the land is recorded \u2014 the steward walked around the place and filed the circuit as a land boundary, because to a clan every named parcel inside the outer boundary has a boundary, and the boundary of a sacred site is a boundary. Those arrive as a closed ring inside the outer one, and only the steward's own note says what the ring is. Three clans recorded sacred sites: Juaiko, Rondi and Sukandi."
+  "The land inside a sacred site's boundary goes back to the clan. Where a Clan Steward walked around a named place, the circuit came through as a closed ring inside the outer boundary, and the pipeline cut the ground inside it out of the clan's land and drew a hole on the map at that spot. Both were wrong: the clan holds that ground, and the hole marked a location that is not ours to share. 253 rings are filled back in across 29 surveys, returning 24.6 ha.",
+  "New, shorter document: \"The completed boundaries\". Only the clans whose boundary closes on the ground their stewards walked, with nothing inferred in the area. The full report carries all 49 clans and a finished map is hard to find among the unfinished ones.",
+  "A steward's own spelling of \"sacred site\" is now read as one when counting. Recorded as a reading of the words, not a change to them: the raw files are never edited, and what any steward wrote about these places stays out of this document."
  ],
  "date": "2026-10-10",
  "date_long": "10 October 2026",
- "commit": "abc1959",
+ "commit": "8d59f94",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

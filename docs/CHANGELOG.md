@@ -19,9 +19,10 @@ Format: `## <version>` followed by bullets. Newest first.
   boundary closes on the ground their stewards walked, with nothing inferred
   in the area. The full report carries all 49 clans and a finished map is
   hard to find among the unfinished ones.
-- "Secret Sight", as written by a steward, is read as "Sacred Site". Recorded
-  as a reading of the words, not a change to them: the raw files are never
-  edited.
+- A steward's own spelling of "sacred site" is now read as one when counting.
+  Recorded as a reading of the words, not a change to them: the raw files are
+  never edited, and what any steward wrote about these places stays out of
+  this document.
 
 ## 1.13
 

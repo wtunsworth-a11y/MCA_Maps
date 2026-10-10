@@ -174,6 +174,62 @@ def _enclosed(lines: list, min_share: float = 0.02):
     return fill_rings(unary_union(kept))
 
 
+def interior_rings(parts: list, tolerance: float = 25.0,
+                   max_spur: float = 0.10) -> list:
+    """The closed rings a survey encloses inside its outer boundary.
+
+    `fill_rings` closes these so the clan keeps the ground and no map marks
+    the spot — which also means the finished polygon no longer carries them,
+    and anything that needs to know how many there were has to ask here
+    instead. Counting a clan's sacred sites is exactly that: the circuit is
+    the record that a steward walked around a named place.
+
+    Built on the same network the polygon is, and that network is chosen the
+    same way. A survey whose outer boundary is still open has no outer face
+    for the circuits to sit inside, so there the bridges have to go in or the
+    circuits go uncounted — which would be most of the clans, because most
+    boundaries are not finished. A survey that closes on its own gets no
+    bridges, because adding them there cuts across the circuits and loses
+    them: Rondi went from five to two that way.
+
+    Returns the rings as polygons in the metric CRS. What a ring *is* is not
+    a geometric question; only the steward's note beside the track says that.
+    """
+    parts = [p for p in parts if p is not None and p.length > 0]
+    if not parts:
+        return []
+    total = sum(p.length for p in parts)
+    endpoints = []
+    for part in parts:
+        endpoints.append(part.coords[0][:2])
+        endpoints.append(part.coords[-1][:2])
+    labels = closure._cluster_endpoints(endpoints, tolerance)
+    positions: dict = {}
+    for index, label in enumerate(labels):
+        positions.setdefault(label, endpoints[index])
+    snapped = _snapped_lines(parts, positions, labels)
+
+    edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
+              "length": parts[i].length, "live": True}
+             for i in range(len(parts))]
+    closure._prune_spurs(edges, max_spur * total)
+    live = [e for e in edges if e["live"]] or edges
+    bridges, _ = _bridges(closure._chains(live, positions))
+
+    network = snapped
+    if bridges:
+        walked = _enclosed(snapped)
+        if not closure.closes_on_its_own(walked, _enclosed(snapped + bridges),
+                                         0.50):
+            network = snapped + bridges
+
+    try:
+        faces = [f for f in polygonize(unary_union(network)) if f.area > 0]
+    except Exception:
+        return []
+    return [Polygon(ring) for face in faces for ring in face.interiors]
+
+
 def fill_rings(shape):
     """Close the holes a survey's interior rings leave in the clan's land.
 

@@ -26,10 +26,10 @@ walked in to reach a boundary and back out again.
 
 | | Areas | Hectares |
 | --- | ---: | ---: |
-| Boundary walked and closed | 6 | 5,163 |
-| Closure inferred | 30 | 28,520 |
-| **Total mapped** | **36** | **33,683** |
-| Footprint, overlaps counted once | | 28,509 |
+| Boundary walked and closed | 6 | 5,168 |
+| Closure inferred | 30 | 28,539 |
+| **Total mapped** | **36** | **33,707** |
+| Footprint, overlaps counted once | | 28,529 |
 
 **36 of 72 surveys give
 no area at all.** Their boundaries were walked — Nituri covers 41.8 km across
@@ -71,12 +71,12 @@ of a boundary followed on foot, not a competing claim.
 | Clans with a mapped area | 35 | 35 |
 | **Clans whose land overlaps another clan's** | **33 (94%)** | **29 (83%)** |
 | Clans with no overlap at all | 2 | 6 |
-| Area claimed by more than one clan | 4,798 ha | 4,726 ha |
+| Area claimed by more than one clan | 4,801 ha | 4,733 ha |
 | — as a share of the mapped footprint | 16.8% | 16.6% |
 
 **The allowance changes almost nothing**, which is the reason for making it:
-72 ha of the
-4,798 ha falls away, and
+68 ha of the
+4,801 ha falls away, and
 4 clan(s) leave the
 overlapping group. The finding is not an artefact of survey precision.
 
@@ -91,7 +91,7 @@ Most contested, as a share of each clan's own mapped land:
 | Ambunkol | 592 | 60% | 58% |
 | Darekikol | 588 | 57% | 56% |
 | Borori | 639 | 53% | 52% |
-| Nituri | 5,275 | 42% | 42% |
+| Nituri | 5,277 | 42% | 42% |
 
 **How much weight this carries.** Of the overlapping area, **1,025 ha
 involves at least one boundary that was walked the whole way round**, and the

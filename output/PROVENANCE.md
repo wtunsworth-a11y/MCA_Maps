@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `6d0b4284ad4abe7bf385d4339280fe1bd44ef518`
+- **Commit:** `8d59f94ff4e18dc2b448b46b420d82a1da424b6e`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 
@@ -13,7 +13,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 | Component | Version |
 | --- | --- |
 | python | 3.11.15 |
-| platform | Linux-6.18.44-fc-v50-x86_64-with-glibc2.39 |
+| platform | Linux-6.18.44-fc-v114-x86_64-with-glibc2.39 |
 | geopandas | 1.2.0 |
 | shapely | 2.1.2 |
 | pyogrio | 0.13.0 |
@@ -67,8 +67,8 @@ If a figure changes between runs, compare these digests first: they say immediat
 | smoothed_km | 1139.9 |
 | polygons | 36 |
 | polygons_surveyed | 6 |
-| area_ha_total | 33683.5 |
-| area_ha_surveyed | 5163.1 |
+| area_ha_total | 33707.2 |
+| area_ha_surveyed | 5168.5 |
 
 ## Data sources
 

@@ -194,7 +194,7 @@ def steward_note(row) -> str:
     return ""
 
 
-def sacred_sites(unit: str, tracks: gpd.GeoDataFrame, geometry) -> dict:
+def sacred_sites(unit: str, tracks: gpd.GeoDataFrame, geometry=None) -> dict:
     """Whether this clan recorded sacred sites, by count and area only.
 
     Two ways a steward recorded one, and both have to be counted or the answer
@@ -214,23 +214,27 @@ def sacred_sites(unit: str, tracks: gpd.GeoDataFrame, geometry) -> dict:
     """
     tagged = int(tracks["feature_type"].isin(dataio.RESTRICTED_TYPES).sum())
 
+    # Asked of the tracks, not of the finished polygon: the polygon has had
+    # these rings filled in so the clan keeps the ground and no map marks the
+    # spot, which leaves the circuits visible only in the linework.
+    lines = []
+    for shape in tracks.geometry:
+        if shape is None:
+            continue
+        lines.extend(shape.geoms if hasattr(shape, "geoms") else [shape])
+
     internal = 0
     internal_m2 = 0.0
-    if geometry is not None:
-        parts = geometry.geoms if hasattr(geometry, "geoms") else [geometry]
-        for part in parts:
-            for ring in part.interiors:
-                enclosed = Polygon(ring)
-                # Below this a ring is a track crossing itself, not a circuit
-                # anybody walked: the median interior ring is 39 square metres.
-                if enclosed.area < 100.0:
-                    continue
-                beside = tracks[tracks.geometry.distance(enclosed) < 5]
-                words = " ".join(steward_note(r) for _, r in
-                                 beside.iterrows()).lower()
-                if any(w in words for w in SITE_WORDS):
-                    internal += 1
-                    internal_m2 += enclosed.area
+    for enclosed in polygon_tools.interior_rings(lines):
+        # Below this a ring is a track crossing itself, not a circuit anybody
+        # walked: the median interior ring is 39 square metres.
+        if enclosed.area < 100.0:
+            continue
+        beside = tracks[tracks.geometry.distance(enclosed) < 5]
+        words = " ".join(steward_note(r) for _, r in beside.iterrows()).lower()
+        if any(w in words for w in SITE_WORDS):
+            internal += 1
+            internal_m2 += enclosed.area
     return {"tagged": tagged, "internal": internal,
             "internal_ha": round(internal_m2 / 1e4, 2)}
 
@@ -466,7 +470,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # of the file name. Every clan map went missing from the document
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
-            "sacred": sacred_sites(unit, group, geometry),
+            "sacred": sacred_sites(unit, group),
             "field_notes": notes.get(unit, {}).get("notes", []),
             "field_source": notes.get(unit, {}).get("source"),
             "river_boundary": bool(notes.get(unit, {}).get("river_boundary")),

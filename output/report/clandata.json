@@ -257,15 +257,15 @@
   "chains": 4,
   "gap_km": 4.78,
   "gap_pct": 49.7,
-  "area_ha": 106.5,
+  "area_ha": 106.6,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 4,
   "overlaps": [
    {
     "with": "Tuoko",
-    "ha": 6.6,
-    "pct": 6.2,
+    "ha": 6.7,
+    "pct": 6.3,
     "beyond_tol_ha": 4.9,
     "beyond_tol_pct": 4.6,
     "verdict": "overlap"
@@ -280,8 +280,8 @@
    },
    {
     "with": "Nituri",
-    "ha": 3.3,
-    "pct": 3.1,
+    "ha": 3.4,
+    "pct": 3.2,
     "beyond_tol_ha": 2.4,
     "beyond_tol_pct": 2.3,
     "verdict": "overlap"
@@ -340,8 +340,8 @@
     "pct": 7.6
    }
   ],
-  "join_sep_ha": 106.5,
-  "join_joined_ha": 106.5,
+  "join_sep_ha": 106.6,
+  "join_joined_ha": 106.6,
   "map": "Gariniko_Zone_2.png",
   "sacred": {
    "tagged": 0,
@@ -376,7 +376,7 @@
   "chains": 7,
   "gap_km": 1.88,
   "gap_pct": 8.5,
-  "area_ha": 1292.9,
+  "area_ha": 1297.5,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 7,
@@ -385,8 +385,8 @@
     "with": "Sukandi",
     "ha": 204.6,
     "pct": 15.8,
-    "beyond_tol_ha": 201.5,
-    "beyond_tol_pct": 15.6,
+    "beyond_tol_ha": 201.6,
+    "beyond_tol_pct": 15.5,
     "verdict": "overlap"
    },
    {
@@ -399,10 +399,10 @@
    },
    {
     "with": "Manoko",
-    "ha": 11.8,
-    "pct": 0.9,
-    "beyond_tol_ha": 6.8,
-    "beyond_tol_pct": 0.5,
+    "ha": 12.5,
+    "pct": 1.0,
+    "beyond_tol_ha": 7.3,
+    "beyond_tol_pct": 0.6,
     "verdict": "overlap"
    }
   ],
@@ -433,8 +433,8 @@
     "pct": 2.7
    }
   ],
-  "join_sep_ha": 1292.9,
-  "join_joined_ha": 1292.9,
+  "join_sep_ha": 1297.5,
+  "join_joined_ha": 1297.5,
   "map": "Juaiko_Zone_2.png",
   "sacred": {
    "tagged": 0,
@@ -694,10 +694,10 @@
    },
    {
     "with": "Juaiko",
-    "ha": 11.8,
-    "pct": 2.9,
-    "beyond_tol_ha": 6.8,
-    "beyond_tol_pct": 1.7,
+    "ha": 12.5,
+    "pct": 3.1,
+    "beyond_tol_ha": 7.3,
+    "beyond_tol_pct": 1.8,
     "verdict": "overlap"
    }
   ],
@@ -885,17 +885,17 @@
   "chains": 14,
   "gap_km": 11.13,
   "gap_pct": 29.4,
-  "area_ha": 5274.6,
+  "area_ha": 5277.0,
   "basis": "inferred",
   "parcels": 2,
   "bridges": 14,
   "overlaps": [
    {
     "with": "Tuoko",
-    "ha": 2198.7,
+    "ha": 2198.8,
     "pct": 41.7,
-    "beyond_tol_ha": 2197.5,
-    "beyond_tol_pct": 41.7,
+    "beyond_tol_ha": 2197.8,
+    "beyond_tol_pct": 41.6,
     "verdict": "overlap"
    },
    {
@@ -908,7 +908,7 @@
    },
    {
     "with": "Gariniko",
-    "ha": 3.3,
+    "ha": 3.4,
     "pct": 0.1,
     "beyond_tol_ha": 2.4,
     "beyond_tol_pct": 0.0,
@@ -953,7 +953,7 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 5274.6,
+  "join_joined_ha": 5277.0,
   "map": "Nituri_Zone_2.png",
   "sacred": {
    "tagged": 0,
@@ -997,17 +997,17 @@
   "chains": 14,
   "gap_km": 0.0,
   "gap_pct": 0.0,
-  "area_ha": 1563.4,
+  "area_ha": 1568.8,
   "basis": "surveyed",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
    {
     "with": "Sukandi",
-    "ha": 211.5,
+    "ha": 211.6,
     "pct": 13.5,
-    "beyond_tol_ha": 210.6,
-    "beyond_tol_pct": 13.5,
+    "beyond_tol_ha": 210.8,
+    "beyond_tol_pct": 13.4,
     "verdict": "overlap"
    },
    {
@@ -1051,8 +1051,8 @@
     "pct": 0.6
    }
   ],
-  "join_sep_ha": 1256.3,
-  "join_joined_ha": 1563.4,
+  "join_sep_ha": 1261.4,
+  "join_joined_ha": 1568.8,
   "map": "Rondi_Zone_2.png",
   "sacred": {
    "tagged": 0,
@@ -1174,9 +1174,9 @@
    },
    {
     "with": "Rondi",
-    "ha": 211.5,
+    "ha": 211.6,
     "pct": 11.1,
-    "beyond_tol_ha": 210.6,
+    "beyond_tol_ha": 210.8,
     "beyond_tol_pct": 11.1,
     "verdict": "overlap"
    },
@@ -1184,7 +1184,7 @@
     "with": "Juaiko",
     "ha": 204.6,
     "pct": 10.8,
-    "beyond_tol_ha": 201.5,
+    "beyond_tol_ha": 201.6,
     "beyond_tol_pct": 10.6,
     "verdict": "overlap"
    },
@@ -1287,16 +1287,16 @@
   "chains": 8,
   "gap_km": 17.08,
   "gap_pct": 37.7,
-  "area_ha": 3676.2,
+  "area_ha": 3676.5,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 8,
   "overlaps": [
    {
     "with": "Nituri",
-    "ha": 2198.7,
+    "ha": 2198.8,
     "pct": 59.8,
-    "beyond_tol_ha": 2197.5,
+    "beyond_tol_ha": 2197.8,
     "beyond_tol_pct": 59.8,
     "verdict": "overlap"
    },
@@ -1318,7 +1318,7 @@
    },
    {
     "with": "Gariniko",
-    "ha": 6.6,
+    "ha": 6.7,
     "pct": 0.2,
     "beyond_tol_ha": 4.9,
     "beyond_tol_pct": 0.1,
@@ -1367,8 +1367,8 @@
     "pct": 0.5
    }
   ],
-  "join_sep_ha": 1681.3,
-  "join_joined_ha": 3676.2,
+  "join_sep_ha": 1681.4,
+  "join_joined_ha": 3676.5,
   "map": "Tuoko_Zone_2.png",
   "sacred": {
    "tagged": 0,
@@ -1844,7 +1844,7 @@
    }
   ],
   "join_sep_ha": 2066.1,
-  "join_joined_ha": 827.7,
+  "join_joined_ha": 830.2,
   "map": "Manuvoora_Zone_6.png",
   "sacred": {
    "tagged": 0,
@@ -1894,23 +1894,23 @@
   "chains": 13,
   "gap_km": 14.25,
   "gap_pct": 42.3,
-  "area_ha": 854.9,
+  "area_ha": 861.3,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 13,
   "overlaps": [
    {
     "with": "Naharaura",
-    "ha": 148.3,
-    "pct": 17.4,
-    "beyond_tol_ha": 144.2,
-    "beyond_tol_pct": 16.9,
+    "ha": 149.0,
+    "pct": 17.3,
+    "beyond_tol_ha": 146.6,
+    "beyond_tol_pct": 17.0,
     "verdict": "overlap"
    },
    {
     "with": "Borori",
     "ha": 56.1,
-    "pct": 6.6,
+    "pct": 6.5,
     "beyond_tol_ha": 52.4,
     "beyond_tol_pct": 6.1,
     "verdict": "overlap"
@@ -1918,7 +1918,7 @@
    {
     "with": "Darekikol",
     "ha": 50.3,
-    "pct": 5.9,
+    "pct": 5.8,
     "beyond_tol_ha": 49.8,
     "beyond_tol_pct": 5.8,
     "verdict": "overlap"
@@ -1955,7 +1955,7 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 854.9,
+  "join_joined_ha": 861.3,
   "map": "Mariura_Zone_6.png",
   "sacred": {
    "tagged": 0,
@@ -1990,17 +1990,17 @@
   "chains": 4,
   "gap_km": 2.49,
   "gap_pct": 7.6,
-  "area_ha": 594.0,
+  "area_ha": 594.2,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 4,
   "overlaps": [
    {
     "with": "Mariura",
-    "ha": 148.3,
-    "pct": 25.0,
-    "beyond_tol_ha": 144.2,
-    "beyond_tol_pct": 24.3,
+    "ha": 149.0,
+    "pct": 25.1,
+    "beyond_tol_ha": 146.6,
+    "beyond_tol_pct": 24.7,
     "verdict": "overlap"
    },
    {
@@ -2024,8 +2024,8 @@
     "pct": 28.3
    }
   ],
-  "join_sep_ha": 594.0,
-  "join_joined_ha": 594.0,
+  "join_sep_ha": 594.2,
+  "join_joined_ha": 594.2,
   "map": "Naharaura_Zone_6.png",
   "sacred": {
    "tagged": 0,
@@ -2283,7 +2283,7 @@
   "chains": 3,
   "gap_km": 3.97,
   "gap_pct": 54.2,
-  "area_ha": 158.4,
+  "area_ha": 158.5,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 3,
@@ -2309,8 +2309,8 @@
     "pct": 1.4
    }
   ],
-  "join_sep_ha": 158.4,
-  "join_joined_ha": 158.4,
+  "join_sep_ha": 158.5,
+  "join_joined_ha": 158.5,
   "map": "Bimkol_Zone_7A.png",
   "sacred": {
    "tagged": 0,
@@ -2363,7 +2363,7 @@
     "with": "Darekikol",
     "ha": 332.9,
     "pct": 52.1,
-    "beyond_tol_ha": 329.1,
+    "beyond_tol_ha": 329.2,
     "beyond_tol_pct": 51.5,
     "verdict": "overlap"
    },
@@ -2460,7 +2460,7 @@
     "with": "Borori",
     "ha": 332.9,
     "pct": 56.7,
-    "beyond_tol_ha": 329.1,
+    "beyond_tol_ha": 329.2,
     "beyond_tol_pct": 56.0,
     "verdict": "overlap"
    },
@@ -2629,10 +2629,10 @@
   "overlaps": [
    {
     "with": "Natang",
-    "ha": 345.4,
-    "pct": 58.4,
-    "beyond_tol_ha": 339.7,
-    "beyond_tol_pct": 57.4,
+    "ha": 346.3,
+    "pct": 58.5,
+    "beyond_tol_ha": 342.3,
+    "beyond_tol_pct": 57.8,
     "verdict": "overlap"
    },
    {
@@ -2728,7 +2728,7 @@
   "chains": 19,
   "gap_km": 6.41,
   "gap_pct": 40.0,
-  "area_ha": 1032.3,
+  "area_ha": 1033.0,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 19,
@@ -2745,8 +2745,8 @@
     "with": "Wohukol",
     "ha": 29.3,
     "pct": 2.8,
-    "beyond_tol_ha": 27.3,
-    "beyond_tol_pct": 2.6,
+    "beyond_tol_ha": 27.5,
+    "beyond_tol_pct": 2.7,
     "verdict": "overlap"
    },
    {
@@ -2844,8 +2844,8 @@
     "pct": 1.0
    }
   ],
-  "join_sep_ha": 1032.3,
-  "join_joined_ha": 1032.3,
+  "join_sep_ha": 1033.0,
+  "join_joined_ha": 1033.0,
   "map": "Binunkol_Zone_7B.png",
   "sacred": {
    "tagged": 0,
@@ -2889,7 +2889,7 @@
   "chains": 7,
   "gap_km": 7.22,
   "gap_pct": 21.4,
-  "area_ha": 1234.3,
+  "area_ha": 1234.6,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 7,
@@ -2970,7 +2970,7 @@
    }
   ],
   "join_sep_ha": 1235.9,
-  "join_joined_ha": 1234.3,
+  "join_joined_ha": 1234.6,
   "map": "Ginangi_Zone_7B.png",
   "sacred": {
    "tagged": 0,
@@ -3023,7 +3023,7 @@
     "with": "Wohukol",
     "ha": 61.8,
     "pct": 8.9,
-    "beyond_tol_ha": 59.2,
+    "beyond_tol_ha": 59.4,
     "beyond_tol_pct": 8.5,
     "verdict": "overlap"
    },
@@ -3466,24 +3466,24 @@
   "chains": 2,
   "gap_km": 6.53,
   "gap_pct": 8.8,
-  "area_ha": 1532.8,
+  "area_ha": 1535.0,
   "basis": "inferred",
   "parcels": 2,
   "bridges": 2,
   "overlaps": [
    {
     "with": "Ambunkol",
-    "ha": 345.4,
-    "pct": 22.5,
-    "beyond_tol_ha": 339.7,
-    "beyond_tol_pct": 22.2,
+    "ha": 346.3,
+    "pct": 22.6,
+    "beyond_tol_ha": 342.3,
+    "beyond_tol_pct": 22.3,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 32.2,
+    "ha": 32.3,
     "pct": 2.1,
-    "beyond_tol_ha": 28.7,
+    "beyond_tol_ha": 28.9,
     "beyond_tol_pct": 1.9,
     "verdict": "overlap"
    },
@@ -3528,8 +3528,8 @@
     "pct": 0.0
    }
   ],
-  "join_sep_ha": 2354.8,
-  "join_joined_ha": 1532.8,
+  "join_sep_ha": 2354.9,
+  "join_joined_ha": 1535.0,
   "map": "Natang_Zone_7B.png",
   "sacred": {
    "tagged": 0,
@@ -3573,7 +3573,7 @@
   "chains": 6,
   "gap_km": 3.68,
   "gap_pct": 16.2,
-  "area_ha": 313.8,
+  "area_ha": 314.1,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 6,
@@ -3588,10 +3588,10 @@
    },
    {
     "with": "Natang",
-    "ha": 32.2,
+    "ha": 32.3,
     "pct": 10.3,
-    "beyond_tol_ha": 28.7,
-    "beyond_tol_pct": 9.1,
+    "beyond_tol_ha": 28.9,
+    "beyond_tol_pct": 9.2,
     "verdict": "overlap"
    },
    {
@@ -3688,7 +3688,7 @@
    }
   ],
   "join_sep_ha": 630.4,
-  "join_joined_ha": 313.8,
+  "join_joined_ha": 314.1,
   "map": "Sugulkol_Zone_7B.png",
   "sacred": {
    "tagged": 0,
@@ -3732,7 +3732,7 @@
   "chains": 4,
   "gap_km": 8.29,
   "gap_pct": 25.2,
-  "area_ha": 701.1,
+  "area_ha": 701.2,
   "basis": "inferred",
   "parcels": 3,
   "bridges": 4,
@@ -3741,15 +3741,15 @@
     "with": "Jariji",
     "ha": 61.8,
     "pct": 8.8,
-    "beyond_tol_ha": 59.2,
-    "beyond_tol_pct": 8.4,
+    "beyond_tol_ha": 59.4,
+    "beyond_tol_pct": 8.5,
     "verdict": "overlap"
    },
    {
     "with": "Binunkol",
     "ha": 29.3,
     "pct": 4.2,
-    "beyond_tol_ha": 27.3,
+    "beyond_tol_ha": 27.5,
     "beyond_tol_pct": 3.9,
     "verdict": "overlap"
    },
@@ -3834,7 +3834,7 @@
    }
   ],
   "join_sep_ha": 1275.5,
-  "join_joined_ha": 701.1,
+  "join_joined_ha": 701.2,
   "map": "Wohukol_Zone_7B.png",
   "sacred": {
    "tagged": 0,
@@ -4058,7 +4058,7 @@
   "chains": 7,
   "gap_km": 2.28,
   "gap_pct": 15.0,
-  "area_ha": 691.3,
+  "area_ha": 691.6,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 7,
@@ -4097,8 +4097,8 @@
     "pct": 6.9
    }
   ],
-  "join_sep_ha": 691.3,
-  "join_joined_ha": 691.3,
+  "join_sep_ha": 691.6,
+  "join_joined_ha": 691.6,
   "map": "Gumuyude_Zone_8.png",
   "sacred": {
    "tagged": 0,
@@ -4181,7 +4181,7 @@
   "chains": 3,
   "gap_km": 2.26,
   "gap_pct": 16.8,
-  "area_ha": 569.7,
+  "area_ha": 569.9,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 3,
@@ -4220,8 +4220,8 @@
     "pct": 1.5
    }
   ],
-  "join_sep_ha": 569.7,
-  "join_joined_ha": 569.7,
+  "join_sep_ha": 569.9,
+  "join_joined_ha": 569.9,
   "map": "Mungaikol_Zone_8.png",
   "sacred": {
    "tagged": 0,
@@ -4265,7 +4265,7 @@
   "chains": 3,
   "gap_km": 1.56,
   "gap_pct": 7.8,
-  "area_ha": 371.8,
+  "area_ha": 371.9,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 3,
@@ -4305,7 +4305,7 @@
    }
   ],
   "join_sep_ha": 770.3,
-  "join_joined_ha": 371.8,
+  "join_joined_ha": 371.9,
   "map": "Riribudeh_Zone_8.png",
   "sacred": {
    "tagged": 0,
