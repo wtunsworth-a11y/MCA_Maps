@@ -79,5 +79,15 @@
       "Not yet fixed. Removing the line is straightforward; making the boundary follow the walk instead is not, because the recorded line does not close geometrically even once every loose end is tied and the south-east gap is bridged. Why is still open."
     ],
     "source": "Survey team, 10 October 2026"
+  },
+  "Gumuyude — Zone 8": {
+    "notes": [
+      "Gap 1 on the southern edge was not a gap. The boundary there was walked in short pieces that arc north of the straight line the pipeline drew — 826 m of walked line in seven pieces. Their ends are now tied, 190 m in all, and the two sides connect along 1,015 m of recorded line.",
+      "Gap 2 on the northern shoulder, 652 m, is a real gap and is left as one. It needs walking.",
+      "NEEDS CLAN CONFIRMATION: a notch on the north-eastern edge, where a 2,120 m track crosses itself and closes a loop of 0.28 ha, about 109 m by 47 m. It sits wholly inside the boundary. Nothing in the steward's notes says what it is — the only words on the tracks there are \"Mapping Run and Stops here\" and \"continue next day\". It is either a narrow finger of ground the boundary goes round or the steward backtracking, and only the clan can say which. See output/queries/gumuyude_notch.png.",
+      "After tying gap 1 the pipeline draws a new 793 m line further east along the southern edge. That is the closing-step chord moving, not a newly discovered gap; it is only 37% clear of walked line."
+    ],
+    "source": "Survey team, 10 October 2026",
+    "needs_clan_confirmation": true
   }
 }
