@@ -155,12 +155,92 @@ and three cheap tests find out which.
 
 ---
 
-## 3. What the fixes were worth
+## 3. Ring order: the method that does most of the work
+
+Everything in Band 4 above is a test — it tells you a drawn line is wrong
+without telling you what to draw instead. This is the part that produces an
+answer, and it came out of asking a simple question: can the pieces be put in
+order around the boundary and all turned the same way, so that combining them
+stops being a choice?
+
+**The method.**
+
+1. **Merge the pieces without noding them.** `linemerge` on the recorded
+   pieces, *not* on their union. Unioning first splits every trace at every
+   crossing — Riribudeh's two walks became 290 fragments that way, and the
+   method produced 12 km of joining and nonsense.
+2. **Orient each chain so it advances clockwise** about the survey's centre:
+   take it in the stored direction if the bearing of its end is clockwise of
+   the bearing of its start, reversed otherwise.
+3. **Sort by the bearing of the start point.**
+4. **The join is then the distance from each chain's end to the next chain's
+   start.** No pairing decision, no nearest-neighbour search, nothing to get
+   wrong about which end meets which.
+
+**Do this per steward, never per pair.** A pair walking the same line
+interleaves when ordered together — Riribudeh taken as a pair gives 17 joins
+over 150 m and 7.94 km of joining, because going round the ring takes the two
+parallel traces alternately. Run it on each steward separately and use their
+agreement as the check on the result instead.
+
+**What it gives on a compact clan.** Riribudeh:
+
+| steward | chains | walked | joins under 50 m | 50–150 m | over 150 m |
+| --- | ---: | ---: | --- | --- | --- |
+| Prut Buitari | 12 | 10.37 km | 10 joins, 153 m | one, 83 m | **one, 387 m** |
+| Unido Ose | 34 | 10.01 km | 31 joins, 310 m | two, 142 m | **one, 204 m** |
+
+One real gap each, in the same place, everything else a recording restart.
+The joins separate without anyone choosing a threshold. **397 ha from Prut's
+ring and 398 ha from Unido's, computed independently** — against 372 ha from
+the chord the pipeline drew and 403 ha from a buffer envelope. Two people who
+never saw each other's files landing within 1 ha is a far better check on the
+answer than any internal test.
+
+### Its limit, and the fix
+
+Ordering by bearing works only where the boundary is roughly **star-shaped
+about its centre**. Manuvoora is a long sinuous strip, and there pieces at
+opposite ends share a bearing and interleave — the same failure as ordering a
+pair together, for the same reason:
+
+| | joins under 50 m | over 150 m |
+| --- | --- | --- |
+| Riribudeh, a blob | 10, totalling 153 m | **1** |
+| Manuvoora, a long strip | 3, totalling 20 m | **14** |
+
+Egobeyas Kuarisi's fourteen "gaps" run 4,652 m, 3,914 m, 2,862 m — noise, not
+a shortlist.
+
+Note what still worked, though: the **area** came out at 1,087 ha from
+Egobeyas and 1,054 ha from Granville Nepo, independently, against the
+1,058 ha reached by a long detour through river routing and four hand joins.
+The polygon is right even where the gap classification is not, because a
+mis-ordered join between two pieces that are close together costs little
+ground.
+
+**The fix is to change the sort key**: order pieces by position along a
+reference ring rather than by bearing. The buffer envelope of the walk
+provides one for any shape, convex or not. Bearing can stay as the cheap case
+where it works.
+
+### What it does not do
+
+It will not tell you that the river has four waterfalls on it, cannot be
+walked, and is the boundary anyway. That came from the field, and it is what
+made Manuvoora correct rather than merely closed. **Ring order gets to a
+defensible area and a short list of real gaps. The conversation is still
+where the boundary comes from.**
+
+---
+
+## 4. What the fixes were worth
 
 Measured on this dataset, best first.
 
 | fix | effect |
 | --- | --- |
+| Ring order, per steward (§3) | Riribudeh **397 and 398 ha** from two independent recordings, one real gap found, no chord; Manuvoora's area in one step |
 | Ask whether the tracks enclose ground (§14) | surveyed area 2,542 → **5,163 ha**; inferred share 92% → 85% |
 | Order and orient the pieces before joining (2-opt) | Tuoko 3,282 → **3,676 ha**; Bimkol 0 → 158 ha; 36/36 polygons valid |
 | Keep every parcel, not the largest | recovered an entire northern parcel for Wohukol |
@@ -180,7 +260,7 @@ the drawn line is not thereby a better fix. Measure the ground.**
 
 ---
 
-## 4. Traps in the tooling itself
+## 5. Traps in the tooling itself
 
 Faults that were not in the field data at all.
 
@@ -205,12 +285,12 @@ Faults that were not in the field data at all.
 
 ---
 
-## 5. Still open
+## 6. Still open
 
 - **The scaffolding chord (§11).** 214 km of drawn line that does not join
-  two open ends. Riribudeh is the clearest case and the one with a known
-  right answer. Removing the chord is easy; making the boundary follow the
-  walk instead is not, and is not yet solved.
+  two open ends. Ring order (§3) solves it for compact clans and is not yet
+  wired into the pipeline; the sort key still has to be generalised before it
+  can be run on strip-shaped clans like Manuvoora.
 - **Clans with too little walked to infer anything.** Zambiko reports 513 ha
   from 5.7 km walked, 79% of its outline drawn by the pipeline. The
   `--max-gap` limit is measured against the bridged ring rather than against
