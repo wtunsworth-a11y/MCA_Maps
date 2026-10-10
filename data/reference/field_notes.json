@@ -59,5 +59,19 @@
       "A further 245 m of what is drawn is not a gap at all. Two of the four lines lie wholly within 50 m of ground the steward already walked, so there the boundary is recorded and only the ends need tying. That has not been done yet."
     ],
     "source": "Survey team, 10 October 2026"
+  },
+  "Juaiko — Zone 2": {
+    "notes": [
+      "The break on the western edge, by the Manoko boundary, is a real gap: 917 m with only 12% of it having any walked line within 50 m. It needs walking.",
+      "The other six lines drawn here, 966 m between them, are not gaps. They lie 82-100% within 50 m of ground the steward already walked; the recording stopped and restarted along stretches he had covered. Sixteen loose ends, eight of them within 27 m of line already there. Those ends have not been tied yet."
+    ],
+    "source": "Survey team, 10 October 2026"
+  },
+  "Riribudeh — Zone 8": {
+    "notes": [
+      "The boundary is complete apart from the gap at the south-east. The long line the pipeline draws across the north-east corner is not a gap and not a boundary: it cuts through a walk that has no break in it, leaving 3.1 km of walked line — 16% of what the two stewards recorded — outside the clan's reported land, and taking in ground nobody walked. It must not be read as boundary.",
+      "Not yet fixed. Removing the line is straightforward; making the boundary follow the walk instead is not, because the recorded line does not close geometrically even once every loose end is tied and the south-east gap is bridged. Why is still open."
+    ],
+    "source": "Survey team, 10 October 2026"
   }
 }
