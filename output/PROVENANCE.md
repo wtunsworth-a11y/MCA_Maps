@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `8d59f94ff4e18dc2b448b46b420d82a1da424b6e`
+- **Commit:** `0f0323c428196f7ddae3f970edbecc1bd3a18f7c`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 

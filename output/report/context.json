@@ -1,13 +1,13 @@
 {
- "version": "1.14",
+ "version": "1.15",
  "changes": [
-  "The land inside a sacred site's boundary goes back to the clan. Where a Clan Steward walked around a named place, the circuit came through as a closed ring inside the outer boundary, and the pipeline cut the ground inside it out of the clan's land and drew a hole on the map at that spot. Both were wrong: the clan holds that ground, and the hole marked a location that is not ours to share. 253 rings are filled back in across 29 surveys, returning 24.6 ha.",
-  "New, shorter document: \"The completed boundaries\". Only the clans whose boundary closes on the ground their stewards walked, with nothing inferred in the area. The full report carries all 49 clans and a finished map is hard to find among the unfinished ones.",
-  "A steward's own spelling of \"sacred site\" is now read as one when counting. Recorded as a reading of the words, not a change to them: the raw files are never edited, and what any steward wrote about these places stays out of this document."
+  "A pair of Clan Stewards is one survey, and the clan maps now say so. Stewards come in pairs and are not mapping different things: together they make one outer boundary and, where the clan has them, the inner boundaries of its sacred sites. The maps used to set each steward's walk against the joined result \u2014 \"joining costs 1,236 ha\" on Manuvoora \u2014 which reported a loss that never happened, because half a pair is not a survey and has no area to lose. Rondi shows what the pair is worth: Humphrey Poto's walk alone would need 11.5 km of straight line to close, Jefferson Amunisa's 15.8 km, and the two together close exactly with nothing inferred.",
+  "Each clan's map is now the finished thing: the land as mapped, each steward's line, any boundary derived rather than walked, and the stretches still not walked. Nothing else.",
+  "Manuvoora's map no longer carries a straight line across it. The clan maps were built without the river route and the hand joins, so a boundary that closed in the figures still showed 11.4 km of pink on the page."
  ],
  "date": "2026-10-10",
  "date_long": "10 October 2026",
- "commit": "8d59f94",
+ "commit": "0f0323c",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

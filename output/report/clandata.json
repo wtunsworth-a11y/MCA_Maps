@@ -88,7 +88,7 @@
     "pct": 3.5
    }
   ],
-  "join_sep_ha": 166.1,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 166.1,
   "map": "Asingi_Zone_2.png",
   "sacred": {
@@ -163,7 +163,7 @@
     "pct": 0.2
    }
   ],
-  "join_sep_ha": 3506.7,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 3506.7,
   "map": "Asoro_Zone_2.png",
   "sacred": {
@@ -340,7 +340,7 @@
     "pct": 7.6
    }
   ],
-  "join_sep_ha": 106.6,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 106.6,
   "map": "Gariniko_Zone_2.png",
   "sacred": {
@@ -433,7 +433,7 @@
     "pct": 2.7
    }
   ],
-  "join_sep_ha": 1297.5,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1297.5,
   "map": "Juaiko_Zone_2.png",
   "sacred": {
@@ -555,7 +555,7 @@
     "pct": 3.6
    }
   ],
-  "join_sep_ha": 540.8,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 540.8,
   "map": "Kasaki_Zone_2.png",
   "sacred": {
@@ -643,7 +643,7 @@
     "pct": 6.3
    }
   ],
-  "join_sep_ha": 275.8,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 275.8,
   "map": "Majanko_Zone_2.png",
   "sacred": {
@@ -733,7 +733,7 @@
     "pct": 2.0
    }
   ],
-  "join_sep_ha": 404.0,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 404.0,
   "map": "Manoko_Zone_2.png",
   "sacred": {
@@ -831,7 +831,7 @@
     "pct": 0.4
    }
   ],
-  "join_sep_ha": 198.9,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 198.9,
   "map": "Murai_Z2_Zone_2.png",
   "sacred": {
@@ -1051,7 +1051,7 @@
     "pct": 0.6
    }
   ],
-  "join_sep_ha": 1261.4,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1568.8,
   "map": "Rondi_Zone_2.png",
   "sacred": {
@@ -1242,7 +1242,7 @@
     "pct": 0.6
    }
   ],
-  "join_sep_ha": 2367.9,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1900.9,
   "map": "Sukandi_Zone_2.png",
   "sacred": {
@@ -1367,7 +1367,7 @@
     "pct": 0.5
    }
   ],
-  "join_sep_ha": 1681.4,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 3676.5,
   "map": "Tuoko_Zone_2.png",
   "sacred": {
@@ -1579,7 +1579,7 @@
     "pct": 47.2
    }
   ],
-  "join_sep_ha": 78.3,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 9.5,
   "map": "Giroiko_Zone_3.png",
   "sacred": {
@@ -1843,8 +1843,8 @@
     "pct": 1.0
    }
   ],
-  "join_sep_ha": 2066.1,
-  "join_joined_ha": 830.2,
+  "join_sep_ha": 0.0,
+  "join_joined_ha": 1058.0,
   "map": "Manuvoora_Zone_6.png",
   "sacred": {
    "tagged": 0,
@@ -2024,7 +2024,7 @@
     "pct": 28.3
    }
   ],
-  "join_sep_ha": 594.2,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 594.2,
   "map": "Naharaura_Zone_6.png",
   "sacred": {
@@ -2155,7 +2155,7 @@
     "pct": 19.0
    }
   ],
-  "join_sep_ha": 812.2,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 812.2,
   "map": "Pina_Ora_Zone_6.png",
   "sacred": {
@@ -2247,7 +2247,7 @@
     "pct": 1.1
    }
   ],
-  "join_sep_ha": 458.0,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 345.0,
   "map": "Sahirut_Zone_6.png",
   "sacred": {
@@ -2309,7 +2309,7 @@
     "pct": 1.4
    }
   ],
-  "join_sep_ha": 158.5,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 158.5,
   "map": "Bimkol_Zone_7A.png",
   "sacred": {
@@ -2406,7 +2406,7 @@
     "pct": 0.3
    }
   ],
-  "join_sep_ha": 676.7,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 638.7,
   "map": "Borori_Zone_7A.png",
   "sacred": {
@@ -2498,7 +2498,7 @@
     "pct": 2.5
    }
   ],
-  "join_sep_ha": 1226.6,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 587.5,
   "map": "Darekikol_Zone_7A.png",
   "sacred": {
@@ -2692,7 +2692,7 @@
     "pct": 1.8
    }
   ],
-  "join_sep_ha": 591.8,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 591.8,
   "map": "Ambunkol_Zone_7B.png",
   "sacred": {
@@ -2844,7 +2844,7 @@
     "pct": 1.0
    }
   ],
-  "join_sep_ha": 1033.0,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1033.0,
   "map": "Binunkol_Zone_7B.png",
   "sacred": {
@@ -2969,7 +2969,7 @@
     "pct": 0.4
    }
   ],
-  "join_sep_ha": 1235.9,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1234.6,
   "map": "Ginangi_Zone_7B.png",
   "sacred": {
@@ -3102,7 +3102,7 @@
     "pct": 0.5
    }
   ],
-  "join_sep_ha": 620.0,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 696.1,
   "map": "Jariji_Zone_7B.png",
   "sacred": {
@@ -3182,7 +3182,7 @@
     "pct": 4.4
    }
   ],
-  "join_sep_ha": 353.0,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 353.0,
   "map": "Manang_Zone_7B.png",
   "sacred": {
@@ -3528,7 +3528,7 @@
     "pct": 0.0
    }
   ],
-  "join_sep_ha": 2354.9,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1535.0,
   "map": "Natang_Zone_7B.png",
   "sacred": {
@@ -3687,7 +3687,7 @@
     "pct": 1.7
    }
   ],
-  "join_sep_ha": 630.4,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 314.1,
   "map": "Sugulkol_Zone_7B.png",
   "sacred": {
@@ -3833,7 +3833,7 @@
     "pct": 0.1
    }
   ],
-  "join_sep_ha": 1275.5,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 701.2,
   "map": "Wohukol_Zone_7B.png",
   "sacred": {
@@ -3956,7 +3956,7 @@
     "pct": 18.4
    }
   ],
-  "join_sep_ha": 218.6,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 218.6,
   "map": "Dusi_Zone_8.png",
   "sacred": {
@@ -4022,7 +4022,7 @@
     "pct": 9.2
    }
   ],
-  "join_sep_ha": 1666.6,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1173.2,
   "map": "Gubai_Zone_8.png",
   "sacred": {
@@ -4097,7 +4097,7 @@
     "pct": 6.9
    }
   ],
-  "join_sep_ha": 691.6,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 691.6,
   "map": "Gumuyude_Zone_8.png",
   "sacred": {
@@ -4145,7 +4145,7 @@
     "pct": 3.9
    }
   ],
-  "join_sep_ha": 1.4,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 1.4,
   "map": "Madukol_Zone_8.png",
   "sacred": {
@@ -4220,7 +4220,7 @@
     "pct": 1.5
    }
   ],
-  "join_sep_ha": 569.9,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 569.9,
   "map": "Mungaikol_Zone_8.png",
   "sacred": {
@@ -4304,7 +4304,7 @@
     "pct": 2.3
    }
   ],
-  "join_sep_ha": 770.3,
+  "join_sep_ha": 0.0,
   "join_joined_ha": 371.9,
   "map": "Riribudeh_Zone_8.png",
   "sacred": {
