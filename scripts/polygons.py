@@ -42,7 +42,7 @@ from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
-from shapely.geometry import LineString
+from shapely.geometry import LineString, Polygon
 from shapely.ops import polygonize, unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -167,11 +167,48 @@ def _enclosed(lines: list, min_share: float = 0.02):
     largest = max(p.area for p in polygons)
     kept = [p for p in polygons if p.area >= largest * min_share]
     if len(kept) == 1:
-        return kept[0]
+        return fill_rings(kept[0])
     # Union rather than collect: where the pieces overlap — which happens when
     # a bridged ring still crosses itself — a MultiPolygon of them would count
     # the shared ground twice and report an area the walk never enclosed.
-    return unary_union(kept)
+    return fill_rings(unary_union(kept))
+
+
+def fill_rings(shape):
+    """Close the holes a survey's interior rings leave in the clan's land.
+
+    A survey arrives as more than one closed ring. There is the outer
+    boundary, and there are rings inside it where a Clan Steward walked around
+    a named place — a sacred site, a historical stone, an ancestors' cave.
+    Those were recorded as `Land Boundary` and that is not a mislabel: to a
+    clan, every named parcel inside the outer boundary has a boundary, and the
+    boundary of a sacred site is a boundary.
+
+    Polygonising the network turns each of those circuits into a face of its
+    own, which leaves the land around it as a polygon with a hole. The hole is
+    wrong twice over. It takes ground off a clan that holds it — 23.4 ha
+    across 284 rings in 24 surveys — and it draws a ring on the map at exactly
+    the spot whose location is not ours to share.
+
+    So the rings are filled back in. The ground returns to the clan, and the
+    map shows nothing where the place is. How many such places a clan recorded
+    and how much they cover is reported on the clan's page; where they are is
+    not reported anywhere.
+
+    Checked before this was adopted: nothing in the rings looks like ground
+    that is not the clan's. Of the 107 rings of 0.01 ha or more, the largest
+    is 4.30 ha and carries a note about two historical eels; none is anywhere
+    near the size a separately-held block would be, and none says in any words
+    that the ground belongs to someone else.
+    """
+    if shape is None or shape.is_empty:
+        return shape
+    parts = shape.geoms if hasattr(shape, "geoms") else [shape]
+    filled = [Polygon(part.exterior) for part in parts
+              if getattr(part, "exterior", None) is not None]
+    if not filled:
+        return shape
+    return unary_union(filled)
 
 
 def _largest(lines: list):

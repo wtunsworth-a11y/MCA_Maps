@@ -35,6 +35,10 @@ SCRIPTS = Path(__file__).resolve().parent
 DOCUMENTS = [
     ("build_report_docx.js", "Managalas_Clan_Land_Mapping"),
     ("build_stewards_docx.js", "Managalas_Steward_Days"),
+    # The short companion: only the clans whose boundary closes on the walk.
+    # The full report carries all 49, and a finished map is hard to find among
+    # the unfinished ones.
+    ("build_finished_docx.js", "Managalas_Completed_Boundaries"),
 ]
 
 

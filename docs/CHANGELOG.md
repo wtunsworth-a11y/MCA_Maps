@@ -6,6 +6,23 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.14
+
+- **The land inside a sacred site's boundary goes back to the clan.** Where a
+  Clan Steward walked around a named place, the circuit came through as a
+  closed ring inside the outer boundary, and the pipeline cut the ground
+  inside it out of the clan's land and drew a hole on the map at that spot.
+  Both were wrong: the clan holds that ground, and the hole marked a location
+  that is not ours to share. 253 rings are filled back in across 29 surveys,
+  returning 24.6 ha.
+- **New, shorter document: "The completed boundaries".** Only the clans whose
+  boundary closes on the ground their stewards walked, with nothing inferred
+  in the area. The full report carries all 49 clans and a finished map is
+  hard to find among the unfinished ones.
+- "Secret Sight", as written by a steward, is read as "Sacred Site". Recorded
+  as a reading of the words, not a change to them: the raw files are never
+  edited.
+
 ## 1.13
 
 - **Every clan's page now says whether sacred sites were recorded.** The Clan

@@ -165,6 +165,9 @@ def parcel_count(geometry) -> int:
     return len(getattr(geometry, "geoms", [geometry]))
 
 
+# "Secret Sight" is how one steward wrote "Sacred Site", and it is the plainest
+# statement of a sacred site anywhere in the data. Read that way here; the raw
+# file keeps the words as written, because the raw data is never edited.
 SITE_WORDS = ("sacred", "secret", "tabu", "tambu", "spirit", "ancestor",
               "burial", "grave", "history", "historical", "lyric", "story",
               "cave", "stone")
