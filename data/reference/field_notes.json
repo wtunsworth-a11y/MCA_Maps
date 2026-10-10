@@ -39,5 +39,12 @@
     ],
     "river_boundary": true,
     "source": "Field advice, 24 August 2026, on an annotated printout"
+  },
+  "Sahirut — Zone 6": {
+    "notes": [
+      "The field confirms this boundary is complete. The 217 m that was left open is closed on that word; no track records it, so it is held as a derived segment and adds no walked distance.",
+      "Four of Solomon Makanisa's tracks, 15.2 km, carry Lenard Urami's name in their attributes. Flagged, never reassigned — if the attribution is wrong the two stewards' distances are close to reversed."
+    ],
+    "source": "Field advice, 10 October 2026"
   }
 }
