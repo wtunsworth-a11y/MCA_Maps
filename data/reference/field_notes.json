@@ -62,8 +62,10 @@
   },
   "Juaiko — Zone 2": {
     "notes": [
-      "The break on the western edge, by the Manoko boundary, is a real gap: 917 m with only 12% of it having any walked line within 50 m. It needs walking.",
-      "The other six lines drawn here, 966 m between them, are not gaps. They lie 82-100% within 50 m of ground the steward already walked; the recording stopped and restarted along stretches he had covered. Sixteen loose ends, eight of them within 27 m of line already there. Those ends have not been tied yet."
+      "One real gap, on the western edge by the Manoko boundary: 917 m, with only 12% of it having any walked line within 50 m. It needs walking.",
+      "Six other drawn lines, 966 m between them, are not gaps — they lie 82-100% within 50 m of ground already walked and only need their ends tying. Not yet done.",
+      "Four lines run inside the boundary rather than along it, and they are two different things. Two of them are the steward describing the boundary as following rivers — down the Salm to the Makamata fall, on to the Ujai, then up the Ujai to Sinigir. If that is the boundary, the mapped edge is in the wrong place along those stretches and the clan holds more than is shown. The other two are named places with histories attached. The clan needs to be shown the numbered map and asked which is which.",
+      "See output/queries/juaiko_to_clarify.png. The numbers on that map are deliberately not labelled; what each one is came from the stewards' own notes and is not for a document."
     ],
     "source": "Survey team, 10 October 2026"
   },
