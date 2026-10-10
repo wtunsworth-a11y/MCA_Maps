@@ -91,6 +91,11 @@
   "join_sep_ha": 166.1,
   "join_joined_ha": 166.1,
   "map": "Asingi_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -161,6 +166,11 @@
   "join_sep_ha": 3506.7,
   "join_joined_ha": 3506.7,
   "map": "Asoro_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -214,6 +224,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Bujevi_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -328,6 +343,11 @@
   "join_sep_ha": 106.5,
   "join_joined_ha": 106.5,
   "map": "Gariniko_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -416,6 +436,11 @@
   "join_sep_ha": 1292.9,
   "join_joined_ha": 1292.9,
   "map": "Juaiko_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 4,
+   "internal_ha": 4.62
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -533,6 +558,11 @@
   "join_sep_ha": 540.8,
   "join_joined_ha": 540.8,
   "map": "Kasaki_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -616,6 +646,11 @@
   "join_sep_ha": 275.8,
   "join_joined_ha": 275.8,
   "map": "Majanko_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -701,6 +736,11 @@
   "join_sep_ha": 404.0,
   "join_joined_ha": 404.0,
   "map": "Manoko_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -794,6 +834,11 @@
   "join_sep_ha": 198.9,
   "join_joined_ha": 198.9,
   "map": "Murai_Z2_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -910,6 +955,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 5274.6,
   "map": "Nituri_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1004,6 +1054,11 @@
   "join_sep_ha": 1256.3,
   "join_joined_ha": 1563.4,
   "map": "Rondi_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 5,
+   "internal_ha": 5.38
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1062,6 +1117,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Rumbi_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1185,6 +1245,11 @@
   "join_sep_ha": 2367.9,
   "join_joined_ha": 1900.9,
   "map": "Sukandi_Zone_2.png",
+  "sacred": {
+   "tagged": 3,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1305,6 +1370,11 @@
   "join_sep_ha": 1681.3,
   "join_joined_ha": 3676.2,
   "map": "Tuoko_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1388,6 +1458,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Zambiko_Zone_2.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1450,6 +1525,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Deari_Zone_3.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1502,6 +1582,11 @@
   "join_sep_ha": 78.3,
   "join_joined_ha": 9.5,
   "map": "Giroiko_Zone_3.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1554,6 +1639,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Gumuri_Zone_3.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1616,6 +1706,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Nui_Zone_3.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1664,6 +1759,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Savasi_Zone_3.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [
    "The eastern border of Savasi's clan land is along the Baraje river.",
    "The mapping is not finished: the northern and southern ends have yet to be closed off."
@@ -1746,6 +1846,11 @@
   "join_sep_ha": 2066.1,
   "join_joined_ha": 827.7,
   "map": "Manuvoora_Zone_6.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [
    "Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari.",
    "The river line itself is impassable because of those waterfalls, but the boundary follows the river line. That stretch is not to be walked; it will be completed by editing.",
@@ -1852,6 +1957,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 854.9,
   "map": "Mariura_Zone_6.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1917,6 +2027,11 @@
   "join_sep_ha": 594.0,
   "join_joined_ha": 594.0,
   "map": "Naharaura_Zone_6.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -1960,6 +2075,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Nupa_Ora_Zone_6.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2038,6 +2158,11 @@
   "join_sep_ha": 812.2,
   "join_joined_ha": 812.2,
   "map": "Pina_Ora_Zone_6.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2125,6 +2250,11 @@
   "join_sep_ha": 458.0,
   "join_joined_ha": 345.0,
   "map": "Sahirut_Zone_6.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2182,6 +2312,11 @@
   "join_sep_ha": 158.4,
   "join_joined_ha": 158.4,
   "map": "Bimkol_Zone_7A.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2274,6 +2409,11 @@
   "join_sep_ha": 676.7,
   "join_joined_ha": 638.7,
   "map": "Borori_Zone_7A.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2361,6 +2501,11 @@
   "join_sep_ha": 1226.6,
   "join_joined_ha": 587.5,
   "map": "Darekikol_Zone_7A.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2444,6 +2589,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Abuankol_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2545,6 +2695,11 @@
   "join_sep_ha": 591.8,
   "join_joined_ha": 591.8,
   "map": "Ambunkol_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2692,6 +2847,11 @@
   "join_sep_ha": 1032.3,
   "join_joined_ha": 1032.3,
   "map": "Binunkol_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2812,6 +2972,11 @@
   "join_sep_ha": 1235.9,
   "join_joined_ha": 1234.3,
   "map": "Ginangi_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -2940,6 +3105,11 @@
   "join_sep_ha": 620.0,
   "join_joined_ha": 696.1,
   "map": "Jariji_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3015,6 +3185,11 @@
   "join_sep_ha": 353.0,
   "join_joined_ha": 353.0,
   "map": "Manang_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3073,6 +3248,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Marang_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3146,6 +3326,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Marijabimkol_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3239,6 +3424,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Murai_Z7B_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3341,6 +3531,11 @@
   "join_sep_ha": 2354.8,
   "join_joined_ha": 1532.8,
   "map": "Natang_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3495,6 +3690,11 @@
   "join_sep_ha": 630.4,
   "join_joined_ha": 313.8,
   "map": "Sugulkol_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3636,6 +3836,11 @@
   "join_sep_ha": 1275.5,
   "join_joined_ha": 701.1,
   "map": "Wohukol_Zone_7B.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3684,6 +3889,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Duribip_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3749,6 +3959,11 @@
   "join_sep_ha": 218.6,
   "join_joined_ha": 218.6,
   "map": "Dusi_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3810,6 +4025,11 @@
   "join_sep_ha": 1666.6,
   "join_joined_ha": 1173.2,
   "map": "Gubai_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3880,6 +4100,11 @@
   "join_sep_ha": 691.3,
   "join_joined_ha": 691.3,
   "map": "Gumuyude_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3923,6 +4148,11 @@
   "join_sep_ha": 1.4,
   "join_joined_ha": 1.4,
   "map": "Madukol_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -3993,6 +4223,11 @@
   "join_sep_ha": 569.7,
   "join_joined_ha": 569.7,
   "map": "Mungaikol_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -4072,6 +4307,11 @@
   "join_sep_ha": 770.3,
   "join_joined_ha": 371.8,
   "map": "Riribudeh_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,
@@ -4120,6 +4360,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Uremkol_Zone_8.png",
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0
+  },
   "field_notes": [],
   "field_source": null,
   "river_boundary": false,

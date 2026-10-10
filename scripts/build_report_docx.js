@@ -274,6 +274,27 @@ for (const c of clans) {
     body.push(note("Where the two clans' recorded lines run within " + TOL + " m of each other. Two neighbours walking the same edge is the ordinary case."));
   }
 
+  // Sacred sites: recorded or not, by count and area only. Asked for on
+  // every sheet, including the clans with none, because "none recorded" is
+  // itself the answer to whether that part of the work has been done.
+  {
+    const sc = c.sacred || {tagged:0, internal:0, internal_ha:0};
+    const n = (sc.tagged||0) + (sc.internal||0);
+    body.push(p("Sacred sites", {bold:true, size:21}));
+    if (!n) {
+      body.push(p("None recorded. The Clan Stewards were asked for the outer boundary and the sacred sites; nothing in this clan's files is marked as one.", {size:21}));
+    } else {
+      const bits = [];
+      if (sc.tagged) bits.push(`${money(sc.tagged)} marked as a sacred site`);
+      if (sc.internal) bits.push(`${money(sc.internal)} recorded as a boundary walked around a named place`);
+      const share = (sc.internal_ha && c.area_ha)
+        ? `, covering ${one(sc.internal_ha)} ha — ${one(sc.internal_ha / c.area_ha * 100)}% of this clan's land`
+        : "";
+      body.push(p(`Recorded: ${money(n)} — ${bits.join("; ")}${share}.`, {size:21}));
+      body.push(note("Locations are not shared and appear on no map or layer in this document. A sacred site is usually recorded the way the rest of the land is, as a boundary walked around it, so it is counted from what the steward wrote beside the track."));
+    }
+  }
+
   if (c.field_notes && c.field_notes.length) {
     body.push(p("From the field", {bold:true, size:21}));
     body.push(...bullets(c.field_notes));

@@ -6,6 +6,22 @@ reader can see what moved since the copy they already have.
 
 Format: `## <version>` followed by bullets. Newest first.
 
+## 1.13
+
+- **Every clan's page now says whether sacred sites were recorded.** The Clan
+  Stewards were asked for the outer boundary and the sacred sites, so whether
+  a clan recorded any is part of the answer, and "none recorded" is as much a
+  finding as a count. Reported by number and area only; locations are not
+  shared and appear on no map or layer.
+- Counting them meant reading what the steward wrote. Only three features in
+  the whole dataset are tagged as a sacred site. The usual way one was
+  recorded is the way the rest of the land is recorded — the steward walked
+  around the place and filed the circuit as a land boundary, because to a
+  clan every named parcel inside the outer boundary has a boundary, and the
+  boundary of a sacred site is a boundary. Those arrive as a closed ring
+  inside the outer one, and only the steward's own note says what the ring
+  is. Three clans recorded sacred sites: Juaiko, Rondi and Sukandi.
+
 ## 1.12
 
 - **The closure test now asks whether the tracks enclose the ground.** It used

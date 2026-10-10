@@ -29,6 +29,7 @@ from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
+from shapely.geometry import Polygon
 from shapely.ops import unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -162,6 +163,73 @@ def parcel_count(geometry) -> int:
     if geometry is None or geometry.is_empty:
         return 0
     return len(getattr(geometry, "geoms", [geometry]))
+
+
+SITE_WORDS = ("sacred", "secret", "tabu", "tambu", "spirit", "ancestor",
+              "burial", "grave", "history", "historical", "lyric", "story",
+              "cave", "stone")
+
+
+def steward_note(row) -> str:
+    """What the Clan Steward wrote about a track, with the app's HTML stripped.
+
+    The recording app wraps the steward's own words in a table of speed, pace
+    and energy figures. Only the words are of any use here, and they sit
+    between its `desc_user` markers.
+    """
+    for field in ("desc", "description", "cmt", "name"):
+        raw = str(row.get(field) or "")
+        if not raw.strip() or raw.strip().lower() == "nan":
+            continue
+        marked = re.search(r"desc_user:start -->\s*(.*?)\s*<!-- desc_user:end",
+                           raw, re.S)
+        text = marked.group(1) if marked else ("" if "<" in raw else raw)
+        text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text)).strip()
+        # A bare timestamp is the app's default name, not a note.
+        if text and not re.match(r"^\d{4}-\d\d-\d\d", text):
+            return text
+    return ""
+
+
+def sacred_sites(unit: str, tracks: gpd.GeoDataFrame, geometry) -> dict:
+    """Whether this clan recorded sacred sites, by count and area only.
+
+    Two ways a steward recorded one, and both have to be counted or the answer
+    is wrong for most of the clans that did the work.
+
+    The first is a feature tagged with a restricted type. Only three features
+    in the whole dataset are tagged that way.
+
+    The second is how it was actually done: the steward walked around the
+    place and recorded the circuit as `Land Boundary`. That is not a mislabel.
+    A clan's land is named parcels all the way down, and the boundary of a
+    sacred site is a boundary. It arrives as a closed ring inside the outer
+    one, and what it is can only be read from what the steward wrote beside
+    it — "Secret Sight", a historical cave, an ancestors' hiding place.
+
+    Locations never leave this function. It returns how many and how much.
+    """
+    tagged = int(tracks["feature_type"].isin(dataio.RESTRICTED_TYPES).sum())
+
+    internal = 0
+    internal_m2 = 0.0
+    if geometry is not None:
+        parts = geometry.geoms if hasattr(geometry, "geoms") else [geometry]
+        for part in parts:
+            for ring in part.interiors:
+                enclosed = Polygon(ring)
+                # Below this a ring is a track crossing itself, not a circuit
+                # anybody walked: the median interior ring is 39 square metres.
+                if enclosed.area < 100.0:
+                    continue
+                beside = tracks[tracks.geometry.distance(enclosed) < 5]
+                words = " ".join(steward_note(r) for _, r in
+                                 beside.iterrows()).lower()
+                if any(w in words for w in SITE_WORDS):
+                    internal += 1
+                    internal_m2 += enclosed.area
+    return {"tagged": tagged, "internal": internal,
+            "internal_ha": round(internal_m2 / 1e4, 2)}
 
 
 def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
@@ -395,6 +463,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # of the file name. Every clan map went missing from the document
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
+            "sacred": sacred_sites(unit, group, geometry),
             "field_notes": notes.get(unit, {}).get("notes", []),
             "field_source": notes.get(unit, {}).get("source"),
             "river_boundary": bool(notes.get(unit, {}).get("river_boundary")),
