@@ -783,11 +783,20 @@ def adopt_segment(unit: str, line, kind: str, note: str,
 
     if RESOLUTIONS_PATH.exists():
         existing = gpd.read_file(RESOLUTIONS_PATH).to_crs(METRIC_CRS)
+        # Same stretch means near-identical geometry, not merely nearby. Two
+        # 25 m joins 40 m apart are different stretches; a 50 m Hausdorff
+        # test called them the same and adopting one silently deleted the
+        # other — three of Kasaki's eight joins vanished that way.
+        def same(other) -> bool:
+            if other.hausdorff_distance(line) >= 10:
+                return False
+            longer = max(other.length, line.length) or 1.0
+            return abs(other.length - line.length) / longer < 0.25
+
         keep = existing[~(
             (existing.unit == unit)
             & (existing.kind == kind)
-            & existing.geometry.apply(
-                lambda g: g.hausdorff_distance(line) < 50))]
+            & existing.geometry.apply(same))]
         row = gpd.GeoDataFrame(pd.concat([keep, row], ignore_index=True),
                                geometry="geometry", crs=METRIC_CRS)
 
