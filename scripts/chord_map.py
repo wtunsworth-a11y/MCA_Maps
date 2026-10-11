@@ -180,7 +180,15 @@ def render(unit: str, group: gpd.GeoDataFrame, built: dict, rows: list,
 
     gpd.GeoSeries([built["geometry"]], crs=dataio.METRIC_CRS).plot(
         ax=axis, color="#1d4ed8", alpha=0.15, edgecolor="none", zorder=2)
+    # Every metre walked, including what the polygon does not use. A map
+    # drawn only from the lines the closing step chose cannot show that it
+    # chose wrongly — Mungaikol's polygon leaves out 5.5 km of walked land
+    # boundary, and the map said nothing about it.
     group.plot(ax=axis, color="#1f2937", linewidth=1.3, zorder=5)
+    spare = walked.difference(built["geometry"].buffer(60))
+    if not spare.is_empty:
+        gpd.GeoSeries([spare], crs=dataio.METRIC_CRS).plot(
+            ax=axis, color="#ea580c", linewidth=2.0, zorder=6)
     if derived is not None and len(derived):
         derived.plot(ax=axis, color="#7c3aed", linewidth=1.8, zorder=6)
 
@@ -258,6 +266,10 @@ def render(unit: str, group: gpd.GeoDataFrame, built: dict, rows: list,
     handles = [Patch(facecolor="#1d4ed8", alpha=0.15,
                      label=f"Land as mapped — {built['area_ha']:,.0f} ha"),
                Line2D([0], [0], color="#1f2937", lw=2, label="Walked")]
+    if not spare.is_empty:
+        handles.append(Line2D([0], [0], color="#ea580c", lw=2.2,
+                              label=f"Walked, but outside the polygon — "
+                                    f"{spare.length / 1000:.1f} km"))
     if streams is not None and not streams.empty:
         handles.append(Line2D([0], [0], color=WATER, lw=1.6,
                               label="Watercourse, from the terrain model"))
