@@ -102,5 +102,29 @@
   ],
   "source": "Steward's own track descriptions, 12 June 2025; reviewed on the chord map 11 October 2026",
   "priority": "Real gap — return to the clan"
+ },
+ "Mungaikol — Zone 8": {
+  "notes": [
+   "NOT READY. Walked by Graham Ekiawa alone over nine days, 18.2 km recorded. The map cannot be completed until the clan answers one question.",
+   "",
+   "FOR THE CLAN TO CONFIRM: where does the boundary run across the north?",
+   "",
+   "Four of Graham's five recordings are titled 'Mungaikol Clan land boundary' and form one continuous chain — 13 July down the west, 15 July along the south, 16 July up the east, 21 July on north — ending at the far north-east, 4.0 km from where it began. Nothing closes that 4.0 km.",
+   "",
+   "His fifth recording, 20 July, 2.8 km, is titled 'Mungaikol Clan Sacred site boundary'. It starts 138 m from the chain's north-west end and runs east into the middle of the ground the chain encloses, stopping 3.2 km short of the north-east end.",
+   "",
+   "So either:",
+   "  (a) that line is the land boundary, and the unwalked stretch is the 3.2 km from its east end to the north-east terminus; or",
+   "  (b) it is what he titled it, an unfinished sacred site perimeter, and the unwalked stretch is the 4.0 km across the north.",
+   "",
+   "The two readings differ by roughly a third of the clan's land. There is nothing in the file to separate them: Graham wrote no comments at all, and no field of any recording mentions a river, creek, crossing or waterfall. Nineteen of the twenty-one sacred-site recordings in the dataset are open lines rather than closed loops, so the shape does not decide it either.",
+   "",
+   "It has been suggested the boundary follows a river across the north. Graham can say whether that is so, and if it is, which river.",
+   "",
+   "Until this is answered the pipeline closes the boundary using the sacred-site line as the northern edge and discards 5.4 km of the walked land boundary. That figure (338 ha) must not be issued."
+  ],
+  "source": "Raw recording titles and timings, 13-21 July 2025; reviewed on the chord map 11 October 2026",
+  "priority": "NOT READY — return to the clan before any figure is issued",
+  "needs_clan_confirmation": true
  }
 }
