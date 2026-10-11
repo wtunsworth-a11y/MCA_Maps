@@ -352,12 +352,24 @@ for (const c of clans) {
     body.push(p(`A GPX file for this clan is supplied as ${c.gpx}. Loaded onto the phone or handheld the boundary was mapped with, it shows the stewards' own tracks` + (c.gpx_gaps ? `, the ${c.gpx_gaps} gap${c.gpx_gaps===1?"":"s"} drawn as straight lines, and a waypoint at each end of every gap so a steward can navigate to where the walking stopped and carry on.` : ` and confirms the boundary closes with no gaps to walk.`), {size:21}));
   }
 
-  if (c.map) {
+  // An approved map is one that was looked at with someone who knows the
+  // ground and agreed, kept where re-running the pipeline cannot change it.
+  // Where there is one, it is the map this page shows.
+  if (c.approved && c.approved.map) {
+    body.push(p("Map", {bold:true, size:21, para:{ spacing:{ before:160 } }}));
+    body.push(img(path.join("output/clans/approved", c.approved.map), 620, 470));
+    body.push(note(`Approved ${c.approved.on}. Numbered lines are stretches the pipeline drew rather than anyone walked, each measured by how much walked line runs beside it. Neighbouring clans are named where they lie; their boundaries are not drawn.`));
+  } else if (c.map) {
     body.push(p("Map", {bold:true, size:21, para:{ spacing:{ before:160 } }}));
     body.push(img(path.join("output/clans", c.map), 620, 470));
     body.push(note(c.n_stewards > 1
       ? "Each steward's line and the area it gives alone (dashed); the survey they combine into, dotted; the stretches nobody walked in pink. Neighbouring clans are named where they lie; their boundaries are not drawn."
       : "The walk and the area it gives (dotted), with the stretches nobody walked in pink. Neighbouring clans are named where they lie; their boundaries are not drawn."));
+  }
+
+  if (c.approved && c.approved.todo && c.approved.todo.length) {
+    body.push(p("To complete this map", {bold:true, size:21}));
+    body.push(...bullets(c.approved.todo));
   }
 }
 

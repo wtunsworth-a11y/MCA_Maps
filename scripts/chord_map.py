@@ -50,6 +50,7 @@ import terrain  # noqa: E402
 
 GAP = "#db2777"
 TIE = "#15803d"
+WATER = "#7dd3fc"
 
 # Numbers have to survive a fix. A chord discussed as "number 3" is still
 # number 3 next time, a chord that has been closed simply disappears from the
@@ -141,6 +142,22 @@ def render(unit: str, group: gpd.GeoDataFrame, built: dict, rows: list,
     axis.set_xlim(window[0], window[2])
     axis.set_ylim(window[1], window[3])
 
+    # Water, for somewhere to stand. The Clan Stewards describe boundaries by
+    # rivers — down the Salm to the Makamata fall, along the Baraje — so the
+    # drainage is the context that means something here. It is modelled from
+    # the 30 m DEM, not surveyed, so it is drawn faintly and named as such.
+    try:
+        streams = gpd.read_file(dataio.REPO_ROOT / "data" / "reference"
+                                / "hydro" / "streams.gpkg").to_crs(
+                                    dataio.METRIC_CRS)
+        from shapely.geometry import box
+        streams = streams[streams.intersects(box(*window))]
+        if not streams.empty:
+            streams.plot(ax=axis, color=WATER, linewidth=1.1, zorder=1,
+                         alpha=0.9)
+    except Exception:
+        streams = None
+
     gpd.GeoSeries([built["geometry"]], crs=dataio.METRIC_CRS).plot(
         ax=axis, color="#1d4ed8", alpha=0.15, edgecolor="none", zorder=2)
     group.plot(ax=axis, color="#1f2937", linewidth=1.3, zorder=5)
@@ -181,6 +198,9 @@ def render(unit: str, group: gpd.GeoDataFrame, built: dict, rows: list,
     handles = [Patch(facecolor="#1d4ed8", alpha=0.15,
                      label=f"Land as mapped — {built['area_ha']:,.0f} ha"),
                Line2D([0], [0], color="#1f2937", lw=2, label="Walked")]
+    if streams is not None and not streams.empty:
+        handles.append(Line2D([0], [0], color=WATER, lw=1.6,
+                              label="Watercourse, from the terrain model"))
     if derived is not None and len(derived):
         handles.append(Line2D([0], [0], color="#7c3aed", lw=1.8,
                               label="Boundary derived, not walked"))

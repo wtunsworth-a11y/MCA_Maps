@@ -33,6 +33,7 @@ from shapely.geometry import Polygon
 from shapely.ops import unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import approve  # noqa: E402
 import closure  # noqa: E402
 import dataio  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
@@ -470,6 +471,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # of the file name. Every clan map went missing from the document
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
+            "approved": approve.approved(unit),
             "sacred": sacred_sites(unit, group),
             "field_notes": notes.get(unit, {}).get("notes", []),
             "field_source": notes.get(unit, {}).get("source"),
