@@ -40,7 +40,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
-from shapely.geometry import box  # noqa: E402
+from shapely.geometry import Point, box  # noqa: E402
 from shapely.ops import unary_union  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -368,7 +368,7 @@ def main(argv: list[str] | None = None) -> int:
         # The test is measurable: how much of the segment has walked
         # line beside it.
         for segment, kind, note in derived_rows:
-            share = (segment.intersection(walked_union.buffer(30)).length
+            share = (segment.intersection(walked_union.buffer(5)).length
                      / segment.length if segment.length else 0)
             if share >= 0.80:
                 axis.plot(*segment.xy, color="#0d9488", lw=3.0, zorder=6)
@@ -489,7 +489,14 @@ def main(argv: list[str] | None = None) -> int:
     def walked_share(segment):
         if not segment.length:
             return 0.0
-        return (segment.intersection(walked_union.buffer(30)).length
+        # Five metres, near GPS precision. Thirty metres measures
+        # nearness, not whether the ground was walked: Riribudeh's 48 m
+        # straight join scores 100% at 30 m and 44% at 5 m, and we
+        # established this morning that nobody walked that span. A line
+        # traced along the steward's own track holds up at 5 m — 88%,
+        # 92%, 97% on Gumuyude's three — while a line cut across a gap
+        # does not.
+        return (segment.intersection(walked_union.buffer(5)).length
                 / segment.length)
 
     chained = [r for r in derived_rows if walked_share(r[0]) >= 0.80]

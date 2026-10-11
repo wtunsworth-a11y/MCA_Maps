@@ -79,3 +79,10 @@ Order is the order we agreed them.
     shape says — a recording that returns near its own start is a place,
     one that goes somewhere is a stretch.
     *Dusi, 11 Oct.*
+
+14. **Chained or inferred is decided at 5 m, not 30.** Thirty metres
+    measures how near the walk passes, not whether the ground was
+    walked: Riribudeh's 48 m straight join scores 100% at 30 m and 44%
+    at 5 m, and nobody walked that span. A line traced along a steward's
+    own track still holds up at 5 m.
+    *Riribudeh, 11 Oct.*
