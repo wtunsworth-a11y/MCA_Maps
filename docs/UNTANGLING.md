@@ -250,6 +250,24 @@ Measured on this dataset, best first.
 | River routing where water cannot be walked | Manuvoora's four-waterfall stretch; 828 → 1,058 ha and closed |
 | Count sacred sites from the linework, not the polygon | restored Rondi 5 and Juaiko 4 after filling destroyed the evidence |
 
+**Gumuyude, the worked example of two fixes compounding.** Worth the space,
+because the arithmetic of "one fix, one improvement" does not hold.
+
+| step | longest drawn line | area |
+| --- | ---: | ---: |
+| as received | 872 m chord | 692 ha |
+| seven ends tied on gap 1 | **793 m, in a different place** | 678 ha |
+| the chord fix | **1,945 m, spanning both** | 656 ha |
+
+The ties were right in themselves — 1,015 m of boundary connects that did not
+before — but they left one free end over, so the closing step drew a chord
+elsewhere. The chord fix then took the two ends furthest apart across *both*
+problems and drew a single line over the lot: it begins 46 m from one end of
+the original chord and finishes exactly on one end of the 793 m line. Two
+faults became one larger fault, longer than both of them added together.
+
+Nothing was reverted. The lesson is cheaper to keep than the figure.
+
 A note on the mixed one. It was kept rather than reverted because a fix that
 is right on one clan and wrong on another is still information: it told us
 that chain-shaped surveys and mesh-shaped surveys need different tools, and
