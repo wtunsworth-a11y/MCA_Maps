@@ -106,7 +106,7 @@ def assess(group: gpd.GeoDataFrame, tolerance: float, min_enclosure: float,
     unit = dataio.survey_group(group).iloc[0]
     built = polygon_tools.survey_polygon(
         parts_of(group), tolerance, min_enclosure, max_spur,
-        derived=dataio.adopted_segments(unit))
+        derived=dataio.adopted_segments(unit), unit=unit)
     usable = built and (built["basis"] == "surveyed"
                         or built["gap_pct"] <= max_gap * 100)
     walked = {}

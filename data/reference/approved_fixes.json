@@ -1,0 +1,39 @@
+{
+ "_README": [
+  "Which repair is approved for which survey. Keyed by survey unit —",
+  "'<Clan> — <Zone>', the same key the polygon layer uses.",
+  "",
+  "A repair is approved for one survey at a time, by the person reviewing",
+  "that survey's map, and it applies to that survey and no other. A fix that",
+  "is right on one clan's data has been wrong on the next often enough that",
+  "this is the rule, not a precaution. Nothing here is a default, and",
+  "nothing is applied dataset-wide without being added, survey by survey,",
+  "after someone has looked at the map it changes.",
+  "",
+  "Repairs available:",
+  "",
+  "  collapse_duplicates — read the survey's open ends from one copy of each",
+  "    stretch. The recording app saved many walks several times over under",
+  "    names differing by a keystroke; each copy adds two endpoints, so a",
+  "    real open end where copies stop reads as a junction, and a copy that",
+  "    stopped short of the line it was copying leaves a phantom open end.",
+  "    Topology only — walked distance, enclosure geometry and the stored",
+  "    data all still come from every recording. See closure.distinct_indices."
+ ],
+
+ "Dusi — Zone 8": {
+  "collapse_duplicates": {
+   "approved": "2026-10-11",
+   "why": [
+    "77 recorded parts carrying 9.4 km of distinct line. None of the twenty",
+    "open ends the pipeline could see was either of the two Max Mamo named.",
+    "Chord 1 was drawn from a phantom: the 169 m 'Raian water' recording",
+    "lies 0.0 m on top of the first 168 m of the 332 m 'Karira' track and",
+    "stops 2.7 m from a line that carries straight on.",
+    "",
+    "With one copy of each stretch the two named ends come out unprompted,",
+    "first and fourth of eight, and the chord runs between them."
+   ]
+  }
+ }
+}

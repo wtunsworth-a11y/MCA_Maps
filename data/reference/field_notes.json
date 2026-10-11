@@ -1,93 +1,102 @@
 {
-  "_README": [
-    "What the field tells us that the GPS cannot. Keyed by survey unit —",
-    "'<Clan> — <Zone>', the same key the polygon layer uses. Everything here",
-    "is somebody's account, not a measurement, and it is reproduced as such:",
-    "on the clan's page under 'From the field', and in the clan's GPX so the",
-    "steward sees it on the device. Nothing here changes a geometry or a",
-    "figure. Add to it whenever the field answers a query.",
-    "",
-    "Set 'river_boundary': true where a gap follows a large river. It stops",
-    "the pipeline asking the clan to walk it.",
-    "",
-    "Named features are recorded only as the field spells them. Where a",
-    "name was read off handwriting it is confirmed before use, because a",
-    "misread river name propagates into every document and GPX after it."
+ "_README": [
+  "What the field tells us that the GPS cannot. Keyed by survey unit —",
+  "'<Clan> — <Zone>', the same key the polygon layer uses. Everything here",
+  "is somebody's account, not a measurement, and it is reproduced as such:",
+  "on the clan's page under 'From the field', and in the clan's GPX so the",
+  "steward sees it on the device. Nothing here changes a geometry or a",
+  "figure. Add to it whenever the field answers a query.",
+  "",
+  "Set 'river_boundary': true where a gap follows a large river. It stops",
+  "the pipeline asking the clan to walk it.",
+  "",
+  "Named features are recorded only as the field spells them. Where a",
+  "name was read off handwriting it is confirmed before use, because a",
+  "misread river name propagates into every document and GPX after it."
+ ],
+ "_standing": {
+  "notes": [
+   "Large rivers cannot reasonably be walked. Boulders, rapids and steep drops make it physically difficult and unsafe, so a gap that follows one is not a gap anybody should be asked to close on foot.",
+   "Where a boundary is a large river, the survey team will complete that stretch themselves by editing. How to draw a robust river boundary is an open decision, not yet made."
   ],
-  "_standing": {
-    "notes": [
-      "Large rivers cannot reasonably be walked. Boulders, rapids and steep drops make it physically difficult and unsafe, so a gap that follows one is not a gap anybody should be asked to close on foot.",
-      "Where a boundary is a large river, the survey team will complete that stretch themselves by editing. How to draw a robust river boundary is an open decision, not yet made."
-    ],
-    "source": "Field advice, 23 August 2026"
-  },
-  "Savasi — Zone 3": {
-    "notes": [
-      "The eastern border of Savasi's clan land is along the Baraje river.",
-      "The mapping is not finished: the northern and southern ends have yet to be closed off."
-    ],
-    "river_boundary": true,
-    "source": "Field advice, 23 August 2026"
-  },
-  "Manuvoora — Zone 6": {
-    "notes": [
-      "Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari.",
-      "The river line itself is impassable because of those waterfalls, but the boundary follows the river line. That stretch is not to be walked; it will be completed by editing.",
-      "The smaller gap is a gorge at the Jarahe waterfall, and the two ends may be joined by a straight line. The straight line there is the boundary, not an assumption.",
-      "The river is resolved: it runs along the modelled drainage (2.48 km, kind river_routed). The Jarahe gorge is NOT resolved. A 1.86 km line adopted for it was withdrawn: it was not a break in the walk at all, but the span the closing step drew between two arbitrary points, running past all four open ends without joining any of them. The real open ends in Granville Nepo's walk are 44 m at the river, four ends 117-342 m apart where the western and north-eastern pieces fail to meet, and a 52 m stub.",
-      "Egobeyas Kuarisi and Granville Nepo walked this boundary together, both recording: 98% of each line runs within 50 m of the other. It is one walk recorded twice, not two walks to be joined. Joined, the linework doubles and the survey encloses 556 ha; taken as Granville Nepo recorded it, it encloses 1,099 ha and is closed but for 40 m."
-    ],
-    "river_boundary": true,
-    "source": "Field advice, 24 August 2026, on an annotated printout"
-  },
-  "Sahirut — Zone 6": {
-    "notes": [
-      "Closed without further survey. 217 m remained open and there is nothing there worth a return to the field, so the map is treated as finished. No track records that stretch, so it adds no walked distance. The clan has not seen this line and has not agreed to it — it is the survey team's judgement, not the clan's.",
-      "Four of Solomon Makanisa's tracks, 15.2 km, carry Lenard Urami's name in their attributes. Flagged, never reassigned — if the attribution is wrong the two stewards' distances are close to reversed."
-    ],
-    "source": "Survey team, 10 October 2026"
-  },
-  "Kasaki — Zone 2": {
-    "notes": [
-      "This boundary was walked. What looked like 1.3 km of gap was the closing step drawing end-to-end across stretches the steward had already covered — every metre of it had walked line within 50 m. The eight loose ends are tied to the line beside them instead, 216 m in all, and the boundary closes on the walk."
-    ],
-    "source": "Survey team, 10 October 2026"
-  },
-  "Pina Ora — Zone 6": {
-    "notes": [
-      "PRIORITY: return to the clan. Both gaps, 788 m and 397 m on the eastern edge, need walking. Real gaps need real data; neither should be closed by editing.",
-      "Two real gaps, both on the eastern edge: 788 m and 397 m, where the recording stops and restarts with little or nothing walked between — only 37% and 31% of them have any walked line within 50 m. Both are easily fixed; a short walk closes them and no part of it is difficult ground.",
-      "A further 245 m of what is drawn is not a gap at all. Two of the four lines lie wholly within 50 m of ground the steward already walked, so there the boundary is recorded and only the ends need tying. That has not been done yet."
-    ],
-    "source": "Survey team, 10 October 2026",
-    "priority": "field return"
-  },
-  "Juaiko — Zone 2": {
-    "notes": [
-      "PRIORITY: return to the clan. The 917 m gap needs walking, not inferring, and the four interior lines need the clan to say which are boundary along the rivers and which are named places. Nothing here should be closed by editing.",
-      "One real gap, on the western edge by the Manoko boundary: 917 m, with only 12% of it having any walked line within 50 m. It needs walking.",
-      "Six other drawn lines, 966 m between them, are not gaps — they lie 82-100% within 50 m of ground already walked and only need their ends tying. Not yet done.",
-      "Four lines run inside the boundary rather than along it, and they are two different things. Two of them are the steward describing the boundary as following rivers — down the Salm to the Makamata fall, on to the Ujai, then up the Ujai to Sinigir. If that is the boundary, the mapped edge is in the wrong place along those stretches and the clan holds more than is shown. The other two are named places with histories attached. The clan needs to be shown the numbered map and asked which is which.",
-      "See output/queries/juaiko_to_clarify.png. The numbers on that map are deliberately not labelled; what each one is came from the stewards' own notes and is not for a document."
-    ],
-    "source": "Survey team, 10 October 2026",
-    "priority": "field return"
-  },
-  "Riribudeh — Zone 8": {
-    "notes": [
-      "The boundary is complete apart from the gap at the south-east. The long line the pipeline draws across the north-east corner is not a gap and not a boundary: it cuts through a walk that has no break in it, leaving 3.1 km of walked line — 16% of what the two stewards recorded — outside the clan's reported land, and taking in ground nobody walked. It must not be read as boundary.",
-      "Not yet fixed. Removing the line is straightforward; making the boundary follow the walk instead is not, because the recorded line does not close geometrically even once every loose end is tied and the south-east gap is bridged. Why is still open."
-    ],
-    "source": "Survey team, 10 October 2026"
-  },
-  "Gumuyude — Zone 8": {
-    "notes": [
-      "Every stretch of this boundary that was walked is now followed rather than cut across. Three chords ran beside the steward's own line and are traced along it; three had no walked line between their ends at all — 144 m, 75 m and 26 m — and are straight joins, which is the whole of what can be said about them.",
-      "One real gap remains: 652 m on the northern shoulder, with no walked line between its ends. It is for the clan to close, not for editing.",
-      "No walked line falls outside the boundary.",
-      "NEEDS CLAN CONFIRMATION: a notch on the north-eastern edge, where a 2,120 m track crosses itself and closes a loop of 0.28 ha, about 109 m by 47 m, wholly inside the boundary. Nothing in the steward's notes says what it is. See output/queries/gumuyude_notch.png."
-    ],
-    "source": "Survey team, 10 October 2026",
-    "needs_clan_confirmation": true
-  }
+  "source": "Field advice, 23 August 2026"
+ },
+ "Savasi — Zone 3": {
+  "notes": [
+   "The eastern border of Savasi's clan land is along the Baraje river.",
+   "The mapping is not finished: the northern and southern ends have yet to be closed off."
+  ],
+  "river_boundary": true,
+  "source": "Field advice, 23 August 2026"
+ },
+ "Manuvoora — Zone 6": {
+  "notes": [
+   "Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari.",
+   "The river line itself is impassable because of those waterfalls, but the boundary follows the river line. That stretch is not to be walked; it will be completed by editing.",
+   "The smaller gap is a gorge at the Jarahe waterfall, and the two ends may be joined by a straight line. The straight line there is the boundary, not an assumption.",
+   "The river is resolved: it runs along the modelled drainage (2.48 km, kind river_routed). The Jarahe gorge is NOT resolved. A 1.86 km line adopted for it was withdrawn: it was not a break in the walk at all, but the span the closing step drew between two arbitrary points, running past all four open ends without joining any of them. The real open ends in Granville Nepo's walk are 44 m at the river, four ends 117-342 m apart where the western and north-eastern pieces fail to meet, and a 52 m stub.",
+   "Egobeyas Kuarisi and Granville Nepo walked this boundary together, both recording: 98% of each line runs within 50 m of the other. It is one walk recorded twice, not two walks to be joined. Joined, the linework doubles and the survey encloses 556 ha; taken as Granville Nepo recorded it, it encloses 1,099 ha and is closed but for 40 m."
+  ],
+  "river_boundary": true,
+  "source": "Field advice, 24 August 2026, on an annotated printout"
+ },
+ "Sahirut — Zone 6": {
+  "notes": [
+   "Closed without further survey. 217 m remained open and there is nothing there worth a return to the field, so the map is treated as finished. No track records that stretch, so it adds no walked distance. The clan has not seen this line and has not agreed to it — it is the survey team's judgement, not the clan's.",
+   "Four of Solomon Makanisa's tracks, 15.2 km, carry Lenard Urami's name in their attributes. Flagged, never reassigned — if the attribution is wrong the two stewards' distances are close to reversed."
+  ],
+  "source": "Survey team, 10 October 2026"
+ },
+ "Kasaki — Zone 2": {
+  "notes": [
+   "This boundary was walked. What looked like 1.3 km of gap was the closing step drawing end-to-end across stretches the steward had already covered — every metre of it had walked line within 50 m. The eight loose ends are tied to the line beside them instead, 216 m in all, and the boundary closes on the walk."
+  ],
+  "source": "Survey team, 10 October 2026"
+ },
+ "Pina Ora — Zone 6": {
+  "notes": [
+   "PRIORITY: return to the clan. Both gaps, 788 m and 397 m on the eastern edge, need walking. Real gaps need real data; neither should be closed by editing.",
+   "Two real gaps, both on the eastern edge: 788 m and 397 m, where the recording stops and restarts with little or nothing walked between — only 37% and 31% of them have any walked line within 50 m. Both are easily fixed; a short walk closes them and no part of it is difficult ground.",
+   "A further 245 m of what is drawn is not a gap at all. Two of the four lines lie wholly within 50 m of ground the steward already walked, so there the boundary is recorded and only the ends need tying. That has not been done yet."
+  ],
+  "source": "Survey team, 10 October 2026",
+  "priority": "field return"
+ },
+ "Juaiko — Zone 2": {
+  "notes": [
+   "PRIORITY: return to the clan. The 917 m gap needs walking, not inferring, and the four interior lines need the clan to say which are boundary along the rivers and which are named places. Nothing here should be closed by editing.",
+   "One real gap, on the western edge by the Manoko boundary: 917 m, with only 12% of it having any walked line within 50 m. It needs walking.",
+   "Six other drawn lines, 966 m between them, are not gaps — they lie 82-100% within 50 m of ground already walked and only need their ends tying. Not yet done.",
+   "Four lines run inside the boundary rather than along it, and they are two different things. Two of them are the steward describing the boundary as following rivers — down the Salm to the Makamata fall, on to the Ujai, then up the Ujai to Sinigir. If that is the boundary, the mapped edge is in the wrong place along those stretches and the clan holds more than is shown. The other two are named places with histories attached. The clan needs to be shown the numbered map and asked which is which.",
+   "See output/queries/juaiko_to_clarify.png. The numbers on that map are deliberately not labelled; what each one is came from the stewards' own notes and is not for a document."
+  ],
+  "source": "Survey team, 10 October 2026",
+  "priority": "field return"
+ },
+ "Riribudeh — Zone 8": {
+  "notes": [
+   "The boundary is complete apart from the gap at the south-east. The long line the pipeline draws across the north-east corner is not a gap and not a boundary: it cuts through a walk that has no break in it, leaving 3.1 km of walked line — 16% of what the two stewards recorded — outside the clan's reported land, and taking in ground nobody walked. It must not be read as boundary.",
+   "Not yet fixed. Removing the line is straightforward; making the boundary follow the walk instead is not, because the recorded line does not close geometrically even once every loose end is tied and the south-east gap is bridged. Why is still open."
+  ],
+  "source": "Survey team, 10 October 2026"
+ },
+ "Gumuyude — Zone 8": {
+  "notes": [
+   "Every stretch of this boundary that was walked is now followed rather than cut across. Three chords ran beside the steward's own line and are traced along it; three had no walked line between their ends at all — 144 m, 75 m and 26 m — and are straight joins, which is the whole of what can be said about them.",
+   "One real gap remains: 652 m on the northern shoulder, with no walked line between its ends. It is for the clan to close, not for editing.",
+   "No walked line falls outside the boundary.",
+   "NEEDS CLAN CONFIRMATION: a notch on the north-eastern edge, where a 2,120 m track crosses itself and closes a loop of 0.28 ha, about 109 m by 47 m, wholly inside the boundary. Nothing in the steward's notes says what it is. See output/queries/gumuyude_notch.png."
+  ],
+  "source": "Survey team, 10 October 2026",
+  "needs_clan_confirmation": true
+ },
+ "Dusi — Zone 8": {
+  "notes": [
+   "Walked by Max Mamo alone, 12 June 2025. His recordings name each stretch and the clan on the other side of it — Karira, Gubai, Suhikol, Anaje — which is the fullest annotation in the dataset.",
+   "",
+   "Chord 5, 953 m, is a real gap: the Savahun boundary with Anaje clan, between two points Max Mamo named himself. It starts at the hook in the north where he wrote 'Sawahun broudre with anaje clan', at the corner where the Karira boundary ends. It ends at the Guaipnun waterfall, where three separate recordings stop and he wrote 'Savahun big drain so hard to continue over', 'Guaipnun hard to cross over.' and 'guapnun waterfall'. He could not get across. The stretch needs walking; it is not to be closed by drawing."
+  ],
+  "source": "Steward's own track descriptions, 12 June 2025; reviewed on the chord map 11 October 2026",
+  "priority": "Real gap — return to the clan"
+ }
 }

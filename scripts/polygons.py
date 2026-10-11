@@ -70,7 +70,8 @@ adopt_segment = dataio.adopt_segment
 
 
 def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
-                   max_spur: float, derived: list | None = None) -> dict | None:
+                   max_spur: float, derived: list | None = None,
+                   unit: str | None = None) -> dict | None:
     """Build the best polygon available for one survey's tracks.
 
     `derived` are boundary segments nobody walked — a river traced along the
@@ -103,7 +104,9 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     # endpoints and the open ends of the boundary stop looking open. The
     # graph is built from one copy of each stretch; the geometry above is
     # built from all of them, and `walked_m` counts all of them.
-    keep = closure.distinct_indices(parts)
+    keep = (closure.distinct_indices(parts)
+            if closure.approved_fix(unit, "collapse_duplicates")
+            else list(range(len(parts))))
     distinct_m = sum(parts[i].length for i in keep)
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
               "length": parts[i].length, "live": True}
@@ -566,7 +569,8 @@ def main(argv: list[str] | None = None) -> int:
                          else [geometry])
         built = survey_polygon(parts, args.tolerance, args.min_enclosure,
                                args.max_spur,
-                               derived=resolutions.get(source, []))
+                               derived=resolutions.get(source, []),
+                               unit=source)
         if built is None:
             continue
         first = group.iloc[0]

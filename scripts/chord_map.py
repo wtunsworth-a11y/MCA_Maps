@@ -250,7 +250,7 @@ def main(argv: list[str] | None = None) -> int:
     derived = polygon_tools.adopted_frame(unit)
     built = polygon_tools.survey_polygon(
         parts_of(group), 25.0, 0.50, 0.10,
-        derived=polygon_tools.adopted_segments(unit))
+        derived=polygon_tools.adopted_segments(unit), unit=unit)
     if not built:
         print(f"{unit}: no polygon could be built.")
         return 1

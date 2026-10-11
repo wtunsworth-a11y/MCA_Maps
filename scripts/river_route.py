@@ -156,7 +156,8 @@ def main(argv: list[str] | None = None) -> int:
         group = group[group.steward.astype(str).str.lower()
                       .str.contains(args.steward.lower())]
 
-    built = polygon_tools.survey_polygon(parts_of(group), 25.0, 0.50, 0.10)
+    built = polygon_tools.survey_polygon(parts_of(group), 25.0, 0.50, 0.10,
+                                         unit=unit)
     bridges = sorted((built.get("bridges") or []), key=lambda b: -b.length)
     if not 1 <= args.gap <= len(bridges):
         print(f"Gap {args.gap} does not exist; there are {len(bridges)}.")

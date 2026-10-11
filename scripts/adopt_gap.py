@@ -76,7 +76,7 @@ def main(argv: list[str] | None = None) -> int:
 
     derived = polygon_tools.adopted_segments(unit)
     built = polygon_tools.survey_polygon(parts_of(group) + derived,
-                                         25.0, 0.50, 0.10)
+                                         25.0, 0.50, 0.10, unit=unit)
     bridges = sorted((built.get("bridges") or []), key=lambda b: -b.length)
     if not 1 <= args.gap <= len(bridges):
         print(f"Gap {args.gap} does not exist; there are {len(bridges)}.")

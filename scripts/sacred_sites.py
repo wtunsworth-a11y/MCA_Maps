@@ -74,7 +74,7 @@ def build(tracks: gpd.GeoDataFrame, tolerance: float,
                          else [geometry])
         walked = sum(p.length for p in parts)
         built = polygon_tools.survey_polygon(parts, tolerance, min_enclosure,
-                                             max_spur)
+                                             max_spur, unit=unit)
         hull = unary_union(parts).convex_hull
 
         rows.append({

@@ -183,7 +183,8 @@ def main(argv: list[str] | None = None) -> int:
                      and not derived.empty else [])
     built = polygon_tools.survey_polygon(parts_of(group) + derived_lines,
                                          args.tolerance,
-                                         args.min_enclosure, args.max_spur)
+                                         args.min_enclosure, args.max_spur,
+                                         unit=match._unit.iloc[0])
     bridges = (built.get("bridges") or []) if built else []
     if not bridges:
         print(f"{unit}: no gaps — the boundary closes.")

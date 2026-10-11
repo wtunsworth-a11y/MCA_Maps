@@ -71,6 +71,29 @@ class _Groups:
 
 DUPLICATE_TOLERANCE = 20.0
 
+APPROVED_FIXES_PATH = (dataio.REPO_ROOT / "data" / "reference"
+                       / "approved_fixes.json")
+
+
+def approved_fix(unit: str | None, fix: str) -> bool:
+    """Whether `fix` has been approved for `unit`, and only for `unit`.
+
+    A repair that is right on one clan's data has been wrong on the next
+    often enough that nothing here is a default. Each is approved against
+    the map it changes, survey by survey, and a survey nobody has reviewed
+    is left exactly as it was.
+    """
+    if not unit:
+        return False
+    try:
+        import json
+        with open(APPROVED_FIXES_PATH, encoding="utf-8") as handle:
+            register = json.load(handle)
+    except (OSError, ValueError):
+        return False
+    return fix in (register.get(unit) or {})
+
+
 
 def distinct_indices(parts: list, tolerance: float = DUPLICATE_TOLERANCE,
                      samples: int = 20) -> list:
@@ -146,7 +169,8 @@ def _cluster_endpoints(endpoints: list[tuple[float, float]], tolerance: float):
 def analyse_survey(parts: list, tolerance: float, threshold: float,
                    max_spur: float = 0.10,
                    min_enclosure: float = 0.50,
-                   derived: list | None = None) -> dict:
+                   derived: list | None = None,
+                   unit: str | None = None) -> dict:
     """Classify one survey's track parts as closed, near, open or fragmented.
 
     Surveyors walk in to where the boundary starts and out again at the end,
@@ -182,7 +206,9 @@ def analyse_survey(parts: list, tolerance: float, threshold: float,
     # One copy of each stretch for the graph — see `distinct_indices`. The
     # lengths reported below, and the geometry tested for enclosure, still
     # come from every recording.
-    keep = distinct_indices(parts)
+    keep = (distinct_indices(parts)
+            if approved_fix(unit, "collapse_duplicates")
+            else list(range(len(parts))))
     distinct_length = sum(parts[i].length for i in keep)
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
               "length": parts[i].length, "live": True}
@@ -758,7 +784,8 @@ def analyse_all(gdf: gpd.GeoDataFrame, tolerance: float,
                          else [geometry])
         outcome = analyse_survey(parts, tolerance, threshold, max_spur,
                                  min_enclosure,
-                                 derived=dataio.adopted_segments(source))
+                                 derived=dataio.adopted_segments(source),
+                                 unit=source)
         if outcome["length_m"] < min_length:
             outcome["status"] = "too short"
             outcome["detail"] = f"only {outcome['length_m']:.0f} m walked"

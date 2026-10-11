@@ -205,7 +205,8 @@ def main(argv: list[str] | None = None) -> int:
         metric = group.to_crs(dataio.METRIC_CRS)
         built = polygon_tools.survey_polygon(
             parts_of(metric), args.tolerance, args.min_enclosure,
-            args.max_spur)
+            args.max_spur,
+            unit=dataio.survey_group(metric).iloc[0])
         found = (built.get("bridges") or []) if built else []
         bridges = [b for b in found if b.length >= args.min_gap]
         skipped = len(found) - len(bridges)
