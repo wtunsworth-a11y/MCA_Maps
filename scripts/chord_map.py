@@ -45,6 +45,7 @@ from shapely.ops import unary_union  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dataio  # noqa: E402
+import closure  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
 import terrain  # noqa: E402
 
@@ -132,11 +133,19 @@ def classify(unit: str, bridges: list, walked, tolerance: float,
     """Each drawn line, with how much of it already has walked line beside it."""
     ordered = sorted(bridges, key=lambda b: -b.length)
     numbers = numbering(unit, ordered, record=record)
+    pinned = closure.agreed_gaps(unit)
     rows = []
     for index, line in enumerate(ordered):
         near = line.intersection(walked.buffer(tolerance)).length / line.length
+        # A gap already agreed is a gap. The coverage test averages over the
+        # whole line, so one that is well covered at both ends and empty in
+        # the middle reads as covered — which is what Riribudeh's chord 1
+        # does at 58%, with 85 m of nothing at its midpoint. Where someone
+        # has looked at the line and settled it, that settles it.
+        agreed = any(g.hausdorff_distance(line) < 25 for g in pinned)
         rows.append({"n": numbers[index], "line": line, "share": near * 100,
-                     "kind": "gap" if near < cut else "tie"})
+                     "kind": "gap" if (agreed or near < cut) else "tie",
+                     "agreed": agreed})
     return rows
 
 

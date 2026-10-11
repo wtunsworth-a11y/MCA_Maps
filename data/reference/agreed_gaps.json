@@ -13,7 +13,6 @@
   "counted as gap in every figure and drawn as a gap on every map. Pinning",
   "settles where it runs, not what it is."
  ],
-
  "Dusi — Zone 8": [
   {
    "gap": "LINESTRING (663095.4663161682 8991099.23191406, 663834.350634272 8990497.866734292)",
@@ -31,6 +30,26 @@
     "the two ends are in different catchments whose flow paths first meet",
     "4.4 km downstream. No modelled channel comes within 600 m of the line.",
     "This stretch needs walking. It is not to be closed by drawing."
+   ]
+  }
+ ],
+ "Riribudeh — Zone 8": [
+  {
+   "gap": "LINESTRING (661153 8988545, 661211 8988740)",
+   "agreed": "2026-10-11",
+   "chord": 1,
+   "note": [
+    "203 m between two named places, with nothing walked between them.",
+    "",
+    "South: 'Butam do' (Unido Ose), which Prut Buitari writes 'But am doa'.",
+    "North: 'Muamara' (Unido Ose). Both notes sit 1-2 m from the chord's",
+    "ends.",
+    "",
+    "Both stewards walked this boundary together — their lines run on top of",
+    "each other everywhere else — and both stopped at Butam do and both",
+    "resumed at Muamara. The middle of the gap is 85 m from any walked line.",
+    "",
+    "Two stewards stopping at the same place is worth asking the clan about."
    ]
   }
  ]
