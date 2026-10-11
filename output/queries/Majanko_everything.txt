@@ -1,0 +1,14 @@
+Majanko: 4 recordings, 8.7 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1            2722 m
+   2            1836 m
+        Gilford Amakana clan boundary
+   3            3658 m
+        Gilford Amakana clan boundary
+        Water fall Afuti
+   4             454 m
+        Gilford Amakana clan boundary
+        Stop
+
+Wrote /home/user/MCA_Maps/output/queries/Majanko_everything.png
