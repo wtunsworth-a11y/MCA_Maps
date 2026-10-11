@@ -1,0 +1,7 @@
+Naharaura: 2 recordings, 36.9 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1           18434 m
+   2           18434 m
+
+Wrote /home/user/MCA_Maps/output/queries/Naharaura_everything.png
