@@ -391,7 +391,7 @@ def main(argv: list[str] | None = None) -> int:
     lines = [r for r in found
              if r["geometry"].length >= site_length and r not in flagged]
 
-    walkers = sorted({who(r) for r in lines})
+    walkers = sorted({who(r) for r in lines + sites})
     palette = ["#1f2937", "#1d4ed8", "#047857", "#b45309"]
     colours = {name: palette[i % len(palette)]
                for i, name in enumerate(walkers)}
@@ -422,6 +422,14 @@ def main(argv: list[str] | None = None) -> int:
         sacred = row in flagged
         colour = "#c026d3" if sacred else "#ea580c"
         geometry = row["geometry"]
+        # The walking, not only the dot. A short recording is still a
+        # steward walking: 452 m at garegummara hill was being drawn as
+        # one point with nothing under it, so a stretch of Dusi's walk
+        # looked like bare ground.
+        for part in (geometry.geoms if hasattr(geometry, "geoms")
+                     else [geometry]):
+            axis.plot(*part.xy, color=colours.get(who(row), "#1f2937"),
+                      lw=1.9, zorder=4, alpha=0.85)
         spot = geometry.interpolate(0.5, normalized=True)
         axis.plot(spot.x, spot.y, "o", ms=9, mfc=colour, mec="white",
                   mew=1.4, zorder=8)
