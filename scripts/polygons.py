@@ -99,10 +99,16 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     enclosed = _enclosed(snapped)
 
     # Bridge the open ends, so the two can be compared.
+    # Where the app saved a walk several times, every copy adds two more
+    # endpoints and the open ends of the boundary stop looking open. The
+    # graph is built from one copy of each stretch; the geometry above is
+    # built from all of them, and `walked_m` counts all of them.
+    keep = closure.distinct_indices(parts)
+    distinct_m = sum(parts[i].length for i in keep)
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
               "length": parts[i].length, "live": True}
-             for i in range(len(parts))]
-    closure._prune_spurs(edges, max_spur * total)
+             for i in keep]
+    closure._prune_spurs(edges, max_spur * distinct_m)
     live = [e for e in edges if e["live"]] or edges
 
     chains = closure._chains(live, positions)

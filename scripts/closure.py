@@ -69,6 +69,66 @@ class _Groups:
             self.parent[rb] = ra
 
 
+DUPLICATE_TOLERANCE = 20.0
+
+
+def distinct_indices(parts: list, tolerance: float = DUPLICATE_TOLERANCE,
+                     samples: int = 20) -> list:
+    """Indices of the parts that are not a re-recording of another part.
+
+    The recording app saved many walks several times over, under names that
+    differ by a keystroke — `Dussy clan land boundary`, `Dussy clan
+    boundry.`, `Dussy land boundry`. Dusi has 77 parts carrying 9.4 km of
+    distinct line between them.
+
+    Duplicates wreck the closure step, and they wreck it backwards. Each copy
+    contributes two more endpoints, so a genuine open end where three copies
+    stop reads as a junction of degree three and is no longer looked at; and
+    where a copy stopped short of the line it was copying, its last point
+    hangs free and reads as an open end although the boundary runs straight
+    past it. Dusi's chord 1 was drawn from one of those phantoms, and none of
+    the twenty "open ends" the pipeline could see was either of the two the
+    steward actually named. Collapsing duplicates first brings both of them
+    out, unprompted, at the top of a list of eight.
+
+    A part counts as a re-recording when every sample along it lies within
+    `tolerance` of a longer part already kept, so the longest version of a
+    stretch survives and the copies drop out. Two stewards walking the same
+    boundary collapse the same way, which is right: their two lines are one
+    boundary recorded twice, and the ends of that boundary are what the
+    closing step needs. How far apart the two of them walked is a separate
+    question, measured on the raw lines.
+
+    **This is for topology only.** Walked distance, the steward-agreement
+    measurements and the stored data are all taken from the full set. Nothing
+    here edits or discards a recording.
+    """
+    order = sorted(range(len(parts)),
+                   key=lambda i: (-parts[i].length, i))
+    kept: list = []
+    fractions = [f / samples for f in range(samples + 1)]
+    for index in order:
+        part = parts[index]
+        if part is None or part.length <= 0:
+            continue
+        bounds = part.bounds
+        duplicate = False
+        for other in kept:
+            keeper = parts[other]
+            kb = keeper.bounds
+            if (bounds[0] > kb[2] + tolerance or bounds[2] < kb[0] - tolerance
+                    or bounds[1] > kb[3] + tolerance
+                    or bounds[3] < kb[1] - tolerance):
+                continue
+            if all(keeper.distance(part.interpolate(f, normalized=True))
+                   < tolerance for f in fractions):
+                duplicate = True
+                break
+        if not duplicate:
+            kept.append(index)
+    return sorted(kept)
+
+
 def _cluster_endpoints(endpoints: list[tuple[float, float]], tolerance: float):
     """Group endpoints that sit within tolerance of each other."""
     groups = _Groups()
@@ -119,11 +179,16 @@ def analyse_survey(parts: list, tolerance: float, threshold: float,
     for index, label in enumerate(labels):
         positions.setdefault(label, endpoints[index])
 
+    # One copy of each stretch for the graph — see `distinct_indices`. The
+    # lengths reported below, and the geometry tested for enclosure, still
+    # come from every recording.
+    keep = distinct_indices(parts)
+    distinct_length = sum(parts[i].length for i in keep)
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
               "length": parts[i].length, "live": True}
-             for i in range(len(parts))]
+             for i in keep]
 
-    _prune_spurs(edges, max_spur * total_length)
+    _prune_spurs(edges, max_spur * distinct_length)
     live = [e for e in edges if e["live"]]
     if not live:
         live = edges
