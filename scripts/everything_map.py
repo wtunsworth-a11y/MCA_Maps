@@ -430,33 +430,27 @@ def main(argv: list[str] | None = None) -> int:
     axis.set_ylim(window[1], window[3])
     axis.set_aspect("equal")
     axis.set_axis_off()
-    # The area first. It is what the clan is being told about their land,
-    # and it belongs where the eye lands, not in the fourth line of a
-    # legend.
-    headline = args.clan
-    if built is not None:
-        headline += f" — {built['area_ha']:,.0f} ha"
+    # The area stays in the legend, and stays described as what it is.
+    # The polygon encloses a number of hectares; it does not say the clan
+    # owns them. Chords will move as they are corrected, overlaps with
+    # neighbours have not been measured, and disputes are the thing this
+    # survey exists to surface rather than something to be settled by a
+    # figure printed large at the top of a map.
     axis.set_title(
-        headline + "\n"
+        f"{args.clan} — mapping progress\n"
         + f"{len(found)} recordings, {total:.1f} km walked  ·  "
         + f"{len(lines)} stretch{'' if len(lines) == 1 else 'es'} of "
           f"boundary, {len(sites)} "
           f"place{'' if len(sites) == 1 else 's'} marked along it"
         + (f", {len(flagged)} sacred" if flagged else ""),
         fontsize=13, pad=10)
-    if built is not None:
-        axis.title.set_fontsize(13)
-        axis.set_title(axis.get_title(), fontsize=13, pad=10,
-                       loc="center")
     handles = []
     if built is not None:
         from matplotlib.patches import Patch
-        walked_share = (built["walked_km"] * 1000
-                        / built["geometry"].boundary.length * 100
-                        if built["geometry"].boundary.length else 0)
         handles.append(Patch(
             facecolor="#1d4ed8", alpha=0.13,
-            label=f"{built['area_ha']:,.0f} ha — {built['basis']}"))
+            label=f"{built['area_ha']:,.0f} ha enclosed by the mapping so "
+                  f"far ({built['basis']})"))
     handles += [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
                 for name in walkers]
     settled = [r for r in derived_rows if CONFIRMED.search(r[2] or "")]
@@ -492,6 +486,13 @@ def main(argv: list[str] | None = None) -> int:
     # enough to cover the thing it describes.
     axis.legend(handles=handles, loc="upper left", fontsize=9,
                 bbox_to_anchor=(1.01, 1.0), borderaxespad=0, frameon=False)
+    axis.annotate(
+        "Area enclosed by the mapping to date. Not a statement of what the "
+        "clan owns:\nboundaries not yet confirmed will move, and overlaps "
+        "with neighbours are not yet measured.",
+        xy=(0.0, -0.035), xycoords="axes fraction", ha="left", va="top",
+        fontsize=8.5, color="#4b5563")
+
     span = window[2] - window[0]
     bar = 1000 if span > 4000 else 500
     x0 = window[0] + span * 0.05
