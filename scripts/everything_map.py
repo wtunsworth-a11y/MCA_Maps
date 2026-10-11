@@ -122,11 +122,44 @@ def recordings(clan: str) -> list:
     return found
 
 
+MEMBER = re.compile(r"clan\s+member|^\s*\d{4}-\d{2}-\d{2}", re.I)
+
+
+def who(row: dict) -> str:
+    """The person, from whichever line carries their name."""
+    for line in row["text"]:
+        if "clan member" in line.lower():
+            cut = re.split(r"clan\s+member", line, flags=re.I)[0]
+            cut = re.sub(r"^\s*\d{4}-\d{2}-\d{2}[\s\d:]*", "", cut)
+            if cut.strip():
+                return " ".join(cut.split())[:28]
+    return "unattributed"
+
+
+def describe(row: dict) -> str:
+    """What the steward called this place, without their own name on it."""
+    for line in row["text"]:
+        if MEMBER.search(line) and "clan member" in line.lower():
+            continue
+        text = re.sub(r"^\s*\d{4}-\d{2}-\d{2}[\s\d:]*", "", line).strip()
+        if not text or "clan member" in text.lower():
+            continue
+        if re.search(r"original (clan )?(land )?boundary|boundary mapping",
+                     text, re.I):
+            return ""
+        return text[:58]
+    return ""
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--clan", required=True)
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--site-length", type=float, default=500.0,
+                        help="a recording shorter than this is a place, "
+                             "not a stretch of boundary")
     args = parser.parse_args(argv)
+    site_length = args.site_length
 
     found = recordings(args.clan)
     if not found:
@@ -160,37 +193,68 @@ def main(argv: list[str] | None = None) -> int:
     except Exception:
         pass
 
-    for index, row in enumerate(found, 1):
-        sacred = row in flagged
-        colour = "#c026d3" if sacred else "#1f2937"
+    # A short recording in the middle of a survey is a feature the steward
+    # stopped to mark, not a stretch of boundary, and what he wrote on it
+    # is its name. Those get drawn as places with their names against
+    # them; the long lines are the boundary and need no label.
+    sites = [r for r in found if r["geometry"].length < site_length]
+    lines = [r for r in found if r["geometry"].length >= site_length]
+
+    walkers = sorted({who(r) for r in lines})
+    palette = ["#1f2937", "#1d4ed8", "#047857", "#b45309"]
+    colours = {name: palette[i % len(palette)]
+               for i, name in enumerate(walkers)}
+
+    for row in lines:
         geometry = row["geometry"]
         for part in (geometry.geoms if hasattr(geometry, "geoms")
                      else [geometry]):
-            axis.plot(*part.xy, color=colour, lw=2.6 if sacred else 1.9,
-                      zorder=5 if sacred else 4, alpha=0.92)
-        middle = (geometry.geoms[0] if hasattr(geometry, "geoms")
-                  else geometry).interpolate(0.5, normalized=True)
-        axis.annotate(str(index), (middle.x, middle.y), fontsize=9,
-                      fontweight="bold", color="white", ha="center",
-                      va="center", zorder=9,
-                      bbox=dict(boxstyle="circle,pad=0.26",
-                                facecolor=colour, edgecolor="white",
-                                linewidth=1.0))
+            axis.plot(*part.xy, color=colours.get(who(row), "#1f2937"),
+                      lw=1.9, zorder=4, alpha=0.85)
+
+    placed = []
+    for row in sorted(sites, key=lambda r: -r["geometry"].length):
+        sacred = row in flagged
+        colour = "#c026d3" if sacred else "#ea580c"
+        geometry = row["geometry"]
+        spot = geometry.interpolate(0.5, normalized=True)
+        axis.plot(spot.x, spot.y, "o", ms=9, mfc=colour, mec="white",
+                  mew=1.4, zorder=8)
+        label = describe(row)
+        if not label:
+            continue
+        # one label per place: the pair walked the same sites twice
+        if any(spot.distance(q) < site_length * 1.6 for q in placed):
+            continue
+        placed.append(spot)
+        step = (window[2] - window[0]) * 0.055
+        axis.annotate(label, (spot.x, spot.y),
+                      xytext=(spot.x + step, spot.y + step * 0.45),
+                      fontsize=8.5, color=colour, ha="left", zorder=10,
+                      arrowprops=dict(arrowstyle="-", color=colour, lw=0.8))
 
     axis.set_xlim(window[0], window[2])
     axis.set_ylim(window[1], window[3])
     axis.set_aspect("equal")
     axis.set_axis_off()
-    axis.set_title(f"{args.clan} — every recording in the raw files, "
-                   f"{total:.1f} km\nnumbered as listed; magenta carries "
-                   f"sacred or tambu wording", fontsize=13, pad=10)
-    axis.legend(handles=[
-        Line2D([0], [0], color="#1f2937", lw=1.9, label="Recorded"),
-        Line2D([0], [0], color="#c026d3", lw=2.6,
-               label="Text mentions a sacred site or tambu"),
+    axis.set_title(f"{args.clan} — everything in the raw files: "
+                   f"{len(found)} recordings, {total:.1f} km\n"
+                   f"{len(lines)} stretches of boundary and {len(sites)} "
+                   f"places marked along it", fontsize=13, pad=10)
+    handles = [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
+               for name in walkers]
+    handles += [
+        Line2D([0], [0], marker="o", color="none", markerfacecolor="#ea580c",
+               markeredgecolor="white", markersize=9,
+               label="A place the steward stopped to mark"),
+        Line2D([0], [0], marker="o", color="none", markerfacecolor="#c026d3",
+               markeredgecolor="white", markersize=9,
+               label="Its description mentions a sacred site or tambu"),
         Line2D([0], [0], color="#7dd3fc", lw=1.1,
                label="Watercourse, from the terrain model"),
-    ], loc="lower left", fontsize=9.5, framealpha=0.94)
+    ]
+    axis.legend(handles=handles, loc="lower left", fontsize=9,
+                framealpha=0.94)
     span = window[2] - window[0]
     bar = 1000 if span > 4000 else 500
     x0 = window[0] + span * 0.05
