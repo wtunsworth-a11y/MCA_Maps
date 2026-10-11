@@ -86,3 +86,9 @@ Order is the order we agreed them.
     at 5 m, and nobody walked that span. A line traced along a steward's
     own track still holds up at 5 m.
     *Riribudeh, 11 Oct.*
+
+15. **Do not move to the next clan until told.** One clan at a time
+    means waiting, not queueing. Running ahead through Majanko and Murai
+    while Sahirut was still open put three maps on the table at once and
+    made it impossible to review any of them.
+    *Sahirut, 11 Oct.*
