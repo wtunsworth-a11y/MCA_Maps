@@ -139,6 +139,33 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
         edge["live"] = True
     live = [e for e in edges if e["live"]] or edges
 
+    # Does the walk close once the pinned gaps are in? A survey whose only
+    # remaining opening is a gap already agreed needs nothing drawn: the
+    # ring is complete and anything further is a line across a finished
+    # boundary. Dusi, tied at a 25.5 m break, is one piece of 10.70 km with
+    # no free ends, and was being handed a 2,741 m chord across the clan.
+    #
+    # Asked geometrically rather than from the graph, because a single
+    # piece with no free ends need not enclose anything — a line walked out
+    # and back is a cycle in the graph and a ring around nothing. Gumuri is
+    # exactly that, and the question put to the graph alone lost all 81 ha
+    # of it.
+    if pinned:
+        with_pinned = _enclosed(snapped + list(pinned))
+        probe = closure._chains(live + pinned_edges, positions)
+        probe_bridges, _ = _bridges(probe)
+        probed = (_enclosed(snapped + list(pinned) + probe_bridges)
+                  if probe_bridges else with_pinned)
+        if closure.closes_on_its_own(with_pinned, probed, min_enclosure):
+            return {"geometry": with_pinned, "basis": "inferred",
+                    "gap_m": sum(g.length for g in pinned),
+                    "gap_pct": (sum(g.length for g in pinned) / total * 100
+                                if total else None),
+                    "walked_km": walked_m / 1000,
+                    "derived_km": (total - walked_m) / 1000,
+                    "area_ha": with_pinned.area / 1e4,
+                    "bridges": list(pinned)}
+
     chains = closure._chains(live + pinned_edges, positions)
     bridges, gap = _bridges(chains)
     bridges = list(pinned) + bridges
