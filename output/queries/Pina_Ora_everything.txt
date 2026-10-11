@@ -1,0 +1,14 @@
+Pina Ora: 3 recordings, 21.3 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1           15337 m
+        Alban and Ezekiel, Pina ora clan.
+        Pina ora clan boundry mapping.
+   2            2803 m
+        Alban and Ezekiel, pina ora clan.
+        Pina ora clan boundry mapping.
+   3            3167 m
+        Alban and Ezekiel, pina ora clan.
+        Pina ora clan boundry mapping.
+
+Wrote /home/user/MCA_Maps/output/queries/Pina_Ora_everything.png
