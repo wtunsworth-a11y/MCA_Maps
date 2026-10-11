@@ -240,6 +240,7 @@ Measured on this dataset, best first.
 
 | fix | effect |
 | --- | --- |
+| Chord: enter a closed piece where its neighbours are (§11) | **mixed, kept.** Riribudeh 372 → **397 ha** with the chord gone, matching two stewards' rings independently; Gumuyude 678 → 656 ha with its drawn line more than doubled; Natang 1,535 → 49 ha, which showed that its old area was the chord and nothing else. Every finished clan untouched |
 | Ring order, per steward (§3) | Riribudeh **397 and 398 ha** from two independent recordings, one real gap found, no chord; Manuvoora's area in one step |
 | Ask whether the tracks enclose ground (§14) | surveyed area 2,542 → **5,163 ha**; inferred share 92% → 85% |
 | Order and orient the pieces before joining (2-opt) | Tuoko 3,282 → **3,676 ha**; Bimkol 0 → 158 ha; 36/36 polygons valid |
@@ -248,6 +249,13 @@ Measured on this dataset, best first.
 | Tie loose ends to the line beside them (§10) | Kasaki 1.34 km of false gap → **0**; closes on the walk |
 | River routing where water cannot be walked | Manuvoora's four-waterfall stretch; 828 → 1,058 ha and closed |
 | Count sacred sites from the linework, not the polygon | restored Rondi 5 and Juaiko 4 after filling destroyed the evidence |
+
+A note on the mixed one. It was kept rather than reverted because a fix that
+is right on one clan and wrong on another is still information: it told us
+that chain-shaped surveys and mesh-shaped surveys need different tools, and
+that the test between them is how many free ends a component has. Reverting
+would have bought back Gumuyude's figure and lost that. **Go backwards only
+for a reason better than the last number looking nicer.**
 
 **And one that was tried and rejected**, which is worth as much as the
 others. Joining each loose end to its *nearest* open end more than halves the
@@ -287,10 +295,16 @@ Faults that were not in the field data at all.
 
 ## 6. Still open
 
-- **The scaffolding chord (§11).** 214 km of drawn line that does not join
-  two open ends. Ring order (§3) solves it for compact clans and is not yet
-  wired into the pipeline; the sort key still has to be generalised before it
-  can be run on strip-shaped clans like Manuvoora.
+- **The mesh-shaped surveys.** Natang, Ginangi, Gubai, Mariura and Tuoko have
+  components with no free ends at all — Natang is 54 km of walked line in a
+  single doubled mesh. No bridging rule can read them, and after the chord
+  fix Natang reports 49 ha where it reported 1,535. Ring order is the tool
+  for these, and the sort key has to be generalised first (§3).
+- **Tying ends is only safe when it closes the survey outright.** Kasaki's
+  ties closed it and no bridging ran at all. Gumuyude's left one free end
+  over, and the closing step then drew 793 m across ground that had read as
+  walked the day before. A T-junction consumes two free ends and creates
+  none, so a partial tie strips the closing step of what it reads.
 - **Clans with too little walked to infer anything.** Zambiko reports 513 ha
   from 5.7 km walked, 79% of its outline drawn by the pipeline. The
   `--max-gap` limit is measured against the bridged ring rather than against
