@@ -60,6 +60,10 @@ NUMERIC = re.compile(
     r"(m|km|mi|ft|m/s|km/h|mi/h|KJ|kcal|%|min/km|min/mile|min/mi)?$", re.I)
 CLOCK = re.compile(r"^\d{1,3}:\d{2}(:\d{2})?\s*(min/km|min/mile|min/mi)?$")
 TIMESTAMP = re.compile(r"^\d{4}-\d{2}-\d{2}[ T]?[\d:]*$")
+# A null date read out of an empty column. It is not something anybody
+# typed, and printing it as a place name says a steward named somewhere
+# "NaT".
+EMPTY = {"nat", "nan", "none", "null", "<na>", "-", "0"}
 SACRED = re.compile(r"sacred|secret\s*s?i?ght|tambu|taboo|tabu|spirit|"
                     r"burial|graveyard|skull|forbidden|holy|holly|masalai",
                     re.I)
@@ -86,7 +90,8 @@ def typed_text(values: dict) -> list:
             if not line or line in out:
                 continue
             if (STATS.match(line) or NUMERIC.match(line)
-                    or CLOCK.match(line) or TIMESTAMP.match(line)):
+                    or CLOCK.match(line) or TIMESTAMP.match(line)
+                    or line.strip().lower() in EMPTY):
                 continue
             out.append(line)
     return out
@@ -216,14 +221,34 @@ def recordings(clan: str) -> list:
 MEMBER = re.compile(r"clan\s+member|^\s*\d{4}-\d{2}-\d{2}", re.I)
 
 
-def who(row: dict) -> str:
-    """The person who walked it.
+def walkers_by_file() -> dict:
+    """Which steward each source file belongs to.
 
-    The pipeline already extracts this and puts it in `steward`; reading
-    the free text for the phrase "clan member" found Rondi's walkers and
+    The raw archives carry no steward column — the pipeline derives it,
+    mostly from the filename, and resolves the spelling variants while it
+    is there. Reading the free text instead found Rondi's walkers and
     missed Manuvoora's, Gumuyude's and Riribudeh's, so four maps said
-    "unattributed" about surveys that name their walker plainly.
+    "unattributed" about surveys that name their walker in the filename.
     """
+    try:
+        tracks = gpd.read_file(dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
+                               layer="tracks_smoothed")
+    except Exception:
+        return {}
+    out: dict = {}
+    for source, group in tracks.groupby("source_name"):
+        names = sorted({str(v) for v in group.steward
+                        if str(v).strip() not in ("", "nan", "None")})
+        if names:
+            out[str(source).lower()] = ", ".join(names)[:28]
+    return out
+
+
+def who(row: dict) -> str:
+    """The person who walked it."""
+    known = walkers_by_file().get(Path(row.get("file", "")).stem.lower())
+    if known:
+        return known
     for key in ("steward", "Steward"):
         value = row.get(key)
         if value and str(value).strip() not in ("", "nan", "None"):
@@ -441,7 +466,10 @@ def main(argv: list[str] | None = None) -> int:
     handles += [
         Line2D([0], [0], marker="o", color="none", markerfacecolor="#ea580c",
                markeredgecolor="white", markersize=9,
-               label="A place the steward stopped to mark"),
+               label=f"A place the steward walked and marked — {len(sites)}"
+                     + (f", {sum(1 for r in sites if not describe(r))} "
+                        f"not yet named"
+                        if any(not describe(r) for r in sites) else "")),
         Line2D([0], [0], color="#c026d3", lw=2.8,
                label="Its description mentions a sacred site or tambu"),
         Line2D([0], [0], color="#7dd3fc", lw=1.1,

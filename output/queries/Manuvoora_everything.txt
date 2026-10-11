@@ -2,102 +2,73 @@ Manuvoora: 29 recordings, 70.9 km raw
   0 carrying sacred or tambu wording, 0.0 km
 
    1             109 m
-        NaT
    2              95 m
-        NaT
    3              11 m
-        NaT
    4              10 m
-        NaT
    5              33 m
-        NaT
    6              12 m
-        NaT
    7             323 m
-        NaT
    8              10 m
-        NaT
    9            8267 m
         Egobeyas kuarisi
         Manuvuo,ora clan land boundary
-        NaT
   10            2192 m
         Egobeyas Kuarisi
         Manuvuo,ora Clan land Boundary
-        NaT
   11            2648 m
         Egobeyas Kuarisi
         Manuvuo,ora Clan Land Boundary
-        NaT
   12            3749 m
         Egobeyas Kuarisi
         Manuvu,ora clan land Boundary
-        NaT
   13            2794 m
         Egobeyas Kuarisi
         Manuvuo,ora Clan Land Boundary
-        NaT
   14            6813 m
         Egobeyas Kuarisi
         manuvuo,ora Clan Land Boundary
-        NaT
   15            8040 m
         Egobeyas Kuarisi
         Manuvu,ora Clan land Boundary
-        NaT
   16             911 m
         Egobeyas Kuarisi
         Manuvuo,ora Clan Land Boundary
-        NaT
   17             495 m
         Egobeyas kuarisi manuvuora clan
         Clan land boundary
-        NaT
   18              11 m
         Egobeyas kuarisisi
         Manuvuo,ra clan
-        NaT
   19              46 m
-        NaT
   20            2003 m
         Granville Nepo
         Manuvuo'ora Clan land boundary
-        NaT
   21            8492 m
         Granville Nepo
         Manuvuo'ora Clan (Land boundary)
-        NaT
   22            2243 m
         Granville Nepo
         Manuvuo'ora Clan (Land boundary)
-        NaT
   23             312 m
         Granville Nepo
         Manuvuo'ora Clan
-        NaT
   24            2367 m
         Granville Nepo
         Manuvuo'ora Clan (Land boundary)
-        NaT
   25            2695 m
         Granville Nepo
         Manuvuo'ora Clan land boundary
-        NaT
   26            6965 m
         Granville Nepo
         Manuvuo'ora Clan land boundary
-        NaT
   27            7651 m
         Granville Nepo
         Manuvuo'ora Clan ( Land boundary mark )
-        NaT
   28             991 m
         Granville Nepo
         Manuvuo'ora Clan (Land boundary mark)
-        NaT
   29             576 m
         Granville Nepo (Manuvuo,ora Clan)
         Clan Land Boundry
-        NaT
 
 Wrote /home/user/MCA_Maps/output/queries/Manuvoora_everything.png

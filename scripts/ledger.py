@@ -168,7 +168,10 @@ def ledger(clan: str) -> dict:
                 sum(g.length for g in gaps) / 1000, 2),
             "still_to_walk_count": len(gaps),
         },
-        "unexplained_recordings": sum(
+        # Not "unexplained". A steward walked it, and the walking is the
+        # record; the name is the extra. Counted so the clan can be asked
+        # what these places are, not treated as data of lesser standing.
+        "walked_but_unnamed": sum(
             1 for r in arrived if not em.describe(r)),
     }
 
@@ -212,9 +215,9 @@ def show(entry: dict) -> None:
     print(f"      still to walk               "
           f"{b['still_to_walk_km']:6.2f} km  "
           f"({b['still_to_walk_count']} gap(s))")
-    if entry["unexplained_recordings"]:
-        print(f"\n  {entry['unexplained_recordings']} recording(s) with "
-              f"nothing written about them")
+    if entry["walked_but_unnamed"]:
+        print(f"\n  {entry['walked_but_unnamed']} recording(s) walked but "
+              f"not named — the ground is recorded, the name is to ask for")
 
 
 def main(argv: list[str] | None = None) -> int:
