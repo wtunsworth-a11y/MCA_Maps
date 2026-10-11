@@ -1,0 +1,136 @@
+Dusi: 52 recordings, 42.3 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1              50 m
+        2025-06-05 08:48Max MAMO Dusi clanboundry maping.
+        Iand bounder withsuhikol land name waru credck.
+   2             452 m
+        land name garegummara hill
+   3            2563 m
+        Aramukin Border Suhikol and Uwana
+   4            1654 m
+        2025-06-05 09:02Dussy clan
+        Iand name umbara follow by the river.
+   5             989 m
+        2025-06-05 09:02dussy clan land boundry
+        Iand name aramukin bounder with suhikol bounder Ivana follow the umbara river.
+   6            2385 m
+        2025-06-05 09:02Dussy clan boundary suke,anai and follow by the river.
+   7            2081 m
+        2025-06-05 09:02Dussy clan land boundry
+        Kin water and follow by the river.
+   8             718 m
+        Kundingvakin water fall
+   9             344 m
+        2025-06-05 10:48Dussy clan land boundry
+        Kukubii and follow by the river.
+  10             708 m
+        2025-06-05 10:48Dussy clan land boundry
+        Udoruwa water fall continue and follow by the river.
+  11            2021 m
+        2025-06-05 12:46 Dussy Clan
+        Unuwa to Dabahoro
+  12             251 m
+        2025-06-05 12:46Dussy clan land boundary
+        Dabahuro follow up by the river
+  13              62 m
+        2025-06-05 12:46Dussy clan land boundry
+        Unnuvs waterfall and follow,s by the water.
+  14             885 m
+        Avam
+  15             547 m
+        Gibal
+  16             726 m
+        Guaipnun hard to cross over.
+  17              14 m
+        Savahun big drain so hard to continue over
+  18              51 m
+        Savahun
+  19             717 m
+        Gigulhun border with Karira
+  20             470 m
+        Rin river border with Karira Clan
+  21            1475 m
+        Yangin border with Karira
+  22             242 m
+  23            1222 m
+  24             330 m
+  25             400 m
+  26            2563 m
+        dussy clan land boundry25-06-05 09:02
+        Kudeiwakin water fall and follow,s by the river.
+  27            1615 m
+        Dussy clan land boundary.2025-06-05 12:46
+        Mune siru broader with Gubai clan
+  28              53 m
+        dussy clan landboundry2025-06-12 09:02
+        Mt beguilhun velluey.
+  29              41 m
+        Dussy clan land boundary 2025-06-05 14:27
+        Sihorurol boarder with the Gubai clan
+  30             716 m
+        Dussy clan land boundary 2025-06-12 09:28
+        ,guapnun waterfall
+  31             500 m
+        Dussy clan land boundary 2025-06-12 12:56
+        Raian water
+  32             752 m
+        Dussy clan land boundary 2025-06-12 15:08
+        Namedei broader with karira.
+  33             242 m
+        Dussy clan land boundary 2025-06-12 16:36
+        Nanmuanboundry with karira
+  34             335 m
+        Dussy clan land boundary.2025-06-05 14:27
+        Tagummudo boarder with the Gubai clan.
+  35            1506 m
+        Dussy clan land boundary025-06-05 12:46
+        Jebailhun broader with Gubai clan.
+  36            1267 m
+        dussy clan land boundary2025-06-05 12:46
+        Avaam boundry with Gubai clan and follow,s up by the river
+  37             440 m
+        Dussy clan land boundary2025-06-12 14:21
+        Geigulhull broader with karira,.
+  38             885 m
+        Dussy clan land boundaryUD025-06-05 14:27
+        Nigigul land boundry with Gubai clan.
+  39             531 m
+        Dussy clan land boundry 2025-06-12 09:02
+        Mtbeguilhun range.
+  40              22 m
+        Dussy clan land boundry 2025-06-12 09:28
+        Nigigil range.,
+  41             196 m
+        Dussy clan land boundry.2025-06-12 12:56
+        Sawahun broudre with anaje clan,
+  42             439 m
+        Dussy clan land boundry.2025-06-12 15:08
+        Yeagin broader with karira
+  43            1002 m
+        dussy clan land boundry2025-06-05 12:46
+        Kuo,bo follow by the boundry with the Gubai clan.
+  44             938 m
+        Dussy clan land boundry2025-06-12 15:08
+        Bigualhun Lange Agobanei with karira.
+  45            1475 m
+        Dussy clan land boundry2025-06-12 15:08
+        Genuanei boundary with karira
+  46             794 m
+        Dussy clan landboundary025-06-05 12:46
+        Dabahuro waterfall bounder with the Gubai clan.
+  47            1046 m
+        Dussy land boundry 2025-06-12 15:08
+        Biondo boundary with karira
+  48            1222 m
+        Siveramal community boarder with the suhikol clan
+  49            1024 m
+        Samunei boarder with karira and suhikol clan.
+  50             748 m
+        Jaberusauit crick boarder with the karira clan
+  51             160 m
+        Yambawom Range boarder with the karira clan.
+  52             429 m
+        Anshul range boarder with karira clan
+
+Wrote /home/user/MCA_Maps/output/queries/Dusi_everything.png
