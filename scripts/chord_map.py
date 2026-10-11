@@ -41,6 +41,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
 from matplotlib.patches import Patch  # noqa: E402
+from shapely.geometry import Point  # noqa: E402
 from shapely.ops import unary_union  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -196,10 +197,26 @@ def render(unit: str, group: gpd.GeoDataFrame, built: dict, rows: list,
                                   row["line"].coords[-1][:2])
         dx, dy = ax1 - ax0, ay1 - ay0
         span = (dx * dx + dy * dy) ** 0.5 or 1.0
-        offset = (window[2] - window[0]) * 0.045
-        nx, ny = -dy / span * offset, dx / span * offset
+        # Outside the land, on whichever side gets there, and far enough
+        # out to be clear of it. A marker sitting on the polygon hides the
+        # boundary it is there to point at.
+        step = (window[2] - window[0]) * 0.030
+        land = built["geometry"]
+        spot = None
+        for reach in (1, 2, 3, 4, 5, 6):
+            for sign in (1, -1):
+                nx = -dy / span * step * reach * sign
+                ny = dx / span * step * reach * sign
+                here = Point(point.x + nx, point.y + ny)
+                if not land.contains(here):
+                    spot = here
+                    break
+            if spot is not None:
+                break
+        if spot is None:
+            spot = Point(point.x - dy / span * step, point.y + dx / span * step)
         axis.annotate(str(row["n"]), (point.x, point.y),
-                      xytext=(point.x + nx, point.y + ny),
+                      xytext=(spot.x, spot.y),
                       fontsize=10.5, fontweight="bold", color="white",
                       ha="center", va="center", zorder=9,
                       arrowprops=dict(arrowstyle="-", color=colour,
