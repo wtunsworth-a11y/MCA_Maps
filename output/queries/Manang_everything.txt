@@ -1,0 +1,7 @@
+Manang: 1 recordings, 8.0 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1            7955 m
+        Kelly_Wahamo_Manang_Clan_Land_Boundary_Zone_7B_July2026
+
+Wrote /home/user/MCA_Maps/output/queries/Manang_everything.png
