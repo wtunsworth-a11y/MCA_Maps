@@ -1,0 +1,20 @@
+Asingi: 5 recordings, 7.4 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1            1697 m
+        Jethro j akse
+        Clan land boundary
+   2            4298 m
+        Jethro j akse
+        Asgi clan land boundary
+   3            1059 m
+        Jethro j akse
+        Asigi clan. Land boundary
+   4             151 m
+        Jethro_Aksi_Asingi_Clan_2026-02-05 13:11
+        2228:08 min/km
+   5             148 m
+        Trayal
+        Land boundary
+
+Wrote /home/user/MCA_Maps/output/queries/Asingi_everything.png
