@@ -23,5 +23,15 @@
    "Ask the clan what Jaginhul is. Unido Ose puts the name on three recordings at the eastern turn, where both stewards leave the boundary, make the same eastward excursion and both rejoin. Knowing what it is would settle whether that excursion is the boundary or a detour around something.",
    "The 48 m closing the break on the eastern boundary is a straight line, not walked. It runs up to 18 m inside the stewards' tracks where they loop out around it. Confirm or correct."
   ]
+ },
+ "Naharaura — Zone 6": {
+  "on": "2026-10-11",
+  "map": "Naharaura_Zone_6.png",
+  "todo": [
+   "Gap of 546 m across the northern lobe, running north-south between (656218,8998916) and (656307,8999455). Walk it, or confirm what feature the boundary follows there — about half of it lies within 60 m of a modelled watercourse, and a short walked spur inside the lobe stops dead as though the stretch was started and turned back from.",
+   "Gap of 328 m on the south-eastern edge, between (656473,8997619) and (656566,8997304). Every metre lies within 60 m of a modelled watercourse, so the clan may be able to confirm it follows that creek rather than walking it. The modelled drainage comes from a 30 m surface model and is not a survey.",
+   "Two short gaps at the top of the northern lobe, 99 m and 57 m, on no modelled feature.",
+   "Zechariah Sasavo's two recordings cover the same ground twice: 32.6 km recorded over about 16 km of distinct walking. Any figure reporting distance walked should say which it means."
+  ]
  }
 }

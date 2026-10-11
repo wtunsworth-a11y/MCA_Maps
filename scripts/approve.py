@@ -89,6 +89,18 @@ def main(argv: list[str] | None = None) -> int:
 
     source = args.map or (dataio.OUT_DIR / "queries"
                           / f"{dataio.safe_name(unit)}_chords.png")
+    # The map kept is the one that was reviewed. Since the review moved
+    # to everything_map — all the recordings, the four categories, the
+    # area as mapping progress — that is the map to keep, and the chord
+    # map is only a fallback for clans reviewed before the change.
+    if args.map is None:
+        for candidate in (dataio.OUT_DIR / "queries"
+                          / f"{args.clan.replace(' ', '_')}_everything.png",
+                          dataio.OUT_DIR / "queries"
+                          / f"{dataio.safe_name(unit)}_everything.png"):
+            if candidate.exists():
+                source = candidate
+                break
     if not source.exists():
         print(f"No map at {source}. Run scripts/chord_map.py first.")
         return 1
