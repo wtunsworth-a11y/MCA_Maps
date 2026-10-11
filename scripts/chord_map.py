@@ -197,24 +197,36 @@ def render(unit: str, group: gpd.GeoDataFrame, built: dict, rows: list,
                                   row["line"].coords[-1][:2])
         dx, dy = ax1 - ax0, ay1 - ay0
         span = (dx * dx + dy * dy) ** 0.5 or 1.0
-        # Outside the land, on whichever side gets there, and far enough
-        # out to be clear of it. A marker sitting on the polygon hides the
-        # boundary it is there to point at.
-        step = (window[2] - window[0]) * 0.030
+        # Clear of everything the map is read for. Stepping just outside
+        # the land is not enough — the edge of the land is exactly where
+        # the walked boundary runs, so the marker lands on it. Step out
+        # until it is outside the land AND a clear margin from any walked
+        # line and any other drawn line.
+        step = (window[2] - window[0]) * 0.022
+        margin = (window[2] - window[0]) * 0.030
         land = built["geometry"]
-        spot = None
-        for reach in (1, 2, 3, 4, 5, 6):
+        # Its own line counts: a marker resting on the chord it labels
+        # hides that chord as surely as it hides anything else.
+        others = [r["line"] for r in rows]
+        spot, best = None, None
+        for reach in range(1, 13):
             for sign in (1, -1):
-                nx = -dy / span * step * reach * sign
-                ny = dx / span * step * reach * sign
-                here = Point(point.x + nx, point.y + ny)
-                if not land.contains(here):
+                here = Point(point.x - dy / span * step * reach * sign,
+                             point.y + dx / span * step * reach * sign)
+                if land.contains(here):
+                    continue
+                clear = min([walked.distance(here)]
+                            + [o.distance(here) for o in others])
+                if best is None or clear > best[0]:
+                    best = (clear, here)
+                if clear >= margin:
                     spot = here
                     break
             if spot is not None:
                 break
         if spot is None:
-            spot = Point(point.x - dy / span * step, point.y + dx / span * step)
+            spot = (best[1] if best else
+                    Point(point.x - dy / span * step, point.y + dx / span * step))
         axis.annotate(str(row["n"]), (point.x, point.y),
                       xytext=(spot.x, spot.y),
                       fontsize=10.5, fontweight="bold", color="white",
