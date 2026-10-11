@@ -80,6 +80,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     distance is a record of what a steward did on the ground.
     """
     walked = [p for p in parts if p is not None and p.length > 0]
+    walked = closure.extended_parts(unit, walked)
     derived = [d for d in (derived or []) if d is not None and d.length > 0]
     parts = walked + derived
     if not parts:

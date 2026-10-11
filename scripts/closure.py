@@ -34,7 +34,7 @@ from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
-from shapely.geometry import LineString
+from shapely.geometry import LineString, Point
 from shapely.ops import polygonize, unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -73,6 +73,113 @@ DUPLICATE_TOLERANCE = 20.0
 
 APPROVED_FIXES_PATH = (dataio.REPO_ROOT / "data" / "reference"
                        / "approved_fixes.json")
+
+
+EXTENSIONS_PATH = (dataio.REPO_ROOT / "data" / "reference"
+                   / "line_extensions.json")
+
+
+def extended_parts(unit: str | None, parts: list):
+    """Carry a recording a few metres past where it stopped, so it crosses.
+
+    Where two stewards walk one boundary their lines lie a few metres
+    apart, and where the boundary passes from one to the other neither has
+    an end at the crossing — so the graph cannot see that they meet, and
+    the closing step draws a line beside the walked line instead. On
+    Riribudeh that was 83 m of invention alongside 83 m of record, and it
+    was load-bearing: without it the clan fell from 397 ha to 2.9.
+
+    Inserting a separate join does not help, because its own far end is a
+    new loose end in its turn. Carrying one line on past its last point
+    does: it crosses its neighbour, the two are split at the crossing, and
+    the boundary has a node to turn at. Riribudeh needed ten metres.
+
+    The extension follows the bearing of the line's last few points, so it
+    is the walk continued rather than a direction chosen. Nothing is moved
+    and nothing is deleted; the recorded line is a prefix of the result.
+    Each one is registered against the survey with the reason, and a
+    survey with no entry is untouched.
+    """
+    cuts = _extensions_for(unit)
+    if not cuts:
+        return parts
+
+    out = list(parts)
+    tips = []
+    for entry in cuts:
+        tip = Point(entry["at"])
+        metres = float(entry["metres"])
+        best, index, at_start = None, None, True
+        for position, part in enumerate(out):
+            for start in (True, False):
+                end = Point(part.coords[0][:2] if start
+                            else part.coords[-1][:2])
+                gap = end.distance(tip)
+                if best is None or gap < best:
+                    best, index, at_start = gap, position, start
+        if index is None or best > 5.0:
+            continue
+        out[index] = _carry_on(out[index], metres, at_start)
+        tips.append(tip)
+    return _node_crossings(out, tips)
+
+
+def _extensions_for(unit: str | None):
+    if not unit:
+        return []
+    try:
+        import json
+        with open(EXTENSIONS_PATH, encoding="utf-8") as handle:
+            register = json.load(handle)
+    except (OSError, ValueError):
+        return []
+    return register.get(unit) or []
+
+
+def _carry_on(line, metres: float, at_start: bool):
+    """The line with `metres` added on, along its own last bearing."""
+    coords = [tuple(c[:2]) for c in line.coords]
+    if at_start:
+        tip, back = coords[0], coords[min(4, len(coords) - 1)]
+    else:
+        tip, back = coords[-1], coords[max(-5, -len(coords))]
+    dx, dy = tip[0] - back[0], tip[1] - back[1]
+    span = (dx * dx + dy * dy) ** 0.5 or 1.0
+    far = (tip[0] + dx / span * metres, tip[1] + dy / span * metres)
+    return (LineString([far] + coords) if at_start
+            else LineString(coords + [far]))
+
+
+def _node_crossings(parts: list, tips: list, radius: float = 60.0):
+    """Split parts where an extension made them cross, and only there.
+
+    Confined to the neighbourhood of the extension on purpose. Noding
+    every crossing in a survey is a different and much larger change:
+    done across Riribudeh it took the clan from 397 ha to 166.
+    """
+    from shapely.ops import substring
+
+    out = []
+    for index, part in enumerate(parts):
+        marks = []
+        for other in range(len(parts)):
+            if other == index or not part.crosses(parts[other]):
+                continue
+            hit = part.intersection(parts[other])
+            for piece in (hit.geoms if hasattr(hit, "geoms") else [hit]):
+                where = (piece if piece.geom_type == "Point"
+                         else Point(piece.coords[0][:2]))
+                if all(where.distance(t) > radius for t in tips):
+                    continue
+                marks.append(part.project(where))
+        marks = sorted(m for m in marks if 0.5 < m < part.length - 0.5)
+        if not marks:
+            out.append(part)
+            continue
+        for first, second in zip([0.0] + marks, marks + [part.length]):
+            if second - first > 0.5:
+                out.append(substring(part, first, second))
+    return out
 
 
 AGREED_GAPS_PATH = (dataio.REPO_ROOT / "data" / "reference"

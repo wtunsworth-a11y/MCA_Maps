@@ -1,0 +1,42 @@
+{
+ "_README": [
+  "Recordings carried a few metres past where they stopped, so that they",
+  "cross a neighbouring line and the two can be split at the crossing.",
+  "Keyed by survey unit.",
+  "",
+  "Where two stewards walk one boundary their lines lie a few metres apart,",
+  "and where the boundary passes from one to the other neither has an end",
+  "at the crossing. The graph cannot see that they meet, and the closing",
+  "step draws a line beside the walked line instead.",
+  "",
+  "The extension follows the bearing of the line's own last few points, so",
+  "it is the walk continued rather than a direction chosen. Nothing is",
+  "moved and nothing deleted: the recorded line is a prefix of the result.",
+  "A survey with no entry here is untouched.",
+  "",
+  "'at' is the tip being carried on, 'metres' how far."
+ ],
+
+ "Riribudeh — Zone 8": [
+  {
+   "at": [661469.0, 8990474.0],
+   "metres": 10,
+   "agreed": "2026-10-11",
+   "chord": 2,
+   "note": [
+    "Prut Buitari's 1,729 m recording starts here, 2.3 m from Unido Ose's",
+    "201 m line and 5.7 m from his own 886 m. Carrying it ten metres back",
+    "along its own bearing crosses all three, and the crossing gives the",
+    "boundary a node to turn at.",
+    "",
+    "Chord 2 was 83 m of drawn line lying a few metres east of 83 m of",
+    "walked line, and it was load-bearing: without it Riribudeh fell from",
+    "397 ha to 2.9. With the node it is not needed at all — the tracks plus",
+    "chords 1 and 3 enclose 396.6 ha.",
+    "",
+    "The 201 m 'Jaginhul' spur east of here is walked inside the boundary",
+    "and is not part of the boundary line."
+   ]
+  }
+ ]
+}
