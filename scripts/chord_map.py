@@ -51,6 +51,61 @@ import terrain  # noqa: E402
 GAP = "#db2777"
 TIE = "#15803d"
 
+# Numbers have to survive a fix. A chord discussed as "number 3" is still
+# number 3 next time, a chord that has been closed simply disappears from the
+# list, and anything newly drawn takes the next free number. Renumbering from
+# the top each run makes the previous conversation useless.
+REGISTER = dataio.REPO_ROOT / "data" / "reference" / "chord_numbers.json"
+
+
+def numbering(unit: str, bridges: list) -> dict:
+    """Stable numbers for this clan's drawn lines, kept between runs.
+
+    Matched on where a line is, not on how long it is or where it sits in the
+    order: a fix next door can change both. A line within 100 m of one seen
+    before, by Hausdorff distance, is taken to be that line.
+    """
+    import json
+
+    book = {}
+    if REGISTER.exists():
+        try:
+            book = json.loads(REGISTER.read_text(encoding="utf-8"))
+        except Exception:
+            book = {}
+    seen = book.get(unit, {})
+
+    from shapely import wkt
+    known = {}
+    for number, text in seen.items():
+        try:
+            known[int(number)] = wkt.loads(text)
+        except Exception:
+            continue
+
+    out, taken = {}, set()
+    for index, line in enumerate(bridges):
+        match = None
+        for number, old in known.items():
+            if number in taken:
+                continue
+            if old.hausdorff_distance(line) < 100:
+                match = number
+                break
+        if match is not None:
+            out[index] = match
+            taken.add(match)
+    nxt = max(list(known) + [0]) + 1
+    for index in range(len(bridges)):
+        if index not in out:
+            out[index] = nxt
+            nxt += 1
+
+    book[unit] = {str(out[i]): bridges[i].wkt for i in range(len(bridges))}
+    REGISTER.parent.mkdir(parents=True, exist_ok=True)
+    REGISTER.write_text(json.dumps(book, indent=1) + "\n", encoding="utf-8")
+    return out
+
 
 def parts_of(frame: gpd.GeoDataFrame) -> list:
     out = []
@@ -61,12 +116,15 @@ def parts_of(frame: gpd.GeoDataFrame) -> list:
     return [p for p in out if p.length > 0]
 
 
-def classify(bridges: list, walked, tolerance: float, cut: float):
+def classify(unit: str, bridges: list, walked, tolerance: float,
+             cut: float):
     """Each drawn line, with how much of it already has walked line beside it."""
+    ordered = sorted(bridges, key=lambda b: -b.length)
+    numbers = numbering(unit, ordered)
     rows = []
-    for number, line in enumerate(sorted(bridges, key=lambda b: -b.length), 1):
+    for index, line in enumerate(ordered):
         near = line.intersection(walked.buffer(tolerance)).length / line.length
-        rows.append({"n": number, "line": line, "share": near * 100,
+        rows.append({"n": numbers[index], "line": line, "share": near * 100,
                      "kind": "gap" if near < cut else "tie"})
     return rows
 
@@ -182,7 +240,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     walked = unary_union(parts_of(group))
-    rows = classify(bridges, walked, args.tolerance, args.cut)
+    rows = classify(unit, bridges, walked, args.tolerance, args.cut)
     out = args.out or (dataio.OUT_DIR / "queries"
                        / f"{dataio.safe_name(unit)}_chords.png")
     render(unit, group, built, rows, derived, out, args.tolerance)
