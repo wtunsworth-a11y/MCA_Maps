@@ -153,7 +153,9 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     # of it.
     if pinned:
         with_pinned = _enclosed(snapped + list(pinned))
-        probe = closure._chains(live + pinned_edges, positions)
+        probe = closure._chains(live + pinned_edges, positions,
+                                keep_free_end=closure.approved_fix(
+                                    unit, "keep_free_end"))
         probe_bridges, _ = _bridges(probe)
         probed = (_enclosed(snapped + list(pinned) + probe_bridges)
                   if probe_bridges else with_pinned)
@@ -167,7 +169,9 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
                     "area_ha": with_pinned.area / 1e4,
                     "bridges": list(pinned)}
 
-    chains = closure._chains(live + pinned_edges, positions)
+    chains = closure._chains(live + pinned_edges, positions,
+                             keep_free_end=closure.approved_fix(
+                                 unit, "keep_free_end"))
     bridges, gap = _bridges(chains)
     bridges = list(pinned) + bridges
     gap = (gap or 0.0) + sum(g.length for g in pinned)

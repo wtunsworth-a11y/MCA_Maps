@@ -18,6 +18,30 @@
   "wanted; 'at' is then the crossing point itself rather than a tip.",
   "'at' is the tip being carried on, 'metres' how far."
  ],
+ "Juaiko — Zone 2": [
+  {
+   "at": [
+    645456.6,
+    8980929.5
+   ],
+   "metres": 0,
+   "agreed": "2026-10-11",
+   "chord": 1,
+   "note": [
+    "Two of Gasper K / Philip Jukaro's recordings already cross here, at",
+    "the north-east corner of the southern lobe: the 342 m stretch running",
+    "east and the 26 m stretch that starts the climb north. Neither has an",
+    "end at the crossing, so the graph could not see that they meet, the",
+    "342 m stretch read as a dead end and was pruned, and the closing step",
+    "drew a 1,050 m line straight across the lobe instead — crossing the",
+    "walked line six times.",
+    "",
+    "Only the node is wanted; nothing is carried on. With it the boundary",
+    "turns at the crossing and follows the walked track round the loop,",
+    "which is what the reviewer traced on 2026-10-11."
+   ]
+  }
+ ],
  "Riribudeh — Zone 8": [
   {
    "at": [

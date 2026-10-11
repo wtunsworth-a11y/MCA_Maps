@@ -28,6 +28,7 @@ import argparse
 import json
 import re
 import sys
+import textwrap
 import zipfile
 import sqlite3
 import tempfile
@@ -346,6 +347,26 @@ def who(row: dict) -> str:
     return "unattributed"
 
 
+def description_of(row: dict) -> str:
+    """Everything the steward wrote about this recording, as one piece.
+
+    `describe` returns a short label for the map. This returns the whole
+    of it, including the `cmt` field, which is where Philip Jukaro put
+    Juaiko's boundary description and the clan's history and which no
+    map has ever shown.
+    """
+    kept = []
+    for line in row["text"]:
+        body = re.sub(r"^\s*\d{4}-\d{2}-\d{2}[\s\d:oO]*", "", line).strip()
+        if not body or len(body) < 4:
+            continue
+        if body in kept:
+            continue
+        kept.append(body)
+    joined = "  ".join(kept)
+    return joined if len(joined) > 30 else ""
+
+
 def describe(row: dict) -> str:
     """What the steward called this place, without their own name on it."""
     for line in row["text"]:
@@ -365,6 +386,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--clan", required=True)
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--zoom", type=int, default=None,
+                        help="frame the map on one numbered gap")
     parser.add_argument("--site-length", type=float, default=500.0,
                         help="a recording shorter than this is a place, "
                              "not a stretch of boundary")
@@ -441,7 +464,52 @@ def main(argv: list[str] | None = None) -> int:
     pad = max(maxx - minx, maxy - miny) * 0.10
     window = (minx - pad, miny - pad, maxx + pad, maxy + pad)
 
-    figure, axis = plt.subplots(figsize=(11, 9.5), dpi=125)
+    # Frame on one gap when asked. A 1,274 ha clan drawn on one page puts
+    # a 35 m gap inside the width of its own label.
+    if args.zoom is not None and built is not None and built["bridges"]:
+        import chord_map as _zm
+        _order = sorted(built["bridges"], key=lambda b: -b.length)
+        _nums = _zm.numbering(unit, _order, record=False)
+        _want = [b for i, b in enumerate(_order)
+                 if _nums[i] == args.zoom]
+        if not _want:
+            print(f"  (no gap numbered {args.zoom}; have {sorted(_nums.values())})")
+        else:
+            x0, y0, x1, y1 = _want[0].bounds
+            reach = max(x1 - x0, y1 - y0, 200.0) * 0.85
+            mx, my = (x0 + x1) / 2, (y0 + y1) / 2
+            window = (mx - reach, my - reach, mx + reach, my + reach)
+
+    # Anything the steward wrote is numbered on the map and printed in
+    # full beneath it. Juaiko's boundary description — "Follow the Salm
+    # river down to Hiefiruna and follow up-stream Ujai river to
+    # sinigir" — was in the file all along and never reached a map.
+    spoken = [r for r in found if description_of(r)]
+    spoken.sort(key=lambda r: -r["geometry"].length)
+    told = {id(r): n for n, r in enumerate(spoken, 1)}
+
+    panel = []
+    for row in spoken:
+        body = description_of(row)
+        panel.append(f"{told[id(row)]}.  {row['geometry'].length:,.0f} m — "
+                     f"{body}")
+    wrapped: list = []
+    for entry in panel:
+        lines = textwrap.wrap(entry, 150, subsequent_indent="     ")
+        wrapped.extend(lines)
+        wrapped.append("")
+    text_height = 0.17 * len(wrapped) if wrapped else 0
+
+    # Three bands down the page: the map, then the caveat, then the words
+    # the stewards typed. The caveat used to be hung off the axes and the
+    # panel off the figure, so on a clan with a lot of notes they landed on
+    # top of each other.
+    figure_height = 9.5 + text_height
+    caveat_band = 0.42
+    axis_floor = (text_height + caveat_band) / figure_height
+    figure = plt.figure(figsize=(11, figure_height), dpi=125)
+    axis = figure.add_axes([0.02, axis_floor, 0.96,
+                            1 - axis_floor - 0.03])
     terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.36, bounds=window)
     try:
         streams = gpd.read_file(dataio.REFERENCE_DIR / "hydro"
@@ -680,8 +748,24 @@ def main(argv: list[str] | None = None) -> int:
         "Area enclosed by the mapping to date. Not a statement of what the "
         "clan owns:\nboundaries not yet confirmed will move, and overlaps "
         "with neighbours are not yet measured.",
-        xy=(0.0, -0.035), xycoords="axes fraction", ha="left", va="top",
+        xy=(0.02, axis_floor - 0.06 / figure_height),
+        xycoords="figure fraction", ha="left", va="top",
         fontsize=8.5, color="#4b5563")
+
+    for row in spoken:
+        geometry = row["geometry"]
+        here = geometry.interpolate(0.5, normalized=True)
+        axis.annotate(str(told[id(row)]), (here.x, here.y), fontsize=8.5,
+                      fontweight="bold", color="white", ha="center",
+                      va="center", zorder=11,
+                      bbox=dict(boxstyle="circle,pad=0.22",
+                                facecolor="#111827", edgecolor="white",
+                                linewidth=1.0))
+
+    if wrapped:
+        figure.text(0.02, text_height / figure_height, "\n".join(wrapped),
+                    fontsize=7.6, va="top", ha="left", family="monospace",
+                    color="#111827")
 
     span = window[2] - window[0]
     bar = 1000 if span > 4000 else 500

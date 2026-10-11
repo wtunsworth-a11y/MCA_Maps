@@ -409,7 +409,8 @@ def analyse_survey(parts: list, tolerance: float, threshold: float,
     return result
 
 
-def _chains(edges: list[dict], positions: dict) -> list[dict]:
+def _chains(edges: list[dict], positions: dict,
+            keep_free_end: bool = False) -> list[dict]:
     """Reduce the live edges to connected pieces, each with its two open ends.
 
     A piece that already forms a loop has no open ends and is marked closed.
@@ -466,7 +467,21 @@ def _chains(edges: list[dict], positions: dict) -> list[dict]:
                     x, y = positions[n]
                     return min((x - positions[m][0]) ** 2
                                + (y - positions[m][1]) ** 2 for m in outside)
-                loose = sorted(nodes, key=reach)[:2]
+                # A piece with exactly one free end has one end it really
+                # does have. Replacing it as well as the one it lacks
+                # throws away the only thing here that is not a guess, and
+                # the ring then has no reason to pass through this piece at
+                # all. Juaiko's southern lobe is a loop with a 2.3 km tail:
+                # one free end, and both ends re-chosen, the ring skipped
+                # the lot and drew 1,760 m across the clan instead of
+                # following 5.7 km of walked line.
+                if keep_free_end and len(loose) == 1:
+                    held = loose[0]
+                    rest = [n for n in nodes if n != held]
+                    loose = [held] + (sorted(rest, key=reach)[:1] if rest
+                                      else [held])
+                else:
+                    loose = sorted(nodes, key=reach)[:2]
             elif len(nodes) >= 2:
                 loose = _furthest_pair(nodes, positions)
             else:

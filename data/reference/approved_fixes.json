@@ -18,8 +18,29 @@
   "    real open end where copies stop reads as a junction, and a copy that",
   "    stopped short of the line it was copying leaves a phantom open end.",
   "    Topology only — walked distance, enclosure geometry and the stored",
-  "    data all still come from every recording. See closure.distinct_indices."
+  "    data all still come from every recording. See closure.distinct_indices.",
+  "",
+  "  keep_free_end — when a connected piece of the survey has exactly one",
+  "    free end, keep it. The closing step has to be told where to enter and",
+  "    leave a piece that has fewer than two ends of its own, and it was",
+  "    re-choosing both from scratch — discarding the one end the piece",
+  "    really does have. See closure._chains."
  ],
+ "Juaiko — Zone 2": {
+  "keep_free_end": {
+   "approved": "2026-10-11",
+   "why": [
+    "The southern lobe, the loop above it and the 2.3 km climb north are",
+    "one piece of 5.7 km with a single free end, where it stops 105 m short",
+    "of the next recording. Both its ends were being re-chosen, so the ring",
+    "had no reason to pass through it and drew 1,760 m across the clan",
+    "instead.",
+    "",
+    "Keeping the free end the piece has, and choosing only the end it",
+    "lacks, puts the boundary back on the walked line."
+   ]
+  }
+ },
  "Dusi — Zone 8": {
   "collapse_duplicates": {
    "approved": "2026-10-11",
