@@ -196,13 +196,18 @@ def recordings(clan: str) -> list:
                         if row.geometry is None or row.geometry.is_empty:
                             continue
                         values = {k: row.get(k) for k in names}
-                        found.append({
+                        record = {
                             "folder": folder,
                             "file": Path(member).name,
                             "row": position + 1,
                             "text": typed_text(values),
                             "geometry": row.geometry,
-                        })
+                        }
+                        # the walker, if the file itself carries one
+                        for key in ("steward", "Steward"):
+                            if key in values:
+                                record[key] = values[key]
+                        found.append(record)
                 finally:
                     os.unlink(path)
     return found
@@ -212,7 +217,17 @@ MEMBER = re.compile(r"clan\s+member|^\s*\d{4}-\d{2}-\d{2}", re.I)
 
 
 def who(row: dict) -> str:
-    """The person, from whichever line carries their name."""
+    """The person who walked it.
+
+    The pipeline already extracts this and puts it in `steward`; reading
+    the free text for the phrase "clan member" found Rondi's walkers and
+    missed Manuvoora's, Gumuyude's and Riribudeh's, so four maps said
+    "unattributed" about surveys that name their walker plainly.
+    """
+    for key in ("steward", "Steward"):
+        value = row.get(key)
+        if value and str(value).strip() not in ("", "nan", "None"):
+            return " ".join(str(value).split())[:28]
     for line in row["text"]:
         if "clan member" in line.lower():
             cut = re.split(r"clan\s+member", line, flags=re.I)[0]
