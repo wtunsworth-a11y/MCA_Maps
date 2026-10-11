@@ -300,8 +300,10 @@ def main(argv: list[str] | None = None) -> int:
         Line2D([0], [0], color="#7dd3fc", lw=1.1,
                label="Watercourse, from the terrain model"),
     ]
-    axis.legend(handles=handles, loc="lower left", fontsize=9,
-                framealpha=0.94)
+    # Outside the frame. A legend long enough to need reading is long
+    # enough to cover the thing it describes.
+    axis.legend(handles=handles, loc="upper left", fontsize=9,
+                bbox_to_anchor=(1.01, 1.0), borderaxespad=0, frameon=False)
     span = window[2] - window[0]
     bar = 1000 if span > 4000 else 500
     x0 = window[0] + span * 0.05
