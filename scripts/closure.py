@@ -203,11 +203,40 @@ def _chains(edges: list[dict], positions: dict) -> list[dict]:
         length = sum(e["length"] for e in group_edges)
 
         if len(loose) < 2:
-            # A piece with no free ends walks back over itself. It encloses
-            # nothing (that was already tested geometrically), so span it by
-            # its two most distant nodes instead.
+            # Fewer than two free ends means this piece cannot be entered and
+            # left again at ends of its own, so the ring has to be told where
+            # to enter and leave it.
+            #
+            # It used to be told "the two nodes furthest apart", which is an
+            # answer to no question anyone asked. Riribudeh's complete
+            # north-east corner was cut off by the line that followed, and
+            # Gumuyude grew a false 793 m gap the moment seven ties turned a
+            # chain of pieces into a web with one free end left over.
+            #
+            # Drawing nothing is worse still: tested across all 51 surveys it
+            # halves the line drawn, 260 km to 135 km, and destroys 23 of
+            # them — Gubai 1,173 ha to 3, Mariura 861 ha to 3.
+            #
+            # So enter and leave where the neighbours are. Of this piece's
+            # own nodes, take the two that sit closest to the rest of the
+            # survey. The ring then reaches it by the shortest way in and the
+            # shortest way out, and the ground between is its own walked line
+            # rather than a line across the middle of it.
             nodes = list({n for e in group_edges for n in (e["a"], e["b"])})
-            loose = _furthest_pair(nodes, positions) if len(nodes) >= 2 else nodes * 2
+            member = set(nodes)
+            outside = [n for n in positions
+                       if n not in member and n in groups.parent
+                       and groups.find(n) != root]
+            if len(nodes) >= 2 and outside:
+                def reach(n):
+                    x, y = positions[n]
+                    return min((x - positions[m][0]) ** 2
+                               + (y - positions[m][1]) ** 2 for m in outside)
+                loose = sorted(nodes, key=reach)[:2]
+            elif len(nodes) >= 2:
+                loose = _furthest_pair(nodes, positions)
+            else:
+                loose = nodes * 2
         if len(loose) > 2:
             best, pair = -1.0, (loose[0], loose[1])
             for i in range(len(loose)):
