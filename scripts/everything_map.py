@@ -171,6 +171,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"{args.clan}: {len(found)} recordings, {total:.1f} km raw")
     print(f"  {len(flagged)} carrying sacred or tambu wording, "
           f"{sum(r['geometry'].length for r in flagged) / 1000:.1f} km\n")
+    site_length = args.site_length
     for index, row in enumerate(found, 1):
         mark = "SACRED?" if row in flagged else "       "
         print(f"  {index:2d} {mark} {row['geometry'].length:7.0f} m")
@@ -197,8 +198,13 @@ def main(argv: list[str] | None = None) -> int:
     # stopped to mark, not a stretch of boundary, and what he wrote on it
     # is its name. Those get drawn as places with their names against
     # them; the long lines are the boundary and need no label.
-    sites = [r for r in found if r["geometry"].length < site_length]
-    lines = [r for r in found if r["geometry"].length >= site_length]
+    # Sacred wording decides first, whatever the length. Sukandi's three
+    # sacred sites are 1.4, 3.8 and 6.4 km of perimeter; judged on length
+    # alone they read as boundary and were drawn as boundary.
+    sites = [r for r in found
+             if r["geometry"].length < site_length and r not in flagged]
+    lines = [r for r in found
+             if r["geometry"].length >= site_length and r not in flagged]
 
     walkers = sorted({who(r) for r in lines})
     palette = ["#1f2937", "#1d4ed8", "#047857", "#b45309"]
@@ -211,6 +217,20 @@ def main(argv: list[str] | None = None) -> int:
                      else [geometry]):
             axis.plot(*part.xy, color=colours.get(who(row), "#1f2937"),
                       lw=1.9, zorder=4, alpha=0.85)
+
+    for row in flagged:
+        geometry = row["geometry"]
+        for part in (geometry.geoms if hasattr(geometry, "geoms")
+                     else [geometry]):
+            axis.plot(*part.xy, color="#c026d3", lw=2.8, zorder=6)
+        if geometry.length >= site_length:
+            spot = geometry.interpolate(0.5, normalized=True)
+            axis.annotate(describe(row) or "sacred", (spot.x, spot.y),
+                          xytext=(spot.x, spot.y
+                                  + (window[3] - window[1]) * 0.04),
+                          ha="center", fontsize=9, color="#c026d3",
+                          zorder=10, arrowprops=dict(arrowstyle="-",
+                                                     color="#c026d3", lw=0.9))
 
     placed = []
     for row in sorted(sites, key=lambda r: -r["geometry"].length):
@@ -239,16 +259,18 @@ def main(argv: list[str] | None = None) -> int:
     axis.set_axis_off()
     axis.set_title(f"{args.clan} — everything in the raw files: "
                    f"{len(found)} recordings, {total:.1f} km\n"
-                   f"{len(lines)} stretches of boundary and {len(sites)} "
-                   f"places marked along it", fontsize=13, pad=10)
+                   f"{len(lines)} stretch{'' if len(lines) == 1 else 'es'} "
+                   f"of boundary, {len(sites)} "
+                   f"place{'' if len(sites) == 1 else 's'} marked along it"
+                   + (f", {len(flagged)} sacred" if flagged else ""),
+                   fontsize=13, pad=10)
     handles = [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
                for name in walkers]
     handles += [
         Line2D([0], [0], marker="o", color="none", markerfacecolor="#ea580c",
                markeredgecolor="white", markersize=9,
                label="A place the steward stopped to mark"),
-        Line2D([0], [0], marker="o", color="none", markerfacecolor="#c026d3",
-               markeredgecolor="white", markersize=9,
+        Line2D([0], [0], color="#c026d3", lw=2.8,
                label="Its description mentions a sacred site or tambu"),
         Line2D([0], [0], color="#7dd3fc", lw=1.1,
                label="Watercourse, from the terrain model"),
