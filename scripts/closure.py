@@ -34,7 +34,7 @@ from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
-from shapely.geometry import LineString
+from shapely.geometry import LineString, Point
 from shapely.ops import polygonize, unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -73,6 +73,67 @@ DUPLICATE_TOLERANCE = 20.0
 
 APPROVED_FIXES_PATH = (dataio.REPO_ROOT / "data" / "reference"
                        / "approved_fixes.json")
+
+
+def split_at_free_ends(parts: list, tolerance: float = 25.0) -> list:
+    """Split a part where another part's free end stops beside it.
+
+    Endpoint clustering can only see endpoints, so a line that stops part
+    of the way along another line is invisible as a junction: the stopping
+    end reads as free, the line it stopped against reads as untouched, and
+    the closing step draws a chord between two points that are already
+    connected on the ground.
+
+    Riribudeh's chord 2 is 83 m across a corner Prut Buitari walked. His
+    recording breaks there, and the line that carries the boundary past the
+    break passes 5.4 m from the loose end — through its middle, not by an
+    end of its own. Adding a 5.4 m join changes nothing, because the join's
+    far end lands mid-line and is itself a new free end.
+
+    Splitting the carrying line at that point turns the near-miss into a
+    node, and the two meet with nothing drawn at all.
+
+    Geometry is untouched and total length is unchanged; one line becomes
+    two at a point it already passes through.
+    """
+    from shapely.ops import substring
+
+    parts = [p for p in parts if p is not None and p.length > 0]
+    endpoints = []
+    for part in parts:
+        endpoints.append(part.coords[0][:2])
+        endpoints.append(part.coords[-1][:2])
+    labels = _cluster_endpoints(endpoints, tolerance)
+    counts: dict = {}
+    for label in labels:
+        counts[label] = counts.get(label, 0) + 1
+
+    loose = [Point(endpoints[i]) for i, label in enumerate(labels)
+             if counts[label] == 1]
+    if not loose:
+        return parts
+
+    out = []
+    for index, part in enumerate(parts):
+        own = {labels[2 * index], labels[2 * index + 1]}
+        cuts = []
+        for i, point in enumerate(loose):
+            if part.distance(point) >= tolerance:
+                continue
+            along = part.project(point)
+            # Only an interior hit: an end of this very part is not a
+            # junction with itself.
+            if along <= tolerance or along >= part.length - tolerance:
+                continue
+            cuts.append(along)
+        if not cuts:
+            out.append(part)
+            continue
+        marks = [0.0] + sorted(cuts) + [part.length]
+        for first, second in zip(marks, marks[1:]):
+            if second - first > 0.5:
+                out.append(substring(part, first, second))
+    return out
 
 
 AGREED_GAPS_PATH = (dataio.REPO_ROOT / "data" / "reference"

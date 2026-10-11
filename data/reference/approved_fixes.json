@@ -18,9 +18,15 @@
   "    real open end where copies stop reads as a junction, and a copy that",
   "    stopped short of the line it was copying leaves a phantom open end.",
   "    Topology only — walked distance, enclosure geometry and the stored",
-  "    data all still come from every recording. See closure.distinct_indices."
+  "    data all still come from every recording. See closure.distinct_indices.",
+  "",
+  "  split_at_junctions — where one recording stops part of the way along",
+  "    another, split the second at that point so the two meet at a node.",
+  "    Endpoint clustering can only see endpoints, so a line that stops",
+  "    beside another is invisible as a junction and the closing step draws",
+  "    a chord between two points already joined on the ground. Geometry is",
+  "    untouched and total length unchanged. See closure.split_at_free_ends."
  ],
-
  "Dusi — Zone 8": {
   "collapse_duplicates": {
    "approved": "2026-10-11",
