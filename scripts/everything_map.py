@@ -334,6 +334,7 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as error:
         print(f"  (could not build the polygon: {error})")
 
+    walked_union = unary_union([r["geometry"] for r in found])
     shapes = unary_union([r["geometry"] for r in found]
                          + ([built["geometry"]] if built else []))
     minx, miny, maxx, maxy = shapes.bounds
@@ -354,15 +355,26 @@ def main(argv: list[str] | None = None) -> int:
     if built is not None:
         gpd.GeoSeries([built["geometry"]], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
-        # Four things, and the map has to keep them apart: what was
-        # walked, what was inferred, which inferences the clan has still
-        # to confirm, and what is left to walk.
+        # Chaining recorded walks together is not the same as asserting
+        # a line nobody walked, and the map must not say it is. A chord
+        # replaced by the steward's own track between the same two
+        # points adds no claim about where the boundary runs; a line
+        # drawn along a river or a ridge does. Gumuyude's six adopted
+        # segments are 2,127 m, of which 1,883 m is Philip Igai's own
+        # footsteps traced back into a line — calling all of it inferred
+        # would send the clan to confirm two kilometres of their own
+        # steward's walking.
+        #
+        # The test is measurable: how much of the segment has walked
+        # line beside it.
         for segment, kind, note in derived_rows:
-            settled = CONFIRMED.search(note or "") is not None
-            axis.plot(*segment.xy,
-                      color="#7c3aed" if settled else "#f59e0b",
-                      lw=3.0, zorder=6,
-                      linestyle="solid" if settled else (0, (7, 2)))
+            share = (segment.intersection(walked_union.buffer(30)).length
+                     / segment.length if segment.length else 0)
+            if share >= 0.80:
+                axis.plot(*segment.xy, color="#0d9488", lw=3.0, zorder=6)
+            else:
+                axis.plot(*segment.xy, color="#f59e0b", lw=3.0, zorder=6,
+                          linestyle=(0, (7, 2)))
         for bridge in built["bridges"]:
             axis.plot(*bridge.xy, color="#db2777", lw=2.4,
                       linestyle=(0, (5, 3)), zorder=7)
@@ -453,18 +465,26 @@ def main(argv: list[str] | None = None) -> int:
                   f"far ({built['basis']})"))
     handles += [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
                 for name in walkers]
-    settled = [r for r in derived_rows if CONFIRMED.search(r[2] or "")]
-    pending = [r for r in derived_rows if not CONFIRMED.search(r[2] or "")]
-    if settled:
+    def walked_share(segment):
+        if not segment.length:
+            return 0.0
+        return (segment.intersection(walked_union.buffer(30)).length
+                / segment.length)
+
+    chained = [r for r in derived_rows if walked_share(r[0]) >= 0.80]
+    asserted = [r for r in derived_rows if walked_share(r[0]) < 0.80]
+    if chained:
         handles.append(Line2D(
-            [0], [0], color="#7c3aed", lw=3.0,
-            label=f"Inferred, confirmed with the clan — "
-                  f"{sum(r[0].length for r in settled) / 1000:.2f} km"))
-    if pending:
+            [0], [0], color="#0d9488", lw=3.0,
+            label=f"Recorded walks chained into one line — "
+                  f"{sum(r[0].length for r in chained) / 1000:.2f} km "
+                  f"(the ground is walked)"))
+    if asserted:
         handles.append(Line2D(
             [0], [0], color="#f59e0b", lw=3.0, linestyle=(0, (7, 2)),
-            label=f"Inferred, NOT yet confirmed — "
-                  f"{sum(r[0].length for r in pending) / 1000:.2f} km"))
+            label=f"Inferred where nobody walked — "
+                  f"{sum(r[0].length for r in asserted) / 1000:.2f} km, "
+                  f"for the clan to confirm"))
     if built is not None and built["bridges"]:
         handles.append(Line2D(
             [0], [0], color="#db2777", lw=2.4, linestyle=(0, (5, 3)),
