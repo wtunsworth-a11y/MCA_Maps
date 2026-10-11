@@ -386,10 +386,23 @@ def main(argv: list[str] | None = None) -> int:
     # Sacred wording decides first, whatever the length. Sukandi's three
     # sacred sites are 1.4, 3.8 and 6.4 km of perimeter; judged on length
     # alone they read as boundary and were drawn as boundary.
-    sites = [r for r in found
-             if r["geometry"].length < site_length and r not in flagged]
-    lines = [r for r in found
-             if r["geometry"].length >= site_length and r not in flagged]
+    # A place is a recording that comes back to where it started: the
+    # steward walked round something and stopped. A stretch goes
+    # somewhere. Length alone called 452 m of Dusi's boundary walk at
+    # garegummara hill a point, because it was under 500 m.
+    def is_a_place(row):
+        geometry = row["geometry"]
+        if geometry.length <= 0:
+            return True
+        ends = []
+        for part in (geometry.geoms if hasattr(geometry, "geoms")
+                     else [geometry]):
+            ends += [Point(part.coords[0][:2]), Point(part.coords[-1][:2])]
+        spread = max(a.distance(b) for a in ends for b in ends)
+        return (spread / geometry.length) < 0.35
+
+    sites = [r for r in found if r not in flagged and is_a_place(r)]
+    lines = [r for r in found if r not in flagged and not is_a_place(r)]
 
     walkers = sorted({who(r) for r in lines + sites})
     palette = ["#1f2937", "#1d4ed8", "#047857", "#b45309"]

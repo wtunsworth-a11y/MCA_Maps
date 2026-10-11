@@ -132,5 +132,17 @@ Dusi: 52 recordings, 42.3 km raw
         Yambawom Range boarder with the karira clan.
   52             429 m
         Anshul range boarder with karira clan
-
-Wrote /home/user/MCA_Maps/output/queries/Dusi_everything.png
+Traceback (most recent call last):
+  File "/home/user/MCA_Maps/scripts/everything_map.py", line 554, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/user/MCA_Maps/scripts/everything_map.py", line 404, in main
+    sites = [r for r in found if r not in flagged and is_a_place(r)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/MCA_Maps/scripts/everything_map.py", line 404, in <listcomp>
+    sites = [r for r in found if r not in flagged and is_a_place(r)]
+                                                      ^^^^^^^^^^^^^
+  File "/home/user/MCA_Maps/scripts/everything_map.py", line 400, in is_a_place
+    ends += [Point(part.coords[0][:2]), Point(part.coords[-1][:2])]
+             ^^^^^
+NameError: name 'Point' is not defined. Did you mean: 'print'?
