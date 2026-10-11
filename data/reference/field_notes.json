@@ -126,5 +126,54 @@
   "source": "Raw recording titles and timings, 13-21 July 2025; reviewed on the chord map 11 October 2026",
   "priority": "NOT READY — return to the clan before any figure is issued",
   "needs_clan_confirmation": true
+ },
+ "road_3_and_4_paul_digori_tracks_zone_7a": {
+  "notes": [
+   "LSS block — Land Settlement Scheme, the settlers. Treated as a",
+   "quasi-clan: it holds and is mapped like clan land, but it is not a clan",
+   "and must not be presented as one.",
+   "",
+   "This matters for the overlap question. An LSS block lying over clan land",
+   "is not a fault in the data to be cleaned away — it is a finding, and",
+   "possibly the sharpest kind, because the ILG system assumes undisputed",
+   "single ownership and a settlement scheme on top of clan land is the",
+   "plainest case of that assumption failing. It must be measured, not",
+   "tidied.",
+   "",
+   "Walked by Paul Digori, Zone 7A, 4.3 km in 13 recordings over May and",
+   "June 2026. His own words name roads, a house and a boundary marker:",
+   "'Dareki', 'Otherside.mainhighway.to.dareki', 'Myhouse', 'Block.home',",
+   "'Henry.and.justins.boader.cement'. The pipeline builds 282 ha from it",
+   "with 9 drawn lines, so almost all of that outline is inferred and none",
+   "of it confirmed.",
+   "",
+   "It sits 0.00 km from Bimkol, Borori and Darekikol."
+  ],
+  "source": "Raw recordings, May-June 2026; identified as an LSS block 11 October 2026",
+  "priority": "Quasi-clan — label as LSS, measure the overlap, do not merge with any clan",
+  "quasi_clan": "LSS block"
+ },
+ "ruth_makisa_land_steward_block_1_land_boundary": {
+  "notes": [
+   "LSS block — Land Settlement Scheme, the settlers. Treated as a",
+   "quasi-clan: it holds and is mapped like clan land, but it is not a clan",
+   "and must not be presented as one.",
+   "",
+   "This matters for the overlap question. An LSS block lying over clan land",
+   "is not a fault in the data to be cleaned away — it is a finding, and",
+   "possibly the sharpest kind, because the ILG system assumes undisputed",
+   "single ownership and a settlement scheme on top of clan land is the",
+   "plainest case of that assumption failing. It must be measured, not",
+   "tidied.",
+   "",
+   "Walked by Ruth Makisa, Zone 7B, 6.3 km in a single recording titled",
+   "Land Steward Block 1. The pipeline builds 237 ha from it with 6 drawn",
+   "lines, so most of that outline is inferred and none of it confirmed.",
+   "",
+   "It sits 0.00 km from Sugulkol and 0.02 km from Ambunkol."
+  ],
+  "source": "Raw recording, July 2026; identified as an LSS block 11 October 2026",
+  "priority": "Quasi-clan — label as LSS, measure the overlap, do not merge with any clan",
+  "quasi_clan": "LSS block"
  }
 }
