@@ -1,0 +1,22 @@
+Murai (Z7B): 8 recordings, 13.5 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1              62 m
+        2025-10-21 oo:46 James iroti murai clan (Trial Mapping)
+        Mamure area
+   2              74 m
+        2025-10-21 11:34 James Iroti from Murai clan (Trial Mapping)
+        Mamure Area
+   3              52 m
+        2025-10-25 09:19 James Iroti from Murai Clan (Trial Mapping)
+        Murai Clan boundary
+   4             342 m
+        2025-10-28 09:46 (Trial Mapping)
+   5             242 m
+   6            9341 m
+   7            2589 m
+        James_Iroti_Zone_7B_Murai_Clan_Land_Boundary_2025-11-07 12:09
+   8             768 m
+        Trial_Run_2025-10-28 14:59 (Trial Mapping)
+
+Wrote /home/user/MCA_Maps/output/queries/Murai_Z7B_everything.png
