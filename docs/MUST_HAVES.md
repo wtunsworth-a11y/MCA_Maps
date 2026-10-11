@@ -80,12 +80,17 @@ Order is the order we agreed them.
     one that goes somewhere is a stretch.
     *Dusi, 11 Oct.*
 
-14. **Chained or inferred is decided at 5 m, not 30.** Thirty metres
-    measures how near the walk passes, not whether the ground was
-    walked: Riribudeh's 48 m straight join scores 100% at 30 m and 44%
-    at 5 m, and nobody walked that span. A line traced along a steward's
-    own track still holds up at 5 m.
-    *Riribudeh, 11 Oct.*
+14. **Chained or inferred is decided at 10 m, against the smoothed
+    layer.** Not 30 m, which measures how near the walk passes rather
+    than whether the ground was walked — Riribudeh's 48 m straight join
+    is 100% at 30 m and nobody walked it. And not 5 m, which is tighter
+    than the stewards' own agreement with each other: a pair walking one
+    boundary differ by median 3 m and 12 m at the 90th percentile, so
+    5 m called Solomon Makanisa's walk "not walked" on Sahirut because
+    Lenard Urami's line was the reference. Judge against the smoothed
+    layer the segment came from, not the raw tracks, or the comparison
+    measures the smoothing.
+    *Riribudeh and Sahirut, 11 Oct.*
 
 15. **Do not move to the next clan until told.** One clan at a time
     means waiting, not queueing. Running ahead through Majanko and Murai

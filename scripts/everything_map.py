@@ -387,6 +387,22 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  (could not build the polygon: {error})")
 
     walked_union = unary_union([r["geometry"] for r in found])
+    # Judge an adopted segment against the smoothed layer it was derived
+    # from, not the raw tracks: the two differ by several metres and the
+    # comparison is then measuring the smoothing.
+    try:
+        import chord_map as _cm
+        _pub = gpd.read_file(dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
+                             layer="tracks_smoothed").to_crs(dataio.METRIC_CRS)
+        _pub = dataio.publishable(_pub, quiet=True)
+        _pub["_unit"] = dataio.survey_group(_pub)
+        _mine = _pub[_pub.clan.astype(str).str.lower()
+                     .str.startswith(args.clan.lower())]
+        if not _mine.empty:
+            walked_union = unary_union(_cm.parts_of(
+                _pub[_pub._unit == _mine._unit.iloc[0]]))
+    except Exception:
+        pass
     shapes = unary_union([r["geometry"] for r in found]
                          + ([built["geometry"]] if built else []))
     minx, miny, maxx, maxy = shapes.bounds
@@ -420,7 +436,7 @@ def main(argv: list[str] | None = None) -> int:
         # The test is measurable: how much of the segment has walked
         # line beside it.
         for segment, kind, note in derived_rows:
-            share = (segment.intersection(walked_union.buffer(5)).length
+            share = (segment.intersection(walked_union.buffer(10)).length
                      / segment.length if segment.length else 0)
             if share >= 0.80:
                 axis.plot(*segment.xy, color="#0d9488", lw=3.0, zorder=6)
@@ -541,14 +557,15 @@ def main(argv: list[str] | None = None) -> int:
     def walked_share(segment):
         if not segment.length:
             return 0.0
-        # Five metres, near GPS precision. Thirty metres measures
-        # nearness, not whether the ground was walked: Riribudeh's 48 m
-        # straight join scores 100% at 30 m and 44% at 5 m, and we
-        # established this morning that nobody walked that span. A line
-        # traced along the steward's own track holds up at 5 m — 88%,
-        # 92%, 97% on Gumuyude's three — while a line cut across a gap
-        # does not.
-        return (segment.intersection(walked_union.buffer(5)).length
+        # Ten metres: the spread between two stewards walking the same
+        # boundary. We measured a pair at median 3 m and 90th percentile
+        # 12 m, so a tighter threshold calls one steward's walk "not
+        # walked" because the other's line is the reference — Sahirut's
+        # 217 m scored 36% at 5 m with Solomon Makanisa's track under
+        # 88% of it. Thirty metres goes the other way and measures
+        # nearness rather than coverage: Riribudeh's 48 m straight join
+        # is 100% at 30 m and 66% at 10 m, and nobody walked that span.
+        return (segment.intersection(walked_union.buffer(10)).length
                 / segment.length)
 
     chained = [r for r in derived_rows if walked_share(r[0]) >= 0.80]
