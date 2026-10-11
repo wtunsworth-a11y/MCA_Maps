@@ -175,5 +175,28 @@
   "source": "Raw recording, July 2026; identified as an LSS block 11 October 2026",
   "priority": "Quasi-clan — label as LSS, measure the overlap, do not merge with any clan",
   "quasi_clan": "LSS block"
+ },
+ "Murai (Z7B) — Zone 7B": {
+  "notes": [
+   "NOT READY. James Iroti walked the northern and western edges in one",
+   "continuous stretch, 12.3 km. The whole southern side and part of the",
+   "north-east have never been walked: 7.13 km across five gaps, more than",
+   "a third of the perimeter. Nothing has been inferred into it and nothing",
+   "should be — the lines go to the clan as questions.",
+   "",
+   "IGNORE THE TRIAL MAPPING. Five of the eight recordings are practice,",
+   "1.1 km in all, and are not survey:",
+   "   29 m  '2025-10-21 oo:46 James iroti murai clan (Trial Mapping)'",
+   "   34 m  '2025-10-21 11:34 James Iroti from Murai clan (Trial Mapping)'",
+   "   22 m  '2025-10-25 09:19 James Iroti from Murai Clan (Trial Mapping)'",
+   "  305 m  '2025-10-28 09:46 (Trial Mapping)'",
+   "  699 m  'Trial_Run_2025-10-28 14:59 (Trial Mapping)'",
+   "",
+   "The real survey is the 8,716 m walk of 11 March 2026, the 2,430 m of",
+   "7 November 2025 and the 115 m of 19 January 2026."
+  ],
+  "source": "Raw recording titles; reviewed 11 October 2026",
+  "priority": "NOT READY — 7.13 km to walk; drop the trial mapping before any figure is issued",
+  "needs_clan_confirmation": true
  }
 }
