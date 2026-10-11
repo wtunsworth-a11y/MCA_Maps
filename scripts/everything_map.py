@@ -86,8 +86,31 @@ def typed_text(values: dict) -> list:
     return out
 
 
+def source_files(clan: str) -> set:
+    """The raw files the published layer says this clan came from.
+
+    Matching raw filenames against the clan's name misses them. Manuvoora
+    is spelled `manuvuoora` in one of its two files, so a name match found
+    only Egobeyas Kuarisi's walk and lost Granville Nepo's entirely — and
+    then reported the raw archives as holding less than the published
+    layer. The pipeline already reconciles those spellings; the published
+    layer records which file each recording came from, so ask it.
+    """
+    try:
+        tracks = gpd.read_file(dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
+                               layer="tracks_smoothed")
+    except Exception:
+        return set()
+    if "source_name" not in tracks.columns:
+        return set()
+    want = tracks[tracks.clan.astype(str).str.lower()
+                  .str.startswith(clan.lower())]
+    return {str(v).lower() for v in want.source_name if str(v) != "nan"}
+
+
 def recordings(clan: str) -> list:
     """Every feature in every raw archive belonging to this clan."""
+    sources = source_files(clan)
     found = []
     for archive in sorted(dataio.RAW_DIR.glob("*.zip")):
         with zipfile.ZipFile(archive) as zf:
@@ -95,7 +118,9 @@ def recordings(clan: str) -> list:
                 if not member.lower().endswith((".gpkg", ".sqlite")):
                     continue
                 folder = Path(member).parent.name or Path(member).stem
-                if clan.lower() not in f"{folder} {Path(member).name}".lower():
+                stem = Path(member).stem.lower()
+                if stem not in sources and clan.lower() not in (
+                        f"{folder} {Path(member).name}".lower()):
                     continue
                 with tempfile.NamedTemporaryFile(suffix=".gpkg",
                                                  delete=False) as handle:

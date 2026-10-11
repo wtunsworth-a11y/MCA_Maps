@@ -74,24 +74,38 @@ def main(argv: list[str] | None = None) -> int:
     print(f"     {len(sacred)} recording(s) with sacred or tambu wording, "
           f"{sum(r['geometry'].length for r in sacred) / 1000:.1f} km")
 
-    def build(rows, label):
-        parts = _flatten(rows)
+    # Rebuild from the smoothed layer, not the raw geometry. Raw tracks
+    # carry the GPS jitter that smoothing exists to remove, and a polygon
+    # built on them is measuring the jitter: Manuvoora came out at 467 ha
+    # against its approved 1,058 for that reason alone, which says nothing
+    # about Manuvoora. What is being tested here is what the *filter*
+    # hides, so the comparison has to hold everything else steady.
+    everything = tracks.copy()
+    everything["_unit"] = dataio.survey_group(everything)
+    whole = everything[everything._unit == unit]
+    withheld = whole.loc[~whole.index.isin(group.index)]
+
+    def build(frame, label):
+        parts = chord_map.parts_of(frame)
         if not parts:
-            print(f"  {label:32s} nothing to build")
+            print(f"  {label:34s} nothing to build")
             return
-        built = polygon_tools.survey_polygon(parts, 25.0, 0.50, 0.10)
+        built = polygon_tools.survey_polygon(
+            parts, 25.0, 0.50, 0.10,
+            derived=polygon_tools.adopted_segments(unit), unit=unit)
         if not built:
-            print(f"  {label:32s} no polygon")
+            print(f"  {label:34s} no polygon")
             return
         delta = built["area_ha"] - approved["area_ha"]
-        print(f"  {label:32s} {built['area_ha']:9,.0f} ha  "
+        print(f"  {label:34s} {built['area_ha']:9,.0f} ha  "
               f"{delta:+8,.0f}  basis {built['basis']}, "
               f"{len(built['bridges'])} drawn")
 
-    print("\n  rebuilt from the raw archives:")
-    build(found, "everything")
-    build(lines, "boundary stretches only")
-    build([r for r in found if r not in sacred], "sacred recordings withheld")
+    print(f"\n  withheld by the sacred-site filter: {len(withheld)} "
+          f"recording(s), {withheld.geometry.length.sum() / 1000:.1f} km")
+    print("  rebuilt with the filter lifted:")
+    build(group, "as approved")
+    build(whole, "including the withheld")
 
     if sacred:
         print("\n  what the sacred recordings say:")
