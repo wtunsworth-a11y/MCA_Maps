@@ -66,6 +66,12 @@ SACRED = re.compile(r"sacred|secret\s*s?i?ght|tambu|taboo|tabu|spirit|"
 SKIP = {"fid", "geom", "line", "locus_activity", "id", "ogc_fid",
         "tessellate", "extrude", "visibility", "layer", "path"}
 
+# An inference the clan has agreed, against one still waiting on them.
+# Every adopted segment carries its reasoning; the ones that have been
+# put to the people who know the ground say so in it.
+CONFIRMED = re.compile(r"\bagreed\b|\bconfirmed\b|clan has (agreed|said)",
+                       re.I)
+
 
 def typed_text(values: dict) -> list:
     """Every line a person typed, from whichever field they typed it into."""
@@ -263,6 +269,7 @@ def main(argv: list[str] | None = None) -> int:
     # boundary follows them.
     built = None
     derived: list = []
+    derived_rows: list = []
     try:
         import chord_map
         import polygons as polygon_tools
@@ -276,7 +283,11 @@ def main(argv: list[str] | None = None) -> int:
         if not match.empty:
             unit = match._unit.iloc[0]
             group = published[published._unit == unit]
-            derived = list(polygon_tools.adopted_segments(unit))
+            frame = polygon_tools.adopted_frame(unit)
+            derived_rows = ([] if frame is None or frame.empty else
+                            [(r.geometry, r["kind"], r["note"])
+                             for _, r in frame.iterrows()])
+            derived = [row[0] for row in derived_rows]
             built = polygon_tools.survey_polygon(
                 chord_map.parts_of(group), 25.0, 0.50, 0.10,
                 derived=derived, unit=unit)
@@ -303,12 +314,15 @@ def main(argv: list[str] | None = None) -> int:
     if built is not None:
         gpd.GeoSeries([built["geometry"]], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
-        # Boundary nobody walked, adopted in earlier work. Drawn in black
-        # with the recordings it was indistinguishable from them, and
-        # Manuvoora carries 2.9 km of it under a line that reads
-        # "surveyed, 0 drawn lines".
-        for segment in derived:
-            axis.plot(*segment.xy, color="#7c3aed", lw=3.0, zorder=6)
+        # Four things, and the map has to keep them apart: what was
+        # walked, what was inferred, which inferences the clan has still
+        # to confirm, and what is left to walk.
+        for segment, kind, note in derived_rows:
+            settled = CONFIRMED.search(note or "") is not None
+            axis.plot(*segment.xy,
+                      color="#7c3aed" if settled else "#f59e0b",
+                      lw=3.0, zorder=6,
+                      linestyle="solid" if settled else (0, (7, 2)))
         for bridge in built["bridges"]:
             axis.plot(*bridge.xy, color="#db2777", lw=2.4,
                       linestyle=(0, (5, 3)), zorder=7)
@@ -392,15 +406,22 @@ def main(argv: list[str] | None = None) -> int:
                   f"{built['basis']}"))
     handles += [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
                 for name in walkers]
-    if derived:
+    settled = [r for r in derived_rows if CONFIRMED.search(r[2] or "")]
+    pending = [r for r in derived_rows if not CONFIRMED.search(r[2] or "")]
+    if settled:
         handles.append(Line2D(
             [0], [0], color="#7c3aed", lw=3.0,
-            label=f"Boundary derived, nobody walked it — "
-                  f"{sum(d.length for d in derived) / 1000:.2f} km"))
+            label=f"Inferred, confirmed with the clan — "
+                  f"{sum(r[0].length for r in settled) / 1000:.2f} km"))
+    if pending:
+        handles.append(Line2D(
+            [0], [0], color="#f59e0b", lw=3.0, linestyle=(0, (7, 2)),
+            label=f"Inferred, NOT yet confirmed — "
+                  f"{sum(r[0].length for r in pending) / 1000:.2f} km"))
     if built is not None and built["bridges"]:
         handles.append(Line2D(
             [0], [0], color="#db2777", lw=2.4, linestyle=(0, (5, 3)),
-            label=f"Drawn by the pipeline — {len(built['bridges'])} line(s), "
+            label=f"Still to walk — {len(built['bridges'])} gap(s), "
                   f"{sum(b.length for b in built['bridges']) / 1000:.2f} km"))
     handles += [
         Line2D([0], [0], marker="o", color="none", markerfacecolor="#ea580c",
