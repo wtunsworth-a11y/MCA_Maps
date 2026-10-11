@@ -327,5 +327,26 @@ Faults that were not in the field data at all.
   from 5.7 km walked, 79% of its outline drawn by the pipeline. The
   `--max-gap` limit is measured against the bridged ring rather than against
   what was walked, which is how it passes a test designed to reject it.
+- **The river layer is a 30 m DSM, and the walk is better than it.** Where a
+  steward walked a river boundary, his track *is* the river, recorded on the
+  ground, while the modelled channel is a surface model's guess with the
+  canopy still on it and 30 m stair-steps in it. Dusi's chord 6 closes along
+  a river both the steward and the model agree on, but the shape offered for
+  the unwalked 377 m comes from the model alone. A cleaner river layer is
+  needed before any `river_routed` geometry is put to a clan as a shape
+  rather than as a question. Until then a routed line is provisional, and it
+  is the *existence* of the river that the notes establish, not its course.
+- **A sound fix can still be refused by what it does elsewhere.** Dusi chord
+  6's river route is right on every test — 377 m against 299 m straight,
+  both ends on the channel, 22 m maximum deviation, and the steward naming
+  the river as the Gubai boundary from both directions. Adopting it drops
+  the clan from 227 ha to 193 and destroys the north: chords 5, 7 and 8
+  vanish and two new ones, 847 m and 568 m, cut the Guaipnun limb off
+  altogether. Adding the line turns the two ends from free ends into
+  interior nodes and merges two components, and `_chains` then spans the
+  merged component by its two most distant nodes — the chord fault again,
+  third time (Gumuyude twice, now Dusi). **Render the whole clan before
+  adopting anything, never just the detail.** The detail map showed a clean
+  fix; the clan map showed a broken boundary.
 - **Mariura's duplicated file** (§1).
 - **Sahirut's steward attribution** (§2).
