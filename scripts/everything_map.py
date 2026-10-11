@@ -86,6 +86,56 @@ def typed_text(values: dict) -> list:
     return out
 
 
+def _read_row_by_row(path: str):
+    """Read a geopackage a row at a time, skipping the broken ones.
+
+    A single recording with one point in it stops geopandas loading the
+    whole file, and the pipeline's own repair never sees these because it
+    works on what loaded. Riribudeh has one. Reading the blobs directly
+    loses that row and keeps the other fifty.
+    """
+    import struct
+    from shapely import wkb
+
+    try:
+        db = sqlite3.connect(path)
+        tables = [r[0] for r in db.execute(
+            "select table_name from gpkg_contents where data_type='features'")]
+    except Exception:
+        return None
+
+    rows, dropped = [], 0
+    for table in tables:
+        columns = [r[1] for r in db.execute(f'pragma table_info("{table}")')]
+        if "geom" not in columns:
+            continue
+        others = [c for c in columns if c != "geom"]
+        picked = ",".join(f'"{c}"' for c in others + ["geom"])
+        for record in db.execute(f'select {picked} from "{table}"'):
+            blob = record[-1]
+            if not blob:
+                continue
+            try:
+                # GeoPackage binary: "GP", version, flags, srs_id, envelope
+                flags = blob[3]
+                envelope = (0, 32, 48, 48, 64)[(flags >> 1) & 0x07]
+                geometry = wkb.loads(bytes(blob[8 + envelope:]))
+                if geometry.is_empty:
+                    continue
+            except Exception:
+                dropped += 1
+                continue
+            rows.append(dict(zip(others, record[:-1]), geometry=geometry))
+    db.close()
+    if dropped:
+        print(f"  ({dropped} unreadable recording(s) skipped in "
+              f"{Path(path).name})")
+    if not rows:
+        return None
+    frame = gpd.GeoDataFrame(rows, geometry="geometry", crs=dataio.WGS84)
+    return frame.to_crs(dataio.METRIC_CRS)
+
+
 def source_files(clan: str) -> set:
     """The raw files the published layer says this clan came from.
 
@@ -127,7 +177,12 @@ def recordings(clan: str) -> list:
                     handle.write(zf.read(member))
                     path = handle.name
                 try:
-                    frame = gpd.read_file(path).to_crs(dataio.METRIC_CRS)
+                    try:
+                        frame = gpd.read_file(path).to_crs(dataio.METRIC_CRS)
+                    except Exception:
+                        frame = _read_row_by_row(path)
+                        if frame is None or frame.empty:
+                            raise
                     names = [c for c in frame.columns if c != "geometry"]
                     with sqlite3.connect(path) as db:
                         db.execute("select 1")

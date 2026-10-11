@@ -1,0 +1,66 @@
+  (2 unreadable recording(s) skipped in tmpwi9bov68.gpkg)
+Riribudeh: 33 recordings, 23.6 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1            2217 m
+   2            3526 m
+   3            2408 m
+   4            2397 m
+   5            1296 m
+        But am doa
+   6             595 m
+   7              84 m
+   8             195 m
+        Aramukin
+   9            1462 m
+        ASI track road
+  10             365 m
+        Bivunauri
+  11             400 m
+        Butam do
+  12             240 m
+        Butam do
+  13             617 m
+        Fp udadap border with Asuankol
+  14             355 m
+        Garabi border with Depkol
+  15             273 m
+        Ijatam
+  16             312 m
+        Iron
+  17              58 m
+        Jabeloset
+  18             771 m
+        Jaginhul
+  19             575 m
+        Jimungivai
+  20              99 m
+        Jimungivai border with Depkol
+  21             129 m
+        Jordan river
+  22              81 m
+        Kakumo
+  23             407 m
+        Kuhina
+  24             370 m
+        Maran range
+  25             456 m
+        Mt. Aroi
+  26             342 m
+        Muamara
+  27            1472 m
+        Namip amal
+  28             285 m
+        Samunei
+  29             307 m
+        Sirulin
+  30             709 m
+        Sivilimal
+  31             321 m
+        Tarelmul
+  32             320 m
+        Tarelmul range
+  33             150 m
+        Warui
+
+Wrote /home/user/MCA_Maps/output/queries/Riribudeh_everything.png
