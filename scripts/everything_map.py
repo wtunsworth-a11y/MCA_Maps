@@ -203,7 +203,31 @@ def main(argv: list[str] | None = None) -> int:
         for line in row["text"]:
             print(f"        {line[:104]}")
 
-    shapes = unary_union([r["geometry"] for r in found])
+    # What the pipeline made of it, drawn behind the data so the two can
+    # be compared. A map of the recordings alone cannot show whether the
+    # boundary follows them.
+    built = None
+    try:
+        import chord_map
+        import polygons as polygon_tools
+        published = gpd.read_file(
+            dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
+            layer="tracks_smoothed").to_crs(dataio.METRIC_CRS)
+        published = dataio.publishable(published, quiet=True)
+        published["_unit"] = dataio.survey_group(published)
+        match = published[published.clan.astype(str).str.lower()
+                          .str.startswith(args.clan.lower())]
+        if not match.empty:
+            unit = match._unit.iloc[0]
+            group = published[published._unit == unit]
+            built = polygon_tools.survey_polygon(
+                chord_map.parts_of(group), 25.0, 0.50, 0.10,
+                derived=polygon_tools.adopted_segments(unit), unit=unit)
+    except Exception as error:
+        print(f"  (could not build the polygon: {error})")
+
+    shapes = unary_union([r["geometry"] for r in found]
+                         + ([built["geometry"]] if built else []))
     minx, miny, maxx, maxy = shapes.bounds
     pad = max(maxx - minx, maxy - miny) * 0.10
     window = (minx - pad, miny - pad, maxx + pad, maxy + pad)
@@ -218,6 +242,13 @@ def main(argv: list[str] | None = None) -> int:
             streams.plot(ax=axis, color="#7dd3fc", linewidth=1.1, zorder=1)
     except Exception:
         pass
+
+    if built is not None:
+        gpd.GeoSeries([built["geometry"]], crs=dataio.METRIC_CRS).plot(
+            ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
+        for bridge in built["bridges"]:
+            axis.plot(*bridge.xy, color="#db2777", lw=2.4,
+                      linestyle=(0, (5, 3)), zorder=7)
 
     # A short recording in the middle of a survey is a feature the steward
     # stopped to mark, not a stretch of boundary, and what he wrote on it
@@ -289,8 +320,20 @@ def main(argv: list[str] | None = None) -> int:
                    f"place{'' if len(sites) == 1 else 's'} marked along it"
                    + (f", {len(flagged)} sacred" if flagged else ""),
                    fontsize=13, pad=10)
-    handles = [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
-               for name in walkers]
+    handles = []
+    if built is not None:
+        from matplotlib.patches import Patch
+        handles.append(Patch(
+            facecolor="#1d4ed8", alpha=0.13,
+            label=f"Boundary as built — {built['area_ha']:,.0f} ha, "
+                  f"{built['basis']}"))
+    handles += [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
+                for name in walkers]
+    if built is not None and built["bridges"]:
+        handles.append(Line2D(
+            [0], [0], color="#db2777", lw=2.4, linestyle=(0, (5, 3)),
+            label=f"Drawn by the pipeline — {len(built['bridges'])} line(s), "
+                  f"{sum(b.length for b in built['bridges']) / 1000:.2f} km"))
     handles += [
         Line2D([0], [0], marker="o", color="none", markerfacecolor="#ea580c",
                markeredgecolor="white", markersize=9,
