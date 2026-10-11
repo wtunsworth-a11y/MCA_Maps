@@ -1,0 +1,22 @@
+Gumuyude: 6 recordings, 19.8 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1             305 m
+        2025-05-19 11:02Philip IGAI GUMUYUDE Clan.
+        Boundary Map Stop Here.
+   2            5715 m
+        2025-05-20 09:59PHILIP IGAI GUMUYUDE Clan.
+        Gumuyude Clan Boundary Mapping Run and Stops here.
+   3            2507 m
+        2025-05-21 13:19Philip IGAI ,, GUMUYUDE Clan.
+        Gumuyude Clan Boundary Mapping Run and Stop Here and continue next day.
+   4            6115 m
+        2025-05-22 09:56 Philip IGAI GUMUYUDE Clan BOUNDRY MAping start and stop here.
+   5            2952 m
+        2025-05-28 10:37 Philip IGAI GUMUYUDE Clan.
+        Gumuyude Clan Boundary Mapping Run and Stop here.
+   6            2245 m
+        2025-06-04 09:24 Philip IGAI GUMUYUDE Clan.
+        Gumuyude Land Boundary Mappping is ends here.
+
+Wrote /home/user/MCA_Maps/output/queries/Gumuyude_everything.png
