@@ -14,12 +14,16 @@
   "moved and nothing deleted: the recorded line is a prefix of the result.",
   "A survey with no entry here is untouched.",
   "",
+  "'metres' of zero means the two lines already cross and only the node is",
+  "wanted; 'at' is then the crossing point itself rather than a tip.",
   "'at' is the tip being carried on, 'metres' how far."
  ],
-
  "Riribudeh — Zone 8": [
   {
-   "at": [661469.0, 8990474.0],
+   "at": [
+    661469.0,
+    8990474.0
+   ],
    "metres": 10,
    "agreed": "2026-10-11",
    "chord": 2,
@@ -36,6 +40,28 @@
     "",
     "The 201 m 'Jaginhul' spur east of here is walked inside the boundary",
     "and is not part of the boundary line."
+   ]
+  }
+ ],
+ "Mungaikol — Zone 8": [
+  {
+   "at": [
+    659039.7,
+    8991079.1
+   ],
+   "metres": 0,
+   "agreed": "2026-10-11",
+   "chord": 3,
+   "note": [
+    "Graham Ekiawa's 1,520 m and 2,988 m recordings cross here. Neither has",
+    "an end at the crossing — the 1,520 m carries 77 m past it before",
+    "stopping, and the 2,988 m starts 12 m beyond it — so the graph could",
+    "not see that they meet, and the closing step drew a 72 m line across",
+    "the bend instead, up to 20 m off the walked track.",
+    "",
+    "No extension is needed: the lines already cross. Splitting both at the",
+    "crossing puts the boundary through it, which is where the steward",
+    "walked."
    ]
   }
  ]

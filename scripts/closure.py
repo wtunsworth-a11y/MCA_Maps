@@ -117,9 +117,12 @@ def extended_parts(unit: str | None, parts: list):
                 gap = end.distance(tip)
                 if best is None or gap < best:
                     best, index, at_start = gap, position, start
-        if index is None or best > 5.0:
-            continue
-        out[index] = _carry_on(out[index], metres, at_start)
+        # metres of zero means the lines already cross and only the node
+        # is wanted; `at` is then the crossing itself rather than a tip.
+        if metres > 0:
+            if index is None or best > 5.0:
+                continue
+            out[index] = _carry_on(out[index], metres, at_start)
         tips.append(tip)
     return _node_crossings(out, tips)
 
