@@ -262,6 +262,7 @@ def main(argv: list[str] | None = None) -> int:
     # be compared. A map of the recordings alone cannot show whether the
     # boundary follows them.
     built = None
+    derived: list = []
     try:
         import chord_map
         import polygons as polygon_tools
@@ -275,9 +276,10 @@ def main(argv: list[str] | None = None) -> int:
         if not match.empty:
             unit = match._unit.iloc[0]
             group = published[published._unit == unit]
+            derived = list(polygon_tools.adopted_segments(unit))
             built = polygon_tools.survey_polygon(
                 chord_map.parts_of(group), 25.0, 0.50, 0.10,
-                derived=polygon_tools.adopted_segments(unit), unit=unit)
+                derived=derived, unit=unit)
     except Exception as error:
         print(f"  (could not build the polygon: {error})")
 
@@ -301,6 +303,12 @@ def main(argv: list[str] | None = None) -> int:
     if built is not None:
         gpd.GeoSeries([built["geometry"]], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
+        # Boundary nobody walked, adopted in earlier work. Drawn in black
+        # with the recordings it was indistinguishable from them, and
+        # Manuvoora carries 2.9 km of it under a line that reads
+        # "surveyed, 0 drawn lines".
+        for segment in derived:
+            axis.plot(*segment.xy, color="#7c3aed", lw=3.0, zorder=6)
         for bridge in built["bridges"]:
             axis.plot(*bridge.xy, color="#db2777", lw=2.4,
                       linestyle=(0, (5, 3)), zorder=7)
@@ -384,6 +392,11 @@ def main(argv: list[str] | None = None) -> int:
                   f"{built['basis']}"))
     handles += [Line2D([0], [0], color=colours[name], lw=1.9, label=name)
                 for name in walkers]
+    if derived:
+        handles.append(Line2D(
+            [0], [0], color="#7c3aed", lw=3.0,
+            label=f"Boundary derived, nobody walked it — "
+                  f"{sum(d.length for d in derived) / 1000:.2f} km"))
     if built is not None and built["bridges"]:
         handles.append(Line2D(
             [0], [0], color="#db2777", lw=2.4, linestyle=(0, (5, 3)),

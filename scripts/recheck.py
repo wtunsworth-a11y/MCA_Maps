@@ -64,9 +64,19 @@ def main(argv: list[str] | None = None) -> int:
     pub_km = group.geometry.length.sum() / 1000
 
     print(f"{unit}\n")
+    # "surveyed, 0 drawn lines" reads as "the walk closes it", and on
+    # Manuvoora that hid 2.9 km of adopted river route and editorial
+    # joins. Derived line is boundary nobody walked, and it is said here.
+    derived = list(polygon_tools.adopted_segments(unit))
     print(f"  approved           {approved['area_ha']:9,.0f} ha  "
           f"basis {approved['basis']}, "
           f"{len(approved['bridges'])} drawn line(s)")
+    if derived:
+        print(f"     plus {len(derived)} adopted segment(s), "
+              f"{sum(d.length for d in derived) / 1000:.2f} km of boundary "
+              f"nobody walked:")
+        for segment in derived:
+            print(f"       {segment.length:7.0f} m")
     print(f"  published          {pub_km:9.1f} km in {len(group)} recordings")
     print(f"  raw archives       {raw_km:9.1f} km in {len(found)} recordings")
     print(f"     hidden from the map: {raw_km - pub_km:.1f} km")
