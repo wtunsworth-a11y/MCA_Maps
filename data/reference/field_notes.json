@@ -75,10 +75,14 @@
  },
  "Riribudeh — Zone 8": {
   "notes": [
-   "The boundary is complete apart from the gap at the south-east. The long line the pipeline draws across the north-east corner is not a gap and not a boundary: it cuts through a walk that has no break in it, leaving 3.1 km of walked line — 16% of what the two stewards recorded — outside the clan's reported land, and taking in ground nobody walked. It must not be read as boundary.",
-   "Not yet fixed. Removing the line is straightforward; making the boundary follow the walk instead is not, because the recorded line does not close geometrically even once every loose end is tied and the south-east gap is bridged. Why is still open."
+   "Walked by Unido Ose and Prut Buitari together; their two lines sit on top of each other for almost the whole boundary.",
+   "",
+   "ASK THE CLAN: what is Jaginhul? Unido Ose puts the name on three recordings at the eastern turn on the north-east boundary, where both stewards leave the boundary line, make the same eastward excursion and both rejoin at the same place. The name is used for the whole stretch rather than for a single feature, and no water is named there. The nearest modelled watercourse is 818 m away, but that layer only resolves channels of about 0.01 km2 and up, so a creek crossed on foot would not appear in it. Knowing what Jaginhul is would settle whether the excursion is the boundary or a detour around something.",
+   "",
+   "Chord 1 is a real gap: 203 m between Butam do and Muamara, where both stewards stopped and both resumed. Needs walking."
   ],
-  "source": "Survey team, 10 October 2026"
+  "source": "Steward's own track descriptions, 15 July 2025; reviewed on the chord map 11 October 2026",
+  "priority": "Ask the clan what Jaginhul is; chord 1 needs walking"
  },
  "Gumuyude — Zone 8": {
   "notes": [
