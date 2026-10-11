@@ -475,9 +475,46 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 axis.plot(*segment.xy, color="#f59e0b", lw=3.0, zorder=6,
                           linestyle=(0, (7, 2)))
-        for bridge in built["bridges"]:
+        # Numbered, so a gap can be named and discussed. The numbers
+        # come from the shared register, so they survive between runs:
+        # a closed gap disappears and a new one takes the next number.
+        import chord_map as _cm
+        gap_order = sorted(built["bridges"], key=lambda b: -b.length)
+        gap_numbers = _cm.numbering(unit, gap_order)
+        for index, bridge in enumerate(gap_order):
             axis.plot(*bridge.xy, color="#db2777", lw=2.4,
                       linestyle=(0, (5, 3)), zorder=7)
+            middle = bridge.interpolate(0.5, normalized=True)
+            (ax0, ay0), (ax1, ay1) = (bridge.coords[0][:2],
+                                      bridge.coords[-1][:2])
+            dx, dy = ax1 - ax0, ay1 - ay0
+            span = (dx * dx + dy * dy) ** 0.5 or 1.0
+            step = (window[2] - window[0]) * 0.030
+            spot = None
+            for reach in range(1, 10):
+                for sign in (1, -1):
+                    here = Point(middle.x - dy / span * step * reach * sign,
+                                 middle.y + dx / span * step * reach * sign)
+                    if built["geometry"].contains(here):
+                        continue
+                    if min(walked_union.distance(here),
+                           min(b.distance(here) for b in gap_order)) >= step:
+                        spot = here
+                        break
+                if spot is not None:
+                    break
+            if spot is None:
+                spot = Point(middle.x - dy / span * step,
+                             middle.y + dx / span * step)
+            axis.annotate(str(gap_numbers[index]), (middle.x, middle.y),
+                          xytext=(spot.x, spot.y), fontsize=10.5,
+                          fontweight="bold", color="white", ha="center",
+                          va="center", zorder=10,
+                          arrowprops=dict(arrowstyle="-", color="#db2777",
+                                          lw=1.1, shrinkA=6, shrinkB=1),
+                          bbox=dict(boxstyle="circle,pad=0.30",
+                                    facecolor="#db2777", edgecolor="white",
+                                    linewidth=1.2))
 
     # A short recording in the middle of a survey is a feature the steward
     # stopped to mark, not a stretch of boundary, and what he wrote on it
@@ -619,6 +656,10 @@ def main(argv: list[str] | None = None) -> int:
             [0], [0], color="#db2777", lw=2.4, linestyle=(0, (5, 3)),
             label=f"Still to walk — {len(built['bridges'])} gap(s), "
                   f"{sum(b.length for b in built['bridges']) / 1000:.2f} km"))
+        for index, bridge in enumerate(gap_order):
+            handles.append(Line2D(
+                [0], [0], color="none",
+                label=f"      {gap_numbers[index]}.  {bridge.length:,.0f} m"))
     handles += [
         Line2D([0], [0], marker="o", color="none", markerfacecolor="#ea580c",
                markeredgecolor="white", markersize=9,

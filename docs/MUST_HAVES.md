@@ -115,3 +115,16 @@ Order is the order we agreed them.
     3 and 4. Always render the whole clan after adopting, and withdraw
     rather than keep a correct fix that breaks the boundary.
     *Pina Ora, 11 Oct.*
+
+18. **Number the gaps.** Standard on the chord map from the first day,
+    and dropped when the review moved to the everything map — so a gap
+    could be seen but not named, and one of Pina Ora's four was too
+    small to find at all. Numbers come from the shared register and
+    persist between runs: a closed gap disappears, a new one takes the
+    next number.
+    *Pina Ora, 11 Oct.*
+
+    The wider point, which keeps recurring: a new map does not inherit
+    what the old map had learned. Anything on this list applies to
+    whatever map is in front of the reviewer, not to the script it was
+    first agreed on.
