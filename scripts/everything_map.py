@@ -97,6 +97,53 @@ def typed_text(values: dict) -> list:
     return out
 
 
+def _lines_from_wkb(body: bytes):
+    """Read a line geometry by hand, dropping any part with one point.
+
+    A MultiLineString holding a single one-point part cannot be loaded
+    at all — not by geopandas, not by shapely — so one bad fix in a
+    recording takes the whole file with it. Kasaki is one file holding
+    one row, and that row is 15.1 km of boundary; the pipeline repaired
+    it at smoothing time and the raw reader could not open it.
+
+    This walks the WKB itself and keeps the parts that are lines.
+    """
+    import struct
+    from shapely.geometry import LineString, MultiLineString
+
+    def read_line(data, at):
+        order = "<" if data[at] == 1 else ">"
+        kind = struct.unpack_from(order + "I", data, at + 1)[0]
+        dims = 2 + (1 if kind // 1000 in (1, 3) else 0)                  + (1 if kind // 1000 in (2, 3) else 0)
+        count = struct.unpack_from(order + "I", data, at + 5)[0]
+        at += 9
+        points = []
+        for _ in range(count):
+            values = struct.unpack_from(order + f"{dims}d", data, at)
+            points.append(values[:2])
+            at += 8 * dims
+        return (LineString(points) if len(points) >= 2 else None), at
+
+    try:
+        order = "<" if body[0] == 1 else ">"
+        kind = struct.unpack_from(order + "I", body, 1)[0]
+        base = kind % 1000
+        if base == 2:
+            line, _ = read_line(body, 0)
+            return line
+        if base == 5:
+            count = struct.unpack_from(order + "I", body, 5)[0]
+            at, parts = 9, []
+            for _ in range(count):
+                line, at = read_line(body, at)
+                if line is not None:
+                    parts.append(line)
+            return MultiLineString(parts) if parts else None
+    except Exception:
+        return None
+    return None
+
+
 def _read_row_by_row(path: str):
     """Read a geopackage a row at a time, skipping the broken ones.
 
@@ -130,8 +177,13 @@ def _read_row_by_row(path: str):
                 # GeoPackage binary: "GP", version, flags, srs_id, envelope
                 flags = blob[3]
                 envelope = (0, 32, 48, 48, 64)[(flags >> 1) & 0x07]
-                geometry = wkb.loads(bytes(blob[8 + envelope:]))
-                if geometry.is_empty:
+                body = bytes(blob[8 + envelope:])
+                try:
+                    geometry = wkb.loads(body)
+                except Exception:
+                    geometry = _lines_from_wkb(body)
+                if geometry is None or geometry.is_empty:
+                    dropped += 1
                     continue
             except Exception:
                 dropped += 1

@@ -1,0 +1,7 @@
+Kasaki: 1 recordings, 17.6 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1           17600 m
+        ANANIAS Masua Kasaki Clan
+
+Wrote /home/user/MCA_Maps/output/queries/Kasaki_everything.png
