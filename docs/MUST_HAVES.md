@@ -105,3 +105,13 @@ Order is the order we agreed them.
     enforce it. Naming a survey ambiguously now lists the candidates and
     stops.
     *Murai, 11 Oct.*
+
+17. **A correct join can still be refused by what the closing step does
+    with it.** Pina Ora's gaps 3 and 4 are not gaps — 206 m with walked
+    line under it the whole way, and a 39 m corner cut — but chaining
+    them dropped the clan from 812 ha to 473 and put a 4.1 km line
+    across the middle of it. Four clans are now blocked on the same
+    fault: Dusi chord 9, Riribudeh chord 2, Mungaikol chord 3, Pina Ora
+    3 and 4. Always render the whole clan after adopting, and withdraw
+    rather than keep a correct fix that breaks the boundary.
+    *Pina Ora, 11 Oct.*
