@@ -19,6 +19,15 @@ and 8 give each clan its own folder; Zone 6, Zone 6 Sahirut and Zone 7A
 have no folders at all, and for those the ledger says so rather than
 pretending the grouping is as safe.
 
+**Nothing is withheld here.** The sacred-site rule governs what is
+shared — the documents, the exported layers, the clan maps — not what
+the people deciding are allowed to see. Mungaikol's boundary turns on a
+line titled as a sacred site, and Sukandi's sacred perimeters run
+alongside its boundary; neither can be judged by someone shown only the
+remainder. So this tool, `everything_map` and `recheck` read the raw
+archives and list the sacred recordings in full. Withholding happens
+once, on the way out.
+
 Usage:
     python scripts/ledger.py --clan Manuvoora
     python scripts/ledger.py --all
@@ -41,8 +50,29 @@ import closure  # noqa: E402
 import dataio  # noqa: E402
 import everything_map as em  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
+import report_data  # noqa: E402
 
 FOLDERLESS = "no folder — identity is from the filename alone"
+
+
+def _names_the_place(row) -> str:
+    """The line that says what the place is, not who walked it.
+
+    Sukandi's sacred sites are named in `name` — Mitakin, Birezama,
+    Bijanuri — while the steward note on the same recording carries only
+    "Melinton Beso. Sukadi Clan member.". Taking the first field that had
+    anything in it reported the walker and hid the site.
+    """
+    lines = []
+    for key in ("name", "desc", "cmt", "Name", "description"):
+        value = row.get(key)
+        if value in (None, "") or str(value) == "nan":
+            continue
+        lines.extend(em.typed_text({key: value}))
+    for line in lines:
+        if em.SACRED.search(line):
+            return line[:90]
+    return (lines[0][:90] if lines else "")
 
 
 def uploads() -> dict:
@@ -113,7 +143,16 @@ def ledger(clan: str) -> dict:
             raw_km - whole.geometry.length.sum() / 1000, 1),
         "withheld_as_sacred": {
             "recordings": len(withheld),
-            "km": round(withheld.geometry.length.sum() / 1000, 1)},
+            "km": round(withheld.geometry.length.sum() / 1000, 1),
+            # Listed, not merely counted. Withholding is for what gets
+            # shared; it is not a reason to keep the people deciding in
+            # the dark, and Mungaikol and Sukandi both turn on how the
+            # sacred sites and the land boundary sit against each other.
+            "detail": [
+                {"km": round(r.geometry.length / 1000, 2),
+                 "said": _names_the_place(r)}
+                for _, r in withheld.iterrows()],
+        },
         "reached_the_polygon_km": round(
             published.geometry.length.sum() / 1000, 1),
         "duplicate_recordings_km": round(duplicate_km, 1),
@@ -154,6 +193,8 @@ def show(entry: dict) -> None:
     w = entry["withheld_as_sacred"]
     print(f"  withheld      {-w['km']:6.1f} km  "
           f"({w['recordings']} sacred recording(s))")
+    for item in w.get("detail", []):
+        print(f"                  {item['km']:5.2f} km  {item['said']}")
     print(f"  = reached the polygon  {entry['reached_the_polygon_km']:6.1f} km")
     if entry["duplicate_recordings_km"]:
         print(f"      of which duplicated recordings: "
