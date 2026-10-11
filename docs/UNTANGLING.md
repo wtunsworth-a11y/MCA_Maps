@@ -348,5 +348,17 @@ Faults that were not in the field data at all.
   third time (Gumuyude twice, now Dusi). **Render the whole clan before
   adopting anything, never just the detail.** The detail map showed a clean
   fix; the clan map showed a broken boundary.
+- **A 25 m tolerance decides whether 764 m of boundary exists.** Dusi's
+  northern boundary — 127 m, 332 m and 305 m, all named *Gigulhun /
+  Geigulhull border with Karira* — hangs off one node because its far end
+  stops **25.5 m** from the next piece, half a metre outside the clustering
+  tolerance. The spur pruner reads the chain as a dead end and discards it,
+  and the closing step then draws a 552 m chord across the ground it
+  covered. The walked boundary is thrown away and replaced with an invention
+  on the strength of 50 cm.
+  Tying the 25.5 m closes the chord and the closing step answers with a
+  2,741 m line across the whole clan — the chord fault again. So chord 9
+  cannot be fixed until `_chains` stops spanning a component by its two most
+  distant nodes, and raising the tolerance is not a Dusi decision.
 - **Mariura's duplicated file** (§1).
 - **Sahirut's steward attribution** (§2).

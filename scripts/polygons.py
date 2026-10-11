@@ -120,16 +120,24 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     edges = [{"a": labels[2 * i], "b": labels[2 * i + 1],
               "length": parts[i].length, "live": True}
              for i in keep]
-    closure._prune_spurs(edges, max_spur * distinct_m)
-    live = [e for e in edges if e["live"]] or edges
-
     # A pinned gap goes into the graph before the closing step runs, so the
     # closing step bridges what is left around it rather than redrawing over
     # it. Fixed is fixed.
+    #
+    # It has to go in before spur pruning, not after. A chain hanging off
+    # one node reads as a dead end and is pruned, and a pinned gap leaving
+    # that chain's far end is exactly what makes it load-bearing rather than
+    # a dead end. Added afterwards, 764 m of Dusi's walked northern boundary
+    # was pruned and then redrawn as a 552 m chord across it.
     base = 2 * len(parts)
     pinned_edges = [{"a": labels[base + 2 * j], "b": labels[base + 2 * j + 1],
-                     "length": pinned[j].length, "live": True}
+                     "length": pinned[j].length, "live": True, "pinned": True}
                     for j in range(len(pinned))]
+
+    closure._prune_spurs(edges + pinned_edges, max_spur * distinct_m)
+    for edge in pinned_edges:
+        edge["live"] = True
+    live = [e for e in edges if e["live"]] or edges
 
     chains = closure._chains(live + pinned_edges, positions)
     bridges, gap = _bridges(chains)
