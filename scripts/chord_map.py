@@ -179,10 +179,22 @@ def render(unit: str, group: gpd.GeoDataFrame, built: dict, rows: list,
         gpd.GeoSeries([row["line"]], crs=dataio.METRIC_CRS).plot(
             ax=axis, color=colour, linewidth=2.6, linestyle=(0, (5, 3)),
             zorder=7)
+        # The number sits off the line on a leader, not on top of it. A
+        # marker centred on the midpoint hides the very thing the map is
+        # being read for — whether there is walked line underneath.
         point = row["line"].interpolate(0.5, normalized=True)
-        axis.annotate(str(row["n"]), (point.x, point.y), fontsize=10.5,
-                      fontweight="bold", color="white", ha="center",
-                      va="center", zorder=9,
+        (ax0, ay0), (ax1, ay1) = (row["line"].coords[0][:2],
+                                  row["line"].coords[-1][:2])
+        dx, dy = ax1 - ax0, ay1 - ay0
+        span = (dx * dx + dy * dy) ** 0.5 or 1.0
+        offset = (window[2] - window[0]) * 0.045
+        nx, ny = -dy / span * offset, dx / span * offset
+        axis.annotate(str(row["n"]), (point.x, point.y),
+                      xytext=(point.x + nx, point.y + ny),
+                      fontsize=10.5, fontweight="bold", color="white",
+                      ha="center", va="center", zorder=9,
+                      arrowprops=dict(arrowstyle="-", color=colour,
+                                      lw=1.1, shrinkA=6, shrinkB=1),
                       bbox=dict(boxstyle="circle,pad=0.30", facecolor=colour,
                                 edgecolor="white", linewidth=1.2))
 
