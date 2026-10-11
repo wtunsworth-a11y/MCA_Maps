@@ -75,6 +75,39 @@ APPROVED_FIXES_PATH = (dataio.REPO_ROOT / "data" / "reference"
                        / "approved_fixes.json")
 
 
+AGREED_GAPS_PATH = (dataio.REPO_ROOT / "data" / "reference"
+                    / "agreed_gaps.json")
+
+
+def agreed_gaps(unit: str | None):
+    """Gaps whose two ends have been settled with the people reviewing them.
+
+    A gap that has been looked at on a map, traced back to what the steward
+    wrote at each end and agreed, is a finding. The next repair must not be
+    free to move it. Dusi's chord 5 was fixed to the corner marked 'Sawahun
+    broudre with anaje clan' and the Guaipnun waterfall; closing an
+    unrelated chord 700 m away then merged two components and the closing
+    step spanned the merged one by its two most distant nodes, so chord 5
+    disappeared and two invented lines took its place, 34 ha of the clan's
+    land with them.
+
+    A pinned gap is put into the graph before the closing step runs, so the
+    closing step works around it instead of over it. It is still a gap: not
+    walked, not boundary, counted as gap in every figure, and shown as one
+    on every map.
+    """
+    if not unit:
+        return []
+    try:
+        import json
+        from shapely import wkt
+        with open(AGREED_GAPS_PATH, encoding="utf-8") as handle:
+            register = json.load(handle)
+    except (OSError, ValueError):
+        return []
+    return [wkt.loads(entry["gap"]) for entry in (register.get(unit) or [])]
+
+
 def approved_fix(unit: str | None, fix: str) -> bool:
     """Whether `fix` has been approved for `unit`, and only for `unit`.
 

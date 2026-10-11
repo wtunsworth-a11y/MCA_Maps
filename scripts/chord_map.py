@@ -59,12 +59,20 @@ WATER = "#7dd3fc"
 REGISTER = dataio.REPO_ROOT / "data" / "reference" / "chord_numbers.json"
 
 
-def numbering(unit: str, bridges: list) -> dict:
+def numbering(unit: str, bridges: list, record: bool = True) -> dict:
     """Stable numbers for this clan's drawn lines, kept between runs.
 
     Matched on where a line is, not on how long it is or where it sits in the
     order: a fix next door can change both. A line within 100 m of one seen
     before, by Hausdorff distance, is taken to be that line.
+
+    `record=False` for anything speculative. The numbers are what the survey
+    is discussed by — "fix chord 1", "chord 6 is fixed" — so a render of a
+    proposal that is then rejected must not leave its numbers behind. One
+    did: a throwaway proposal map issued 9 and 10 to lines that were never
+    accepted, and the next real run found nothing it recognised and renamed
+    the whole survey 11, 12, 13 in the middle of a conversation about 5, 6,
+    7 and 8.
     """
     import json
 
@@ -102,9 +110,11 @@ def numbering(unit: str, bridges: list) -> dict:
             out[index] = nxt
             nxt += 1
 
-    book[unit] = {str(out[i]): bridges[i].wkt for i in range(len(bridges))}
-    REGISTER.parent.mkdir(parents=True, exist_ok=True)
-    REGISTER.write_text(json.dumps(book, indent=1) + "\n", encoding="utf-8")
+    if record:
+        book[unit] = {str(out[i]): bridges[i].wkt for i in range(len(bridges))}
+        REGISTER.parent.mkdir(parents=True, exist_ok=True)
+        REGISTER.write_text(json.dumps(book, indent=1) + "\n",
+                            encoding="utf-8")
     return out
 
 
@@ -118,10 +128,10 @@ def parts_of(frame: gpd.GeoDataFrame) -> list:
 
 
 def classify(unit: str, bridges: list, walked, tolerance: float,
-             cut: float):
+             cut: float, record: bool = True):
     """Each drawn line, with how much of it already has walked line beside it."""
     ordered = sorted(bridges, key=lambda b: -b.length)
-    numbers = numbering(unit, ordered)
+    numbers = numbering(unit, ordered, record=record)
     rows = []
     for index, line in enumerate(ordered):
         near = line.intersection(walked.buffer(tolerance)).length / line.length

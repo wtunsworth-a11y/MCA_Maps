@@ -87,10 +87,19 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
 
     walked_m = sum(p.length for p in walked)
     total = sum(p.length for p in parts)
+
+    # Gaps already settled with the people reviewing this survey. They are
+    # clustered in with everything else so they attach to the right nodes,
+    # but they are not parts: nobody walked them and they are not boundary.
+    pinned = closure.agreed_gaps(unit)
+
     endpoints = []
     for part in parts:
         endpoints.append(part.coords[0][:2])
         endpoints.append(part.coords[-1][:2])
+    for gap_line in pinned:
+        endpoints.append(gap_line.coords[0][:2])
+        endpoints.append(gap_line.coords[-1][:2])
     labels = closure._cluster_endpoints(endpoints, tolerance)
     positions: dict = {}
     for index, label in enumerate(labels):
@@ -114,8 +123,18 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     closure._prune_spurs(edges, max_spur * distinct_m)
     live = [e for e in edges if e["live"]] or edges
 
-    chains = closure._chains(live, positions)
+    # A pinned gap goes into the graph before the closing step runs, so the
+    # closing step bridges what is left around it rather than redrawing over
+    # it. Fixed is fixed.
+    base = 2 * len(parts)
+    pinned_edges = [{"a": labels[base + 2 * j], "b": labels[base + 2 * j + 1],
+                     "length": pinned[j].length, "live": True}
+                    for j in range(len(pinned))]
+
+    chains = closure._chains(live + pinned_edges, positions)
     bridges, gap = _bridges(chains)
+    bridges = list(pinned) + bridges
+    gap = (gap or 0.0) + sum(g.length for g in pinned)
 
     bridged = _enclosed(snapped + bridges) if bridges else enclosed
 

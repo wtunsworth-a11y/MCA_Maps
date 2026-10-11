@@ -1,0 +1,37 @@
+{
+ "_README": [
+  "Gaps whose two ends have been settled with the people reviewing the map.",
+  "Keyed by survey unit — '<Clan> — <Zone>', the same key the polygon layer",
+  "uses.",
+  "",
+  "A gap listed here has been looked at on a map, traced back to what the",
+  "steward wrote at each end, and agreed. It is put into the graph before",
+  "the closing step runs, so a later repair elsewhere in the survey cannot",
+  "move it. Fixed is fixed.",
+  "",
+  "A pinned gap is still a gap. Nobody walked it, it is not boundary, it is",
+  "counted as gap in every figure and drawn as a gap on every map. Pinning",
+  "settles where it runs, not what it is."
+ ],
+
+ "Dusi — Zone 8": [
+  {
+   "gap": "LINESTRING (663095.4663161682 8991099.23191406, 663834.350634272 8990497.866734292)",
+   "agreed": "2026-10-11",
+   "chord": 5,
+   "note": [
+    "The Savahun boundary with Anaje clan, 953 m, between two points Max",
+    "Mamo named himself. North: the hook where the Karira boundary ends and",
+    "he wrote 'Sawahun broudre with anaje clan'. East: the Guaipnun",
+    "waterfall, where three recordings stop and he wrote 'Savahun big drain",
+    "so hard to continue over', 'Guaipnun hard to cross over.' and 'guapnun",
+    "waterfall'. He could not get across.",
+    "",
+    "Tested against the terrain model for a river route and there is none:",
+    "the two ends are in different catchments whose flow paths first meet",
+    "4.4 km downstream. No modelled channel comes within 600 m of the line.",
+    "This stretch needs walking. It is not to be closed by drawing."
+   ]
+  }
+ ]
+}
