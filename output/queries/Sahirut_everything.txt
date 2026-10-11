@@ -1,0 +1,28 @@
+Sahirut: 7 recordings, 25.7 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1              10 m
+        2026-06-22 14:18 gtf
+        Dfc
+   2            5323 m
+        2026-06-23 11:30 Jarahi waterfall
+        On top of Jarahi waterfall
+   3            5440 m
+        Lenard Urami. Sahirut clan
+        Omuna Mountain.
+        First stop on first track recording day
+   4            6277 m
+        Lenard Urami. Sahirut clan
+        On top of Jarahi waterfall
+   5            5440 m
+        Lenard Urami.Sahirut clan
+        Omuna Mountain.
+        First stop on first track recording day
+   6             130 m
+        Lenard Urami.Sahirut clan
+        Puki waterfall
+   7            3064 m
+        Solomon Makanisa
+        Sahirut Land Boundary Map
+
+Wrote /home/user/MCA_Maps/output/queries/Sahirut_everything.png
