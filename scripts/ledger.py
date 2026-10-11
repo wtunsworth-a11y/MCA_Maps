@@ -128,8 +128,22 @@ def ledger(clan: str) -> dict:
     duplicate_km = (sum(p.length for p in parts) -
                     sum(parts[i].length for i in distinct)) / 1000
 
-    settled = [r for r in rows if em.CONFIRMED.search(r[2] or "")]
-    pending = [r for r in rows if not em.CONFIRMED.search(r[2] or "")]
+    # The same test the map uses, rule 14: a segment with walked line
+    # beside it is the walk chained back together, not an assertion
+    # about where the boundary runs. Judging it on the wording of the
+    # note instead had the ledger call a 39 m join "inferred" while the
+    # map called it chained.
+    from shapely.ops import unary_union as _union
+    walk = _union(parts) if parts else None
+
+    def chained(segment):
+        if walk is None or not segment.length:
+            return False
+        return (segment.intersection(walk.buffer(10)).length
+                / segment.length) >= 0.80
+
+    settled = [r for r in rows if chained(r[0])]
+    pending = [r for r in rows if not chained(r[0])]
     gaps = (built or {}).get("bridges") or []
 
     return {
@@ -160,9 +174,9 @@ def ledger(clan: str) -> dict:
             "area_ha": round(built["area_ha"]),
             "basis": built["basis"],
             "walked_km": round(built["walked_km"], 1),
-            "inferred_confirmed_km": round(
+            "chained_km": round(
                 sum(r[0].length for r in settled) / 1000, 2),
-            "inferred_unconfirmed_km": round(
+            "inferred_km": round(
                 sum(r[0].length for r in pending) / 1000, 2),
             "still_to_walk_km": round(
                 sum(g.length for g in gaps) / 1000, 2),
@@ -208,10 +222,10 @@ def show(entry: dict) -> None:
         return
     print(f"\n  boundary      {b['area_ha']:,} ha  ({b['basis']})")
     print(f"      walked                      {b['walked_km']:6.1f} km")
-    print(f"      inferred, confirmed         "
-          f"{b['inferred_confirmed_km']:6.2f} km")
-    print(f"      inferred, NOT confirmed     "
-          f"{b['inferred_unconfirmed_km']:6.2f} km")
+    print(f"      recorded walks chained      "
+          f"{b['chained_km']:6.2f} km  (the ground is walked)")
+    print(f"      inferred, nobody walked it  "
+          f"{b['inferred_km']:6.2f} km  (for the clan to confirm)")
     print(f"      still to walk               "
           f"{b['still_to_walk_km']:6.2f} km  "
           f"({b['still_to_walk_count']} gap(s))")
