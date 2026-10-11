@@ -39,6 +39,20 @@
     "Keeping the free end the piece has, and choosing only the end it",
     "lacks, puts the boundary back on the walked line."
    ]
+  },
+  "max_spur": {
+   "fraction": 0.02,
+   "approved": "2026-10-11",
+   "why": [
+    "The default is a tenth of the survey's own line. On Juaiko's 24.3 km",
+    "that is 2.4 km, and it pruned the whole western loop — 326 m, 485 m",
+    "and 306 m of walked boundary — as a dead end, then drew a 631 m line",
+    "straight across it. The loop is encircled by walked track.",
+    "",
+    "At a fiftieth, 486 m, the loop survives and the gap comes out as what",
+    "it really is: 84 m, where two walks of the same boundary pass each",
+    "other without either having an end at the crossing."
+   ]
   }
  },
  "Dusi — Zone 8": {

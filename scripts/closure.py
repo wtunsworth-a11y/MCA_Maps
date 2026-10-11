@@ -237,6 +237,29 @@ def approved_fix(unit: str | None, fix: str) -> bool:
     return fix in (register.get(unit) or {})
 
 
+def spur_limit(unit: str | None, default: float) -> float:
+    """How long a dead-end chain may be before it is pruned, for this survey.
+
+    The default is a tenth of the survey's own line, which on a 24 km survey
+    is 2.4 km — long enough to swallow real boundary. Juaiko's western loop
+    is walked right round and was pruned whole, and a 631 m line drawn
+    across it. Lowered per survey, by the person looking at the map it
+    changes, and at no other time.
+    """
+    if not unit:
+        return default
+    try:
+        import json
+        with open(APPROVED_FIXES_PATH, encoding="utf-8") as handle:
+            register = json.load(handle)
+    except (OSError, ValueError):
+        return default
+    entry = (register.get(unit) or {}).get("max_spur")
+    if not isinstance(entry, dict) or "fraction" not in entry:
+        return default
+    return float(entry["fraction"])
+
+
 
 def distinct_indices(parts: list, tolerance: float = DUPLICATE_TOLERANCE,
                      samples: int = 20) -> list:

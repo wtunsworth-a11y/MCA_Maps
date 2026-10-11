@@ -135,7 +135,8 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
                      "length": pinned[j].length, "live": True, "pinned": True}
                     for j in range(len(pinned))]
 
-    closure._prune_spurs(edges + pinned_edges, max_spur * distinct_m)
+    closure._prune_spurs(edges + pinned_edges,
+                         closure.spur_limit(unit, max_spur) * distinct_m)
     for edge in pinned_edges:
         edge["live"] = True
     live = [e for e in edges if e["live"]] or edges
