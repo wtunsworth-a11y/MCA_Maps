@@ -97,3 +97,11 @@ Order is the order we agreed them.
     while Sahirut was still open put three maps on the table at once and
     made it impossible to review any of them.
     *Sahirut, 11 Oct.*
+
+16. **An ambiguous clan name refuses rather than guesses.** `Murai` is
+    two clans, Zone 2 and Zone 7B, eight kilometres apart with different
+    stewards, and matching on the name drew both on one map under one
+    clan's polygon — rule 11 broken by the tool that was written to
+    enforce it. Naming a survey ambiguously now lists the candidates and
+    stops.
+    *Murai, 11 Oct.*

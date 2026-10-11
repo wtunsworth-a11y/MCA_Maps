@@ -1,0 +1,49 @@
+Murai (Z2): 32 recordings, 8.0 km raw
+  0 carrying sacred or tambu wording, 0.0 km
+
+   1              60 m
+   2             188 m
+   3             211 m
+   4             158 m
+   5              73 m
+   6             286 m
+   7             109 m
+   8             382 m
+   9             117 m
+  10             137 m
+  11             304 m
+  12             255 m
+  13             113 m
+  14              63 m
+  15              72 m
+  16              21 m
+  17              55 m
+  18             449 m
+  19             208 m
+  20             242 m
+  21              32 m
+  22             261 m
+  23             168 m
+  24             175 m
+  25             354 m
+  26             197 m
+  27             567 m
+        Nehemiah Nindori ,Murai clan
+        Stone bordering two clan,s
+  28             438 m
+        Nehemiah Nindori Murai clan
+        Dabud river
+  29             185 m
+        Nehemiah Nindori, Murai clan
+        Trial cland land boundary
+  30             774 m
+        Nehemiah Nindori,Murai clan
+        Village located on land boundary
+  31             638 m
+        Nehemiah Nindori,Murai clan
+        Ruat kir
+  32             748 m
+        Nehemiah Nindori,Murai clan
+        FaraivieMakaf
+
+Wrote /home/user/MCA_Maps/output/queries/Murai_Z2_everything.png

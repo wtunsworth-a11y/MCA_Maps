@@ -199,6 +199,34 @@ def _read_row_by_row(path: str):
     return frame.to_crs(dataio.METRIC_CRS)
 
 
+def resolve_unit(clan: str) -> str | None:
+    """The one survey unit this name means.
+
+    `Murai` is two clans — Zone 2 and Zone 7B, eight kilometres apart,
+    different stewards — and matching on the name drew both on one map
+    with one clan's polygon. Rule 11: never match by a typed name.
+    """
+    try:
+        tracks = gpd.read_file(dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
+                               layer="tracks_smoothed")
+    except Exception:
+        return None
+    tracks["_unit"] = dataio.survey_group(tracks)
+    named = tracks[tracks.clan.astype(str).str.lower()
+                   .str.startswith(clan.lower())]
+    if named.empty:
+        return None
+    units = sorted({str(u) for u in named._unit})
+    if len(units) > 1:
+        exact = [u for u in units if u.split(" — ")[0].lower() == clan.lower()]
+        if len(exact) != 1:
+            raise SystemExit(
+                f"{clan!r} means more than one survey — "
+                + ", ".join(units) + ". Name one of them.")
+        return exact[0]
+    return units[0]
+
+
 def source_files(clan: str) -> set:
     """The raw files the published layer says this clan came from.
 
@@ -216,8 +244,11 @@ def source_files(clan: str) -> set:
         return set()
     if "source_name" not in tracks.columns:
         return set()
-    want = tracks[tracks.clan.astype(str).str.lower()
-                  .str.startswith(clan.lower())]
+    unit = resolve_unit(clan)
+    if unit is None:
+        return set()
+    tracks["_unit"] = dataio.survey_group(tracks)
+    want = tracks[tracks._unit == unit]
     return {str(v).lower() for v in want.source_name if str(v) != "nan"}
 
 
@@ -231,9 +262,10 @@ def recordings(clan: str) -> list:
                 if not member.lower().endswith((".gpkg", ".sqlite")):
                     continue
                 folder = Path(member).parent.name or Path(member).stem
-                stem = Path(member).stem.lower()
-                if stem not in sources and clan.lower() not in (
-                        f"{folder} {Path(member).name}".lower()):
+                # Only the files this survey actually came from. No
+                # fallback to the name: that is what put two clans
+                # called Murai on one map.
+                if Path(member).stem.lower() not in sources:
                     continue
                 with tempfile.NamedTemporaryFile(suffix=".gpkg",
                                                  delete=False) as handle:
