@@ -81,8 +81,6 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     """
     walked = [p for p in parts if p is not None and p.length > 0]
     derived = [d for d in (derived or []) if d is not None and d.length > 0]
-    if closure.approved_fix(unit, "split_at_junctions"):
-        walked = closure.split_at_free_ends(walked, tolerance)
     parts = walked + derived
     if not parts:
         return None
