@@ -5,216 +5,178 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Mariura — clan land boundary</name>
-    <desc>Mariura, Zone 6. 33.7 km walked; 14.1 km still to walk in 11 gaps. 2 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Mariura, Zone 6. 33.7 km walked; 15.3 km still to walk in 9 gaps. 4 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.0766300" lon="148.4374190">
-    <name>GAP 1 OF 11 START</name>
-    <desc>0.24 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0772141" lon="148.4395439">
-    <name>GAP 1 OF 11 END</name>
-    <desc>0.24 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0781085" lon="148.4403361">
-    <name>GAP 2 OF 11 START</name>
-    <desc>0.69 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0721162" lon="148.4419652">
-    <name>GAP 2 OF 11 END</name>
-    <desc>0.69 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0682229" lon="148.4443727">
-    <name>GAP 3 OF 11 START</name>
-    <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0662203" lon="148.4471830">
-    <name>GAP 3 OF 11 END</name>
-    <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0690149" lon="148.4525556">
-    <name>GAP 4 OF 11 START</name>
-    <desc>0.96 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0603274" lon="148.4524153">
-    <name>GAP 4 OF 11 END</name>
-    <desc>0.96 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0721525" lon="148.4296670">
+    <name>GAP 1 OF 9 START</name>
+    <desc>2.78 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0602227" lon="148.4519357">
-    <name>GAP 5 OF 11 START</name>
-    <desc>1.71 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 1 OF 9 END</name>
+    <desc>2.78 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0538680" lon="148.4377675">
-    <name>GAP 5 OF 11 END</name>
-    <desc>1.71 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0603274" lon="148.4524153">
+    <name>GAP 2 OF 9 START</name>
+    <desc>0.96 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0648138" lon="148.4232634">
-    <name>GAP 6 OF 11 START</name>
-    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0690149" lon="148.4525556">
+    <name>GAP 2 OF 9 END</name>
+    <desc>0.96 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0655133" lon="148.4240170">
-    <name>GAP 6 OF 11 END</name>
-    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0662203" lon="148.4471830">
+    <name>GAP 3 OF 9 START</name>
+    <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0727960" lon="148.4276007">
-    <name>GAP 7 OF 11 START</name>
-    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0682229" lon="148.4443727">
+    <name>GAP 3 OF 9 END</name>
+    <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0736325" lon="148.4287766">
-    <name>GAP 7 OF 11 END</name>
-    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0721162" lon="148.4419652">
+    <name>GAP 4 OF 9 START</name>
+    <desc>0.62 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.0772141" lon="148.4395439">
+    <name>GAP 4 OF 9 END</name>
+    <desc>0.62 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.0781085" lon="148.4403361">
+    <name>GAP 5 OF 9 START</name>
+    <desc>1.30 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.0726680" lon="148.4298604">
+    <name>GAP 5 OF 9 END</name>
+    <desc>1.30 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0689511" lon="148.4249369">
-    <name>GAP 8 OF 11 START</name>
-    <desc>0.24 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0710773" lon="148.4250026">
-    <name>GAP 8 OF 11 END</name>
-    <desc>0.24 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 6 OF 9 START</name>
+    <desc>0.32 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0715428" lon="148.4261755">
-    <name>GAP 9 OF 11 START</name>
-    <desc>0.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 6 OF 9 END</name>
+    <desc>0.32 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0657674" lon="148.4239771">
-    <name>GAP 9 OF 11 END</name>
-    <desc>0.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0710773" lon="148.4250026">
+    <name>GAP 7 OF 9 START</name>
+    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0610606" lon="148.4274162">
-    <name>GAP 10 OF 11 START</name>
-    <desc>4.75 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0705566" lon="148.4230469">
+    <name>GAP 7 OF 9 END</name>
+    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.0705993" lon="148.4248062">
+    <name>GAP 8 OF 9 START</name>
+    <desc>4.43 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0669909" lon="148.3846528">
-    <name>GAP 10 OF 11 END</name>
-    <desc>4.75 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 8 OF 9 END</name>
+    <desc>4.43 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0669909" lon="148.3846528">
-    <name>GAP 11 OF 11 START</name>
-    <desc>4.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 9 OF 9 START</name>
+    <desc>4.25 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0702899" lon="148.4228475">
-    <name>GAP 11 OF 11 END</name>
-    <desc>4.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+  <wpt lat="-9.0648138" lon="148.4232634">
+    <name>GAP 9 OF 9 END</name>
+    <desc>4.25 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 11 - NOT WALKED - 0.24 km</name>
-    <desc>0.24 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 1 OF 9 - NOT WALKED - 2.78 km</name>
+    <desc>2.78 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.0766300" lon="148.4374190"/>
+      <trkpt lat="-9.0721525" lon="148.4296670"/>
+      <trkpt lat="-9.0602227" lon="148.4519357"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 2 OF 9 - NOT WALKED - 0.96 km</name>
+    <desc>0.96 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.0603274" lon="148.4524153"/>
+      <trkpt lat="-9.0690149" lon="148.4525556"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 3 OF 9 - NOT WALKED - 0.38 km</name>
+    <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.0662203" lon="148.4471830"/>
+      <trkpt lat="-9.0682229" lon="148.4443727"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 4 OF 9 - NOT WALKED - 0.62 km</name>
+    <desc>0.62 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.0721162" lon="148.4419652"/>
       <trkpt lat="-9.0772141" lon="148.4395439"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 11 - NOT WALKED - 0.69 km</name>
-    <desc>0.69 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 5 OF 9 - NOT WALKED - 1.30 km</name>
+    <desc>1.30 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.0781085" lon="148.4403361"/>
-      <trkpt lat="-9.0721162" lon="148.4419652"/>
+      <trkpt lat="-9.0726680" lon="148.4298604"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 11 - NOT WALKED - 0.38 km</name>
-    <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.0682229" lon="148.4443727"/>
-      <trkpt lat="-9.0662203" lon="148.4471830"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 4 OF 11 - NOT WALKED - 0.96 km</name>
-    <desc>0.96 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.0690149" lon="148.4525556"/>
-      <trkpt lat="-9.0603274" lon="148.4524153"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 5 OF 11 - NOT WALKED - 1.71 km</name>
-    <desc>1.71 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.0602227" lon="148.4519357"/>
-      <trkpt lat="-9.0538680" lon="148.4377675"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 6 OF 11 - NOT WALKED - 0.11 km</name>
-    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.0648138" lon="148.4232634"/>
-      <trkpt lat="-9.0655133" lon="148.4240170"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 7 OF 11 - NOT WALKED - 0.16 km</name>
-    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.0727960" lon="148.4276007"/>
-      <trkpt lat="-9.0736325" lon="148.4287766"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 8 OF 11 - NOT WALKED - 0.24 km</name>
-    <desc>0.24 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 6 OF 9 - NOT WALKED - 0.32 km</name>
+    <desc>0.32 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.0689511" lon="148.4249369"/>
-      <trkpt lat="-9.0710773" lon="148.4250026"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 9 OF 11 - NOT WALKED - 0.68 km</name>
-    <desc>0.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
-    <type>not-walked</type>
-    <trkseg>
       <trkpt lat="-9.0715428" lon="148.4261755"/>
-      <trkpt lat="-9.0657674" lon="148.4239771"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 10 OF 11 - NOT WALKED - 4.75 km</name>
-    <desc>4.75 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 7 OF 9 - NOT WALKED - 0.22 km</name>
+    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.0610606" lon="148.4274162"/>
+      <trkpt lat="-9.0710773" lon="148.4250026"/>
+      <trkpt lat="-9.0705566" lon="148.4230469"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 8 OF 9 - NOT WALKED - 4.43 km</name>
+    <desc>4.43 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.0705993" lon="148.4248062"/>
       <trkpt lat="-9.0669909" lon="148.3846528"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 11 OF 11 - NOT WALKED - 4.21 km</name>
-    <desc>4.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
+    <name>GAP 9 OF 9 - NOT WALKED - 4.25 km</name>
+    <desc>4.25 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Mariura, Zone 6.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.0669909" lon="148.3846528"/>
-      <trkpt lat="-9.0702899" lon="148.4228475"/>
+      <trkpt lat="-9.0648138" lon="148.4232634"/>
     </trkseg>
   </trk>
   <trk>

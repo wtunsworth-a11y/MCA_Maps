@@ -5,45 +5,45 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Marang — clan land boundary</name>
-    <desc>Marang, Zone 7B. 8.3 km walked; 5.5 km still to walk in 2 gaps</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Marang, Zone 7B. 8.3 km walked; 5.1 km still to walk in 2 gaps</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1621096" lon="148.3485121">
+  <wpt lat="-9.1657753" lon="148.3479060">
     <name>GAP 1 OF 2 START</name>
-    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
+    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1615478" lon="148.3498633">
     <name>GAP 1 OF 2 END</name>
-    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
+    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1377113" lon="148.3817536">
     <name>GAP 2 OF 2 START</name>
-    <desc>5.33 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
+    <desc>4.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1712317" lon="148.3468900">
+  <wpt lat="-9.1621096" lon="148.3485121">
     <name>GAP 2 OF 2 END</name>
-    <desc>5.33 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
+    <desc>4.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 2 - NOT WALKED - 0.16 km</name>
-    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
+    <name>GAP 1 OF 2 - NOT WALKED - 0.51 km</name>
+    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1621096" lon="148.3485121"/>
+      <trkpt lat="-9.1657753" lon="148.3479060"/>
       <trkpt lat="-9.1615478" lon="148.3498633"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 2 - NOT WALKED - 5.33 km</name>
-    <desc>5.33 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
+    <name>GAP 2 OF 2 - NOT WALKED - 4.54 km</name>
+    <desc>4.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Marang, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1377113" lon="148.3817536"/>
-      <trkpt lat="-9.1712317" lon="148.3468900"/>
+      <trkpt lat="-9.1621096" lon="148.3485121"/>
     </trkseg>
   </trk>
   <trk>

@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `0f0323c428196f7ddae3f970edbecc1bd3a18f7c`
+- **Commit:** `57c6018a47cf85bec35d1d9f76323f44e8b29366`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 
@@ -18,10 +18,12 @@ What produced the current results. Regenerated on every pipeline run — no date
 | shapely | 2.1.2 |
 | pyogrio | 0.13.0 |
 | rasterio | 1.4.4 |
+| pysheds | 0.5 |
 | numpy | 2.4.6 |
 | pandas | 3.0.6 |
 | matplotlib | 3.11.2 |
 | folium | 0.20.0 |
+| scipy | 1.17.1 |
 | contextily | 1.7.1 |
 | geos | 3.13.1 |
 | gdal | 3.10.3 |
@@ -66,9 +68,9 @@ If a figure changes between runs, compare these digests first: they say immediat
 | zones | Zone 2, Zone 3, Zone 6, Zone 7A, Zone 7B, Zone 8 |
 | smoothed_km | 1139.9 |
 | polygons | 36 |
-| polygons_surveyed | 6 |
-| area_ha_total | 33707.2 |
-| area_ha_surveyed | 5168.5 |
+| polygons_surveyed | 9 |
+| area_ha_total | 28305.0 |
+| area_ha_surveyed | 6103.1 |
 
 ## Data sources
 

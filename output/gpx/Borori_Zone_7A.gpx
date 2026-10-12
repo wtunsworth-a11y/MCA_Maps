@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Borori — clan land boundary</name>
-    <desc>Borori, Zone 7A. 32.7 km walked; 6.9 km still to walk in 7 gaps. 3 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Borori, Zone 7A. 32.7 km walked; 6.6 km still to walk in 7 gaps. 3 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1003662" lon="148.4365162">
     <name>GAP 1 OF 7 START</name>
@@ -50,12 +50,12 @@
   </wpt>
   <wpt lat="-9.0745698" lon="148.4430710">
     <name>GAP 5 OF 7 START</name>
-    <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Borori, Zone 7A.</desc>
+    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Borori, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0717716" lon="148.4446290">
+  <wpt lat="-9.0736066" lon="148.4433251">
     <name>GAP 5 OF 7 END</name>
-    <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Borori, Zone 7A.</desc>
+    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Borori, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0801463" lon="148.4270142">
@@ -115,12 +115,12 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 5 OF 7 - NOT WALKED - 0.35 km</name>
-    <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Borori, Zone 7A.</desc>
+    <name>GAP 5 OF 7 - NOT WALKED - 0.11 km</name>
+    <desc>0.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Borori, Zone 7A.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.0745698" lon="148.4430710"/>
-      <trkpt lat="-9.0717716" lon="148.4446290"/>
+      <trkpt lat="-9.0736066" lon="148.4433251"/>
     </trkseg>
   </trk>
   <trk>

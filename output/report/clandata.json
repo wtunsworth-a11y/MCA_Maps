@@ -91,6 +91,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 166.1,
   "map": "Asingi_Zone_2.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Asingi_Zone_2.png",
+   "todo": []
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -166,6 +171,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 3506.7,
   "map": "Asoro_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -224,6 +230,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Bujevi_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -263,27 +270,11 @@
   "bridges": 4,
   "overlaps": [
    {
-    "with": "Tuoko",
-    "ha": 6.7,
-    "pct": 6.3,
-    "beyond_tol_ha": 4.9,
-    "beyond_tol_pct": 4.6,
-    "verdict": "overlap"
-   },
-   {
     "with": "Asingi",
     "ha": 4.1,
     "pct": 3.9,
     "beyond_tol_ha": 2.6,
     "beyond_tol_pct": 2.5,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Nituri",
-    "ha": 3.4,
-    "pct": 3.2,
-    "beyond_tol_ha": 2.4,
-    "beyond_tol_pct": 2.3,
     "verdict": "overlap"
    },
    {
@@ -343,6 +334,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 106.6,
   "map": "Gariniko_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -373,20 +365,28 @@
   "walked_km": 24.3,
   "spur_km": 5.81,
   "status": "near",
-  "chains": 7,
-  "gap_km": 1.88,
-  "gap_pct": 8.5,
-  "area_ha": 1297.5,
+  "chains": 4,
+  "gap_km": 1.89,
+  "gap_pct": 8.3,
+  "area_ha": 1295.1,
   "basis": "inferred",
   "parcels": 1,
-  "bridges": 7,
+  "bridges": 3,
   "overlaps": [
    {
     "with": "Sukandi",
     "ha": 204.6,
     "pct": 15.8,
     "beyond_tol_ha": 201.6,
-    "beyond_tol_pct": 15.5,
+    "beyond_tol_pct": 15.6,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Manoko",
+    "ha": 106.2,
+    "pct": 8.2,
+    "beyond_tol_ha": 104.3,
+    "beyond_tol_pct": 8.1,
     "verdict": "overlap"
    },
    {
@@ -395,14 +395,6 @@
     "pct": 1.2,
     "beyond_tol_ha": 14.7,
     "beyond_tol_pct": 1.1,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Manoko",
-    "ha": 12.5,
-    "pct": 1.0,
-    "beyond_tol_ha": 7.3,
-    "beyond_tol_pct": 0.6,
     "verdict": "overlap"
    }
   ],
@@ -434,18 +426,34 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 1297.5,
+  "join_joined_ha": 1295.1,
   "map": "Juaiko_Zone_2.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Juaiko_Zone_2.png",
+   "todo": [
+    "One real gap runs through the whole western section \u2014 gap 2 at 917 m, gap 9 at 181 m and gap 10 at 84 m. Walk it, or tell us what feature the boundary follows.",
+    "Two inclusions in the south to settle: in or out.",
+    "Philip Jukaro states that Juaiko, Manoevkor and Rumbieh are three clans under the umbrella name Sukandi. Sukandi is held here as a clan in its own right. Nothing has been changed over it.",
+    "Ask what the 60 m Taffkin fall means for the boundary at the 105 m stretch joined straight on the eastern side."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 4,
    "internal_ha": 4.62
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "PRIORITY: return to the clan. The 917 m gap needs walking, not inferring, and the four interior lines need the clan to say which are boundary along the rivers and which are named places. Nothing here should be closed by editing.",
+   "One real gap, on the western edge by the Manoko boundary: 917 m, with only 12% of it having any walked line within 50 m. It needs walking.",
+   "Six other drawn lines, 966 m between them, are not gaps \u2014 they lie 82-100% within 50 m of ground already walked and only need their ends tying. Not yet done.",
+   "Four lines run inside the boundary rather than along it, and they are two different things. Two of them are the steward describing the boundary as following rivers \u2014 down the Salm to the Makamata fall, on to the Ujai, then up the Ujai to Sinigir. If that is the boundary, the mapped edge is in the wrong place along those stretches and the clan holds more than is shown. The other two are named places with histories attached. The clan needs to be shown the numbered map and asked which is which.",
+   "See output/queries/juaiko_to_clarify.png. The numbers on that map are deliberately not labelled; what each one is came from the stewards' own notes and is not for a document."
+  ],
+  "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Juaiko_Zone_2.gpx",
-  "gpx_gaps": 6
+  "gpx_gaps": 4
  },
  {
   "unit": "Kasaki \u2014 Zone 2",
@@ -465,23 +473,15 @@
   "n_stewards": 1,
   "walked_km": 15.13,
   "spur_km": 3.11,
-  "status": "near",
-  "chains": 4,
-  "gap_km": 1.34,
-  "gap_pct": 9.8,
+  "status": "closed",
+  "chains": 1,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
   "area_ha": 540.8,
-  "basis": "inferred",
+  "basis": "surveyed",
   "parcels": 1,
-  "bridges": 4,
+  "bridges": 0,
   "overlaps": [
-   {
-    "with": "Tuoko",
-    "ha": 156.6,
-    "pct": 29.0,
-    "beyond_tol_ha": 154.9,
-    "beyond_tol_pct": 28.6,
-    "verdict": "overlap"
-   },
    {
     "with": "Murai (Z2)",
     "ha": 154.4,
@@ -491,19 +491,19 @@
     "verdict": "overlap"
    },
    {
-    "with": "Nituri",
-    "ha": 59.3,
-    "pct": 11.0,
-    "beyond_tol_ha": 59.0,
-    "beyond_tol_pct": 10.9,
+    "with": "Tuoko",
+    "ha": 45.4,
+    "pct": 8.4,
+    "beyond_tol_ha": 44.0,
+    "beyond_tol_pct": 8.1,
     "verdict": "overlap"
    },
    {
     "with": "Majanko",
-    "ha": 39.9,
-    "pct": 7.4,
-    "beyond_tol_ha": 38.9,
-    "beyond_tol_pct": 7.2,
+    "ha": 39.4,
+    "pct": 7.3,
+    "beyond_tol_ha": 38.4,
+    "beyond_tol_pct": 7.1,
     "verdict": "overlap"
    },
    {
@@ -558,13 +558,22 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 540.8,
   "map": "Kasaki_Zone_2.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Kasaki_Zone_2.png",
+   "todo": [
+    "Confirm the 0.19 km of joins between recorded open ends. The notch on the boundary was looked at and is not an error."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "This boundary was walked. What looked like 1.3 km of gap was the closing step drawing end-to-end across stretches the steward had already covered \u2014 every metre of it had walked line within 50 m. The eight loose ends are tied to the line beside them instead, 216 m in all, and the boundary closes on the walk."
+  ],
+  "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Kasaki_Zone_2.gpx",
   "gpx_gaps": 2
@@ -597,19 +606,11 @@
   "bridges": 0,
   "overlaps": [
    {
-    "with": "Manoko",
-    "ha": 65.0,
-    "pct": 23.6,
-    "beyond_tol_ha": 64.5,
-    "beyond_tol_pct": 23.4,
-    "verdict": "overlap"
-   },
-   {
     "with": "Kasaki",
-    "ha": 39.9,
-    "pct": 14.5,
-    "beyond_tol_ha": 38.9,
-    "beyond_tol_pct": 14.1,
+    "ha": 39.4,
+    "pct": 14.3,
+    "beyond_tol_ha": 38.4,
+    "beyond_tol_pct": 13.9,
     "verdict": "overlap"
    },
    {
@@ -646,6 +647,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 275.8,
   "map": "Majanko_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -677,27 +679,27 @@
   "spur_km": 1.81,
   "status": "open",
   "chains": 3,
-  "gap_km": 3.85,
-  "gap_pct": 32.1,
-  "area_ha": 404.0,
+  "gap_km": 2.86,
+  "gap_pct": 23.9,
+  "area_ha": 118.0,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 3,
   "overlaps": [
    {
-    "with": "Majanko",
-    "ha": 65.0,
-    "pct": 16.1,
-    "beyond_tol_ha": 64.5,
-    "beyond_tol_pct": 16.0,
+    "with": "Juaiko",
+    "ha": 106.2,
+    "pct": 90.0,
+    "beyond_tol_ha": 104.3,
+    "beyond_tol_pct": 88.4,
     "verdict": "overlap"
    },
    {
-    "with": "Juaiko",
-    "ha": 12.5,
-    "pct": 3.1,
-    "beyond_tol_ha": 7.3,
-    "beyond_tol_pct": 1.8,
+    "with": "Sukandi",
+    "ha": 12.1,
+    "pct": 10.2,
+    "beyond_tol_ha": 9.5,
+    "beyond_tol_pct": 8.0,
     "verdict": "overlap"
    }
   ],
@@ -734,8 +736,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 404.0,
+  "join_joined_ha": 118.0,
   "map": "Manoko_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -745,7 +748,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Manoko_Zone_2.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 2
  },
  {
   "unit": "Murai (Z2) \u2014 Zone 2",
@@ -834,6 +837,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 198.9,
   "map": "Murai_Z2_Zone_2.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Murai_Z2_Zone_2.png",
+   "todo": []
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -883,35 +891,19 @@
   "spur_km": 10.45,
   "status": "open",
   "chains": 14,
-  "gap_km": 11.13,
-  "gap_pct": 29.4,
-  "area_ha": 5277.0,
+  "gap_km": 11.18,
+  "gap_pct": 29.5,
+  "area_ha": 5171.3,
   "basis": "inferred",
-  "parcels": 2,
+  "parcels": 1,
   "bridges": 14,
   "overlaps": [
    {
     "with": "Tuoko",
-    "ha": 2198.8,
-    "pct": 41.7,
-    "beyond_tol_ha": 2197.8,
-    "beyond_tol_pct": 41.6,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Kasaki",
-    "ha": 59.3,
-    "pct": 1.1,
-    "beyond_tol_ha": 59.0,
-    "beyond_tol_pct": 1.1,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Gariniko",
-    "ha": 3.4,
-    "pct": 0.1,
-    "beyond_tol_ha": 2.4,
-    "beyond_tol_pct": 0.0,
+    "ha": 1835.0,
+    "pct": 35.5,
+    "beyond_tol_ha": 1834.3,
+    "beyond_tol_pct": 35.5,
     "verdict": "overlap"
    }
   ],
@@ -953,8 +945,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 5277.0,
+  "join_joined_ha": 5171.3,
   "map": "Nituri_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1054,6 +1047,11 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1568.8,
   "map": "Rondi_Zone_2.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Rondi_Zone_2.png",
+   "todo": []
+  },
   "sacred": {
    "tagged": 0,
    "internal": 5,
@@ -1117,6 +1115,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Rumbi_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1189,12 +1188,12 @@
     "verdict": "overlap"
    },
    {
-    "with": "Jariji",
-    "ha": 0.1,
-    "pct": 0.0,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
+    "with": "Manoko",
+    "ha": 12.1,
+    "pct": 0.6,
+    "beyond_tol_ha": 9.5,
+    "beyond_tol_pct": 0.5,
+    "verdict": "overlap"
    },
    {
     "with": "Binunkol",
@@ -1245,6 +1244,16 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1900.9,
   "map": "Sukandi_Zone_2.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Sukandi_Zone_2.png",
+   "todo": [
+    "Ask Rodney Ajinko about Mafua. His own note records it as being in a land dispute and inside this boundary: 'Mafua is also included in land dispute. (Short history) of mafua. Thise please is bettle field before the time of angesters many evidence are located there to proved the history.'",
+    "Resolve the umbrella question. Philip Jukaro of Juaiko states that Juaiko, Manoevkor and Rumbieh are three clans under the umbrella name Sukandi. Sukandi is held here as a clan in its own right. Two stewards are using the name differently and neither boundary has been changed over it.",
+    "Name the one recording that is walked but unnamed.",
+    "Confirm Millinton Beso's three sacred walks \u2014 Mitakin, Birezama and Bijanuri, 10.6 km \u2014 sit inside the boundary and carry no part of it."
+   ]
+  },
   "sacred": {
    "tagged": 3,
    "internal": 0,
@@ -1285,43 +1294,35 @@
   "spur_km": 9.47,
   "status": "open",
   "chains": 8,
-  "gap_km": 17.08,
-  "gap_pct": 37.7,
-  "area_ha": 3676.5,
+  "gap_km": 15.79,
+  "gap_pct": 34.8,
+  "area_ha": 3027.2,
   "basis": "inferred",
-  "parcels": 1,
+  "parcels": 2,
   "bridges": 8,
   "overlaps": [
    {
     "with": "Nituri",
-    "ha": 2198.8,
-    "pct": 59.8,
-    "beyond_tol_ha": 2197.8,
-    "beyond_tol_pct": 59.8,
+    "ha": 1835.0,
+    "pct": 60.6,
+    "beyond_tol_ha": 1834.3,
+    "beyond_tol_pct": 60.6,
     "verdict": "overlap"
    },
    {
     "with": "Kasaki",
-    "ha": 156.6,
-    "pct": 4.3,
-    "beyond_tol_ha": 154.9,
-    "beyond_tol_pct": 4.2,
+    "ha": 45.4,
+    "pct": 1.5,
+    "beyond_tol_ha": 44.0,
+    "beyond_tol_pct": 1.5,
     "verdict": "overlap"
    },
    {
     "with": "Majanko",
     "ha": 12.5,
-    "pct": 0.3,
+    "pct": 0.4,
     "beyond_tol_ha": 12.4,
-    "beyond_tol_pct": 0.3,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Gariniko",
-    "ha": 6.7,
-    "pct": 0.2,
-    "beyond_tol_ha": 4.9,
-    "beyond_tol_pct": 0.1,
+    "beyond_tol_pct": 0.4,
     "verdict": "overlap"
    }
   ],
@@ -1368,8 +1369,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 3676.5,
+  "join_joined_ha": 3027.2,
   "map": "Tuoko_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1379,7 +1381,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Tuoko_Zone_2.gpx",
-  "gpx_gaps": 7
+  "gpx_gaps": 6
  },
  {
   "unit": "Zambiko \u2014 Zone 2",
@@ -1458,6 +1460,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Zambiko_Zone_2.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1525,6 +1528,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Deari_Zone_3.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1582,6 +1586,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 9.5,
   "map": "Giroiko_Zone_3.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1639,6 +1644,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Gumuri_Zone_3.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1706,6 +1712,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Nui_Zone_3.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1759,6 +1766,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Savasi_Zone_3.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1846,6 +1854,13 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1058.0,
   "map": "Manuvoora_Zone_6.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Manuvoora_Zone_6.png",
+   "todo": [
+    "Confirm the 2.93 km that nobody walked. One section is traced along a river the field says the boundary follows and cannot be walked; the rest are joins between recorded open ends, decided from the map. All of it is drawn apart from the walked line on the map."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1892,41 +1907,33 @@
   "spur_km": 0.0,
   "status": "open",
   "chains": 13,
-  "gap_km": 14.25,
-  "gap_pct": 42.3,
-  "area_ha": 861.3,
+  "gap_km": 15.43,
+  "gap_pct": 45.8,
+  "area_ha": 299.9,
   "basis": "inferred",
-  "parcels": 1,
+  "parcels": 2,
   "bridges": 13,
   "overlaps": [
    {
     "with": "Naharaura",
-    "ha": 149.0,
-    "pct": 17.3,
-    "beyond_tol_ha": 146.6,
-    "beyond_tol_pct": 17.0,
+    "ha": 80.8,
+    "pct": 26.9,
+    "beyond_tol_ha": 77.3,
+    "beyond_tol_pct": 25.8,
     "verdict": "overlap"
    },
    {
     "with": "Borori",
-    "ha": 56.1,
-    "pct": 6.5,
-    "beyond_tol_ha": 52.4,
-    "beyond_tol_pct": 6.1,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Darekikol",
-    "ha": 50.3,
-    "pct": 5.8,
-    "beyond_tol_ha": 49.8,
-    "beyond_tol_pct": 5.8,
+    "ha": 3.5,
+    "pct": 1.2,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.5,
     "verdict": "overlap"
    },
    {
     "with": "Sahirut",
-    "ha": 1.7,
-    "pct": 0.2,
+    "ha": 1.1,
+    "pct": 0.4,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -1955,8 +1962,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 861.3,
+  "join_joined_ha": 299.9,
   "map": "Mariura_Zone_6.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1966,7 +1974,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Mariura_Zone_6.gpx",
-  "gpx_gaps": 11
+  "gpx_gaps": 9
  },
  {
   "unit": "Naharaura \u2014 Zone 6",
@@ -1988,28 +1996,28 @@
   "spur_km": 0.0,
   "status": "near",
   "chains": 4,
-  "gap_km": 2.49,
-  "gap_pct": 7.6,
-  "area_ha": 594.2,
+  "gap_km": 1.03,
+  "gap_pct": 3.2,
+  "area_ha": 552.2,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 4,
   "overlaps": [
    {
     "with": "Mariura",
-    "ha": 149.0,
-    "pct": 25.1,
-    "beyond_tol_ha": 146.6,
-    "beyond_tol_pct": 24.7,
+    "ha": 80.8,
+    "pct": 14.6,
+    "beyond_tol_ha": 77.3,
+    "beyond_tol_pct": 14.0,
     "verdict": "overlap"
    },
    {
     "with": "Pina Ora",
-    "ha": 59.6,
-    "pct": 10.0,
-    "beyond_tol_ha": 59.0,
-    "beyond_tol_pct": 9.9,
-    "verdict": "overlap"
+    "ha": 1.4,
+    "pct": 0.2,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
    }
   ],
   "shared_lines": [
@@ -2025,8 +2033,18 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 594.2,
+  "join_joined_ha": 552.2,
   "map": "Naharaura_Zone_6.png",
+  "approved": {
+   "on": "2026-10-11",
+   "map": "Naharaura_Zone_6.png",
+   "todo": [
+    "Gap of 546 m across the northern lobe, running north-south between (656218,8998916) and (656307,8999455). Walk it, or confirm what feature the boundary follows there \u2014 about half of it lies within 60 m of a modelled watercourse, and a short walked spur inside the lobe stops dead as though the stretch was started and turned back from.",
+    "Gap of 328 m on the south-eastern edge, between (656473,8997619) and (656566,8997304). Every metre lies within 60 m of a modelled watercourse, so the clan may be able to confirm it follows that creek rather than walking it. The modelled drainage comes from a 30 m surface model and is not a survey.",
+    "Two short gaps at the top of the northern lobe, 99 m and 57 m, on no modelled feature.",
+    "Zechariah Sasavo's two recordings cover the same ground twice: 32.6 km recorded over about 16 km of distinct walking. Any figure reporting distance walked should say which it means."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2075,6 +2093,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Nupa_Ora_Zone_6.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2105,22 +2124,14 @@
   "walked_km": 18.85,
   "spur_km": 3.91,
   "status": "near",
-  "chains": 4,
-  "gap_km": 1.43,
-  "gap_pct": 8.3,
+  "chains": 3,
+  "gap_km": 1.39,
+  "gap_pct": 8.0,
   "area_ha": 812.2,
   "basis": "inferred",
   "parcels": 1,
-  "bridges": 4,
+  "bridges": 3,
   "overlaps": [
-   {
-    "with": "Naharaura",
-    "ha": 59.6,
-    "pct": 7.3,
-    "beyond_tol_ha": 59.0,
-    "beyond_tol_pct": 7.3,
-    "verdict": "overlap"
-   },
    {
     "with": "Sahirut",
     "ha": 14.5,
@@ -2136,6 +2147,14 @@
     "beyond_tol_ha": 10.4,
     "beyond_tol_pct": 1.3,
     "verdict": "overlap"
+   },
+   {
+    "with": "Naharaura",
+    "ha": 1.4,
+    "pct": 0.2,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
    }
   ],
   "shared_lines": [
@@ -2158,13 +2177,26 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 812.2,
   "map": "Pina_Ora_Zone_6.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Pina_Ora_Zone_6.png",
+   "todo": [
+    "Walk gap 1, 788 m, or name the feature the boundary follows there.",
+    "Walk gap 2, 397 m, or name the feature the boundary follows there.",
+    "Gap 3, 206 m, is part of what needs cleaning up at gap 2 and stands as it is until gap 2 is settled."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "PRIORITY: return to the clan. Both gaps, 788 m and 397 m on the eastern edge, need walking. Real gaps need real data; neither should be closed by editing.",
+   "Two real gaps, both on the eastern edge: 788 m and 397 m, where the recording stops and restarts with little or nothing walked between \u2014 only 37% and 31% of them have any walked line within 50 m. Both are easily fixed; a short walk closes them and no part of it is difficult ground.",
+   "A further 245 m of what is drawn is not a gap at all. Two of the four lines lie wholly within 50 m of ground the steward already walked, so there the boundary is recorded and only the ends need tying. That has not been done yet."
+  ],
+  "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Pina_Ora_Zone_6.gpx",
   "gpx_gaps": 3
@@ -2196,14 +2228,14 @@
   "n_stewards": 2,
   "walked_km": 22.97,
   "spur_km": 2.99,
-  "status": "near",
+  "status": "closed",
   "chains": 1,
-  "gap_km": 0.22,
-  "gap_pct": 0.9,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
   "area_ha": 345.0,
-  "basis": "inferred",
+  "basis": "surveyed",
   "parcels": 1,
-  "bridges": 1,
+  "bridges": 0,
   "overlaps": [
    {
     "with": "Manuvoora",
@@ -2223,8 +2255,8 @@
    },
    {
     "with": "Mariura",
-    "ha": 1.7,
-    "pct": 0.5,
+    "ha": 1.1,
+    "pct": 0.3,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -2250,13 +2282,23 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 345.0,
   "map": "Sahirut_Zone_6.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Sahirut_Zone_6.png",
+   "todo": [
+    "Confirm the 0.22 km that nobody walked."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "Closed without further survey. 217 m remained open and there is nothing there worth a return to the field, so the map is treated as finished. No track records that stretch, so it adds no walked distance. The clan has not seen this line and has not agreed to it \u2014 it is the survey team's judgement, not the clan's.",
+   "Four of Solomon Makanisa's tracks, 15.2 km, carry Lenard Urami's name in their attributes. Flagged, never reassigned \u2014 if the attribution is wrong the two stewards' distances are close to reversed."
+  ],
+  "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Sahirut_Zone_6.gpx",
   "gpx_gaps": 1
@@ -2281,17 +2323,17 @@
   "spur_km": 1.78,
   "status": "open",
   "chains": 3,
-  "gap_km": 3.97,
-  "gap_pct": 54.2,
-  "area_ha": 158.5,
+  "gap_km": 3.64,
+  "gap_pct": 49.7,
+  "area_ha": 51.7,
   "basis": "inferred",
-  "parcels": 1,
+  "parcels": 2,
   "bridges": 3,
   "overlaps": [
    {
     "with": "Darekikol",
     "ha": 0.5,
-    "pct": 0.3,
+    "pct": 1.0,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -2310,8 +2352,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 158.5,
+  "join_joined_ha": 51.7,
   "map": "Bimkol_Zone_7A.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2352,27 +2395,27 @@
   "spur_km": 8.01,
   "status": "open",
   "chains": 10,
-  "gap_km": 6.97,
-  "gap_pct": 23.6,
-  "area_ha": 638.7,
+  "gap_km": 6.72,
+  "gap_pct": 22.8,
+  "area_ha": 639.8,
   "basis": "inferred",
   "parcels": 2,
   "bridges": 10,
   "overlaps": [
    {
     "with": "Darekikol",
-    "ha": 332.9,
-    "pct": 52.1,
-    "beyond_tol_ha": 329.2,
-    "beyond_tol_pct": 51.5,
+    "ha": 322.0,
+    "pct": 50.3,
+    "beyond_tol_ha": 320.1,
+    "beyond_tol_pct": 50.0,
     "verdict": "overlap"
    },
    {
     "with": "Mariura",
-    "ha": 56.1,
-    "pct": 8.8,
-    "beyond_tol_ha": 52.4,
-    "beyond_tol_pct": 8.2,
+    "ha": 3.5,
+    "pct": 0.5,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.2,
     "verdict": "overlap"
    },
    {
@@ -2407,8 +2450,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 638.7,
+  "join_joined_ha": 639.8,
   "map": "Borori_Zone_7A.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2449,27 +2493,19 @@
   "spur_km": 6.68,
   "status": "open",
   "chains": 7,
-  "gap_km": 5.92,
-  "gap_pct": 22.8,
-  "area_ha": 587.5,
+  "gap_km": 6.49,
+  "gap_pct": 24.9,
+  "area_ha": 568.9,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 7,
   "overlaps": [
    {
     "with": "Borori",
-    "ha": 332.9,
-    "pct": 56.7,
-    "beyond_tol_ha": 329.2,
-    "beyond_tol_pct": 56.0,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Mariura",
-    "ha": 50.3,
-    "pct": 8.6,
-    "beyond_tol_ha": 49.8,
-    "beyond_tol_pct": 8.5,
+    "ha": 322.0,
+    "pct": 56.6,
+    "beyond_tol_ha": 320.1,
+    "beyond_tol_pct": 56.3,
     "verdict": "overlap"
    },
    {
@@ -2499,8 +2535,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 587.5,
+  "join_joined_ha": 568.9,
   "map": "Darekikol_Zone_7A.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2510,7 +2547,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Darekikol_Zone_7A.gpx",
-  "gpx_gaps": 6
+  "gpx_gaps": 5
  },
  {
   "unit": "Abuankol \u2014 Zone 7B",
@@ -2532,8 +2569,8 @@
   "spur_km": 0.0,
   "status": "open",
   "chains": 3,
-  "gap_km": 1.26,
-  "gap_pct": 245.3,
+  "gap_km": 1.17,
+  "gap_pct": 227.5,
   "area_ha": null,
   "basis": null,
   "parcels": 0,
@@ -2589,6 +2626,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Abuankol_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2620,41 +2658,41 @@
   "spur_km": 4.03,
   "status": "open",
   "chains": 6,
-  "gap_km": 4.49,
-  "gap_pct": 26.0,
-  "area_ha": 591.8,
+  "gap_km": 3.55,
+  "gap_pct": 20.5,
+  "area_ha": 662.5,
   "basis": "inferred",
-  "parcels": 3,
+  "parcels": 1,
   "bridges": 6,
   "overlaps": [
    {
     "with": "Natang",
-    "ha": 346.3,
-    "pct": 58.5,
-    "beyond_tol_ha": 342.3,
-    "beyond_tol_pct": 57.8,
+    "ha": 36.6,
+    "pct": 5.5,
+    "beyond_tol_ha": 36.0,
+    "beyond_tol_pct": 5.4,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 5.2,
-    "pct": 0.9,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
+    "ha": 9.6,
+    "pct": 1.4,
+    "beyond_tol_ha": 9.1,
+    "beyond_tol_pct": 1.4,
+    "verdict": "overlap"
    },
    {
     "with": "Wohukol",
-    "ha": 3.1,
-    "pct": 0.5,
+    "ha": 4.0,
+    "pct": 0.6,
     "beyond_tol_ha": 1.4,
     "beyond_tol_pct": 0.2,
     "verdict": "overlap"
    },
    {
     "with": "Jariji",
-    "ha": 0.5,
-    "pct": 0.1,
+    "ha": 0.1,
+    "pct": 0.0,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -2693,8 +2731,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 591.8,
+  "join_joined_ha": 662.5,
   "map": "Ambunkol_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2704,7 +2743,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Ambunkol_Zone_7B.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 4
  },
  {
   "unit": "Binunkol \u2014 Zone 7B",
@@ -2735,8 +2774,8 @@
   "overlaps": [
    {
     "with": "Jariji",
-    "ha": 45.1,
-    "pct": 4.4,
+    "ha": 44.5,
+    "pct": 4.3,
     "beyond_tol_ha": 42.0,
     "beyond_tol_pct": 4.1,
     "verdict": "overlap"
@@ -2847,6 +2886,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1033.0,
   "map": "Binunkol_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2887,33 +2927,25 @@
   "spur_km": 4.24,
   "status": "open",
   "chains": 7,
-  "gap_km": 7.22,
-  "gap_pct": 21.4,
-  "area_ha": 1234.6,
+  "gap_km": 10.56,
+  "gap_pct": 31.3,
+  "area_ha": 382.5,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 7,
   "overlaps": [
    {
     "with": "Manang",
-    "ha": 311.5,
-    "pct": 25.2,
-    "beyond_tol_ha": 311.1,
-    "beyond_tol_pct": 25.2,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Sugulkol",
-    "ha": 51.5,
-    "pct": 4.2,
-    "beyond_tol_ha": 50.8,
-    "beyond_tol_pct": 4.1,
+    "ha": 114.1,
+    "pct": 29.8,
+    "beyond_tol_ha": 113.5,
+    "beyond_tol_pct": 29.7,
     "verdict": "overlap"
    },
    {
     "with": "Binunkol",
     "ha": 0.4,
-    "pct": 0.0,
+    "pct": 0.1,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -2970,8 +3002,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 1234.6,
+  "join_joined_ha": 382.5,
   "map": "Ginangi_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3012,47 +3045,39 @@
   "spur_km": 5.77,
   "status": "open",
   "chains": 6,
-  "gap_km": 9.04,
-  "gap_pct": 36.6,
-  "area_ha": 696.1,
+  "gap_km": 9.94,
+  "gap_pct": 40.2,
+  "area_ha": 519.3,
   "basis": "inferred",
   "parcels": 2,
   "bridges": 6,
   "overlaps": [
    {
     "with": "Wohukol",
-    "ha": 61.8,
-    "pct": 8.9,
-    "beyond_tol_ha": 59.4,
-    "beyond_tol_pct": 8.5,
+    "ha": 72.9,
+    "pct": 14.0,
+    "beyond_tol_ha": 72.5,
+    "beyond_tol_pct": 14.0,
     "verdict": "overlap"
    },
    {
     "with": "Binunkol",
-    "ha": 45.1,
-    "pct": 6.5,
+    "ha": 44.5,
+    "pct": 8.6,
     "beyond_tol_ha": 42.0,
-    "beyond_tol_pct": 6.0,
+    "beyond_tol_pct": 8.1,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 7.5,
-    "pct": 1.1,
-    "beyond_tol_ha": 7.1,
-    "beyond_tol_pct": 1.0,
+    "ha": 4.3,
+    "pct": 0.8,
+    "beyond_tol_ha": 2.9,
+    "beyond_tol_pct": 0.6,
     "verdict": "overlap"
    },
    {
     "with": "Ambunkol",
-    "ha": 0.5,
-    "pct": 0.1,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Sukandi",
     "ha": 0.1,
     "pct": 0.0,
     "beyond_tol_ha": 0.0,
@@ -3103,8 +3128,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 696.1,
+  "join_joined_ha": 519.3,
   "map": "Jariji_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3145,16 +3171,16 @@
   "overlaps": [
    {
     "with": "Ginangi",
-    "ha": 311.5,
-    "pct": 88.3,
-    "beyond_tol_ha": 311.1,
-    "beyond_tol_pct": 88.1,
+    "ha": 114.1,
+    "pct": 32.3,
+    "beyond_tol_ha": 113.5,
+    "beyond_tol_pct": 32.2,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 2.7,
-    "pct": 0.8,
+    "ha": 0.1,
+    "pct": 0.0,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -3185,6 +3211,13 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 353.0,
   "map": "Manang_Zone_7B.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Manang_Zone_7B.png",
+   "todo": [
+    "One gap, 1,788 m. Walk it, or name the feature the boundary follows."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3216,8 +3249,8 @@
   "spur_km": 1.33,
   "status": "open",
   "chains": 2,
-  "gap_km": 5.49,
-  "gap_pct": 66.7,
+  "gap_km": 5.06,
+  "gap_pct": 61.4,
   "area_ha": null,
   "basis": null,
   "parcels": 0,
@@ -3248,6 +3281,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Marang_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3326,6 +3360,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Marijabimkol_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3357,8 +3392,8 @@
   "spur_km": 2.92,
   "status": "open",
   "chains": 5,
-  "gap_km": 7.15,
-  "gap_pct": 63.9,
+  "gap_km": 7.13,
+  "gap_pct": 63.7,
   "area_ha": null,
   "basis": null,
   "parcels": 0,
@@ -3424,13 +3459,38 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Murai_Z7B_Zone_7B.png",
+  "approved": {
+   "on": "2026-10-12",
+   "map": "Murai_Z7B_Zone_7B.png",
+   "todo": [
+    "7.13 km still to walk, in five gaps: 3,803 m, 1,168 m, 967 m, 797 m and 399 m. These are the lines for the clan to respond to.",
+    "The trial mapping data is to be ignored and is not part of this boundary."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "NOT READY. James Iroti walked the northern and western edges in one",
+   "continuous stretch, 12.3 km. The whole southern side and part of the",
+   "north-east have never been walked: 7.13 km across five gaps, more than",
+   "a third of the perimeter. Nothing has been inferred into it and nothing",
+   "should be \u2014 the lines go to the clan as questions.",
+   "",
+   "IGNORE THE TRIAL MAPPING. Five of the eight recordings are practice,",
+   "1.1 km in all, and are not survey:",
+   "   29 m  '2025-10-21 oo:46 James iroti murai clan (Trial Mapping)'",
+   "   34 m  '2025-10-21 11:34 James Iroti from Murai clan (Trial Mapping)'",
+   "   22 m  '2025-10-25 09:19 James Iroti from Murai Clan (Trial Mapping)'",
+   "  305 m  '2025-10-28 09:46 (Trial Mapping)'",
+   "  699 m  'Trial_Run_2025-10-28 14:59 (Trial Mapping)'",
+   "",
+   "The real survey is the 8,716 m walk of 11 March 2026, the 2,430 m of",
+   "7 November 2025 and the 115 m of 19 January 2026."
+  ],
+  "field_source": "Raw recording titles; reviewed 11 October 2026",
   "river_boundary": false,
   "gpx": "Murai_Z7B_Zone_7B.gpx",
   "gpx_gaps": 5
@@ -3462,37 +3522,29 @@
   "n_stewards": 2,
   "walked_km": 77.25,
   "spur_km": 3.43,
-  "status": "near",
+  "status": "closed",
   "chains": 2,
-  "gap_km": 6.53,
-  "gap_pct": 8.8,
-  "area_ha": 1535.0,
-  "basis": "inferred",
-  "parcels": 2,
-  "bridges": 2,
+  "gap_km": 0.0,
+  "gap_pct": 0.0,
+  "area_ha": 48.8,
+  "basis": "surveyed",
+  "parcels": 1,
+  "bridges": 0,
   "overlaps": [
    {
     "with": "Ambunkol",
-    "ha": 346.3,
-    "pct": 22.6,
-    "beyond_tol_ha": 342.3,
-    "beyond_tol_pct": 22.3,
+    "ha": 36.6,
+    "pct": 75.0,
+    "beyond_tol_ha": 36.0,
+    "beyond_tol_pct": 73.8,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 32.3,
-    "pct": 2.1,
-    "beyond_tol_ha": 28.9,
-    "beyond_tol_pct": 1.9,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Wohukol",
-    "ha": 4.2,
-    "pct": 0.3,
-    "beyond_tol_ha": 1.4,
-    "beyond_tol_pct": 0.1,
+    "ha": 4.3,
+    "pct": 8.9,
+    "beyond_tol_ha": 3.6,
+    "beyond_tol_pct": 7.4,
     "verdict": "overlap"
    }
   ],
@@ -3529,8 +3581,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 1535.0,
+  "join_joined_ha": 48.8,
   "map": "Natang_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3540,7 +3593,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Natang_Zone_7B.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 0
  },
  {
   "unit": "Sugulkol \u2014 Zone 7B",
@@ -3571,68 +3624,60 @@
   "spur_km": 1.29,
   "status": "open",
   "chains": 6,
-  "gap_km": 3.68,
-  "gap_pct": 16.2,
-  "area_ha": 314.1,
+  "gap_km": 7.03,
+  "gap_pct": 31.0,
+  "area_ha": 199.5,
   "basis": "inferred",
-  "parcels": 1,
+  "parcels": 2,
   "bridges": 6,
   "overlaps": [
    {
-    "with": "Ginangi",
-    "ha": 51.5,
-    "pct": 16.4,
-    "beyond_tol_ha": 50.8,
-    "beyond_tol_pct": 16.2,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Natang",
-    "ha": 32.3,
-    "pct": 10.3,
-    "beyond_tol_ha": 28.9,
-    "beyond_tol_pct": 9.2,
+    "with": "Ambunkol",
+    "ha": 9.6,
+    "pct": 4.8,
+    "beyond_tol_ha": 9.1,
+    "beyond_tol_pct": 4.6,
     "verdict": "overlap"
    },
    {
     "with": "Wohukol",
-    "ha": 21.1,
-    "pct": 6.7,
-    "beyond_tol_ha": 19.0,
-    "beyond_tol_pct": 6.1,
+    "ha": 8.7,
+    "pct": 4.4,
+    "beyond_tol_ha": 6.3,
+    "beyond_tol_pct": 3.2,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Natang",
+    "ha": 4.3,
+    "pct": 2.2,
+    "beyond_tol_ha": 3.6,
+    "beyond_tol_pct": 1.8,
     "verdict": "overlap"
    },
    {
     "with": "Jariji",
-    "ha": 7.5,
-    "pct": 2.4,
-    "beyond_tol_ha": 7.1,
-    "beyond_tol_pct": 2.3,
+    "ha": 4.3,
+    "pct": 2.2,
+    "beyond_tol_ha": 2.9,
+    "beyond_tol_pct": 1.4,
     "verdict": "overlap"
-   },
-   {
-    "with": "Ambunkol",
-    "ha": 5.2,
-    "pct": 1.7,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Manang",
-    "ha": 2.7,
-    "pct": 0.9,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
    },
    {
     "with": "Binunkol",
     "ha": 1.5,
-    "pct": 0.5,
+    "pct": 0.8,
     "beyond_tol_ha": 1.3,
-    "beyond_tol_pct": 0.4,
+    "beyond_tol_pct": 0.6,
     "verdict": "overlap"
+   },
+   {
+    "with": "Manang",
+    "ha": 0.1,
+    "pct": 0.0,
+    "beyond_tol_ha": 0.0,
+    "beyond_tol_pct": 0.0,
+    "verdict": "within tolerance"
    }
   ],
   "shared_lines": [
@@ -3688,8 +3733,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 314.1,
+  "join_joined_ha": 199.5,
   "map": "Sugulkol_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3730,51 +3776,43 @@
   "spur_km": 4.87,
   "status": "open",
   "chains": 4,
-  "gap_km": 8.29,
-  "gap_pct": 25.2,
-  "area_ha": 701.2,
+  "gap_km": 6.93,
+  "gap_pct": 21.0,
+  "area_ha": 513.1,
   "basis": "inferred",
   "parcels": 3,
   "bridges": 4,
   "overlaps": [
    {
     "with": "Jariji",
-    "ha": 61.8,
-    "pct": 8.8,
-    "beyond_tol_ha": 59.4,
-    "beyond_tol_pct": 8.5,
+    "ha": 72.9,
+    "pct": 14.2,
+    "beyond_tol_ha": 72.5,
+    "beyond_tol_pct": 14.1,
     "verdict": "overlap"
    },
    {
     "with": "Binunkol",
     "ha": 29.3,
-    "pct": 4.2,
+    "pct": 5.7,
     "beyond_tol_ha": 27.5,
-    "beyond_tol_pct": 3.9,
+    "beyond_tol_pct": 5.4,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 21.1,
-    "pct": 3.0,
-    "beyond_tol_ha": 19.0,
-    "beyond_tol_pct": 2.7,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Natang",
-    "ha": 4.2,
-    "pct": 0.6,
-    "beyond_tol_ha": 1.4,
-    "beyond_tol_pct": 0.2,
+    "ha": 8.7,
+    "pct": 1.7,
+    "beyond_tol_ha": 6.3,
+    "beyond_tol_pct": 1.2,
     "verdict": "overlap"
    },
    {
     "with": "Ambunkol",
-    "ha": 3.1,
-    "pct": 0.4,
+    "ha": 4.0,
+    "pct": 0.8,
     "beyond_tol_ha": 1.4,
-    "beyond_tol_pct": 0.2,
+    "beyond_tol_pct": 0.3,
     "verdict": "overlap"
    },
    {
@@ -3834,8 +3872,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 701.2,
+  "join_joined_ha": 513.1,
   "map": "Wohukol_Zone_7B.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3889,6 +3928,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Duribip_Zone_8.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3919,26 +3959,26 @@
   "walked_km": 32.95,
   "spur_km": 7.39,
   "status": "near",
-  "chains": 4,
-  "gap_km": 1.89,
-  "gap_pct": 6.3,
-  "area_ha": 218.6,
+  "chains": 1,
+  "gap_km": 0.72,
+  "gap_pct": 7.9,
+  "area_ha": 227.2,
   "basis": "inferred",
   "parcels": 1,
-  "bridges": 4,
+  "bridges": 1,
   "overlaps": [
    {
     "with": "Riribudeh",
     "ha": 6.6,
-    "pct": 3.0,
+    "pct": 2.9,
     "beyond_tol_ha": 5.7,
-    "beyond_tol_pct": 2.6,
+    "beyond_tol_pct": 2.5,
     "verdict": "overlap"
    },
    {
     "with": "Gubai",
-    "ha": 1.5,
-    "pct": 0.7,
+    "ha": 0.9,
+    "pct": 0.4,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -3957,18 +3997,30 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 218.6,
+  "join_joined_ha": 227.2,
   "map": "Dusi_Zone_8.png",
+  "approved": {
+   "on": "2026-10-11",
+   "map": "Dusi_Zone_8.png",
+   "todo": [
+    "Community confirmation on chord 5, the 953 m Savahun boundary with Anaje clan: either walk it, or confirm a river or ridge for us to follow. Max Mamo stopped at the Guaipnun waterfall \u2014 'Savahun big drain so hard to continue over' \u2014 and at the corner he marked 'Sawahun broudre with anaje clan'. Tested against the terrain model: the two ends are in different catchments, so there is no single watercourse joining them.",
+    "The river line closing the southern boundary with Gubai clan is traced from a 30 m surface model, not walked. Its course is provisional until a cleaner river layer is sourced; what the steward's notes establish is that the boundary is that river, not the exact line it takes."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "Walked by Max Mamo alone, 12 June 2025. His recordings name each stretch and the clan on the other side of it \u2014 Karira, Gubai, Suhikol, Anaje \u2014 which is the fullest annotation in the dataset.",
+   "",
+   "Chord 5, 953 m, is a real gap: the Savahun boundary with Anaje clan, between two points Max Mamo named himself. It starts at the hook in the north where he wrote 'Sawahun broudre with anaje clan', at the corner where the Karira boundary ends. It ends at the Guaipnun waterfall, where three separate recordings stop and he wrote 'Savahun big drain so hard to continue over', 'Guaipnun hard to cross over.' and 'guapnun waterfall'. He could not get across. The stretch needs walking; it is not to be closed by drawing."
+  ],
+  "field_source": "Steward's own track descriptions, 12 June 2025; reviewed on the chord map 11 October 2026",
   "river_boundary": false,
   "gpx": "Dusi_Zone_8.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 4
  },
  {
   "unit": "Gubai \u2014 Zone 8",
@@ -3999,17 +4051,17 @@
   "spur_km": 0.0,
   "status": "near",
   "chains": 7,
-  "gap_km": 5.02,
-  "gap_pct": 3.7,
-  "area_ha": 1173.2,
+  "gap_km": 10.73,
+  "gap_pct": 8.0,
+  "area_ha": 497.1,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 7,
   "overlaps": [
    {
     "with": "Dusi",
-    "ha": 1.5,
-    "pct": 0.1,
+    "ha": 0.9,
+    "pct": 0.2,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -4023,8 +4075,9 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 1173.2,
+  "join_joined_ha": 497.1,
   "map": "Gubai_Zone_8.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4034,7 +4087,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Gubai_Zone_8.gpx",
-  "gpx_gaps": 6
+  "gpx_gaps": 5
  },
  {
   "unit": "Gumuyude \u2014 Zone 8",
@@ -4054,14 +4107,14 @@
   "n_stewards": 1,
   "walked_km": 16.79,
   "spur_km": 3.94,
-  "status": "open",
-  "chains": 7,
-  "gap_km": 2.28,
-  "gap_pct": 15.0,
-  "area_ha": 691.6,
+  "status": "near",
+  "chains": 1,
+  "gap_km": 0.65,
+  "gap_pct": 3.8,
+  "area_ha": 682.3,
   "basis": "inferred",
   "parcels": 1,
-  "bridges": 7,
+  "bridges": 1,
   "overlaps": [
    {
     "with": "Riribudeh",
@@ -4073,8 +4126,8 @@
    },
    {
     "with": "Mungaikol",
-    "ha": 0.6,
-    "pct": 0.1,
+    "ha": 0.0,
+    "pct": 0.0,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -4098,15 +4151,28 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 691.6,
+  "join_joined_ha": 682.3,
   "map": "Gumuyude_Zone_8.png",
+  "approved": {
+   "on": "2026-10-11",
+   "map": "Gumuyude_Zone_8.png",
+   "todo": [
+    "Walk the 652 m gap on the northern shoulder. It is the only stretch of this boundary with no walked line between its ends.",
+    "Confirm what the notch on the north-eastern edge is: a 0.28 ha loop, about 109 m by 47 m, where the recording crosses itself. It is either a narrow finger of ground the boundary goes round or the steward backtracking, and nothing written on the tracks says which."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "Every stretch of this boundary that was walked is now followed rather than cut across. Three chords ran beside the steward's own line and are traced along it; three had no walked line between their ends at all \u2014 144 m, 75 m and 26 m \u2014 and are straight joins, which is the whole of what can be said about them.",
+   "One real gap remains: 652 m on the northern shoulder, with no walked line between its ends. It is for the clan to close, not for editing.",
+   "No walked line falls outside the boundary.",
+   "NEEDS CLAN CONFIRMATION: a notch on the north-eastern edge, where a 2,120 m track crosses itself and closes a loop of 0.28 ha, about 109 m by 47 m, wholly inside the boundary. Nothing in the steward's notes says what it is. See output/queries/gumuyude_notch.png."
+  ],
+  "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Gumuyude_Zone_8.gpx",
   "gpx_gaps": 5
@@ -4148,6 +4214,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1.4,
   "map": "Madukol_Zone_8.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4179,23 +4246,23 @@
   "spur_km": 2.77,
   "status": "open",
   "chains": 3,
-  "gap_km": 2.26,
-  "gap_pct": 16.8,
-  "area_ha": 569.9,
+  "gap_km": 1.86,
+  "gap_pct": 13.8,
+  "area_ha": 337.9,
   "basis": "inferred",
   "parcels": 1,
   "bridges": 3,
   "overlaps": [
    {
-    "with": "Gumuyude",
-    "ha": 0.6,
-    "pct": 0.1,
+    "with": "Borori",
+    "ha": 0.0,
+    "pct": 0.0,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
    },
    {
-    "with": "Borori",
+    "with": "Gumuyude",
     "ha": 0.0,
     "pct": 0.0,
     "beyond_tol_ha": 0.0,
@@ -4221,15 +4288,34 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 569.9,
+  "join_joined_ha": 337.9,
   "map": "Mungaikol_Zone_8.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "NOT READY. Walked by Graham Ekiawa alone over nine days, 18.2 km recorded. The map cannot be completed until the clan answers one question.",
+   "",
+   "FOR THE CLAN TO CONFIRM: where does the boundary run across the north?",
+   "",
+   "Four of Graham's five recordings are titled 'Mungaikol Clan land boundary' and form one continuous chain \u2014 13 July down the west, 15 July along the south, 16 July up the east, 21 July on north \u2014 ending at the far north-east, 4.0 km from where it began. Nothing closes that 4.0 km.",
+   "",
+   "His fifth recording, 20 July, 2.8 km, is titled 'Mungaikol Clan Sacred site boundary'. It starts 138 m from the chain's north-west end and runs east into the middle of the ground the chain encloses, stopping 3.2 km short of the north-east end.",
+   "",
+   "So either:",
+   "  (a) that line is the land boundary, and the unwalked stretch is the 3.2 km from its east end to the north-east terminus; or",
+   "  (b) it is what he titled it, an unfinished sacred site perimeter, and the unwalked stretch is the 4.0 km across the north.",
+   "",
+   "The two readings differ by roughly a third of the clan's land. There is nothing in the file to separate them: Graham wrote no comments at all, and no field of any recording mentions a river, creek, crossing or waterfall. Nineteen of the twenty-one sacred-site recordings in the dataset are open lines rather than closed loops, so the shape does not decide it either.",
+   "",
+   "It has been suggested the boundary follows a river across the north. Graham can say whether that is so, and if it is, which river.",
+   "",
+   "Until this is answered the pipeline closes the boundary using the sacred-site line as the northern edge and discards 5.4 km of the walked land boundary. That figure (338 ha) must not be issued."
+  ],
+  "field_source": "Raw recording titles and timings, 13-21 July 2025; reviewed on the chord map 11 October 2026",
   "river_boundary": false,
   "gpx": "Mungaikol_Zone_8.gpx",
   "gpx_gaps": 2
@@ -4262,26 +4348,26 @@
   "walked_km": 20.37,
   "spur_km": 0.3,
   "status": "near",
-  "chains": 3,
-  "gap_km": 1.56,
-  "gap_pct": 7.8,
-  "area_ha": 371.9,
+  "chains": 2,
+  "gap_km": 1.97,
+  "gap_pct": 9.8,
+  "area_ha": 396.6,
   "basis": "inferred",
   "parcels": 1,
-  "bridges": 3,
+  "bridges": 1,
   "overlaps": [
    {
     "with": "Dusi",
     "ha": 6.6,
-    "pct": 1.8,
+    "pct": 1.7,
     "beyond_tol_ha": 5.7,
-    "beyond_tol_pct": 1.5,
+    "beyond_tol_pct": 1.4,
     "verdict": "overlap"
    },
    {
     "with": "Gumuyude",
     "ha": 3.7,
-    "pct": 1.0,
+    "pct": 0.9,
     "beyond_tol_ha": 0.0,
     "beyond_tol_pct": 0.0,
     "verdict": "within tolerance"
@@ -4305,15 +4391,30 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 371.9,
+  "join_joined_ha": 396.6,
   "map": "Riribudeh_Zone_8.png",
+  "approved": {
+   "on": "2026-10-11",
+   "map": "Riribudeh_Zone_8.png",
+   "todo": [
+    "Community confirmation on chord 1, the 203 m real gap between Butam do and Muamara. Both stewards stopped at Butam do and both resumed at Muamara, and the middle of the gap is 85 m from any walked line. It needs walking.",
+    "Ask the clan what Jaginhul is. Unido Ose puts the name on three recordings at the eastern turn, where both stewards leave the boundary, make the same eastward excursion and both rejoin. Knowing what it is would settle whether that excursion is the boundary or a detour around something.",
+    "The 48 m closing the break on the eastern boundary is a straight line, not walked. It runs up to 18 m inside the stewards' tracks where they loop out around it. Confirm or correct."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
    "internal_ha": 0.0
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "Walked by Unido Ose and Prut Buitari together; their two lines sit on top of each other for almost the whole boundary.",
+   "",
+   "ASK THE CLAN: what is Jaginhul? Unido Ose puts the name on three recordings at the eastern turn on the north-east boundary, where both stewards leave the boundary line, make the same eastward excursion and both rejoin at the same place. The name is used for the whole stretch rather than for a single feature, and no water is named there. The nearest modelled watercourse is 818 m away, but that layer only resolves channels of about 0.01 km2 and up, so a creek crossed on foot would not appear in it. Knowing what Jaginhul is would settle whether the excursion is the boundary or a detour around something.",
+   "",
+   "Chord 1 is a real gap: 203 m between Butam do and Muamara, where both stewards stopped and both resumed. Needs walking."
+  ],
+  "field_source": "Steward's own track descriptions, 15 July 2025; reviewed on the chord map 11 October 2026",
   "river_boundary": false,
   "gpx": "Riribudeh_Zone_8.gpx",
   "gpx_gaps": 2
@@ -4360,6 +4461,7 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Uremkol_Zone_8.png",
+  "approved": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,

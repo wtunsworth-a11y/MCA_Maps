@@ -5,121 +5,102 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Gubai — clan land boundary</name>
-    <desc>Gubai, Zone 8. 134.5 km walked; 5.0 km still to walk in 6 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Gubai, Zone 8. 134.5 km walked; 10.7 km still to walk in 5 gaps. 2 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1243267" lon="148.5023867">
-    <name>GAP 1 OF 6 START</name>
-    <desc>0.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+  <wpt lat="-9.1243117" lon="148.5031550">
+    <name>GAP 1 OF 5 START</name>
+    <desc>3.71 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1232650" lon="148.5006117">
-    <name>GAP 1 OF 6 END</name>
-    <desc>0.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+  <wpt lat="-9.1451367" lon="148.5296150">
+    <name>GAP 1 OF 5 END</name>
+    <desc>3.71 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1284767" lon="148.4999400">
-    <name>GAP 2 OF 6 START</name>
-    <desc>1.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1300917" lon="148.4900133">
-    <name>GAP 2 OF 6 END</name>
-    <desc>1.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1402250" lon="148.4811417">
-    <name>GAP 3 OF 6 START</name>
-    <desc>2.42 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1441417" lon="148.5027683">
-    <name>GAP 3 OF 6 END</name>
-    <desc>2.42 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1456633" lon="148.5247483">
-    <name>GAP 4 OF 6 START</name>
-    <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1469633" lon="148.5242917">
-    <name>GAP 4 OF 6 END</name>
-    <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+  <wpt lat="-9.1458983" lon="148.5291633">
+    <name>GAP 2 OF 5 START</name>
+    <desc>0.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1472300" lon="148.5242717">
-    <name>GAP 5 OF 6 START</name>
-    <desc>0.55 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <name>GAP 2 OF 5 END</name>
+    <desc>0.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1483733" lon="148.5291350">
-    <name>GAP 5 OF 6 END</name>
-    <desc>0.55 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+  <wpt lat="-9.1469633" lon="148.5242917">
+    <name>GAP 3 OF 5 START</name>
+    <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1342300" lon="148.5323267">
-    <name>GAP 6 OF 6 START</name>
-    <desc>0.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+  <wpt lat="-9.1456633" lon="148.5247483">
+    <name>GAP 3 OF 5 END</name>
+    <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1310650" lon="148.5360817">
-    <name>GAP 6 OF 6 END</name>
-    <desc>0.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+  <wpt lat="-9.1463400" lon="148.5235700">
+    <name>GAP 4 OF 5 START</name>
+    <desc>4.40 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1351700" lon="148.4851567">
+    <name>GAP 4 OF 5 END</name>
+    <desc>4.40 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1325983" lon="148.4874383">
+    <name>GAP 5 OF 5 START</name>
+    <desc>1.86 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1240350" lon="148.5019933">
+    <name>GAP 5 OF 5 END</name>
+    <desc>1.86 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 6 - NOT WALKED - 0.23 km</name>
-    <desc>0.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <name>GAP 1 OF 5 - NOT WALKED - 3.71 km</name>
+    <desc>3.71 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1243267" lon="148.5023867"/>
-      <trkpt lat="-9.1232650" lon="148.5006117"/>
+      <trkpt lat="-9.1243117" lon="148.5031550"/>
+      <trkpt lat="-9.1451367" lon="148.5296150"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 6 - NOT WALKED - 1.11 km</name>
-    <desc>1.11 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <name>GAP 2 OF 5 - NOT WALKED - 0.56 km</name>
+    <desc>0.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1284767" lon="148.4999400"/>
-      <trkpt lat="-9.1300917" lon="148.4900133"/>
+      <trkpt lat="-9.1458983" lon="148.5291633"/>
+      <trkpt lat="-9.1472300" lon="148.5242717"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 6 - NOT WALKED - 2.42 km</name>
-    <desc>2.42 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1402250" lon="148.4811417"/>
-      <trkpt lat="-9.1441417" lon="148.5027683"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 4 OF 6 - NOT WALKED - 0.15 km</name>
+    <name>GAP 3 OF 5 - NOT WALKED - 0.15 km</name>
     <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1456633" lon="148.5247483"/>
       <trkpt lat="-9.1469633" lon="148.5242917"/>
+      <trkpt lat="-9.1456633" lon="148.5247483"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 5 OF 6 - NOT WALKED - 0.55 km</name>
-    <desc>0.55 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <name>GAP 4 OF 5 - NOT WALKED - 4.40 km</name>
+    <desc>4.40 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1472300" lon="148.5242717"/>
-      <trkpt lat="-9.1483733" lon="148.5291350"/>
+      <trkpt lat="-9.1463400" lon="148.5235700"/>
+      <trkpt lat="-9.1351700" lon="148.4851567"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 6 OF 6 - NOT WALKED - 0.54 km</name>
-    <desc>0.54 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
+    <name>GAP 5 OF 5 - NOT WALKED - 1.86 km</name>
+    <desc>1.86 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Gubai, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1342300" lon="148.5323267"/>
-      <trkpt lat="-9.1310650" lon="148.5360817"/>
+      <trkpt lat="-9.1325983" lon="148.4874383"/>
+      <trkpt lat="-9.1240350" lon="148.5019933"/>
     </trkseg>
   </trk>
   <trk>

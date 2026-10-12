@@ -6,234 +6,234 @@
   <metadata>
     <name>Nituri — clan land boundary</name>
     <desc>Nituri, Zone 2. 41.8 km walked; 11.1 km still to walk in 12 gaps. 2 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1296233" lon="148.2726583">
+  <wpt lat="-9.1342517" lon="148.2350817">
     <name>GAP 1 OF 12 START</name>
-    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1291250" lon="148.2621917">
-    <name>GAP 1 OF 12 END</name>
-    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1235583" lon="148.2558833">
-    <name>GAP 2 OF 12 START</name>
-    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1149767" lon="148.2446350">
-    <name>GAP 2 OF 12 END</name>
-    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0716433" lon="148.2053967">
-    <name>GAP 3 OF 12 START</name>
-    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0716117" lon="148.2041533">
-    <name>GAP 3 OF 12 END</name>
-    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1140450" lon="148.1567667">
-    <name>GAP 4 OF 12 START</name>
-    <desc>1.12 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1241167" lon="148.1554000">
-    <name>GAP 4 OF 12 END</name>
-    <desc>1.12 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1420283" lon="148.1597217">
-    <name>GAP 5 OF 12 START</name>
-    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1398000" lon="148.1556850">
-    <name>GAP 5 OF 12 END</name>
-    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1335000" lon="148.2319617">
+    <name>GAP 1 OF 12 END</name>
+    <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1398000" lon="148.1556850">
+    <name>GAP 2 OF 12 START</name>
+    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1420283" lon="148.1597217">
+    <name>GAP 2 OF 12 END</name>
+    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1241167" lon="148.1554000">
+    <name>GAP 3 OF 12 START</name>
+    <desc>1.12 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1140450" lon="148.1567667">
+    <name>GAP 3 OF 12 END</name>
+    <desc>1.12 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.0716117" lon="148.2041533">
+    <name>GAP 4 OF 12 START</name>
+    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.0716433" lon="148.2053967">
+    <name>GAP 4 OF 12 END</name>
+    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1149767" lon="148.2446350">
+    <name>GAP 5 OF 12 START</name>
+    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1235583" lon="148.2558833">
+    <name>GAP 5 OF 12 END</name>
+    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1291250" lon="148.2621917">
     <name>GAP 6 OF 12 START</name>
-    <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>1.17 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1342517" lon="148.2350817">
+  <wpt lat="-9.1289400" lon="148.2728717">
     <name>GAP 6 OF 12 END</name>
-    <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>1.17 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1342517" lon="148.2350817">
+  <wpt lat="-9.1292583" lon="148.2732050">
     <name>GAP 7 OF 12 START</name>
-    <desc>0.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1273167" lon="148.2369467">
+  <wpt lat="-9.1208083" lon="148.2738050">
     <name>GAP 7 OF 12 END</name>
-    <desc>0.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1273167" lon="148.2369467">
+  <wpt lat="-9.1207850" lon="148.2734117">
     <name>GAP 8 OF 12 START</name>
-    <desc>1.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>1.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1317650" lon="148.2512283">
+  <wpt lat="-9.1248700" lon="148.2586683">
     <name>GAP 8 OF 12 END</name>
-    <desc>1.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>1.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1317650" lon="148.2512283">
+  <wpt lat="-9.1248700" lon="148.2586683">
     <name>GAP 9 OF 12 START</name>
-    <desc>0.98 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1268650" lon="148.2586100">
     <name>GAP 9 OF 12 END</name>
-    <desc>0.98 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1268650" lon="148.2586100">
     <name>GAP 10 OF 12 START</name>
-    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.98 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1248700" lon="148.2586683">
+  <wpt lat="-9.1317650" lon="148.2512283">
     <name>GAP 10 OF 12 END</name>
-    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.98 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1248700" lon="148.2586683">
+  <wpt lat="-9.1317650" lon="148.2512283">
     <name>GAP 11 OF 12 START</name>
-    <desc>1.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>1.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1207850" lon="148.2734117">
+  <wpt lat="-9.1273167" lon="148.2369467">
     <name>GAP 11 OF 12 END</name>
-    <desc>1.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>1.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1208083" lon="148.2738050">
+  <wpt lat="-9.1273167" lon="148.2369467">
     <name>GAP 12 OF 12 START</name>
-    <desc>0.91 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1289400" lon="148.2728717">
+  <wpt lat="-9.1342517" lon="148.2350817">
     <name>GAP 12 OF 12 END</name>
-    <desc>0.91 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <desc>0.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 12 - NOT WALKED - 1.15 km</name>
-    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1296233" lon="148.2726583"/>
-      <trkpt lat="-9.1291250" lon="148.2621917"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 2 OF 12 - NOT WALKED - 1.56 km</name>
-    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1235583" lon="148.2558833"/>
-      <trkpt lat="-9.1149767" lon="148.2446350"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 3 OF 12 - NOT WALKED - 0.14 km</name>
-    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.0716433" lon="148.2053967"/>
-      <trkpt lat="-9.0716117" lon="148.2041533"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 4 OF 12 - NOT WALKED - 1.12 km</name>
-    <desc>1.12 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1140450" lon="148.1567667"/>
-      <trkpt lat="-9.1241167" lon="148.1554000"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 5 OF 12 - NOT WALKED - 0.51 km</name>
-    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1420283" lon="148.1597217"/>
-      <trkpt lat="-9.1398000" lon="148.1556850"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 6 OF 12 - NOT WALKED - 0.35 km</name>
+    <name>GAP 1 OF 12 - NOT WALKED - 0.35 km</name>
     <desc>0.35 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
+      <trkpt lat="-9.1342517" lon="148.2350817"/>
       <trkpt lat="-9.1335000" lon="148.2319617"/>
-      <trkpt lat="-9.1342517" lon="148.2350817"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 7 OF 12 - NOT WALKED - 0.79 km</name>
-    <desc>0.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <name>GAP 2 OF 12 - NOT WALKED - 0.51 km</name>
+    <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1342517" lon="148.2350817"/>
-      <trkpt lat="-9.1273167" lon="148.2369467"/>
+      <trkpt lat="-9.1398000" lon="148.1556850"/>
+      <trkpt lat="-9.1420283" lon="148.1597217"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 8 OF 12 - NOT WALKED - 1.64 km</name>
-    <desc>1.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <name>GAP 3 OF 12 - NOT WALKED - 1.12 km</name>
+    <desc>1.12 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1273167" lon="148.2369467"/>
-      <trkpt lat="-9.1317650" lon="148.2512283"/>
+      <trkpt lat="-9.1241167" lon="148.1554000"/>
+      <trkpt lat="-9.1140450" lon="148.1567667"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 9 OF 12 - NOT WALKED - 0.98 km</name>
-    <desc>0.98 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <name>GAP 4 OF 12 - NOT WALKED - 0.14 km</name>
+    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1317650" lon="148.2512283"/>
-      <trkpt lat="-9.1268650" lon="148.2586100"/>
+      <trkpt lat="-9.0716117" lon="148.2041533"/>
+      <trkpt lat="-9.0716433" lon="148.2053967"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 10 OF 12 - NOT WALKED - 0.22 km</name>
-    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <name>GAP 5 OF 12 - NOT WALKED - 1.56 km</name>
+    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1268650" lon="148.2586100"/>
-      <trkpt lat="-9.1248700" lon="148.2586683"/>
+      <trkpt lat="-9.1149767" lon="148.2446350"/>
+      <trkpt lat="-9.1235583" lon="148.2558833"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 11 OF 12 - NOT WALKED - 1.68 km</name>
+    <name>GAP 6 OF 12 - NOT WALKED - 1.17 km</name>
+    <desc>1.17 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1291250" lon="148.2621917"/>
+      <trkpt lat="-9.1289400" lon="148.2728717"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 7 OF 12 - NOT WALKED - 0.94 km</name>
+    <desc>0.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1292583" lon="148.2732050"/>
+      <trkpt lat="-9.1208083" lon="148.2738050"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 8 OF 12 - NOT WALKED - 1.68 km</name>
     <desc>1.68 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1248700" lon="148.2586683"/>
       <trkpt lat="-9.1207850" lon="148.2734117"/>
+      <trkpt lat="-9.1248700" lon="148.2586683"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 12 OF 12 - NOT WALKED - 0.91 km</name>
-    <desc>0.91 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <name>GAP 9 OF 12 - NOT WALKED - 0.22 km</name>
+    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1208083" lon="148.2738050"/>
-      <trkpt lat="-9.1289400" lon="148.2728717"/>
+      <trkpt lat="-9.1248700" lon="148.2586683"/>
+      <trkpt lat="-9.1268650" lon="148.2586100"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 10 OF 12 - NOT WALKED - 0.98 km</name>
+    <desc>0.98 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1268650" lon="148.2586100"/>
+      <trkpt lat="-9.1317650" lon="148.2512283"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 11 OF 12 - NOT WALKED - 1.64 km</name>
+    <desc>1.64 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1317650" lon="148.2512283"/>
+      <trkpt lat="-9.1273167" lon="148.2369467"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 12 OF 12 - NOT WALKED - 0.79 km</name>
+    <desc>0.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Nituri, Zone 2.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1273167" lon="148.2369467"/>
+      <trkpt lat="-9.1342517" lon="148.2350817"/>
     </trkseg>
   </trk>
   <trk>

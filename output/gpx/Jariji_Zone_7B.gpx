@@ -5,70 +5,61 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Jariji — clan land boundary</name>
-    <desc>Jariji, Zone 7B. 27.5 km walked; 9.0 km still to walk in 5 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Jariji, Zone 7B. 27.5 km walked; 9.9 km still to walk in 5 gaps. 1 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1959383" lon="148.3726400">
-    <name>GAP 1 OF 5 START</name>
-    <desc>1.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1965633" lon="148.3614567">
-    <name>GAP 1 OF 5 END</name>
-    <desc>1.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
   <wpt lat="-9.1807500" lon="148.3632350">
-    <name>GAP 2 OF 5 START</name>
+    <name>GAP 1 OF 5 START</name>
     <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1787267" lon="148.3660583">
-    <name>GAP 2 OF 5 END</name>
+    <name>GAP 1 OF 5 END</name>
     <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1631850" lon="148.3697950">
-    <name>GAP 3 OF 5 START</name>
-    <desc>1.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <name>GAP 2 OF 5 START</name>
+    <desc>2.87 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1527967" lon="148.3768267">
-    <name>GAP 3 OF 5 END</name>
-    <desc>1.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+  <wpt lat="-9.1452217" lon="148.3886783">
+    <name>GAP 2 OF 5 END</name>
+    <desc>2.87 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1477217" lon="148.3904950">
+    <name>GAP 3 OF 5 START</name>
+    <desc>2.63 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1690800" lon="148.3800283">
+    <name>GAP 3 OF 5 END</name>
+    <desc>2.63 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1660733" lon="148.3813450">
     <name>GAP 4 OF 5 START</name>
-    <desc>2.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1475783" lon="148.3933467">
-    <name>GAP 4 OF 5 END</name>
-    <desc>2.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1426133" lon="148.3902550">
-    <name>GAP 5 OF 5 START</name>
-    <desc>3.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <desc>0.44 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1696600" lon="148.3796717">
+    <name>GAP 4 OF 5 END</name>
+    <desc>0.44 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1695833" lon="148.3793733">
+    <name>GAP 5 OF 5 START</name>
+    <desc>3.57 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1965633" lon="148.3614567">
     <name>GAP 5 OF 5 END</name>
-    <desc>3.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <desc>3.57 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 5 - NOT WALKED - 1.23 km</name>
-    <desc>1.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1959383" lon="148.3726400"/>
-      <trkpt lat="-9.1965633" lon="148.3614567"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 2 OF 5 - NOT WALKED - 0.38 km</name>
+    <name>GAP 1 OF 5 - NOT WALKED - 0.38 km</name>
     <desc>0.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -77,30 +68,39 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 5 - NOT WALKED - 1.38 km</name>
-    <desc>1.38 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <name>GAP 2 OF 5 - NOT WALKED - 2.87 km</name>
+    <desc>2.87 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1631850" lon="148.3697950"/>
-      <trkpt lat="-9.1527967" lon="148.3768267"/>
+      <trkpt lat="-9.1452217" lon="148.3886783"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 4 OF 5 - NOT WALKED - 2.79 km</name>
-    <desc>2.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <name>GAP 3 OF 5 - NOT WALKED - 2.63 km</name>
+    <desc>2.63 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
+      <trkpt lat="-9.1477217" lon="148.3904950"/>
       <trkpt lat="-9.1690800" lon="148.3800283"/>
-      <trkpt lat="-9.1475783" lon="148.3933467"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 5 OF 5 - NOT WALKED - 3.21 km</name>
-    <desc>3.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <name>GAP 4 OF 5 - NOT WALKED - 0.44 km</name>
+    <desc>0.44 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1426133" lon="148.3902550"/>
+      <trkpt lat="-9.1660733" lon="148.3813450"/>
       <trkpt lat="-9.1696600" lon="148.3796717"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 5 OF 5 - NOT WALKED - 3.57 km</name>
+    <desc>3.57 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Jariji, Zone 7B.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1695833" lon="148.3793733"/>
+      <trkpt lat="-9.1965633" lon="148.3614567"/>
     </trkseg>
   </trk>
   <trk>

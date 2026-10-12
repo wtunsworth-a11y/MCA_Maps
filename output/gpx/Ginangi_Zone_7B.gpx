@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Ginangi — clan land boundary</name>
-    <desc>Ginangi, Zone 7B. 36.7 km walked; 6.9 km still to walk in 3 gaps. 4 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Ginangi, Zone 7B. 36.7 km walked; 10.3 km still to walk in 3 gaps. 4 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1400141" lon="148.3875787">
     <name>GAP 1 OF 3 START</name>
@@ -20,22 +20,22 @@
   </wpt>
   <wpt lat="-9.1334800" lon="148.3721831">
     <name>GAP 2 OF 3 START</name>
-    <desc>1.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
+    <desc>3.06 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1206501" lon="148.3601189">
+  <wpt lat="-9.1191896" lon="148.3483774">
     <name>GAP 2 OF 3 END</name>
-    <desc>1.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
+    <desc>3.06 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1097194" lon="148.3875629">
+  <wpt lat="-9.1075159" lon="148.3491254">
     <name>GAP 3 OF 3 START</name>
-    <desc>3.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
+    <desc>5.45 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1388634" lon="148.3873959">
     <name>GAP 3 OF 3 END</name>
-    <desc>3.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
+    <desc>5.45 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
@@ -48,20 +48,20 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 3 - NOT WALKED - 1.94 km</name>
-    <desc>1.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
+    <name>GAP 2 OF 3 - NOT WALKED - 3.06 km</name>
+    <desc>3.06 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1334800" lon="148.3721831"/>
-      <trkpt lat="-9.1206501" lon="148.3601189"/>
+      <trkpt lat="-9.1191896" lon="148.3483774"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 3 - NOT WALKED - 3.22 km</name>
-    <desc>3.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
+    <name>GAP 3 OF 3 - NOT WALKED - 5.45 km</name>
+    <desc>5.45 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Ginangi, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1097194" lon="148.3875629"/>
+      <trkpt lat="-9.1075159" lon="148.3491254"/>
       <trkpt lat="-9.1388634" lon="148.3873959"/>
     </trkseg>
   </trk>

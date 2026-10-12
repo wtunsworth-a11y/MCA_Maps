@@ -5,71 +5,51 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Juaiko — clan land boundary</name>
-    <desc>Juaiko, Zone 2. 24.3 km walked; 1.8 km still to walk in 6 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Juaiko, Zone 2. 24.3 km walked; 1.4 km still to walk in 4 gaps. 4 join(s) under the marking threshold are not shown. PRIORITY: return to the clan. The 917 m gap needs walking, not inferring, and the four interior lines need the clan to say which are boundary along the rivers and which are named places. Nothing here should be closed by editing. One real gap, on the western edge by the Manoko boundary: 917 m, with only 12% of it having any walked line within 50 m. It needs walking. Six other drawn lines, 966 m between them, are not gaps — they lie 82-100% within 50 m of ground already walked and only need their ends tying. Not yet done. Four lines run inside the boundary rather than along it, and they are two different things. Two of them are the steward describing the boundary as following rivers — down the Salm to the Makamata fall, on to the Ujai, then up the Ujai to Sinigir. If that is the boundary, the mapped edge is in the wrong place along those stretches and the clan holds more than is shown. The other two are named places with histories attached. The clan needs to be shown the numbered map and asked which is which. See output/queries/juaiko_to_clarify.png. The numbers on that map are deliberately not labelled; what each one is came from the stewards' own notes and is not for a document.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.2106333" lon="148.3280650">
-    <name>GAP 1 OF 6 START</name>
+    <name>GAP 1 OF 4 START</name>
     <desc>0.10 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.2109250" lon="148.3289733">
-    <name>GAP 1 OF 6 END</name>
+    <name>GAP 1 OF 4 END</name>
     <desc>0.10 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.2166967" lon="148.3239833">
-    <name>GAP 2 OF 6 START</name>
-    <desc>0.19 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
+  <wpt lat="-9.2166208" lon="148.3240521">
+    <name>GAP 2 OF 4 START</name>
+    <desc>0.20 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.2178933" lon="148.3227050">
-    <name>GAP 2 OF 6 END</name>
-    <desc>0.19 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1912350" lon="148.2914783">
-    <name>GAP 3 OF 6 START</name>
-    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
+    <name>GAP 2 OF 4 END</name>
+    <desc>0.20 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1901717" lon="148.2932067">
-    <name>GAP 3 OF 6 END</name>
-    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1901717" lon="148.2932067">
-    <name>GAP 4 OF 6 START</name>
+    <name>GAP 3 OF 4 START</name>
     <desc>0.92 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1819233" lon="148.2940350">
-    <name>GAP 4 OF 6 END</name>
+    <name>GAP 3 OF 4 END</name>
     <desc>0.92 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1831133" lon="148.2984767">
-    <name>GAP 5 OF 6 START</name>
-    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
+    <name>GAP 4 OF 4 START</name>
+    <desc>0.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1824400" lon="148.2973450">
-    <name>GAP 5 OF 6 END</name>
-    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1711883" lon="148.2906633">
-    <name>GAP 6 OF 6 START</name>
-    <desc>0.27 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1689933" lon="148.2916417">
-    <name>GAP 6 OF 6 END</name>
-    <desc>0.27 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
+  <wpt lat="-9.1844133" lon="148.2994833">
+    <name>GAP 4 OF 4 END</name>
+    <desc>0.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 6 - NOT WALKED - 0.10 km</name>
+    <name>GAP 1 OF 4 - NOT WALKED - 0.10 km</name>
     <desc>0.10 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -78,25 +58,16 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 6 - NOT WALKED - 0.19 km</name>
-    <desc>0.19 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
+    <name>GAP 2 OF 4 - NOT WALKED - 0.20 km</name>
+    <desc>0.20 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.2166967" lon="148.3239833"/>
+      <trkpt lat="-9.2166208" lon="148.3240521"/>
       <trkpt lat="-9.2178933" lon="148.3227050"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 6 - NOT WALKED - 0.22 km</name>
-    <desc>0.22 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1912350" lon="148.2914783"/>
-      <trkpt lat="-9.1901717" lon="148.2932067"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 4 OF 6 - NOT WALKED - 0.92 km</name>
+    <name>GAP 3 OF 4 - NOT WALKED - 0.92 km</name>
     <desc>0.92 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -105,21 +76,12 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 5 OF 6 - NOT WALKED - 0.14 km</name>
-    <desc>0.14 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
+    <name>GAP 4 OF 4 - NOT WALKED - 0.18 km</name>
+    <desc>0.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1831133" lon="148.2984767"/>
-      <trkpt lat="-9.1824400" lon="148.2973450"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 6 OF 6 - NOT WALKED - 0.27 km</name>
-    <desc>0.27 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Juaiko, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1711883" lon="148.2906633"/>
-      <trkpt lat="-9.1689933" lon="148.2916417"/>
+      <trkpt lat="-9.1844133" lon="148.2994833"/>
     </trkseg>
   </trk>
   <trk>

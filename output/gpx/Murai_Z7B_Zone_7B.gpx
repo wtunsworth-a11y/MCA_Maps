@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Murai (Z7B) — clan land boundary</name>
-    <desc>Murai (Z7B), Zone 7B. 12.3 km walked; 7.2 km still to walk in 5 gaps</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Murai (Z7B), Zone 7B. 12.3 km walked; 7.1 km still to walk in 5 gaps NOT READY. James Iroti walked the northern and western edges in one continuous stretch, 12.3 km. The whole southern side and part of the north-east have never been walked: 7.13 km across five gaps, more than a third of the perimeter. Nothing has been inferred into it and nothing should be — the lines go to the clan as questions.  IGNORE THE TRIAL MAPPING. Five of the eight recordings are practice, 1.1 km in all, and are not survey:    29 m  '2025-10-21 oo:46 James iroti murai clan (Trial Mapping)'    34 m  '2025-10-21 11:34 James Iroti from Murai clan (Trial Mapping)'    22 m  '2025-10-25 09:19 James Iroti from Murai Clan (Trial Mapping)'   305 m  '2025-10-28 09:46 (Trial Mapping)'   699 m  'Trial_Run_2025-10-28 14:59 (Trial Mapping)'  The real survey is the 8,716 m walk of 11 March 2026, the 2,430 m of 7 November 2025 and the 115 m of 19 January 2026.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1436850" lon="148.3539333">
     <name>GAP 1 OF 5 START</name>
@@ -30,12 +30,12 @@
   </wpt>
   <wpt lat="-9.1425800" lon="148.3907333">
     <name>GAP 3 OF 5 START</name>
-    <desc>0.99 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Murai (Z7B), Zone 7B.</desc>
+    <desc>0.97 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Murai (Z7B), Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1353083" lon="148.3855517">
+  <wpt lat="-9.1366950" lon="148.3842233">
     <name>GAP 3 OF 5 END</name>
-    <desc>0.99 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Murai (Z7B), Zone 7B.</desc>
+    <desc>0.97 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Murai (Z7B), Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1335800" lon="148.3778017">
@@ -77,12 +77,12 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 5 - NOT WALKED - 0.99 km</name>
-    <desc>0.99 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Murai (Z7B), Zone 7B.</desc>
+    <name>GAP 3 OF 5 - NOT WALKED - 0.97 km</name>
+    <desc>0.97 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Murai (Z7B), Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1425800" lon="148.3907333"/>
-      <trkpt lat="-9.1353083" lon="148.3855517"/>
+      <trkpt lat="-9.1366950" lon="148.3842233"/>
     </trkseg>
   </trk>
   <trk>

@@ -5,64 +5,45 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Manoko — clan land boundary</name>
-    <desc>Manoko, Zone 2. 12.2 km walked; 3.8 km still to walk in 3 gaps</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Manoko, Zone 2. 12.2 km walked; 2.8 km still to walk in 2 gaps. 1 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1517350" lon="148.2859333">
-    <name>GAP 1 OF 3 START</name>
-    <desc>1.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
   <wpt lat="-9.1615583" lon="148.2953283">
-    <name>GAP 1 OF 3 END</name>
-    <desc>1.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
+    <name>GAP 1 OF 2 START</name>
+    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1615583" lon="148.2953283">
-    <name>GAP 2 OF 3 START</name>
-    <desc>0.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1693750" lon="148.2919250">
-    <name>GAP 2 OF 3 END</name>
-    <desc>0.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
+  <wpt lat="-9.1628700" lon="148.2946683">
+    <name>GAP 1 OF 2 END</name>
+    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1846650" lon="148.3003767">
-    <name>GAP 3 OF 3 START</name>
-    <desc>1.41 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
+    <name>GAP 2 OF 2 START</name>
+    <desc>2.61 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1827650" lon="148.2877167">
-    <name>GAP 3 OF 3 END</name>
-    <desc>1.41 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
+  <wpt lat="-9.1615583" lon="148.2953283">
+    <name>GAP 2 OF 2 END</name>
+    <desc>2.61 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 3 - NOT WALKED - 1.50 km</name>
-    <desc>1.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1517350" lon="148.2859333"/>
-      <trkpt lat="-9.1615583" lon="148.2953283"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 2 OF 3 - NOT WALKED - 0.94 km</name>
-    <desc>0.94 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
+    <name>GAP 1 OF 2 - NOT WALKED - 0.16 km</name>
+    <desc>0.16 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1615583" lon="148.2953283"/>
-      <trkpt lat="-9.1693750" lon="148.2919250"/>
+      <trkpt lat="-9.1628700" lon="148.2946683"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 3 - NOT WALKED - 1.41 km</name>
-    <desc>1.41 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
+    <name>GAP 2 OF 2 - NOT WALKED - 2.61 km</name>
+    <desc>2.61 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Manoko, Zone 2.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1846650" lon="148.3003767"/>
-      <trkpt lat="-9.1827650" lon="148.2877167"/>
+      <trkpt lat="-9.1615583" lon="148.2953283"/>
     </trkseg>
   </trk>
   <trk>

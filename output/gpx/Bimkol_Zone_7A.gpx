@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Bimkol — clan land boundary</name>
-    <desc>Bimkol, Zone 7A. 8.0 km walked; 4.0 km still to walk in 3 gaps</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Bimkol, Zone 7A. 8.0 km walked; 3.6 km still to walk in 3 gaps</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.0981463" lon="148.4248521">
     <name>GAP 1 OF 3 START</name>
@@ -28,14 +28,14 @@
     <desc>1.32 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Bimkol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1012358" lon="148.4035146">
+  <wpt lat="-9.0993115" lon="148.4062695">
     <name>GAP 3 OF 3 START</name>
-    <desc>1.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Bimkol, Zone 7A.</desc>
+    <desc>1.46 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Bimkol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0980861" lon="148.4195003">
     <name>GAP 3 OF 3 END</name>
-    <desc>1.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Bimkol, Zone 7A.</desc>
+    <desc>1.46 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Bimkol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
@@ -57,11 +57,11 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 3 - NOT WALKED - 1.79 km</name>
-    <desc>1.79 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Bimkol, Zone 7A.</desc>
+    <name>GAP 3 OF 3 - NOT WALKED - 1.46 km</name>
+    <desc>1.46 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Bimkol, Zone 7A.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1012358" lon="148.4035146"/>
+      <trkpt lat="-9.0993115" lon="148.4062695"/>
       <trkpt lat="-9.0980861" lon="148.4195003"/>
     </trkseg>
   </trk>

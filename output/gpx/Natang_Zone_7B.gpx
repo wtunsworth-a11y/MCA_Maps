@@ -5,47 +5,9 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Natang — clan land boundary</name>
-    <desc>Natang, Zone 7B. 77.3 km walked; 6.5 km still to walk in 2 gaps</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Natang, Zone 7B. 77.3 km walked; the boundary closes</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1436817" lon="148.4109033">
-    <name>GAP 1 OF 2 START</name>
-    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Natang, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1420333" lon="148.4006100">
-    <name>GAP 1 OF 2 END</name>
-    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Natang, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1434700" lon="148.3938283">
-    <name>GAP 2 OF 2 START</name>
-    <desc>5.39 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Natang, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1921117" lon="148.3913633">
-    <name>GAP 2 OF 2 END</name>
-    <desc>5.39 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Natang, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <trk>
-    <name>GAP 1 OF 2 - NOT WALKED - 1.15 km</name>
-    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Natang, Zone 7B.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1436817" lon="148.4109033"/>
-      <trkpt lat="-9.1420333" lon="148.4006100"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 2 OF 2 - NOT WALKED - 5.39 km</name>
-    <desc>5.39 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Natang, Zone 7B.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1434700" lon="148.3938283"/>
-      <trkpt lat="-9.1921117" lon="148.3913633"/>
-    </trkseg>
-  </trk>
   <trk>
     <name>Natang - Dickson Hoe</name>
     <desc>Walked by Dickson Hoe. 30.8 km, 4 track(s), recorded on the ground. Natang, Zone 7B.</desc>

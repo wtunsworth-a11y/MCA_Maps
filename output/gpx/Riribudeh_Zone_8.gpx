@@ -5,45 +5,45 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Riribudeh — clan land boundary</name>
-    <desc>Riribudeh, Zone 8. 20.4 km walked; 1.5 km still to walk in 2 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Riribudeh, Zone 8. 20.4 km walked; 3.1 km still to walk in 2 gaps Walked by Unido Ose and Prut Buitari together; their two lines sit on top of each other for almost the whole boundary.  ASK THE CLAN: what is Jaginhul? Unido Ose puts the name on three recordings at the eastern turn on the north-east boundary, where both stewards leave the boundary line, make the same eastward excursion and both rejoin at the same place. The name is used for the whole stretch rather than for a single feature, and no water is named there. The nearest modelled watercourse is 818 m away, but that layer only resolves channels of about 0.01 km2 and up, so a creek crossed on foot would not appear in it. Knowing what Jaginhul is would settle whether the excursion is the boundary or a detour around something.  Chord 1 is a real gap: 203 m between Butam do and Muamara, where both stewards stopped and both resumed. Needs walking.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1228417" lon="148.4609883">
+  <wpt lat="-9.1472072" lon="148.4666184">
     <name>GAP 1 OF 2 START</name>
-    <desc>1.13 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
+    <desc>0.20 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1290833" lon="148.4690850">
+  <wpt lat="-9.1454419" lon="148.4671389">
     <name>GAP 1 OF 2 END</name>
-    <desc>1.13 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1454450" lon="148.4671383">
-    <name>GAP 2 OF 2 START</name>
-    <desc>0.39 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
+    <desc>0.20 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1485600" lon="148.4655333">
+    <name>GAP 2 OF 2 START</name>
+    <desc>2.89 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1228417" lon="148.4609883">
     <name>GAP 2 OF 2 END</name>
-    <desc>0.39 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
+    <desc>2.89 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 2 - NOT WALKED - 1.13 km</name>
-    <desc>1.13 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
+    <name>GAP 1 OF 2 - NOT WALKED - 0.20 km</name>
+    <desc>0.20 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1228417" lon="148.4609883"/>
-      <trkpt lat="-9.1290833" lon="148.4690850"/>
+      <trkpt lat="-9.1472072" lon="148.4666184"/>
+      <trkpt lat="-9.1454419" lon="148.4671389"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 2 - NOT WALKED - 0.39 km</name>
-    <desc>0.39 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
+    <name>GAP 2 OF 2 - NOT WALKED - 2.89 km</name>
+    <desc>2.89 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Riribudeh, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1454450" lon="148.4671383"/>
       <trkpt lat="-9.1485600" lon="148.4655333"/>
+      <trkpt lat="-9.1228417" lon="148.4609883"/>
     </trkseg>
   </trk>
   <trk>

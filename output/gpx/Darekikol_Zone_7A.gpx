@@ -5,80 +5,61 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Darekikol — clan land boundary</name>
-    <desc>Darekikol, Zone 7A. 28.8 km walked; 5.9 km still to walk in 6 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Darekikol, Zone 7A. 28.8 km walked; 6.3 km still to walk in 5 gaps. 2 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.0799688" lon="148.4461639">
-    <name>GAP 1 OF 6 START</name>
-    <desc>0.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.0769126" lon="148.4428438">
-    <name>GAP 1 OF 6 END</name>
-    <desc>0.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
-    <sym>Flag</sym>
-  </wpt>
   <wpt lat="-9.0800614" lon="148.4398522">
-    <name>GAP 2 OF 6 START</name>
+    <name>GAP 1 OF 5 START</name>
     <desc>0.72 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0773330" lon="148.4339025">
-    <name>GAP 2 OF 6 END</name>
+    <name>GAP 1 OF 5 END</name>
     <desc>0.72 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0881057" lon="148.4206918">
-    <name>GAP 3 OF 6 START</name>
+    <name>GAP 2 OF 5 START</name>
     <desc>1.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0980481" lon="148.4244848">
-    <name>GAP 3 OF 6 END</name>
+    <name>GAP 2 OF 5 END</name>
     <desc>1.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0981798" lon="148.4247438">
-    <name>GAP 4 OF 6 START</name>
+    <name>GAP 3 OF 5 START</name>
     <desc>0.88 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1000879" lon="148.4325546">
-    <name>GAP 4 OF 6 END</name>
+    <name>GAP 3 OF 5 END</name>
     <desc>0.88 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1000879" lon="148.4325546">
-    <name>GAP 5 OF 6 START</name>
-    <desc>1.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
+    <name>GAP 4 OF 5 START</name>
+    <desc>2.47 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1009171" lon="148.4436963">
-    <name>GAP 5 OF 6 END</name>
-    <desc>1.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
+  <wpt lat="-9.0846751" lon="148.4487949">
+    <name>GAP 4 OF 5 END</name>
+    <desc>2.47 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.0844814" lon="148.4493133">
-    <name>GAP 6 OF 6 START</name>
-    <desc>1.36 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
+    <name>GAP 5 OF 5 START</name>
+    <desc>1.10 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0910747" lon="148.4388672">
-    <name>GAP 6 OF 6 END</name>
-    <desc>1.36 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
+  <wpt lat="-9.0769126" lon="148.4428438">
+    <name>GAP 5 OF 5 END</name>
+    <desc>1.10 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 6 - NOT WALKED - 0.50 km</name>
-    <desc>0.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.0799688" lon="148.4461639"/>
-      <trkpt lat="-9.0769126" lon="148.4428438"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 2 OF 6 - NOT WALKED - 0.72 km</name>
+    <name>GAP 1 OF 5 - NOT WALKED - 0.72 km</name>
     <desc>0.72 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -87,7 +68,7 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 6 - NOT WALKED - 1.18 km</name>
+    <name>GAP 2 OF 5 - NOT WALKED - 1.18 km</name>
     <desc>1.18 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -96,7 +77,7 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 4 OF 6 - NOT WALKED - 0.88 km</name>
+    <name>GAP 3 OF 5 - NOT WALKED - 0.88 km</name>
     <desc>0.88 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -105,21 +86,21 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 5 OF 6 - NOT WALKED - 1.23 km</name>
-    <desc>1.23 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
+    <name>GAP 4 OF 5 - NOT WALKED - 2.47 km</name>
+    <desc>2.47 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1000879" lon="148.4325546"/>
-      <trkpt lat="-9.1009171" lon="148.4436963"/>
+      <trkpt lat="-9.0846751" lon="148.4487949"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 6 OF 6 - NOT WALKED - 1.36 km</name>
-    <desc>1.36 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
+    <name>GAP 5 OF 5 - NOT WALKED - 1.10 km</name>
+    <desc>1.10 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Darekikol, Zone 7A.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.0844814" lon="148.4493133"/>
-      <trkpt lat="-9.0910747" lon="148.4388672"/>
+      <trkpt lat="-9.0769126" lon="148.4428438"/>
     </trkseg>
   </trk>
   <trk>

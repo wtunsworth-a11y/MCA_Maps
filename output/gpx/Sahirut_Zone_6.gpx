@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Sahirut — clan land boundary</name>
-    <desc>Sahirut, Zone 6. 23.0 km walked; 0.2 km still to walk in 1 gap</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Sahirut, Zone 6. 23.0 km walked; 0.2 km still to walk in 1 gap Closed without further survey. 217 m remained open and there is nothing there worth a return to the field, so the map is treated as finished. No track records that stretch, so it adds no walked distance. The clan has not seen this line and has not agreed to it — it is the survey team's judgement, not the clan's. Four of Solomon Makanisa's tracks, 15.2 km, carry Lenard Urami's name in their attributes. Flagged, never reassigned — if the attribution is wrong the two stewards' distances are close to reversed.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.0402507" lon="148.3835541">
     <name>GAP 1 OF 1 START</name>

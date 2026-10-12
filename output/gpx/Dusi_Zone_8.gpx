@@ -5,50 +5,51 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Dusi — clan land boundary</name>
-    <desc>Dusi, Zone 8. 33.0 km walked; 1.9 km still to walk in 3 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Dusi, Zone 8. 33.0 km walked; 1.7 km still to walk in 4 gaps Walked by Max Mamo alone, 12 June 2025. His recordings name each stretch and the clan on the other side of it — Karira, Gubai, Suhikol, Anaje — which is the fullest annotation in the dataset.  Chord 5, 953 m, is a real gap: the Savahun boundary with Anaje clan, between two points Max Mamo named himself. It starts at the hook in the north where he wrote 'Sawahun broudre with anaje clan', at the corner where the Karira boundary ends. It ends at the Guaipnun waterfall, where three separate recordings stop and he wrote 'Savahun big drain so hard to continue over', 'Guaipnun hard to cross over.' and 'guapnun waterfall'. He could not get across. The stretch needs walking; it is not to be closed by drawing.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1301233" lon="148.4809483">
-    <name>GAP 1 OF 3 START</name>
-    <desc>0.42 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1288133" lon="148.4845183">
-    <name>GAP 1 OF 3 END</name>
-    <desc>0.42 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
-    <sym>Flag</sym>
-  </wpt>
   <wpt lat="-9.1240400" lon="148.4841967">
-    <name>GAP 2 OF 3 START</name>
+    <name>GAP 1 OF 4 START</name>
     <desc>0.95 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1294500" lon="148.4909417">
-    <name>GAP 2 OF 3 END</name>
+    <name>GAP 1 OF 4 END</name>
     <desc>0.95 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
+  <wpt lat="-9.1290300" lon="148.4844367">
+    <name>GAP 2 OF 4 START</name>
+    <desc>0.28 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1265417" lon="148.4847417">
+    <name>GAP 2 OF 4 END</name>
+    <desc>0.28 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1335500" lon="148.4868867">
+    <name>GAP 3 OF 4 START</name>
+    <desc>0.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1350867" lon="148.4857300">
+    <name>GAP 3 OF 4 END</name>
+    <desc>0.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <sym>Flag</sym>
+  </wpt>
   <wpt lat="-9.1452383" lon="148.4836200">
-    <name>GAP 3 OF 3 START</name>
-    <desc>0.48 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <name>GAP 4 OF 4 START</name>
+    <desc>0.30 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1465300" lon="148.4794550">
-    <name>GAP 3 OF 3 END</name>
-    <desc>0.48 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+  <wpt lat="-9.1474200" lon="148.4820083">
+    <name>GAP 4 OF 4 END</name>
+    <desc>0.30 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 3 - NOT WALKED - 0.42 km</name>
-    <desc>0.42 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1301233" lon="148.4809483"/>
-      <trkpt lat="-9.1288133" lon="148.4845183"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 2 OF 3 - NOT WALKED - 0.95 km</name>
+    <name>GAP 1 OF 4 - NOT WALKED - 0.95 km</name>
     <desc>0.95 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -57,12 +58,30 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 3 - NOT WALKED - 0.48 km</name>
-    <desc>0.48 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <name>GAP 2 OF 4 - NOT WALKED - 0.28 km</name>
+    <desc>0.28 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1290300" lon="148.4844367"/>
+      <trkpt lat="-9.1265417" lon="148.4847417"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 3 OF 4 - NOT WALKED - 0.21 km</name>
+    <desc>0.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1335500" lon="148.4868867"/>
+      <trkpt lat="-9.1350867" lon="148.4857300"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 4 OF 4 - NOT WALKED - 0.30 km</name>
+    <desc>0.30 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Dusi, Zone 8.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1452383" lon="148.4836200"/>
-      <trkpt lat="-9.1465300" lon="148.4794550"/>
+      <trkpt lat="-9.1474200" lon="148.4820083"/>
     </trkseg>
   </trk>
   <trk>

@@ -5,27 +5,27 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Naharaura — clan land boundary</name>
-    <desc>Naharaura, Zone 6. 32.6 km walked; 2.4 km still to walk in 2 gaps. 2 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Naharaura, Zone 6. 32.6 km walked; 0.9 km still to walk in 2 gaps. 2 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.0702453" lon="148.4231069">
+  <wpt lat="-9.0536058" lon="148.4213449">
     <name>GAP 1 OF 2 START</name>
     <desc>0.55 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0653273" lon="148.4237085">
+  <wpt lat="-9.0487343" lon="148.4221368">
     <name>GAP 1 OF 2 END</name>
     <desc>0.55 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0486483" lon="148.4216619">
+  <wpt lat="-9.0653273" lon="148.4237085">
     <name>GAP 2 OF 2 START</name>
-    <desc>1.87 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
+    <desc>0.33 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.0550913" lon="148.4059081">
+  <wpt lat="-9.0681696" lon="148.4245648">
     <name>GAP 2 OF 2 END</name>
-    <desc>1.87 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
+    <desc>0.33 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
@@ -33,17 +33,17 @@
     <desc>0.55 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.0702453" lon="148.4231069"/>
-      <trkpt lat="-9.0653273" lon="148.4237085"/>
+      <trkpt lat="-9.0536058" lon="148.4213449"/>
+      <trkpt lat="-9.0487343" lon="148.4221368"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 2 - NOT WALKED - 1.87 km</name>
-    <desc>1.87 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
+    <name>GAP 2 OF 2 - NOT WALKED - 0.33 km</name>
+    <desc>0.33 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Naharaura, Zone 6.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.0486483" lon="148.4216619"/>
-      <trkpt lat="-9.0550913" lon="148.4059081"/>
+      <trkpt lat="-9.0653273" lon="148.4237085"/>
+      <trkpt lat="-9.0681696" lon="148.4245648"/>
     </trkseg>
   </trk>
   <trk>

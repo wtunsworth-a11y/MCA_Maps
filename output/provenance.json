@@ -6,7 +6,7 @@
   "git": {
     "branch": "claude/create-maps-86nf12",
     "clean": false,
-    "commit": "0f0323c428196f7ddae3f970edbecc1bd3a18f7c"
+    "commit": "57c6018a47cf85bec35d1d9f76323f44e8b29366"
   },
   "inputs": [
     {
@@ -72,11 +72,11 @@
     "storage_crs": "EPSG:4326"
   },
   "results": {
-    "area_ha_surveyed": 5168.5,
-    "area_ha_total": 33707.2,
+    "area_ha_surveyed": 6103.1,
+    "area_ha_total": 28305.0,
     "clans": 49,
     "polygons": 36,
-    "polygons_surveyed": 6,
+    "polygons_surveyed": 9,
     "smoothed_km": 1139.9,
     "stewards": 70,
     "surveys": 72,
@@ -124,10 +124,10 @@
     "pandas": "3.0.6",
     "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
     "pyogrio": "0.13.0",
-    "pysheds": null,
+    "pysheds": "0.5",
     "python": "3.11.15",
     "rasterio": "1.4.4",
-    "scipy": null,
+    "scipy": "1.17.1",
     "shapely": "2.1.2"
   }
 }

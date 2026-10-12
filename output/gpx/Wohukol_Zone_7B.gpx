@@ -5,60 +5,51 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Wohukol — clan land boundary</name>
-    <desc>Wohukol, Zone 7B. 34.9 km walked; 8.3 km still to walk in 4 gaps</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Wohukol, Zone 7B. 34.9 km walked; 6.9 km still to walk in 4 gaps</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1685061" lon="148.3925222">
-    <name>GAP 1 OF 4 START</name>
-    <desc>2.84 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1428117" lon="148.3915767">
-    <name>GAP 1 OF 4 END</name>
-    <desc>2.84 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
   <wpt lat="-9.1425417" lon="148.3906717">
+    <name>GAP 1 OF 4 START</name>
+    <desc>0.52 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1390300" lon="148.3874683">
+    <name>GAP 1 OF 4 END</name>
+    <desc>0.52 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1390300" lon="148.3874683">
     <name>GAP 2 OF 4 START</name>
-    <desc>0.52 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1390300" lon="148.3874683">
-    <name>GAP 2 OF 4 END</name>
-    <desc>0.52 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1390300" lon="148.3874683">
-    <name>GAP 3 OF 4 START</name>
     <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1432833" lon="148.3856400">
-    <name>GAP 3 OF 4 END</name>
+    <name>GAP 2 OF 4 END</name>
     <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1583186" lon="148.3859486">
+  <wpt lat="-9.1453000" lon="148.3887417">
+    <name>GAP 3 OF 4 START</name>
+    <desc>2.60 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1685061" lon="148.3925222">
+    <name>GAP 3 OF 4 END</name>
+    <desc>2.60 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1725454" lon="148.3930152">
     <name>GAP 4 OF 4 START</name>
-    <desc>4.41 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <desc>3.29 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1959344" lon="148.3724939">
+  <wpt lat="-9.1428117" lon="148.3915767">
     <name>GAP 4 OF 4 END</name>
-    <desc>4.41 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <desc>3.29 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 4 - NOT WALKED - 2.84 km</name>
-    <desc>2.84 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1685061" lon="148.3925222"/>
-      <trkpt lat="-9.1428117" lon="148.3915767"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 2 OF 4 - NOT WALKED - 0.52 km</name>
+    <name>GAP 1 OF 4 - NOT WALKED - 0.52 km</name>
     <desc>0.52 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -67,7 +58,7 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 4 - NOT WALKED - 0.51 km</name>
+    <name>GAP 2 OF 4 - NOT WALKED - 0.51 km</name>
     <desc>0.51 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
@@ -76,12 +67,21 @@
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 4 OF 4 - NOT WALKED - 4.41 km</name>
-    <desc>4.41 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <name>GAP 3 OF 4 - NOT WALKED - 2.60 km</name>
+    <desc>2.60 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1583186" lon="148.3859486"/>
-      <trkpt lat="-9.1959344" lon="148.3724939"/>
+      <trkpt lat="-9.1453000" lon="148.3887417"/>
+      <trkpt lat="-9.1685061" lon="148.3925222"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 4 OF 4 - NOT WALKED - 3.29 km</name>
+    <desc>3.29 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Wohukol, Zone 7B.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1725454" lon="148.3930152"/>
+      <trkpt lat="-9.1428117" lon="148.3915767"/>
     </trkseg>
   </trk>
   <trk>

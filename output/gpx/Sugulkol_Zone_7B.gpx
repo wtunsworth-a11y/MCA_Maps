@@ -5,102 +5,102 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Sugulkol — clan land boundary</name>
-    <desc>Sugulkol, Zone 7B. 24.0 km walked; 3.6 km still to walk in 5 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-10T00:00:00Z</time>
+    <desc>Sugulkol, Zone 7B. 24.0 km walked; 7.0 km still to walk in 5 gaps. 1 join(s) under the marking threshold are not shown.</desc>
+    <time>2026-10-12T00:00:00Z</time>
   </metadata>
-  <wpt lat="-9.1172767" lon="148.3883800">
+  <wpt lat="-9.1470767" lon="148.3965933">
     <name>GAP 1 OF 5 START</name>
-    <desc>0.70 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <desc>3.19 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1190673" lon="148.3895947">
+    <name>GAP 1 OF 5 END</name>
+    <desc>3.19 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1188597" lon="148.3890703">
+    <name>GAP 2 OF 5 START</name>
+    <desc>0.60 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1227950" lon="148.3852683">
-    <name>GAP 1 OF 5 END</name>
-    <desc>0.70 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <name>GAP 2 OF 5 END</name>
+    <desc>0.60 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1262517" lon="148.3850000">
-    <name>GAP 2 OF 5 START</name>
-    <desc>0.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1304183" lon="148.3832233">
-    <name>GAP 2 OF 5 END</name>
-    <desc>0.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1477117" lon="148.3933300">
     <name>GAP 3 OF 5 START</name>
-    <desc>0.67 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <desc>1.90 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1534950" lon="148.3915000">
+  <wpt lat="-9.1422683" lon="148.3913500">
     <name>GAP 3 OF 5 END</name>
-    <desc>0.67 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1470767" lon="148.3965933">
-    <name>GAP 4 OF 5 START</name>
-    <desc>0.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
-    <sym>Flag</sym>
-  </wpt>
-  <wpt lat="-9.1459900" lon="148.3950050">
-    <name>GAP 4 OF 5 END</name>
-    <desc>0.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <desc>1.90 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <wpt lat="-9.1421617" lon="148.3910833">
-    <name>GAP 5 OF 5 START</name>
-    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <name>GAP 4 OF 5 START</name>
+    <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
-  <wpt lat="-9.1357900" lon="148.4037862">
+  <wpt lat="-9.1425271" lon="148.3897900">
+    <name>GAP 4 OF 5 END</name>
+    <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1427854" lon="148.3907825">
+    <name>GAP 5 OF 5 START</name>
+    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="-9.1521167" lon="148.3953750">
     <name>GAP 5 OF 5 END</name>
-    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <sym>Flag</sym>
   </wpt>
   <trk>
-    <name>GAP 1 OF 5 - NOT WALKED - 0.70 km</name>
-    <desc>0.70 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <name>GAP 1 OF 5 - NOT WALKED - 3.19 km</name>
+    <desc>3.19 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
-      <trkpt lat="-9.1172767" lon="148.3883800"/>
+      <trkpt lat="-9.1470767" lon="148.3965933"/>
+      <trkpt lat="-9.1190673" lon="148.3895947"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 2 OF 5 - NOT WALKED - 0.60 km</name>
+    <desc>0.60 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1188597" lon="148.3890703"/>
       <trkpt lat="-9.1227950" lon="148.3852683"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 2 OF 5 - NOT WALKED - 0.50 km</name>
-    <desc>0.50 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <name>GAP 3 OF 5 - NOT WALKED - 1.90 km</name>
+    <desc>1.90 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1262517" lon="148.3850000"/>
-      <trkpt lat="-9.1304183" lon="148.3832233"/>
+      <trkpt lat="-9.1422683" lon="148.3913500"/>
     </trkseg>
   </trk>
   <trk>
-    <name>GAP 3 OF 5 - NOT WALKED - 0.67 km</name>
-    <desc>0.67 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1477117" lon="148.3933300"/>
-      <trkpt lat="-9.1534950" lon="148.3915000"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 4 OF 5 - NOT WALKED - 0.21 km</name>
-    <desc>0.21 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
-    <type>not-walked</type>
-    <trkseg>
-      <trkpt lat="-9.1470767" lon="148.3965933"/>
-      <trkpt lat="-9.1459900" lon="148.3950050"/>
-    </trkseg>
-  </trk>
-  <trk>
-    <name>GAP 5 OF 5 - NOT WALKED - 1.56 km</name>
-    <desc>1.56 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <name>GAP 4 OF 5 - NOT WALKED - 0.15 km</name>
+    <desc>0.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
     <type>not-walked</type>
     <trkseg>
       <trkpt lat="-9.1421617" lon="148.3910833"/>
-      <trkpt lat="-9.1357900" lon="148.4037862"/>
+      <trkpt lat="-9.1425271" lon="148.3897900"/>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>GAP 5 OF 5 - NOT WALKED - 1.15 km</name>
+    <desc>1.15 km not walked. This straight line is not a boundary — it joins the two ends so the shape can be closed on paper. Sugulkol, Zone 7B.</desc>
+    <type>not-walked</type>
+    <trkseg>
+      <trkpt lat="-9.1427854" lon="148.3907825"/>
+      <trkpt lat="-9.1521167" lon="148.3953750"/>
     </trkseg>
   </trk>
   <trk>
