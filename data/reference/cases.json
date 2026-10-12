@@ -411,6 +411,62 @@
     "gaps_crossing_walk": 4,
     "longest_gap_m": 1944
    }
+  },
+  {
+   "unit": "Ambunkol — Zone 7B",
+   "gap": 3,
+   "fault": "chords 3, 4 and 6 each cross the walk; the real breaks behind them are 53 m, 37 m and 34 m",
+   "before": {
+    "unit": "Ambunkol — Zone 7B",
+    "area_ha": 662.5,
+    "basis": "implied",
+    "walked_km": 18.598,
+    "derived_km": 0.0,
+    "gaps": 6,
+    "gap_km": 3.545,
+    "gaps_crossing_walk": 4,
+    "longest_gap_m": 1944
+   },
+   "shape": {
+    "unit": "Ambunkol — Zone 7B",
+    "gap": 3,
+    "length_m": 286,
+    "crosses_walk": true,
+    "crossings": 4,
+    "within_10m_pct": 24.3,
+    "walked_route_m": null,
+    "detour_ratio": null,
+    "free_ends_on_piece": [
+     2,
+     1
+    ],
+    "same_piece": false,
+    "ends": [
+     [
+      654245,
+      8988571
+     ],
+     [
+      654315,
+      8988849
+     ]
+    ]
+   },
+   "on": "2026-10-12",
+   "approach": "close the real break behind each crossing chord (53 m, 37 m, 33 m)",
+   "kept": true,
+   "note": "Applied on the reviewer's instruction after the three were shown.\n\n  before  662.5 ha  6 chords [1944, 904, 286, 248, 99, 64]  5 visits  3.145 km\n  after   629.6 ha  3 chords [2767, 1408, 99]               3 visits  4.115 km\n\nChords 3, 4 and 6 are gone and realgap now reports no cheaper way round\nfor any chord that remains. Two visits saved, and 87 m of the clan's\nline is now marked as ours to close rather than anyone's to walk.\n\nThe cost is the western loop, as predicted: it has no free ends at all\nand sits 658 m from anything, so the closing step must invent both of\nits attachments, and with the small breaks closed it invented longer\nones. 1,944 + 904 became 2,767 + 1,408, and the clan lost 33 ha.\n\nSo the three fixes are right and the loop is still unsettled. Rule 20\nholds: this was the wrong order, and the order was the reviewer's call\nmade with the numbers in front of them.",
+   "after": {
+    "unit": "Ambunkol — Zone 7B",
+    "area_ha": 629.6,
+    "basis": "implied",
+    "walked_km": 18.598,
+    "derived_km": 0.124,
+    "gaps": 3,
+    "gap_km": 4.274,
+    "gaps_crossing_walk": 1,
+    "longest_gap_m": 2767
+   }
   }
  ],
  "open": {}
