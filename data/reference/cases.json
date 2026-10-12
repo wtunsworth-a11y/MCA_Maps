@@ -268,6 +268,62 @@
     "gaps_crossing_walk": 2,
     "unit": "Natang — Zone 7B"
    }
+  },
+  {
+   "unit": "Natang — Zone 7B",
+   "gap": 4,
+   "fault": "1,723 m chord from the neck of Dickson Hoe's out-and-back to a free end on Stafford Gidiri's circuit, crossing the walked line six times",
+   "before": {
+    "unit": "Natang — Zone 7B",
+    "area_ha": 1196.6,
+    "basis": "inferred",
+    "walked_km": 77.251,
+    "derived_km": 0.0,
+    "gaps": 2,
+    "gap_km": 2.248,
+    "gaps_crossing_walk": 2,
+    "longest_gap_m": 1723
+   },
+   "shape": {
+    "unit": "Natang — Zone 7B",
+    "gap": 4,
+    "length_m": 1723,
+    "crosses_walk": true,
+    "crossings": 6,
+    "within_10m_pct": 15.6,
+    "walked_route_m": null,
+    "detour_ratio": null,
+    "free_ends_on_piece": [
+     1,
+     3
+    ],
+    "same_piece": false,
+    "ends": [
+     [
+      653155,
+      8988990
+     ],
+     [
+      654157,
+      8987589
+     ]
+    ]
+   },
+   "on": "2026-10-12",
+   "approach": "withdraw the gap-3 node",
+   "kept": true,
+   "note": "Worked the 1,723 m gap 4 and the answer was that gap 3's node caused it. Measured all four combinations on the same data:\n    node, as it stood        1,196.6 ha  2 gaps  2.248 km  2 crossing the walk\n    node + keep_free_end     1,151.0 ha  2 gaps  1.801 km  2 crossing\n    no node                  1,176.7 ha  3 gaps  1.397 km  3 crossing\n    no node + keep_free_end  1,176.7 ha  3 gaps  1.397 km  3 crossing\nThe node closes a 68 m chord and buys 850 m of new one, or 404 m with\nkeep_free_end. Withdrawn: 68 m of wrong line is cheaper than 850 m.\nAlso measured and rejected: adopting the 68 m as a chained segment\ninstead of noding changes nothing at all; building from one steward\nalone gives Dickson 1,147.2 ha with 3.062 km of chord and Stafford\n1,111.8 ha with 1.264 km, so neither record is the answer on its own.\nThe finding underneath: the two stewards walked the same boundary.\n99.7% of Stafford's 23.2 km lies within 20 m of Dickson's 30.8 km. They\ncannot be noded together — two tracks 0-20 m apart over 23 km cross\nconstantly, which is the weave that cost Juaiko 270 ha.",
+   "after": {
+    "unit": "Natang — Zone 7B",
+    "area_ha": 1176.7,
+    "basis": "inferred",
+    "walked_km": 77.251,
+    "derived_km": 0.0,
+    "gaps": 3,
+    "gap_km": 1.397,
+    "gaps_crossing_walk": 3,
+    "longest_gap_m": 803
+   }
   }
  ],
  "open": {}
