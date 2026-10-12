@@ -69,5 +69,23 @@
     "first and fourth of eight, and the chord runs between them."
    ]
   }
+ },
+ "Natang — Zone 7B": {
+  "collapse_duplicates": {
+   "approved": "2026-10-12",
+   "why": [
+    "93 recorded parts carrying 77.3 km, of which only 31 parts and 31.2 km",
+    "are distinct. Stafford Gidiri's 23,249 m walk is saved twice,",
+    "identically, and Dickson Hoe's 22,942 m likewise.",
+    "",
+    "With every copy in the graph the open ends invert: the survey read as",
+    "closed and surveyed at 48.8 ha, a false ring around a fragment of",
+    "Dickson's northern walk, while Stafford's entire 23 km circuit was",
+    "ignored. Each steward's walk on its own gives about 1,100 ha.",
+    "",
+    "With one copy of each stretch the two walks come together at",
+    "1,176.7 ha with 1.40 km still to walk in three gaps."
+   ]
+  }
  }
 }

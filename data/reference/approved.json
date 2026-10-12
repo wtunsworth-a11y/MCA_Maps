@@ -113,5 +113,13 @@
    "7.13 km still to walk, in five gaps: 3,803 m, 1,168 m, 967 m, 797 m and 399 m. These are the lines for the clan to respond to.",
    "The trial mapping data is to be ignored and is not part of this boundary."
   ]
+ },
+ "Majanko — Zone 2": {
+  "on": "2026-10-12",
+  "map": "Majanko_Zone_2.png",
+  "todo": [
+   "Name the one recording that is walked but unnamed.",
+   "Ask Gilford Amakana whether the boundary follows the watercourse it tracks closely down the eastern side and at the southern corner. It is not written anywhere; it is only what the line does on the ground."
+  ]
  }
 }
