@@ -355,6 +355,62 @@
     "gaps_crossing_walk": 0,
     "longest_gap_m": 0
    }
+  },
+  {
+   "unit": "Ambunkol — Zone 7B",
+   "gap": 3,
+   "fault": "286 m chord across a bay the steward walked right round; reviewer traced the walked route",
+   "before": {
+    "unit": "Ambunkol — Zone 7B",
+    "area_ha": 662.5,
+    "basis": "implied",
+    "walked_km": 18.598,
+    "derived_km": 0.0,
+    "gaps": 6,
+    "gap_km": 3.545,
+    "gaps_crossing_walk": 4,
+    "longest_gap_m": 1944
+   },
+   "shape": {
+    "unit": "Ambunkol — Zone 7B",
+    "gap": 3,
+    "length_m": 286,
+    "crosses_walk": true,
+    "crossings": 4,
+    "within_10m_pct": 24.3,
+    "walked_route_m": null,
+    "detour_ratio": null,
+    "free_ends_on_piece": [
+     2,
+     1
+    ],
+    "same_piece": false,
+    "ends": [
+     [
+      654245,
+      8988571
+     ],
+     [
+      654315,
+      8988849
+     ]
+    ]
+   },
+   "on": "2026-10-12",
+   "approach": "measure the real gap behind each chord (scripts/realgap.py)",
+   "kept": false,
+   "note": "Nothing applied. The measurement is the result.\n\nOf Ambunkol's six chords, three are not gaps at all:\n    chord 3   286 m drawn   real gap 53 m   418 m walked instead\n    chord 4   248 m drawn   real gap 37 m   333 m walked instead\n    chord 6    64 m drawn   real gap 34 m    30 m walked instead\nChords 1, 2 and 5 have no cheaper way round within 600 m: those are\nreal. So 598 m of drawn line stands in for 124 m of actual break.\n\nAll three crossed the walked line, which is the trigger: a chord that\ncrosses the walk has walked line on the other side of it, so the ground\nit spans is not unwalked.\n\nActing on them is the problem, not finding them. Each step alone makes\nthe clan worse — 53 m gives 684.9 ha but turns chord 1 from 1,944 m into\n2,534 m; 37 m drops the clan to 382.8 ha; 34 m to 338.7 ha; all three\ntogether 629.6 ha and 4.1 km to walk against 3.1 km now.\n\nRule 20 says find the under-attached pieces first. Ambunkol has two: a\n727 m loop in the west with NO free ends at all, detached by 658 m and\nenclosing nothing, and an 8,248 m piece with one. Setting the loop aside\ngives 589.5 ha and 1.6 km to walk, but the three steps then collapse the\nclan to 214.5 ha, so the second piece still has to be settled first.\n\nAmbunkol left exactly as it was: 662.5 ha, six chords.",
+   "after": {
+    "unit": "Ambunkol — Zone 7B",
+    "area_ha": 662.5,
+    "basis": "implied",
+    "walked_km": 18.598,
+    "derived_km": 0.0,
+    "gaps": 6,
+    "gap_km": 3.545,
+    "gaps_crossing_walk": 4,
+    "longest_gap_m": 1944
+   }
   }
  ],
  "open": {}
