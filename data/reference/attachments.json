@@ -1,0 +1,17 @@
+{
+ "_README": [
+  "Where a piece of a survey joins the rest, decided once and kept.",
+  "Keyed by survey unit — '<Clan> — <Zone>'.",
+  "",
+  "The closing step has to be told where to enter and leave any piece",
+  "held on by fewer than two ends of its own. Left to itself it works",
+  "that out afresh every run, so a repair anywhere changes what it",
+  "invents somewhere else. An attachment takes the decision away: a line",
+  "from a point on the piece to a point on the rest, chosen on a map with",
+  "the person reviewing it, never recomputed.",
+  "",
+  "An attachment is not walked and is not boundary. It is drawn and",
+  "counted as a chord like any other, and its metres are reported as line",
+  "nobody walked."
+ ]
+}

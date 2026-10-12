@@ -94,6 +94,12 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     # but they are not parts: nobody walked them and they are not boundary.
     pinned = closure.agreed_gaps(unit)
 
+    # Where a piece of the survey joins the rest, decided once and kept.
+    # Unlike a pinned gap this does not say the survey is finished; it
+    # says the closing step has nothing left to invent here, so a repair
+    # elsewhere cannot move it.
+    fixed = closure.attachments(unit)
+
     endpoints = []
     for part in parts:
         endpoints.append(part.coords[0][:2])
@@ -101,6 +107,9 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     for gap_line in pinned:
         endpoints.append(gap_line.coords[0][:2])
         endpoints.append(gap_line.coords[-1][:2])
+    for join in fixed:
+        endpoints.append(join.coords[0][:2])
+        endpoints.append(join.coords[-1][:2])
     labels = closure._cluster_endpoints(endpoints, tolerance)
     positions: dict = {}
     for index, label in enumerate(labels):
@@ -141,12 +150,17 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     pinned_edges = [{"a": labels[base + 2 * j], "b": labels[base + 2 * j + 1],
                      "length": pinned[j].length, "live": True, "pinned": True}
                     for j in range(len(pinned))]
+    after = base + 2 * len(pinned)
+    fixed_edges = [{"a": labels[after + 2 * j], "b": labels[after + 2 * j + 1],
+                    "length": fixed[j].length, "live": True, "fixed": True}
+                   for j in range(len(fixed))]
 
-    closure._prune_spurs(edges + pinned_edges,
+    closure._prune_spurs(edges + pinned_edges + fixed_edges,
                          closure.spur_limit(unit, max_spur) * distinct_m)
-    for edge in pinned_edges:
+    for edge in pinned_edges + fixed_edges:
         edge["live"] = True
     live = [e for e in edges if e["live"]] or edges
+    live = live + fixed_edges
 
     # Does the walk close once the pinned gaps are in? A survey whose only
     # remaining opening is a gap already agreed needs nothing drawn: the
@@ -181,8 +195,9 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
                              keep_free_end=closure.approved_fix(
                                  unit, "keep_free_end"))
     bridges, gap = _bridges(chains)
-    bridges = list(pinned) + bridges
-    gap = (gap or 0.0) + sum(g.length for g in pinned)
+    bridges = list(pinned) + list(fixed) + bridges
+    gap = ((gap or 0.0) + sum(g.length for g in pinned)
+           + sum(f.length for f in fixed))
 
     bridged = _enclosed(snapped + bridges) if bridges else enclosed
 
@@ -218,14 +233,17 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
             d.length - (d.intersection(unwalked.buffer(10)).length
                         if unwalked is not None else 0.0)
             for d in derived)
-        enclosed = _with_walked_land(enclosed)
+        enclosed = _with_walked_land(_enclosed(snapped + list(fixed))
+                                    if fixed else enclosed)
         return {"geometry": enclosed,
                 "basis": "walked" if asserted < 50 else "implied",
-                "gap_m": asserted, "gap_pct": (asserted / total * 100
+                "gap_m": asserted + sum(f.length for f in fixed),
+                "gap_pct": (asserted / total * 100
                                                if total else None),
                 "walked_km": walked_m / 1000,
                 "derived_km": (total - walked_m) / 1000,
-                "area_ha": enclosed.area / 1e4, "bridges": []}
+                "area_ha": enclosed.area / 1e4,
+                "bridges": list(fixed)}
 
     if not bridges or bridged is None:
         return None

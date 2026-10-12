@@ -218,6 +218,47 @@ def agreed_gaps(unit: str | None):
     return [wkt.loads(entry["gap"]) for entry in (register.get(unit) or [])]
 
 
+ATTACHMENTS_PATH = (dataio.REPO_ROOT / "data" / "reference"
+                    / "attachments.json")
+
+
+def attachments(unit: str | None):
+    """Where a piece of the survey joins the rest, decided and kept.
+
+    The closing step has to be told where to enter and leave any piece
+    held on by fewer than two ends of its own, and left to itself it
+    works that out afresh on every run. So a repair anywhere in the
+    survey changes what it invents somewhere else: Natang's 68 m join
+    moved a chord four kilometres away from 803 m to 1,723 m, and
+    Ambunkol has three such pieces, so no order of repairs avoids it.
+
+    An attachment takes that decision away. It is a line from a point on
+    the piece to a point on the rest, chosen on a map with the person
+    reviewing it, and once recorded it is never recomputed. The closing
+    step works around it. Nothing else in the survey can move it.
+
+    It is not walked and it is not boundary: it is drawn and counted as
+    a chord like any other, and its metres are reported as line nobody
+    walked.
+    """
+    if not unit:
+        return []
+    try:
+        import json
+        from shapely import wkt
+        with open(ATTACHMENTS_PATH, encoding="utf-8") as handle:
+            register = json.load(handle)
+    except (OSError, ValueError):
+        return []
+    out = []
+    for entry in (register.get(unit) or []):
+        try:
+            out.append(wkt.loads(entry["line"]))
+        except Exception:
+            continue
+    return out
+
+
 def approved_fix(unit: str | None, fix: str) -> bool:
     """Whether `fix` has been approved for `unit`, and only for `unit`.
 
