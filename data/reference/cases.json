@@ -324,10 +324,8 @@
     "gaps_crossing_walk": 3,
     "longest_gap_m": 803
    }
-  }
- ],
- "open": {
-  "Natang — Zone 7B": {
+  },
+  {
    "unit": "Natang — Zone 7B",
    "gap": null,
    "fault": "three chords — 803 m, 526 m and 68 m — because the survey arrived in three pieces",
@@ -341,7 +339,23 @@
     "gap_km": 0.0,
     "gaps_crossing_walk": 0,
     "longest_gap_m": 0
+   },
+   "on": "2026-10-12",
+   "approach": "attach the dangling piece at two real points, then node",
+   "kept": true,
+   "note": "What changed between the attempt that broke things and the one that\ndid not. Noding the circled crossing alone merged two pieces, but a\nthird — Dickson Hoe's out-and-back — still hung off the survey by a\nsingle free end. A piece attached at one point cannot be entered and\nleft, so the closing step invents a second attachment, and that\ninvention is what moved from 803 m to 1,723 m.\n\nAttaching that piece at two real points first — 321 m west and 456 m\neast, the shortest crossings between it and the other pieces — leaves\nnothing for the closing step to choose. The node then costs 0.1 ha.\n\n  node alone                 1,196.6 ha, 803 m became 1,723 m\n  joins first, then node     1,177.7 ha, no chords at all\n\nGeneral: a chord only moves if the closing step chose it. Wherever a\npiece is attached at fewer than two points the algorithm is choosing,\nand that choice shifts when anything else changes. Attach those pieces\nat real points first and local fixes stay local.",
+   "after": {
+    "unit": "Natang — Zone 7B",
+    "area_ha": 1177.7,
+    "basis": "surveyed",
+    "walked_km": 77.251,
+    "derived_km": 0.776,
+    "gaps": 0,
+    "gap_km": 0.0,
+    "gaps_crossing_walk": 0,
+    "longest_gap_m": 0
    }
   }
- }
+ ],
+ "open": {}
 }

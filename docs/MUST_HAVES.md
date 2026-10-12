@@ -138,3 +138,15 @@ Order is the order we agreed them.
     network, so a sacred walk never silently becomes a clan's boundary
     line. Mungaikol is why that half of the rule stands.
     *Sukandi, 12 Oct.*
+
+20. **Attach every piece at two real points before fixing anything
+    else.** A chord only moves when the closing step chose it, and it
+    is free to choose wherever a piece of the survey hangs off by
+    fewer than two attachments — it must invent the rest. Natang's
+    68 m repair turned an 803 m chord into 1,723 m four kilometres
+    away, not because the repair was wrong but because Dickson Hoe's
+    out-and-back was held on by one free end. Joined at the two places
+    it actually came closest to the rest, the same repair cost 0.1 ha
+    and the survey closed with no chords at all. Find the pieces with
+    fewer than two attachments first.
+    *Natang, 12 Oct.*
