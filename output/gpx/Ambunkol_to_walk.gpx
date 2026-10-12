@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="MCA_Maps boundary.py" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Ambunkol — Zone 7B</name><desc>Boundary as stored 2026-10-12. Segments marked DRAWN were not walked by anyone.</desc></metadata>
+  <trk><name>s2 — DRAWN 1860 m</name><trkseg>
+    <trkpt lat="-9.1415660" lon="148.3922592"/>
+    <trkpt lat="-9.1309687" lon="148.4054031"/>
+  </trkseg></trk>
+  <trk><name>s4 — DRAWN 240 m</name><trkseg>
+    <trkpt lat="-9.1448694" lon="148.4043517"/>
+    <trkpt lat="-9.1457469" lon="148.4041317"/>
+    <trkpt lat="-9.1458130" lon="148.4041151"/>
+    <trkpt lat="-9.1459224" lon="148.4040877"/>
+    <trkpt lat="-9.1469754" lon="148.4038238"/>
+  </trkseg></trk>
+  <trk><name>s6 — DRAWN 80 m</name><trkseg>
+    <trkpt lat="-9.1480544" lon="148.3983693"/>
+    <trkpt lat="-9.1485848" lon="148.3988645"/>
+  </trkseg></trk>
+  <trk><name>s8 — DRAWN 110 m</name><trkseg>
+    <trkpt lat="-9.1646516" lon="148.4047421"/>
+    <trkpt lat="-9.1656249" lon="148.4049490"/>
+  </trkseg></trk>
+  <trk><name>s10 — DRAWN 890 m</name><trkseg>
+    <trkpt lat="-9.1433343" lon="148.3997399"/>
+    <trkpt lat="-9.1428697" lon="148.3917913"/>
+    <trkpt lat="-9.1428617" lon="148.3916550"/>
+  </trkseg></trk>
+</gpx>
