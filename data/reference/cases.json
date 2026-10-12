@@ -1,0 +1,274 @@
+{
+ "_README": [
+  "What was tried on each clan, and what it did.",
+  "",
+  "A case is one fault on one survey: the shape of the gap before",
+  "anything was done, the approach tried, what it did to the whole",
+  "clan, and whether it was kept. Written by scripts/cases.py.",
+  "",
+  "Nothing here is applied to anything. It is the evidence for",
+  "choosing an approach on the next clan, so that a decision made",
+  "once does not have to be argued again from the beginning.",
+  "",
+  "'kept: no' is as useful as 'kept: yes' and must not be deleted."
+ ],
+ "cases": [
+  {
+   "unit": "Juaiko — Zone 2",
+   "gap": 1,
+   "fault": "1,050 m chord straight across the southern lobe of the walk",
+   "on": "2026-10-12",
+   "approach": "river_route + node_crossing + keep_free_end",
+   "kept": true,
+   "note": "Three faults in one place. The break is 98 m, not 1,050: traced along the watercourse between the two ends and adopted as inferred. Two recordings already crossed at the lobe's corner with neither having an end there, so the 342 m stretch read as a dead end and was pruned — noded. The piece that resulted has one free end and _chains was re-choosing both of its ends, so the ring skipped 5.7 km of walked line; keep_free_end holds the end the piece really has.",
+   "before": {
+    "area_ha": 1274.1,
+    "gaps": 7,
+    "gap_km": 2.74,
+    "longest_gap_m": 1050,
+    "gaps_crossing_walk": 7,
+    "unit": "Juaiko — Zone 2"
+   },
+   "after": {
+    "area_ha": 1293.2,
+    "gaps": 6,
+    "gap_km": 2.1,
+    "longest_gap_m": 917,
+    "gaps_crossing_walk": 5,
+    "unit": "Juaiko — Zone 2"
+   },
+   "shape": {
+    "length_m": 1050,
+    "crosses_walk": true,
+    "crossings": 6,
+    "within_10m_pct": 12.5,
+    "walked_route_m": 2685,
+    "detour_ratio": 2.6,
+    "free_ends_on_piece": [
+     1,
+     1
+    ],
+    "same_piece": false,
+    "unit": "Juaiko — Zone 2",
+    "gap": 1
+   }
+  },
+  {
+   "unit": "Juaiko — Zone 2",
+   "gap": 8,
+   "fault": "631 m chord across a loop the steward walked right round",
+   "on": "2026-10-12",
+   "approach": "spur limit 1/10 -> 1/50 of the survey",
+   "kept": true,
+   "note": "Not a chord fault at all. The spur limit is a tenth of the survey's own line, 2.4 km on Juaiko's 24.3 km, which pruned 326 m, 485 m and 306 m of walked boundary as a dead end. At a fiftieth the loop survives and the gap comes out as the 84 m it really is.",
+   "before": {
+    "area_ha": 1293.2,
+    "gaps": 6,
+    "gap_km": 2.1,
+    "longest_gap_m": 917,
+    "gaps_crossing_walk": 5,
+    "unit": "Juaiko — Zone 2"
+   },
+   "after": {
+    "area_ha": 1296.3,
+    "gaps": 6,
+    "gap_km": 1.59,
+    "longest_gap_m": 917,
+    "gaps_crossing_walk": 5,
+    "unit": "Juaiko — Zone 2"
+   }
+  },
+  {
+   "unit": "Juaiko — Zone 2",
+   "gap": 8,
+   "fault": "same 631 m chord",
+   "on": "2026-10-12",
+   "approach": "node the weaving crossing",
+   "kept": false,
+   "note": "WITHDRAWN. The two walks weave over each other five times, so noding shatters both into a dozen fragments. Juaiko fell to 1,024 ha with a 3,597 m chord. Noding is for a single clean crossing, not a weave.",
+   "before": {
+    "area_ha": 1293.2,
+    "gaps": 6,
+    "gap_km": 2.1,
+    "unit": "Juaiko — Zone 2"
+   },
+   "after": {
+    "area_ha": 1024.4,
+    "gaps": 5,
+    "gap_km": 5.67,
+    "longest_gap_m": 3597,
+    "unit": "Juaiko — Zone 2"
+   }
+  },
+  {
+   "unit": "Juaiko — Zone 2",
+   "gap": 6,
+   "fault": "105 m between the end of the morning walk and the start of the afternoon one, same steward, same day",
+   "on": "2026-10-12",
+   "approach": "accepted_complete straight join",
+   "kept": true,
+   "note": "Not a pipeline fault. The terrain model drops 52 m across the 105 m and the note on the recording that stops there names Ndamban and Taffkin falls at 'about the height some 60m'. Joined straight on the reviewer's call, on the project's authority rather than the clan's.",
+   "before": {
+    "area_ha": 1296.3,
+    "gaps": 6,
+    "gap_km": 1.59,
+    "gaps_crossing_walk": 5,
+    "unit": "Juaiko — Zone 2"
+   },
+   "after": {
+    "area_ha": 1296.3,
+    "gaps": 5,
+    "gap_km": 1.48,
+    "gaps_crossing_walk": 4,
+    "unit": "Juaiko — Zone 2"
+   }
+  },
+  {
+   "unit": "Juaiko — Zone 2",
+   "gap": 7,
+   "fault": "35 m chord lying on top of walked line, in ground the steward quartered: 915 m of walk in a 300 m circle",
+   "on": "2026-10-12",
+   "approach": "walk_centreline + free ends chosen by neighbour when more than two",
+   "kept": true,
+   "note": "A chord across a thicket says the boundary is somewhere nobody walked. Took the medial axis of the corridor the walking occupies, 369 m node to node, 100% of it within 10 m of walked line. Two things had to be right: the line runs node to node, not from the edge of the region — an earlier 503 m version stopped mid-recording and cost 71 ha; and with the south closed the western piece has three free ends, where keeping the two furthest apart discarded one 84 m from its partner and drew 322 m.",
+   "before": {
+    "area_ha": 1296.3,
+    "gaps": 5,
+    "gap_km": 1.48,
+    "gaps_crossing_walk": 4,
+    "unit": "Juaiko — Zone 2"
+   },
+   "after": {
+    "area_ha": 1296.3,
+    "gaps": 4,
+    "gap_km": 1.45,
+    "gaps_crossing_walk": 3,
+    "unit": "Juaiko — Zone 2"
+   },
+   "shape": {
+    "length_m": 35,
+    "crosses_walk": true,
+    "crossings": 2,
+    "within_10m_pct": 100.0,
+    "free_ends_on_piece": [
+     1,
+     1
+    ],
+    "same_piece": false,
+    "unit": "Juaiko — Zone 2",
+    "gap": 7
+   }
+  },
+  {
+   "unit": "Juaiko — Zone 2",
+   "gap": 10,
+   "fault": "84 m break where two walks of the same boundary pass each other",
+   "on": "2026-10-12",
+   "approach": "pin as an agreed gap to hold it in place",
+   "kept": false,
+   "note": "WITHDRAWN. Pinning fired the closes-on-its-own test and the clan dropped to 8.2 ha. A pinned gap is for a break already settled with the field, not for holding a position while something else is fixed.",
+   "before": {
+    "area_ha": 1296.3,
+    "gaps": 5,
+    "gap_km": 1.48,
+    "unit": "Juaiko — Zone 2"
+   },
+   "after": {
+    "area_ha": 8.2,
+    "gaps": 5,
+    "gap_km": 2.167,
+    "unit": "Juaiko — Zone 2"
+   }
+  },
+  {
+   "unit": "Juaiko — Zone 2",
+   "gap": 3,
+   "fault": "265 m chord over 274 m of walked line, crossing it four times",
+   "on": "2026-10-12",
+   "approach": "two end_joined segments",
+   "kept": true,
+   "note": "The 274 m stretch runs between the chord's two ends but reaches neither: 58.2 m short at one, 27.4 m at the other — the second by 2.4 m over the join tolerance. Joined both breaks. The 1.2 ha lost is the boundary coming inside the old chord onto the walked line.",
+   "before": {
+    "area_ha": 1296.3,
+    "gaps": 4,
+    "gap_km": 1.45,
+    "gaps_crossing_walk": 3,
+    "unit": "Juaiko — Zone 2"
+   },
+   "after": {
+    "area_ha": 1295.1,
+    "gaps": 3,
+    "gap_km": 1.182,
+    "gaps_crossing_walk": 2,
+    "unit": "Juaiko — Zone 2"
+   },
+   "shape": {
+    "length_m": 265,
+    "crosses_walk": true,
+    "crossings": 4,
+    "within_10m_pct": 30.8,
+    "walked_route_m": 274,
+    "detour_ratio": 1.0,
+    "free_ends_on_piece": [
+     1,
+     1
+    ],
+    "same_piece": false,
+    "unit": "Juaiko — Zone 2",
+    "gap": 3
+   }
+  },
+  {
+   "unit": "Natang — Zone 7B",
+   "gap": null,
+   "fault": "reported as 48.8 ha and as 'surveyed' — a false ring around a fragment of one steward's walk, with the other steward's entire 23 km circuit ignored",
+   "on": "2026-10-12",
+   "approach": "collapse_duplicates",
+   "kept": true,
+   "note": "93 parts carrying 77.3 km, of which 31 parts and 31.2 km are distinct. Both stewards' walks are saved twice, identically. Every copy adds two endpoints, so the real open ends stop looking open and the topology inverts. Each steward's walk alone gives about 1,100 ha.",
+   "before": {
+    "area_ha": 48.8,
+    "basis": "surveyed",
+    "gaps": 0,
+    "gap_km": 0.0,
+    "gaps_crossing_walk": 0,
+    "unit": "Natang — Zone 7B"
+   },
+   "after": {
+    "area_ha": 1176.7,
+    "basis": "inferred",
+    "gaps": 3,
+    "gap_km": 1.397,
+    "longest_gap_m": 803,
+    "gaps_crossing_walk": 3,
+    "unit": "Natang — Zone 7B"
+   }
+  },
+  {
+   "unit": "Natang — Zone 7B",
+   "gap": 3,
+   "fault": "68 m chord across a lobe, where two of one steward's stretches already cross",
+   "on": "2026-10-12",
+   "approach": "node_crossing",
+   "kept": true,
+   "note": "Closed gap 3, and the reviewer marked the crossing. But it merged two pieces of 14.3 km and 8.8 km into one with three free ends, and keeping the two furthest apart discarded the end that had a partner 803 m away — so the same chord now reaches 1,723 m. Net: one fewer gap, 850 m more drawn line. The Juaiko-1 shape has one free end on the merged piece; this one has three.",
+   "before": {
+    "area_ha": 1176.7,
+    "gaps": 3,
+    "gap_km": 1.397,
+    "longest_gap_m": 803,
+    "gaps_crossing_walk": 3,
+    "unit": "Natang — Zone 7B"
+   },
+   "after": {
+    "area_ha": 1196.6,
+    "gaps": 2,
+    "gap_km": 2.249,
+    "longest_gap_m": 1723,
+    "gaps_crossing_walk": 2,
+    "unit": "Natang — Zone 7B"
+   }
+  }
+ ],
+ "open": {}
+}
