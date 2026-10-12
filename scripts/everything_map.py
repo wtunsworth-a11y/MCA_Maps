@@ -727,14 +727,42 @@ def main(argv: list[str] | None = None) -> int:
                   f"{sum(r[0].length for r in asserted) / 1000:.2f} km, "
                   f"for the clan to confirm"))
     if built is not None and built["bridges"]:
-        handles.append(Line2D(
-            [0], [0], color="#db2777", lw=2.4, linestyle=(0, (5, 3)),
-            label=f"Still to walk — {len(built['bridges'])} gap(s), "
-                  f"{sum(b.length for b in built['bridges']) / 1000:.2f} km"))
-        for index, bridge in enumerate(gap_order):
+        # A journey, or a job for an editor. Getting to these places takes
+        # days, and nobody should be sent for a gap whose ground has
+        # already been walked — Natang's 68 m lies on the walked line from
+        # end to end. The two were being counted together as "3 gaps", so
+        # a map that needed two visits read as if it needed three.
+        def unwalked_m(bridge):
+            return (bridge.length
+                    - bridge.intersection(walked_union.buffer(10)).length)
+
+        trips = [b for b in gap_order if unwalked_m(b) > 50]
+        editorial = [b for b in gap_order if unwalked_m(b) <= 50]
+        if trips:
             handles.append(Line2D(
-                [0], [0], color="none",
-                label=f"      {gap_numbers[index]}.  {bridge.length:,.0f} m"))
+                [0], [0], color="#db2777", lw=2.4, linestyle=(0, (5, 3)),
+                label=f"Still to walk — {len(trips)} visit(s), "
+                      f"{sum(unwalked_m(b) for b in trips) / 1000:.2f} km "
+                      f"of ground nobody has walked"))
+            for index, bridge in enumerate(gap_order):
+                if bridge in trips:
+                    handles.append(Line2D(
+                        [0], [0], color="none",
+                        label=f"      {gap_numbers[index]}.  "
+                              f"{bridge.length:,.0f} m"))
+        if editorial:
+            handles.append(Line2D(
+                [0], [0], color="#db2777", lw=2.4, linestyle=(0, (1, 2)),
+                label=f"To close in the data, not in the field — "
+                      f"{len(editorial)}, "
+                      f"{sum(b.length for b in editorial):,.0f} m "
+                      f"lying on walked ground"))
+            for index, bridge in enumerate(gap_order):
+                if bridge in editorial:
+                    handles.append(Line2D(
+                        [0], [0], color="none",
+                        label=f"      {gap_numbers[index]}.  "
+                              f"{bridge.length:,.0f} m"))
     handles += [
         Line2D([0], [0], marker="o", color="none", markerfacecolor="#ea580c",
                markeredgecolor="white", markersize=9,

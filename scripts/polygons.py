@@ -114,7 +114,14 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     # endpoints and the open ends of the boundary stop looking open. The
     # graph is built from one copy of each stretch; the geometry above is
     # built from all of them, and `walked_m` counts all of them.
-    keep = (closure.distinct_indices(parts)
+    # De-duplication is about recordings, not about decisions. An adopted
+    # segment lies on or beside the walked line by design — a join across
+    # a break, a centreline through a thicket — so the duplicate test
+    # recognises it as a copy and throws it away. Natang's 68 m join was
+    # adopted three times and changed nothing at all, because it never
+    # reached the graph.
+    keep = (closure.distinct_indices(walked) + list(
+                range(len(walked), len(parts)))
             if closure.approved_fix(unit, "collapse_duplicates")
             else list(range(len(parts))))
     distinct_m = sum(parts[i].length for i in keep)
