@@ -66,5 +66,23 @@
     "and is not part of the boundary line."
    ]
   }
+ ],
+ "Natang — Zone 7B": [
+  {
+   "at": [
+    652677.8,
+    8984946.2
+   ],
+   "metres": 0,
+   "agreed": "2026-10-12",
+   "chord": 3,
+   "note": [
+    "Stafford Gidiri's 2,270 m stretch and his 1,272 m one already cross",
+    "here, but neither has an end at the crossing, so the graph could not",
+    "see that they meet and drew a 68 m chord across the lobe instead.",
+    "The reviewer marked the crossing on the map, 2026-10-12.",
+    "Only the node is wanted; nothing is carried on."
+   ]
+  }
  ]
 }
