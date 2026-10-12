@@ -715,6 +715,18 @@ def adopted_segments(unit: str | None = None):
     the clan agreeing to a line, and recording one as the other puts words in
     their mouth about ground they have not seen drawn.
 
+    `walk_centreline` — where a steward quartered the same ground instead of
+    walking one line there is no recorded line to follow, and a chord across
+    the thicket says the boundary is somewhere nobody walked. The line taken
+    is the middle of the walking: the medial axis of the corridor the tracks
+    occupy, between the two nodes where the boundary enters and leaves it.
+    The ground under it is walked, so it is chained record rather than
+    inference, and the 10 m test on the maps will say so. See
+    scripts/centreline.py.
+
+    `end_joined` — an editorial join between two recorded open ends, decided
+    from the map. Nobody walked it and the field did not specify it.
+
     `accepted_complete` — the survey team judges a map finished and the
     remaining stretch not worth a return to the field. It closes the boundary
     on the project's authority, not the clan's, and says so wherever it is

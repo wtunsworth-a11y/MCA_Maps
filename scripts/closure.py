@@ -509,6 +509,27 @@ def _chains(edges: list[dict], positions: dict,
                 loose = _furthest_pair(nodes, positions)
             else:
                 loose = nodes * 2
+        if len(loose) > 2 and keep_free_end:
+            # More than two free ends, and the ring can only enter and leave
+            # once. Taking the two furthest apart discards whichever end has
+            # the nearest neighbour — which is the one most obviously
+            # joined to something. On Juaiko it threw away a free end 84 m
+            # from its partner and kept one 322 m from anything, and drew
+            # the 322 m.
+            #
+            # Same answer as the fewer-than-two case: keep the ends where
+            # the neighbours are.
+            nodes = list({n for e in group_edges for n in (e["a"], e["b"])})
+            member = set(nodes)
+            outside = [n for n in positions
+                       if n not in member and n in groups.parent
+                       and groups.find(n) != root]
+            if outside:
+                def reach(n):
+                    x, y = positions[n]
+                    return min((x - positions[m][0]) ** 2
+                               + (y - positions[m][1]) ** 2 for m in outside)
+                loose = sorted(loose, key=reach)[:2]
         if len(loose) > 2:
             best, pair = -1.0, (loose[0], loose[1])
             for i in range(len(loose)):
