@@ -182,7 +182,7 @@ def bridge_check(polygons: gpd.GeoDataFrame, streams: gpd.GeoDataFrame,
 
     lines = unary_union(list(streams.to_crs(dataio.METRIC_CRS).geometry))
     rows = []
-    for _, row in polygons[polygons.basis == "inferred"].iterrows():
+    for _, row in polygons[polygons.basis == "implied"].iterrows():
         ring = row.geometry.exterior
         crossings = 0
         if lines.intersects(ring):

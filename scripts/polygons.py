@@ -168,7 +168,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
         probed = (_enclosed(snapped + list(pinned) + probe_bridges)
                   if probe_bridges else with_pinned)
         if closure.closes_on_its_own(with_pinned, probed, min_enclosure):
-            return {"geometry": with_pinned, "basis": "inferred",
+            return {"geometry": with_pinned, "basis": "implied",
                     "gap_m": sum(g.length for g in pinned),
                     "gap_pct": (sum(g.length for g in pinned) / total * 100
                                 if total else None),
@@ -210,7 +210,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
         # Closed, but closed by what? Adopting a line counts as bridging
         # it, so a gap stops being a gap the moment it is adopted and the
         # survey starts reporting itself as walked all the way round.
-        # Natang read "surveyed" with 734 m of its boundary that nobody
+        # Natang read "walked" with 734 m of its boundary that nobody
         # had walked. Surveyed means walked; anything else is inferred,
         # whichever register the line was written into.
         unwalked = unary_union(walked) if walked else None
@@ -220,7 +220,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
             for d in derived)
         enclosed = _with_walked_land(enclosed)
         return {"geometry": enclosed,
-                "basis": "surveyed" if asserted < 50 else "inferred",
+                "basis": "walked" if asserted < 50 else "implied",
                 "gap_m": asserted, "gap_pct": (asserted / total * 100
                                                if total else None),
                 "walked_km": walked_m / 1000,
@@ -231,7 +231,7 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
         return None
 
     bridged = _with_walked_land(bridged)
-    return {"geometry": bridged, "basis": "inferred", "gap_m": gap,
+    return {"geometry": bridged, "basis": "implied", "gap_m": gap,
             "gap_pct": gap / total * 100 if total else None,
             "walked_km": walked_m / 1000,
             "derived_km": (total - walked_m) / 1000,
@@ -603,8 +603,8 @@ def _render(polygons: gpd.GeoDataFrame, boundary, out_path: Path) -> None:
             edgecolor="#475569" if has_terrain else "#94a3b8",
             linewidth=1.2, zorder=0)
 
-    inferred = polygons[polygons.basis == "inferred"]
-    surveyed = polygons[polygons.basis == "surveyed"]
+    inferred = polygons[polygons.basis == "implied"]
+    surveyed = polygons[polygons.basis == "walked"]
     if len(inferred):
         inferred.plot(ax=axis, facecolor="#fbbf24", edgecolor="#b45309",
                       linewidth=0.6, alpha=0.45, zorder=1)
@@ -729,14 +729,14 @@ def main(argv: list[str] | None = None) -> int:
     polygons = gpd.GeoDataFrame(records, geometry="geometry",
                                 crs=dataio.METRIC_CRS)
 
-    dropped = polygons[(polygons.basis == "inferred")
+    dropped = polygons[(polygons.basis == "implied")
                        & (polygons.gap_pct > args.max_gap * 100)]
     polygons = polygons.drop(dropped.index)
     if args.surveyed_only:
-        polygons = polygons[polygons.basis == "surveyed"]
+        polygons = polygons[polygons.basis == "walked"]
 
-    surveyed = polygons[polygons.basis == "surveyed"]
-    inferred = polygons[polygons.basis == "inferred"]
+    surveyed = polygons[polygons.basis == "walked"]
+    inferred = polygons[polygons.basis == "implied"]
 
     print(f"\nBuilt {len(polygons)} polygon(s) from {gdf.source_name.nunique()} "
           f"surveys")

@@ -304,7 +304,7 @@ for (const c of clans) {
   // problems
   const problems = [];
   if (c.area_ha === null) problems.push(`No area can be given. The tracks are in ${c.chains} disconnected piece${c.chains===1?"":"s"} and ${one(c.gap_km)} km of straight-line joining would be needed to make a ring${c.gap_pct?` — ${Math.round(c.gap_pct)}% of the distance walked`:""}. That is beyond the 50% limit, above which an area would be more assumption than survey.`);
-  else if (c.basis === "inferred") problems.push(`The boundary does not close. ${one(c.gap_km)} km${c.bridges?` in ${c.bridges} stretch${c.bridges===1?"":"es"}`:""} was bridged with straight lines nobody walked${c.gap_pct?` — ${Math.round(c.gap_pct)}% of the distance walked`:""}, so ${money(c.area_ha)} ha is an estimate rather than a measured area. On the map those stretches are pink.`);
+  else if (c.basis === "implied") problems.push(`The boundary does not close. ${one(c.gap_km)} km${c.bridges?` in ${c.bridges} stretch${c.bridges===1?"":"es"}`:""} was bridged with straight lines nobody walked${c.gap_pct?` — ${Math.round(c.gap_pct)}% of the distance walked`:""}, so ${money(c.area_ha)} ha is an estimate rather than a measured area. On the map those stretches are pink.`);
   else problems.push(`The boundary closes on its own. ${money(c.area_ha)} ha is measured from the walk, with nothing inferred.`);
 
   if (c.parcels > 1) problems.push(`The walks enclose ${c.parcels} separate parcels, totalling ${money(c.area_ha)} ha. All of them are counted. Whether they are all this clan's land, or whether one belongs to a neighbour, is a question for the clan.`);
@@ -318,7 +318,7 @@ for (const c of clans) {
 
   const real = c.overlaps.filter(o=>o.verdict==="overlap");
   const slivers = c.overlaps.filter(o=>o.verdict!=="overlap");
-  const unfinished = c.area_ha === null || (c.basis === "inferred" && c.gap_pct > 10);
+  const unfinished = c.area_ha === null || (c.basis === "implied" && c.gap_pct > 10);
   if (real.length) {
     const top = real.slice(0,4).map(o=>`${o.with} (${money(o.ha)} ha)`).join("; ");
     problems.push(`Ground here is also inside the area recorded for ${real.length} other clan${real.length===1?"":"s"}: ${top}.` + (unfinished ? ` These figures are provisional while this boundary is incomplete: the unwalked stretches are drawn as straight lines, and those lines are what the overlap is measured against.` : ``));
@@ -338,7 +338,7 @@ for (const c of clans) {
     queries.push(`No stretch of this boundary should be walked to close it where it follows a large river. That stretch will be completed by editing, once it is decided how a river boundary is to be drawn. What would help instead: where does the river stop being the boundary, at each end?`);
   }
   else if (c.area_ha === null) queries.push(`Can the missing stretches be walked so this boundary closes? If any gap is deliberate — a river, a road, an agreed open edge — please say what runs along it.`);
-  else if (c.basis === "inferred" && c.gap_pct > 25) queries.push(`${Math.round(c.gap_pct)}% of this outline was not walked — ${one(c.gap_km)} km of straight line, shown in pink. Does the boundary in fact run along those straight lines, or somewhere else? Can the missing stretches be walked?`);
+  else if (c.basis === "implied" && c.gap_pct > 25) queries.push(`${Math.round(c.gap_pct)}% of this outline was not walked — ${one(c.gap_km)} km of straight line, shown in pink. Does the boundary in fact run along those straight lines, or somewhere else? Can the missing stretches be walked?`);
   if (c.parcels > 1) queries.push(`This clan's land is recorded as ${c.parcels} separate pieces. Is that right, and does each piece belong to this clan?`);
   if (c.chains > 3 && c.area_ha !== null)
     queries.push(`This boundary is recorded in ${c.chains} separate pieces. Were the connecting stretches walked but not recorded, or not yet walked?`);

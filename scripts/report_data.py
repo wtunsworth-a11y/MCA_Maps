@@ -272,8 +272,8 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
     boundary_only = tracks[tracks.feature_type == smooth_tracks.BOUNDARY_TYPE]
     spurs = sum(smooth_tracks.spur_length(group) for _, group
                 in boundary_only.groupby("source_name"))
-    surveyed = surveys[surveys.basis == "surveyed"]
-    inferred = surveys[surveys.basis == "inferred"]
+    surveyed = surveys[surveys.basis == "walked"]
+    inferred = surveys[surveys.basis == "implied"]
     mca = dataio.load_boundary()
     try:
         bridge_km = gpd.read_file(polygons_path, layer="inferred_bridges") \

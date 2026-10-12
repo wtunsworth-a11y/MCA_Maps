@@ -85,7 +85,7 @@ def collect(args) -> list[tuple[str, gpd.GeoDataFrame, str, bool]]:
         elif kind == "polygons_inferred":
             frame = read(polygons, layer)
             if frame is not None and "basis" in frame:
-                frame = frame[frame.basis == "inferred"]
+                frame = frame[frame.basis == "implied"]
         elif kind == "sacred":
             frame = read(sacred, layer)
         elif kind == "streams":
@@ -99,7 +99,7 @@ def collect(args) -> list[tuple[str, gpd.GeoDataFrame, str, bool]]:
 
         if kind == "polygons" and layer == "survey_polygons" \
                 and frame is not None and "basis" in frame:
-            frame = frame[frame.basis == "surveyed"]
+            frame = frame[frame.basis == "walked"]
 
         if frame is None or frame.empty:
             print(f"  - {label}: not available")

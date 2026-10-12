@@ -67,7 +67,7 @@ function img(rel, maxW, maxH){
 const money = n => n===null||n===undefined ? "—" : Number(n).toLocaleString('en-GB',{maximumFractionDigits:0});
 const one = n => n===null||n===undefined ? "—" : Number(n).toLocaleString('en-GB',{minimumFractionDigits:1,maximumFractionDigits:1});
 
-const done = clans.filter(c => c.basis === "surveyed" && c.area_ha);
+const done = clans.filter(c => c.basis === "walked" && c.area_ha);
 done.sort((a,b)=> b.area_ha - a.area_ha);
 
 const body = [];

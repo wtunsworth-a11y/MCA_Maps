@@ -185,9 +185,9 @@ def render_zone_map(track_layers: list[dataio.Layer], out_path: Path,
                         "color": c, "weight": 1,
                         "fillColor": c,
                         "fillOpacity": 0.45 if f["properties"].get("basis")
-                        == "surveyed" else 0.20,
+                        == "walked" else 0.20,
                         "dashArray": "" if f["properties"].get("basis")
-                        == "surveyed" else "4,3",
+                        == "walked" else "4,3",
                     },
                     tooltip=folium.GeoJsonTooltip(fields=fields),
                     popup=folium.GeoJsonPopup(fields=fields),

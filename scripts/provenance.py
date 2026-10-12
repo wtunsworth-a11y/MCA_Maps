@@ -175,10 +175,10 @@ def results() -> dict:
     if polygons.exists():
         frame = gpd.read_file(polygons, layer="survey_polygons")
         out["polygons"] = int(len(frame))
-        out["polygons_surveyed"] = int((frame.basis == "surveyed").sum())
+        out["polygons_surveyed"] = int((frame.basis == "walked").sum())
         out["area_ha_total"] = round(float(frame.area_ha.sum()), 1)
         out["area_ha_surveyed"] = round(
-            float(frame[frame.basis == "surveyed"].area_ha.sum()), 1)
+            float(frame[frame.basis == "walked"].area_ha.sum()), 1)
     return out
 
 

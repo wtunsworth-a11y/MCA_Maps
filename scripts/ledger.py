@@ -131,7 +131,7 @@ def ledger(clan: str) -> dict:
     # The same test the map uses, rule 14: a segment with walked line
     # beside it is the walk chained back together, not an assertion
     # about where the boundary runs. Judging it on the wording of the
-    # note instead had the ledger call a 39 m join "inferred" while the
+    # note instead had the ledger call a 39 m join "implied" while the
     # map called it chained.
     from shapely.ops import unary_union as _union
     walk = _union(parts) if parts else None

@@ -59,8 +59,8 @@ def gather(tracks_path: Path, polygons_path: Path) -> dict:
                 in boundary_only.groupby("source_name"))
 
     named = tracks[tracks.clan.astype(str).str.strip() != ""]
-    surveyed = surveys[surveys.basis == "surveyed"]
-    inferred = surveys[surveys.basis == "inferred"]
+    surveyed = surveys[surveys.basis == "walked"]
+    inferred = surveys[surveys.basis == "implied"]
 
     # Clan-level overlap: the ILG question. Measured strictly, and again with
     # strips narrower than the tolerance removed — two lines recorded closer
@@ -96,7 +96,7 @@ def gather(tracks_path: Path, polygons_path: Path) -> dict:
             a, b = surveys.iloc[i], surveys.iloc[j]
             if a.clan == b.clan or not a.geometry.intersects(b.geometry):
                 continue
-            if "surveyed" in (a.basis, b.basis):
+            if "walked" in (a.basis, b.basis):
                 strong += a.geometry.intersection(b.geometry).area / 1e4
 
     try:
