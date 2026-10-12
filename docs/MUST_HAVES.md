@@ -128,3 +128,13 @@ Order is the order we agreed them.
     what the old map had learned. Anything on this list applies to
     whatever map is in front of the reviewer, not to the script it was
     first agreed on.
+
+19. **Sacred sites are reported to the landowners and the reviewer, and
+    to nobody else.** The earlier rule — area and percentage only,
+    locations never shared — was a rule about who sees them, and it was
+    being enforced as if it were a rule about what may exist. Named
+    sites and their areas belong in the reports the clans and the
+    reviewer read. What does not change: they stay out of the boundary
+    network, so a sacred walk never silently becomes a clan's boundary
+    line. Mungaikol is why that half of the rule stands.
+    *Sukandi, 12 Oct.*
