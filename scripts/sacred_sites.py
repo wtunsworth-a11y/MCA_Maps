@@ -73,6 +73,14 @@ def build(tracks: gpd.GeoDataFrame, tolerance: float,
             parts.extend(geometry.geoms if hasattr(geometry, "geoms")
                          else [geometry])
         walked = sum(p.length for p in parts)
+        # The survey the site belongs to, so that any repair approved for
+        # that survey applies here too and none from another does. Sites
+        # are grouped by the name the steward typed, which can in principle
+        # gather walks from more than one survey; where it does there is no
+        # single survey to answer for them and none is claimed.
+        units = {f"{str(r.get('clan', '')).strip()} — "
+                 f"{str(r.get('zone', '')).strip()}" for r in members}
+        unit = units.pop() if len(units) == 1 else None
         built = polygon_tools.survey_polygon(parts, tolerance, min_enclosure,
                                              max_spur, unit=unit)
         hull = unary_union(parts).convex_hull

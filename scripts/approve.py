@@ -94,8 +94,15 @@ def main(argv: list[str] | None = None) -> int:
     # area as mapping progress — that is the map to keep, and the chord
     # map is only a fallback for clans reviewed before the change.
     if args.map is None:
+        # everything_map names its file after the clan, not the unit —
+        # `Murai_Z2_everything.png`, not `Murai_Z2_Zone_2_everything.png`.
+        # Looking only for the unit's spelling sent both Murai surveys to
+        # the chord-map fallback, which does not exist, and neither was
+        # recorded.
         for candidate in (dataio.OUT_DIR / "queries"
                           / f"{args.clan.replace(' ', '_')}_everything.png",
+                          dataio.OUT_DIR / "queries"
+                          / f"{dataio.safe_name(args.clan)}_everything.png",
                           dataio.OUT_DIR / "queries"
                           / f"{dataio.safe_name(unit)}_everything.png"):
             if candidate.exists():

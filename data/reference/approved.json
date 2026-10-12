@@ -43,5 +43,75 @@
    "Name the one recording that is walked but unnamed.",
    "Confirm Millinton Beso's three sacred walks — Mitakin, Birezama and Bijanuri, 10.6 km — sit inside the boundary and carry no part of it."
   ]
+ },
+ "Rondi — Zone 2": {
+  "on": "2026-10-12",
+  "map": "Rondi_Zone_2.png",
+  "todo": []
+ },
+ "Manuvoora — Zone 6": {
+  "on": "2026-10-12",
+  "map": "Manuvoora_Zone_6.png",
+  "todo": [
+   "Confirm the 2.93 km that nobody walked. One section is traced along a river the field says the boundary follows and cannot be walked; the rest are joins between recorded open ends, decided from the map. All of it is drawn apart from the walked line on the map."
+  ]
+ },
+ "Kasaki — Zone 2": {
+  "on": "2026-10-12",
+  "map": "Kasaki_Zone_2.png",
+  "todo": [
+   "Confirm the 0.19 km of joins between recorded open ends. The notch on the boundary was looked at and is not an error."
+  ]
+ },
+ "Sahirut — Zone 6": {
+  "on": "2026-10-12",
+  "map": "Sahirut_Zone_6.png",
+  "todo": [
+   "Confirm the 0.22 km that nobody walked."
+  ]
+ },
+ "Asingi — Zone 2": {
+  "on": "2026-10-12",
+  "map": "Asingi_Zone_2.png",
+  "todo": []
+ },
+ "Pina Ora — Zone 6": {
+  "on": "2026-10-12",
+  "map": "Pina_Ora_Zone_6.png",
+  "todo": [
+   "Walk gap 1, 788 m, or name the feature the boundary follows there.",
+   "Walk gap 2, 397 m, or name the feature the boundary follows there.",
+   "Gap 3, 206 m, is part of what needs cleaning up at gap 2 and stands as it is until gap 2 is settled."
+  ]
+ },
+ "Manang — Zone 7B": {
+  "on": "2026-10-12",
+  "map": "Manang_Zone_7B.png",
+  "todo": [
+   "One gap, 1,788 m. Walk it, or name the feature the boundary follows."
+  ]
+ },
+ "Juaiko — Zone 2": {
+  "on": "2026-10-12",
+  "map": "Juaiko_Zone_2.png",
+  "todo": [
+   "One real gap runs through the whole western section — gap 2 at 917 m, gap 9 at 181 m and gap 10 at 84 m. Walk it, or tell us what feature the boundary follows.",
+   "Two inclusions in the south to settle: in or out.",
+   "Philip Jukaro states that Juaiko, Manoevkor and Rumbieh are three clans under the umbrella name Sukandi. Sukandi is held here as a clan in its own right. Nothing has been changed over it.",
+   "Ask what the 60 m Taffkin fall means for the boundary at the 105 m stretch joined straight on the eastern side."
+  ]
+ },
+ "Murai (Z2) — Zone 2": {
+  "on": "2026-10-12",
+  "map": "Murai_Z2_Zone_2.png",
+  "todo": []
+ },
+ "Murai (Z7B) — Zone 7B": {
+  "on": "2026-10-12",
+  "map": "Murai_Z7B_Zone_7B.png",
+  "todo": [
+   "7.13 km still to walk, in five gaps: 3,803 m, 1,168 m, 967 m, 797 m and 399 m. These are the lines for the clan to respond to.",
+   "The trial mapping data is to be ignored and is not part of this boundary."
+  ]
  }
 }
