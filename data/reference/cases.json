@@ -326,5 +326,22 @@
    }
   }
  ],
- "open": {}
+ "open": {
+  "Natang — Zone 7B": {
+   "unit": "Natang — Zone 7B",
+   "gap": null,
+   "fault": "three chords — 803 m, 526 m and 68 m — because the survey arrived in three pieces",
+   "before": {
+    "unit": "Natang — Zone 7B",
+    "area_ha": 1177.6,
+    "basis": "surveyed",
+    "walked_km": 77.251,
+    "derived_km": 0.776,
+    "gaps": 0,
+    "gap_km": 0.0,
+    "gaps_crossing_walk": 0,
+    "longest_gap_m": 0
+   }
+  }
+ }
 }
