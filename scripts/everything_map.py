@@ -553,12 +553,23 @@ def main(argv: list[str] | None = None) -> int:
         # Numbered, so a gap can be named and discussed. The numbers
         # come from the shared register, so they survive between runs:
         # a closed gap disappears and a new one takes the next number.
+        # A line nobody walked is numbered whether it reached the map as
+        # a chord or as an adopted segment. Adopting one was making it
+        # disappear from the count: Natang read "surveyed, no gaps" with
+        # 734 m of its boundary that nobody had been to.
         import chord_map as _cm
-        gap_order = sorted(built["bridges"], key=lambda b: -b.length)
+        gap_order = sorted(
+            list(built["bridges"])
+            + [r[0] for r in derived_rows
+               if (r[0].intersection(walked_union.buffer(10)).length
+                   / r[0].length if r[0].length else 1) < 0.80],
+            key=lambda b: -b.length)
         gap_numbers = _cm.numbering(unit, gap_order)
+        drawn_as_chord = set(id(b) for b in built["bridges"])
         for index, bridge in enumerate(gap_order):
-            axis.plot(*bridge.xy, color="#db2777", lw=2.4,
-                      linestyle=(0, (5, 3)), zorder=7)
+            if id(bridge) in drawn_as_chord:
+                axis.plot(*bridge.xy, color="#db2777", lw=2.4,
+                          linestyle=(0, (5, 3)), zorder=7)
             middle = bridge.interpolate(0.5, normalized=True)
             (ax0, ay0), (ax1, ay1) = (bridge.coords[0][:2],
                                       bridge.coords[-1][:2])
@@ -726,7 +737,7 @@ def main(argv: list[str] | None = None) -> int:
             label=f"Inferred where nobody walked — "
                   f"{sum(r[0].length for r in asserted) / 1000:.2f} km, "
                   f"for the clan to confirm"))
-    if built is not None and built["bridges"]:
+    if built is not None and gap_order:
         # A journey, or a job for an editor. Getting to these places takes
         # days, and nobody should be sent for a gap whose ground has
         # already been walked — Natang's 68 m lies on the walked line from

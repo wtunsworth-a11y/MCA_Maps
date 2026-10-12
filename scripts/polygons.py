@@ -191,21 +191,78 @@ def survey_polygon(parts: list, tolerance: float, min_enclosure: float,
     # the closing step has drawn its lines. If the drawn lines add nothing,
     # they were not needed, and the survey is closed however the closing step
     # chose to describe it.
+    def _with_walked_land(shape):
+        """Add back ground the walking encircles, where that is approved."""
+        if not closure.approved_fix(unit, "enclose_walked_land"):
+            return shape
+        round_it = enclosed_by_walking(walked, derived)
+        if round_it is None or shape is None:
+            return shape
+        # Only what touches the boundary already. A separate ring of
+        # walking somewhere else in the clan is not part of this one.
+        add = [piece for piece
+               in (round_it.geoms if hasattr(round_it, "geoms")
+                   else [round_it])
+               if piece.intersects(shape)]
+        return unary_union([shape] + add) if add else shape
+
     if closure.closes_on_its_own(enclosed, bridged, min_enclosure):
-        return {"geometry": enclosed, "basis": "surveyed", "gap_m": 0.0,
-                "gap_pct": 0.0, "walked_km": walked_m / 1000,
+        # Closed, but closed by what? Adopting a line counts as bridging
+        # it, so a gap stops being a gap the moment it is adopted and the
+        # survey starts reporting itself as walked all the way round.
+        # Natang read "surveyed" with 734 m of its boundary that nobody
+        # had walked. Surveyed means walked; anything else is inferred,
+        # whichever register the line was written into.
+        unwalked = unary_union(walked) if walked else None
+        asserted = sum(
+            d.length - (d.intersection(unwalked.buffer(10)).length
+                        if unwalked is not None else 0.0)
+            for d in derived)
+        enclosed = _with_walked_land(enclosed)
+        return {"geometry": enclosed,
+                "basis": "surveyed" if asserted < 50 else "inferred",
+                "gap_m": asserted, "gap_pct": (asserted / total * 100
+                                               if total else None),
+                "walked_km": walked_m / 1000,
                 "derived_km": (total - walked_m) / 1000,
                 "area_ha": enclosed.area / 1e4, "bridges": []}
 
     if not bridges or bridged is None:
         return None
 
+    bridged = _with_walked_land(bridged)
     return {"geometry": bridged, "basis": "inferred", "gap_m": gap,
             "gap_pct": gap / total * 100 if total else None,
             "walked_km": walked_m / 1000,
             "derived_km": (total - walked_m) / 1000,
             "area_ha": bridged.area / 1e4,
             "bridges": bridges}
+
+
+def enclosed_by_walking(parts, derived, weld: float = 20.0):
+    """Ground the walking goes right round, whatever the ring does.
+
+    The closing step builds one ring and takes what is inside it. Where
+    the steward walked round a block and the ring cuts across the neck,
+    that block falls outside — 13.1 ha of Natang, encircled by Dickson
+    Hoe's own tracks and left out because two joins took the corner.
+
+    Asked of the geometry instead: buffer the walking, and anything it
+    leaves as a hole is ground it went round. Welded at 20 m so that two
+    passes a few metres apart do not read as a corridor with a gap down
+    the middle.
+    """
+    from shapely.geometry import Polygon
+
+    lines = [p for p in list(parts) + list(derived or [])
+             if p is not None and p.length > 0]
+    if not lines:
+        return None
+    grown = unary_union(lines).buffer(weld)
+    holes = []
+    for piece in (grown.geoms if hasattr(grown, "geoms") else [grown]):
+        holes += [Polygon(ring).buffer(weld) for ring in piece.interiors]
+    return unary_union(holes) if holes else None
 
 
 def _snapped_lines(parts, positions, labels) -> list:
