@@ -286,6 +286,115 @@ def to_gpx(book: dict, only_drawn: bool = False) -> str:
     return "\n".join(out)
 
 
+def draw(book: dict, out: Path):
+    """The stored boundary, with every segment carrying its number.
+
+    The map and the list have to be the same thing. A reviewer saying
+    "s4 is wrong" and an editor changing s4 must be looking at the same
+    object, which is what has been missing: until now a gap could be
+    pointed at on a map and then be a different gap by the next run.
+    """
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
+    import terrain
+
+    lines = [(s, shapely_wkt.loads(s["wkt"])) for s in book["segments"]]
+    land = ring_geometry(book)
+    shapes = unary_union([g for _, g in lines])
+    x0, y0, x1, y1 = shapes.bounds
+    pad = max(x1 - x0, y1 - y0) * 0.10
+    window = (x0 - pad, y0 - pad, x1 + pad, y1 + pad)
+
+    figure = plt.figure(figsize=(11, 9.5), dpi=125)
+    axis = figure.add_axes([0.02, 0.05, 0.74, 0.90])
+    terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.34, bounds=window)
+    if land is not None:
+        gpd.GeoSeries([land], crs=dataio.METRIC_CRS).plot(
+            ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
+    for seg, line in lines:
+        if seg["kind"] == "walked":
+            axis.plot(*line.xy, color="#1f2937", lw=2.2, zorder=5)
+        else:
+            axis.plot(*line.xy, color="#db2777", lw=2.8,
+                      linestyle=(0, (5, 3)), zorder=6)
+    step = (window[2] - window[0]) * 0.035
+    for seg, line in lines:
+        middle = line.interpolate(0.5, normalized=True)
+        (ax0, ay0), (ax1, ay1) = line.coords[0][:2], line.coords[-1][:2]
+        dx, dy = ax1 - ax0, ay1 - ay0
+        span = (dx * dx + dy * dy) ** 0.5 or 1.0
+        spot = None
+        for reach in range(1, 9):
+            for sign in (1, -1):
+                here = Point(middle.x - dy / span * step * reach * sign,
+                             middle.y + dx / span * step * reach * sign)
+                if land is not None and land.contains(here):
+                    continue
+                if min(g.distance(here) for _, g in lines) >= step * 0.8:
+                    spot = here
+                    break
+            if spot is not None:
+                break
+        if spot is None:
+            spot = Point(middle.x - dy / span * step,
+                         middle.y + dx / span * step)
+        colour = "#1f2937" if seg["kind"] == "walked" else "#db2777"
+        axis.annotate(seg["id"], (middle.x, middle.y),
+                      xytext=(spot.x, spot.y), fontsize=9.5,
+                      fontweight="bold", color="white", ha="center",
+                      va="center", zorder=10,
+                      arrowprops=dict(arrowstyle="-", color=colour, lw=1.0,
+                                      shrinkA=6, shrinkB=1),
+                      bbox=dict(boxstyle="circle,pad=0.26",
+                                facecolor=colour, edgecolor="white",
+                                linewidth=1.1))
+    axis.set_xlim(window[0], window[2])
+    axis.set_ylim(window[1], window[3])
+    axis.set_xticks([])
+    axis.set_yticks([])
+    for side in axis.spines.values():
+        side.set_visible(False)
+    walked = sum(s["length_m"] for s in book["segments"]
+                 if s["kind"] == "walked")
+    drawn = sum(s["length_m"] for s in book["segments"]
+                if s["kind"] == "drawn")
+    handles = [
+        plt.Rectangle((0, 0), 1, 1, facecolor="#1d4ed8", alpha=0.13,
+                      edgecolor="none",
+                      label=f"{(land.area / 1e4) if land else 0:,.0f} ha "
+                            f"enclosed by the stored boundary"),
+        Line2D([0], [0], color="#1f2937", lw=2.2,
+               label=f"Walked — {walked / 1000:.2f} km"),
+        Line2D([0], [0], color="#db2777", lw=2.8, linestyle=(0, (5, 3)),
+               label=f"Drawn, nobody walked it — {drawn / 1000:.2f} km"),
+    ]
+    for seg in book["segments"]:
+        if seg["kind"] != "drawn":
+            continue
+        handles.append(Line2D([0], [0], color="none",
+                              label=f"      {seg['id']}  "
+                                    f"{seg['length_m']:,.0f} m"))
+    axis.legend(handles=handles, loc="upper left", fontsize=9,
+                bbox_to_anchor=(1.01, 1.0), borderaxespad=0, frameon=False)
+    axis.set_title(f"{book['unit']} — the boundary as stored\n"
+                   f"{len(book['segments'])} segments, written down "
+                   f"{book['solved']}; each one edited on its own",
+                   fontsize=12)
+    span = window[2] - window[0]
+    bar = 1000 if span > 4000 else 500
+    bx = window[0] + span * 0.05
+    by = window[1] + (window[3] - window[1]) * 0.05
+    axis.plot([bx, bx + bar], [by, by], color="#111827", lw=3)
+    axis.annotate(f"{bar / 1000:g} km", (bx + bar / 2, by), xytext=(0, 7),
+                  textcoords="offset points", ha="center", fontsize=9)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    figure.savefig(out, bbox_inches="tight")
+    plt.close(figure)
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -299,6 +408,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--with-wkt")
     parser.add_argument("--delete", action="store_true")
     parser.add_argument("--note", default="")
+    parser.add_argument("--map", dest="map_to", type=Path,
+                        help="draw the stored boundary, segments numbered")
     parser.add_argument("--gpx", type=Path,
                         help="write the stored boundary out for a GPS")
     parser.add_argument("--only-drawn", action="store_true",
@@ -364,6 +475,10 @@ def main(argv: list[str] | None = None) -> int:
         save(book)
         print()
         print(summary(book))
+        return 0
+
+    if args.map_to:
+        print(f"Wrote {draw(book, args.map_to)}")
         return 0
 
     if args.gpx:
