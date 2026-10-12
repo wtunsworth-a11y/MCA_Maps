@@ -388,6 +388,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", type=Path)
     parser.add_argument("--zoom", type=int, default=None,
                         help="frame the map on one numbered gap")
+    parser.add_argument("--window", type=float, nargs=4, default=None,
+                        metavar=("X0", "Y0", "X1", "Y1"),
+                        help="frame the map on these metric-CRS bounds")
     parser.add_argument("--site-length", type=float, default=500.0,
                         help="a recording shorter than this is a place, "
                              "not a stretch of boundary")
@@ -464,9 +467,13 @@ def main(argv: list[str] | None = None) -> int:
     pad = max(maxx - minx, maxy - miny) * 0.10
     window = (minx - pad, miny - pad, maxx + pad, maxy + pad)
 
+    if args.window:
+        window = tuple(args.window)
+
     # Frame on one gap when asked. A 1,274 ha clan drawn on one page puts
     # a 35 m gap inside the width of its own label.
-    if args.zoom is not None and built is not None and built["bridges"]:
+    if (args.zoom is not None and args.window is None
+            and built is not None and built["bridges"]):
         import chord_map as _zm
         _order = sorted(built["bridges"], key=lambda b: -b.length)
         _nums = _zm.numbering(unit, _order, record=False)
