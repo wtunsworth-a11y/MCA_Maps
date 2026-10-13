@@ -113,11 +113,12 @@
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 1234.5,
-   "wkt": "LINESTRING (650078 8991897, 649126 8991111)",
+   "length_m": 719.4,
+   "wkt": "LINESTRING (650078 8991897, 649461 8991527)",
    "history": [
     "2026-10-13: added — the one opening left in the line: s1's free end to s14's. 1,884 m of ground nobody walked. To be investigated, not accepted.",
-    "2026-10-13: was 1884 m drawn — joined to the wrong end of s14; moved to its eastern end at 649126 8991111"
+    "2026-10-13: was 1884 m drawn — joined to the wrong end of s14; moved to its eastern end at 649126 8991111",
+    "2026-10-13: was 1234 m drawn — the closest point, as the reviewer traced: s1's free end to the nearest point on s14, not to s14's end"
    ]
   }
  ]
