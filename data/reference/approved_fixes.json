@@ -98,5 +98,18 @@
     "Ground the steward walked right round belongs inside the line."
    ]
   }
+ },
+ "Jariji — Zone 7B": {
+  "collapse_duplicates": {
+   "approved": "2026-10-13",
+   "why": [
+    "The 6,755 m recording carrying 'Jariji clan boundary with shape clan'",
+    "and 'Maranabum water cleke for drinking' is saved twice, identically,",
+    "one of the two named '- copy'.",
+    "",
+    "Tried at the reviewer's request to see what it changes. Topology only:",
+    "walked distance and enclosure still come from every recording."
+   ]
+  }
  }
 }
