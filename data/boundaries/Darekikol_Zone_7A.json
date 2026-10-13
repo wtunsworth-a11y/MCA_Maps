@@ -217,12 +217,13 @@
   {
    "id": "s18",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 35.0,
    "wkt": "LINESTRING (658803.9823674787 8995072.61816413, 658829.3944482985 8995096.69050733)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was drawn, now implied — 35 m with nothing under it and the nearest walking 7 m away; settled, not a visit"
    ]
   },
   {
@@ -277,12 +278,14 @@
   {
    "id": "s24",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "walked",
    "steward": "",
-   "length_m": 242.6,
-   "wkt": "LINESTRING (658238 8994537, 658321 8994309)",
+   "length_m": 254.3,
+   "wkt": "LINESTRING (658238 8994537, 658256.8134448521 8994531.235173216, 658256.840126929 8994511.667913986, 658257.0288377383 8994492.059634438, 658258.7901657778 8994472.493731016, 658263.2860150185 8994454.69405721, 658267.5864651315 8994437.608460732, 658276.0176556557 8994422.741309224, 658283.6101871002 8994406.78689646, 658291.8482228172 8994390.129325045, 658296.9124096385 8994371.253633285, 658302.0775220231 8994352.211939998, 658309.2914754788 8994333.700193046, 658317.9056151118 8994316.706925007, 658321 8994309)",
    "history": [
-    "2026-10-13: added — closing the ring between s19's end and s4's; 222 m"
+    "2026-10-13: added — closing the ring between s19's end and s4's; 222 m",
+    "2026-10-13: was 243 m drawn — put on the recording it was already lying along — 96.6% of it was within 10 m of walking",
+    "2026-10-13: was drawn, now walked — it is the recording itself now"
    ]
   },
   {
@@ -332,12 +335,14 @@
   {
    "id": "s28",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
-   "length_m": 259.5,
-   "wkt": "LINESTRING (659278.920808291 8995489.651205726, 659475.6028338622 8995658.902392445)",
+   "length_m": 261.8,
+   "wkt": "LINESTRING (659278.920808291 8995489.651205726, 659287.060813505 8995504.629422497, 659294.3891405562 8995511.23832085, 659343.1390109786 8995546.159320254, 659409.8935124516 8995606.96237792, 659467.7313830962 8995646.832115263, 659475.6028338622 8995658.902392445)",
    "history": [
-    "2026-10-13: added — s13 to s17 along the walking, as the reviewer directed"
+    "2026-10-13: added — s13 to s17 along the walking, as the reviewer directed",
+    "2026-10-13: was 260 m drawn — a central line through the walking either side of it, as the reviewer directed — the middle of the corridor rather than a chord across it",
+    "2026-10-13: was drawn, now implied — the midline of walked track, not a journey anyone need make"
    ]
   },
   {
