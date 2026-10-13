@@ -93,6 +93,17 @@
    "history": [
     "written down from the first solve, 2026-10-13"
    ]
+  },
+  {
+   "id": "s2",
+   "ring": 0,
+   "kind": "drawn",
+   "steward": "",
+   "length_m": 25.2,
+   "wkt": "LINESTRING (648257 8992985, 648260 8993010)",
+   "history": [
+    "2026-10-13: added — the real gap, shaded green by the reviewer: where s1 stops and the north-east circuit begins"
+   ]
   }
  ]
 }

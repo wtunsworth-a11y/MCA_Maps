@@ -548,6 +548,11 @@ def main(argv: list[str] | None = None) -> int:
                         help="draw the stored boundary, segments numbered")
     parser.add_argument("--gpx", type=Path,
                         help="write the stored boundary out for a GPS")
+    parser.add_argument("--add", metavar="WKT",
+                        help="add a segment to the line")
+    parser.add_argument("--kind-of", default="drawn",
+                        choices=["walked", "implied", "drawn"],
+                        help="with --add: what the new segment is")
     parser.add_argument("--near", type=float, nargs=3,
                         metavar=("X", "Y", "METRES"),
                         help="with --map, frame on one place")
@@ -622,6 +627,22 @@ def main(argv: list[str] | None = None) -> int:
         save(book)
         print(f"{args.kind} ({seg['length_m']:.0f} m) {was} -> "
               f"{args.as_kind}. The line itself is untouched.\n")
+        print(summary(book))
+        return 0
+
+    if args.add:
+        line = shapely_wkt.loads(args.add)
+        used = {s["id"] for s in book["segments"]}
+        n = 1
+        while f"s{n}" in used:
+            n += 1
+        book["segments"].append({
+            "id": f"s{n}", "ring": 0, "kind": args.kind_of, "steward": "",
+            "length_m": round(line.length, 1), "wkt": line.wkt,
+            "history": [f"{date.today().isoformat()}: added"
+                        + (f" — {args.note}" if args.note else "")]})
+        save(book)
+        print(f"s{n} added, {line.length:.0f} m {args.kind_of}.\n")
         print(summary(book))
         return 0
 
