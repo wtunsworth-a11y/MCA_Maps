@@ -160,14 +160,15 @@
    ]
   },
   {
-   "id": "s14",
+   "id": "s41",
    "ring": 0,
    "kind": "drawn",
    "steward": "",
    "length_m": 65.0,
    "wkt": "LINESTRING (650068.306364286 8984709.760608925, 650077.8871555713 8984645.455834335)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "2026-10-13: put in place of s14, which was 65 m nobody walked — small chord with walked track interspersed",
+    "2026-10-13: was 105 m drawn — follow-walk made this 65 m chord into 105 m of drawn line; put back as it was"
    ]
   },
   {
@@ -226,14 +227,36 @@
    ]
   },
   {
-   "id": "s20",
+   "id": "s38",
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 300.1,
-   "wkt": "LINESTRING (650011.5675989089 8984276.992623633, 649825.5197497437 8984041.56412621)",
+   "length_m": 86.2,
+   "wkt": "LINESTRING (650011.5675989089 8984276.992623633, 650020.2640923497 8984287.997332329, 650001.8451102638 8984218.251990315)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "2026-10-13: put in place of s20, which was 300 m nobody walked — small chord with walked track interspersed"
+   ]
+  },
+  {
+   "id": "s39",
+   "ring": 0,
+   "kind": "walked",
+   "steward": "",
+   "length_m": 82.1,
+   "wkt": "LINESTRING (650001.8451102638 8984218.251990315, 649998.919749825 8984210.601335015, 649993.0652137755 8984197.817598931, 649983.7590366367 8984180.217360282, 649973.5298116665 8984163.049622878, 649963.1750429067 8984145.95165489)",
+   "history": [
+    "2026-10-13: put in place of s20, which was 300 m nobody walked — small chord with walked track interspersed"
+   ]
+  },
+  {
+   "id": "s40",
+   "ring": 0,
+   "kind": "drawn",
+   "steward": "",
+   "length_m": 191.4,
+   "wkt": "LINESTRING (649963.1750429067 8984145.95165489, 649819.6426095952 8984034.127080953, 649825.5197497437 8984041.56412621)",
+   "history": [
+    "2026-10-13: put in place of s20, which was 300 m nobody walked — small chord with walked track interspersed"
    ]
   },
   {
@@ -386,14 +409,25 @@
    ]
   },
   {
-   "id": "s34",
+   "id": "s42",
+   "ring": 0,
+   "kind": "walked",
+   "steward": "",
+   "length_m": 282.9,
+   "wkt": "LINESTRING (649734.8234159896 8987970.725826576, 649678.4593090515 8987910.74413987, 649684.9455187212 8987919.319267847, 649694.0246903497 8987931.717770264, 649705.8216478501 8987947.804844482, 649716.7380442048 8987964.294018196, 649728.8698193504 8987979.365513725, 649739.0537552584 8987995.255943118, 649751.6491541904 8988009.052113235, 649762.7597052719 8988024.452910831, 649775.2273833021 8988039.470069531, 649787.4328191165 8988054.941328885, 649801.3201670911 8988068.886846192)",
+   "history": [
+    "2026-10-13: put in place of s34, which was 140 m nobody walked — small chord with walked track interspersed"
+   ]
+  },
+  {
+   "id": "s43",
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 140.0,
-   "wkt": "LINESTRING (649734.8234159896 8987970.725826576, 649830.7154532458 8988072.772438306)",
+   "length_m": 45.3,
+   "wkt": "LINESTRING (649801.3201670911 8988068.886846192, 649836.6032321723 8988079.038108608, 649830.7154532458 8988072.772438306)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "2026-10-13: put in place of s34, which was 140 m nobody walked — small chord with walked track interspersed"
    ]
   },
   {
