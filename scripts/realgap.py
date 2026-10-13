@@ -72,7 +72,7 @@ def routes(parts, reach: float = REACH):
         a, b = labels[2 * index], labels[2 * index + 1]
         if a != b:
             graph.add_edge(a, b, cost=0.0, kind="walked",
-                           length=part.length)
+                           length=part.length, part=index)
     # A break costs what it spans.
     nodes = list(positions)
     for i in range(len(nodes)):
@@ -116,16 +116,28 @@ def real_gap(parts, chord, reach: float = REACH):
     if start == finish or not nx.has_path(graph, start, finish):
         return None
     path = nx.shortest_path(graph, start, finish, weight="cost")
-    breaks, walked = [], 0.0
+    # The route in order, so the boundary can be rebuilt along it rather
+    # than merely measured. A walked edge hands back the recording it
+    # came from, oriented to run the way the route goes.
+    breaks, walked, route = [], 0.0, []
     for a, b in zip(path, path[1:]):
         edge = graph[a][b]
         if edge["kind"] == "break":
-            breaks.append(LineString([positions[a], positions[b]]))
+            piece = LineString([positions[a], positions[b]])
+            breaks.append(piece)
+            route.append((piece, "drawn"))
         else:
+            line = parts[edge["part"]]
+            here = Point(positions[a])
+            if (Point(line.coords[0][:2]).distance(here)
+                    > Point(line.coords[-1][:2]).distance(here)):
+                line = LineString(list(line.coords)[::-1])
             walked += edge["length"]
+            route.append((line, "walked"))
     return {"breaks": breaks,
             "break_m": sum(b.length for b in breaks),
             "walked_m": walked,
+            "route": route,
             "chord_m": chord.length}
 
 

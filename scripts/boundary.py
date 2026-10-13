@@ -395,6 +395,64 @@ def draw(book: dict, out: Path):
     return out
 
 
+def follow_walk(book: dict, seg_id: str, parts: list, note: str = ""):
+    """Replace a drawn segment with the walking it was cutting across.
+
+    The segment becomes the run of recordings the steward actually made
+    between its two ends, with whatever break is left in it kept as its
+    own drawn segment. Nothing outside the replacement is touched, and
+    the new pieces take fresh numbers — a segment that goes, goes.
+    """
+    import realgap
+
+    found = [s for s in book["segments"] if s["id"] == seg_id]
+    if not found:
+        raise SystemExit(f"No segment {seg_id}.")
+    seg = found[0]
+    line = shapely_wkt.loads(seg["wkt"])
+    got = realgap.real_gap(parts, line)
+    if not got or got["break_m"] >= line.length:
+        raise SystemExit(f"{seg_id}: no cheaper way round. Nothing done.")
+
+    used = {int(s["id"][1:]) for s in book["segments"] if s["id"][1:].isdigit()}
+    next_id = max(used) + 1
+    when = date.today().isoformat()
+    made = []
+    for piece, kind in got["route"]:
+        made.append({
+            "id": f"s{next_id}",
+            "ring": seg.get("ring", 0),
+            "kind": kind,
+            "steward": seg.get("steward", "") if kind == "walked" else "",
+            "length_m": round(piece.length, 1),
+            "wkt": piece.wkt,
+            "history": [
+                f"{when}: put in place of {seg_id}, which was "
+                f"{seg['length_m']:.0f} m nobody walked"
+                + (f" — {note}" if note else "")],
+        })
+        next_id += 1
+    # The run has to start and finish exactly where the segment it
+    # replaces did, or the ring comes apart. The walked recordings end a
+    # few metres off the ring's own corners, so the first and last pieces
+    # are carried to meet them.
+    head = shapely_wkt.loads(made[0]["wkt"])
+    if Point(head.coords[0][:2]).distance(Point(line.coords[0][:2])) > 0.01:
+        head = LineString([line.coords[0][:2]] + list(head.coords))
+        made[0]["wkt"] = head.wkt
+        made[0]["length_m"] = round(head.length, 1)
+    tail = shapely_wkt.loads(made[-1]["wkt"])
+    if Point(tail.coords[-1][:2]).distance(Point(line.coords[-1][:2])) > 0.01:
+        tail = LineString(list(tail.coords) + [line.coords[-1][:2]])
+        made[-1]["wkt"] = tail.wkt
+        made[-1]["length_m"] = round(tail.length, 1)
+
+    at = book["segments"].index(seg)
+    book["segments"] = (book["segments"][:at] + made
+                        + book["segments"][at + 1:])
+    return seg, made
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -407,6 +465,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--replace", metavar="ID")
     parser.add_argument("--with-wkt")
     parser.add_argument("--delete", action="store_true")
+    parser.add_argument("--follow-walk", metavar="ID",
+                        help="replace a drawn segment with the walking it "
+                             "cuts across")
     parser.add_argument("--note", default="")
     parser.add_argument("--map", dest="map_to", type=Path,
                         help="draw the stored boundary, segments numbered")
@@ -449,6 +510,19 @@ def main(argv: list[str] | None = None) -> int:
     if book is None:
         print(f"{unit} has no stored boundary yet. Run --solve.")
         return 1
+
+    if args.follow_walk:
+        group = published[published._unit == unit]
+        parts = chord_map.parts_of(group)
+        gone, made = follow_walk(book, args.follow_walk, parts, args.note)
+        save(book)
+        walked = sum(m["length_m"] for m in made if m["kind"] == "walked")
+        drawn = sum(m["length_m"] for m in made if m["kind"] == "drawn")
+        print(f"{args.follow_walk} ({gone['length_m']:.0f} m drawn) replaced "
+              f"by {len(made)} segment(s): {walked:.0f} m walked, "
+              f"{drawn:.0f} m still drawn\n")
+        print(summary(book))
+        return 0
 
     if args.replace:
         found = [s for s in book["segments"] if s["id"] == args.replace]

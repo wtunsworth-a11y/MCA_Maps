@@ -316,11 +316,40 @@
     <trkpt lat="-9.1447033" lon="148.4043933"/>
     <trkpt lat="-9.1448694" lon="148.4043517"/>
   </trkseg></trk>
-  <trk><name>s4 — DRAWN 240 m</name><trkseg>
+  <trk><name>s11 — DRAWN 72 m</name><trkseg>
     <trkpt lat="-9.1448694" lon="148.4043517"/>
-    <trkpt lat="-9.1457469" lon="148.4041317"/>
-    <trkpt lat="-9.1458130" lon="148.4041151"/>
-    <trkpt lat="-9.1459224" lon="148.4040877"/>
+    <trkpt lat="-9.1447033" lon="148.4043933"/>
+    <trkpt lat="-9.1447683" lon="148.4039117"/>
+  </trkseg></trk>
+  <trk><name>s12 — WALKED 428 m</name><trkseg>
+    <trkpt lat="-9.1447683" lon="148.4039117"/>
+    <trkpt lat="-9.1448528" lon="148.4037971"/>
+    <trkpt lat="-9.1449594" lon="148.4036811"/>
+    <trkpt lat="-9.1450805" lon="148.4035567"/>
+    <trkpt lat="-9.1452051" lon="148.4034355"/>
+    <trkpt lat="-9.1452741" lon="148.4033514"/>
+    <trkpt lat="-9.1453342" lon="148.4033484"/>
+    <trkpt lat="-9.1453914" lon="148.4034406"/>
+    <trkpt lat="-9.1454872" lon="148.4035774"/>
+    <trkpt lat="-9.1455756" lon="148.4037260"/>
+    <trkpt lat="-9.1456759" lon="148.4038742"/>
+    <trkpt lat="-9.1457481" lon="148.4040271"/>
+    <trkpt lat="-9.1458389" lon="148.4041502"/>
+    <trkpt lat="-9.1459491" lon="148.4042167"/>
+    <trkpt lat="-9.1461130" lon="148.4042322"/>
+    <trkpt lat="-9.1462876" lon="148.4042282"/>
+    <trkpt lat="-9.1464476" lon="148.4042731"/>
+    <trkpt lat="-9.1465741" lon="148.4043661"/>
+    <trkpt lat="-9.1466825" lon="148.4044937"/>
+    <trkpt lat="-9.1467883" lon="148.4045650"/>
+    <trkpt lat="-9.1468569" lon="148.4045719"/>
+    <trkpt lat="-9.1468901" lon="148.4044798"/>
+    <trkpt lat="-9.1468800" lon="148.4043540"/>
+    <trkpt lat="-9.1469072" lon="148.4041890"/>
+    <trkpt lat="-9.1469552" lon="148.4040356"/>
+    <trkpt lat="-9.1470201" lon="148.4038984"/>
+    <trkpt lat="-9.1470402" lon="148.4038006"/>
+    <trkpt lat="-9.1470183" lon="148.4037383"/>
     <trkpt lat="-9.1469754" lon="148.4038238"/>
   </trkseg></trk>
   <trk><name>s5 — WALKED 750 m — Peter Awako</name><trkseg>

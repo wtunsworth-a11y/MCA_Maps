@@ -5,12 +5,10 @@
     <trkpt lat="-9.1415660" lon="148.3922592"/>
     <trkpt lat="-9.1309687" lon="148.4054031"/>
   </trkseg></trk>
-  <trk><name>s4 — DRAWN 240 m</name><trkseg>
+  <trk><name>s11 — DRAWN 72 m</name><trkseg>
     <trkpt lat="-9.1448694" lon="148.4043517"/>
-    <trkpt lat="-9.1457469" lon="148.4041317"/>
-    <trkpt lat="-9.1458130" lon="148.4041151"/>
-    <trkpt lat="-9.1459224" lon="148.4040877"/>
-    <trkpt lat="-9.1469754" lon="148.4038238"/>
+    <trkpt lat="-9.1447033" lon="148.4043933"/>
+    <trkpt lat="-9.1447683" lon="148.4039117"/>
   </trkseg></trk>
   <trk><name>s6 — DRAWN 80 m</name><trkseg>
     <trkpt lat="-9.1480544" lon="148.3983693"/>
