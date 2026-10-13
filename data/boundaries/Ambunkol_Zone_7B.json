@@ -51,14 +51,25 @@
    ]
   },
   {
-   "id": "s16",
+   "id": "s19",
+   "ring": 0,
+   "kind": "walked",
+   "steward": "Peter Awako",
+   "length_m": 46.9,
+   "wkt": "LINESTRING (654334.3095898649 8988898.768949658, 654326.4618909479 8988885.02324439, 654319.5710479033 8988870.620611811, 654310.497235828 8988858.569577724)",
+   "history": [
+    "2026-10-13: put in place of s16, which was 92 m straight across the point. The reviewer traced the 53 m break and then Peter Awako's climb up to the point."
+   ]
+  },
+  {
+   "id": "s20",
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 91.5,
-   "wkt": "LINESTRING (654334.3095898649 8988898.768949658, 654262.4496157388 8988842.168026097)",
+   "length_m": 50.8,
+   "wkt": "LINESTRING (654310.497235828 8988858.569577724, 654262.4496157388 8988842.168026097)",
    "history": [
-    "2026-10-13: one straight line in place of s13, s14 and s15 (19 m drawn, 28 m walked, 40 m drawn). The reviewer drew it: the walked hook is not how the boundary runs here."
+    "2026-10-13: put in place of s16, which was 92 m straight across the point. The reviewer traced the 53 m break and then Peter Awako's climb up to the point."
    ]
   },
   {
