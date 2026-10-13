@@ -297,5 +297,12 @@
    "See output/queries/deari_nui.png."
   ],
   "raised": "2026-10-13"
+ },
+ "Marang — Zone 7B": {
+  "notes": [
+   "No polygon and no closing — not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Nothing in the two recordings carries sacred or tambu wording, and neither carries any note beyond its file name."
+  ],
+  "raised": "2026-10-13"
  }
 }
