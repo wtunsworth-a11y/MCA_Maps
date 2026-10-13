@@ -272,5 +272,13 @@
    "Simeon Pasip's own words, reproduced as written: 'Mamure Area' and 'Abuankol Clan Bandry'."
   ],
   "raised": "2026-10-13"
+ },
+ "Nui — Zone 3": {
+  "notes": [
+   "No polygon and no closing — not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Seven recordings from Bobby Aneba and Nickod Nakina, 23.4 km. Two of them lie 2.2-2.3 km from the body of the survey, one of 2,409 m and one of 290 m.",
+   "Their own words, reproduced as written: 'Odohakill boundry point.', 'For whole nui clain.', 'Nui clain boundry maping, track record.'"
+  ],
+  "raised": "2026-10-13"
  }
 }
