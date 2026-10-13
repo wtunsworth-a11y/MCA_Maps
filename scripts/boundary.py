@@ -325,7 +325,14 @@ def draw(book: dict, out: Path):
         axis.plot(*line.xy, color=colour, lw=width, linestyle=dash,
                   zorder=5 if seg["kind"] == "walked" else 6)
     step = (window[2] - window[0]) * 0.035
-    for seg, line in lines:
+    # Labels have to clear each other as well as the lines. s16 and s12
+    # are 60 m apart on Ambunkol and one marker sat on top of the other,
+    # so a segment could be seen but not named — which is the whole point
+    # of numbering them.
+    placed: list = []
+    # Shortest first: a small segment has less room to put its marker, so
+    # it chooses before the long ones have taken the space.
+    for seg, line in sorted(lines, key=lambda pair: pair[1].length):
         middle = line.interpolate(0.5, normalized=True)
         (ax0, ay0), (ax1, ay1) = line.coords[0][:2], line.coords[-1][:2]
         dx, dy = ax1 - ax0, ay1 - ay0
@@ -337,14 +344,19 @@ def draw(book: dict, out: Path):
                              middle.y + dx / span * step * reach * sign)
                 if land is not None and land.contains(here):
                     continue
-                if min(g.distance(here) for _, g in lines) >= step * 0.8:
-                    spot = here
-                    break
+                if min(g.distance(here) for _, g in lines) < step * 0.8:
+                    continue
+                if any(here.distance(taken) < step * 0.95
+                       for taken in placed):
+                    continue
+                spot = here
+                break
             if spot is not None:
                 break
         if spot is None:
             spot = Point(middle.x - dy / span * step,
                          middle.y + dx / span * step)
+        placed.append(spot)
         colour = paint.get(seg["kind"], paint["drawn"])[0]
         axis.annotate(seg["id"], (middle.x, middle.y),
                       xytext=(spot.x, spot.y), fontsize=9.5,
