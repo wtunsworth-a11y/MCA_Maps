@@ -316,12 +316,13 @@
   {
    "id": "s28",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 470.1,
    "wkt": "LINESTRING (648936.6279777377 8983329.522546018, 648766.901940051 8983767.919833373)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was drawn, now implied — follows the river, as the reviewer identified on 2026-10-13. Not a journey anyone need make."
    ]
   },
   {
@@ -338,12 +339,13 @@
   {
    "id": "s30",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 670.2,
    "wkt": "LINESTRING (648550.225192969 8984123.72258647, 648367.8735698329 8984768.586362705)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was drawn, now implied — follows the river, as the reviewer identified on 2026-10-13. Not a journey anyone need make."
    ]
   },
   {
@@ -360,12 +362,13 @@
   {
    "id": "s32",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 500.1,
    "wkt": "LINESTRING (648220.4615232786 8986436.433097042, 648707.5512748446 8986549.816250168)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was drawn, now implied — follows the river, as the reviewer identified on 2026-10-13. Not a journey anyone need make."
    ]
   },
   {
