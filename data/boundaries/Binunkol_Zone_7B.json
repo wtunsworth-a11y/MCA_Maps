@@ -428,12 +428,13 @@
   {
    "id": "s43",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 45.3,
    "wkt": "LINESTRING (649801.3201670911 8988068.886846192, 649836.6032321723 8988079.038108608, 649830.7154532458 8988072.772438306)",
    "history": [
-    "2026-10-13: put in place of s34, which was 140 m nobody walked — small chord with walked track interspersed"
+    "2026-10-13: put in place of s34, which was 140 m nobody walked — small chord with walked track interspersed",
+    "2026-10-13: was drawn, now implied — 63% of it lies within 10 m of walking — a seam between recordings, not missing ground"
    ]
   },
   {
