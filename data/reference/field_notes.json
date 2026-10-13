@@ -250,5 +250,13 @@
    "Nothing in the twelve recordings carries sacred or tambu wording."
   ],
   "raised": "2026-10-13"
+ },
+ "Gubai — Zone 8": {
+  "notes": [
+   "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "75 recordings from Kenny Noi and Fordy Igai, 134.5 km — the largest file in the set.",
+   "Kenny Noi names the edge, reproduced as written: 'Darei dry Creek Land Boundary.' and 'Following Darei dry Creek.'"
+  ],
+  "raised": "2026-10-13"
  }
 }
