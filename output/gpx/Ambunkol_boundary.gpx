@@ -16,7 +16,7 @@
     <trkpt lat="-9.1415660" lon="148.3922592"/>
     <trkpt lat="-9.1309687" lon="148.4054031"/>
   </trkseg></trk>
-  <trk><name>s3 — WALKED 5240 m — Peter Awako</name><trkseg>
+  <trk><name>s3 — WALKED 5168 m — Peter Awako</name><trkseg>
     <trkpt lat="-9.1309687" lon="148.4054031"/>
     <trkpt lat="-9.1308831" lon="148.4055093"/>
     <trkpt lat="-9.1307608" lon="148.4056610"/>
@@ -311,22 +311,9 @@
     <trkpt lat="-9.1442868" lon="148.4047232"/>
     <trkpt lat="-9.1442272" lon="148.4046248"/>
     <trkpt lat="-9.1442540" lon="148.4045635"/>
-    <trkpt lat="-9.1443785" lon="148.4044926"/>
-    <trkpt lat="-9.1445090" lon="148.4044304"/>
-    <trkpt lat="-9.1447033" lon="148.4043933"/>
-    <trkpt lat="-9.1448694" lon="148.4043517"/>
   </trkseg></trk>
-  <trk><name>s13 — DRAWN 19 m</name><trkseg>
-    <trkpt lat="-9.1448694" lon="148.4043517"/>
-    <trkpt lat="-9.1447033" lon="148.4043933"/>
-  </trkseg></trk>
-  <trk><name>s14 — WALKED 28 m — Peter Awako</name><trkseg>
-    <trkpt lat="-9.1447033" lon="148.4043933"/>
-    <trkpt lat="-9.1447993" lon="148.4042637"/>
-    <trkpt lat="-9.1447117" lon="148.4042667"/>
-  </trkseg></trk>
-  <trk><name>s15 — DRAWN 40 m</name><trkseg>
-    <trkpt lat="-9.1447117" lon="148.4042667"/>
+  <trk><name>s16 — DRAWN 92 m</name><trkseg>
+    <trkpt lat="-9.1442540" lon="148.4045635"/>
     <trkpt lat="-9.1447683" lon="148.4039117"/>
   </trkseg></trk>
   <trk><name>s12 — WALKED 428 m</name><trkseg>
