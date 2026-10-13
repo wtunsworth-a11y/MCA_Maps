@@ -612,6 +612,57 @@ def grow(book: dict, parts: list, reach: float = REACH, note: str = ""):
         added.append((sid, piece.length))
     return added
 
+SNAP = 25.0
+
+
+def snap(book: dict, reach: float = SNAP, note: str = ""):
+    """Pull ends that nearly touch onto each other.
+
+    Two segments taken from two recordings of the same boundary stop a
+    few metres apart, and the line reads as open where nothing is
+    missing. This moves the shorter segment's tip onto the longer one's,
+    so the join is exact. Nothing but the last point of a segment moves,
+    and never further than `reach`.
+    """
+    from shapely.geometry import LineString, Point
+
+    done = []
+    for _ in range(200):
+        segments = {s["id"]: shapely_wkt.loads(s["wkt"])
+                    for s in book["segments"]}
+        pairs = []
+        for sid, line in segments.items():
+            others = unary_union([g for k, g in segments.items() if k != sid])
+            for which in (0, -1):
+                tip = Point(line.coords[which][:2])
+                if tip.distance(others) <= 0.01:
+                    continue
+                for kid, mate in segments.items():
+                    if kid == sid:
+                        continue
+                    for mwhich in (0, -1):
+                        onto = Point(mate.coords[mwhich][:2])
+                        gap = tip.distance(onto)
+                        if 0.01 < gap <= reach:
+                            pairs.append((gap, sid, which, kid, onto))
+        if not pairs:
+            break
+        pairs.sort(key=lambda row: row[0])
+        gap, sid, which, kid, onto = pairs[0]
+        line = segments[sid]
+        coords = list(line.coords)
+        coords[which] = (onto.x, onto.y)
+        moved = LineString(coords)
+        seg = [s for s in book["segments"] if s["id"] == sid][0]
+        seg["history"].append(
+            f"{date.today().isoformat()}: its end moved {gap:.0f} m onto "
+            f"{kid}, which it had stopped short of"
+            + (f" — {note}" if note else ""))
+        seg["wkt"] = moved.wkt
+        seg["length_m"] = round(moved.length, 1)
+        done.append((sid, kid, gap))
+    return done
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -640,6 +691,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--grow", action="store_true",
                         help="carry every free end on along the walking "
                              "until nothing continues")
+    parser.add_argument("--snap", nargs="?", type=float, const=SNAP,
+                        metavar="METRES",
+                        help="pull ends that nearly touch onto each other")
     parser.add_argument("--add", metavar="WKT",
                         help="add a segment to the line")
     parser.add_argument("--kind-of", default="drawn",
@@ -685,6 +739,19 @@ def main(argv: list[str] | None = None) -> int:
     if book is None:
         print(f"{unit} has no stored boundary yet. Run --solve.")
         return 1
+
+    if args.snap:
+        done = snap(book, args.snap, args.note)
+        save(book)
+        if not done:
+            print(f"No ends within {args.snap:.0f} m of each other.")
+        else:
+            print(f"{len(done)} join(s) closed:")
+            for sid, kid, gap in done:
+                print(f"   {sid} -> {kid}   {gap:.0f} m")
+        print()
+        print(summary(book))
+        return 0
 
     if args.grow:
         group = published[published._unit == unit]
