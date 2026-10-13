@@ -53,12 +53,13 @@
   {
    "id": "s11",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 30.7,
    "wkt": "LINESTRING (648147.1273432022 8992037.84363648, 648168.4330885487 8992015.690678442)",
    "history": [
-    "2026-10-13: put in place of s2, which was 2048 m nobody walked — the north-east circuit brought into the line: the route the stewards actually walked between s1 and s9, in place of the 2,048 m line across the middle"
+    "2026-10-13: put in place of s2, which was 2048 m nobody walked — the north-east circuit brought into the line: the route the stewards actually walked between s1 and s9, in place of the 2,048 m line across the middle",
+    "2026-10-13: was drawn, now implied — a 31 m break between two recordings of the same boundary — s10 ends on one walk, s12 begins on another, and no recording spans it. Nobody is sent 31 m into the bush for this."
    ]
   },
   {
