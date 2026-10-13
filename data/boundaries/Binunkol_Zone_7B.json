@@ -178,10 +178,11 @@
    "ring": 0,
    "kind": "walked",
    "steward": "Moses Garui",
-   "length_m": 35.0,
-   "wkt": "LINESTRING (650088.9419147465 8984571.258017499, 650091.5339815118 8984553.86047025, 650094.1008023617 8984536.632369643)",
+   "length_m": 45.8,
+   "wkt": "LINESTRING (650089 8984571, 650096.5936734667 8984568.638785435, 650092.7042720702 8984556.130458312, 650085.9611749303 8984543.051014157, 650094 8984537)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was 35 m walked — half where it was and half on the grey line, as the reviewer drew"
    ]
   },
   {
