@@ -490,6 +490,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--follow-walk", metavar="ID",
                         help="replace a drawn segment with the walking it "
                              "cuts across")
+    parser.add_argument("--kind", metavar="ID",
+                        help="change what a segment is, not where it runs")
+    parser.add_argument("--as", dest="as_kind",
+                        choices=["walked", "implied", "drawn"],
+                        help="with --kind: walked, implied or drawn")
     parser.add_argument("--note", default="")
     parser.add_argument("--map", dest="map_to", type=Path,
                         help="draw the stored boundary, segments numbered")
@@ -543,6 +548,29 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{args.follow_walk} ({gone['length_m']:.0f} m drawn) replaced "
               f"by {len(made)} segment(s): {walked:.0f} m walked, "
               f"{drawn:.0f} m still drawn\n")
+        print(summary(book))
+        return 0
+
+    if args.kind:
+        found = [s for s in book["segments"] if s["id"] == args.kind]
+        if not found:
+            print(f"No segment {args.kind}.")
+            return 1
+        if not args.as_kind:
+            print("--kind needs --as walked|implied|drawn.")
+            return 1
+        seg = found[0]
+        was = seg["kind"]
+        if was == args.as_kind:
+            print(f"{args.kind} is already {was}.")
+            return 0
+        seg["history"].append(
+            f"{date.today().isoformat()}: was {was}, now {args.as_kind}"
+            + (f" — {args.note}" if args.note else ""))
+        seg["kind"] = args.as_kind
+        save(book)
+        print(f"{args.kind} ({seg['length_m']:.0f} m) {was} -> "
+              f"{args.as_kind}. The line itself is untouched.\n")
         print(summary(book))
         return 0
 

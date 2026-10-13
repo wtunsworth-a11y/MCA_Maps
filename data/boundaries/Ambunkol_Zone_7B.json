@@ -64,12 +64,13 @@
   {
    "id": "s20",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 50.8,
    "wkt": "LINESTRING (654310.497235828 8988858.569577724, 654262.4496157388 8988842.168026097)",
    "history": [
-    "2026-10-13: put in place of s16, which was 92 m straight across the point. The reviewer traced the 53 m break and then Peter Awako's climb up to the point."
+    "2026-10-13: put in place of s16, which was 92 m straight across the point. The reviewer traced the 53 m break and then Peter Awako's climb up to the point.",
+    "2026-10-13: was drawn, now implied — the reviewer traced it. Peter Awako's recording stops and restarts three times inside these 51 m, with 32 m of his own walking lying 10 m off the line between the two ends. The pen lifted; he did not. Nobody goes back for it."
    ]
   },
   {
