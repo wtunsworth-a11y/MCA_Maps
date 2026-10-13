@@ -258,5 +258,12 @@
    "Kenny Noi names the edge, reproduced as written: 'Darei dry Creek Land Boundary.' and 'Following Darei dry Creek.'"
   ],
   "raised": "2026-10-13"
+ },
+ "Zambiko — Zone 2": {
+  "notes": [
+   "No polygon and no closing — not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Eight recordings from Sylvester Anai, 5.7 km. Five of them lie 3.5-4.1 km from the body of the survey: four short ones at 4.1 km and one of 1,322 m at 3.5 km. This is a short walk plus a scatter of separate visits, not one circuit."
+  ],
+  "raised": "2026-10-13"
  }
 }
