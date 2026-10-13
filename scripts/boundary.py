@@ -415,6 +415,17 @@ def draw(book: dict, out: Path, near=None):
     # are 60 m apart on Ambunkol and one marker sat on top of the other,
     # so a segment could be seen but not named — which is the whole point
     # of numbering them.
+    # Where each segment begins and ends. Without them a reviewer cannot
+    # see which end of a piece is which, and every instruction about
+    # "the far end" is a guess.
+    ends = [shapely_wkt.loads(s["wkt"]) for s in book["segments"]]
+    xs = [c[:2] for line in ends for c in (line.coords[0], line.coords[-1])]
+    if xs:
+        gpd.GeoSeries([Point(c) for c in xs],
+                      crs=dataio.METRIC_CRS).plot(
+            ax=axis, color="white", edgecolor="#111827", markersize=26,
+            linewidth=1.1, zorder=8)
+
     placed: list = []
     # Shortest first: a small segment has less room to put its marker, so
     # it chooses before the long ones have taken the space.
