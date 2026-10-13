@@ -188,10 +188,11 @@
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 25.0,
-   "wkt": "LINESTRING (650085.2569950215 8984595.99062311, 650088.9419147465 8984571.258017499)",
+   "length_m": 50.5,
+   "wkt": "LINESTRING (650085 8984596, 650095.1539123508 8984599.619061736, 650098.0482604508 8984591.498460582, 650098.3896198911 8984574.414554784, 650096.5936734667 8984568.638785435, 650089 8984571)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was 25 m drawn — put on the same walked track as s41, as the reviewer traced"
    ]
   },
   {
