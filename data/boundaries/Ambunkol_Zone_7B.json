@@ -50,14 +50,36 @@
    ]
   },
   {
-   "id": "s11",
+   "id": "s13",
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 72.3,
-   "wkt": "LINESTRING (654310.7586951632 8988830.79787801, 654315.4061792567 8988849.150172226, 654262.4496157388 8988842.168026097)",
+   "length_m": 18.9,
+   "wkt": "LINESTRING (654310.7586951632 8988830.79787801, 654315.4061792567 8988849.150172226)",
    "history": [
-    "2026-10-13: put in place of s4, which was 240 m nobody walked — the reviewer traced the walked route round the bay"
+    "2026-10-13: put in place of s11, which was 72 m straight across — the reviewer traced the walked hook"
+   ]
+  },
+  {
+   "id": "s14",
+   "ring": 0,
+   "kind": "walked",
+   "steward": "Peter Awako",
+   "length_m": 27.5,
+   "wkt": "LINESTRING (654315.4061792567 8988849.150172226, 654301.120029069 8988838.591691636, 654301.4890285057 8988848.275426961)",
+   "history": [
+    "2026-10-13: put in place of s11, which was 72 m straight across — the reviewer traced the walked hook"
+   ]
+  },
+  {
+   "id": "s15",
+   "ring": 0,
+   "kind": "drawn",
+   "steward": "",
+   "length_m": 39.5,
+   "wkt": "LINESTRING (654301.4890285057 8988848.275426961, 654262.4496157388 8988842.168026097)",
+   "history": [
+    "2026-10-13: put in place of s11, which was 72 m straight across — the reviewer traced the walked hook"
    ]
   },
   {
