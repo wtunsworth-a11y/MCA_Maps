@@ -330,6 +330,28 @@ def draw(book: dict, out: Path):
         road_tools.underlay(axis, dataio.METRIC_CRS, window)
     except Exception:
         pass
+    # Every metre the stewards walked, drawn behind the stored line. A map
+    # of the boundary alone cannot show what the boundary has left out,
+    # and on Ginangi it left out 9.2 km.
+    missed = 0.0
+    try:
+        published = gpd.read_file(
+            dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
+            layer="tracks_smoothed").to_crs(dataio.METRIC_CRS)
+        published = dataio.publishable(published, quiet=True)
+        published["_unit"] = dataio.survey_group(published)
+        group = published[published._unit == book["unit"]]
+        every = chord_map.parts_of(group)
+        if every:
+            gpd.GeoSeries(every, crs=dataio.METRIC_CRS).plot(
+                ax=axis, color="#94a3b8", linewidth=1.0, zorder=1.5)
+            off = unary_union(every).difference(shapes.buffer(25))
+            missed = off.length
+            if missed > 50:
+                gpd.GeoSeries([off], crs=dataio.METRIC_CRS).plot(
+                    ax=axis, color="#0d9488", linewidth=2.0, zorder=1.8)
+    except Exception:
+        pass
     if land is not None:
         gpd.GeoSeries([land], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
@@ -408,6 +430,10 @@ def draw(book: dict, out: Path):
         Line2D([0], [0], color="#db2777", lw=2.8, linestyle=(0, (5, 3)),
                label=f"Still to walk — {drawn / 1000:.2f} km"),
     ]
+    if missed > 50:
+        handles.append(Line2D([0], [0], color="#0d9488", lw=2.0,
+                              label=f"Walked, but not on the stored line — "
+                                    f"{missed / 1000:.2f} km"))
     for seg in book["segments"]:
         if seg["kind"] != "drawn":
             continue
