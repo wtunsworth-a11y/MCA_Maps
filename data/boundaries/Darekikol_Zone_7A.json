@@ -243,10 +243,11 @@
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 1090.1,
-   "wkt": "LINESTRING (658238.4287767413 8994536.88084177, 657447.0239740676 8993787.199296404)",
+   "length_m": 1018.0,
+   "wkt": "LINESTRING (657447 8993787, 658321 8994309)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was 1090 m drawn — run ENE from the join with s2 to the end of the teal, as the reviewer directed"
    ]
   },
   {
