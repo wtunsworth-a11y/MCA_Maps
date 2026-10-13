@@ -1,0 +1,52 @@
+{
+ "_README": [
+  "Walking that is not boundary. See scripts/off_boundary.py.",
+  "",
+  "Keyed by survey unit. Each entry is a place, a radius in metres, and",
+  "why. Any recording lying wholly inside that circle is left out of the",
+  "boundary network for that one survey. Nothing is deleted, no raw file",
+  "is touched, the walking still appears on the map and still counts as",
+  "ground walked.",
+  "",
+  "Added only after someone has looked at the map it changes."
+ ],
+ "Ginangi — Zone 7B": [
+  {
+   "at": [
+    652450.0,
+    8989435.0
+   ],
+   "radius": 150.0,
+   "agreed": "2026-10-13",
+   "what": "five recordings, 437 m, on the road junction by the Afore Market",
+   "why": [
+    "A knot of short recordings 11 km from the rest of the survey's",
+    "line, sitting on a road junction. Three of the five are named only",
+    "by a timestamp; the other two are 'Stecan job mokondo ginagi clan /",
+    "Afore Market' and 'Joshua mokodo Ginage clan track recording'.",
+    "",
+    "Somebody arriving somewhere and marking it. The closing step could",
+    "not tell that from an edge, reached out to it, and drew chords 1, 2",
+    "and 3 — 10.3 km — across the middle of the clan to get there.",
+    "",
+    "Marked off the boundary by the reviewer on 2026-10-13."
+   ]
+  },
+  {
+   "at": [
+    650781.0,
+    8990124.0
+   ],
+   "radius": 150.0,
+   "agreed": "2026-10-13",
+   "what": "three recordings, 1,136 m, at the Semmara community",
+   "why": [
+    "Three overlapping recordings of the same few hundred metres around",
+    "the Semmara community, one of them named for it. Chord 4 (88 m) and",
+    "chord 2 (3,057 m) both exist to reach this knot.",
+    "",
+    "Marked off the boundary by the reviewer on 2026-10-13."
+   ]
+  }
+ ]
+}

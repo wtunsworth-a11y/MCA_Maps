@@ -45,6 +45,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dataio  # noqa: E402
 import chord_map  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
+import off_boundary  # noqa: E402
 
 STORE = dataio.REPO_ROOT / "data" / "boundaries"
 
@@ -145,6 +146,16 @@ def solve(clan: str) -> dict:
     unit = match._unit.iloc[0]
     group = published[published._unit == unit]
     parts = chord_map.parts_of(group)
+    # Walking the reviewer has said is not boundary — somebody arriving
+    # at a place and marking it rather than walking an edge. It is left
+    # out here, where the boundary is written down, and nowhere else:
+    # the recordings keep their length, their map and their words.
+    kept = off_boundary.drop(unit, parts)
+    if len(kept) != len(parts):
+        gone = sum(p.length for p in parts) - sum(p.length for p in kept)
+        print(f"  {len(parts) - len(kept)} recording(s), {gone:,.0f} m, are "
+              f"marked not-boundary for this survey and are left out.")
+        parts = kept
     frame = polygon_tools.adopted_frame(unit)
     derived = [] if frame is None or frame.empty else list(frame.geometry)
     built = polygon_tools.survey_polygon(parts, 25.0, 0.50, 0.10,
