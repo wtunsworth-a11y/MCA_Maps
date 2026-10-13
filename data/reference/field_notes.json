@@ -280,5 +280,13 @@
    "Their own words, reproduced as written: 'Odohakill boundry point.', 'For whole nui clain.', 'Nui clain boundry maping, track record.'"
   ],
   "raised": "2026-10-13"
+ },
+ "Duribip — Zone 8": {
+  "notes": [
+   "No polygon and no closing — not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Four recordings from Beven Naive, 4.5 km. Two of them — 121 m and 296 m — lie 2.2 km from the body of the survey, which is one 3,444 m walk and one of 1,346 m.",
+   "His own words, reproduced as written: 'Benven duribip Clan' and 'Land boundary map'."
+  ],
+  "raised": "2026-10-13"
  }
 }
