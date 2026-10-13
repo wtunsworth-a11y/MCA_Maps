@@ -453,13 +453,14 @@
   {
    "id": "s36",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 161.9,
    "wkt": "LINESTRING (650210 8988350, 650237 8988376, 650358 8988405)",
    "history": [
     "written down from the first solve, 2026-10-13",
-    "2026-10-13: was 230 m drawn — shortened using the walked tracks either side: 230 m of drawn line becomes 162 m, with the rest on walking"
+    "2026-10-13: was 230 m drawn — shortened using the walked tracks either side: 230 m of drawn line becomes 162 m, with the rest on walking",
+    "2026-10-13: was drawn, now implied — the rest of it settled by the reviewer once the walked tracks either side were used"
    ]
   },
   {
