@@ -211,48 +211,61 @@ def ring_geometry(book: dict, tolerance: float = 1.0):
     """What the stored segments enclose.
 
     The segments are chained end to end rather than handed to
-    polygonize. Two segments that meet within a metre are the same join
-    as far as the line is concerned, but polygonize wants the coordinate
-    to be identical, and a ring that is closed everywhere to within a
-    metre came back as forty-six slivers and 1.4 ha.
+    polygonize: two that meet within a metre are the same join as far
+    as the line is concerned, but polygonize wants the coordinate to be
+    identical.
+
+    A boundary is not always one loop. Darekikol goes out along the
+    south side of an eastern lobe and back along its north, meeting
+    itself at the neck, which is a figure of eight — two rings sharing
+    a node, and the reviewer read it off the map as two polygons before
+    the arithmetic did. Walking the segments greedily from one end
+    cannot follow that, so the cycles are found properly and each one
+    becomes a ring.
     """
+    import networkx as nx
     from shapely.geometry import Polygon
 
-    lines = [shapely_wkt.loads(s["wkt"]) for s in book["segments"]]
-    lines = [line for line in lines if line.length > 0]
-    if not lines:
+    pieces = [(s["id"], shapely_wkt.loads(s["wkt"])) for s in book["segments"]]
+    pieces = [(sid, line) for sid, line in pieces if line.length > 0]
+    if not pieces:
         return None
-    rings, spare = [], list(lines)
-    while spare:
-        run = list(spare.pop(0).coords)
-        moved = True
-        while moved and spare:
-            moved = False
-            tail = Point(run[-1][:2])
-            head = Point(run[0][:2])
-            for index, line in enumerate(spare):
-                a = Point(line.coords[0][:2])
-                b = Point(line.coords[-1][:2])
-                if tail.distance(a) <= tolerance:
-                    run += list(line.coords)[1:]
-                elif tail.distance(b) <= tolerance:
-                    run += list(line.coords)[::-1][1:]
-                elif head.distance(b) <= tolerance:
-                    run = list(line.coords)[:-1] + run
-                elif head.distance(a) <= tolerance:
-                    run = list(line.coords)[::-1][:-1] + run
-                else:
-                    continue
-                spare.pop(index)
-                moved = True
+
+    places: list = []
+
+    def node(point):
+        for index, where in enumerate(places):
+            if Point(where).distance(Point(point)) <= tolerance * 10:
+                return index
+        places.append(point)
+        return len(places) - 1
+
+    graph = nx.MultiGraph()
+    for sid, line in pieces:
+        graph.add_edge(node(line.coords[0][:2]), node(line.coords[-1][:2]),
+                       key=sid, line=line)
+
+    rings = []
+    for cycle in nx.cycle_basis(nx.Graph(graph)):
+        run: list = []
+        ok = True
+        for a, b in zip(cycle, cycle[1:] + cycle[:1]):
+            if not graph.has_edge(a, b):
+                ok = False
                 break
-        if len(run) > 3 and Point(run[0][:2]).distance(
-                Point(run[-1][:2])) <= tolerance:
-            shape = Polygon([c[:2] for c in run])
-            if not shape.is_valid:
-                shape = shape.buffer(0)
-            if shape.area > 0:
-                rings.append(shape)
+            line = list(graph[a][b].values())[0]["line"]
+            coords = [c[:2] for c in line.coords]
+            if run and Point(run[-1]).distance(Point(coords[0])) > \
+                    Point(run[-1]).distance(Point(coords[-1])):
+                coords = coords[::-1]
+            run += coords if not run else coords[1:]
+        if not ok or len(run) < 4:
+            continue
+        shape = Polygon(run)
+        if not shape.is_valid:
+            shape = shape.buffer(0)
+        if shape.area > 0:
+            rings.append(shape)
     if not rings:
         return None
     return unary_union(rings)

@@ -203,18 +203,6 @@
    ]
   },
   {
-   "id": "s17",
-   "ring": 0,
-   "kind": "walked",
-   "steward": "George Kopoi",
-   "length_m": 0.0,
-   "wkt": "LINESTRING (658803.9823674787 8995072.61816413, 658803.9823674787 8995072.61816413)",
-   "history": [
-    "written down from the first solve, 2026-10-13",
-    "2026-10-13: its end moved 35 m onto s18, which it had stopped short of"
-   ]
-  },
-  {
    "id": "s18",
    "ring": 0,
    "kind": "implied",
