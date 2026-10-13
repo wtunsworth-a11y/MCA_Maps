@@ -314,6 +314,11 @@ def draw(book: dict, out: Path):
     figure = plt.figure(figsize=(16, 13.8), dpi=200)
     axis = figure.add_axes([0.02, 0.05, 0.74, 0.90])
     terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.34, bounds=window)
+    try:
+        import roads as road_tools
+        road_tools.underlay(axis, dataio.METRIC_CRS, window)
+    except Exception:
+        pass
     if land is not None:
         gpd.GeoSeries([land], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)

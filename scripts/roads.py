@@ -56,11 +56,17 @@ def wanted_groups(handle, area):
     """Which row groups of one file hold anything inside the area."""
     west, south, east, north = area
     meta = handle.metadata
-    names = meta.schema.names
-    try:
-        at = {part: names.index(f"bbox.{part}")
-              for part in ("xmin", "xmax", "ymin", "ymax")}
-    except ValueError:
+    # The bounding box is a struct, so its statistics hang off the leaf
+    # columns 'bbox.xmin' and the rest. They are not in schema.names,
+    # which lists the top-level columns only — looking for them there
+    # found nothing and quietly read every row group in all 128 files.
+    first = meta.row_group(0)
+    at = {}
+    for index in range(meta.num_columns):
+        where = first.column(index).path_in_schema
+        if where.startswith("bbox."):
+            at[where.split(".", 1)[1]] = index
+    if set(at) < {"xmin", "xmax", "ymin", "ymax"}:
         return list(range(meta.num_row_groups))
     found = []
     for index in range(meta.num_row_groups):
@@ -98,6 +104,65 @@ def fetch(theme: str, kind: str, area, columns: list[str]):
     import pyarrow as pa
     return pa.concat_tables(rows)
 
+
+# --- drawing -------------------------------------------------------------
+
+# How a road is drawn depends on what it is. A national road and a
+# footpath through the garden both come back as lines, and drawing them
+# alike would put a motorway through the bush.
+PAINT = {
+    "motorway":   ("#8a9099", 2.6),
+    "trunk":      ("#8a9099", 2.4),
+    "primary":    ("#8a9099", 2.2),
+    "secondary":  ("#979ca5", 1.9),
+    "tertiary":   ("#a3a8b1", 1.6),
+    "residential": ("#b0b5bd", 1.2),
+    "unclassified": ("#b0b5bd", 1.2),
+    "living_street": ("#b0b5bd", 1.1),
+    "track":      ("#bcc1c9", 1.0),
+    "path":       ("#c6cbd2", 0.8),
+    "footway":    ("#c6cbd2", 0.8),
+    "steps":      ("#c6cbd2", 0.8),
+}
+
+
+def underlay(axis, crs, window, zorder: float = 0.6, named: bool = True):
+    """Draw the roads behind a map. Silent when there are none."""
+    if not OUT.exists():
+        return 0
+    import geopandas as gpd
+    from shapely.geometry import box
+
+    frame = gpd.read_file(OUT, layer="roads").to_crs(crs)
+    frame = frame[frame.intersects(box(*window))]
+    if frame.empty:
+        return 0
+    for kind, (colour, width) in PAINT.items():
+        part = frame[frame["class"] == kind]
+        if not part.empty:
+            part.plot(ax=axis, color=colour, linewidth=width, zorder=zorder)
+    rest = frame[~frame["class"].isin(PAINT)]
+    if not rest.empty:
+        rest.plot(ax=axis, color="#d3d8df", linewidth=0.7, zorder=zorder)
+    if named:
+        span = window[2] - window[0]
+        placed: list = []
+        big = frame[frame["name"].notna()
+                    & frame["class"].isin(["motorway", "trunk", "primary",
+                                           "secondary", "tertiary"])]
+        for name, part in big.groupby("name"):
+            line = part.geometry.iloc[part.geometry.length.argmax()]
+            here = line.interpolate(0.5, normalized=True)
+            if any(((here.x - x) ** 2 + (here.y - y) ** 2) ** 0.5
+                   < span * 0.12 for x, y in placed):
+                continue
+            placed.append((here.x, here.y))
+            axis.annotate(str(name), (here.x, here.y), fontsize=7.5,
+                          color="#6b7280", ha="center", va="center",
+                          zorder=zorder + 0.1,
+                          bbox=dict(boxstyle="round,pad=0.15", fc="white",
+                                    ec="none", alpha=0.65))
+    return len(frame)
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(

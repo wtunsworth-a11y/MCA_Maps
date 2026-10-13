@@ -567,12 +567,30 @@ def main(argv: list[str] | None = None) -> int:
     # panel off the figure, so on a clan with a lot of notes they landed on
     # top of each other.
     figure_height = 13.8 + text_height
-    caveat_band = 0.50
+    # The caveat band has to be measured, not guessed. It carries the
+    # standing warning, the road attribution when there are roads, and a
+    # line for every recording that falls outside the frame, and at a
+    # fixed height those last two landed on top of the stewards' own
+    # words printed underneath.
+    try:
+        import roads as _road_tools
+        _has_roads = _road_tools.OUT.exists()
+    except Exception:
+        _has_roads = False
+    caveat_lines = 2 + (2 if _has_roads else 0) \
+        + (1 + len(strays) if strays else 0)
+    caveat_band = 0.20 + 0.17 * caveat_lines
     axis_floor = (text_height + caveat_band) / figure_height
     figure = plt.figure(figsize=(16, figure_height), dpi=200)
     axis = figure.add_axes([0.02, axis_floor, 0.96,
                             1 - axis_floor - 0.03])
     terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.36, bounds=window)
+    try:
+        import roads as road_tools
+        drawn_roads = road_tools.underlay(axis, dataio.METRIC_CRS, window)
+    except Exception as error:
+        drawn_roads = 0
+        print(f"  (no roads behind the map: {error})")
     try:
         streams = gpd.read_file(dataio.REFERENCE_DIR / "hydro"
                                 / "streams.gpkg").to_crs(dataio.METRIC_CRS)
@@ -848,6 +866,9 @@ def main(argv: list[str] | None = None) -> int:
     caveat = ("Area enclosed by the mapping to date. Not a statement of "
               "what the clan owns:\nboundaries not yet confirmed will move, "
               "and overlaps with neighbours are not yet measured.")
+    if drawn_roads:
+        caveat += ("\n\nRoads and tracks behind the map: © OpenStreetMap "
+                   "contributors, ODbL, via Overture Maps.")
     if strays:
         caveat += "\n"
         for row, far in strays:
