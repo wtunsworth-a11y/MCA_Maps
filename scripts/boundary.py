@@ -311,7 +311,7 @@ def draw(book: dict, out: Path):
     pad = max(x1 - x0, y1 - y0) * 0.10
     window = (x0 - pad, y0 - pad, x1 + pad, y1 + pad)
 
-    figure = plt.figure(figsize=(11, 9.5), dpi=125)
+    figure = plt.figure(figsize=(16, 13.8), dpi=200)
     axis = figure.add_axes([0.02, 0.05, 0.74, 0.90])
     terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.34, bounds=window)
     if land is not None:

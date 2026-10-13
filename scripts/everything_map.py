@@ -382,6 +382,47 @@ def describe(row: dict) -> str:
     return ""
 
 
+def main_body(found, link: float = 2000.0):
+    """The recordings that hang together, and the ones that do not.
+
+    A survey is drawn at the scale of the ground it covers. One stray
+    recording a long way off sets the scale for everything else, and the
+    clan's own boundary then arrives a centimetre across. This groups the
+    recordings by how close they lie to each other -- any two within
+    `link` metres belong together -- and calls the group carrying the most
+    walked line the body of the survey.
+
+    Nothing is discarded. The strays come back with how far each lies
+    from the body, to be named under the map and asked about.
+    """
+    if len(found) < 2:
+        return list(found), []
+    shapes = [row["geometry"] for row in found]
+    group = list(range(len(shapes)))
+
+    def root(i):
+        while group[i] != i:
+            group[i] = group[group[i]]
+            i = group[i]
+        return i
+
+    for i in range(len(shapes)):
+        for j in range(i + 1, len(shapes)):
+            if shapes[i].distance(shapes[j]) <= link:
+                group[root(i)] = root(j)
+    held: dict = {}
+    for i in range(len(shapes)):
+        held.setdefault(root(i), []).append(i)
+    biggest = max(held.values(),
+                  key=lambda ids: sum(shapes[i].length for i in ids))
+    body = [found[i] for i in sorted(biggest)]
+    kept = unary_union([shapes[i] for i in biggest])
+    strays = [(found[i], shapes[i].distance(kept))
+              for i in range(len(shapes)) if i not in set(biggest)]
+    strays.sort(key=lambda pair: -pair[1])
+    return body, strays
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--clan", required=True)
@@ -461,11 +502,25 @@ def main(argv: list[str] | None = None) -> int:
                 _pub[_pub._unit == _mine._unit.iloc[0]]))
     except Exception:
         pass
-    shapes = unary_union([r["geometry"] for r in found]
+    # Frame on the body of the survey, not on its strays. Ginangi has an
+    # 80 m recording named "test" sitting 41 km north of the clan, and
+    # framing on it drew the whole survey into one corner of the page at
+    # a tenth of the scale. Nothing is dropped from the data or from any
+    # figure: a recording outside the frame is named underneath it with
+    # how far away it lies, which is how it gets noticed at all.
+    body, strays = main_body(found)
+    shapes = unary_union([r["geometry"] for r in body]
                          + ([built["geometry"]] if built else []))
     minx, miny, maxx, maxy = shapes.bounds
     pad = max(maxx - minx, maxy - miny) * 0.10
     window = (minx - pad, miny - pad, maxx + pad, maxy + pad)
+    if strays:
+        print(f"\n  {len(strays)} recording(s) lie away from the survey and "
+              f"are outside the frame:")
+        for row, far in strays:
+            name = (row["text"][0][:60] if row["text"] else "unnamed")
+            print(f"     {row['geometry'].length:7.0f} m  "
+                  f"{far / 1000:5.1f} km away   {name}")
 
     if args.window:
         window = tuple(args.window)
@@ -505,16 +560,16 @@ def main(argv: list[str] | None = None) -> int:
         lines = textwrap.wrap(entry, 150, subsequent_indent="     ")
         wrapped.extend(lines)
         wrapped.append("")
-    text_height = 0.17 * len(wrapped) if wrapped else 0
+    text_height = 0.20 * len(wrapped) if wrapped else 0
 
     # Three bands down the page: the map, then the caveat, then the words
     # the stewards typed. The caveat used to be hung off the axes and the
     # panel off the figure, so on a clan with a lot of notes they landed on
     # top of each other.
-    figure_height = 9.5 + text_height
-    caveat_band = 0.42
+    figure_height = 13.8 + text_height
+    caveat_band = 0.50
     axis_floor = (text_height + caveat_band) / figure_height
-    figure = plt.figure(figsize=(11, figure_height), dpi=125)
+    figure = plt.figure(figsize=(16, figure_height), dpi=200)
     axis = figure.add_axes([0.02, axis_floor, 0.96,
                             1 - axis_floor - 0.03])
     terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.36, bounds=window)
@@ -790,10 +845,17 @@ def main(argv: list[str] | None = None) -> int:
     # enough to cover the thing it describes.
     axis.legend(handles=handles, loc="upper left", fontsize=9,
                 bbox_to_anchor=(1.01, 1.0), borderaxespad=0, frameon=False)
+    caveat = ("Area enclosed by the mapping to date. Not a statement of "
+              "what the clan owns:\nboundaries not yet confirmed will move, "
+              "and overlaps with neighbours are not yet measured.")
+    if strays:
+        caveat += "\n"
+        for row, far in strays:
+            name = (row["text"][0][:70] if row["text"] else "unnamed")
+            caveat += (f"\nOff this map: {row['geometry'].length:,.0f} m "
+                       f"recorded {far / 1000:.1f} km away — {name}")
     axis.annotate(
-        "Area enclosed by the mapping to date. Not a statement of what the "
-        "clan owns:\nboundaries not yet confirmed will move, and overlaps "
-        "with neighbours are not yet measured.",
+        caveat,
         xy=(0.02, axis_floor - 0.06 / figure_height),
         xycoords="figure fraction", ha="left", va="top",
         fontsize=8.5, color="#4b5563")
