@@ -447,7 +447,7 @@ def draw(book: dict, out: Path, near=None):
     try:
         import roads as _rt
         if _rt.OUT.exists():
-            handles.append(Line2D([0], [0], color="#8a9099", lw=1.6,
+            handles.append(Line2D([0], [0], color="#c2410c", lw=1.6,
                                   label="Road or track (OpenStreetMap)"))
     except Exception:
         pass

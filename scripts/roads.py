@@ -111,18 +111,18 @@ def fetch(theme: str, kind: str, area, columns: list[str]):
 # footpath through the garden both come back as lines, and drawing them
 # alike would put a motorway through the bush.
 PAINT = {
-    "motorway":   ("#8a9099", 2.6),
-    "trunk":      ("#8a9099", 2.4),
-    "primary":    ("#8a9099", 2.2),
-    "secondary":  ("#979ca5", 1.9),
-    "tertiary":   ("#a3a8b1", 1.6),
-    "residential": ("#b0b5bd", 1.2),
-    "unclassified": ("#b0b5bd", 1.2),
-    "living_street": ("#b0b5bd", 1.1),
-    "track":      ("#bcc1c9", 1.0),
-    "path":       ("#c6cbd2", 0.8),
-    "footway":    ("#c6cbd2", 0.8),
-    "steps":      ("#c6cbd2", 0.8),
+    "motorway":   ("#c2410c", 2.4),
+    "trunk":      ("#c2410c", 2.2),
+    "primary":    ("#c2410c", 2.0),
+    "secondary":  ("#d97706", 1.7),
+    "tertiary":   ("#d97706", 1.4),
+    "residential": ("#e0a060", 1.1),
+    "unclassified": ("#e0a060", 1.1),
+    "living_street": ("#e0a060", 1.0),
+    "track":      ("#e8bc8a", 0.9),
+    "path":       ("#edcba6", 0.8),
+    "footway":    ("#edcba6", 0.8),
+    "steps":      ("#edcba6", 0.8),
 }
 
 
@@ -143,7 +143,7 @@ def underlay(axis, crs, window, zorder: float = 0.6, named: bool = True):
             part.plot(ax=axis, color=colour, linewidth=width, zorder=zorder)
     rest = frame[~frame["class"].isin(PAINT)]
     if not rest.empty:
-        rest.plot(ax=axis, color="#d3d8df", linewidth=0.7, zorder=zorder)
+        rest.plot(ax=axis, color="#edcba6", linewidth=0.8, zorder=zorder)
     if named:
         span = window[2] - window[0]
         placed: list = []
@@ -158,7 +158,7 @@ def underlay(axis, crs, window, zorder: float = 0.6, named: bool = True):
                 continue
             placed.append((here.x, here.y))
             axis.annotate(str(name), (here.x, here.y), fontsize=7.5,
-                          color="#6b7280", ha="center", va="center",
+                          color="#b45309", ha="center", va="center",
                           zorder=zorder + 0.1,
                           bbox=dict(boxstyle="round,pad=0.15", fc="white",
                                     ec="none", alpha=0.65))
