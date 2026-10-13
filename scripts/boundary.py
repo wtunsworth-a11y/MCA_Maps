@@ -301,7 +301,7 @@ def to_gpx(book: dict, only_drawn: bool = False) -> str:
     return "\n".join(out)
 
 
-def draw(book: dict, out: Path):
+def draw(book: dict, out: Path, near=None):
     """The stored boundary, with every segment carrying its number.
 
     The map and the list have to be the same thing. A reviewer saying
@@ -332,6 +332,9 @@ def draw(book: dict, out: Path):
         every = []
     x0, y0, x1, y1 = unary_union([shapes] + every).bounds if every \
         else shapes.bounds
+    if near:
+        cx, cy, reach = near
+        x0, y0, x1, y1 = cx - reach, cy - reach, cx + reach, cy + reach
     pad = max(x1 - x0, y1 - y0) * 0.10
     window = (x0 - pad, y0 - pad, x1 + pad, y1 + pad)
 
@@ -545,6 +548,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="draw the stored boundary, segments numbered")
     parser.add_argument("--gpx", type=Path,
                         help="write the stored boundary out for a GPS")
+    parser.add_argument("--near", type=float, nargs=3,
+                        metavar=("X", "Y", "METRES"),
+                        help="with --map, frame on one place")
     parser.add_argument("--only-drawn", action="store_true",
                         help="with --gpx, only the stretches nobody walked")
     args = parser.parse_args(argv)
@@ -647,7 +653,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.map_to:
-        print(f"Wrote {draw(book, args.map_to)}")
+        print(f"Wrote {draw(book, args.map_to, args.near)}")
         return 0
 
     if args.gpx:
