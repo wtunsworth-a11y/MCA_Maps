@@ -705,6 +705,104 @@ def snap(book: dict, reach: float = SNAP, note: str = ""):
         done.append((sid, kid, gap))
     return done
 
+def follow_river(book: dict, seg_id: str, reach: float = 250.0,
+                 note: str = ""):
+    """Put a drawn segment on the watercourse it was drawn across.
+
+    A boundary that the reviewer says follows a river should follow the
+    river, not a straight line between the river's ends. The streams
+    come from the terrain model, so the line can be laid along the
+    channel without anybody getting wet.
+    """
+    import networkx as nx
+    from shapely.geometry import LineString, Point
+    from shapely.ops import linemerge, unary_union, substring
+
+    found = [s for s in book["segments"] if s["id"] == seg_id]
+    if not found:
+        raise SystemExit(f"No segment {seg_id}.")
+    seg = found[0]
+    line = shapely_wkt.loads(seg["wkt"])
+    a = Point(line.coords[0][:2])
+    b = Point(line.coords[-1][:2])
+
+    streams = gpd.read_file(dataio.REFERENCE_DIR / "hydro" / "streams.gpkg")
+    streams = streams.to_crs(dataio.METRIC_CRS)
+    near = streams[streams.distance(line) < reach]
+    if near.empty:
+        raise SystemExit(f"No watercourse within {reach:.0f} m of {seg_id}.")
+    joined = unary_union(list(near.geometry))
+    # linemerge refuses a lone LineString, which is what one channel gives.
+    merged = joined if joined.geom_type == "LineString" else linemerge(joined)
+    runs = list(merged.geoms) if hasattr(merged, "geoms") else [merged]
+
+    # Usually both ends sit on one channel, and then the answer is simply
+    # the stretch of that channel between them. The graph is only needed
+    # where the line crosses from one watercourse to another.
+    best = None
+    for run in runs:
+        gap = max(run.distance(a), run.distance(b))
+        if gap <= reach and (best is None or gap < best[0]):
+            best = (gap, run)
+    if best is not None:
+        run = best[1]
+        pa, pb = run.project(a), run.project(b)
+        piece = substring(run, min(pa, pb), max(pa, pb))
+        if piece.length > 1.0:
+            if Point(piece.coords[0][:2]).distance(a) > \
+                    Point(piece.coords[-1][:2]).distance(a):
+                piece = LineString(list(piece.coords)[::-1])
+            made = LineString([(a.x, a.y)]
+                              + [c[:2] for c in piece.coords][1:-1]
+                              + [(b.x, b.y)])
+            seg["history"].append(
+                f"{date.today().isoformat()}: was {seg['length_m']:.0f} m "
+                f"drawn straight; laid along the watercourse instead"
+                + (f" — {note}" if note else ""))
+            seg["wkt"] = made.wkt
+            seg["length_m"] = round(made.length, 1)
+            return seg
+
+    graph = nx.Graph()
+    for index, run in enumerate(runs):
+        head, tail = run.coords[0][:2], run.coords[-1][:2]
+        graph.add_edge(head, tail, length=run.length, run=index)
+    # Channels that meet without sharing a vertex still meet.
+    nodes = list(graph.nodes)
+    for i in range(len(nodes)):
+        for j in range(i + 1, len(nodes)):
+            gap = Point(nodes[i]).distance(Point(nodes[j]))
+            if 0 < gap <= 30.0 and not graph.has_edge(nodes[i], nodes[j]):
+                graph.add_edge(nodes[i], nodes[j], length=gap, run=None)
+    if not graph.number_of_nodes():
+        raise SystemExit("No channel network to follow.")
+    start = min(graph.nodes, key=lambda n: Point(n).distance(a))
+    finish = min(graph.nodes, key=lambda n: Point(n).distance(b))
+    if start == finish or not nx.has_path(graph, start, finish):
+        raise SystemExit(f"{seg_id}: no way along the water between its ends.")
+    path = nx.shortest_path(graph, start, finish, weight="length")
+
+    coords = [(a.x, a.y)]
+    for one, two in zip(path, path[1:]):
+        edge = graph[one][two]
+        if edge["run"] is None:
+            coords.append(two)
+            continue
+        run = runs[edge["run"]]
+        if Point(run.coords[0][:2]).distance(Point(one)) > \
+                Point(run.coords[-1][:2]).distance(Point(one)):
+            run = LineString(list(run.coords)[::-1])
+        coords += [c[:2] for c in run.coords]
+    coords.append((b.x, b.y))
+    made = LineString(coords)
+    seg["history"].append(
+        f"{date.today().isoformat()}: was {seg['length_m']:.0f} m drawn "
+        f"straight; laid along the watercourse instead"
+        + (f" — {note}" if note else ""))
+    seg["wkt"] = made.wkt
+    seg["length_m"] = round(made.length, 1)
+    return seg
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -730,6 +828,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="draw the stored boundary, segments numbered")
     parser.add_argument("--gpx", type=Path,
                         help="write the stored boundary out for a GPS")
+    parser.add_argument("--follow-river", metavar="ID",
+                        help="lay a drawn segment along the watercourse")
     parser.add_argument("--grow", action="store_true",
                         help="carry every free end on along the walking "
                              "until nothing continues")
@@ -781,6 +881,14 @@ def main(argv: list[str] | None = None) -> int:
     if book is None:
         print(f"{unit} has no stored boundary yet. Run --solve.")
         return 1
+
+    if args.follow_river:
+        seg = follow_river(book, args.follow_river, note=args.note)
+        save(book)
+        print(f"{args.follow_river} is now {seg['length_m']:.0f} m along "
+              f"the water.\n")
+        print(summary(book))
+        return 0
 
     if args.snap:
         done = snap(book, args.snap, args.note)
