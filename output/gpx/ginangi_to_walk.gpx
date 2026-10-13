@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="MCA_Maps boundary.py" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Ginangi — Zone 7B</name><desc>Boundary as stored 2026-10-13. Segments marked DRAWN were not walked by anyone.</desc></metadata>
+  <trk><name>s2 — DRAWN 2141 m</name><trkseg>
+    <trkpt lat="-9.1151144" lon="148.3674944"/>
+    <trkpt lat="-9.1191741" lon="148.3484501"/>
+  </trkseg></trk>
+  <trk><name>s4 — DRAWN 110 m</name><trkseg>
+    <trkpt lat="-9.1167616" lon="148.3482590"/>
+    <trkpt lat="-9.1163617" lon="148.3483351"/>
+    <trkpt lat="-9.1162825" lon="148.3483501"/>
+    <trkpt lat="-9.1161839" lon="148.3483689"/>
+    <trkpt lat="-9.1157839" lon="148.3484450"/>
+  </trkseg></trk>
+  <trk><name>s6 — DRAWN 75 m</name><trkseg>
+    <trkpt lat="-9.1148918" lon="148.3486147"/>
+    <trkpt lat="-9.1142252" lon="148.3487415"/>
+  </trkseg></trk>
+  <trk><name>s8 — DRAWN 90 m</name><trkseg>
+    <trkpt lat="-9.1136695" lon="148.3488472"/>
+    <trkpt lat="-9.1128695" lon="148.3489994"/>
+  </trkseg></trk>
+  <trk><name>s10 — DRAWN 100 m</name><trkseg>
+    <trkpt lat="-9.1100572" lon="148.3495343"/>
+    <trkpt lat="-9.1091684" lon="148.3497034"/>
+  </trkseg></trk>
+  <trk><name>s12 — DRAWN 715 m</name><trkseg>
+    <trkpt lat="-9.1085949" lon="148.3498125"/>
+    <trkpt lat="-9.1022397" lon="148.3510214"/>
+  </trkseg></trk>
+</gpx>
