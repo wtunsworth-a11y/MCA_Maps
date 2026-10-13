@@ -265,5 +265,12 @@
    "Eight recordings from Sylvester Anai, 5.7 km. Five of them lie 3.5-4.1 km from the body of the survey: four short ones at 4.1 km and one of 1,322 m at 3.5 km. This is a short walk plus a scatter of separate visits, not one circuit."
   ],
   "raised": "2026-10-13"
+ },
+ "Abuankol — Zone 7B": {
+  "notes": [
+   "No polygon and no closing — not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Simeon Pasip's own words, reproduced as written: 'Mamure Area' and 'Abuankol Clan Bandry'."
+  ],
+  "raised": "2026-10-13"
  }
 }
