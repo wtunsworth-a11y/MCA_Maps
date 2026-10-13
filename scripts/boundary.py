@@ -550,6 +550,7 @@ def grow(book: dict, parts: list, reach: float = REACH, note: str = ""):
     the line has, and is passed over.
     """
     from shapely.geometry import LineString, Point
+    from shapely.ops import substring
 
     added = []
     for _ in range(200):
@@ -568,12 +569,31 @@ def grow(book: dict, parts: list, reach: float = REACH, note: str = ""):
                 if tip.distance(others) <= 1.0:
                     continue
                 for piece in spare:
-                    for end in (0, -1):
-                        here = Point(piece.coords[end][:2])
-                        if here.distance(tip) > reach:
+                    if piece.distance(tip) > reach:
+                        continue
+                    # A recording may end near the tip, or run straight
+                    # through it. The second is the commoner: the line
+                    # copied the middle of a walk and stopped, and the
+                    # walk carries on both ways. Cut it at the tip and
+                    # take whichever side is not already on the line.
+                    where = piece.project(tip)
+                    runs = []
+                    if where > 1.0:
+                        runs.append(substring(piece, 0, where))
+                    if where < piece.length - 1.0:
+                        runs.append(substring(piece, where, piece.length))
+                    for run in runs:
+                        if run.length < 5.0:
                             continue
-                        if best is None or piece.length > best[2].length:
-                            best = (sid, which, piece, end)
+                        if run.intersection(whole.buffer(10)).length \
+                                > run.length * 0.8:
+                            continue
+                        if best is None or run.length > best[2].length:
+                            near_start = (Point(run.coords[0][:2])
+                                          .distance(tip)
+                                          <= Point(run.coords[-1][:2])
+                                          .distance(tip))
+                            best = (sid, which, run, 0 if near_start else -1)
         if best is None:
             break
         sid, which, piece, end = best
