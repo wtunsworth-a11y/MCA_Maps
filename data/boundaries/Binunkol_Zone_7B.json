@@ -118,12 +118,13 @@
   {
    "id": "s10",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 45.0,
    "wkt": "LINESTRING (650752.2335217124 8987678.568300646, 650708.5557561443 8987689.438504668)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was drawn, now implied — 45 m and 40 m with no walked track between the ends and no detour nearer than 400 m — too small to send anyone for. Settled by the reviewer."
    ]
   },
   {
@@ -213,12 +214,13 @@
   {
    "id": "s18",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 40.0,
    "wkt": "LINESTRING (650094.1008023617 8984536.632369643, 650099.996673922 8984497.060200663)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-13: was drawn, now implied — 45 m and 40 m with no walked track between the ends and no detour nearer than 400 m — too small to send anyone for. Settled by the reviewer."
    ]
   },
   {
