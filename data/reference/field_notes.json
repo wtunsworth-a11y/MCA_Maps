@@ -212,5 +212,14 @@
    "",
    "Nothing in this survey has been repaired. The 1.45 ha figure must not be issued as Madukol's land."
   ]
+ },
+ "Ambunkol — Zone 7B": {
+  "notes": [
+   "PRIORITY: two real gaps, 2.75 km between them, both on the western side. They need walking, not inferring, and nothing here should be closed by editing.",
+   "s2 — 1,860 m, the northern of the two. s10 — 890 m, the southern. Between them hangs a 727 m loop of walked line that touches nothing else, sits 658 m from the rest of the survey and encloses nothing. Peter Awako walked it; it is not joined to anything he walked before or after.",
+   "The question for the clan is the loop: is that ground Ambunkol's, and does the boundary run out to it and back, or does the line run straight past it? The answer decides what the two gaps actually are. Ask before anyone is sent to walk them.",
+   "Both stretches are in output/gpx/ambunkol_to_walk.gpx for the device. The rest of the boundary is settled: 16.51 km walked by Peter Awako, 0.17 km implied, 662.4 ha."
+  ],
+  "raised": "2026-10-13"
  }
 }
