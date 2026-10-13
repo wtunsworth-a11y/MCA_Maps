@@ -33,33 +33,12 @@
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 5437.7,
-   "wkt": "LINESTRING (648272 8992972, 652385 8989415)",
+   "length_m": 2047.6,
+   "wkt": "LINESTRING (648272 8992972, 649126 8991111)",
    "history": [
     "written down from the first solve, 2026-10-13",
-    "2026-10-13: was 5422 m drawn — re-ended on s6's start when the Afore Market knot came out; Semmara untouched"
-   ]
-  },
-  {
-   "id": "s6",
-   "ring": 0,
-   "kind": "drawn",
-   "steward": "",
-   "length_m": 1675.6,
-   "wkt": "LINESTRING (652384.9837107792 8989414.948128115, 650871.0831789202 8990132.996452393)",
-   "history": [
-    "written down from the first solve, 2026-10-13"
-   ]
-  },
-  {
-   "id": "s8",
-   "ring": 0,
-   "kind": "drawn",
-   "steward": "",
-   "length_m": 1845.6,
-   "wkt": "LINESTRING (650702.4929566208 8990151.2892107, 649126.3080857963 8991111.459438814)",
-   "history": [
-    "written down from the first solve, 2026-10-13"
+    "2026-10-13: was 5422 m drawn — re-ended on s6's start when the Afore Market knot came out; Semmara untouched",
+    "2026-10-13: was 5438 m drawn — the two free ends of the walked horseshoe, joined directly. It no longer goes out to Afore Market or Semmara because neither is in the line."
    ]
   },
   {
