@@ -318,7 +318,20 @@ def draw(book: dict, out: Path):
     lines = [(s, shapely_wkt.loads(s["wkt"])) for s in book["segments"]]
     land = ring_geometry(book)
     shapes = unary_union([g for _, g in lines])
-    x0, y0, x1, y1 = shapes.bounds
+    # Every metre the stewards walked, loaded before the window is set so
+    # that walking the line has left out is on the page rather than off it.
+    every: list = []
+    try:
+        published = gpd.read_file(
+            dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
+            layer="tracks_smoothed").to_crs(dataio.METRIC_CRS)
+        published = dataio.publishable(published, quiet=True)
+        published["_unit"] = dataio.survey_group(published)
+        every = chord_map.parts_of(published[published._unit == book["unit"]])
+    except Exception:
+        every = []
+    x0, y0, x1, y1 = unary_union([shapes] + every).bounds if every \
+        else shapes.bounds
     pad = max(x1 - x0, y1 - y0) * 0.10
     window = (x0 - pad, y0 - pad, x1 + pad, y1 + pad)
 
@@ -334,24 +347,14 @@ def draw(book: dict, out: Path):
     # of the boundary alone cannot show what the boundary has left out,
     # and on Ginangi it left out 9.2 km.
     missed = 0.0
-    try:
-        published = gpd.read_file(
-            dataio.SMOOTHED_DIR / "mca_tracks_smoothed.gpkg",
-            layer="tracks_smoothed").to_crs(dataio.METRIC_CRS)
-        published = dataio.publishable(published, quiet=True)
-        published["_unit"] = dataio.survey_group(published)
-        group = published[published._unit == book["unit"]]
-        every = chord_map.parts_of(group)
-        if every:
-            gpd.GeoSeries(every, crs=dataio.METRIC_CRS).plot(
-                ax=axis, color="#94a3b8", linewidth=1.0, zorder=1.5)
-            off = unary_union(every).difference(shapes.buffer(25))
-            missed = off.length
-            if missed > 50:
-                gpd.GeoSeries([off], crs=dataio.METRIC_CRS).plot(
-                    ax=axis, color="#0d9488", linewidth=2.0, zorder=1.8)
-    except Exception:
-        pass
+    if every:
+        gpd.GeoSeries(every, crs=dataio.METRIC_CRS).plot(
+            ax=axis, color="#94a3b8", linewidth=1.0, zorder=1.5)
+        off = unary_union(every).difference(shapes.buffer(25))
+        missed = off.length
+        if missed > 50:
+            gpd.GeoSeries([off], crs=dataio.METRIC_CRS).plot(
+                ax=axis, color="#0d9488", linewidth=2.0, zorder=1.8)
     if land is not None:
         gpd.GeoSeries([land], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
