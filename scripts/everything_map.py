@@ -429,6 +429,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", type=Path)
     parser.add_argument("--zoom", type=int, default=None,
                         help="frame the map on one numbered gap")
+    parser.add_argument("--lines-only", action="store_true",
+                        help="draw the recordings as they came to us, with "
+                             "no polygon, no chords and nothing closed")
     parser.add_argument("--window", type=float, nargs=4, default=None,
                         metavar=("X0", "Y0", "X1", "Y1"),
                         help="frame the map on these metric-CRS bounds")
@@ -479,9 +482,11 @@ def main(argv: list[str] | None = None) -> int:
                             [(r.geometry, r["kind"], r["note"])
                              for _, r in frame.iterrows()])
             derived = [row[0] for row in derived_rows]
-            built = polygon_tools.survey_polygon(
+            built = None if args.lines_only else polygon_tools.survey_polygon(
                 chord_map.parts_of(group), 25.0, 0.50, 0.10,
                 derived=derived, unit=unit)
+            if args.lines_only:
+                derived, derived_rows = [], []
     except Exception as error:
         print(f"  (could not build the polygon: {error})")
 
