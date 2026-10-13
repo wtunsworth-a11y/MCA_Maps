@@ -106,14 +106,14 @@
    ]
   },
   {
-   "id": "s8",
+   "id": "s18",
    "ring": 0,
-   "kind": "drawn",
-   "steward": "",
-   "length_m": 110.0,
-   "wkt": "LINESTRING (654345.1274749524 8986642.917398937, 654367.4482875088 8986535.19501178)",
+   "kind": "walked",
+   "steward": "Peter Awako",
+   "length_m": 152.7,
+   "wkt": "LINESTRING (654345.1274749524 8986642.917398937, 654351.9948862152 8986654.754568841, 654352.5195189696 8986654.45019973, 654366.9684731311 8986645.515389008, 654373.2314401718 8986632.862479676, 654373.1461390568 8986614.967583472, 654374.6301047639 8986597.09120178, 654377.2081702737 8986578.862641286, 654378.1044512335 8986560.755430838, 654376.638683703 8986541.705744686, 654376.2001868029 8986534.65102415, 654367.4482875088 8986535.19501178)",
    "history": [
-    "written down from the first solve, 2026-10-12"
+    "2026-10-13: put in place of s8, which was 110 m nobody walked. Peter Awako's own line runs 9 m east of it for the whole length; the reviewer traced it and the boundary moves onto it. Carried a few metres at each end to meet its neighbours."
    ]
   },
   {
