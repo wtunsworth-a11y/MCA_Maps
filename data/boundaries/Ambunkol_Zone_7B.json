@@ -84,14 +84,14 @@
    ]
   },
   {
-   "id": "s6",
+   "id": "s17",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
-   "length_m": 80.0,
-   "wkt": "LINESTRING (653651.9267587289 8988481.127901757, 653706.1143796777 8988422.264204487)",
+   "length_m": 117.1,
+   "wkt": "LINESTRING (653651.9267587289 8988481.127901757, 653644.1519728458 8988489.573606413, 653710.9105697124 8988417.054131165, 653706.1143796777 8988422.264204487)",
    "history": [
-    "written down from the first solve, 2026-10-12"
+    "2026-10-13: closed here in place of s6, which was 80 m. No walked track anywhere near this corner. The reviewer drew the line and settled it: implied, not a journey for anyone."
    ]
   },
   {

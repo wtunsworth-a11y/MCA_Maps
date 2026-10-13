@@ -227,10 +227,13 @@ def summary(book: dict) -> str:
                  if s["kind"] == "walked")
     drawn = sum(s["length_m"] for s in book["segments"]
                 if s["kind"] == "drawn")
+    implied = sum(s["length_m"] for s in book["segments"]
+                  if s["kind"] == "implied")
     land = ring_geometry(book)
     out = [f"{book['unit']}   written down {book['solved']}",
            f"  {len(book['segments'])} segments, "
-           f"{walked / 1000:.2f} km walked, {drawn / 1000:.2f} km drawn"]
+           f"{walked / 1000:.2f} km walked, {drawn / 1000:.2f} km still to "
+           f"walk, {implied / 1000:.2f} km implied"]
     # An edit can leave the ring open, and saying "0.0 ha" for that is no
     # use to anybody. Say where it is open.
     loose = open_ends(book)
@@ -244,7 +247,8 @@ def summary(book: dict) -> str:
         out.append(f"  {(land.area / 1e4) if land else 0:,.1f} ha enclosed")
     out.append("")
     for seg in book["segments"]:
-        mark = "walked" if seg["kind"] == "walked" else "DRAWN "
+        mark = {"walked": "walked", "implied": "implied",
+                "drawn": "TO WALK"}.get(seg["kind"], seg["kind"])
         who = f"  {seg['steward']}" if seg.get("steward") else ""
         out.append(f"  {seg['id']:>5s}  {mark}  {seg['length_m']:8.0f} m{who}")
         for line in seg.get("history", [])[1:]:
@@ -313,12 +317,13 @@ def draw(book: dict, out: Path):
     if land is not None:
         gpd.GeoSeries([land], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
+    paint = {"walked": ("#1f2937", 2.2, "-"),
+             "implied": ("#f59e0b", 3.0, (0, (7, 2))),
+             "drawn": ("#db2777", 2.8, (0, (5, 3)))}
     for seg, line in lines:
-        if seg["kind"] == "walked":
-            axis.plot(*line.xy, color="#1f2937", lw=2.2, zorder=5)
-        else:
-            axis.plot(*line.xy, color="#db2777", lw=2.8,
-                      linestyle=(0, (5, 3)), zorder=6)
+        colour, width, dash = paint.get(seg["kind"], paint["drawn"])
+        axis.plot(*line.xy, color=colour, lw=width, linestyle=dash,
+                  zorder=5 if seg["kind"] == "walked" else 6)
     step = (window[2] - window[0]) * 0.035
     for seg, line in lines:
         middle = line.interpolate(0.5, normalized=True)
@@ -340,7 +345,7 @@ def draw(book: dict, out: Path):
         if spot is None:
             spot = Point(middle.x - dy / span * step,
                          middle.y + dx / span * step)
-        colour = "#1f2937" if seg["kind"] == "walked" else "#db2777"
+        colour = paint.get(seg["kind"], paint["drawn"])[0]
         axis.annotate(seg["id"], (middle.x, middle.y),
                       xytext=(spot.x, spot.y), fontsize=9.5,
                       fontweight="bold", color="white", ha="center",
@@ -360,6 +365,8 @@ def draw(book: dict, out: Path):
                  if s["kind"] == "walked")
     drawn = sum(s["length_m"] for s in book["segments"]
                 if s["kind"] == "drawn")
+    implied = sum(s["length_m"] for s in book["segments"]
+                  if s["kind"] == "implied")
     handles = [
         plt.Rectangle((0, 0), 1, 1, facecolor="#1d4ed8", alpha=0.13,
                       edgecolor="none",
@@ -367,8 +374,11 @@ def draw(book: dict, out: Path):
                             f"enclosed by the stored boundary"),
         Line2D([0], [0], color="#1f2937", lw=2.2,
                label=f"Walked — {walked / 1000:.2f} km"),
+        Line2D([0], [0], color="#f59e0b", lw=3.0, linestyle=(0, (7, 2)),
+               label=f"Implied — settled here, not a journey — "
+                     f"{implied / 1000:.2f} km"),
         Line2D([0], [0], color="#db2777", lw=2.8, linestyle=(0, (5, 3)),
-               label=f"Drawn, nobody walked it — {drawn / 1000:.2f} km"),
+               label=f"Still to walk — {drawn / 1000:.2f} km"),
     ]
     for seg in book["segments"]:
         if seg["kind"] != "drawn":

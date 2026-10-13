@@ -396,8 +396,10 @@
     <trkpt lat="-9.1479783" lon="148.3982983"/>
     <trkpt lat="-9.1480544" lon="148.3983693"/>
   </trkseg></trk>
-  <trk><name>s6 — DRAWN 80 m</name><trkseg>
+  <trk><name>s17 — IMPLIED 117 m</name><trkseg>
     <trkpt lat="-9.1480544" lon="148.3983693"/>
+    <trkpt lat="-9.1479783" lon="148.3982983"/>
+    <trkpt lat="-9.1486317" lon="148.3989083"/>
     <trkpt lat="-9.1485848" lon="148.3988645"/>
   </trkseg></trk>
   <trk><name>s7 — WALKED 2665 m — Peter Awako</name><trkseg>
