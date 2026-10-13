@@ -534,6 +534,64 @@ def follow_walk(book: dict, seg_id: str, parts: list, note: str = ""):
     return seg, made
 
 
+REACH = 50.0
+
+
+def grow(book: dict, parts: list, reach: float = REACH, note: str = ""):
+    """Carry every free end on along the walking, until nothing continues.
+
+    The reviewer should not have to find these by eye. A segment that
+    stops where a recording carries straight on is not a gap; it is the
+    line copying part of a recording and stopping. This walks every free
+    end outward along any recording that starts near it and is not
+    already on the line, longest first, until no recording continues.
+
+    A recording that is mostly on the line already is a copy of a walk
+    the line has, and is passed over.
+    """
+    from shapely.geometry import LineString, Point
+
+    added = []
+    for _ in range(200):
+        segments = {s["id"]: shapely_wkt.loads(s["wkt"])
+                    for s in book["segments"]}
+        whole = unary_union(list(segments.values()))
+        spare = [p for p in parts
+                 if p.intersection(whole.buffer(10)).length < p.length * 0.8]
+        if not spare:
+            break
+        best = None
+        for sid, line in segments.items():
+            others = unary_union([g for k, g in segments.items() if k != sid])
+            for which in (0, -1):
+                tip = Point(line.coords[which][:2])
+                if tip.distance(others) <= 1.0:
+                    continue
+                for piece in spare:
+                    for end in (0, -1):
+                        here = Point(piece.coords[end][:2])
+                        if here.distance(tip) > reach:
+                            continue
+                        if best is None or piece.length > best[2].length:
+                            best = (sid, which, piece, end)
+        if best is None:
+            break
+        sid, which, piece, end = best
+        line = segments[sid]
+        run = list(piece.coords) if end == 0 else list(piece.coords)[::-1]
+        # run now starts at the tip; lay it the way the segment goes
+        joined = (LineString(run[::-1] + list(line.coords)) if which == 0
+                  else LineString(list(line.coords) + run))
+        seg = [s for s in book["segments"] if s["id"] == sid][0]
+        seg["history"].append(
+            f"{date.today().isoformat()}: was {seg['length_m']:.0f} m, "
+            f"carried on {piece.length:.0f} m along the walking"
+            + (f" — {note}" if note else ""))
+        seg["wkt"] = joined.wkt
+        seg["length_m"] = round(joined.length, 1)
+        added.append((sid, piece.length))
+    return added
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -559,6 +617,9 @@ def main(argv: list[str] | None = None) -> int:
                         help="draw the stored boundary, segments numbered")
     parser.add_argument("--gpx", type=Path,
                         help="write the stored boundary out for a GPS")
+    parser.add_argument("--grow", action="store_true",
+                        help="carry every free end on along the walking "
+                             "until nothing continues")
     parser.add_argument("--add", metavar="WKT",
                         help="add a segment to the line")
     parser.add_argument("--kind-of", default="drawn",
@@ -604,6 +665,22 @@ def main(argv: list[str] | None = None) -> int:
     if book is None:
         print(f"{unit} has no stored boundary yet. Run --solve.")
         return 1
+
+    if args.grow:
+        group = published[published._unit == unit]
+        parts = chord_map.parts_of(group)
+        added = grow(book, parts, note=args.note)
+        save(book)
+        if not added:
+            print("Nothing continues at any free end.")
+        else:
+            print(f"{len(added)} stretch(es) carried on, "
+                  f"{sum(m for _, m in added):,.0f} m:")
+            for sid, metres in added:
+                print(f"   {sid}  +{metres:,.0f} m")
+        print()
+        print(summary(book))
+        return 0
 
     if args.follow_walk:
         group = published[published._unit == unit]
