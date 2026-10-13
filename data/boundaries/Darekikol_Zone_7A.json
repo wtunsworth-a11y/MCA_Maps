@@ -273,6 +273,17 @@
    "history": [
     "2026-10-13: added — the teal the reviewer traced, from its south end back up to where s20 used to finish"
    ]
+  },
+  {
+   "id": "s24",
+   "ring": 0,
+   "kind": "drawn",
+   "steward": "",
+   "length_m": 242.6,
+   "wkt": "LINESTRING (658238 8994537, 658321 8994309)",
+   "history": [
+    "2026-10-13: added — closing the ring between s19's end and s4's; 222 m"
+   ]
   }
  ]
 }
