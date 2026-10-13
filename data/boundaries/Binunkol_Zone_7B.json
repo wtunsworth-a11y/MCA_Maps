@@ -164,35 +164,13 @@
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 129.0,
-   "wkt": "LINESTRING (650068 8984710, 650096.5984347546 8984702.319615783, 650106.9528756737 8984688.438077724, 650115.655773347 8984672.418637233, 650118.601494736 8984657.291943908, 650111.4734894466 8984648.895421231, 650097.1022496076 8984645.743479675, 650085.7229080902 8984639.273027632, 650078 8984645)",
+   "length_m": 201.1,
+   "wkt": "LINESTRING (650068 8984710, 650096.5984347546 8984702.319615783, 650106.9528756737 8984688.438077724, 650115.655773347 8984672.418637233, 650118.601494736 8984657.291943908, 650111.4734894466 8984648.895421231, 650097.1022496076 8984645.743479675, 650085.7229080902 8984639.273027632, 650084.0723860606 8984625.834112441, 650092.0841774365 8984608.231741356, 650098.0482604508 8984591.498460582, 650098.3896198911 8984574.414554784, 650096.5936734667 8984568.638785435, 650089 8984571)",
    "history": [
     "2026-10-13: put in place of s14, which was 65 m nobody walked — small chord with walked track interspersed",
     "2026-10-13: was 105 m drawn — follow-walk made this 65 m chord into 105 m of drawn line; put back as it was",
-    "2026-10-13: was 65 m drawn — put on the walked track it was missing, as the reviewer pointed out"
-   ]
-  },
-  {
-   "id": "s15",
-   "ring": 0,
-   "kind": "walked",
-   "steward": "Moses Garui",
-   "length_m": 50.0,
-   "wkt": "LINESTRING (650077.8871555713 8984645.455834335, 650085.2569950215 8984595.99062311)",
-   "history": [
-    "written down from the first solve, 2026-10-13"
-   ]
-  },
-  {
-   "id": "s16",
-   "ring": 0,
-   "kind": "drawn",
-   "steward": "",
-   "length_m": 50.5,
-   "wkt": "LINESTRING (650085 8984596, 650095.1539123508 8984599.619061736, 650098.0482604508 8984591.498460582, 650098.3896198911 8984574.414554784, 650096.5936734667 8984568.638785435, 650089 8984571)",
-   "history": [
-    "written down from the first solve, 2026-10-13",
-    "2026-10-13: was 25 m drawn — put on the same walked track as s41, as the reviewer traced"
+    "2026-10-13: was 65 m drawn — put on the walked track it was missing, as the reviewer pointed out",
+    "2026-10-13: was 129 m drawn — s41, s15 and s16 made one run along the grey track the reviewer drew in orange"
    ]
   },
   {
