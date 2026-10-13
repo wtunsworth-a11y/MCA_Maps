@@ -440,6 +440,17 @@ def draw(book: dict, out: Path, near=None):
         handles.append(Line2D([0], [0], color="#0d9488", lw=2.0,
                               label=f"Walked, but not on the stored line — "
                                     f"{missed / 1000:.2f} km"))
+    if every:
+        handles.append(Line2D([0], [0], color="#94a3b8", lw=1.0,
+                              label=f"Every recording, behind the line — "
+                                    f"{len(every)} of them"))
+    try:
+        import roads as _rt
+        if _rt.OUT.exists():
+            handles.append(Line2D([0], [0], color="#8a9099", lw=1.6,
+                                  label="Road or track (OpenStreetMap)"))
+    except Exception:
+        pass
     for seg in book["segments"]:
         if seg["kind"] != "drawn":
             continue
