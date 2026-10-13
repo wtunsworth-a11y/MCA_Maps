@@ -207,13 +207,55 @@ def solve(clan: str) -> dict:
     return book
 
 
-def ring_geometry(book: dict):
-    """What the stored segments enclose."""
+def ring_geometry(book: dict, tolerance: float = 1.0):
+    """What the stored segments enclose.
+
+    The segments are chained end to end rather than handed to
+    polygonize. Two segments that meet within a metre are the same join
+    as far as the line is concerned, but polygonize wants the coordinate
+    to be identical, and a ring that is closed everywhere to within a
+    metre came back as forty-six slivers and 1.4 ha.
+    """
+    from shapely.geometry import Polygon
+
     lines = [shapely_wkt.loads(s["wkt"]) for s in book["segments"]]
-    faces = [f for f in polygonize(unary_union(lines)) if f.area > 0]
-    if not faces:
+    lines = [line for line in lines if line.length > 0]
+    if not lines:
         return None
-    return unary_union(faces)
+    rings, spare = [], list(lines)
+    while spare:
+        run = list(spare.pop(0).coords)
+        moved = True
+        while moved and spare:
+            moved = False
+            tail = Point(run[-1][:2])
+            head = Point(run[0][:2])
+            for index, line in enumerate(spare):
+                a = Point(line.coords[0][:2])
+                b = Point(line.coords[-1][:2])
+                if tail.distance(a) <= tolerance:
+                    run += list(line.coords)[1:]
+                elif tail.distance(b) <= tolerance:
+                    run += list(line.coords)[::-1][1:]
+                elif head.distance(b) <= tolerance:
+                    run = list(line.coords)[:-1] + run
+                elif head.distance(a) <= tolerance:
+                    run = list(line.coords)[::-1][:-1] + run
+                else:
+                    continue
+                spare.pop(index)
+                moved = True
+                break
+        if len(run) > 3 and Point(run[0][:2]).distance(
+                Point(run[-1][:2])) <= tolerance:
+            shape = Polygon([c[:2] for c in run])
+            if not shape.is_valid:
+                shape = shape.buffer(0)
+            if shape.area > 0:
+                rings.append(shape)
+    if not rings:
+        return None
+    return unary_union(rings)
 
 
 def open_ends(book: dict, tolerance: float = 1.0):
