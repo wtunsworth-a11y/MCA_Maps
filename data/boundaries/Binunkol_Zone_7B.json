@@ -164,11 +164,12 @@
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 65.0,
-   "wkt": "LINESTRING (650068.306364286 8984709.760608925, 650077.8871555713 8984645.455834335)",
+   "length_m": 129.0,
+   "wkt": "LINESTRING (650068 8984710, 650096.5984347546 8984702.319615783, 650106.9528756737 8984688.438077724, 650115.655773347 8984672.418637233, 650118.601494736 8984657.291943908, 650111.4734894466 8984648.895421231, 650097.1022496076 8984645.743479675, 650085.7229080902 8984639.273027632, 650078 8984645)",
    "history": [
     "2026-10-13: put in place of s14, which was 65 m nobody walked — small chord with walked track interspersed",
-    "2026-10-13: was 105 m drawn — follow-walk made this 65 m chord into 105 m of drawn line; put back as it was"
+    "2026-10-13: was 105 m drawn — follow-walk made this 65 m chord into 105 m of drawn line; put back as it was",
+    "2026-10-13: was 65 m drawn — put on the walked track it was missing, as the reviewer pointed out"
    ]
   },
   {
