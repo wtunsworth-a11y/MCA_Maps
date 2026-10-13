@@ -239,12 +239,14 @@
   {
    "id": "s38",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
-   "length_m": 86.2,
-   "wkt": "LINESTRING (650011.5675989089 8984276.992623633, 650020.2640923497 8984287.997332329, 650001.8451102638 8984218.251990315)",
+   "length_m": 14.0,
+   "wkt": "LINESTRING (650011.5675989089 8984276.992623633, 650020.2640923497 8984287.997332329)",
    "history": [
-    "2026-10-13: put in place of s20, which was 300 m nobody walked — small chord with walked track interspersed"
+    "2026-10-13: put in place of s20, which was 300 m nobody walked — small chord with walked track interspersed",
+    "2026-10-13: was 86 m drawn — split where it leaves the walked track",
+    "2026-10-13: was drawn, now implied — from the split"
    ]
   },
   {
@@ -496,6 +498,17 @@
    "wkt": "LINESTRING (650096.5984347546 8984702.319615783, 650106.9528756737 8984688.438077724, 650115.655773347 8984672.418637233, 650118.601494736 8984657.291943908, 650111.4734894466 8984648.895421231, 650097.1022496076 8984645.743479675, 650085.7229080902 8984639.273027632, 650084.0723860606 8984625.834112441, 650092.0841774365 8984608.231741356, 650098.0482604508 8984591.498460582, 650098.3896198911 8984574.414554784, 650096.5936734667 8984568.638785435, 650089 8984571)",
    "history": [
     "2026-10-13: added — the 172 m of old s41 that runs on the walked track"
+   ]
+  },
+  {
+   "id": "s15",
+   "ring": 0,
+   "kind": "walked",
+   "steward": "",
+   "length_m": 72.1,
+   "wkt": "LINESTRING (650020.2640923497 8984287.997332329, 650001.8451102638 8984218.251990315)",
+   "history": [
+    "2026-10-13: added — from the split of s38"
    ]
   }
  ]
