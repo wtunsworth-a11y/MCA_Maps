@@ -164,5 +164,104 @@
    "It has no stored boundary. The line came from the solver with those",
    "fixes, not from the stored-segment model."
   ]
+ },
+ "Jariji — Zone 7B": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves."
+  ]
+ },
+ "Sugulkol — Zone 7B": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves."
+  ]
+ },
+ "Gubai — Zone 8": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+  ]
+ },
+ "Zambiko — Zone 2": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing — not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+  ]
+ },
+ "Abuankol — Zone 7B": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing — not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+  ]
+ },
+ "Nui — Zone 3": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing — not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+  ]
+ },
+ "Duribip — Zone 8": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing — not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+  ]
+ },
+ "Marang — Zone 7B": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing — not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+  ]
+ },
+ "Gariniko — Zone 2": {
+  "approved": "2026-10-14",
+  "lines_only": true,
+  "why": [
+   "Ready for the report as the recordings themselves. No polygon,",
+   "no chords and no area: the reviewer judged the line the solver",
+   "drew was mostly ground nobody walked, and removed it.",
+   "",
+   "No polygon and no closing — not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+  ]
  }
 }
