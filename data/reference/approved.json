@@ -146,5 +146,23 @@
    "",
    "Nothing is merged and nothing moved. See output/queries/deari_nui.png."
   ]
+ },
+ "Natang — Zone 7B": {
+  "approved": "2026-10-14",
+  "why": [
+   "Looked at on the map and approved: it is as it should be. Into the",
+   "report for the clan to respond to.",
+   "",
+   "Three repairs stand behind it, each approved for this survey alone",
+   "and recorded in approved_fixes.json and line_extensions.json:",
+   "collapse_duplicates, because 93 recorded parts carry only 31",
+   "distinct; enclose_walked_land, for the 13.1 ha the reviewer found",
+   "encircled by Dickson Hoe's own tracks and falling outside; and the",
+   "node at 652677.8 652677.8E 8984946.2N where two of Stafford",
+   "Gidiri's stretches cross without either having an end there.",
+   "",
+   "It has no stored boundary. The line came from the solver with those",
+   "fixes, not from the stored-segment model."
+  ]
  }
 }
