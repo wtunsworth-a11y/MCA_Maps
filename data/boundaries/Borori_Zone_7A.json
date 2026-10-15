@@ -87,12 +87,13 @@
   {
    "id": "s17",
    "ring": 1,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 53.4,
    "wkt": "LINESTRING (660008.8763362616 8995680.908755165, 660016.8852542498 8995687.169499947, 660004.8906702168 8995645.623356873)",
    "history": [
-    "2026-10-15: put in place of s7, which was 265 m nobody walked — a walked track runs most of the way, as the reviewer saw"
+    "2026-10-15: put in place of s7, which was 265 m nobody walked — a walked track runs most of the way, as the reviewer saw",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -120,12 +121,13 @@
   {
    "id": "s9",
    "ring": 1,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 30.0,
    "wkt": "LINESTRING (659763.4094314966 8995493.506218165, 659735.5883564359 8995482.264339859)",
    "history": [
-    "written down from the first solve, 2026-10-15"
+    "written down from the first solve, 2026-10-15",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -153,12 +155,13 @@
   {
    "id": "s20",
    "ring": 1,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 155.5,
    "wkt": "LINESTRING (658894.5177332221 8993885.626033561, 658937.5989377585 8993768.225182623, 658920.5789699601 8993793.502322568)",
    "history": [
-    "2026-10-15: put in place of s11, which was 230 m nobody walked — a walked track runs most of the way, as the reviewer saw"
+    "2026-10-15: put in place of s11, which was 230 m nobody walked — a walked track runs most of the way, as the reviewer saw",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -175,13 +178,14 @@
   {
    "id": "s13",
    "ring": 1,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 214.7,
    "wkt": "LINESTRING (658153.1364627507 8993627.613498377, 658146.4118298079 8993651.173193965, 658115.8550610049 8993651.294607064, 658085.4082121816 8993651.415560069, 658054.7293492045 8993620.792588593, 658024.1726146959 8993620.913934913, 658027.1370283696 8993676.16328164)",
    "history": [
     "written down from the first solve, 2026-10-15",
-    "2026-10-15: was 135 m drawn straight; laid along the watercourse instead — it follows a river, as the reviewer saw"
+    "2026-10-15: was 135 m drawn straight; laid along the watercourse instead — it follows a river, as the reviewer saw",
+    "2026-10-15: was drawn, now implied — a river boundary: the line lies on the channel, and the stewards walked the same river 100-440 m along it. Not a journey anyone need make."
    ],
    "basis": "river"
   },
@@ -199,12 +203,13 @@
   {
    "id": "s15",
    "ring": 1,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 50.0,
    "wkt": "LINESTRING (657920.2684160625 8993717.341624944, 657873.6019588842 8993735.323026152)",
    "history": [
-    "written down from the first solve, 2026-10-15"
+    "written down from the first solve, 2026-10-15",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -265,12 +270,13 @@
   {
    "id": "s23",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 25.1,
    "wkt": "LINESTRING (656660.8209887664 8995892.821355952, 656683.8964667697 8995902.571426999)",
    "history": [
-    "2026-10-15: added — from the rebuild of s2"
+    "2026-10-15: added — from the rebuild of s2",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   }
  ]
