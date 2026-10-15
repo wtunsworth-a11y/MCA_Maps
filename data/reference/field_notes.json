@@ -373,5 +373,14 @@
    "Only one of the five recordings carries text: 146 m captioned 'Kennedy Wosa Bimkol Clan' and 'Dareki Village'. Dareki Village is the place named repeatedly in the neighbouring Darekikol survey. Nothing sacred or tambu."
   ],
   "raised": "2026-10-15"
+ },
+ "Gumuri — Zone 3": {
+  "notes": [
+   "No polygon and no closing. Of the 11.6 km line the solver drew, 5.15 km was ground nobody walked, enclosing 80.8 ha. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Two recordings only: Gray Saui's 8,469 m walk and Monty Stanford's 25 m marker.",
+   "Monty Stanford's words on the marker, as written: 'Monty Stanford Gumuri clan. Guivom mountain,up in the hill.. still border with doikal clan'.",
+   "That names Guivom mountain and a shared border with Doikal clan. Doikal is not among the 51 surveys in this dataset — there is no Doikal survey to compare against."
+  ],
+  "raised": "2026-10-15"
  }
 }

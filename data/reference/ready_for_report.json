@@ -732,5 +732,24 @@
     ]
    }
   ]
+ },
+ "Gumuri — Zone 3": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "map": "output/rounds/round1/gumuri_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: 5.15 km of the 11.6 km line was ground nobody",
+     "walked.",
+     "",
+     "Two recordings. Monty Stanford's marker names Guivom mountain and",
+     "a border shared with Doikal clan, which has no survey in this",
+     "dataset."
+    ]
+   }
+  ]
  }
 }
