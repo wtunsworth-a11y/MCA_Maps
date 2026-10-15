@@ -625,5 +625,24 @@
     ]
    }
   ]
+ },
+ "Manoko — Zone 2": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "map": "output/rounds/round1/manoko_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: 2.69 km of the 7.5 km line was ground nobody",
+     "walked, enclosing only 118.0 ha.",
+     "",
+     "Two of the seven raw features are corrupt and unreadable. The",
+     "query for Gilford Amakana is whether those two can be supplied",
+     "again."
+    ]
+   }
+  ]
  }
 }

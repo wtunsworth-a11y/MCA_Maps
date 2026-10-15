@@ -339,7 +339,8 @@
  },
  "Manoko — Zone 2": {
   "notes": [
-   "Two of the seven features in the raw file have corrupt geometry and cannot be read. The five that can carry 9.1 km on 827 points, 11 m apart — a real walked track."
+   "No polygon and no closing. Of the 7.5 km line the solver drew, 2.69 km was ground nobody walked, enclosing 118.0 ha. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Two of the seven features in the raw file have corrupt geometry and cannot be read at all. The five that can carry 9.1 km on 827 points, 11 m apart — genuine walking. Worth asking Gilford Amakana whether the two lost recordings can be supplied again."
   ],
   "raised": "2026-10-15"
  },
