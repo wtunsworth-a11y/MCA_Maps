@@ -661,5 +661,26 @@
     ]
    }
   ]
+ },
+ "Marijabimkol — Zone 7B": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "map": "output/rounds/round1/marijabimkol_r1.png",
+    "why": [
+     "Into the report as it stands. 6 segments, 7.71 km walked, 0.24 km",
+     "still to walk in s2 (210 m) and s4 (30 m). No area: the ring is",
+     "open because s8 hangs unattached.",
+     "",
+     "s6 is not part of the clan land — a 15 m recording at the same",
+     "place as Ginangi's Afore Market knot — and s7 and s9 existed only",
+     "to reach it, so 5,642 m of drawn line was removed with it.",
+     "",
+     "s8, 400 m of walking, is left in place and unattached, 473 m from",
+     "the rest. It goes to the clan as a question, not closed over."
+    ]
+   }
+  ]
  }
 }
