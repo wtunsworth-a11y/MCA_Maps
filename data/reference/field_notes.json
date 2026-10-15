@@ -350,5 +350,12 @@
    "Nine recordings from Joel Mamata, 15.1 km."
   ],
   "raised": "2026-10-15"
+ },
+ "Uremkol — Zone 8": {
+  "notes": [
+   "No polygon and no closing. Of the 15.7 km line the solver drew, 5.54 km was ground nobody walked, enclosing 226.1 ha. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Three recordings from Cyprian Sirami, 11.2 km."
+  ],
+  "raised": "2026-10-15"
  }
 }

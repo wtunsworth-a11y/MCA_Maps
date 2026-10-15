@@ -644,5 +644,22 @@
     ]
    }
   ]
+ },
+ "Uremkol — Zone 8": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "map": "output/rounds/round1/uremkol_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: 5.54 km of the 15.7 km line was ground nobody",
+     "walked.",
+     "",
+     "Three recordings from Cyprian Sirami, 11.2 km."
+    ]
+   }
+  ]
  }
 }
