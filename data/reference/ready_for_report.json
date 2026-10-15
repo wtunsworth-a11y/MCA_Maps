@@ -1,320 +1,453 @@
 {
  "_README": [
-  "Which surveys are clean enough to be read in a report. Keyed by",
-  "survey unit — '<Clan> — <Zone>'.",
+  "Which surveys are clean enough to be read in a report, round by round.",
+  "Keyed by survey unit — '<Clan> — <Zone>'.",
   "",
   "This is not approval and nothing in it is final. It records that the",
   "reviewer has looked at the map and judged the data clean enough to put",
-  "in front of the clan, so that the clan can correct it, answer the",
-  "questions on it, or go back and remap the gaps.",
+  "in front of the clan, so the clan can correct it, answer the questions",
+  "on it, or go back and remap the gaps. The clan decides what their",
+  "boundary is.",
   "",
-  "The clan decides what their boundary is. Nothing here decides anything",
-  "for them, and no figure in a report is settled until they say so.",
+  "There will be several rounds. Each survey holds a list under 'rounds',",
+  "oldest first, and a round is never overwritten: what went to the clan",
+  "in round 1 must still be readable after round 2 changes it. Add a new",
+  "entry to the list instead.",
   "",
-  "'lines_only' means the survey goes in as the recordings themselves,",
-  "with no polygon, chords or area. 'withhold_area' means the area the",
-  "pipeline computes must not be printed."
+  "Per round: 'round' the number, 'ready' the date, 'why' the reviewer's",
+  "reasoning, 'lines_only' for a survey going in as the recordings alone",
+  "with no polygon or area, 'withhold_area' where the computed area must",
+  "not be printed, and 'map' the file that went out, which is kept under",
+  "its round number so it is not overwritten."
  ],
  "Gumuyude — Zone 8": {
-  "on": "2026-10-11",
-  "map": "Gumuyude_Zone_8.png",
-  "todo": [
-   "Walk the 652 m gap on the northern shoulder. It is the only stretch of this boundary with no walked line between its ends.",
-   "Confirm what the notch on the north-eastern edge is: a 0.28 ha loop, about 109 m by 47 m, where the recording crosses itself. It is either a narrow finger of ground the boundary goes round or the steward backtracking, and nothing written on the tracks says which."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Dusi — Zone 8": {
-  "on": "2026-10-11",
-  "map": "Dusi_Zone_8.png",
-  "todo": [
-   "Community confirmation on chord 5, the 953 m Savahun boundary with Anaje clan: either walk it, or confirm a river or ridge for us to follow. Max Mamo stopped at the Guaipnun waterfall — 'Savahun big drain so hard to continue over' — and at the corner he marked 'Sawahun broudre with anaje clan'. Tested against the terrain model: the two ends are in different catchments, so there is no single watercourse joining them.",
-   "The river line closing the southern boundary with Gubai clan is traced from a 30 m surface model, not walked. Its course is provisional until a cleaner river layer is sourced; what the steward's notes establish is that the boundary is that river, not the exact line it takes."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Riribudeh — Zone 8": {
-  "on": "2026-10-11",
-  "map": "Riribudeh_Zone_8.png",
-  "todo": [
-   "Community confirmation on chord 1, the 203 m real gap between Butam do and Muamara. Both stewards stopped at Butam do and both resumed at Muamara, and the middle of the gap is 85 m from any walked line. It needs walking.",
-   "Ask the clan what Jaginhul is. Unido Ose puts the name on three recordings at the eastern turn, where both stewards leave the boundary, make the same eastward excursion and both rejoin. Knowing what it is would settle whether that excursion is the boundary or a detour around something.",
-   "The 48 m closing the break on the eastern boundary is a straight line, not walked. It runs up to 18 m inside the stewards' tracks where they loop out around it. Confirm or correct."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Naharaura — Zone 6": {
-  "on": "2026-10-11",
-  "map": "Naharaura_Zone_6.png",
-  "todo": [
-   "Gap of 546 m across the northern lobe, running north-south between (656218,8998916) and (656307,8999455). Walk it, or confirm what feature the boundary follows there — about half of it lies within 60 m of a modelled watercourse, and a short walked spur inside the lobe stops dead as though the stretch was started and turned back from.",
-   "Gap of 328 m on the south-eastern edge, between (656473,8997619) and (656566,8997304). Every metre lies within 60 m of a modelled watercourse, so the clan may be able to confirm it follows that creek rather than walking it. The modelled drainage comes from a 30 m surface model and is not a survey.",
-   "Two short gaps at the top of the northern lobe, 99 m and 57 m, on no modelled feature.",
-   "Zechariah Sasavo's two recordings cover the same ground twice: 32.6 km recorded over about 16 km of distinct walking. Any figure reporting distance walked should say which it means."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Sukandi — Zone 2": {
-  "on": "2026-10-12",
-  "map": "Sukandi_Zone_2.png",
-  "todo": [
-   "Ask Rodney Ajinko about Mafua. His own note records it as being in a land dispute and inside this boundary: 'Mafua is also included in land dispute. (Short history) of mafua. Thise please is bettle field before the time of angesters many evidence are located there to proved the history.'",
-   "Resolve the umbrella question. Philip Jukaro of Juaiko states that Juaiko, Manoevkor and Rumbieh are three clans under the umbrella name Sukandi. Sukandi is held here as a clan in its own right. Two stewards are using the name differently and neither boundary has been changed over it.",
-   "Name the one recording that is walked but unnamed.",
-   "Confirm Millinton Beso's three sacred walks — Mitakin, Birezama and Bijanuri, 10.6 km — sit inside the boundary and carry no part of it."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Rondi — Zone 2": {
-  "on": "2026-10-12",
-  "map": "Rondi_Zone_2.png",
-  "todo": []
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
+  ]
  },
  "Manuvoora — Zone 6": {
-  "on": "2026-10-12",
-  "map": "Manuvoora_Zone_6.png",
-  "todo": [
-   "Confirm the 2.93 km that nobody walked. One section is traced along a river the field says the boundary follows and cannot be walked; the rest are joins between recorded open ends, decided from the map. All of it is drawn apart from the walked line on the map."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Kasaki — Zone 2": {
-  "on": "2026-10-12",
-  "map": "Kasaki_Zone_2.png",
-  "todo": [
-   "Confirm the 0.19 km of joins between recorded open ends. The notch on the boundary was looked at and is not an error."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Sahirut — Zone 6": {
-  "on": "2026-10-12",
-  "map": "Sahirut_Zone_6.png",
-  "todo": [
-   "Confirm the 0.22 km that nobody walked."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Asingi — Zone 2": {
-  "on": "2026-10-12",
-  "map": "Asingi_Zone_2.png",
-  "todo": []
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
+  ]
  },
  "Pina Ora — Zone 6": {
-  "on": "2026-10-12",
-  "map": "Pina_Ora_Zone_6.png",
-  "todo": [
-   "Walk gap 1, 788 m, or name the feature the boundary follows there.",
-   "Walk gap 2, 397 m, or name the feature the boundary follows there.",
-   "Gap 3, 206 m, is part of what needs cleaning up at gap 2 and stands as it is until gap 2 is settled."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Manang — Zone 7B": {
-  "on": "2026-10-12",
-  "map": "Manang_Zone_7B.png",
-  "todo": [
-   "One gap, 1,788 m. Walk it, or name the feature the boundary follows."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Juaiko — Zone 2": {
-  "on": "2026-10-12",
-  "map": "Juaiko_Zone_2.png",
-  "todo": [
-   "One real gap runs through the whole western section — gap 2 at 917 m, gap 9 at 181 m and gap 10 at 84 m. Walk it, or tell us what feature the boundary follows.",
-   "Two inclusions in the south to settle: in or out.",
-   "Philip Jukaro states that Juaiko, Manoevkor and Rumbieh are three clans under the umbrella name Sukandi. Sukandi is held here as a clan in its own right. Nothing has been changed over it.",
-   "Ask what the 60 m Taffkin fall means for the boundary at the 105 m stretch joined straight on the eastern side."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": [],
+    "map": "output/rounds/round1/juaiko_r1.png"
+   }
   ]
  },
  "Murai (Z2) — Zone 2": {
-  "on": "2026-10-12",
-  "map": "Murai_Z2_Zone_2.png",
-  "todo": []
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
+  ]
  },
  "Murai (Z7B) — Zone 7B": {
-  "on": "2026-10-12",
-  "map": "Murai_Z7B_Zone_7B.png",
-  "todo": [
-   "7.13 km still to walk, in five gaps: 3,803 m, 1,168 m, 967 m, 797 m and 399 m. These are the lines for the clan to respond to.",
-   "The trial mapping data is to be ignored and is not part of this boundary."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Majanko — Zone 2": {
-  "on": "2026-10-12",
-  "map": "Majanko_Zone_2.png",
-  "todo": [
-   "Name the one recording that is walked but unnamed.",
-   "Ask Gilford Amakana whether the boundary follows the watercourse it tracks closely down the eastern side and at the southern corner. It is not written anywhere; it is only what the line does on the ground."
+  "rounds": [
+   {
+    "round": 1,
+    "ready": null,
+    "why": []
+   }
   ]
  },
  "Wohukol — Zone 7B": {
-  "why": [
-   "Reviewed on the map and approved as it stands. No edits were made",
-   "to the line, and none are needed before it goes into the report.",
-   "",
-   "11 segments, 17.76 km walked, 4.48 km still to walk, 513.1 ha."
-  ],
-  "ready": "2026-10-13"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-13",
+    "why": [
+     "Reviewed on the map and approved as it stands. No edits were made",
+     "to the line, and none are needed before it goes into the report.",
+     "",
+     "11 segments, 17.76 km walked, 4.48 km still to walk, 513.1 ha."
+    ],
+    "map": "output/rounds/round1/wohukol_r1.png"
+   }
+  ]
  },
  "Deari — Zone 3": {
-  "why": [
-   "Into the report as it stands, with a query attached. 7 segments,",
-   "7.81 km walked, 8.56 km still to walk, 995.5 ha. No edits made.",
-   "",
-   "THE QUERY, for the clans and not for the data: all five of Deari's",
-   "recordings lie on Nui's walking — 10,271 m of Deari's 13.1 km",
-   "within 5 m of it, 11,892 m within 10 m. That includes the one",
-   "captioned 'deari clain boundry maping'; the other four are",
-   "captioned 'nui clain boundry maping' by Patrick Dirise and Anthony",
-   "Irimari. Four stewards, one line, two clan names on it.",
-   "",
-   "Nothing is merged and nothing moved. See output/queries/deari_nui.png."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "why": [
+     "Into the report as it stands, with a query attached. 7 segments,",
+     "7.81 km walked, 8.56 km still to walk, 995.5 ha. No edits made.",
+     "",
+     "THE QUERY, for the clans and not for the data: all five of Deari's",
+     "recordings lie on Nui's walking — 10,271 m of Deari's 13.1 km",
+     "within 5 m of it, 11,892 m within 10 m. That includes the one",
+     "captioned 'deari clain boundry maping'; the other four are",
+     "captioned 'nui clain boundry maping' by Patrick Dirise and Anthony",
+     "Irimari. Four stewards, one line, two clan names on it.",
+     "",
+     "Nothing is merged and nothing moved. See output/queries/deari_nui.png."
+    ],
+    "map": "output/rounds/round1/deari_r1.png"
+   }
+  ]
  },
  "Natang — Zone 7B": {
-  "why": [
-   "Looked at on the map and approved: it is as it should be. Into the",
-   "report for the clan to respond to.",
-   "",
-   "Three repairs stand behind it, each approved for this survey alone",
-   "and recorded in approved_fixes.json and line_extensions.json:",
-   "collapse_duplicates, because 93 recorded parts carry only 31",
-   "distinct; enclose_walked_land, for the 13.1 ha the reviewer found",
-   "encircled by Dickson Hoe's own tracks and falling outside; and the",
-   "node at 652677.8 652677.8E 8984946.2N where two of Stafford",
-   "Gidiri's stretches cross without either having an end there.",
-   "",
-   "It has no stored boundary. The line came from the solver with those",
-   "fixes, not from the stored-segment model."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "why": [
+     "Looked at on the map and approved: it is as it should be. Into the",
+     "report for the clan to respond to.",
+     "",
+     "Three repairs stand behind it, each approved for this survey alone",
+     "and recorded in approved_fixes.json and line_extensions.json:",
+     "collapse_duplicates, because 93 recorded parts carry only 31",
+     "distinct; enclose_walked_land, for the 13.1 ha the reviewer found",
+     "encircled by Dickson Hoe's own tracks and falling outside; and the",
+     "node at 652677.8 652677.8E 8984946.2N where two of Stafford",
+     "Gidiri's stretches cross without either having an end there.",
+     "",
+     "It has no stored boundary. The line came from the solver with those",
+     "fixes, not from the stored-segment model."
+    ],
+    "map": "output/rounds/round1/natang_r1.png"
+   }
+  ]
  },
  "Jariji — Zone 7B": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/jariji_r1.png"
+   }
+  ]
  },
  "Sugulkol — Zone 7B": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/sugulkol_r1.png"
+   }
+  ]
  },
  "Gubai — Zone 8": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/gubai_r1.png"
+   }
+  ]
  },
  "Zambiko — Zone 2": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing — not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing — not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/zambiko_r1.png"
+   }
+  ]
  },
  "Abuankol — Zone 7B": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing — not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing — not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/abuankol_r1.png"
+   }
+  ]
  },
  "Nui — Zone 3": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing — not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing — not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/nui_r1.png"
+   }
+  ]
  },
  "Duribip — Zone 8": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing — not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing — not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/duribip_r1.png"
+   }
+  ]
  },
  "Marang — Zone 7B": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing — not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing — not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/marang_r1.png"
+   }
+  ]
  },
  "Gariniko — Zone 2": {
-  "lines_only": true,
-  "why": [
-   "Ready for the report as the recordings themselves. No polygon,",
-   "no chords and no area: the reviewer judged the line the solver",
-   "drew was mostly ground nobody walked, and removed it.",
-   "",
-   "No polygon and no closing — not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ],
-  "ready": "2026-10-14"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-14",
+    "lines_only": true,
+    "why": [
+     "Ready for the report as the recordings themselves. No polygon,",
+     "no chords and no area: the reviewer judged the line the solver",
+     "drew was mostly ground nobody walked, and removed it.",
+     "",
+     "No polygon and no closing — not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+    ],
+    "map": "output/rounds/round1/gariniko_r1.png"
+   }
+  ]
  },
  "Ambunkol — Zone 7B": {
-  "why": [
-   "The reviewer's decision, given on the map: 's2 and s10 are",
-   "unfixable at this time and must go back to the clan.' That settles",
-   "the survey; it goes into the report with those two as the clan's",
-   "question.",
-   "",
-   "12 segments, 16.51 km walked, 2.75 km still to walk in s2 (1,860 m)",
-   "and s10 (890 m), 0.17 km implied in s17 and s20, 662.4 ha.",
-   "",
-   "The question for the clan is the detached 727 m western loop that",
-   "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
-   "what those two stretches are. Nobody is sent to walk them first."
-  ],
-  "ready": "2026-10-15"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "why": [
+     "The reviewer's decision, given on the map: 's2 and s10 are",
+     "unfixable at this time and must go back to the clan.' That settles",
+     "the survey; it goes into the report with those two as the clan's",
+     "question.",
+     "",
+     "12 segments, 16.51 km walked, 2.75 km still to walk in s2 (1,860 m)",
+     "and s10 (890 m), 0.17 km implied in s17 and s20, 662.4 ha.",
+     "",
+     "The question for the clan is the detached 727 m western loop that",
+     "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
+     "what those two stretches are. Nobody is sent to walk them first."
+    ],
+    "map": "output/rounds/round1/ambunkol_r1.png"
+   }
+  ]
  },
  "Mungaikol — Zone 8": {
-  "withhold_area": true,
-  "why": [
-   "In the report, because going back to the clan is via the report.",
-   "The survey carries its question rather than being held back from",
-   "the clan who need to answer it.",
-   "",
-   "NO AREA IS TO BE ISSUED. The pipeline closes the boundary using",
-   "Graham Ekiawa's sacred-site line as the northern edge and discards",
-   "5.4 km of the walked land boundary; that figure, 338 ha, must not",
-   "appear.",
-   "",
-   "THE QUESTION FOR THE CLAN: where does the boundary run across the",
-   "north? Either the 20 July line titled 'Mungaikol Clan Sacred site",
-   "boundary' is the land boundary, leaving 3.2 km unwalked, or it is",
-   "what he titled it and the unwalked stretch is the 4.0 km across the",
-   "north. The two readings differ by about a third of the clan's land.",
-   "Graham is from the clan, so it goes to the clan with the map."
-  ],
-  "ready": "2026-10-15"
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "withhold_area": true,
+    "why": [
+     "In the report, because going back to the clan is via the report.",
+     "The survey carries its question rather than being held back from",
+     "the clan who need to answer it.",
+     "",
+     "NO AREA IS TO BE ISSUED. The pipeline closes the boundary using",
+     "Graham Ekiawa's sacred-site line as the northern edge and discards",
+     "5.4 km of the walked land boundary; that figure, 338 ha, must not",
+     "appear.",
+     "",
+     "THE QUESTION FOR THE CLAN: where does the boundary run across the",
+     "north? Either the 20 July line titled 'Mungaikol Clan Sacred site",
+     "boundary' is the land boundary, leaving 3.2 km unwalked, or it is",
+     "what he titled it and the unwalked stretch is the 4.0 km across the",
+     "north. The two readings differ by about a third of the clan's land.",
+     "Graham is from the clan, so it goes to the clan with the map."
+    ]
+   }
+  ]
+ },
+ "Ginangi — Zone 7B": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "why": [
+     "Clean enough to go in front of the clan. 4 segments, 14.85 km",
+     "walked, 719 m still to walk in s2, 648.7 ha.",
+     "",
+     "Two knots of walking are out of the boundary at the reviewer's",
+     "direction and recorded in off_boundary.json: the Afore Market road",
+     "junction and the Semmara community. They are places somebody",
+     "arrived at and marked, not edges. They still appear on the map and",
+     "still count as ground walked.",
+     "",
+     "The duplicate recordings were collapsed for this survey alone.",
+     "",
+     "The reviewer noted the map's scaling looks off; to be looked at."
+    ],
+    "map": "output/rounds/round1/ginangi_r1.png"
+   }
+  ]
  }
 }

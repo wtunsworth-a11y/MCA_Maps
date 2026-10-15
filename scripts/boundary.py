@@ -479,6 +479,13 @@ def draw(book: dict, out: Path, near=None):
                                 linewidth=1.1))
     axis.set_xlim(window[0], window[2])
     axis.set_ylim(window[1], window[3])
+    # Match the drawing box to the ground it covers. The axes was a fixed
+    # shape, so a clan wider than it is tall was squeezed into a band with
+    # dead space above and below it.
+    across = window[2] - window[0]
+    up = window[3] - window[1]
+    if across > 0:
+        axis.set_box_aspect(up / across)
     axis.set_xticks([])
     axis.set_yticks([])
     for side in axis.spines.values():
