@@ -31,14 +31,15 @@
   {
    "id": "s2",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 126.7,
    "wkt": "LINESTRING (657142.4137715659 8994590.082235862, 657018.0730581133 8994565.827454705)",
    "history": [
     "written down from the first solve, 2026-10-15",
     "2026-10-15: was 1390 m drawn — s2 was 1,390 m of line nobody walked. Rebuilt on the two long walked tracks beside it, as the reviewer directed.",
-    "2026-10-15: was 321 m drawn — s2 was 321 m of line nobody walked with two recordings lying on it, as the reviewer saw. Rebuilt."
+    "2026-10-15: was 321 m drawn — s2 was 321 m of line nobody walked with two recordings lying on it, as the reviewer saw. Rebuilt.",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -296,12 +297,13 @@
   {
    "id": "s25",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 4.7,
    "wkt": "LINESTRING (657076.7338375401 8994464.558963522, 657073.576569247 8994461.120931426)",
    "history": [
-    "2026-10-15: added — from the rebuild of s2"
+    "2026-10-15: added — from the rebuild of s2",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -318,12 +320,13 @@
   {
    "id": "s27",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 76.9,
    "wkt": "LINESTRING (656989.6937396082 8994382.289621018, 656993.1721060659 8994305.45844421)",
    "history": [
-    "2026-10-15: added — from the rebuild of s2"
+    "2026-10-15: added — from the rebuild of s2",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   }
  ]
