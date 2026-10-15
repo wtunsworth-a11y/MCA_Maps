@@ -470,5 +470,30 @@
     ]
    }
   ]
+ },
+ "Darekikol — Zone 7A": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "map": "output/rounds/round1/darekikol_r1.png",
+    "why": [
+     "Clean enough to go in front of the clan. 31 segments, 18.44 km",
+     "walked, 3.62 km still to walk, 0.18 km implied, 612.1 ha in three",
+     "rings that touch rather than overlap: the western 517.7 ha, the",
+     "eastern lobe 90.0 ha and 17.3 ha between them.",
+     "",
+     "Six gaps for the clan: s20 1,212 m, s2 850 m, s8 690 m, s10 471 m,",
+     "s6 400 m and s14, which the reviewer settled.",
+     "",
+     "Worked with the reviewer segment by segment: the chord that",
+     "shortcut 1,638 m of walking, the route to the eastern lobe put on",
+     "walked track instead of a 495 m line across country, the s28/s29",
+     "out-and-back reduced from 608 m to 89 m, and the 142 m line that",
+     "should not have existed removed once it was found that s27 and s15",
+     "already touch s19 and s16 at 7 m and 10 m."
+    ]
+   }
+  ]
  }
 }
