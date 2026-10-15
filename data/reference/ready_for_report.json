@@ -560,5 +560,31 @@
     ]
    }
   ]
+ },
+ "Borori — Zone 7A": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "map": "output/rounds/round1/borori_r1.png",
+    "why": [
+     "Clean enough to go in front of the clan. 27 segments, 21.32 km",
+     "walked, 0.15 km still to walk, 0.52 km implied, 740.0 ha.",
+     "",
+     "Eleven recordings from Hagahi Semo and John Saini, 32.7 km.",
+     "",
+     "Worked with the reviewer: s2 was 1,390 m of line nobody walked and",
+     "went onto the two long tracks beside it; s7 and s11 onto walking",
+     "that ran most of the way; s13 onto the river channel. A second",
+     "pass found recordings lying directly on s11 and s2 that the first",
+     "search had hidden, taking another 483 m onto walked ground.",
+     "",
+     "ONE THING LEFT UNKNOWN: s5, 155 m. Five recordings run within 75 m",
+     "of it in different directions and none bridges its ends. The",
+     "reviewer judged the area too confused to read, and it is not",
+     "settled either way. It goes to the clan as a question."
+    ]
+   }
+  ]
  }
 }
