@@ -342,5 +342,12 @@
    "Two of the seven features in the raw file have corrupt geometry and cannot be read. The five that can carry 9.1 km on 827 points, 11 m apart — a real walked track."
   ],
   "raised": "2026-10-15"
+ },
+ "Rumbi — Zone 2": {
+  "notes": [
+   "No polygon and no closing. Of the 22.4 km line the solver drew, 9.18 km was ground nobody walked, against 15.1 km of walking in the file. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Nine recordings from Joel Mamata, 15.1 km."
+  ],
+  "raised": "2026-10-15"
  }
 }

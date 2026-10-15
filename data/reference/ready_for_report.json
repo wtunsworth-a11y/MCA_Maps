@@ -608,5 +608,22 @@
     ]
    }
   ]
+ },
+ "Rumbi — Zone 2": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "map": "output/rounds/round1/rumbi_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: of the 22.4 km line the solver drew, 9.18 km was",
+     "ground nobody walked, against 15.1 km of walking in the file.",
+     "",
+     "Nine recordings from Joel Mamata."
+    ]
+   }
+  ]
  }
 }
