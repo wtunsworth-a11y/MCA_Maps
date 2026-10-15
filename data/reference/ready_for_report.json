@@ -495,5 +495,32 @@
     ]
    }
   ]
+ },
+ "Tuoko — Zone 2": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "map": "output/rounds/round1/tuoko_r1.png",
+    "why": [
+     "Clean enough to go in front of the clan. 41 segments, 34.54 km",
+     "walked, 4.59 km still to walk, 0.37 km implied, 3,156.1 ha in one",
+     "polygon — the largest area in the set.",
+     "",
+     "Nine recordings from Terrence Dobija and Kaupa Dota, 47.7 km. Kaupa",
+     "Dota's words, as written: 'Tuoko.clan.land.boundry.' and",
+     "'.clan.land.boundary.'",
+     "",
+     "Worked with the reviewer: s7 was 5,946 m of line nobody walked and",
+     "is now 2,554 m drawn over 4,111 m of walked fragments; s11 was",
+     "4,866 m and is now 3,306 m drawn over a 3,365 m recording lying",
+     "97 m off it; s42 cut past the eastern loop and left it as a second",
+     "118.7 ha ring, and now joins it into the single boundary. Nine",
+     "seams between fragments of the same corridor are implied.",
+     "",
+     "Still to walk: s7 2,182 m, s42's two ends, s9 270 m, s2 245 m."
+    ]
+   }
+  ]
  }
 }
