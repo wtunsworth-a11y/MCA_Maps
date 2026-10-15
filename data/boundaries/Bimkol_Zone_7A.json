@@ -50,17 +50,6 @@
    ]
   },
   {
-   "id": "s4",
-   "ring": 0,
-   "kind": "drawn",
-   "steward": "",
-   "length_m": 165.2,
-   "wkt": "LINESTRING (655779.7787955819 8993978.767460167, 655944.2977782014 8993993.45116381)",
-   "history": [
-    "written down from the first solve, 2026-10-15"
-   ]
-  },
-  {
    "id": "s5",
    "ring": 0,
    "kind": "walked",
