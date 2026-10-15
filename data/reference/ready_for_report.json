@@ -682,5 +682,27 @@
     ]
    }
   ]
+ },
+ "Bimkol — Zone 7A": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "map": "output/rounds/round1/bimkol_r1.png",
+    "why": [
+     "Clean enough to go in front of the clan. 9 segments, 6.68 km",
+     "walked, 66 m of drawn line, 161.4 ha.",
+     "",
+     "The first build gave 51.4 ha with 3.38 km drawn. The reviewer saw",
+     "that the southern loop the stewards walked was the edge of the",
+     "polygon and that three long chords cutting across the clan were",
+     "wrong. With those out and the loop in, the boundary is almost",
+     "entirely Kennedy Wosa's own walking.",
+     "",
+     "s5, an 1,111 m eastern spur attached at neither end, is out of the",
+     "boundary and goes to the clan as a question."
+    ]
+   }
+  ]
  }
 }
