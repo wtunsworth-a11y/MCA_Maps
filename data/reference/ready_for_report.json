@@ -704,5 +704,33 @@
     ]
    }
   ]
+ },
+ "Madukol — Zone 8": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "withhold_area": true,
+    "map": "output/rounds/round1/madukol_r1.png",
+    "why": [
+     "Into the report as the recordings themselves, carrying its",
+     "queries. No polygon, no chords. NO AREA IS TO BE ISSUED: the",
+     "1.45 ha the pipeline computes is a fragment closed by two chords",
+     "of 179 m and 106 m across a shape that was never a ring.",
+     "",
+     "Gibs Ginave recorded 1.4 km in five pieces. The whole survey spans",
+     "369 m east to west by 157 m north to south — the smallest in the",
+     "set. Two of the five recordings carry no name; the three that do",
+     "say 'Darmal', 'Gibs Ginave / Land boundary' and 'Gibs_Ginave /",
+     "Madukol Clan land boundary'.",
+     "",
+     "TWO QUESTIONS FOR THE CLAN: what was being recorded here — there",
+     "is a tangle at the eastern end where the steward circled a small",
+     "area several times, with no note saying what it is — and what is",
+     "Darmal?"
+    ]
+   }
+  ]
  }
 }

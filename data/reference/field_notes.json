@@ -202,7 +202,7 @@
  "Madukol — Zone 8": {
   "source": "Raw recordings and the everything map, reviewed 12 October 2026",
   "notes": [
-   "SET ASIDE — too little data to work with.",
+   "IN THE REPORT WITH THE QUERIES, 2026-10-15, as the recordings themselves — no polygon, no chords, no area.",
    "",
    "Gibs Ginave recorded 1.4 km in five pieces, 1.07 km after smoothing. The whole of it spans 369 m east to west by 157 m north to south and encloses 1.45 ha. That is a fragment, not a clan boundary, and the two chords of 179 m and 106 m are closing a shape that was never a ring.",
    "",
@@ -211,7 +211,8 @@
    "FOR THE CLAN: what was being recorded here? There is a tangle at the eastern end where the steward circled a small area several times, and no note saying what it is. And what is Darmal?",
    "",
    "Nothing in this survey has been repaired. The 1.45 ha figure must not be issued as Madukol's land."
-  ]
+  ],
+  "priority": "No figure to be issued until the clan answers."
  },
  "Ambunkol — Zone 7B": {
   "notes": [
