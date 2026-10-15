@@ -542,5 +542,23 @@
     ]
    }
   ]
+ },
+ "Mariura — Zone 6": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "map": "output/rounds/round1/mariura_r1.png",
+    "why": [
+     "Straight into the report as the recordings themselves. No polygon,",
+     "no chords, no area: the reviewer could not tell what the survey is.",
+     "",
+     "The solver drew 18.3 km of line of which 14.87 km was ground nobody",
+     "walked, while the file carries 33.7 km of walking in 43 recordings",
+     "from Livingstone Nisavora and Fabian Justin."
+    ]
+   }
+  ]
  }
 }

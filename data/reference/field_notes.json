@@ -312,5 +312,12 @@
    "Their own words, reproduced as written: 'Lance sake gariniko clan land boundry', 'Luke kevura garinko clan', 'Clan land boundary', 'Trial Clan track boundary'."
   ],
   "raised": "2026-10-13"
+ },
+ "Mariura — Zone 6": {
+  "notes": [
+   "No polygon and no closing — the reviewer could not tell what the survey is. Of the 18.3 km line the solver drew, 14.87 km was ground nobody walked, against 33.7 km of walking in the file. Removed on 2026-10-15; it goes into the report as the recordings themselves.",
+   "43 recordings from Livingstone Nisavora and Fabian Justin, 33.7 km."
+  ],
+  "raised": "2026-10-15"
  }
 }
