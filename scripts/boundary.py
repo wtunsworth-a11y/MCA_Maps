@@ -398,6 +398,17 @@ def draw(book: dict, out: Path, near=None):
     figure = plt.figure(figsize=(16, 13.8), dpi=200)
     axis = figure.add_axes([0.02, 0.05, 0.74, 0.90])
     terrain.add_hillshade(axis, dataio.METRIC_CRS, alpha=0.34, bounds=window)
+    # Watercourses and roads behind every stored map, not just the clan
+    # map. A boundary is argued about against the land it crosses.
+    try:
+        from shapely.geometry import box as _box
+        streams = gpd.read_file(dataio.REFERENCE_DIR / "hydro"
+                                / "streams.gpkg").to_crs(dataio.METRIC_CRS)
+        streams = streams[streams.intersects(_box(*window))]
+        if not streams.empty:
+            streams.plot(ax=axis, color="#7dd3fc", linewidth=1.1, zorder=1)
+    except Exception:
+        pass
     try:
         import roads as road_tools
         road_tools.underlay(axis, dataio.METRIC_CRS, window)
@@ -523,6 +534,8 @@ def draw(book: dict, out: Path, near=None):
         Line2D([0], [0], color="#db2777", lw=2.8, linestyle=(0, (5, 3)),
                label=f"Still to walk — {drawn / 1000:.2f} km"),
     ]
+    handles.append(Line2D([0], [0], color="#7dd3fc", lw=1.1,
+                          label="Watercourse, from the terrain model"))
     if missed > 50:
         handles.append(Line2D([0], [0], color="#0d9488", lw=2.0,
                               label=f"Walked, but not on the stored line — "
