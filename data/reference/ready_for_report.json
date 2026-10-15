@@ -1,4 +1,20 @@
 {
+ "_README": [
+  "Which surveys are clean enough to be read in a report. Keyed by",
+  "survey unit — '<Clan> — <Zone>'.",
+  "",
+  "This is not approval and nothing in it is final. It records that the",
+  "reviewer has looked at the map and judged the data clean enough to put",
+  "in front of the clan, so that the clan can correct it, answer the",
+  "questions on it, or go back and remap the gaps.",
+  "",
+  "The clan decides what their boundary is. Nothing here decides anything",
+  "for them, and no figure in a report is settled until they say so.",
+  "",
+  "'lines_only' means the survey goes in as the recordings themselves,",
+  "with no polygon, chords or area. 'withhold_area' means the area the",
+  "pipeline computes must not be printed."
+ ],
  "Gumuyude — Zone 8": {
   "on": "2026-10-11",
   "map": "Gumuyude_Zone_8.png",
@@ -123,16 +139,15 @@
   ]
  },
  "Wohukol — Zone 7B": {
-  "approved": "2026-10-13",
   "why": [
    "Reviewed on the map and approved as it stands. No edits were made",
    "to the line, and none are needed before it goes into the report.",
    "",
    "11 segments, 17.76 km walked, 4.48 km still to walk, 513.1 ha."
-  ]
+  ],
+  "ready": "2026-10-13"
  },
  "Deari — Zone 3": {
-  "approved": "2026-10-14",
   "why": [
    "Into the report as it stands, with a query attached. 7 segments,",
    "7.81 km walked, 8.56 km still to walk, 995.5 ha. No edits made.",
@@ -145,10 +160,10 @@
    "Irimari. Four stewards, one line, two clan names on it.",
    "",
    "Nothing is merged and nothing moved. See output/queries/deari_nui.png."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Natang — Zone 7B": {
-  "approved": "2026-10-14",
   "why": [
    "Looked at on the map and approved: it is as it should be. Into the",
    "report for the clan to respond to.",
@@ -163,10 +178,10 @@
    "",
    "It has no stored boundary. The line came from the solver with those",
    "fixes, not from the stored-segment model."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Jariji — Zone 7B": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -174,10 +189,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Sugulkol — Zone 7B": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -185,10 +200,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Gubai — Zone 8": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -196,10 +211,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Zambiko — Zone 2": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -207,10 +222,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing — not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Abuankol — Zone 7B": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -218,10 +233,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing — not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Nui — Zone 3": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -229,10 +244,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing — not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Duribip — Zone 8": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -240,10 +255,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing — not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Marang — Zone 7B": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -251,10 +266,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing — not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Gariniko — Zone 2": {
-  "approved": "2026-10-14",
   "lines_only": true,
   "why": [
    "Ready for the report as the recordings themselves. No polygon,",
@@ -262,10 +277,10 @@
    "drew was mostly ground nobody walked, and removed it.",
    "",
    "No polygon and no closing — not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-  ]
+  ],
+  "ready": "2026-10-14"
  },
  "Ambunkol — Zone 7B": {
-  "approved": "2026-10-15",
   "why": [
    "The reviewer's decision, given on the map: 's2 and s10 are",
    "unfixable at this time and must go back to the clan.' That settles",
@@ -278,10 +293,10 @@
    "The question for the clan is the detached 727 m western loop that",
    "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
    "what those two stretches are. Nobody is sent to walk them first."
-  ]
+  ],
+  "ready": "2026-10-15"
  },
  "Mungaikol — Zone 8": {
-  "approved": "2026-10-15",
   "withhold_area": true,
   "why": [
    "In the report, because going back to the clan is via the report.",
@@ -299,6 +314,7 @@
    "what he titled it and the unwalked stretch is the 4.0 km across the",
    "north. The two readings differ by about a third of the clan's land.",
    "Graham is from the clan, so it goes to the clan with the map."
-  ]
+  ],
+  "ready": "2026-10-15"
  }
 }

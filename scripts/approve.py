@@ -35,7 +35,7 @@ import geopandas as gpd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dataio  # noqa: E402
 
-REGISTER = dataio.REPO_ROOT / "data" / "reference" / "approved.json"
+REGISTER = dataio.REPO_ROOT / "data" / "reference" / "ready_for_report.json"
 APPROVED_DIR = dataio.OUT_DIR / "clans" / "approved"
 
 
