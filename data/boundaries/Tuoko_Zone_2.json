@@ -175,12 +175,13 @@
   {
    "id": "s15",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 20.5,
    "wkt": "LINESTRING (631431.7693755748 8989394.40146517, 631411.5781968026 8989390.886176718)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -241,12 +242,13 @@
   {
    "id": "s21",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 19.3,
    "wkt": "LINESTRING (630631.6805739141 8989568.123410404, 630618.159228668 8989554.365936097)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -263,12 +265,13 @@
   {
    "id": "s23",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 7.9,
    "wkt": "LINESTRING (630471.0859182335 8989460.219968418, 630463.3581824894 8989461.88806351)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -340,12 +343,13 @@
   {
    "id": "s30",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 7.9,
    "wkt": "LINESTRING (628964.0437148691 8989352.430200389, 628956.4516285292 8989350.104603011)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -362,12 +366,13 @@
   {
    "id": "s32",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 3.0,
    "wkt": "LINESTRING (628828.934835169 8989349.989231993, 628825.9602496036 8989350.236815844)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -384,12 +389,13 @@
   {
    "id": "s34",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 109.2,
    "wkt": "LINESTRING (628680.4216531724 8989307.397497045, 628571.3830895165 8989301.095056964)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -406,12 +412,13 @@
   {
    "id": "s36",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 19.2,
    "wkt": "LINESTRING (628344.9381197693 8989364.018250851, 628326.2999573755 8989368.710860591)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -428,12 +435,13 @@
   {
    "id": "s38",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 65.7,
    "wkt": "LINESTRING (628150.6914243967 8989301.748095945, 628085.3230018517 8989295.519123977)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   },
   {
@@ -450,12 +458,13 @@
   {
    "id": "s40",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 118.9,
    "wkt": "LINESTRING (627947.2765957598 8989233.88253496, 627829.4863647599 8989217.327603625)",
    "history": [
-    "2026-10-15: added — from the rebuild of s7"
+    "2026-10-15: added — from the rebuild of s7",
+    "2026-10-15: was drawn, now implied — a seam between two fragments of the same walked corridor, settled by the reviewer"
    ]
   }
  ]
