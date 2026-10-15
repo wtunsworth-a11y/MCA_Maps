@@ -327,5 +327,20 @@
    "Everything else on Borori is walked, implied, or implied along the river at s13."
   ],
   "raised": "2026-10-15"
+ },
+ "Asoro — Zone 2": {
+  "notes": [
+   "QUERY THE WHOLE SURVEY. These are not walked tracks. In the raw file Asoro's ten recordings carry 22.8 km on 177 points — an average of 129 m between them, and one leg of 7,418 m on ten points, 824 m apart. A walked GPS logs every few seconds. This is a set of points joined by straight lines.",
+   "The smoothed layer hides it: smoothing resampled every recording to a uniform 19 m spacing, so the map shows what looks like a track. It is not one, and the 21.54 km the pipeline reported as walked is not walked.",
+   "No polygon and no closing. Removed on 2026-10-15; the survey goes into the report as the recordings themselves, with this query attached.",
+   "Gilford Amakana recorded three surveys — Asoro, Majanko and Manoko, all Zone 2. The other two ARE real walked tracks, logging a point every 11-12 m. Only Asoro is made of joined points. That is worth putting to him directly: what are these points, and how were they taken?"
+  ],
+  "raised": "2026-10-15"
+ },
+ "Manoko — Zone 2": {
+  "notes": [
+   "Two of the seven features in the raw file have corrupt geometry and cannot be read. The five that can carry 9.1 km on 827 points, 11 m apart — a real walked track."
+  ],
+  "raised": "2026-10-15"
  }
 }

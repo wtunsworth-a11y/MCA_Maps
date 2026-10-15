@@ -586,5 +586,27 @@
     ]
    }
   ]
+ },
+ "Asoro — Zone 2": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "map": "output/rounds/round1/asoro_r1.png",
+    "why": [
+     "Into the report as the recordings themselves, with the whole",
+     "survey queried. No polygon, no chords, no area.",
+     "",
+     "These are not walked tracks: 22.8 km on 177 points, 129 m apart on",
+     "average, one leg of 7,418 m on ten points. Points joined by",
+     "straight lines, not a walk. The smoothed layer had resampled them",
+     "to a uniform 19 m and made them look like tracks.",
+     "",
+     "To put to Gilford Amakana: his Majanko and Manoko surveys are real",
+     "walked tracks at 11-12 m per point. Only Asoro is like this."
+    ]
+   }
+  ]
  }
 }
