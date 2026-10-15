@@ -751,5 +751,24 @@
     ]
    }
   ]
+ },
+ "Savasi — Zone 3": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "lines_only": true,
+    "map": "output/rounds/round1/savasi_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: 4.89 km of the 8.9 km line was ground nobody",
+     "walked, more drawn than walked.",
+     "",
+     "Three recordings from Oscar Isuni. One of 207 m is captioned",
+     "'Church boundary' — the only one in the dataset, and not a clan",
+     "edge."
+    ]
+   }
+  ]
  }
 }

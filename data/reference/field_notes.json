@@ -23,11 +23,13 @@
  },
  "Savasi — Zone 3": {
   "notes": [
+   "No polygon and no closing. Of the 8.9 km line the solver drew, 4.89 km was ground nobody walked — more drawn than walked. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Three recordings from Oscar Isuni, 5.3 km: one 4,900 m walk and two short ones.",
+   "A 207 m recording is captioned 'Oscar isuni savasi clan' and 'Church boundary'. That is the only church boundary in the dataset, and it is a different kind of thing from a clan edge. Reproduce as written.",
    "The eastern border of Savasi's clan land is along the Baraje river.",
    "The mapping is not finished: the northern and southern ends have yet to be closed off."
   ],
-  "river_boundary": true,
-  "source": "Field advice, 23 August 2026"
+  "raised": "2026-10-15"
  },
  "Manuvoora — Zone 6": {
   "notes": [
