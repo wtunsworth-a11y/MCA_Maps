@@ -449,5 +449,26 @@
     "map": "output/rounds/round1/ginangi_r1.png"
    }
   ]
+ },
+ "Binunkol — Zone 7B": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "map": "output/rounds/round1/binunkol_r1.png",
+    "why": [
+     "Clean enough to go in front of the clan. 43 segments, 15.73 km",
+     "walked, 2.61 km still to walk, 0.80 km implied and 2.32 km implied",
+     "along a watercourse, 1,026.0 ha.",
+     "",
+     "Five gaps for the clan: s8 945 m, s2 630 m, s4 450 m, s6 445 m and",
+     "s46 138 m. The reviewer named s2, s4, s6 and s8 as the real ones.",
+     "",
+     "s28, s30 and s32 follow the river and are laid along the channel",
+     "from the terrain model, not drawn straight. s22, s24, s26 and s40",
+     "were settled by the reviewer, along with five small seams."
+    ]
+   }
+  ]
  }
 }

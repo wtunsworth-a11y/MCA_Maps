@@ -294,7 +294,9 @@ def summary(book: dict) -> str:
     drawn = sum(s["length_m"] for s in book["segments"]
                 if s["kind"] == "drawn")
     implied = sum(s["length_m"] for s in book["segments"]
-                  if s["kind"] == "implied")
+                  if s["kind"] == "implied" and s.get("basis") != "river")
+    river = sum(s["length_m"] for s in book["segments"]
+                if s["kind"] == "implied" and s.get("basis") == "river")
     land = ring_geometry(book)
     out = [f"{book['unit']}   written down {book['solved']}",
            f"  {len(book['segments'])} segments, "
@@ -416,11 +418,17 @@ def draw(book: dict, out: Path, near=None):
     if land is not None:
         gpd.GeoSeries([land], crs=dataio.METRIC_CRS).plot(
             ax=axis, color="#1d4ed8", alpha=0.13, edgecolor="none", zorder=2)
+    # A line implied because it follows a watercourse is a different
+    # claim from one implied because it is too short to send anyone to
+    # walk, and the map should not say they are the same.
     paint = {"walked": ("#1f2937", 2.2, "-"),
              "implied": ("#f59e0b", 3.0, (0, (7, 2))),
+             "river": ("#0284c7", 3.0, (0, (7, 2))),
              "drawn": ("#db2777", 2.8, (0, (5, 3)))}
     for seg, line in lines:
-        colour, width, dash = paint.get(seg["kind"], paint["drawn"])
+        look = ("river" if seg["kind"] == "implied"
+                and seg.get("basis") == "river" else seg["kind"])
+        colour, width, dash = paint.get(look, paint["drawn"])
         axis.plot(*line.xy, color=colour, lw=width, linestyle=dash,
                   zorder=5 if seg["kind"] == "walked" else 6)
     step = (window[2] - window[0]) * 0.035
@@ -467,7 +475,9 @@ def draw(book: dict, out: Path, near=None):
             spot = Point(middle.x - dy / span * step,
                          middle.y + dx / span * step)
         placed.append(spot)
-        colour = paint.get(seg["kind"], paint["drawn"])[0]
+        colour = paint.get("river" if seg["kind"] == "implied"
+                           and seg.get("basis") == "river" else seg["kind"],
+                           paint["drawn"])[0]
         axis.annotate(seg["id"], (middle.x, middle.y),
                       xytext=(spot.x, spot.y), fontsize=9.5,
                       fontweight="bold", color="white", ha="center",
@@ -495,7 +505,9 @@ def draw(book: dict, out: Path, near=None):
     drawn = sum(s["length_m"] for s in book["segments"]
                 if s["kind"] == "drawn")
     implied = sum(s["length_m"] for s in book["segments"]
-                  if s["kind"] == "implied")
+                  if s["kind"] == "implied" and s.get("basis") != "river")
+    river = sum(s["length_m"] for s in book["segments"]
+                if s["kind"] == "implied" and s.get("basis") == "river")
     handles = [
         plt.Rectangle((0, 0), 1, 1, facecolor="#1d4ed8", alpha=0.13,
                       edgecolor="none",
@@ -506,6 +518,8 @@ def draw(book: dict, out: Path, near=None):
         Line2D([0], [0], color="#f59e0b", lw=3.0, linestyle=(0, (7, 2)),
                label=f"Implied — settled here, not a journey — "
                      f"{implied / 1000:.2f} km"),
+        Line2D([0], [0], color="#0284c7", lw=3.0, linestyle=(0, (7, 2)),
+               label=f"Implied along a watercourse — {river / 1000:.2f} km"),
         Line2D([0], [0], color="#db2777", lw=2.8, linestyle=(0, (5, 3)),
                label=f"Still to walk — {drawn / 1000:.2f} km"),
     ]
@@ -790,6 +804,7 @@ def follow_river(book: dict, seg_id: str, reach: float = 250.0,
                 f"{date.today().isoformat()}: was {seg['length_m']:.0f} m "
                 f"drawn straight; laid along the watercourse instead"
                 + (f" — {note}" if note else ""))
+            seg["basis"] = "river"
             seg["wkt"] = made.wkt
             seg["length_m"] = round(made.length, 1)
             return seg
@@ -830,6 +845,7 @@ def follow_river(book: dict, seg_id: str, reach: float = 250.0,
         f"{date.today().isoformat()}: was {seg['length_m']:.0f} m drawn "
         f"straight; laid along the watercourse instead"
         + (f" — {note}" if note else ""))
+    seg["basis"] = "river"
     seg["wkt"] = made.wkt
     seg["length_m"] = round(made.length, 1)
     return seg

@@ -263,12 +263,13 @@
   {
    "id": "s40",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 191.4,
    "wkt": "LINESTRING (649963.1750429067 8984145.95165489, 649819.6426095952 8984034.127080953, 649825.5197497437 8984041.56412621)",
    "history": [
-    "2026-10-13: put in place of s20, which was 300 m nobody walked — small chord with walked track interspersed"
+    "2026-10-13: put in place of s20, which was 300 m nobody walked — small chord with walked track interspersed",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -285,12 +286,13 @@
   {
    "id": "s22",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 80.0,
    "wkt": "LINESTRING (649802.2590867501 8984003.138767185, 649763.1105127308 8983933.351514846)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -307,12 +309,13 @@
   {
    "id": "s24",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 100.0,
    "wkt": "LINESTRING (649750.293139586 8983901.2123844, 649730.1655720612 8983803.236021714)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -329,12 +332,13 @@
   {
    "id": "s26",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 90.0,
    "wkt": "LINESTRING (649853.4514123645 8983433.729822796, 649847.5937473446 8983343.900418242)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
@@ -359,7 +363,8 @@
     "written down from the first solve, 2026-10-13",
     "2026-10-13: was drawn, now implied — follows the river, as the reviewer identified on 2026-10-13. Not a journey anyone need make.",
     "2026-10-13: was 470 m drawn straight; laid along the watercourse instead — the river the reviewer identified"
-   ]
+   ],
+   "basis": "river"
   },
   {
    "id": "s29",
@@ -383,7 +388,8 @@
     "written down from the first solve, 2026-10-13",
     "2026-10-13: was drawn, now implied — follows the river, as the reviewer identified on 2026-10-13. Not a journey anyone need make.",
     "2026-10-13: was 670 m drawn straight; laid along the watercourse instead — the river the reviewer identified"
-   ]
+   ],
+   "basis": "river"
   },
   {
    "id": "s31",
@@ -407,7 +413,8 @@
     "written down from the first solve, 2026-10-13",
     "2026-10-13: was drawn, now implied — follows the river, as the reviewer identified on 2026-10-13. Not a journey anyone need make.",
     "2026-10-13: was 500 m drawn straight; laid along the watercourse instead — the river the reviewer identified"
-   ]
+   ],
+   "basis": "river"
   },
   {
    "id": "s33",
