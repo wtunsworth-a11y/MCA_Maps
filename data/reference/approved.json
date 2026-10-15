@@ -263,5 +263,21 @@
    "",
    "No polygon and no closing — not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
   ]
+ },
+ "Ambunkol — Zone 7B": {
+  "approved": "2026-10-15",
+  "why": [
+   "The reviewer's decision, given on the map: 's2 and s10 are",
+   "unfixable at this time and must go back to the clan.' That settles",
+   "the survey; it goes into the report with those two as the clan's",
+   "question.",
+   "",
+   "12 segments, 16.51 km walked, 2.75 km still to walk in s2 (1,860 m)",
+   "and s10 (890 m), 0.17 km implied in s17 and s20, 662.4 ha.",
+   "",
+   "The question for the clan is the detached 727 m western loop that",
+   "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
+   "what those two stretches are. Nobody is sent to walk them first."
+  ]
  }
 }
