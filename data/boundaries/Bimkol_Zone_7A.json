@@ -98,10 +98,11 @@
    "ring": 0,
    "kind": "drawn",
    "steward": "",
-   "length_m": 60.6,
-   "wkt": "LINESTRING (654552.8964720429 8993903.606167542, 654545.2911046979 8993843.487168241)",
+   "length_m": 26.3,
+   "wkt": "LINESTRING (654549 8993869, 654545 8993843)",
    "history": [
-    "2026-10-15: added — the southern loop the reviewer highlighted: walked track running from s12 round to s9"
+    "2026-10-15: added — the southern loop the reviewer highlighted: walked track running from s12 round to s9",
+    "2026-10-15: was 61 m drawn — it ran from the node s10 and s12 share and bypassed s12. Brought to s12's other end: 26 m instead of 61, and s12 is in the ring"
    ]
   },
   {
