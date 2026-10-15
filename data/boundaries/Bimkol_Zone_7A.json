@@ -39,17 +39,6 @@
    ]
   },
   {
-   "id": "s3",
-   "ring": 0,
-   "kind": "walked",
-   "steward": "Kennedy Wosa",
-   "length_m": 75.1,
-   "wkt": "LINESTRING (655704.9974398457 8993972.093049422, 655779.7787955819 8993978.767460167)",
-   "history": [
-    "written down from the first solve, 2026-10-15"
-   ]
-  },
-  {
    "id": "s5",
    "ring": 0,
    "kind": "walked",
