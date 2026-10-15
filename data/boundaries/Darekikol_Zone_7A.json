@@ -170,12 +170,13 @@
   {
    "id": "s14",
    "ring": 0,
-   "kind": "drawn",
+   "kind": "implied",
    "steward": "",
    "length_m": 30.0,
    "wkt": "LINESTRING (660155.4880316048 8996053.377464846, 660169.6702452371 8996079.817011649)",
    "history": [
-    "written down from the first solve, 2026-10-13"
+    "written down from the first solve, 2026-10-13",
+    "2026-10-15: was drawn, now implied — settled by the reviewer"
    ]
   },
   {
