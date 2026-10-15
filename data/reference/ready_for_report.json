@@ -522,5 +522,25 @@
     ]
    }
   ]
+ },
+ "Nituri — Zone 2": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "map": "output/rounds/round1/nituri_r1.png",
+    "why": [
+     "Clean enough to go in front of the clan as first built — no edits",
+     "were needed. 14 segments, 35.17 km walked, 6.43 km still to walk,",
+     "5,171.3 ha, the largest area in the set.",
+     "",
+     "85% of the line is walked straight out of the solver, the best",
+     "first build of any survey so far.",
+     "",
+     "39 recordings from Newton Muraba, Graham Naopi and Christoper",
+     "Visua carrying 41.8 km."
+    ]
+   }
+  ]
  }
 }
