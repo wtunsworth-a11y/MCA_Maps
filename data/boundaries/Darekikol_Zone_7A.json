@@ -369,17 +369,6 @@
     "2026-10-13: added — s13 to s17 along the walking, as the reviewer directed",
     "2026-10-13: its end moved 15 m onto s17, which it had stopped short of"
    ]
-  },
-  {
-   "id": "s32",
-   "ring": 0,
-   "kind": "drawn",
-   "steward": "",
-   "length_m": 142.2,
-   "wkt": "LINESTRING (658477 8994763, 658374 8994861)",
-   "history": [
-    "2026-10-13: added — 142 m, the last opening between s15 and the walked route from s11"
-   ]
   }
  ]
 }
