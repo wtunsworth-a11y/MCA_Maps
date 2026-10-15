@@ -326,24 +326,13 @@
    "ring": 0,
    "kind": "implied",
    "steward": "",
-   "length_m": 261.8,
-   "wkt": "LINESTRING (659278.920808291 8995489.651205726, 659287.060813505 8995504.629422497, 659294.3891405562 8995511.23832085, 659343.1390109786 8995546.159320254, 659409.8935124516 8995606.96237792, 659467.7313830962 8995646.832115263, 659475.6028338622 8995658.902392445)",
+   "length_m": 89.1,
+   "wkt": "LINESTRING (659279 8995490, 659255.6951999024 8995474.081251606, 659226.428227508 8995465.05922826, 659203 8995446)",
    "history": [
     "2026-10-13: added — s13 to s17 along the walking, as the reviewer directed",
     "2026-10-13: was 260 m drawn — a central line through the walking either side of it, as the reviewer directed — the middle of the corridor rather than a chord across it",
-    "2026-10-13: was drawn, now implied — the midline of walked track, not a journey anyone need make"
-   ]
-  },
-  {
-   "id": "s29",
-   "ring": 0,
-   "kind": "walked",
-   "steward": "",
-   "length_m": 346.5,
-   "wkt": "LINESTRING (659475.6028338622 8995658.902392445, 659457.6923560695 8995650.271327117, 659440.6917340214 8995640.071964897, 659424.6009677212 8995628.304305777, 659408.8950981614 8995615.921831815, 659393.1892286043 8995603.53935785, 659377.4833590471 8995591.15688389, 659361.7774894871 8995578.774409926, 659346.0716199328 8995566.391935961, 659330.3657503731 8995554.009462, 659314.6598808137 8995541.626988038, 659298.9540112575 8995529.244514076, 659283.248141699 8995516.862040112, 659267.542272141 8995504.47956615, 659251.8364025836 8995492.097092187, 659236.6062129643 8995480.089643268, 659203.3945494519 8995446.191076448)",
-   "history": [
-    "2026-10-13: added — s13 to s17 along the walking, as the reviewer directed",
-    "2026-10-13: its end moved 29 m onto s30, which it had stopped short of"
+    "2026-10-13: was drawn, now implied — the midline of walked track, not a journey anyone need make",
+    "2026-10-15: was 262 m implied — s28 and s29 were the same stretch walked out and back — 608 m of line for 90 m of travel. Replaced by one line through the corridor, as the reviewer drew."
    ]
   },
   {
