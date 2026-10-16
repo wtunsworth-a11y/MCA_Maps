@@ -806,5 +806,27 @@
     ]
    }
   ]
+ },
+ "ruth_makisa_land_steward_block_1_land_boundary": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-16",
+    "report_name": "LSS 7B",
+    "map": "output/rounds/round1/lss_7b_r1.png",
+    "why": [
+     "Into the report as LSS 7B. 10 segments, 6.51 km walked, 0.34 km",
+     "still to walk, 237.4 ha.",
+     "",
+     "The reviewer saw the boundary could close and it does. 96% of it",
+     "is Ruth Makisa's own walking; the five gaps are 185, 55, 50, 25",
+     "and 25 m, real breaks between the 28 pieces her single recording",
+     "was saved in.",
+     "",
+     "The file names no clan. It goes with the question of whose land",
+     "this is."
+    ]
+   }
+  ]
  }
 }
