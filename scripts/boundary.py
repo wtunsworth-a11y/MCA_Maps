@@ -142,6 +142,12 @@ def solve(clan: str) -> dict:
     published["_unit"] = dataio.survey_group(published)
     match = published[published.clan.astype(str).str.lower() == clan.lower()]
     if match.empty:
+        # Some surveys name no clan at all — Ruth Makisa's block is filed
+        # as a land steward block, not a clan. Fall back to the survey
+        # unit itself so they can be worked like any other.
+        match = published[published._unit.astype(str).str.lower()
+                          == clan.lower()]
+    if match.empty:
         raise SystemExit(f"No clan matching {clan!r}.")
     unit = match._unit.iloc[0]
     group = published[published._unit == unit]
@@ -933,6 +939,9 @@ def main(argv: list[str] | None = None) -> int:
     published["_unit"] = dataio.survey_group(published)
     match = published[published.clan.astype(str).str.lower()
                       == args.clan.lower()]
+    if match.empty:
+        match = published[published._unit.astype(str).str.lower()
+                          == args.clan.lower()]
     if match.empty:
         print(f"No clan matching {args.clan!r}.")
         return 1
