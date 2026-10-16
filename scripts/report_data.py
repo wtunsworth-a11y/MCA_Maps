@@ -347,6 +347,10 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
 
     summary = {
         "clans": int(named.clan.nunique()),
+        # Land Settlement blocks: no clan named in the file, reported as
+        # clan equivalents.
+        "blocks": int(tracks[tracks.clan.astype(str).str.strip() == ""]
+                      ._unit.nunique()),
         "stewards": int(tracks.steward.nunique()),
         # A survey is a clan's boundary in a zone, however many Clan
         # Stewards walked it. Counting source files instead said 72, which
@@ -408,8 +412,17 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
 
     # ---- per clan ----------------------------------------------------
     records = []
-    for unit, group in named.groupby("_unit", sort=True):
-        clan = group.clan.iloc[0]
+    # Every survey unit, not only the ones that name a clan. The two Land
+    # Settlement blocks name no clan in the file and would otherwise fall
+    # out of the document entirely; they are not clans, but the group is
+    # treated as a clan equivalent and reported under the name the
+    # reviewer gave it.
+    for unit, group in tracks.groupby("_unit", sort=True):
+        ready_entry = _latest_round(approve.approved(unit))
+        clan = str(group.clan.iloc[0] or "").strip()
+        equivalent = not clan
+        if equivalent:
+            clan = (ready_entry or {}).get("name") or unit
         zone = group.zone.iloc[0]
         row = closures.loc[unit] if unit in closures.index else None
         polygon = surveys[surveys._unit == unit]
@@ -419,8 +432,15 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
         for steward, walk in group.groupby("steward"):
             person = steward_table[steward_table.steward == steward] \
                 if not steward_table.empty else pd.DataFrame()
+            # The day table is keyed on the clan field as it stands in
+            # the recordings. For a block that names no clan that field
+            # is blank, so the display name would match nothing.
+            same_clan = (steward_days.clan.isna()
+                         | (steward_days.clan.astype(str).str.strip() == "")
+                         if equivalent else steward_days.clan == clan) \
+                if not steward_days.empty else None
             days = steward_days[(steward_days.steward == steward)
-                               & (steward_days.clan == clan)] \
+                                & same_clan] \
                 if not steward_days.empty else pd.DataFrame()
             people.append({
                 "steward": steward,
@@ -492,7 +512,8 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # of the file name. Every clan map went missing from the document
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
-            "ready": _latest_round(approve.approved(unit)),
+            "ready": ready_entry,
+            "clan_equivalent": equivalent,
             "stored": stored_boundary(unit),
             "sacred": sacred_sites(unit, group),
             "field_notes": notes.get(unit, {}).get("notes", []),

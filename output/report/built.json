@@ -68,5 +68,12 @@
   "units": 36,
   "boundary_km": 948.5,
   "last_walk": "2026-08-13"
+ },
+ "1.17_2026-10-16": {
+  "clans": 49,
+  "surveys": 51,
+  "units": 36,
+  "boundary_km": 948.5,
+  "last_walk": "2026-08-13"
  }
 }

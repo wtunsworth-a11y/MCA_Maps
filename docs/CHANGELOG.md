@@ -1,3 +1,17 @@
+## 1.17 — 16 October 2026
+
+* **The two Land Settlement blocks are in the report.** Ruth Makisa's
+  block in Zone 7B — now named LSS 7B, 237.4 ha on 6.51 km walked — and
+  Paul Digori's Road 3 & 4 recordings in Zone 7A name no clan in the file,
+  and the document grouped its pages by clan name, so both fell out of it
+  entirely. They are not clans. The whole block is read as one landholding
+  group so the walking is reported alongside everything else, and each page
+  says on its face that no clan is named and whose land it is remains open.
+
+* **The counts are separated.** 49 clans and 2 Land Settlement blocks, 51
+  surveys. The clan count no longer has blocks folded into it, and the
+  blocks are no longer invisible.
+
 ## 1.16 — 16 October 2026
 
 * **A survey is a clan's boundary in a zone, and the count now says so.**

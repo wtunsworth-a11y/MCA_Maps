@@ -1,6 +1,7 @@
 // Build the short report: only the clans whose boundary closes on its own.
 //
-// The large report carries all 49 clans, most of them unfinished, and the
+// The large report carries all 49 clans and the 2 Land Settlement blocks,
+// most of them unfinished, and the
 // finished ones are hard to find inside it. This is the other document: the
 // clans who have completed their map, with nothing in their area figure that
 // the Clan Stewards did not walk.
@@ -80,9 +81,9 @@ body.push(new Paragraph({ children:[new TextRun({
 
 const totalHa = done.reduce((a,c)=>a+c.area_ha,0);
 const totalKm = done.reduce((a,c)=>a+c.walked_km,0);
-body.push(p(`${done.length} of ${clans.length} clans have a boundary that closes on the ground the Clan Stewards walked. Their maps are finished: the area is measured from the walk, with no straight line anywhere in it that nobody walked.`, {size:21}));
+body.push(p(`${done.length} of ${sum.clans} clans have a boundary that closes on the ground the Clan Stewards walked. Their maps are finished: the area is measured from the walk, with no straight line anywhere in it that nobody walked.`, {size:21}));
 body.push(p(`Together they hold ${money(totalHa)} ha, walked over ${money(totalKm)} km.`, {size:21}));
-body.push(note(`This is the short companion to the full report, which carries all ${clans.length} clans including the ${clans.length-done.length} whose maps are not yet finished. Nothing here is estimated, so nothing here needs the cautions that document carries.`));
+body.push(note(`This is the short companion to the full report, which carries all ${sum.clans} clans and ${sum.blocks} Land Settlement blocks, including the ${clans.length-done.length} whose maps are not yet finished. Nothing here is estimated, so nothing here needs the cautions that document carries.`));
 
 body.push(h("The completed boundaries", HeadingLevel.HEADING_1));
 body.push(table(["Clan","Zone","Clan Stewards","Walked (km)","Area (ha)","Sacred sites"],

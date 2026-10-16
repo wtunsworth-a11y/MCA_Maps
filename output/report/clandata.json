@@ -100,6 +100,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -182,6 +183,7 @@
     "walked tracks at 11-12 m per point. Only Asoro is like this."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -265,6 +267,7 @@
     "for Abel Kajari. Who walked it goes to the clan as a question."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -366,6 +369,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -476,6 +480,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -626,6 +631,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -721,6 +727,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -815,6 +822,7 @@
     "again."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -929,6 +937,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -1057,6 +1066,7 @@
     "Visua carrying 41.8 km."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 14,
    "walked_km": 35.17,
@@ -1178,6 +1188,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -1281,6 +1292,7 @@
     "Nine recordings from Joel Mamata."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -1425,6 +1437,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 3,
@@ -1585,6 +1598,7 @@
     "Still to walk: s7 2,182 m, s42's two ends, s9 270 m, s2 245 m."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 41,
    "walked_km": 34.54,
@@ -1701,6 +1715,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -1796,6 +1811,7 @@
     "Nothing is merged and nothing moved. See output/queries/deari_nui.png."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 7,
    "walked_km": 7.81,
@@ -1887,6 +1903,7 @@
     "Three recordings from Mark Samba and Eddie Sioro, none captioned."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -1968,6 +1985,7 @@
     "dataset."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2059,6 +2077,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2137,6 +2156,7 @@
     "edge."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2240,6 +2260,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2338,6 +2359,7 @@
     "from Livingstone Nisavora and Fabian Justin."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2424,6 +2446,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2492,6 +2515,7 @@
     "named on one of them and appears nowhere else in the dataset."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2592,6 +2616,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2701,6 +2726,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -2791,6 +2817,7 @@
     "boundary and goes to the clan as a question."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 9,
    "walked_km": 6.68,
@@ -2930,6 +2957,7 @@
     "settled either way. It goes to the clan as a question."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 27,
    "walked_km": 21.32,
@@ -3055,6 +3083,7 @@
     "already touch s19 and s16 at 7 m and 10 m."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 31,
    "walked_km": 18.44,
@@ -3077,6 +3106,73 @@
   "gpx": "Darekikol_Zone_7A.gpx",
   "gpx_gaps": 5,
   "lines_only": false,
+  "withhold_area": false
+ },
+ {
+  "unit": "road_3_and_4_paul_digori_tracks_zone_7a",
+  "clan": "Road 3 & 4",
+  "zone": "Zone 7A",
+  "stewards": [
+   {
+    "steward": "Paul Digori",
+    "tracks": 13,
+    "km": 4.29,
+    "days": 7,
+    "first": "2026-05-25",
+    "last": "2026-06-15",
+    "type": "Road"
+   }
+  ],
+  "n_stewards": 1,
+  "walked_km": 4.29,
+  "spur_km": 0.92,
+  "status": "open",
+  "chains": 9,
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
+  "shared_lines": [],
+  "join_sep_ha": null,
+  "join_joined_ha": null,
+  "map": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-16",
+   "map": "output/rounds/round1/road34_r1.png",
+   "name": "Road 3 & 4",
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as it stands \u2014 the recordings themselves, no",
+    "polygon, no chords, no area.",
+    "",
+    "This is Paul Digori's road survey, not a clan boundary. 13",
+    "recordings, 4.3 km. The solver's attempt gave 1.33 km walked",
+    "against 11.99 km drawn, nine parts drawn for every one walked."
+   ]
+  },
+  "clan_equivalent": true,
+  "stored": null,
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0,
+   "named": []
+  },
+  "field_notes": [
+   "Called Road 3 & 4 in the report. Not a clan boundary: Paul Digori's road survey, Zone 7A.",
+   "13 recordings, 4.3 km. One is captioned 'Paul Digori Road 3'; four more carry only his name; the rest are bare timestamps. Three longer runs of 1,548 m, 1,007 m and 377 m, and a scatter of markers between 16 m and 62 m.",
+   "No polygon and no closing. The solver gave 1.33 km walked against 11.99 km drawn for 282 ha \u2014 nine parts drawn for every one walked. Removed on 2026-10-16; it goes into the report as the recordings themselves."
+  ],
+  "field_source": null,
+  "river_boundary": false,
+  "gpx": null,
+  "gpx_gaps": 0,
+  "lines_only": true,
   "withhold_area": false
  },
  {
@@ -3171,6 +3267,7 @@
     "No polygon and no closing \u2014 not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -3305,6 +3402,7 @@
     "what those two stretches are. Nobody is sent to walk them first."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 12,
    "walked_km": 16.51,
@@ -3495,6 +3593,7 @@
     "were settled by the reviewer, along with five small seams."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 43,
    "walked_km": 15.73,
@@ -3647,6 +3746,7 @@
     "The reviewer noted the map's scaling looks off; to be looked at."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 4,
    "walked_km": 14.85,
@@ -3767,6 +3867,7 @@
     "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -3785,6 +3886,86 @@
   "gpx": "Jariji_Zone_7B.gpx",
   "gpx_gaps": 5,
   "lines_only": true,
+  "withhold_area": false
+ },
+ {
+  "unit": "ruth_makisa_land_steward_block_1_land_boundary",
+  "clan": "LSS 7B",
+  "zone": "Zone 7B",
+  "stewards": [
+   {
+    "steward": "Ruth Makisa",
+    "tracks": 1,
+    "km": 6.28,
+    "days": 1,
+    "first": "2026-06-22",
+    "last": "2026-06-22",
+    "type": "Steward Block"
+   }
+  ],
+  "n_stewards": 1,
+  "walked_km": 6.51,
+  "spur_km": 1.27,
+  "status": "open",
+  "chains": 6,
+  "gap_km": 0.34,
+  "gap_pct": 5.2,
+  "area_ha": 237.4,
+  "basis": "implied",
+  "parcels": 1,
+  "bridges": null,
+  "overlaps": [],
+  "shared_lines": [],
+  "join_sep_ha": null,
+  "join_joined_ha": null,
+  "map": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-16",
+   "map": "output/rounds/round1/lss_7b_r1.png",
+   "name": "LSS 7B",
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Into the report as LSS 7B. 10 segments, 6.51 km walked, 0.34 km",
+    "still to walk, 237.4 ha.",
+    "",
+    "The reviewer saw the boundary could close and it does. 96% of it",
+    "is Ruth Makisa's own walking; the five gaps are 185, 55, 50, 25",
+    "and 25 m, real breaks between the 28 pieces her single recording",
+    "was saved in.",
+    "",
+    "The file names no clan. It goes with the question of whose land",
+    "this is."
+   ]
+  },
+  "clan_equivalent": true,
+  "stored": {
+   "segments": 10,
+   "walked_km": 6.51,
+   "drawn_km": 0.34,
+   "implied_km": 0.0,
+   "river_km": 0.0,
+   "area_ha": 237.4,
+   "closed": true,
+   "written": "2026-10-16"
+  },
+  "sacred": {
+   "tagged": 0,
+   "internal": 0,
+   "internal_ha": 0.0,
+   "named": []
+  },
+  "field_notes": [
+   "Called LSS 7B in the report, at the reviewer's direction. The file names no clan at all: it is Ruth Makisa's Land Steward Block 1, Zone 7B, July 2026.",
+   "One recording, 6,279 m saved in 28 separate pieces \u2014 the GPS stopped and restarted throughout. The boundary closes on those pieces at 237.4 ha with only 340 m drawn, in five small gaps of 185, 55, 50, 25 and 25 m.",
+   "FOR THE CLAN OR THE STEWARD: this is recorded as a land steward block rather than a clan boundary. Whose land is it, and is this the same line a clan would draw?"
+  ],
+  "field_source": null,
+  "river_boundary": false,
+  "gpx": null,
+  "gpx_gaps": 0,
+  "lines_only": false,
   "withhold_area": false
  },
  {
@@ -3865,6 +4046,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -3947,6 +4129,7 @@
     "No polygon and no closing \u2014 not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -4052,6 +4235,7 @@
     "the rest. It goes to the clan as a question, not closed over."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 6,
    "walked_km": 7.71,
@@ -4175,6 +4359,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -4326,6 +4511,7 @@
     "fixes, not from the stored-segment model."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -4447,6 +4633,7 @@
     "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -4616,6 +4803,7 @@
     "11 segments, 17.76 km walked, 4.48 km still to walk, 513.1 ha."
    ]
   },
+  "clan_equivalent": false,
   "stored": {
    "segments": 11,
    "walked_km": 17.76,
@@ -4704,6 +4892,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -4791,6 +4980,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -4871,6 +5061,7 @@
     "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -4963,6 +5154,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -5045,6 +5237,7 @@
     "Darmal?"
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -5142,6 +5335,7 @@
     "Graham is from the clan, so it goes to the clan with the map."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -5257,6 +5451,7 @@
    "withhold_area": false,
    "why": []
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,
@@ -5335,6 +5530,7 @@
     "Three recordings from Cyprian Sirami, 11.2 km."
    ]
   },
+  "clan_equivalent": false,
   "stored": null,
   "sacred": {
    "tagged": 0,

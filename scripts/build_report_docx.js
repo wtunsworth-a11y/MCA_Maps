@@ -113,6 +113,7 @@ body.push(new Paragraph({ children:[new PageBreak()] }));
 body.push(h("1. What has been mapped", HeadingLevel.HEADING_1));
 body.push(table(["Measure","Value"], [
   ["Clans with data", money(sum.clans)],
+  ["Land Settlement blocks", money(sum.blocks)],
   ["Clan Stewards who walked", money(sum.stewards)],
   ["Individual surveys", money(sum.surveys)],
   ["Clan boundaries assessed (stewards joined)", money(sum.units)],
@@ -237,8 +238,9 @@ body.push(...bullets([
 body.push(new Paragraph({ children:[new PageBreak()] }));
 
 // ---------------- 3. Clan entries ----------------
-body.push(h("3. Clans", HeadingLevel.HEADING_1));
-body.push(p(`${clans.length} clan boundaries, in zone order. Each begins on its own page.`, {size:21}));
+body.push(h("3. Clans and Land Settlement blocks", HeadingLevel.HEADING_1));
+body.push(p(`${sum.clans} clan boundaries and ${sum.blocks} Land Settlement blocks, in zone order. Each begins on its own page.`, {size:21}));
+body.push(note("A Land Settlement block names no clan. It is not a clan, and it is not treated as one here — the whole block is read as a single landholding group so that the walking done on it is reported alongside everything else. Whose land it is remains an open question."));
 
 let currentZone = null;
 for (const c of clans) {
@@ -248,7 +250,8 @@ for (const c of clans) {
     body.push(h(currentZone, HeadingLevel.HEADING_2));
   }
   body.push(h(`${c.clan}`, HeadingLevel.HEADING_3));
-  body.push(note(`${c.zone}  ·  version ${ctx.version}, ${ctx.date_long}`));
+  body.push(note(`${c.zone}  ·  version ${ctx.version}, ${ctx.date_long}`
+    + (c.clan_equivalent ? "  ·  Land Settlement block, no clan named" : "")));
 
   body.push(table(["Stewards","Surveys","Walked (km)","Access legs (km)","Pieces","Not walked (km)","Parcels","Area (ha)","Basis"], [[
     money(c.n_stewards), money(c.stewards.length), one(c.walked_km), one(c.spur_km),
