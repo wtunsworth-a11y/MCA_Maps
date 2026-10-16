@@ -788,5 +788,23 @@
     ]
    }
   ]
+ },
+ "Giroiko — Zone 3": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-16",
+    "lines_only": true,
+    "map": "output/rounds/round1/giroiko_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: the solver enclosed 5.6 ha off 6.7 km of",
+     "walking, closing a small loop and leaving most of the walking",
+     "outside.",
+     "",
+     "Three recordings from Mark Samba and Eddie Sioro, none captioned."
+    ]
+   }
+  ]
  }
 }

@@ -392,5 +392,12 @@
    "Purana is a named place that appears nowhere else in the dataset."
   ],
   "raised": "2026-10-16"
+ },
+ "Giroiko — Zone 3": {
+  "notes": [
+   "No polygon and no closing. The solver enclosed only 5.6 ha off 6.7 km of walking — it closed a small loop and left most of the walking outside it. Removed by the reviewer on 2026-10-16; it goes into the report as the recordings themselves.",
+   "Three recordings from Mark Samba and Eddie Sioro, 6.7 km. None carries any text at all."
+  ],
+  "raised": "2026-10-16"
  }
 }
