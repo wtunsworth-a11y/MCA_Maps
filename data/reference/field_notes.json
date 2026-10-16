@@ -384,5 +384,13 @@
    "That names Guivom mountain and a shared border with Doikal clan. Doikal is not among the 51 surveys in this dataset — there is no Doikal survey to compare against."
   ],
   "raised": "2026-10-15"
+ },
+ "Nupa Ora — Zone 6": {
+  "notes": [
+   "No polygon and no closing. Of the 7.8 km line the solver drew, 3.20 km was ground nobody walked, enclosing 92.5 ha. Removed by the reviewer on 2026-10-16; it goes into the report as the recordings themselves.",
+   "Three recordings from Benjamin Marijah, 5.7 km, all carrying text. As written: 'BENJAMIN MARIJAH NUPA ORA CLAN / Clan land boundry'; 'Nupa ora land boundry / Current location Purana'; 'Nupa ora Land Boundry / Nupa land'.",
+   "Purana is a named place that appears nowhere else in the dataset."
+  ],
+  "raised": "2026-10-16"
  }
 }

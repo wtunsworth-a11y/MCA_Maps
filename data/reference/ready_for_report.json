@@ -770,5 +770,23 @@
     ]
    }
   ]
+ },
+ "Nupa Ora — Zone 6": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-16",
+    "lines_only": true,
+    "map": "output/rounds/round1/nupa_ora_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: 3.20 km of the 7.8 km line was ground nobody",
+     "walked.",
+     "",
+     "Three recordings from Benjamin Marijah, all captioned. Purana is",
+     "named on one of them and appears nowhere else in the dataset."
+    ]
+   }
+  ]
  }
 }
