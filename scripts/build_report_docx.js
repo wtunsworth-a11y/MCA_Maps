@@ -95,11 +95,12 @@ body.push(table(["This version","Detail"], [
   ["Surveys included", money(sum.surveys)],
   ["Code revision", ctx.commit || "—"],
 ], [3,7]));
-if (ctx.changes && ctx.changes.length) {
-  body.push(h(`What changed in version ${ctx.version}`, HeadingLevel.HEADING_2));
-  body.push(...bullets(ctx.changes));
-  body.push(note("Figures move between versions because the method improves as well as because new surveys arrive. Where a correction changed a number materially, the change says so."));
-}
+// The developer changelog used to be printed here. It is an account of how
+// the software changed, written for whoever maintains it, and the clans and
+// the reviewer are reading this to see their land. Figures still move
+// between versions; that is said once, plainly, and the detail lives in
+// docs/CHANGELOG.md for anyone who wants it.
+body.push(note("Figures can change between versions, both because the method improves and because new surveys arrive. Quote this document by its version and date."));
 body.push(new Paragraph({ children:[new PageBreak()] }));
 
 body.push(h("Contents", HeadingLevel.HEADING_1));
@@ -136,7 +137,7 @@ body.push(p(`${inferredShare}% of the mapped area rests on an inferred closure �
 body.push(h("The straight lines are not boundary", HeadingLevel.HEADING_2));
 body.push(p(`${one(sum.bridge_km)} km of the outlines in this document was never walked — ${pct(sum.bridge_km, sum.outline_km)} of the ${one(sum.outline_km)} km of outline drawn around the mapped areas. These are the long straight lines that cut across the landscape on the maps. They are not where anyone said a boundary runs: they mark where a receiver was switched off at the end of one walk and switched on again somewhere else, and the straight line between is this pipeline joining the pieces up so an area can be given at all.`, {size:21}));
 body.push(p("They are drawn in pink on every map, apart from the walked line, so they can never be mistaken for a surveyed edge. Where a clan's outline carries a long straight line, the area behind it is a guess across that gap, and the query on that clan's page asks for the missing stretch to be walked.", {size:21}));
-body.push(note("Which order the recorded pieces are joined in, and which way round each piece is taken, changes the result substantially. Taking a piece the wrong way round makes the joining lines cross, and a crossed outline encloses two slivers where the real walk encloses one block — Tuoko lost 394 ha to exactly that before it was corrected. The pieces are now ordered and oriented to make the joining as short as possible, which leaves no crossings."));
+
 body.push(p(`The mapped footprint is ${(sum.footprint_ha/sum.mca_ha*100).toFixed(1)}% of the conservation area.`, {size:21}));
 
 body.push(h("Land held in more than one piece", HeadingLevel.HEADING_2));
@@ -303,7 +304,7 @@ for (const c of clans) {
   if (c.field_notes && c.field_notes.length) {
     body.push(p("From the field", {bold:true, size:21}));
     body.push(...bullets(c.field_notes));
-    body.push(note((c.field_source ? c.field_source + ". " : "") + "Recorded as told to us. Nothing here has been turned into a line or an area — a river named as a boundary is knowledge the GPS cannot supply, and drawing it would be this pipeline inventing a boundary rather than recording one."));
+    body.push(note((c.field_source ? c.field_source + ". " : "") + "Recorded as told to us, and not turned into a line or an area."));
   }
 
   // problems
@@ -314,12 +315,7 @@ for (const c of clans) {
 
   if (c.parcels > 1) problems.push(`The walks enclose ${c.parcels} separate parcels, totalling ${money(c.area_ha)} ha. All of them are counted. Whether they are all this clan's land, or whether one belongs to a neighbour, is a question for the clan.`);
 
-  // No joining comparison. Clan Stewards come in pairs, and the pair is not
-  // two surveys: together they make one outer boundary and, where the clan
-  // has them, the inner boundaries of its sacred sites. Half a pair has no
-  // area to gain or lose, so setting one against the other reported a change
-  // that never happened — Manuvoora read as "joining costs 1,236 ha".
-  if (c.n_stewards > 1) problems.push(`Walked by ${money(c.n_stewards)} Clan Stewards working together on one boundary. Their tracks are one survey, and the area is what they enclose between them.`);
+  if (c.n_stewards > 1) problems.push(`Walked by ${money(c.n_stewards)} Clan Stewards together.`);
 
   const real = c.overlaps.filter(o=>o.verdict==="overlap");
   const slivers = c.overlaps.filter(o=>o.verdict!=="overlap");
