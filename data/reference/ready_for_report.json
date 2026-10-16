@@ -828,5 +828,24 @@
     ]
    }
   ]
+ },
+ "road_3_and_4_paul_digori_tracks_zone_7a": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-16",
+    "lines_only": true,
+    "report_name": "Road 3 & 4",
+    "map": "output/rounds/round1/road34_r1.png",
+    "why": [
+     "Into the report as it stands — the recordings themselves, no",
+     "polygon, no chords, no area.",
+     "",
+     "This is Paul Digori's road survey, not a clan boundary. 13",
+     "recordings, 4.3 km. The solver's attempt gave 1.33 km walked",
+     "against 11.99 km drawn, nine parts drawn for every one walked."
+    ]
+   }
+  ]
  }
 }
