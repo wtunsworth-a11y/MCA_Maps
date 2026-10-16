@@ -22,7 +22,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 166.1,
-  "basis": "surveyed",
+  "basis": "walked",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -135,7 +135,7 @@
   "gap_km": 7.99,
   "gap_pct": 37.7,
   "area_ha": 3506.7,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 2,
   "overlaps": [
@@ -315,7 +315,7 @@
   "gap_km": 4.78,
   "gap_pct": 49.7,
   "area_ha": 106.6,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 4,
   "overlaps": [
@@ -438,7 +438,7 @@
   "gap_km": 1.89,
   "gap_pct": 8.3,
   "area_ha": 1295.1,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 3,
   "overlaps": [
@@ -564,7 +564,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 540.8,
-  "basis": "surveyed",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -690,7 +690,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 275.8,
-  "basis": "surveyed",
+  "basis": "walked",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -780,7 +780,7 @@
   "gap_km": 2.86,
   "gap_pct": 23.9,
   "area_ha": 118.0,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 3,
   "overlaps": [
@@ -891,7 +891,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 198.9,
-  "basis": "surveyed",
+  "basis": "walked",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -1017,7 +1017,7 @@
   "gap_km": 11.18,
   "gap_pct": 29.5,
   "area_ha": 5171.3,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 14,
   "overlaps": [
@@ -1133,7 +1133,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 1568.8,
-  "basis": "surveyed",
+  "basis": "walked",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -1345,7 +1345,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 1900.9,
-  "basis": "surveyed",
+  "basis": "walked",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -1496,7 +1496,7 @@
   "gap_km": 15.79,
   "gap_pct": 34.8,
   "area_ha": 3027.2,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 2,
   "bridges": 8,
   "overlaps": [
@@ -1841,7 +1841,7 @@
   "gap_km": 1.27,
   "gap_pct": 25.2,
   "area_ha": 9.5,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 4,
   "bridges": 2,
   "overlaps": [],
@@ -2162,7 +2162,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 1058.0,
-  "basis": "surveyed",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -2262,7 +2262,7 @@
   "gap_km": 15.43,
   "gap_pct": 45.8,
   "area_ha": 299.9,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 2,
   "bridges": 13,
   "overlaps": [
@@ -2370,7 +2370,7 @@
   "gap_km": 1.03,
   "gap_pct": 3.2,
   "area_ha": 552.2,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 4,
   "overlaps": [
@@ -2519,7 +2519,7 @@
   "gap_km": 1.39,
   "gap_pct": 8.0,
   "area_ha": 812.2,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 3,
   "overlaps": [
@@ -2625,7 +2625,7 @@
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 345.0,
-  "basis": "surveyed",
+  "basis": "walked",
   "parcels": 1,
   "bridges": 0,
   "overlaps": [
@@ -2721,7 +2721,7 @@
   "gap_km": 3.64,
   "gap_pct": 49.7,
   "area_ha": 51.7,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 2,
   "bridges": 3,
   "overlaps": [
@@ -2818,7 +2818,7 @@
   "gap_km": 6.72,
   "gap_pct": 22.8,
   "area_ha": 639.8,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 2,
   "bridges": 10,
   "overlaps": [
@@ -2945,7 +2945,7 @@
   "gap_km": 6.49,
   "gap_pct": 24.9,
   "area_ha": 568.9,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 7,
   "overlaps": [
@@ -3152,16 +3152,16 @@
   "gap_km": 3.55,
   "gap_pct": 20.5,
   "area_ha": 662.5,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 6,
   "overlaps": [
    {
     "with": "Natang",
-    "ha": 36.6,
-    "pct": 5.5,
-    "beyond_tol_ha": 36.0,
-    "beyond_tol_pct": 5.4,
+    "ha": 63.1,
+    "pct": 9.5,
+    "beyond_tol_ha": 58.9,
+    "beyond_tol_pct": 8.9,
     "verdict": "overlap"
    },
    {
@@ -3285,16 +3285,16 @@
   "gap_km": 6.41,
   "gap_pct": 40.0,
   "area_ha": 1033.0,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 19,
   "overlaps": [
    {
     "with": "Jariji",
-    "ha": 44.5,
-    "pct": 4.3,
-    "beyond_tol_ha": 42.0,
-    "beyond_tol_pct": 4.1,
+    "ha": 47.6,
+    "pct": 4.6,
+    "beyond_tol_ha": 45.0,
+    "beyond_tol_pct": 4.4,
     "verdict": "overlap"
    },
    {
@@ -3467,7 +3467,7 @@
   "gap_km": 10.56,
   "gap_pct": 31.3,
   "area_ha": 382.5,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 7,
   "overlaps": [
@@ -3606,25 +3606,25 @@
   "chains": 6,
   "gap_km": 9.68,
   "gap_pct": 66.4,
-  "area_ha": 519.3,
-  "basis": "inferred",
+  "area_ha": 536.9,
+  "basis": "implied",
   "parcels": 2,
   "bridges": 6,
   "overlaps": [
    {
-    "with": "Wohukol",
-    "ha": 72.9,
-    "pct": 14.0,
-    "beyond_tol_ha": 72.5,
-    "beyond_tol_pct": 14.0,
+    "with": "Binunkol",
+    "ha": 47.6,
+    "pct": 8.9,
+    "beyond_tol_ha": 45.0,
+    "beyond_tol_pct": 8.4,
     "verdict": "overlap"
    },
    {
-    "with": "Binunkol",
-    "ha": 44.5,
-    "pct": 8.6,
-    "beyond_tol_ha": 42.0,
-    "beyond_tol_pct": 8.1,
+    "with": "Wohukol",
+    "ha": 41.9,
+    "pct": 7.8,
+    "beyond_tol_ha": 41.5,
+    "beyond_tol_pct": 7.7,
     "verdict": "overlap"
    },
    {
@@ -3632,7 +3632,7 @@
     "ha": 4.3,
     "pct": 0.8,
     "beyond_tol_ha": 2.9,
-    "beyond_tol_pct": 0.6,
+    "beyond_tol_pct": 0.5,
     "verdict": "overlap"
    },
    {
@@ -3744,7 +3744,7 @@
   "gap_km": 1.79,
   "gap_pct": 25.1,
   "area_ha": 353.0,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 1,
   "overlaps": [
@@ -4151,25 +4151,33 @@
   "chains": 3,
   "gap_km": 0.0,
   "gap_pct": 0.0,
-  "area_ha": 48.8,
-  "basis": "surveyed",
-  "parcels": 1,
+  "area_ha": 1191.1,
+  "basis": "implied",
+  "parcels": 2,
   "bridges": 0,
   "overlaps": [
    {
     "with": "Ambunkol",
-    "ha": 36.6,
-    "pct": 75.0,
-    "beyond_tol_ha": 36.0,
-    "beyond_tol_pct": 73.8,
+    "ha": 63.1,
+    "pct": 5.3,
+    "beyond_tol_ha": 58.9,
+    "beyond_tol_pct": 4.9,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 4.3,
-    "pct": 8.9,
-    "beyond_tol_ha": 3.6,
-    "beyond_tol_pct": 7.4,
+    "ha": 3.8,
+    "pct": 0.3,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.1,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Wohukol",
+    "ha": 3.2,
+    "pct": 0.3,
+    "beyond_tol_ha": 1.9,
+    "beyond_tol_pct": 0.2,
     "verdict": "overlap"
    }
   ],
@@ -4275,7 +4283,7 @@
   "gap_km": 7.03,
   "gap_pct": 31.0,
   "area_ha": 199.5,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 2,
   "bridges": 6,
   "overlaps": [
@@ -4296,19 +4304,19 @@
     "verdict": "overlap"
    },
    {
-    "with": "Natang",
-    "ha": 4.3,
-    "pct": 2.2,
-    "beyond_tol_ha": 3.6,
-    "beyond_tol_pct": 1.8,
-    "verdict": "overlap"
-   },
-   {
     "with": "Jariji",
     "ha": 4.3,
     "pct": 2.2,
     "beyond_tol_ha": 2.9,
     "beyond_tol_pct": 1.4,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Natang",
+    "ha": 3.8,
+    "pct": 1.9,
+    "beyond_tol_ha": 1.4,
+    "beyond_tol_pct": 0.7,
     "verdict": "overlap"
    },
    {
@@ -4447,16 +4455,16 @@
   "gap_km": 6.93,
   "gap_pct": 21.0,
   "area_ha": 513.1,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 3,
   "bridges": 4,
   "overlaps": [
    {
     "with": "Jariji",
-    "ha": 72.9,
-    "pct": 14.2,
-    "beyond_tol_ha": 72.5,
-    "beyond_tol_pct": 14.1,
+    "ha": 41.9,
+    "pct": 8.2,
+    "beyond_tol_ha": 41.5,
+    "beyond_tol_pct": 8.1,
     "verdict": "overlap"
    },
    {
@@ -4481,6 +4489,14 @@
     "pct": 0.8,
     "beyond_tol_ha": 1.4,
     "beyond_tol_pct": 0.3,
+    "verdict": "overlap"
+   },
+   {
+    "with": "Natang",
+    "ha": 3.2,
+    "pct": 0.6,
+    "beyond_tol_ha": 1.9,
+    "beyond_tol_pct": 0.4,
     "verdict": "overlap"
    },
    {
@@ -4671,7 +4687,7 @@
   "gap_km": 0.72,
   "gap_pct": 7.9,
   "area_ha": 227.2,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 1,
   "overlaps": [
@@ -4764,7 +4780,7 @@
   "gap_km": 10.73,
   "gap_pct": 8.0,
   "area_ha": 497.1,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 7,
   "overlaps": [
@@ -4841,7 +4857,7 @@
   "gap_km": 0.65,
   "gap_pct": 3.8,
   "area_ha": 682.3,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 1,
   "overlaps": [
@@ -4931,7 +4947,7 @@
   "gap_km": 0.29,
   "gap_pct": 26.7,
   "area_ha": 1.4,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 2,
   "bridges": 2,
   "overlaps": [],
@@ -5015,12 +5031,12 @@
   "gap_km": 1.86,
   "gap_pct": 13.8,
   "area_ha": 337.9,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 3,
   "overlaps": [
    {
-    "with": "Borori",
+    "with": "Gumuyude",
     "ha": 0.0,
     "pct": 0.0,
     "beyond_tol_ha": 0.0,
@@ -5028,7 +5044,7 @@
     "verdict": "within tolerance"
    },
    {
-    "with": "Gumuyude",
+    "with": "Borori",
     "ha": 0.0,
     "pct": 0.0,
     "beyond_tol_ha": 0.0,
@@ -5143,7 +5159,7 @@
   "gap_km": 1.97,
   "gap_pct": 9.8,
   "area_ha": 396.6,
-  "basis": "inferred",
+  "basis": "implied",
   "parcels": 1,
   "bridges": 1,
   "overlaps": [

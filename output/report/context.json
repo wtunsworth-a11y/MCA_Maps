@@ -7,7 +7,7 @@
  ],
  "date": "2026-10-16",
  "date_long": "16 October 2026",
- "commit": "e7e5060",
+ "commit": "3bf32c3",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

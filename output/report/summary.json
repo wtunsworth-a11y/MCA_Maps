@@ -6,24 +6,24 @@
  "tracks": 610,
  "walked_km": 1139.9,
  "boundary_km": 948.5,
- "surveyed_n": 0,
- "inferred_n": 0,
- "surveyed_ha": 0.0,
- "inferred_ha": 0.0,
- "total_ha": 28305.0,
- "bridge_km": 141.8,
- "outline_km": 572.6,
- "footprint_ha": 24354.0,
+ "surveyed_n": 6,
+ "inferred_n": 30,
+ "surveyed_ha": 4456.0,
+ "inferred_ha": 25009.0,
+ "total_ha": 29465.0,
+ "bridge_km": 141.6,
+ "outline_km": 598.3,
+ "footprint_ha": 25512.0,
  "mca_ha": 213269.0,
  "clans_mapped": 35,
  "clans_overlap": 32,
  "clans_overlap_beyond_tol": 29,
- "contested_ha": 3686.0,
- "contested_beyond_tol_ha": 3634.0,
- "overlap_pairs": 47,
- "overlap_pairs_beyond_tol": 31,
+ "contested_ha": 3689.0,
+ "contested_beyond_tol_ha": 3629.0,
+ "overlap_pairs": 48,
+ "overlap_pairs_beyond_tol": 32,
  "overlap_tolerance_m": 100.0,
- "clans_multi_parcel": 9,
+ "clans_multi_parcel": 10,
  "multi_parcel": [
   {
    "clan": "Bimkol",
@@ -43,7 +43,7 @@
   {
    "clan": "Jariji",
    "parcels": 2,
-   "area_ha": 519.3
+   "area_ha": 536.9
   },
   {
    "clan": "Madukol",
@@ -54,6 +54,11 @@
    "clan": "Mariura",
    "parcels": 2,
    "area_ha": 299.9
+  },
+  {
+   "clan": "Natang",
+   "parcels": 2,
+   "area_ha": 1191.1
   },
   {
    "clan": "Sugulkol",
@@ -130,7 +135,7 @@
    "surveys": 18,
    "walked_km": 282.3,
    "boundary_km": 230.6,
-   "area_ha": 3949.0
+   "area_ha": 5109.0
   },
   {
    "zone": "Zone 8",
@@ -150,14 +155,6 @@
    "beyond_tol_ha": 105.2,
    "pct_contested": 92.6,
    "pct_beyond_tol": 89.1
-  },
-  {
-   "clan": "Natang",
-   "area_ha": 48.8,
-   "contested_ha": 40.7,
-   "beyond_tol_ha": 39.6,
-   "pct_contested": 83.3,
-   "pct_beyond_tol": 81.2
   },
   {
    "clan": "Murai (Z2)",
@@ -256,28 +253,28 @@
    "pct_beyond_tol": 22.4
   },
   {
-   "clan": "Jariji",
-   "area_ha": 519.3,
-   "contested_ha": 121.1,
-   "beyond_tol_ha": 117.3,
-   "pct_contested": 23.3,
-   "pct_beyond_tol": 22.6
-  },
-  {
-   "clan": "Wohukol",
-   "area_ha": 513.1,
-   "contested_ha": 112.7,
-   "beyond_tol_ha": 106.1,
-   "pct_contested": 22.0,
-   "pct_beyond_tol": 20.7
-  },
-  {
    "clan": "Majanko",
    "area_ha": 275.8,
    "contested_ha": 48.4,
    "beyond_tol_ha": 47.5,
    "pct_contested": 17.5,
    "pct_beyond_tol": 17.2
+  },
+  {
+   "clan": "Jariji",
+   "area_ha": 536.9,
+   "contested_ha": 93.6,
+   "beyond_tol_ha": 89.3,
+   "pct_contested": 17.4,
+   "pct_beyond_tol": 16.6
+  },
+  {
+   "clan": "Wohukol",
+   "area_ha": 513.1,
+   "contested_ha": 85.4,
+   "beyond_tol_ha": 77.4,
+   "pct_contested": 16.6,
+   "pct_beyond_tol": 15.1
   },
   {
    "clan": "Naharaura",
@@ -298,10 +295,18 @@
   {
    "clan": "Sugulkol",
    "area_ha": 199.5,
-   "contested_ha": 26.4,
-   "beyond_tol_ha": 21.9,
-   "pct_contested": 13.2,
-   "pct_beyond_tol": 11.0
+   "contested_ha": 25.8,
+   "beyond_tol_ha": 19.8,
+   "pct_contested": 13.0,
+   "pct_beyond_tol": 9.9
+  },
+  {
+   "clan": "Ambunkol",
+   "area_ha": 662.5,
+   "contested_ha": 76.3,
+   "beyond_tol_ha": 69.4,
+   "pct_contested": 11.5,
+   "pct_beyond_tol": 10.5
   },
   {
    "clan": "Manuvoora",
@@ -312,20 +317,12 @@
    "pct_beyond_tol": 7.1
   },
   {
-   "clan": "Ambunkol",
-   "area_ha": 662.5,
-   "contested_ha": 49.9,
-   "beyond_tol_ha": 46.6,
-   "pct_contested": 7.5,
-   "pct_beyond_tol": 7.0
-  },
-  {
    "clan": "Binunkol",
    "area_ha": 1033.0,
-   "contested_ha": 74.5,
-   "beyond_tol_ha": 69.5,
-   "pct_contested": 7.2,
-   "pct_beyond_tol": 6.7
+   "contested_ha": 78.0,
+   "beyond_tol_ha": 72.5,
+   "pct_contested": 7.6,
+   "pct_beyond_tol": 7.0
   },
   {
    "clan": "Asoro",
@@ -342,6 +339,14 @@
    "beyond_tol_ha": 7.9,
    "pct_contested": 6.1,
    "pct_beyond_tol": 4.8
+  },
+  {
+   "clan": "Natang",
+   "area_ha": 1191.1,
+   "contested_ha": 69.8,
+   "beyond_tol_ha": 62.1,
+   "pct_contested": 5.9,
+   "pct_beyond_tol": 5.2
   },
   {
    "clan": "Gariniko",
@@ -536,14 +541,25 @@
    "verdict": "overlap"
   },
   {
-   "clan_a": "Jariji",
-   "clan_b": "Wohukol",
-   "shared_ha": 72.9,
-   "pct_of_a": 14.0,
-   "pct_of_b": 14.2,
-   "beyond_tol_ha": 72.5,
-   "beyond_tol_pct_of_a": 14.0,
-   "beyond_tol_pct_of_b": 14.1,
+   "clan_a": "Ambunkol",
+   "clan_b": "Natang",
+   "shared_ha": 63.1,
+   "pct_of_a": 9.5,
+   "pct_of_b": 5.3,
+   "beyond_tol_ha": 58.9,
+   "beyond_tol_pct_of_a": 8.9,
+   "beyond_tol_pct_of_b": 4.9,
+   "verdict": "overlap"
+  },
+  {
+   "clan_a": "Binunkol",
+   "clan_b": "Jariji",
+   "shared_ha": 47.6,
+   "pct_of_a": 4.6,
+   "pct_of_b": 8.9,
+   "beyond_tol_ha": 45.0,
+   "beyond_tol_pct_of_a": 4.4,
+   "beyond_tol_pct_of_b": 8.4,
    "verdict": "overlap"
   },
   {
@@ -558,13 +574,13 @@
    "verdict": "overlap"
   },
   {
-   "clan_a": "Binunkol",
-   "clan_b": "Jariji",
-   "shared_ha": 44.5,
-   "pct_of_a": 4.3,
-   "pct_of_b": 8.6,
-   "beyond_tol_ha": 42.0,
-   "beyond_tol_pct_of_a": 4.1,
+   "clan_a": "Jariji",
+   "clan_b": "Wohukol",
+   "shared_ha": 41.9,
+   "pct_of_a": 7.8,
+   "pct_of_b": 8.2,
+   "beyond_tol_ha": 41.5,
+   "beyond_tol_pct_of_a": 7.7,
    "beyond_tol_pct_of_b": 8.1,
    "verdict": "overlap"
   },
@@ -577,17 +593,6 @@
    "beyond_tol_ha": 38.4,
    "beyond_tol_pct_of_a": 7.1,
    "beyond_tol_pct_of_b": 13.9,
-   "verdict": "overlap"
-  },
-  {
-   "clan_a": "Ambunkol",
-   "clan_b": "Natang",
-   "shared_ha": 36.6,
-   "pct_of_a": 5.5,
-   "pct_of_b": 75.0,
-   "beyond_tol_ha": 36.0,
-   "beyond_tol_pct_of_a": 5.4,
-   "beyond_tol_pct_of_b": 73.8,
    "verdict": "overlap"
   },
   {
@@ -701,24 +706,13 @@
    "verdict": "overlap"
   },
   {
-   "clan_a": "Natang",
-   "clan_b": "Sugulkol",
-   "shared_ha": 4.3,
-   "pct_of_a": 8.9,
-   "pct_of_b": 2.2,
-   "beyond_tol_ha": 3.6,
-   "beyond_tol_pct_of_a": 7.4,
-   "beyond_tol_pct_of_b": 1.8,
-   "verdict": "overlap"
-  },
-  {
    "clan_a": "Jariji",
    "clan_b": "Sugulkol",
    "shared_ha": 4.3,
    "pct_of_a": 0.8,
    "pct_of_b": 2.2,
    "beyond_tol_ha": 2.9,
-   "beyond_tol_pct_of_a": 0.6,
+   "beyond_tol_pct_of_a": 0.5,
    "beyond_tol_pct_of_b": 1.4,
    "verdict": "overlap"
   },
@@ -745,6 +739,17 @@
    "verdict": "overlap"
   },
   {
+   "clan_a": "Natang",
+   "clan_b": "Sugulkol",
+   "shared_ha": 3.8,
+   "pct_of_a": 0.3,
+   "pct_of_b": 1.9,
+   "beyond_tol_ha": 1.4,
+   "beyond_tol_pct_of_a": 0.1,
+   "beyond_tol_pct_of_b": 0.7,
+   "verdict": "overlap"
+  },
+  {
    "clan_a": "Gumuyude",
    "clan_b": "Riribudeh",
    "shared_ha": 3.7,
@@ -764,6 +769,17 @@
    "beyond_tol_ha": 1.4,
    "beyond_tol_pct_of_a": 0.2,
    "beyond_tol_pct_of_b": 0.5,
+   "verdict": "overlap"
+  },
+  {
+   "clan_a": "Natang",
+   "clan_b": "Wohukol",
+   "shared_ha": 3.2,
+   "pct_of_a": 0.3,
+   "pct_of_b": 0.6,
+   "beyond_tol_ha": 1.9,
+   "beyond_tol_pct_of_a": 0.2,
+   "beyond_tol_pct_of_b": 0.4,
    "verdict": "overlap"
   },
   {
@@ -910,8 +926,8 @@
    "verdict": "within tolerance"
   },
   {
-   "clan_a": "Ginangi",
-   "clan_b": "Wohukol",
+   "clan_a": "Gumuyude",
+   "clan_b": "Mungaikol",
    "shared_ha": 0.0,
    "pct_of_a": 0.0,
    "pct_of_b": 0.0,
@@ -932,8 +948,8 @@
    "verdict": "within tolerance"
   },
   {
-   "clan_a": "Gumuyude",
-   "clan_b": "Mungaikol",
+   "clan_a": "Ginangi",
+   "clan_b": "Wohukol",
    "shared_ha": 0.0,
    "pct_of_a": 0.0,
    "pct_of_b": 0.0,
