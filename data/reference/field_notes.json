@@ -366,5 +366,13 @@
    "Three recordings from Mark Samba and Eddie Sioro, 6.7 km. None carries any text at all."
   ],
   "raised": "2026-10-16"
+ },
+ "Bujevi — Zone 2": {
+  "notes": [
+   "No polygon and no closing. The solver enclosed 42.4 ha off 6.9 km of walking, with 4.14 km of the 9.4 km line being ground nobody walked. Removed by the reviewer on 2026-10-16; it goes into the report as the recordings themselves.",
+   "Two recordings, 6.9 km. Both are captioned by Jude Mikas — 'Jude mikas / Bujive clan boundary' and 'Jude Mikas / BUJEVI CLAN BOUNDRY' — but the file is named for Abel Kajari. Two names on the one survey.",
+   "FOR THE CLAN: who walked this, Jude Mikas or Abel Kajari?"
+  ],
+  "raised": "2026-10-16"
  }
 }

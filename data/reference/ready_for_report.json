@@ -847,5 +847,23 @@
     ]
    }
   ]
+ },
+ "Bujevi — Zone 2": {
+  "rounds": [
+   {
+    "round": 1,
+    "ready": "2026-10-16",
+    "lines_only": true,
+    "map": "output/rounds/round1/bujevi_r1.png",
+    "why": [
+     "Into the report as the recordings themselves. No polygon, no",
+     "chords, no area: 42.4 ha off 6.9 km of walking, with 4.14 km of",
+     "the line being ground nobody walked.",
+     "",
+     "Both recordings are captioned by Jude Mikas but the file is named",
+     "for Abel Kajari. Who walked it goes to the clan as a question."
+    ]
+   }
+  ]
  }
 }
