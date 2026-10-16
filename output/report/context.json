@@ -5,9 +5,9 @@
   "Each clan's map is now the finished thing: the land as mapped, each steward's line, any boundary derived rather than walked, and the stretches still not walked. Nothing else.",
   "Manuvoora's map no longer carries a straight line across it. The clan maps were built without the river route and the hand joins, so a boundary that closed in the figures still showed 11.4 km of pink on the page."
  ],
- "date": "2026-10-12",
- "date_long": "12 October 2026",
- "commit": "adf1616",
+ "date": "2026-10-16",
+ "date_long": "16 October 2026",
+ "commit": "e7e5060",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

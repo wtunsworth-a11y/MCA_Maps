@@ -211,7 +211,10 @@ def sacred_sites(unit: str, tracks: gpd.GeoDataFrame, geometry=None) -> dict:
     one, and what it is can only be read from what the steward wrote beside
     it — "Secret Sight", a historical cave, an ancestors' hiding place.
 
-    Locations never leave this function. It returns how many and how much.
+    Rule 19: sacred sites are reported to the landowners and the reviewer,
+    and to nobody else. The names the stewards wrote belong in the report
+    those two read, so they come back from here. What does not change is
+    that these rings stay out of the boundary network.
     """
     tagged = int(tracks["feature_type"].isin(dataio.RESTRICTED_TYPES).sum())
 
@@ -226,6 +229,7 @@ def sacred_sites(unit: str, tracks: gpd.GeoDataFrame, geometry=None) -> dict:
 
     internal = 0
     internal_m2 = 0.0
+    named: list = []
     for enclosed in polygon_tools.interior_rings(lines):
         # Below this a ring is a track crossing itself, not a circuit anybody
         # walked: the median interior ring is 39 square metres.
@@ -236,8 +240,20 @@ def sacred_sites(unit: str, tracks: gpd.GeoDataFrame, geometry=None) -> dict:
         if any(w in words for w in SITE_WORDS):
             internal += 1
             internal_m2 += enclosed.area
+            said = sorted({steward_note(r).strip()
+                           for _, r in beside.iterrows()
+                           if steward_note(r).strip()})
+            named.append({"said": "; ".join(said)[:300],
+                          "ha": round(enclosed.area / 1e4, 2)})
+    for _, row in tracks[tracks["feature_type"]
+                         .isin(dataio.RESTRICTED_TYPES)].iterrows():
+        said = steward_note(row).strip()
+        if said:
+            named.append({"said": said[:300], "ha": None})
+    named.sort(key=lambda s: -(s["ha"] or 0))
     return {"tagged": tagged, "internal": internal,
-            "internal_ha": round(internal_m2 / 1e4, 2)}
+            "internal_ha": round(internal_m2 / 1e4, 2),
+            "named": named}
 
 
 def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
@@ -471,7 +487,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # of the file name. Every clan map went missing from the document
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
-            "approved": approve.approved(unit),
+            "ready": _latest_round(approve.approved(unit)),
             "sacred": sacred_sites(unit, group),
             "field_notes": notes.get(unit, {}).get("notes", []),
             "field_source": notes.get(unit, {}).get("source"),
@@ -482,6 +498,28 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
 
     records.sort(key=lambda r: (r["zone"], r["clan"]))
     return {"summary": summary, "clans": records}
+
+
+
+def _latest_round(entry):
+    """The most recent round of review, in the shape the document reads.
+
+    The register holds a list per survey so that what went to the clan in
+    one round survives the next. The document shows the latest.
+    """
+    if not entry:
+        return None
+    rounds = entry.get("rounds") or []
+    if not rounds:
+        return None
+    last = rounds[-1]
+    return {"round": last.get("round"),
+            "on": last.get("ready"),
+            "map": last.get("map"),
+            "name": last.get("report_name"),
+            "lines_only": bool(last.get("lines_only")),
+            "withhold_area": bool(last.get("withhold_area")),
+            "why": last.get("why") or []}
 
 
 def _read_csv(path: Path) -> pd.DataFrame:

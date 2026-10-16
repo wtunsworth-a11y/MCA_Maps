@@ -291,7 +291,12 @@ for (const c of clans) {
         ? `, covering ${one(sc.internal_ha)} ha — ${one(sc.internal_ha / c.area_ha * 100)}% of this clan's land`
         : "";
       body.push(p(`Recorded: ${money(n)} — ${bits.join("; ")}${share}.`, {size:21}));
-      body.push(note("Locations are not shared and appear on no map or layer in this document. A sacred site is usually recorded the way the rest of the land is, as a boundary walked around it, so it is counted from what the steward wrote beside the track."));
+      if (sc.named && sc.named.length) {
+        body.push(...bullets(sc.named.map(s => s.ha
+          ? `${s.said} — ${one(s.ha)} ha`
+          : `${s.said}`)));
+      }
+      body.push(note("Named here as the steward wrote it. This report goes to the landowners and to the reviewer and to nobody else. A sacred site is usually recorded the way the rest of the land is, as a boundary walked around it, so it is counted from what the steward wrote beside the track. These circuits are kept out of the boundary network, so a sacred walk never becomes a clan's boundary line."));
     }
   }
 
@@ -355,10 +360,10 @@ for (const c of clans) {
   // An approved map is one that was looked at with someone who knows the
   // ground and agreed, kept where re-running the pipeline cannot change it.
   // Where there is one, it is the map this page shows.
-  if (c.approved && c.approved.map) {
+  if (c.ready && c.ready.map) {
     body.push(p("Map", {bold:true, size:21, para:{ spacing:{ before:160 } }}));
-    body.push(img(path.join("output/clans/approved", c.approved.map), 620, 470));
-    body.push(note(`Approved ${c.approved.on}. Numbered lines are stretches the pipeline drew rather than anyone walked, each measured by how much walked line runs beside it. Neighbouring clans are named where they lie; their boundaries are not drawn.`));
+    body.push(img(c.ready.map, 620, 470));
+    body.push(note(`Reviewed ${c.ready.on}` + (c.ready.round ? `, round ${c.ready.round}` : "") + `. This is the map that went to the clan; it is kept under its round so a later round cannot overwrite it. Nothing here is final — the clan can correct it, answer the questions on it, or walk the gaps again.`));
   } else if (c.map) {
     body.push(p("Map", {bold:true, size:21, para:{ spacing:{ before:160 } }}));
     body.push(img(path.join("output/clans", c.map), 620, 470));
@@ -367,9 +372,9 @@ for (const c of clans) {
       : "The walk and the area it gives (dotted), with the stretches nobody walked in pink. Neighbouring clans are named where they lie; their boundaries are not drawn."));
   }
 
-  if (c.approved && c.approved.todo && c.approved.todo.length) {
-    body.push(p("To complete this map", {bold:true, size:21}));
-    body.push(...bullets(c.approved.todo));
+  if (c.ready && c.ready.why && c.ready.why.length) {
+    body.push(p("How this map was read", {bold:true, size:21}));
+    body.push(...bullets(c.ready.why.filter(s => s && s.trim())));
   }
 }
 

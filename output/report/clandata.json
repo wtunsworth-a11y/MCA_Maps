@@ -91,15 +91,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 166.1,
   "map": "Asingi_Zone_2.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Asingi_Zone_2.png",
-   "todo": []
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -171,13 +176,38 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 3506.7,
   "map": "Asoro_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/asoro_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves, with the whole",
+    "survey queried. No polygon, no chords, no area.",
+    "",
+    "These are not walked tracks: 22.8 km on 177 points, 129 m apart on",
+    "average, one leg of 7,418 m on ten points. Points joined by",
+    "straight lines, not a walk. The smoothed layer had resampled them",
+    "to a uniform 19 m and made them look like tracks.",
+    "",
+    "To put to Gilford Amakana: his Majanko and Manoko surveys are real",
+    "walked tracks at 11-12 m per point. Only Asoro is like this."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "QUERY THE WHOLE SURVEY. These are not walked tracks. In the raw file Asoro's ten recordings carry 22.8 km on 177 points \u2014 an average of 129 m between them, and one leg of 7,418 m on ten points, 824 m apart. A walked GPS logs every few seconds. This is a set of points joined by straight lines.",
+   "The smoothed layer hides it: smoothing resampled every recording to a uniform 19 m spacing, so the map shows what looks like a track. It is not one, and the 21.54 km the pipeline reported as walked is not walked.",
+   "No polygon and no closing. Removed on 2026-10-15; the survey goes into the report as the recordings themselves, with this query attached.",
+   "Gilford Amakana recorded three surveys \u2014 Asoro, Majanko and Manoko, all Zone 2. The other two ARE real walked tracks, logging a point every 11-12 m. Only Asoro is made of joined points. That is worth putting to him directly: what are these points, and how were they taken?"
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Asoro_Zone_2.gpx",
@@ -230,13 +260,33 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Bujevi_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-16",
+   "map": "output/rounds/round1/bujevi_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: 42.4 ha off 6.9 km of walking, with 4.14 km of",
+    "the line being ground nobody walked.",
+    "",
+    "Both recordings are captioned by Jude Mikas but the file is named",
+    "for Abel Kajari. Who walked it goes to the clan as a question."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. The solver enclosed 42.4 ha off 6.9 km of walking, with 4.14 km of the 9.4 km line being ground nobody walked. Removed by the reviewer on 2026-10-16; it goes into the report as the recordings themselves.",
+   "Two recordings, 6.9 km. Both are captioned by Jude Mikas \u2014 'Jude mikas / Bujive clan boundary' and 'Jude Mikas / BUJEVI CLAN BOUNDRY' \u2014 but the file is named for Abel Kajari. Two names on the one survey.",
+   "FOR THE CLAN: who walked this, Jude Mikas or Abel Kajari?"
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Bujevi_Zone_2.gpx",
@@ -334,13 +384,32 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 106.6,
   "map": "Gariniko_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/gariniko_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing \u2014 not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing \u2014 not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Six recordings from Lance Sake and Luke Kevura, 10.1 km.",
+   "Their own words, reproduced as written: 'Lance sake gariniko clan land boundry', 'Luke kevura garinko clan', 'Clan land boundary', 'Trial Clan track boundary'."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Gariniko_Zone_2.gpx",
@@ -428,20 +497,37 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1295.1,
   "map": "Juaiko_Zone_2.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Juaiko_Zone_2.png",
-   "todo": [
-    "One real gap runs through the whole western section \u2014 gap 2 at 917 m, gap 9 at 181 m and gap 10 at 84 m. Walk it, or tell us what feature the boundary follows.",
-    "Two inclusions in the south to settle: in or out.",
-    "Philip Jukaro states that Juaiko, Manoevkor and Rumbieh are three clans under the umbrella name Sukandi. Sukandi is held here as a clan in its own right. Nothing has been changed over it.",
-    "Ask what the 60 m Taffkin fall means for the boundary at the 105 m stretch joined straight on the eastern side."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": "output/rounds/round1/juaiko_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 4,
-   "internal_ha": 4.62
+   "internal_ha": 4.62,
+   "named": [
+    {
+     "said": "P- Jukaro, Following the Salm River down to Makamata fall and all the way to Ujai River and than following the Ujai stream up to sinigir; Philip Jukaro- the two eil fish that bases here at Makamata which are historicol eils.(The son is Gurunkira and the mother is Jeva )The tangent plant is also indi",
+     "ha": 4.3
+    },
+    {
+     "said": "P- Jukaro- History of Juaiko clan Origination(Vasawa).A man named Ngiendy in the of transmigration headed this way with his family, decided to rest for while, but then found a rat in a hollow tree.Ngiendy has three sons,namely ,Keir, Fafaikorand Jookuar- Hoosy, so the rat killed was divided among th",
+     "ha": 0.21
+    },
+    {
+     "said": "P-Jukaro, When following the tribal land border line,we came across sacred place named namun,then down to bareji river, an historical Stone named (Javamba) and then coming down -stream was the home of Fariamba and Bitute his garden place and the up stream warl river the place where he actually colle",
+     "ha": 0.11
+    },
+    {
+     "said": "P -Jukaro -(Sinigir) is the place where peace between Namiai and Birari spear hearders was made.; P -Jukaro- -After the peace at Sinigir all the spears shields and cribs were brought back and buried here .A bamboo and a stone mirror Named (Mumui and Kisak) were planted here to indicate the burial lo",
+     "ha": 0.01
+    }
+   ]
   },
   "field_notes": [
    "PRIORITY: return to the clan. The 917 m gap needs walking, not inferring, and the four interior lines need the clan to say which are boundary along the rivers and which are named places. Nothing here should be closed by editing.",
@@ -558,17 +644,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 540.8,
   "map": "Kasaki_Zone_2.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Kasaki_Zone_2.png",
-   "todo": [
-    "Confirm the 0.19 km of joins between recorded open ends. The notch on the boundary was looked at and is not an error."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "This boundary was walked. What looked like 1.3 km of gap was the closing step drawing end-to-end across stretches the steward had already covered \u2014 every metre of it had walked line within 50 m. The eight loose ends are tied to the line beside them instead, 216 m in all, and the boundary closes on the walk."
@@ -647,11 +736,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 275.8,
   "map": "Majanko_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -738,13 +836,33 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 118.0,
   "map": "Manoko_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/manoko_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: 2.69 km of the 7.5 km line was ground nobody",
+    "walked, enclosing only 118.0 ha.",
+    "",
+    "Two of the seven raw features are corrupt and unreadable. The",
+    "query for Gilford Amakana is whether those two can be supplied",
+    "again."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. Of the 7.5 km line the solver drew, 2.69 km was ground nobody walked, enclosing 118.0 ha. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Two of the seven features in the raw file have corrupt geometry and cannot be read at all. The five that can carry 9.1 km on 827 points, 11 m apart \u2014 genuine walking. Worth asking Gilford Amakana whether the two lost recordings can be supplied again."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Manoko_Zone_2.gpx",
@@ -837,15 +955,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 198.9,
   "map": "Murai_Z2_Zone_2.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Murai_Z2_Zone_2.png",
-   "todo": []
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -947,11 +1070,30 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 5171.3,
   "map": "Nituri_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/nituri_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Clean enough to go in front of the clan as first built \u2014 no edits",
+    "were needed. 14 segments, 35.17 km walked, 6.43 km still to walk,",
+    "5,171.3 ha, the largest area in the set.",
+    "",
+    "85% of the line is walked straight out of the solver, the best",
+    "first build of any survey so far.",
+    "",
+    "39 recordings from Newton Muraba, Graham Naopi and Christoper",
+    "Visua carrying 41.8 km."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -1047,15 +1189,41 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1568.8,
   "map": "Rondi_Zone_2.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Rondi_Zone_2.png",
-   "todo": []
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 5,
-   "internal_ha": 5.38
+   "internal_ha": 5.38,
+   "named": [
+    {
+     "said": "Secret Sight, Three round waters, Boroma, Nubuaeba and Safata. Baroma had a history of Guakira snake and a two stones namely Baroma stone and Munkuve stone. Baroma had a lyric. Nubuaeba round water had a history of heel fish name Uijve. Heel fish had a lyric and Munkuve stone had a lyric.; Secret Si",
+     "ha": 3.02
+    },
+    {
+     "said": "Rondi Clan Settlers Original Second History Base with lyric.; Rondi Clan settlers Original Second history Base with lyric.",
+     "ha": 2.15
+    },
+    {
+     "said": "Bifara Historical Stone in between Kaju and Buorane river link with lyric.; Bifara historical Stone in between Kaju and Buorane river link with lyric.",
+     "ha": 0.13
+    },
+    {
+     "said": "Guon Historical Water Fall, both Male and Female had lyric.; Guon Historical Water Fall, both Male and Female with lyrics.",
+     "ha": 0.06
+    },
+    {
+     "said": "Mianbari Historical Cave. Ancestors hiding cave with lyric.; Mianbari historical Cave. Ancestors hiding cave with lyric.",
+     "ha": 0.01
+    }
+   ]
   },
   "field_notes": [],
   "field_source": null,
@@ -1115,13 +1283,31 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Rumbi_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/rumbi_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: of the 22.4 km line the solver drew, 9.18 km was",
+    "ground nobody walked, against 15.1 km of walking in the file.",
+    "",
+    "Nine recordings from Joel Mamata."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. Of the 22.4 km line the solver drew, 9.18 km was ground nobody walked, against 15.1 km of walking in the file. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Nine recordings from Joel Mamata, 15.1 km."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Rumbi_Zone_2.gpx",
@@ -1244,20 +1430,33 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1900.9,
   "map": "Sukandi_Zone_2.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Sukandi_Zone_2.png",
-   "todo": [
-    "Ask Rodney Ajinko about Mafua. His own note records it as being in a land dispute and inside this boundary: 'Mafua is also included in land dispute. (Short history) of mafua. Thise please is bettle field before the time of angesters many evidence are located there to proved the history.'",
-    "Resolve the umbrella question. Philip Jukaro of Juaiko states that Juaiko, Manoevkor and Rumbieh are three clans under the umbrella name Sukandi. Sukandi is held here as a clan in its own right. Two stewards are using the name differently and neither boundary has been changed over it.",
-    "Name the one recording that is walked but unnamed.",
-    "Confirm Millinton Beso's three sacred walks \u2014 Mitakin, Birezama and Bijanuri, 10.6 km \u2014 sit inside the boundary and carry no part of it."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 3,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": [
+    {
+     "said": "Melinton Beso. Sukadi Clan member.",
+     "ha": null
+    },
+    {
+     "said": "Melinton Beso sukadi Clan member.",
+     "ha": null
+    },
+    {
+     "said": "Milinton Beso sukandi Clan member.",
+     "ha": null
+    }
+   ]
   },
   "field_notes": [],
   "field_source": null,
@@ -1371,11 +1570,37 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 3027.2,
   "map": "Tuoko_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/tuoko_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Clean enough to go in front of the clan. 41 segments, 34.54 km",
+    "walked, 4.59 km still to walk, 0.37 km implied, 3,156.1 ha in one",
+    "polygon \u2014 the largest area in the set.",
+    "",
+    "Nine recordings from Terrence Dobija and Kaupa Dota, 47.7 km. Kaupa",
+    "Dota's words, as written: 'Tuoko.clan.land.boundry.' and",
+    "'.clan.land.boundary.'",
+    "",
+    "Worked with the reviewer: s7 was 5,946 m of line nobody walked and",
+    "is now 2,554 m drawn over 4,111 m of walked fragments; s11 was",
+    "4,866 m and is now 3,306 m drawn over a 3,365 m recording lying",
+    "97 m off it; s42 cut past the eastern loop and left it as a second",
+    "118.7 ha ring, and now joins it into the single boundary. Nine",
+    "seams between fragments of the same corridor are implied.",
+    "",
+    "Still to walk: s7 2,182 m, s42's two ends, s9 270 m, s2 245 m."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -1460,13 +1685,31 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Zambiko_Zone_2.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/zambiko_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing \u2014 not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing \u2014 not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Eight recordings from Sylvester Anai, 5.7 km. Five of them lie 3.5-4.1 km from the body of the survey: four short ones at 4.1 km and one of 1,322 m at 3.5 km. This is a short walk plus a scatter of separate visits, not one circuit."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Zambiko_Zone_2.gpx",
@@ -1528,13 +1771,39 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Deari_Zone_3.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/deari_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Into the report as it stands, with a query attached. 7 segments,",
+    "7.81 km walked, 8.56 km still to walk, 995.5 ha. No edits made.",
+    "",
+    "THE QUERY, for the clans and not for the data: all five of Deari's",
+    "recordings lie on Nui's walking \u2014 10,271 m of Deari's 13.1 km",
+    "within 5 m of it, 11,892 m within 10 m. That includes the one",
+    "captioned 'deari clain boundry maping'; the other four are",
+    "captioned 'nui clain boundry maping' by Patrick Dirise and Anthony",
+    "Irimari. Four stewards, one line, two clan names on it.",
+    "",
+    "Nothing is merged and nothing moved. See output/queries/deari_nui.png."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "In the report as it stands, approved 2026-10-14, with the Nui overlap carried as an open query to the clans.",
+   "All five of Deari's recordings lie on Nui's walking: 10,271 m of Deari's 13.1 km within 5 m of it, 11,892 m within 10 m. That includes the one captioned 'deari clain boundry maping' (73.6% within 5 m); the other four are captioned 'nui clain boundry maping' by Patrick Dirise and Anthony Irimari.",
+   "Four stewards, one line, two clan names on it. This is a question for the clans, not something that can be settled in the data. Nothing merged, nothing moved.",
+   "See output/queries/deari_nui.png."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Deari_Zone_3.gpx",
@@ -1586,13 +1855,32 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 9.5,
   "map": "Giroiko_Zone_3.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-16",
+   "map": "output/rounds/round1/giroiko_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: the solver enclosed 5.6 ha off 6.7 km of",
+    "walking, closing a small loop and leaving most of the walking",
+    "outside.",
+    "",
+    "Three recordings from Mark Samba and Eddie Sioro, none captioned."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. The solver enclosed only 5.6 ha off 6.7 km of walking \u2014 it closed a small loop and left most of the walking outside it. Removed by the reviewer on 2026-10-16; it goes into the report as the recordings themselves.",
+   "Three recordings from Mark Samba and Eddie Sioro, 6.7 km. None carries any text at all."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Giroiko_Zone_3.gpx",
@@ -1644,13 +1932,35 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Gumuri_Zone_3.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/gumuri_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: 5.15 km of the 11.6 km line was ground nobody",
+    "walked.",
+    "",
+    "Two recordings. Monty Stanford's marker names Guivom mountain and",
+    "a border shared with Doikal clan, which has no survey in this",
+    "dataset."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. Of the 11.6 km line the solver drew, 5.15 km was ground nobody walked, enclosing 80.8 ha. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Two recordings only: Gray Saui's 8,469 m walk and Monty Stanford's 25 m marker.",
+   "Monty Stanford's words on the marker, as written: 'Monty Stanford Gumuri clan. Guivom mountain,up in the hill.. still border with doikal clan'.",
+   "That names Guivom mountain and a shared border with Doikal clan. Doikal is not among the 51 surveys in this dataset \u2014 there is no Doikal survey to compare against."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Gumuri_Zone_3.gpx",
@@ -1712,13 +2022,32 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Nui_Zone_3.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/nui_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing \u2014 not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing \u2014 not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Seven recordings from Bobby Aneba and Nickod Nakina, 23.4 km. Two of them lie 2.2-2.3 km from the body of the survey, one of 2,409 m and one of 290 m.",
+   "Their own words, reproduced as written: 'Odohakill boundry point.', 'For whole nui clain.', 'Nui clain boundry maping, track record.'"
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Nui_Zone_3.gpx",
@@ -1766,18 +2095,38 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Savasi_Zone_3.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/savasi_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: 4.89 km of the 8.9 km line was ground nobody",
+    "walked, more drawn than walked.",
+    "",
+    "Three recordings from Oscar Isuni. One of 207 m is captioned",
+    "'Church boundary' \u2014 the only one in the dataset, and not a clan",
+    "edge."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
+   "No polygon and no closing. Of the 8.9 km line the solver drew, 4.89 km was ground nobody walked \u2014 more drawn than walked. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Three recordings from Oscar Isuni, 5.3 km: one 4,900 m walk and two short ones.",
+   "A 207 m recording is captioned 'Oscar isuni savasi clan' and 'Church boundary'. That is the only church boundary in the dataset, and it is a different kind of thing from a clan edge. Reproduce as written.",
    "The eastern border of Savasi's clan land is along the Baraje river.",
    "The mapping is not finished: the northern and southern ends have yet to be closed off."
   ],
-  "field_source": "Field advice, 23 August 2026",
-  "river_boundary": true,
+  "field_source": null,
+  "river_boundary": false,
   "gpx": "Savasi_Zone_3.gpx",
   "gpx_gaps": 3
  },
@@ -1854,17 +2203,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1058.0,
   "map": "Manuvoora_Zone_6.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Manuvoora_Zone_6.png",
-   "todo": [
-    "Confirm the 2.93 km that nobody walked. One section is traced along a river the field says the boundary follows and cannot be walked; the rest are joins between recorded open ends, decided from the map. All of it is drawn apart from the walked line on the map."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "Four waterfalls lie along the boundary. From the north they are Ija, Taram, Pururi and Parari.",
@@ -1964,13 +2316,32 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 299.9,
   "map": "Mariura_Zone_6.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/mariura_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Straight into the report as the recordings themselves. No polygon,",
+    "no chords, no area: the reviewer could not tell what the survey is.",
+    "",
+    "The solver drew 18.3 km of line of which 14.87 km was ground nobody",
+    "walked, while the file carries 33.7 km of walking in 43 recordings",
+    "from Livingstone Nisavora and Fabian Justin."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing \u2014 the reviewer could not tell what the survey is. Of the 18.3 km line the solver drew, 14.87 km was ground nobody walked, against 33.7 km of walking in the file. Removed on 2026-10-15; it goes into the report as the recordings themselves.",
+   "43 recordings from Livingstone Nisavora and Fabian Justin, 33.7 km."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Mariura_Zone_6.gpx",
@@ -2035,20 +2406,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 552.2,
   "map": "Naharaura_Zone_6.png",
-  "approved": {
-   "on": "2026-10-11",
-   "map": "Naharaura_Zone_6.png",
-   "todo": [
-    "Gap of 546 m across the northern lobe, running north-south between (656218,8998916) and (656307,8999455). Walk it, or confirm what feature the boundary follows there \u2014 about half of it lies within 60 m of a modelled watercourse, and a short walked spur inside the lobe stops dead as though the stretch was started and turned back from.",
-    "Gap of 328 m on the south-eastern edge, between (656473,8997619) and (656566,8997304). Every metre lies within 60 m of a modelled watercourse, so the clan may be able to confirm it follows that creek rather than walking it. The modelled drainage comes from a 30 m surface model and is not a survey.",
-    "Two short gaps at the top of the northern lobe, 99 m and 57 m, on no modelled feature.",
-    "Zechariah Sasavo's two recordings cover the same ground twice: 32.6 km recorded over about 16 km of distinct walking. Any figure reporting distance walked should say which it means."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -2093,13 +2464,33 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Nupa_Ora_Zone_6.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-16",
+   "map": "output/rounds/round1/nupa_ora_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: 3.20 km of the 7.8 km line was ground nobody",
+    "walked.",
+    "",
+    "Three recordings from Benjamin Marijah, all captioned. Purana is",
+    "named on one of them and appears nowhere else in the dataset."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. Of the 7.8 km line the solver drew, 3.20 km was ground nobody walked, enclosing 92.5 ha. Removed by the reviewer on 2026-10-16; it goes into the report as the recordings themselves.",
+   "Three recordings from Benjamin Marijah, 5.7 km, all carrying text. As written: 'BENJAMIN MARIJAH NUPA ORA CLAN / Clan land boundry'; 'Nupa ora land boundry / Current location Purana'; 'Nupa ora Land Boundry / Nupa land'.",
+   "Purana is a named place that appears nowhere else in the dataset."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Nupa_Ora_Zone_6.gpx",
@@ -2177,19 +2568,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 812.2,
   "map": "Pina_Ora_Zone_6.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Pina_Ora_Zone_6.png",
-   "todo": [
-    "Walk gap 1, 788 m, or name the feature the boundary follows there.",
-    "Walk gap 2, 397 m, or name the feature the boundary follows there.",
-    "Gap 3, 206 m, is part of what needs cleaning up at gap 2 and stands as it is until gap 2 is settled."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "PRIORITY: return to the clan. Both gaps, 788 m and 397 m on the eastern edge, need walking. Real gaps need real data; neither should be closed by editing.",
@@ -2282,17 +2674,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 345.0,
   "map": "Sahirut_Zone_6.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Sahirut_Zone_6.png",
-   "todo": [
-    "Confirm the 0.22 km that nobody walked."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "Closed without further survey. 217 m remained open and there is nothing there worth a return to the field, so the map is treated as finished. No track records that stretch, so it adds no walked distance. The clan has not seen this line and has not agreed to it \u2014 it is the survey team's judgement, not the clan's.",
@@ -2354,13 +2749,38 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 51.7,
   "map": "Bimkol_Zone_7A.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/bimkol_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Clean enough to go in front of the clan. 9 segments, 6.68 km",
+    "walked, 66 m of drawn line, 161.4 ha.",
+    "",
+    "The first build gave 51.4 ha with 3.38 km drawn. The reviewer saw",
+    "that the southern loop the stewards walked was the edge of the",
+    "polygon and that three long chords cutting across the clan were",
+    "wrong. With those out and the loop in, the boundary is almost",
+    "entirely Kennedy Wosa's own walking.",
+    "",
+    "s5, an 1,111 m eastern spur attached at neither end, is out of the",
+    "boundary and goes to the clan as a question."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "s5, 1,111 m of Kennedy Wosa's walking running east from 655944 8993993 to 656597 8993986, is out of the boundary. It is attached at neither end \u2014 240 m from the nearest point of the ring at its west end and 976 m at its east. The reviewer judged it not part of the polygon. It stays in the recordings and on the map, and the clan can say what it is.",
+   "s6, s8 and s11 were removed as wrong \u2014 3,204 m of line that cut across the clan instead of following the southern loop the stewards walked. s7, a 30 m fragment, was left isolated by that and went too. s3 and s4 were also removed at the reviewer's direction.",
+   "Only one of the five recordings carries text: 146 m captioned 'Kennedy Wosa Bimkol Clan' and 'Dareki Village'. Dareki Village is the place named repeatedly in the neighbouring Darekikol survey. Nothing sacred or tambu."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Bimkol_Zone_7A.gpx",
@@ -2452,13 +2872,42 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 639.8,
   "map": "Borori_Zone_7A.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/borori_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Clean enough to go in front of the clan. 27 segments, 21.32 km",
+    "walked, 0.15 km still to walk, 0.52 km implied, 740.0 ha.",
+    "",
+    "Eleven recordings from Hagahi Semo and John Saini, 32.7 km.",
+    "",
+    "Worked with the reviewer: s2 was 1,390 m of line nobody walked and",
+    "went onto the two long tracks beside it; s7 and s11 onto walking",
+    "that ran most of the way; s13 onto the river channel. A second",
+    "pass found recordings lying directly on s11 and s2 that the first",
+    "search had hidden, taking another 483 m onto walked ground.",
+    "",
+    "ONE THING LEFT UNKNOWN: s5, 155 m. Five recordings run within 75 m",
+    "of it in different directions and none bridges its ends. The",
+    "reviewer judged the area too confused to read, and it is not",
+    "settled either way. It goes to the clan as a question."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "s5, 155 m at 658730 8997313 to 658679 8997459, is left unknown. The reviewer judged there is too much confusion in that area to read it, and it is not settled either way.",
+   "Five recordings lie within 75 m of it running in different directions \u2014 1,358 m, 614 m, 515 m, 36 m and 25 m \u2014 and none of them bridges its two ends.",
+   "Everything else on Borori is walked, implied, or implied along the river at s13."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Borori_Zone_7A.gpx",
@@ -2537,11 +2986,35 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 568.9,
   "map": "Darekikol_Zone_7A.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/darekikol_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Clean enough to go in front of the clan. 31 segments, 18.44 km",
+    "walked, 3.62 km still to walk, 0.18 km implied, 612.1 ha in three",
+    "rings that touch rather than overlap: the western 517.7 ha, the",
+    "eastern lobe 90.0 ha and 17.3 ha between them.",
+    "",
+    "Six gaps for the clan: s20 1,212 m, s2 850 m, s8 690 m, s10 471 m,",
+    "s6 400 m and s14, which the reviewer settled.",
+    "",
+    "Worked with the reviewer segment by segment: the chord that",
+    "shortcut 1,638 m of walking, the route to the eastern lobe put on",
+    "walked track instead of a 495 m line across country, the s28/s29",
+    "out-and-back reduced from 608 m to 89 m, and the 142 m line that",
+    "should not have existed removed once it was found that s27 and s15",
+    "already touch s19 and s16 at 7 m and 10 m."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -2626,13 +3099,31 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Abuankol_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/abuankol_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing \u2014 not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing \u2014 not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Simeon Pasip's own words, reproduced as written: 'Mamure Area' and 'Abuankol Clan Bandry'."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Abuankol_Zone_7B.gpx",
@@ -2733,13 +3224,39 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 662.5,
   "map": "Ambunkol_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/ambunkol_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "The reviewer's decision, given on the map: 's2 and s10 are",
+    "unfixable at this time and must go back to the clan.' That settles",
+    "the survey; it goes into the report with those two as the clan's",
+    "question.",
+    "",
+    "12 segments, 16.51 km walked, 2.75 km still to walk in s2 (1,860 m)",
+    "and s10 (890 m), 0.17 km implied in s17 and s20, 662.4 ha.",
+    "",
+    "The question for the clan is the detached 727 m western loop that",
+    "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
+    "what those two stretches are. Nobody is sent to walk them first."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "PRIORITY: two real gaps, 2.75 km between them, both on the western side. They need walking, not inferring, and nothing here should be closed by editing.",
+   "s2 \u2014 1,860 m, the northern of the two. s10 \u2014 890 m, the southern. Between them hangs a 727 m loop of walked line that touches nothing else, sits 658 m from the rest of the survey and encloses nothing. Peter Awako walked it; it is not joined to anything he walked before or after.",
+   "The question for the clan is the loop: is that ground Ambunkol's, and does the boundary run out to it and back, or does the line run straight past it? The answer decides what the two gaps actually are. Ask before anyone is sent to walk them.",
+   "Both stretches are in output/gpx/ambunkol_to_walk.gpx for the device. The rest of the boundary is settled: 16.51 km walked by Peter Awako, 0.17 km implied, 662.4 ha."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Ambunkol_Zone_7B.gpx",
@@ -2886,11 +3403,31 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1033.0,
   "map": "Binunkol_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/binunkol_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Clean enough to go in front of the clan. 43 segments, 15.73 km",
+    "walked, 2.61 km still to walk, 0.80 km implied and 2.32 km implied",
+    "along a watercourse, 1,026.0 ha.",
+    "",
+    "Five gaps for the clan: s8 945 m, s2 630 m, s4 450 m, s6 445 m and",
+    "s46 138 m. The reviewer named s2, s4, s6 and s8 as the real ones.",
+    "",
+    "s28, s30 and s32 follow the river and are laid along the channel",
+    "from the terrain model, not drawn straight. s22, s24, s26 and s40",
+    "were settled by the reviewer, along with five small seams."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -3004,11 +3541,33 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 382.5,
   "map": "Ginangi_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/ginangi_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Clean enough to go in front of the clan. 4 segments, 14.85 km",
+    "walked, 719 m still to walk in s2, 648.7 ha.",
+    "",
+    "Two knots of walking are out of the boundary at the reviewer's",
+    "direction and recorded in off_boundary.json: the Afore Market road",
+    "junction and the Semmara community. They are places somebody",
+    "arrived at and marked, not edges. They still appear on the map and",
+    "still count as ground walked.",
+    "",
+    "The duplicate recordings were collapsed for this survey alone.",
+    "",
+    "The reviewer noted the map's scaling looks off; to be looked at."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -3045,8 +3604,8 @@
   "spur_km": 5.77,
   "status": "open",
   "chains": 6,
-  "gap_km": 9.94,
-  "gap_pct": 40.2,
+  "gap_km": 9.68,
+  "gap_pct": 66.4,
   "area_ha": 519.3,
   "basis": "inferred",
   "parcels": 2,
@@ -3130,13 +3689,33 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 519.3,
   "map": "Jariji_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/jariji_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves.",
+   "Four recordings, 31.5 km. The 6,755 m one is saved twice, identically, one named '- copy'. Collapsing it changed almost nothing.",
+   "Newton Giwai / Clement Viri, on the 6,755 m recording: 'Jariji clan boundary with shape clan' and 'Maranabum water cleke for drinking'. Reproduce as written.",
+   "Nothing in the four recordings carries sacred or tambu wording."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Jariji_Zone_7B.gpx",
@@ -3211,17 +3790,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 353.0,
   "map": "Manang_Zone_7B.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Manang_Zone_7B.png",
-   "todo": [
-    "One gap, 1,788 m. Walk it, or name the feature the boundary follows."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -3281,13 +3863,31 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Marang_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/marang_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing \u2014 not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing \u2014 not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Nothing in the two recordings carries sacred or tambu wording, and neither carries any note beyond its file name."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Marang_Zone_7B.gpx",
@@ -3360,13 +3960,36 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Marijabimkol_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/marijabimkol_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Into the report as it stands. 6 segments, 7.71 km walked, 0.24 km",
+    "still to walk in s2 (210 m) and s4 (30 m). No area: the ring is",
+    "open because s8 hangs unattached.",
+    "",
+    "s6 is not part of the clan land \u2014 a 15 m recording at the same",
+    "place as Ginangi's Afore Market knot \u2014 and s7 and s9 existed only",
+    "to reach it, so 5,642 m of drawn line was removed with it.",
+    "",
+    "s8, 400 m of walking, is left in place and unattached, 473 m from",
+    "the rest. It goes to the clan as a question, not closed over."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "s8, 400 m of Japhet Nagura's walking at 649716 8989271 to 649534 8989486, is left in place and unattached. It sits 473 m and 599 m from the rest of the boundary. It was reached only through the two long drawn lines that have been removed, so it now hangs on its own. The clan can say whether it belongs to the boundary.",
+   "s6, a 15 m recording at 652447 8989492, is not part of the clan land. That is the same place as the Afore Market knot in Ginangi's survey. s7 (2,726 m) and s9 (2,916 m) existed only to reach it and went with it."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Marijabimkol_Zone_7B.gpx",
@@ -3459,18 +4082,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Murai_Z7B_Zone_7B.png",
-  "approved": {
-   "on": "2026-10-12",
-   "map": "Murai_Z7B_Zone_7B.png",
-   "todo": [
-    "7.13 km still to walk, in five gaps: 3,803 m, 1,168 m, 967 m, 797 m and 399 m. These are the lines for the clan to respond to.",
-    "The trial mapping data is to be ignored and is not part of this boundary."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "NOT READY. James Iroti walked the northern and western edges in one",
@@ -3523,7 +4148,7 @@
   "walked_km": 77.25,
   "spur_km": 3.43,
   "status": "closed",
-  "chains": 2,
+  "chains": 3,
   "gap_km": 0.0,
   "gap_pct": 0.0,
   "area_ha": 48.8,
@@ -3583,11 +4208,34 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 48.8,
   "map": "Natang_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/natang_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Looked at on the map and approved: it is as it should be. Into the",
+    "report for the clan to respond to.",
+    "",
+    "Three repairs stand behind it, each approved for this survey alone",
+    "and recorded in approved_fixes.json and line_extensions.json:",
+    "collapse_duplicates, because 93 recorded parts carry only 31",
+    "distinct; enclose_walked_land, for the 13.1 ha the reviewer found",
+    "encircled by Dickson Hoe's own tracks and falling outside; and the",
+    "node at 652677.8 652677.8E 8984946.2N where two of Stafford",
+    "Gidiri's stretches cross without either having an end there.",
+    "",
+    "It has no stored boundary. The line came from the solver with those",
+    "fixes, not from the stored-segment model."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [],
   "field_source": null,
@@ -3735,13 +4383,33 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 199.5,
   "map": "Sugulkol_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/sugulkol_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves.",
+   "Twelve recordings from Chris Idua and Emmanuel Fufus.",
+   "Emmanuel Fufus's own words, reproduced as written: 'Truck road (main highway)', 'Truck road or main highway', 'AFORE Community village', 'Community water supply Mapping', 'Wari creek'.",
+   "Nothing in the twelve recordings carries sacred or tambu wording."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Sugulkol_Zone_7B.gpx",
@@ -3874,13 +4542,34 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 513.1,
   "map": "Wohukol_Zone_7B.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-13",
+   "map": "output/rounds/round1/wohukol_r1.png",
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": [
+    "Reviewed on the map and approved as it stands. No edits were made",
+    "to the line, and none are needed before it goes into the report.",
+    "",
+    "11 segments, 17.76 km walked, 4.48 km still to walk, 513.1 ha."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "Reproduce the stewards' own wording in the report as it stands; the reviewer did not interpret it.",
+   "Nelson Runage, 6 Nov 2025 09:31, on a 1,934 m recording: 'Korokoro village border with Jariji'.",
+   "Nelson Runage, 6 Nov 2025 11:40, on a 1,958 m recording: 'Bakijak mount road go to Toma'.",
+   "Darling Walele, 25 Oct 2025 09:19, on a 52 m recording: 'Wuhukol clan boundary'.",
+   "Nothing in the nine recordings carries sacred or tambu wording.",
+   "Jariji is also Zone 7B and not yet reviewed. The shared edge Nelson names is to be measured when Jariji comes round, not inferred now."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Wohukol_Zone_7B.gpx",
@@ -3928,13 +4617,32 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Duribip_Zone_8.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/duribip_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing \u2014 not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing \u2014 not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Four recordings from Beven Naive, 4.5 km. Two of them \u2014 121 m and 296 m \u2014 lie 2.2 km from the body of the survey, which is one 3,444 m walk and one of 1,346 m.",
+   "His own words, reproduced as written: 'Benven duribip Clan' and 'Land boundary map'."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Duribip_Zone_8.gpx",
@@ -3999,18 +4707,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 227.2,
   "map": "Dusi_Zone_8.png",
-  "approved": {
-   "on": "2026-10-11",
-   "map": "Dusi_Zone_8.png",
-   "todo": [
-    "Community confirmation on chord 5, the 953 m Savahun boundary with Anaje clan: either walk it, or confirm a river or ridge for us to follow. Max Mamo stopped at the Guaipnun waterfall \u2014 'Savahun big drain so hard to continue over' \u2014 and at the corner he marked 'Sawahun broudre with anaje clan'. Tested against the terrain model: the two ends are in different catchments, so there is no single watercourse joining them.",
-    "The river line closing the southern boundary with Gubai clan is traced from a 30 m surface model, not walked. Its course is provisional until a cleaner river layer is sourced; what the steward's notes establish is that the boundary is that river, not the exact line it takes."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "Walked by Max Mamo alone, 12 June 2025. His recordings name each stretch and the clan on the other side of it \u2014 Karira, Gubai, Suhikol, Anaje \u2014 which is the fullest annotation in the dataset.",
@@ -4077,13 +4787,32 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 497.1,
   "map": "Gubai_Zone_8.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-14",
+   "map": "output/rounds/round1/gubai_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Ready for the report as the recordings themselves. No polygon,",
+    "no chords and no area: the reviewer judged the line the solver",
+    "drew was mostly ground nobody walked, and removed it.",
+    "",
+    "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "75 recordings from Kenny Noi and Fordy Igai, 134.5 km \u2014 the largest file in the set.",
+   "Kenny Noi names the edge, reproduced as written: 'Darei dry Creek Land Boundary.' and 'Following Darei dry Creek.'"
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Gubai_Zone_8.gpx",
@@ -4153,18 +4882,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 682.3,
   "map": "Gumuyude_Zone_8.png",
-  "approved": {
-   "on": "2026-10-11",
-   "map": "Gumuyude_Zone_8.png",
-   "todo": [
-    "Walk the 652 m gap on the northern shoulder. It is the only stretch of this boundary with no walked line between its ends.",
-    "Confirm what the notch on the north-eastern edge is: a 0.28 ha loop, about 109 m by 47 m, where the recording crosses itself. It is either a narrow finger of ground the boundary goes round or the steward backtracking, and nothing written on the tracks says which."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "Every stretch of this boundary that was walked is now followed rather than cut across. Three chords ran beside the steward's own line and are traced along it; three had no walked line between their ends at all \u2014 144 m, 75 m and 26 m \u2014 and are straight joins, which is the whole of what can be said about them.",
@@ -4214,14 +4945,49 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 1.4,
   "map": "Madukol_Zone_8.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/madukol_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": true,
+   "why": [
+    "Into the report as the recordings themselves, carrying its",
+    "queries. No polygon, no chords. NO AREA IS TO BE ISSUED: the",
+    "1.45 ha the pipeline computes is a fragment closed by two chords",
+    "of 179 m and 106 m across a shape that was never a ring.",
+    "",
+    "Gibs Ginave recorded 1.4 km in five pieces. The whole survey spans",
+    "369 m east to west by 157 m north to south \u2014 the smallest in the",
+    "set. Two of the five recordings carry no name; the three that do",
+    "say 'Darmal', 'Gibs Ginave / Land boundary' and 'Gibs_Ginave /",
+    "Madukol Clan land boundary'.",
+    "",
+    "TWO QUESTIONS FOR THE CLAN: what was being recorded here \u2014 there",
+    "is a tangle at the eastern end where the steward circled a small",
+    "area several times, with no note saying what it is \u2014 and what is",
+    "Darmal?"
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
-  "field_source": null,
+  "field_notes": [
+   "IN THE REPORT WITH THE QUERIES, 2026-10-15, as the recordings themselves \u2014 no polygon, no chords, no area.",
+   "",
+   "Gibs Ginave recorded 1.4 km in five pieces, 1.07 km after smoothing. The whole of it spans 369 m east to west by 157 m north to south and encloses 1.45 ha. That is a fragment, not a clan boundary, and the two chords of 179 m and 106 m are closing a shape that was never a ring.",
+   "",
+   "Two of the five recordings carry no name. The three that do say 'Darmal', 'Gibs Ginave / Land boundary' and 'Gibs_Ginave / Madukol Clan land boundary'. Nothing else is written anywhere in the files.",
+   "",
+   "FOR THE CLAN: what was being recorded here? There is a tangle at the eastern end where the steward circled a small area several times, and no note saying what it is. And what is Darmal?",
+   "",
+   "Nothing in this survey has been repaired. The 1.45 ha figure must not be issued as Madukol's land."
+  ],
+  "field_source": "Raw recordings and the everything map, reviewed 12 October 2026",
   "river_boundary": false,
   "gpx": "Madukol_Zone_8.gpx",
   "gpx_gaps": 2
@@ -4290,14 +5056,39 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 337.9,
   "map": "Mungaikol_Zone_8.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": true,
+   "why": [
+    "In the report, because going back to the clan is via the report.",
+    "The survey carries its question rather than being held back from",
+    "the clan who need to answer it.",
+    "",
+    "NO AREA IS TO BE ISSUED. The pipeline closes the boundary using",
+    "Graham Ekiawa's sacred-site line as the northern edge and discards",
+    "5.4 km of the walked land boundary; that figure, 338 ha, must not",
+    "appear.",
+    "",
+    "THE QUESTION FOR THE CLAN: where does the boundary run across the",
+    "north? Either the 20 July line titled 'Mungaikol Clan Sacred site",
+    "boundary' is the land boundary, leaving 3.2 km unwalked, or it is",
+    "what he titled it and the unwalked stretch is the 4.0 km across the",
+    "north. The two readings differ by about a third of the clan's land.",
+    "Graham is from the clan, so it goes to the clan with the map."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
-   "NOT READY. Walked by Graham Ekiawa alone over nine days, 18.2 km recorded. The map cannot be completed until the clan answers one question.",
+   "GOES BACK TO THE CLAN TO REVIEW. Walked by Graham Ekiawa alone over nine days, 18.2 km recorded. Graham is from the clan, so the question goes to the clan with the map rather than to him on his own.",
    "",
    "FOR THE CLAN TO CONFIRM: where does the boundary run across the north?",
    "",
@@ -4393,19 +5184,20 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 396.6,
   "map": "Riribudeh_Zone_8.png",
-  "approved": {
-   "on": "2026-10-11",
-   "map": "Riribudeh_Zone_8.png",
-   "todo": [
-    "Community confirmation on chord 1, the 203 m real gap between Butam do and Muamara. Both stewards stopped at Butam do and both resumed at Muamara, and the middle of the gap is 85 m from any walked line. It needs walking.",
-    "Ask the clan what Jaginhul is. Unido Ose puts the name on three recordings at the eastern turn, where both stewards leave the boundary, make the same eastward excursion and both rejoin. Knowing what it is would settle whether that excursion is the boundary or a detour around something.",
-    "The 48 m closing the break on the eastern boundary is a straight line, not walked. It runs up to 18 m inside the stewards' tracks where they loop out around it. Confirm or correct."
-   ]
+  "ready": {
+   "round": 1,
+   "on": null,
+   "map": null,
+   "name": null,
+   "lines_only": false,
+   "withhold_area": false,
+   "why": []
   },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
   "field_notes": [
    "Walked by Unido Ose and Prut Buitari together; their two lines sit on top of each other for almost the whole boundary.",
@@ -4461,13 +5253,31 @@
   "join_sep_ha": 0.0,
   "join_joined_ha": 0.0,
   "map": "Uremkol_Zone_8.png",
-  "approved": null,
+  "ready": {
+   "round": 1,
+   "on": "2026-10-15",
+   "map": "output/rounds/round1/uremkol_r1.png",
+   "name": null,
+   "lines_only": true,
+   "withhold_area": false,
+   "why": [
+    "Into the report as the recordings themselves. No polygon, no",
+    "chords, no area: 5.54 km of the 15.7 km line was ground nobody",
+    "walked.",
+    "",
+    "Three recordings from Cyprian Sirami, 11.2 km."
+   ]
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
-   "internal_ha": 0.0
+   "internal_ha": 0.0,
+   "named": []
   },
-  "field_notes": [],
+  "field_notes": [
+   "No polygon and no closing. Of the 15.7 km line the solver drew, 5.54 km was ground nobody walked, enclosing 226.1 ha. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves.",
+   "Three recordings from Cyprian Sirami, 11.2 km."
+  ],
   "field_source": null,
   "river_boundary": false,
   "gpx": "Uremkol_Zone_8.gpx",
