@@ -1,3 +1,25 @@
+## 1.16 — 16 October 2026
+
+* **A survey is a clan's boundary in a zone, and the count now says so.**
+  The headline read "Surveys included: 72", which counted source files,
+  while the same document said a pair of Clan Stewards is one survey. The
+  two could not both be true. Surveys are now counted as clan-and-zone
+  units — 51 — and the number of files they arrived in is given beside it.
+
+* **The process narrative is out of the clan report.** The developer
+  changelog was being printed into the document the clans read, along with
+  paragraphs on how piece ordering affects the result and why two stewards
+  are one survey. The facts stay; the reasoning about the software has gone
+  back to this file, which is where it belongs.
+
+* **Sacred sites are named for the landowners and the reviewer** (rule 19),
+  with the notice that the report goes to them and to nobody else. The
+  circuits stay out of the boundary network.
+
+* **Each clan page shows the map that went to the clan**, under its review
+  round and date, with the reviewer's reasoning. Rounds are kept, so a later
+  round cannot overwrite what an earlier one showed.
+
 # Document changelog
 
 What changed between versions of the generated documents. The top section is

@@ -348,7 +348,12 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
     summary = {
         "clans": int(named.clan.nunique()),
         "stewards": int(tracks.steward.nunique()),
-        "surveys": int(tracks.source_name.nunique()),
+        # A survey is a clan's boundary in a zone, however many Clan
+        # Stewards walked it. Counting source files instead said 72, which
+        # contradicted the document's own statement that a pair of stewards
+        # is one survey.
+        "surveys": int(dataio.survey_group(tracks).nunique()),
+        "files": int(tracks.source_name.nunique()),
         "units": int(len(surveys)),
         "tracks": int(len(tracks)),
         "walked_km": round(tracks.geometry.length.sum() / 1000, 1),
@@ -488,6 +493,7 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             # that way, with no error anywhere.
             "map": _json(join_row["map"]) if join_row is not None else None,
             "ready": _latest_round(approve.approved(unit)),
+            "stored": stored_boundary(unit),
             "sacred": sacred_sites(unit, group),
             "field_notes": notes.get(unit, {}).get("notes", []),
             "field_source": notes.get(unit, {}).get("source"),
@@ -496,9 +502,79 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
             "gpx_gaps": gpx.get(dataio.safe_name(unit), {}).get("gaps", 0),
         })
 
+    # Only what the reviewer looked at and agreed goes out. Where a
+    # boundary was written down segment by segment, its figures replace the
+    # solver's draft. Where the reviewer took the polygon away, no area is
+    # published at all.
+    for record in records:
+        ready = record.get("ready") or {}
+        stored = record.get("stored")
+        if stored:
+            record["area_ha"] = stored["area_ha"]
+            record["basis"] = "walked" if not stored["drawn_km"] else "implied"
+            record["gap_km"] = stored["drawn_km"]
+            record["walked_km"] = stored["walked_km"]
+            record["bridges"] = None
+            record["gap_pct"] = (round(stored["drawn_km"]
+                                       / stored["walked_km"] * 100, 1)
+                                 if stored["walked_km"] else None)
+        if ready.get("lines_only") or ready.get("withhold_area"):
+            record["area_ha"] = None
+            record["basis"] = None
+            record["gap_km"] = None
+            record["gap_pct"] = None
+            record["bridges"] = None
+            record["overlaps"] = []
+            record["parcels"] = None
+        record["lines_only"] = bool(ready.get("lines_only"))
+        record["withhold_area"] = bool(ready.get("withhold_area"))
+
     records.sort(key=lambda r: (r["zone"], r["clan"]))
     return {"summary": summary, "clans": records}
 
+
+
+
+BOUNDARY_DIR = dataio.REPO_ROOT / "data" / "boundaries"
+
+
+def stored_boundary(unit: str):
+    """The boundary as the reviewer settled it, if there is one.
+
+    The solver's polygon layer is a first draft. Where a boundary has been
+    worked through segment by segment and written down, that file is the
+    answer and the draft must not be reported in its place.
+    """
+    where = BOUNDARY_DIR / f"{dataio.safe_name(unit)}.json"
+    if not where.exists():
+        return None
+    try:
+        book = json.loads(where.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    segments = book.get("segments") or []
+    if not segments:
+        return None
+    import boundary as boundary_tools
+    land = boundary_tools.ring_geometry(book)
+    def total(kind, basis=None):
+        return sum(s["length_m"] for s in segments
+                   if s["kind"] == kind
+                   and (basis is None or s.get("basis") == basis))
+    walked = total("walked")
+    drawn = total("drawn")
+    implied = sum(s["length_m"] for s in segments if s["kind"] == "implied")
+    river = total("implied", "river")
+    return {
+        "segments": len(segments),
+        "walked_km": round(walked / 1000, 2),
+        "drawn_km": round(drawn / 1000, 2),
+        "implied_km": round(implied / 1000, 2),
+        "river_km": round(river / 1000, 2),
+        "area_ha": round(land.area / 1e4, 1) if land is not None else None,
+        "closed": land is not None,
+        "written": book.get("solved"),
+    }
 
 
 def _latest_round(entry):

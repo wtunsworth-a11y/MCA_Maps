@@ -93,6 +93,7 @@ body.push(table(["This version","Detail"], [
   ["Generated", ctx.date_long],
   ["Data through", sum.last_walk || "—"],
   ["Surveys included", money(sum.surveys)],
+  ["Files they came in", money(sum.files)],
   ["Code revision", ctx.commit || "—"],
 ], [3,7]));
 // The developer changelog used to be printed here. It is an account of how

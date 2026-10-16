@@ -100,6 +100,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -110,7 +111,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Asingi_Zone_2.gpx",
-  "gpx_gaps": 0
+  "gpx_gaps": 0,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Asoro \u2014 Zone 2",
@@ -132,30 +135,13 @@
   "spur_km": 3.51,
   "status": "open",
   "chains": 2,
-  "gap_km": 7.99,
-  "gap_pct": 37.7,
-  "area_ha": 3506.7,
-  "basis": "implied",
-  "parcels": 1,
-  "bridges": 2,
-  "overlaps": [
-   {
-    "with": "Sukandi",
-    "ha": 231.8,
-    "pct": 6.6,
-    "beyond_tol_ha": 231.2,
-    "beyond_tol_pct": 6.6,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Juaiko",
-    "ha": 15.2,
-    "pct": 0.4,
-    "beyond_tol_ha": 14.7,
-    "beyond_tol_pct": 0.4,
-    "verdict": "overlap"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Sukandi",
@@ -196,6 +182,7 @@
     "walked tracks at 11-12 m per point. Only Asoro is like this."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -211,7 +198,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Asoro_Zone_2.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Bujevi \u2014 Zone 2",
@@ -233,12 +222,12 @@
   "spur_km": 1.13,
   "status": "open",
   "chains": 1,
-  "gap_km": 4.47,
-  "gap_pct": 83.8,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -276,6 +265,7 @@
     "for Abel Kajari. Who walked it goes to the clan as a question."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -290,7 +280,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Bujevi_Zone_2.gpx",
-  "gpx_gaps": 1
+  "gpx_gaps": 1,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Gariniko \u2014 Zone 2",
@@ -312,38 +304,13 @@
   "spur_km": 1.53,
   "status": "open",
   "chains": 4,
-  "gap_km": 4.78,
-  "gap_pct": 49.7,
-  "area_ha": 106.6,
-  "basis": "implied",
-  "parcels": 1,
-  "bridges": 4,
-  "overlaps": [
-   {
-    "with": "Asingi",
-    "ha": 4.1,
-    "pct": 3.9,
-    "beyond_tol_ha": 2.6,
-    "beyond_tol_pct": 2.5,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Kasaki",
-    "ha": 1.9,
-    "pct": 1.8,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Murai (Z2)",
-    "ha": 0.5,
-    "pct": 0.5,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Asingi",
@@ -399,6 +366,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -413,7 +381,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Gariniko_Zone_2.gpx",
-  "gpx_gaps": 4
+  "gpx_gaps": 4,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Juaiko \u2014 Zone 2",
@@ -506,6 +476,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 4,
@@ -539,7 +510,9 @@
   "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Juaiko_Zone_2.gpx",
-  "gpx_gaps": 4
+  "gpx_gaps": 4,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Kasaki \u2014 Zone 2",
@@ -653,6 +626,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -665,7 +639,9 @@
   "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Kasaki_Zone_2.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Majanko \u2014 Zone 2",
@@ -745,6 +721,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -755,7 +732,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Majanko_Zone_2.gpx",
-  "gpx_gaps": 0
+  "gpx_gaps": 0,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Manoko \u2014 Zone 2",
@@ -777,30 +756,13 @@
   "spur_km": 1.81,
   "status": "open",
   "chains": 3,
-  "gap_km": 2.86,
-  "gap_pct": 23.9,
-  "area_ha": 118.0,
-  "basis": "implied",
-  "parcels": 1,
-  "bridges": 3,
-  "overlaps": [
-   {
-    "with": "Juaiko",
-    "ha": 106.2,
-    "pct": 90.0,
-    "beyond_tol_ha": 104.3,
-    "beyond_tol_pct": 88.4,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Sukandi",
-    "ha": 12.1,
-    "pct": 10.2,
-    "beyond_tol_ha": 9.5,
-    "beyond_tol_pct": 8.0,
-    "verdict": "overlap"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Juaiko",
@@ -853,6 +815,7 @@
     "again."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -866,7 +829,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Manoko_Zone_2.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Murai (Z2) \u2014 Zone 2",
@@ -964,6 +929,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -974,7 +940,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Murai_Z2_Zone_2.gpx",
-  "gpx_gaps": 0
+  "gpx_gaps": 0,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Nituri \u2014 Zone 2",
@@ -1010,16 +978,16 @@
    }
   ],
   "n_stewards": 3,
-  "walked_km": 41.83,
+  "walked_km": 35.17,
   "spur_km": 10.45,
   "status": "open",
   "chains": 14,
-  "gap_km": 11.18,
-  "gap_pct": 29.5,
+  "gap_km": 6.43,
+  "gap_pct": 18.3,
   "area_ha": 5171.3,
   "basis": "implied",
   "parcels": 1,
-  "bridges": 14,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Tuoko",
@@ -1089,6 +1057,16 @@
     "Visua carrying 41.8 km."
    ]
   },
+  "stored": {
+   "segments": 14,
+   "walked_km": 35.17,
+   "drawn_km": 6.43,
+   "implied_km": 0.0,
+   "river_km": 0.0,
+   "area_ha": 5171.3,
+   "closed": true,
+   "written": "2026-10-15"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1099,7 +1077,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Nituri_Zone_2.gpx",
-  "gpx_gaps": 12
+  "gpx_gaps": 12,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Rondi \u2014 Zone 2",
@@ -1198,6 +1178,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 5,
@@ -1229,7 +1210,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Rondi_Zone_2.gpx",
-  "gpx_gaps": 0
+  "gpx_gaps": 0,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Rumbi \u2014 Zone 2",
@@ -1251,12 +1234,12 @@
   "spur_km": 3.73,
   "status": "open",
   "chains": 3,
-  "gap_km": 9.94,
-  "gap_pct": 72.6,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -1298,6 +1281,7 @@
     "Nine recordings from Joel Mamata."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1311,7 +1295,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Rumbi_Zone_2.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Sukandi \u2014 Zone 2",
@@ -1439,6 +1425,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 3,
    "internal": 0,
@@ -1462,7 +1449,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Sukandi_Zone_2.gpx",
-  "gpx_gaps": 0
+  "gpx_gaps": 0,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Tuoko \u2014 Zone 2",
@@ -1489,16 +1478,16 @@
    }
   ],
   "n_stewards": 2,
-  "walked_km": 47.72,
+  "walked_km": 34.54,
   "spur_km": 9.47,
   "status": "open",
   "chains": 8,
-  "gap_km": 15.79,
-  "gap_pct": 34.8,
-  "area_ha": 3027.2,
+  "gap_km": 4.59,
+  "gap_pct": 13.3,
+  "area_ha": 3156.1,
   "basis": "implied",
   "parcels": 2,
-  "bridges": 8,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Nituri",
@@ -1596,6 +1585,16 @@
     "Still to walk: s7 2,182 m, s42's two ends, s9 270 m, s2 245 m."
    ]
   },
+  "stored": {
+   "segments": 41,
+   "walked_km": 34.54,
+   "drawn_km": 4.59,
+   "implied_km": 0.37,
+   "river_km": 0.0,
+   "area_ha": 3156.1,
+   "closed": true,
+   "written": "2026-10-15"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1606,7 +1605,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Tuoko_Zone_2.gpx",
-  "gpx_gaps": 6
+  "gpx_gaps": 6,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Zambiko \u2014 Zone 2",
@@ -1628,12 +1629,12 @@
   "spur_km": 1.17,
   "status": "open",
   "chains": 5,
-  "gap_km": 21.56,
-  "gap_pct": 419.9,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -1700,6 +1701,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1713,7 +1715,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Zambiko_Zone_2.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Deari \u2014 Zone 3",
@@ -1740,16 +1744,16 @@
    }
   ],
   "n_stewards": 2,
-  "walked_km": 13.09,
+  "walked_km": 7.81,
   "spur_km": 2.22,
   "status": "open",
   "chains": 3,
-  "gap_km": 8.74,
-  "gap_pct": 70.2,
-  "area_ha": null,
-  "basis": null,
+  "gap_km": 8.56,
+  "gap_pct": 109.6,
+  "area_ha": 995.5,
+  "basis": "implied",
   "parcels": 0,
-  "bridges": 0,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -1792,6 +1796,16 @@
     "Nothing is merged and nothing moved. See output/queries/deari_nui.png."
    ]
   },
+  "stored": {
+   "segments": 7,
+   "walked_km": 7.81,
+   "drawn_km": 8.56,
+   "implied_km": 0.0,
+   "river_km": 0.0,
+   "area_ha": 995.5,
+   "closed": true,
+   "written": "2026-10-13"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1807,7 +1821,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Deari_Zone_3.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Giroiko \u2014 Zone 3",
@@ -1838,12 +1854,12 @@
   "spur_km": 0.41,
   "status": "open",
   "chains": 2,
-  "gap_km": 1.27,
-  "gap_pct": 25.2,
-  "area_ha": 9.5,
-  "basis": "implied",
-  "parcels": 4,
-  "bridges": 2,
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -1871,6 +1887,7 @@
     "Three recordings from Mark Samba and Eddie Sioro, none captioned."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1884,7 +1901,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Giroiko_Zone_3.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Gumuri \u2014 Zone 3",
@@ -1915,12 +1934,12 @@
   "spur_km": 0.25,
   "status": "open",
   "chains": 1,
-  "gap_km": 5.49,
-  "gap_pct": 83.9,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -1949,6 +1968,7 @@
     "dataset."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -1964,7 +1984,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Gumuri_Zone_3.gpx",
-  "gpx_gaps": 1
+  "gpx_gaps": 1,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Nui \u2014 Zone 3",
@@ -1995,12 +2017,12 @@
   "spur_km": 5.69,
   "status": "open",
   "chains": 6,
-  "gap_km": 14.73,
-  "gap_pct": 66.2,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -2037,6 +2059,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 21.7 km line the solver drew, 13.92 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2051,7 +2074,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Nui_Zone_3.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Savasi \u2014 Zone 3",
@@ -2073,12 +2098,12 @@
   "spur_km": 0.0,
   "status": "open",
   "chains": 3,
-  "gap_km": 5.11,
-  "gap_pct": 126.7,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -2112,6 +2137,7 @@
     "edge."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2128,7 +2154,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Savasi_Zone_3.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Manuvoora \u2014 Zone 6",
@@ -2212,6 +2240,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2228,7 +2257,9 @@
   "field_source": "Field advice, 24 August 2026, on an annotated printout",
   "river_boundary": true,
   "gpx": "Manuvoora_Zone_6.gpx",
-  "gpx_gaps": 6
+  "gpx_gaps": 6,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Mariura \u2014 Zone 6",
@@ -2259,38 +2290,13 @@
   "spur_km": 0.0,
   "status": "open",
   "chains": 13,
-  "gap_km": 15.43,
-  "gap_pct": 45.8,
-  "area_ha": 299.9,
-  "basis": "implied",
-  "parcels": 2,
-  "bridges": 13,
-  "overlaps": [
-   {
-    "with": "Naharaura",
-    "ha": 80.8,
-    "pct": 26.9,
-    "beyond_tol_ha": 77.3,
-    "beyond_tol_pct": 25.8,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Borori",
-    "ha": 3.5,
-    "pct": 1.2,
-    "beyond_tol_ha": 1.4,
-    "beyond_tol_pct": 0.5,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Sahirut",
-    "ha": 1.1,
-    "pct": 0.4,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Naharaura",
@@ -2332,6 +2338,7 @@
     "from Livingstone Nisavora and Fabian Justin."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2345,7 +2352,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Mariura_Zone_6.gpx",
-  "gpx_gaps": 9
+  "gpx_gaps": 9,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Naharaura \u2014 Zone 6",
@@ -2415,6 +2424,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2425,7 +2435,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Naharaura_Zone_6.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Nupa Ora \u2014 Zone 6",
@@ -2447,12 +2459,12 @@
   "spur_km": 0.62,
   "status": "open",
   "chains": 2,
-  "gap_km": 3.56,
-  "gap_pct": 72.0,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -2480,6 +2492,7 @@
     "named on one of them and appears nowhere else in the dataset."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2494,7 +2507,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Nupa_Ora_Zone_6.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Pina Ora \u2014 Zone 6",
@@ -2577,6 +2592,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2591,7 +2607,9 @@
   "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Pina_Ora_Zone_6.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Sahirut \u2014 Zone 6",
@@ -2683,6 +2701,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2696,7 +2715,9 @@
   "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Sahirut_Zone_6.gpx",
-  "gpx_gaps": 1
+  "gpx_gaps": 1,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Bimkol \u2014 Zone 7A",
@@ -2714,16 +2735,16 @@
    }
   ],
   "n_stewards": 1,
-  "walked_km": 8.01,
+  "walked_km": 6.68,
   "spur_km": 1.78,
   "status": "open",
   "chains": 3,
-  "gap_km": 3.64,
-  "gap_pct": 49.7,
-  "area_ha": 51.7,
+  "gap_km": 0.07,
+  "gap_pct": 1.0,
+  "area_ha": 161.4,
   "basis": "implied",
   "parcels": 2,
-  "bridges": 3,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Darekikol",
@@ -2770,6 +2791,16 @@
     "boundary and goes to the clan as a question."
    ]
   },
+  "stored": {
+   "segments": 9,
+   "walked_km": 6.68,
+   "drawn_km": 0.07,
+   "implied_km": 0.0,
+   "river_km": 0.0,
+   "area_ha": 161.4,
+   "closed": true,
+   "written": "2026-10-15"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2784,7 +2815,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Bimkol_Zone_7A.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Borori \u2014 Zone 7A",
@@ -2811,16 +2844,16 @@
    }
   ],
   "n_stewards": 2,
-  "walked_km": 32.69,
+  "walked_km": 21.32,
   "spur_km": 8.01,
   "status": "open",
   "chains": 10,
-  "gap_km": 6.72,
-  "gap_pct": 22.8,
-  "area_ha": 639.8,
+  "gap_km": 0.15,
+  "gap_pct": 0.7,
+  "area_ha": 740.0,
   "basis": "implied",
   "parcels": 2,
-  "bridges": 10,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Darekikol",
@@ -2897,6 +2930,16 @@
     "settled either way. It goes to the clan as a question."
    ]
   },
+  "stored": {
+   "segments": 27,
+   "walked_km": 21.32,
+   "drawn_km": 0.15,
+   "implied_km": 0.74,
+   "river_km": 0.21,
+   "area_ha": 740.0,
+   "closed": true,
+   "written": "2026-10-15"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -2911,7 +2954,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Borori_Zone_7A.gpx",
-  "gpx_gaps": 7
+  "gpx_gaps": 7,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Darekikol \u2014 Zone 7A",
@@ -2938,16 +2983,16 @@
    }
   ],
   "n_stewards": 2,
-  "walked_km": 28.76,
+  "walked_km": 18.44,
   "spur_km": 6.68,
   "status": "open",
   "chains": 7,
-  "gap_km": 6.49,
-  "gap_pct": 24.9,
-  "area_ha": 568.9,
+  "gap_km": 3.62,
+  "gap_pct": 19.6,
+  "area_ha": 612.1,
   "basis": "implied",
   "parcels": 1,
-  "bridges": 7,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Borori",
@@ -3010,6 +3055,16 @@
     "already touch s19 and s16 at 7 m and 10 m."
    ]
   },
+  "stored": {
+   "segments": 31,
+   "walked_km": 18.44,
+   "drawn_km": 3.62,
+   "implied_km": 0.18,
+   "river_km": 0.0,
+   "area_ha": 612.1,
+   "closed": true,
+   "written": "2026-10-13"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3020,7 +3075,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Darekikol_Zone_7A.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Abuankol \u2014 Zone 7B",
@@ -3042,12 +3099,12 @@
   "spur_km": 0.0,
   "status": "open",
   "chains": 3,
-  "gap_km": 1.17,
-  "gap_pct": 227.5,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -3114,6 +3171,7 @@
     "No polygon and no closing \u2014 not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3127,7 +3185,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Abuankol_Zone_7B.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Ambunkol \u2014 Zone 7B",
@@ -3145,16 +3205,16 @@
    }
   ],
   "n_stewards": 1,
-  "walked_km": 18.6,
+  "walked_km": 16.51,
   "spur_km": 4.03,
   "status": "open",
   "chains": 6,
-  "gap_km": 3.55,
-  "gap_pct": 20.5,
-  "area_ha": 662.5,
+  "gap_km": 2.75,
+  "gap_pct": 16.7,
+  "area_ha": 662.4,
   "basis": "implied",
   "parcels": 1,
-  "bridges": 6,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Natang",
@@ -3245,6 +3305,16 @@
     "what those two stretches are. Nobody is sent to walk them first."
    ]
   },
+  "stored": {
+   "segments": 12,
+   "walked_km": 16.51,
+   "drawn_km": 2.75,
+   "implied_km": 0.17,
+   "river_km": 0.0,
+   "area_ha": 662.4,
+   "closed": true,
+   "written": "2026-10-12"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3260,7 +3330,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Ambunkol_Zone_7B.gpx",
-  "gpx_gaps": 4
+  "gpx_gaps": 4,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Binunkol \u2014 Zone 7B",
@@ -3278,16 +3350,16 @@
    }
   ],
   "n_stewards": 1,
-  "walked_km": 17.81,
+  "walked_km": 15.73,
   "spur_km": 4.11,
   "status": "open",
   "chains": 19,
-  "gap_km": 6.41,
-  "gap_pct": 40.0,
-  "area_ha": 1033.0,
+  "gap_km": 2.61,
+  "gap_pct": 16.6,
+  "area_ha": 1026.0,
   "basis": "implied",
   "parcels": 1,
-  "bridges": 19,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Jariji",
@@ -3423,6 +3495,16 @@
     "were settled by the reviewer, along with five small seams."
    ]
   },
+  "stored": {
+   "segments": 43,
+   "walked_km": 15.73,
+   "drawn_km": 2.61,
+   "implied_km": 3.11,
+   "river_km": 2.32,
+   "area_ha": 1026.0,
+   "closed": true,
+   "written": "2026-10-13"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3433,7 +3515,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Binunkol_Zone_7B.gpx",
-  "gpx_gaps": 15
+  "gpx_gaps": 15,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Ginangi \u2014 Zone 7B",
@@ -3460,16 +3544,16 @@
    }
   ],
   "n_stewards": 2,
-  "walked_km": 36.73,
+  "walked_km": 14.85,
   "spur_km": 4.24,
   "status": "open",
   "chains": 7,
-  "gap_km": 10.56,
-  "gap_pct": 31.3,
-  "area_ha": 382.5,
+  "gap_km": 0.72,
+  "gap_pct": 4.8,
+  "area_ha": 648.7,
   "basis": "implied",
   "parcels": 1,
-  "bridges": 7,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Manang",
@@ -3563,6 +3647,16 @@
     "The reviewer noted the map's scaling looks off; to be looked at."
    ]
   },
+  "stored": {
+   "segments": 4,
+   "walked_km": 14.85,
+   "drawn_km": 0.72,
+   "implied_km": 0.0,
+   "river_km": 0.0,
+   "area_ha": 648.7,
+   "closed": true,
+   "written": "2026-10-13"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3573,7 +3667,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Ginangi_Zone_7B.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Jariji \u2014 Zone 7B",
@@ -3604,46 +3700,13 @@
   "spur_km": 5.77,
   "status": "open",
   "chains": 6,
-  "gap_km": 9.68,
-  "gap_pct": 66.4,
-  "area_ha": 536.9,
-  "basis": "implied",
-  "parcels": 2,
-  "bridges": 6,
-  "overlaps": [
-   {
-    "with": "Binunkol",
-    "ha": 47.6,
-    "pct": 8.9,
-    "beyond_tol_ha": 45.0,
-    "beyond_tol_pct": 8.4,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Wohukol",
-    "ha": 41.9,
-    "pct": 7.8,
-    "beyond_tol_ha": 41.5,
-    "beyond_tol_pct": 7.7,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Sugulkol",
-    "ha": 4.3,
-    "pct": 0.8,
-    "beyond_tol_ha": 2.9,
-    "beyond_tol_pct": 0.5,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Ambunkol",
-    "ha": 0.1,
-    "pct": 0.0,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Wohukol",
@@ -3704,6 +3767,7 @@
     "No polygon and no closing. The reviewer judged on 2026-10-13 that this survey does not carry a boundary: of the line the solver drew, 8.56 km of 18.6 km was ground nobody walked. It goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3719,7 +3783,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Jariji_Zone_7B.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Manang \u2014 Zone 7B",
@@ -3799,6 +3865,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3809,7 +3876,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Manang_Zone_7B.gpx",
-  "gpx_gaps": 1
+  "gpx_gaps": 1,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Marang \u2014 Zone 7B",
@@ -3831,12 +3900,12 @@
   "spur_km": 1.33,
   "status": "open",
   "chains": 2,
-  "gap_km": 5.06,
-  "gap_pct": 61.4,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -3878,6 +3947,7 @@
     "No polygon and no closing \u2014 not enough to work with. Two recordings from Henry Manderi carrying 9.7 km; of the 9.6 km line the solver drew, 3.75 km was a single straight gap nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3891,7 +3961,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Marang_Zone_7B.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Marijabimkol \u2014 Zone 7B",
@@ -3909,16 +3981,16 @@
    }
   ],
   "n_stewards": 1,
-  "walked_km": 10.97,
+  "walked_km": 7.71,
   "spur_km": 2.49,
   "status": "open",
   "chains": 4,
-  "gap_km": 6.08,
-  "gap_pct": 61.1,
-  "area_ha": null,
-  "basis": null,
+  "gap_km": 0.24,
+  "gap_pct": 3.1,
+  "area_ha": 136.5,
+  "basis": "implied",
   "parcels": 0,
-  "bridges": 0,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -3980,6 +4052,16 @@
     "the rest. It goes to the clan as a question, not closed over."
    ]
   },
+  "stored": {
+   "segments": 6,
+   "walked_km": 7.71,
+   "drawn_km": 0.24,
+   "implied_km": 0.0,
+   "river_km": 0.0,
+   "area_ha": 136.5,
+   "closed": true,
+   "written": "2026-10-15"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -3993,7 +4075,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Marijabimkol_Zone_7B.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Murai (Z7B) \u2014 Zone 7B",
@@ -4091,6 +4175,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4118,7 +4203,9 @@
   "field_source": "Raw recording titles; reviewed 11 October 2026",
   "river_boundary": false,
   "gpx": "Murai_Z7B_Zone_7B.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Natang \u2014 Zone 7B",
@@ -4239,6 +4326,7 @@
     "fixes, not from the stored-segment model."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4249,7 +4337,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Natang_Zone_7B.gpx",
-  "gpx_gaps": 0
+  "gpx_gaps": 0,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Sugulkol \u2014 Zone 7B",
@@ -4280,62 +4370,13 @@
   "spur_km": 1.29,
   "status": "open",
   "chains": 6,
-  "gap_km": 7.03,
-  "gap_pct": 31.0,
-  "area_ha": 199.5,
-  "basis": "implied",
-  "parcels": 2,
-  "bridges": 6,
-  "overlaps": [
-   {
-    "with": "Ambunkol",
-    "ha": 9.6,
-    "pct": 4.8,
-    "beyond_tol_ha": 9.1,
-    "beyond_tol_pct": 4.6,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Wohukol",
-    "ha": 8.7,
-    "pct": 4.4,
-    "beyond_tol_ha": 6.3,
-    "beyond_tol_pct": 3.2,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Jariji",
-    "ha": 4.3,
-    "pct": 2.2,
-    "beyond_tol_ha": 2.9,
-    "beyond_tol_pct": 1.4,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Natang",
-    "ha": 3.8,
-    "pct": 1.9,
-    "beyond_tol_ha": 1.4,
-    "beyond_tol_pct": 0.7,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Binunkol",
-    "ha": 1.5,
-    "pct": 0.8,
-    "beyond_tol_ha": 1.3,
-    "beyond_tol_pct": 0.6,
-    "verdict": "overlap"
-   },
-   {
-    "with": "Manang",
-    "ha": 0.1,
-    "pct": 0.0,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Ambunkol",
@@ -4406,6 +4447,7 @@
     "No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4421,7 +4463,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Sugulkol_Zone_7B.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Wohukol \u2014 Zone 7B",
@@ -4448,16 +4492,16 @@
    }
   ],
   "n_stewards": 2,
-  "walked_km": 34.91,
+  "walked_km": 17.76,
   "spur_km": 4.87,
   "status": "open",
   "chains": 4,
-  "gap_km": 6.93,
-  "gap_pct": 21.0,
+  "gap_km": 4.48,
+  "gap_pct": 25.2,
   "area_ha": 513.1,
   "basis": "implied",
   "parcels": 3,
-  "bridges": 4,
+  "bridges": null,
   "overlaps": [
    {
     "with": "Jariji",
@@ -4572,6 +4616,16 @@
     "11 segments, 17.76 km walked, 4.48 km still to walk, 513.1 ha."
    ]
   },
+  "stored": {
+   "segments": 11,
+   "walked_km": 17.76,
+   "drawn_km": 4.48,
+   "implied_km": 0.0,
+   "river_km": 0.0,
+   "area_ha": 513.1,
+   "closed": true,
+   "written": "2026-10-13"
+  },
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4589,7 +4643,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Wohukol_Zone_7B.gpx",
-  "gpx_gaps": 4
+  "gpx_gaps": 4,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Duribip \u2014 Zone 8",
@@ -4611,12 +4667,12 @@
   "spur_km": 0.22,
   "status": "open",
   "chains": 3,
-  "gap_km": 5.9,
-  "gap_pct": 139.2,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -4648,6 +4704,7 @@
     "No polygon and no closing \u2014 not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4662,7 +4719,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Duribip_Zone_8.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Dusi \u2014 Zone 8",
@@ -4732,6 +4791,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4746,7 +4806,9 @@
   "field_source": "Steward's own track descriptions, 12 June 2025; reviewed on the chord map 11 October 2026",
   "river_boundary": false,
   "gpx": "Dusi_Zone_8.gpx",
-  "gpx_gaps": 4
+  "gpx_gaps": 4,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Gubai \u2014 Zone 8",
@@ -4777,22 +4839,13 @@
   "spur_km": 0.0,
   "status": "near",
   "chains": 7,
-  "gap_km": 10.73,
-  "gap_pct": 8.0,
-  "area_ha": 497.1,
-  "basis": "implied",
-  "parcels": 1,
-  "bridges": 7,
-  "overlaps": [
-   {
-    "with": "Dusi",
-    "ha": 0.9,
-    "pct": 0.2,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Dusi",
@@ -4818,6 +4871,7 @@
     "No polygon and no closing. Of the 11.6 km line the solver drew, 10.24 km was ground nobody walked, while the file itself carries 134.5 km of walking. The line was a failure of the solve, not a boundary. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4832,7 +4886,9 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Gubai_Zone_8.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": true,
+  "withhold_area": false
  },
  {
   "unit": "Gumuyude \u2014 Zone 8",
@@ -4907,6 +4963,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -4922,7 +4979,9 @@
   "field_source": "Survey team, 10 October 2026",
   "river_boundary": false,
   "gpx": "Gumuyude_Zone_8.gpx",
-  "gpx_gaps": 5
+  "gpx_gaps": 5,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Madukol \u2014 Zone 8",
@@ -4944,12 +5003,12 @@
   "spur_km": 0.0,
   "status": "open",
   "chains": 2,
-  "gap_km": 0.29,
-  "gap_pct": 26.7,
-  "area_ha": 1.4,
-  "basis": "implied",
-  "parcels": 2,
-  "bridges": 2,
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -4986,6 +5045,7 @@
     "Darmal?"
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -5006,7 +5066,9 @@
   "field_source": "Raw recordings and the everything map, reviewed 12 October 2026",
   "river_boundary": false,
   "gpx": "Madukol_Zone_8.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": true,
+  "withhold_area": true
  },
  {
   "unit": "Mungaikol \u2014 Zone 8",
@@ -5028,30 +5090,13 @@
   "spur_km": 2.77,
   "status": "open",
   "chains": 3,
-  "gap_km": 1.86,
-  "gap_pct": 13.8,
-  "area_ha": 337.9,
-  "basis": "implied",
-  "parcels": 1,
-  "bridges": 3,
-  "overlaps": [
-   {
-    "with": "Gumuyude",
-    "ha": 0.0,
-    "pct": 0.0,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   },
-   {
-    "with": "Borori",
-    "ha": 0.0,
-    "pct": 0.0,
-    "beyond_tol_ha": 0.0,
-    "beyond_tol_pct": 0.0,
-    "verdict": "within tolerance"
-   }
-  ],
+  "gap_km": null,
+  "gap_pct": null,
+  "area_ha": null,
+  "basis": null,
+  "parcels": null,
+  "bridges": null,
+  "overlaps": [],
   "shared_lines": [
    {
     "with": "Uremkol",
@@ -5097,6 +5142,7 @@
     "Graham is from the clan, so it goes to the clan with the map."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -5125,7 +5171,9 @@
   "field_source": "Raw recording titles and timings, 13-21 July 2025; reviewed on the chord map 11 October 2026",
   "river_boundary": false,
   "gpx": "Mungaikol_Zone_8.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": false,
+  "withhold_area": true
  },
  {
   "unit": "Riribudeh \u2014 Zone 8",
@@ -5209,6 +5257,7 @@
    "withhold_area": false,
    "why": []
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -5225,7 +5274,9 @@
   "field_source": "Steward's own track descriptions, 15 July 2025; reviewed on the chord map 11 October 2026",
   "river_boundary": false,
   "gpx": "Riribudeh_Zone_8.gpx",
-  "gpx_gaps": 2
+  "gpx_gaps": 2,
+  "lines_only": false,
+  "withhold_area": false
  },
  {
   "unit": "Uremkol \u2014 Zone 8",
@@ -5247,12 +5298,12 @@
   "spur_km": 2.42,
   "status": "open",
   "chains": 4,
-  "gap_km": 6.26,
-  "gap_pct": 58.0,
+  "gap_km": null,
+  "gap_pct": null,
   "area_ha": null,
   "basis": null,
-  "parcels": 0,
-  "bridges": 0,
+  "parcels": null,
+  "bridges": null,
   "overlaps": [],
   "shared_lines": [
    {
@@ -5284,6 +5335,7 @@
     "Three recordings from Cyprian Sirami, 11.2 km."
    ]
   },
+  "stored": null,
   "sacred": {
    "tagged": 0,
    "internal": 0,
@@ -5297,6 +5349,8 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Uremkol_Zone_8.gpx",
-  "gpx_gaps": 3
+  "gpx_gaps": 3,
+  "lines_only": true,
+  "withhold_area": false
  }
 ]
