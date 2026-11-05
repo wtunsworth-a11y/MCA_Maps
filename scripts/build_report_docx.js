@@ -203,8 +203,43 @@ body.push(h("Sacred sites", HeadingLevel.HEADING_2));
 body.push(p("Reported by area and share of clan land only; locations are not shared. Three sites across two mapped units, covering an estimated 313–456 ha, being 16–24% of the host clan's land. The range reflects that neither walk closed, so the area can only be bracketed.", {size:21}));
 body.push(new Paragraph({ children:[new PageBreak()] }));
 
-// ---------------- 2. How to read the clan entries ----------------
-body.push(h("2. How to read the clan entries", HeadingLevel.HEADING_1));
+// ---------------- 2. The clans of the Managalas ----------------
+const ros = sum.roster || null;
+if (ros) {
+body.push(h("2. The clans of the Managalas", HeadingLevel.HEADING_1));
+body.push(p(`${money(ros.on_roster)} clans are named across ${ros.zones.length} zones. The list is the Kiara Combined Forum's, settled over 30 and 31 October 2026, and it is the list of major clans — the work of separating major clan from sub-clan was done at the forum, not here.`, {size:21}));
+body.push(p(`${money(ros.mapped)} of them have a survey in this document. ${money(ros.awaiting)} are still to be heard from. Every one of them has a place waiting in these pages: the measurements, the maps and the tables are built the same way for each clan, so a survey that arrives next year is reported exactly as the ones here are.`, {size:21}));
+
+body.push(table(["Zone","Clans named","Mapped so far","Still to hear from"],
+  ros.zones.map(z=>[z.zone, money(z.on_roster), money(z.mapped), money(z.awaiting)])
+    .concat([["All zones", money(ros.on_roster), money(ros.mapped), money(ros.awaiting)]]),
+  [4,3,3,4]));
+body.push(note("Mapped means a survey has come in under exactly the name on this list. Where a survey came in under a different spelling of the same name, it is counted as still to hear from until the clan says the two names are one — see the last table in this section."));
+
+body.push(h("Clans still to be heard from", HeadingLevel.HEADING_2));
+body.push(p("By zone and village, as the forum recorded them. A clan that sees its own name here, or does not see it and should, is the right person to say so.", {size:21}));
+body.push(table(["Zone","Clan","Village"],
+  ros.awaiting_list.map(a=>[a.zone, a.clan, a.village]), [3,4,5]));
+
+if (ros.unmatched && ros.unmatched.length) {
+  const near = {};
+  for (const q of (ros.questions||[])) {
+    if (!near[q.survey]) near[q.survey] = [];
+    near[q.survey].push(q.roster_clan + (q.roster_taken && q.roster_taken.length ? " (already mapped)" : ""));
+  }
+  body.push(h("Names in the surveys that are not on the list", HeadingLevel.HEADING_2));
+  body.push(p(`${money(ros.unmatched.length)} of the ${money(sum.surveys)} surveys came in under a name that is not on the forum's list. Most are the same name spelled differently. Some may be a sub-clan that mapped its own ground while the forum was still separating major clan from sub-clan. Nothing has been decided here, and no two names have been treated as one: each is a question for the clan concerned.`, {size:21}));
+  body.push(table(["Zone","Name in the survey","Nearest name on the list"],
+    ros.unmatched.map(u=>[u.zone, u.clan, (near[u.unit]||[]).join(", ") || "— nothing close"]),
+    [3,4,5]));
+  body.push(note("“Already mapped” means another survey has come in under that name on the list. Two surveys against one name is either two Clan Stewards of the same clan, or a sub-clan holding ground of its own — the clan says which."));
+  body.push(note("The forum's list names Settlers twice: in Zone 7A at Road 3 & 7, and in Zone 7B at Blocks 1 & 2. The two Land Settlement blocks in this document are Road 3 & 4 in Zone 7A and Block 1 in Zone 7B. Whether each is the entry on the list is a question, and Road 3 & 7 and Road 3 & 4 are not the same words."));
+}
+body.push(new Paragraph({ children:[new PageBreak()] }));
+}
+
+// ---------------- 3. How to read the clan entries ----------------
+body.push(h("3. How to read the clan entries", HeadingLevel.HEADING_1));
 body.push(p("Each clan starts on a new page, so a single clan's pages can be taken out and discussed with that clan without the rest of the document going with them.", {size:21}));
 body.push(p("Each clan is assessed as one boundary within one zone. Where several stewards walked, their tracks are joined into a single survey — stewards of one clan are joined; different clans never are.", {size:21}));
 body.push(table(["Term","Meaning"], [
@@ -237,8 +272,8 @@ body.push(...bullets([
 ]));
 body.push(new Paragraph({ children:[new PageBreak()] }));
 
-// ---------------- 3. Clan entries ----------------
-body.push(h("3. Clans and Land Settlement blocks", HeadingLevel.HEADING_1));
+// ---------------- 4. Clan entries ----------------
+body.push(h("4. Clans and Land Settlement blocks", HeadingLevel.HEADING_1));
 body.push(p(`${sum.clans} clan boundaries and ${sum.blocks} Land Settlement blocks, in zone order. Each begins on its own page.`, {size:21}));
 body.push(note("A Land Settlement block names no clan. It is not a clan, and it is not treated as one here — the whole block is read as a single landholding group so that the walking done on it is reported alongside everything else. Whose land it is remains an open question."));
 
@@ -380,7 +415,7 @@ for (const c of clans) {
 
 // ---------------- 4. Appendix ----------------
 body.push(new Paragraph({ children:[new PageBreak()] }));
-body.push(h("4. Every overlapping pair", HeadingLevel.HEADING_1));
+body.push(h("5. Every overlapping pair", HeadingLevel.HEADING_1));
 body.push(p(`All ${sum.overlap_pairs} pairs of clans whose mapped land intersects, strictly and beyond the ${TOL} m tolerance. A pair marked “within tolerance” shares only strips narrower than that, and is not counted as an overlap.`, {size:21}));
 body.push(table(["Clan","Clan","Shared (ha)","% of first","% of second",`Beyond ${TOL} m (ha)`,"Verdict"],
   (sum.overlap_table||[]).map(r=>[r.clan_a, r.clan_b, money(r.shared_ha),

@@ -1,0 +1,932 @@
+{
+ "source": "MCA_Clans_by_Zone_v4.docx — Kiara Combined Forum, 30 and 31 October 2026",
+ "received": "2026-11-05",
+ "note": "The clans named at the forum, zone by zone, village by village, exactly as the forum recorded them. This file is a roster, not a measurement: it says who there is to hear from. It is never edited to match the spelling in a recording — where the two differ, the link is decided one clan at a time and written in roster_links.json.",
+ "entries": [
+  {
+   "zone": "Zone 1",
+   "clan": "Akare",
+   "village": "Umuate"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Dahari",
+   "village": "Kuae"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Deobi",
+   "village": "Itokama"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Kanamane",
+   "village": "Naokanane, Ufia"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Moeko",
+   "village": "Kuae"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Roiko",
+   "village": "Itokama"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Sako",
+   "village": "Kuae"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Sanae",
+   "village": "Naokanane, Ufia"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Uva",
+   "village": "Itokama"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Uvuombiro",
+   "village": "Umuate"
+  },
+  {
+   "zone": "Zone 1",
+   "clan": "Vajamo",
+   "village": "Naokanane, Ufia"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Asigi",
+   "village": "(not stated)"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Asoro",
+   "village": "Serefuna"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Bujevi",
+   "village": "(not stated)"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Garinko",
+   "village": "(not stated)"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Juaiko",
+   "village": "Tahama"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Kasaki",
+   "village": "Gajot"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Kasiko",
+   "village": "Tahama"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Kavako",
+   "village": "Kokoro"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Manoiko",
+   "village": "Serefuna"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Mazanko",
+   "village": "Serefuna"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Muanari",
+   "village": "Tahama"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Nituri",
+   "village": "Sagamasi"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Riko",
+   "village": "Kokoro"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Rondi",
+   "village": "Tahama"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Sukadi",
+   "village": "Tahama"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Tamaru",
+   "village": "Kokoro"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Tuko",
+   "village": "(not stated)"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Uagi",
+   "village": "Anatua"
+  },
+  {
+   "zone": "Zone 2",
+   "clan": "Zabiko",
+   "village": "Kokoro"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Abriz",
+   "village": "Natanga"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Abunraez",
+   "village": "Kiera"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Aguoenikol",
+   "village": "Kiera"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Anunaniz",
+   "village": "Natanga"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Arinikol",
+   "village": "Jorura"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Diari",
+   "village": "Koruwo"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Doiko",
+   "village": "Koruwo"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Giroko",
+   "village": "Koruwo"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Gumuri",
+   "village": "Koruwo"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Kakol",
+   "village": "Kiera"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Koegire",
+   "village": "Jorura"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Kuani",
+   "village": "Kiera"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Kukuko",
+   "village": "Koruwo"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Majai",
+   "village": "Kiera"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Managi",
+   "village": "Jorura"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Muaigi",
+   "village": "Kiera"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Muamutu",
+   "village": "Kiera"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Nui",
+   "village": "Koruwo"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Sawasi",
+   "village": "Koruwo"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Sirieg",
+   "village": "Natanga"
+  },
+  {
+   "zone": "Zone 3",
+   "clan": "Zai",
+   "village": "Jorura"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Asio",
+   "village": "Jaure"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Averi",
+   "village": "Suari"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Bidani",
+   "village": "Jaure"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Bie",
+   "village": "Aiari"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Bumeba",
+   "village": "Aiari"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Mikari",
+   "village": "Suari"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Mudi",
+   "village": "Aiari"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Orero",
+   "village": "Aiari-Suari"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Ruvari",
+   "village": "Jaure"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Suaisime",
+   "village": "Aiari"
+  },
+  {
+   "zone": "Zone 4",
+   "clan": "Udiri",
+   "village": "Jaure"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Ajabi",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Bonool",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Ceuse",
+   "village": "Ugunomo"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Dajoje",
+   "village": "Dea"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Dajoje",
+   "village": "Tabuane"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Danam",
+   "village": "Ugunomo"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Daudau",
+   "village": "Tabuane"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Dohol",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Guruije",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Ikole",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Ikole",
+   "village": "Tabuane"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Jiwara",
+   "village": "Tabuane"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Kubiol",
+   "village": "(no village)"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Marovekol",
+   "village": "Dea"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Mejekan",
+   "village": "Ugunomo"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Mesaje",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Niboije",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Osena",
+   "village": "Dea"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Samoije",
+   "village": "Siribu"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Sarusa",
+   "village": "Dea"
+  },
+  {
+   "zone": "Zone 5",
+   "clan": "Venikol",
+   "village": "Tabuane"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Ahusura",
+   "village": "Kaura"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Ajanija",
+   "village": "Numba/Sivurana"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Asinakura",
+   "village": "Sila"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Awakura",
+   "village": "Awaru"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Iko’ura",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Irumija",
+   "village": "Numba/Sivurana"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Kajanija",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Kui",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Manamko’ra",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Manukwiora",
+   "village": "Kaura"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Mareura",
+   "village": "Awaru"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Mera’Ora",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Mera’Ora",
+   "village": "Sila"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Midada",
+   "village": "Sigara"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Mighunija",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Muaturaina",
+   "village": "Numba/Sivurana"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Nahara’Ora",
+   "village": "Awaru"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Namakura",
+   "village": "Sila"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Narija",
+   "village": "Numba/Sivurana"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Nupa’Ora",
+   "village": "Numba/Sivurana"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Pakura",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Pena’Ora",
+   "village": "Awaru"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Sahiruta",
+   "village": "Kaura"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Sanarija",
+   "village": "Sila"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Siaja’ora",
+   "village": "Koeno"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Ueura",
+   "village": "Sigara"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Umudi",
+   "village": "Kuhara (?)"
+  },
+  {
+   "zone": "Zone 6",
+   "clan": "Urimukura",
+   "village": "Numba/Sivurana"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Ajokol",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Azabi",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Borori",
+   "village": "Dareki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Bumol",
+   "village": "Dareki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Butarat",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Daralkol",
+   "village": "Dareki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Dokap",
+   "village": "Dareki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Ginagi",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Kawowoki",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Kawuri",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Kawuribaru",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Kuhanakol",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Kuskol",
+   "village": "Kawowoki"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Settlers",
+   "village": "Road 3 & 7"
+  },
+  {
+   "zone": "Zone 7A",
+   "clan": "Tagul",
+   "village": "Dareki"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Abuankol",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Azabe",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Bajanei",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Binugkol",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Ginagi",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Jarigi",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Manag",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Marang",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Marijabinkol",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Murai",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Nahalkol",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Natang",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Settlers",
+   "village": "Blocks 1 & 2"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Sugulkol",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 7B",
+   "clan": "Wohukol",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Aduanakol",
+   "village": "Manusi, Yoivi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Aneji",
+   "village": "Ondoro, Umbara"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Asackol",
+   "village": "Damaral, Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Asuan",
+   "village": "Marasi, Manusi, Yoivi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Bagia",
+   "village": "Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Duribip",
+   "village": "Manusi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Gubai",
+   "village": "Umbara, Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Gumuyudae",
+   "village": "Ondoro"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Karira",
+   "village": "Umbara"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Kinun",
+   "village": "Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Madukol",
+   "village": "Manusi, Yoivi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Masuabip",
+   "village": "Manusi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Momokol",
+   "village": "Bioi, Vereyame"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Mugaikol",
+   "village": "Bioi, Daveki (?)"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Nagabaru",
+   "village": "Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Nituri",
+   "village": "Sarat"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Riribodae",
+   "village": "Umbara, Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Salakin",
+   "village": "Damaral, Yoivi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Saruan",
+   "village": "Damaral, Bua, Yoivi, Bioi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Suhikol",
+   "village": "Marasi & Kuhiane"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Titkol",
+   "village": "Sarat, Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Uekol",
+   "village": "Bua, Manusi, Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Uremkol",
+   "village": "Marasi"
+  },
+  {
+   "zone": "Zone 8",
+   "clan": "Uwana",
+   "village": "Umbara"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Auha",
+   "village": "Toma"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Baroi",
+   "village": "Toma"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Ihomo",
+   "village": "Toma"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Javejave",
+   "village": "Biriri"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Kita",
+   "village": "Gewoya"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Kobara",
+   "village": "Gewoya"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Mahake",
+   "village": "Biriri"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Mo-oni",
+   "village": "Toma"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Na-a",
+   "village": "Gewoya"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Tabuwai",
+   "village": "Biriri"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Torua",
+   "village": "Manana"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Umatei",
+   "village": "Gewoya"
+  },
+  {
+   "zone": "Zone 9",
+   "clan": "Warama",
+   "village": "Toma"
+  },
+  {
+   "zone": "Zone 10",
+   "clan": "Agabije",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 10",
+   "clan": "Aimapa",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 10",
+   "clan": "Dahoraje",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 10",
+   "clan": "Kuwanije",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 10",
+   "clan": "Misaje",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 10",
+   "clan": "Salkol",
+   "village": "(zone)"
+  },
+  {
+   "zone": "Zone 10",
+   "clan": "Suhinraje",
+   "village": "(zone)"
+  }
+ ]
+}

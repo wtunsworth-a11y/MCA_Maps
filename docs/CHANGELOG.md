@@ -1,3 +1,25 @@
+## 1.18 — 5 November 2026
+
+* **The report is set up to receive all 185 clans.** The Kiara Combined
+  Forum settled the list of major clans over 30 and 31 October 2026 — 185
+  clans across eleven zones, each with its village. A new section carries
+  that list: how many clans each zone names, how many have a survey in
+  hand, and the full list, by zone and village, of the clans still to be
+  heard from. Eighteen of the 185 have a survey here; 167 do not yet.
+
+* **Nothing is matched by resemblance.** A survey counts against a clan on
+  the list only when the name is exactly the same in the same zone.
+  Thirty-three of the 51 surveys came in under a name that is not on the
+  list, mostly the same name spelled differently, and the report says so
+  in a table rather than deciding it. Where a near name on the list has
+  already been mapped by another survey, the table says that too — two
+  surveys against one name is either two Clan Stewards of one clan or a
+  sub-clan holding ground of its own, and the clan says which. A decided
+  link is written down one clan at a time and never swept.
+
+* **Section numbers moved.** The clan list is section 2, so how to read
+  the clan entries is 3, the clan pages are 4, and the overlap table is 5.
+
 ## 1.17 — 16 October 2026
 
 * **The two Land Settlement blocks are in the report.** Ruth Makisa's

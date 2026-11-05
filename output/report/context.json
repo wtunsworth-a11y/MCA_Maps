@@ -1,9 +1,9 @@
 {
- "version": "1.17",
+ "version": "1.18",
  "changes": [],
- "date": "2026-10-16",
- "date_long": "16 October 2026",
- "commit": "063ffc5",
+ "date": "2026-11-05",
+ "date_long": "5 November 2026",
+ "commit": "dc0d051",
  "overlap_tolerance_m": 100.0,
  "smoothing_spacing_m": 20,
  "clip_distance_km": 10,

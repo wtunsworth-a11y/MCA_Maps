@@ -37,6 +37,7 @@ import approve  # noqa: E402
 import closure  # noqa: E402
 import dataio  # noqa: E402
 import polygons as polygon_tools  # noqa: E402
+import roster as clan_roster  # noqa: E402
 import smooth_tracks  # noqa: E402
 import stewards as steward_tools  # noqa: E402
 
@@ -551,6 +552,12 @@ def gather(tracks_path: Path, polygons_path: Path, clans_dir: Path,
         record["withhold_area"] = bool(ready.get("withhold_area"))
 
     records.sort(key=lambda r: (r["zone"], r["clan"]))
+
+    # The roster of clans named at the forum, set against the surveys in
+    # hand. This is what makes the document a place the next hundred and
+    # fifty surveys arrive into rather than a list of whoever happened to
+    # map first.
+    summary["roster"] = clan_roster.for_report(records)
     return {"summary": summary, "clans": records}
 
 
