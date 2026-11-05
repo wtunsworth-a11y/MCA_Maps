@@ -12,5 +12,38 @@
     "The forum's list names Abuankol in Zone 7B, so that is the spelling."
    ]
   }
+ },
+ "held": {
+  "note": "Name queries that are not the reviewer's to settle. Each is two surveys against two similar names on the forum's list, crossed, so picking one pairing picks the other and a wrong guess puts a clan's walking on another clan's page. Held for the zone staff. Nothing is linked and nothing is renamed until they answer.",
+  "stated": "2026-11-05",
+  "with": "zone staff",
+  "queries": [
+   {
+    "zone": "Zone 2",
+    "surveys": [
+     "Majanko — Zone 2",
+     "Manoko — Zone 2"
+    ],
+    "on_the_list": [
+     "Manoiko",
+     "Mazanko"
+    ],
+    "village": "Serefuna",
+    "why": "Both surveys were walked by Gilford Amakana. Two names in, two names on the list, and which goes with which is not readable from the data."
+   },
+   {
+    "zone": "Zone 6",
+    "surveys": [
+     "Nupa Ora — Zone 6",
+     "Pina Ora — Zone 6"
+    ],
+    "on_the_list": [
+     "Nupa’Ora",
+     "Pena’Ora"
+    ],
+    "village": "Numba/Sivurana and Awaru",
+    "why": "Nupa Ora could be Nupa’Ora and Pina Ora could be Pena’Ora, or Pina Ora could be Nupa’Ora. The two list entries are in different villages, so the pairing decides which village each survey belongs to."
+   }
+  ]
  }
 }

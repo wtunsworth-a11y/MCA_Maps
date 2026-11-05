@@ -1,0 +1,22 @@
+{
+ "Zone 7A|Settlers": {
+  "zone": "Zone 7A",
+  "clan": "Settlers",
+  "units": [
+   "road_3_and_4_paul_digori_tracks_zone_7a"
+  ],
+  "why": [
+   "The reviewer, 2026-11-05: the settlers separate cleanly by zone, regardless of the naming. The list calls the Zone 7A entry Road 3 & 7; the survey is Road 3 & 4."
+  ]
+ },
+ "Zone 7B|Settlers": {
+  "zone": "Zone 7B",
+  "clan": "Settlers",
+  "units": [
+   "ruth_makisa_land_steward_block_1_land_boundary"
+  ],
+  "why": [
+   "The reviewer, 2026-11-05: the settlers separate cleanly by zone, regardless of the naming. The list calls the Zone 7B entry Blocks 1 & 2; the survey is Ruth Makisa's Block 1, reported as LSS 7B."
+  ]
+ }
+}
