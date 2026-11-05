@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import re
 import shutil
 import zipfile
@@ -466,6 +467,29 @@ def _unique(name: str, used: set[str]) -> str:
 RESTRICTED_TYPES = {"Sacred Site"}
 
 
+_SPELLINGS: dict | None = None
+
+
+def clan_spellings() -> dict:
+    """One clan spelled two ways, mapped onto the forum's spelling.
+
+    Kept here because this is where a survey unit is formed, and a clan
+    whose two stewards typed the name differently has to become one unit
+    at that moment or it never does. Each entry is written down from
+    what the reviewer states, one case at a time; nothing is matched by
+    resemblance.
+    """
+    global _SPELLINGS
+    if _SPELLINGS is None:
+        where = REFERENCE_DIR / "clan_spellings.json"
+        try:
+            _SPELLINGS = json.loads(where.read_text(encoding="utf-8")) \
+                .get("spellings", {})
+        except Exception:
+            _SPELLINGS = {}
+    return _SPELLINGS
+
+
 def survey_group(gdf: gpd.GeoDataFrame) -> pd.Series:
     """The unit a boundary is assessed as: one clan's walk within one zone.
 
@@ -480,6 +504,11 @@ def survey_group(gdf: gpd.GeoDataFrame) -> pd.Series:
     """
     clan = gdf["clan"].astype(str).str.strip()
     zone = gdf["zone"].astype(str).str.strip()
+    spellings = clan_spellings()
+    if spellings:
+        standard = (zone + "|" + clan).map(
+            lambda pair: (spellings.get(pair) or {}).get("standard"))
+        clan = standard.where(standard.notna(), clan)
     joined = clan + " — " + zone
     return joined.where(clan != "", gdf["source_name"])
 

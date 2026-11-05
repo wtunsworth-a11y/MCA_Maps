@@ -308,6 +308,50 @@
      "No polygon and no closing — not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
     ],
     "map": "output/rounds/round1/abuankol_r1.png"
+   },
+   {
+    "round": 1,
+    "ready": "2026-10-15",
+    "why": [
+     "The reviewer's decision, given on the map: 's2 and s10 are",
+     "unfixable at this time and must go back to the clan.' That settles",
+     "the survey; it goes into the report with those two as the clan's",
+     "question.",
+     "",
+     "12 segments, 16.51 km walked, 2.75 km still to walk in s2 (1,860 m)",
+     "and s10 (890 m), 0.17 km implied in s17 and s20, 662.4 ha.",
+     "",
+     "The question for the clan is the detached 727 m western loop that",
+     "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
+     "what those two stretches are. Nobody is sent to walk them first."
+    ],
+    "map": "output/rounds/round1/ambunkol_r1.png",
+    "recorded_as": "Ambunkol — Zone 7B"
+   },
+   {
+    "round": 2,
+    "ready": "2026-11-05",
+    "report_name": "Abuankol",
+    "map": "output/rounds/round2/abuankol_r2.png",
+    "why": [
+     "One clan, two Clan Stewards, one survey. Peter Awako recorded",
+     "under the spelling Ambunkol and Simeon Pasip under Abuankol;",
+     "their lines touch at 0.0 m and were walked the same morning,",
+     "76 minutes apart. The forum's list names Abuankol in Zone 7B,",
+     "so that is the spelling.",
+     "",
+     "12 segments, 16.51 km walked, 2.75 km still to walk in s2",
+     "(1,860 m) and s10 (890 m), 0.17 km implied, 662.4 ha. Not one",
+     "segment moved in the joining: the boundary is Peter Awako's as",
+     "it was settled on 2026-10-15, and s2 and s10 remain the clan's",
+     "question.",
+     "",
+     "Simeon Pasip's four recordings carry 513 m. Three of them",
+     "(32, 59 and 125 m) lie about 560-600 m inside the boundary and",
+     "are not boundary. The fourth, 298 m, touches the line and runs",
+     "4 m from s10 — whether it shortens that gap is for the",
+     "reviewer to look at, and nothing has been changed on it."
+    ]
    }
   ]
  },
@@ -376,28 +420,6 @@
      "No polygon and no closing — not enough to work with. Of the 9.5 km line the solver drew, 4.12 km was ground nobody walked, enclosing only 106.6 ha off 10.1 km of walking. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
     ],
     "map": "output/rounds/round1/gariniko_r1.png"
-   }
-  ]
- },
- "Ambunkol — Zone 7B": {
-  "rounds": [
-   {
-    "round": 1,
-    "ready": "2026-10-15",
-    "why": [
-     "The reviewer's decision, given on the map: 's2 and s10 are",
-     "unfixable at this time and must go back to the clan.' That settles",
-     "the survey; it goes into the report with those two as the clan's",
-     "question.",
-     "",
-     "12 segments, 16.51 km walked, 2.75 km still to walk in s2 (1,860 m)",
-     "and s10 (890 m), 0.17 km implied in s17 and s20, 662.4 ha.",
-     "",
-     "The question for the clan is the detached 727 m western loop that",
-     "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
-     "what those two stretches are. Nobody is sent to walk them first."
-    ],
-    "map": "output/rounds/round1/ambunkol_r1.png"
    }
   ]
  },

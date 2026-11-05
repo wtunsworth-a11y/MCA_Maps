@@ -1,5 +1,5 @@
 {
- "unit": "Ambunkol — Zone 7B",
+ "unit": "Abuankol — Zone 7B",
  "solved": "2026-10-12",
  "_README": [
   "This file is the boundary. It is not rebuilt from the tracks.",
@@ -150,5 +150,8 @@
     "written down from the first solve, 2026-10-12"
    ]
   }
+ ],
+ "history": [
+  "Solved as 'Ambunkol — Zone 7B'. Joined with Simeon Pasip's recordings under the forum's spelling, Abuankol, on 2026-11-05. No segment moved."
  ]
 }
