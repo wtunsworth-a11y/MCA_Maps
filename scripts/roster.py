@@ -37,6 +37,7 @@ import dataio  # noqa: E402
 
 ROSTER = dataio.REFERENCE_DIR / "clan_roster.json"
 LINKS = dataio.REFERENCE_DIR / "roster_links.json"
+SUB_CLANS = dataio.REFERENCE_DIR / "sub_clans.json"
 
 
 def roster() -> dict:
@@ -56,6 +57,19 @@ def links() -> dict:
     if not LINKS.exists():
         return {}
     return json.loads(LINKS.read_text(encoding="utf-8"))
+
+
+def sub_clans() -> dict:
+    """Surveys stated to be a sub-clan's, not a major clan's.
+
+    The forum's list is the list of major clans. A survey recorded by a
+    sub-clan is therefore not a clan missing from the list, and reporting
+    it as one would say the list is incomplete when it is not. It is also
+    not merged into its parent: the walking stands as the sub-clan's own.
+    """
+    if not SUB_CLANS.exists():
+        return {}
+    return json.loads(SUB_CLANS.read_text(encoding="utf-8")).get("surveys", {})
 
 
 def key(zone: str, clan: str) -> str:
@@ -134,8 +148,17 @@ def tally(found: dict) -> dict:
                     "linked" if linked else None),
         })
 
-    spare = [info for unit, info in sorted(found.items()) if unit not in taken]
-    return {"roster": book, "rows": rows, "surveys": found, "spare": spare}
+    stated = sub_clans()
+    spare, sub = [], []
+    for unit, info in sorted(found.items()):
+        if unit in taken:
+            continue
+        if unit in stated:
+            sub.append({**info, **stated[unit]})
+        else:
+            spare.append(info)
+    return {"roster": book, "rows": rows, "surveys": found, "spare": spare,
+            "sub_clans": sub}
 
 
 def questions(state: dict, cutoff: float = 0.62) -> list:
@@ -216,6 +239,11 @@ def for_report(records: list) -> dict:
         # matched by resemblance.
         "unmatched": [{"clan": i["name"], "zone": i["zone"],
                        "unit": i["unit"]} for i in state["spare"]],
+        "sub_clans": [{"clan": i["name"], "zone": i["zone"],
+                       "unit": i["unit"], "parent": i.get("parent"),
+                       "stated": i.get("stated"),
+                       "why": i.get("why") or []}
+                      for i in state["sub_clans"]],
         "questions": questions(state),
         "links": len(links()),
     }
@@ -255,6 +283,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="clans still to map, all zones or one")
     parser.add_argument("--spare", action="store_true",
                         help="surveys that match no roster entry")
+    parser.add_argument("--sub-clans", dest="show_sub", action="store_true",
+                        help="surveys stated to be a sub-clan's")
     parser.add_argument("--link", metavar="CLAN",
                         help="record that a roster clan and a survey are one")
     parser.add_argument("--zone", help="the roster zone of --link")
@@ -292,6 +322,14 @@ def main(argv: list[str] | None = None) -> int:
                 print("          that roster name is already mapped by "
                       + ", ".join(a["roster_taken"]))
             print(f"          {a['survey']}\n")
+        return 0
+
+    if args.show_sub:
+        for info in state["sub_clans"]:
+            parent = info.get("parent") or "parent clan not yet stated"
+            print(f"  {info['name']:14} {info['zone']:9} {parent}")
+            print(f"          {info['unit']}")
+        print(f"\n{len(state['sub_clans'])} sub-clan survey(s)")
         return 0
 
     if args.spare:

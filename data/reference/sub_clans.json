@@ -1,0 +1,24 @@
+{
+ "note": "Surveys recorded by a sub-clan rather than by one of the major clans the Kiara Combined Forum named. Written one at a time, from what the reviewer states. A sub-clan survey is not a major clan missing from the list, and it is not merged into anything: the walking stands as the sub-clan's own. Where the parent clan is not yet stated it is left null and the report says so.",
+ "surveys": {
+  "Murai (Z2) — Zone 2": {
+   "name": "Murai",
+   "zone": "Zone 2",
+   "parent": null,
+   "stated": "2026-11-05",
+   "why": [
+    "Murai is a sub clan."
+   ]
+  },
+  "Murai (Z7B) — Zone 7B": {
+   "name": "Murai",
+   "zone": "Zone 7B",
+   "parent": null,
+   "stated": "2026-11-05",
+   "why": [
+    "Murai is a sub clan.",
+    "The forum's list names Murai in Zone 7B. That entry and this standing as a sub-clan are not both settled, and the list is the one that decides."
+   ]
+  }
+ }
+}

@@ -235,6 +235,30 @@ if (ros.unmatched && ros.unmatched.length) {
   body.push(note("“Already mapped” means another survey has come in under that name on the list. Two surveys against one name is either two Clan Stewards of the same clan, or a sub-clan holding ground of its own — the clan says which."));
   body.push(note("The forum's list names Settlers twice: in Zone 7A at Road 3 & 7, and in Zone 7B at Blocks 1 & 2. The two Land Settlement blocks in this document are Road 3 & 4 in Zone 7A and Block 1 in Zone 7B. Whether each is the entry on the list is a question, and Road 3 & 7 and Road 3 & 4 are not the same words."));
 }
+if (ros.sub_clans && ros.sub_clans.length) {
+  body.push(h("Sub-clans that mapped their own ground", HeadingLevel.HEADING_2));
+  body.push(p(`The forum's list is the list of major clans. ${ros.sub_clans.length === 1 ? "One survey" : money(ros.sub_clans.length) + " surveys"} in this document ${ros.sub_clans.length === 1 ? "was" : "were"} recorded by a sub-clan, so ${ros.sub_clans.length === 1 ? "it is" : "they are"} not a clan missing from the list. The walking stands as the sub-clan's own and is not merged into anybody else's.`, {size:21}));
+  body.push(table(["Zone","Sub-clan","Within","Clan Stewards"],
+    ros.sub_clans.map(sc=>{
+      const rec = clans.find(c=>c.unit===sc.unit);
+      return [sc.zone, sc.clan, sc.parent || "not yet stated",
+              rec ? rec.stewards.map(w=>w.steward).join(", ") : "—"];
+    }), [3,4,4,5]));
+  for (const sc of ros.sub_clans) {
+    if (sc.why && sc.why.length) {
+      body.push(p(`${sc.clan} (${sc.zone})`, {bold:true, size:21}));
+      for (const line of sc.why) body.push(p(line, {size:21}));
+    }
+  }
+  const scHa = ros.sub_clans.map(sc=>clans.find(c=>c.unit===sc.unit))
+    .filter(c=>c && c.area_ha).map(c=>c.area_ha);
+  if (scHa.length) {
+    body.push(note("A sub-clan's ground lies inside a major clan's. "
+      + money(scHa.reduce((a,b)=>a+b,0)) + " ha of mapped area in this document belongs to a sub-clan survey, and it is still counted in the zone figures and in the conservation area footprint. If that ground is also inside the major clan it belongs to, those totals carry it twice. Nothing has been taken out, because which major clan it sits within has not been stated — once it is, the double count can be removed."));
+  } else {
+    body.push(note("A sub-clan's ground lies inside a major clan's, so no area from a sub-clan survey is added to the zone or footprint totals. None of the sub-clan surveys here gives an area."));
+  }
+}
 body.push(new Paragraph({ children:[new PageBreak()] }));
 }
 

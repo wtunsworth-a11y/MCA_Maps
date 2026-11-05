@@ -2936,16 +2936,6 @@
     "unit": "Mungaikol \u2014 Zone 8"
    },
    {
-    "clan": "Murai (Z2)",
-    "zone": "Zone 2",
-    "unit": "Murai (Z2) \u2014 Zone 2"
-   },
-   {
-    "clan": "Murai (Z7B)",
-    "zone": "Zone 7B",
-    "unit": "Murai (Z7B) \u2014 Zone 7B"
-   },
-   {
     "clan": "Naharaura",
     "zone": "Zone 6",
     "unit": "Naharaura \u2014 Zone 6"
@@ -3004,6 +2994,29 @@
     "clan": "LSS 7B",
     "zone": "Zone 7B",
     "unit": "ruth_makisa_land_steward_block_1_land_boundary"
+   }
+  ],
+  "sub_clans": [
+   {
+    "clan": "Murai",
+    "zone": "Zone 2",
+    "unit": "Murai (Z2) \u2014 Zone 2",
+    "parent": null,
+    "stated": "2026-11-05",
+    "why": [
+     "Murai is a sub clan."
+    ]
+   },
+   {
+    "clan": "Murai",
+    "zone": "Zone 7B",
+    "unit": "Murai (Z7B) \u2014 Zone 7B",
+    "parent": null,
+    "stated": "2026-11-05",
+    "why": [
+     "Murai is a sub clan.",
+     "The forum's list names Murai in Zone 7B. That entry and this standing as a sub-clan are not both settled, and the list is the one that decides."
+    ]
    }
   ],
   "questions": [
@@ -3465,17 +3478,6 @@
     "same_zone": true,
     "roster_taken": [],
     "score": 0.917
-   },
-   {
-    "survey": "Murai (Z7B) \u2014 Zone 7B",
-    "survey_clan": "Murai (Z7B)",
-    "survey_zone": "Zone 7B",
-    "roster_clan": "Murai",
-    "roster_zone": "Zone 7B",
-    "village": "(zone)",
-    "same_zone": true,
-    "roster_taken": [],
-    "score": 0.625
    },
    {
     "survey": "Gumuyude \u2014 Zone 8",

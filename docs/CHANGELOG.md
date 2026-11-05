@@ -1,3 +1,23 @@
+## 1.19 — 5 November 2026
+
+* **Murai is recorded as a sub-clan.** The forum's list is the list of
+  major clans, so a survey recorded by a sub-clan is not a clan missing
+  from that list, and the report no longer reports it as one. Both Murai
+  surveys — Nehemiah Nindori's in Zone 2 and James Iroti's in Zone 7B —
+  are listed under their own heading, with the walking left standing as
+  the sub-clan's own and merged into nothing. The major clan each sits
+  within has not been stated and the report says so.
+
+* **The double count is stated, not quietly removed.** Murai (Zone 2) has
+  198.9 ha in this document and that area is still inside the zone figures
+  and the conservation area footprint. If the same ground is inside the
+  major clan it belongs to, those totals carry it twice. Nothing has been
+  taken out, because taking it out needs the major clan named first.
+
+* **A note on the list's own Murai entry.** The forum's list names Murai in
+  Zone 7B. That entry and Murai standing as a sub-clan are not both
+  settled, and the list decides.
+
 ## 1.18 — 5 November 2026
 
 * **The report is set up to receive all 185 clans.** The Kiara Combined
