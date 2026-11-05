@@ -56,3 +56,33 @@ package-lock.json
 # The GPX bundle is a zip of output/gpx/, rebuilt by scripts/clan_gpx.py.
 # Tracking it would store the same data twice, once per version.
 output/*.zip
+
+# ---------------------------------------------------------------------
+# What is kept and what is not.
+#
+# Kept, because it cannot be made again: the raw archives, every
+# register of what was decided, the stored boundaries, the maps the
+# reviewer agreed under a round, and the report's own figures. Those are
+# the record, and the repository is where the record lives — more
+# durable than any working session.
+#
+# Not kept, because running the pipeline makes it again: the built Word
+# documents and the rendered map images. They are large, they change on
+# every build, and keeping them put hundreds of megabytes of pictures
+# into a public repository to no purpose.
+# ---------------------------------------------------------------------
+
+# Built documents — rebuilt by scripts/build_reports.py
+output/*.docx
+
+# Rendered query and clan maps — rebuilt by the pipeline. output/rounds/
+# and output/clans/approved/ are NOT ignored: those are the maps that
+# went to a clan, and a map that moves after it was shown is not that
+# map any more.
+output/queries/
+output/clans/*.png
+
+# Sacred sites are reported to the landowners and the reviewer, and to
+# nobody else. Nothing naming or locating one belongs in a repository.
+output/sacred_sites.md
+output/queries/*sacred*
