@@ -11,8 +11,11 @@ data/processed/*.qgs
 data/smoothed/*.gpkg
 data/smoothed/*.qgs
 
-# Copernicus DEM — re-fetched by scripts/fetch_dem.py
-data/reference/dem/
+# Copernicus DEM — kept in the repository deliberately. It is public
+# Copernicus data and scripts/fetch_dem.py can re-fetch it, but the
+# hillshade under every map depends on it, and a container that loses it
+# renders the overview maps flat without anything failing. 19 MB once is
+# cheaper than a map quietly losing its terrain.
 output/*.png
 # Query pack is a deliverable that goes to the field — keep it tracked
 !output/queries/
