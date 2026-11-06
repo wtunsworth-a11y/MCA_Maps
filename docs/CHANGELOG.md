@@ -1,3 +1,28 @@
+## 1.21 — 6 November 2026
+
+* **The forum's spellings are linked, and no figure moved.** Twenty-two
+  surveys that came in under a different spelling of a name on the list
+  are now counted against that clan, the zone matching in every case.
+  Linking names changes no geometry and no measurement: every clan's
+  figures are exactly what they were. 43 of the 185 clans now have a
+  survey here; 142 are still to be heard from.
+
+* **Two name queries stay open, with the zone staff.** Zone 2's Majanko
+  and Manoko against Manoiko and Mazanko, and Zone 6's Nupa Ora and Pina
+  Ora against Nupa'Ora and Pena'Ora. Dusi in Zone 8 and Rumbi in Zone 2
+  are on no list entry at all.
+
+* **Murai in Zone 7B is a clan; in Zone 2 it is a sub-clan.** The Zone 2
+  boundary stands as a mapped boundary. It will sit inside a larger
+  boundary when that clan maps. The land does not disappear and nothing
+  is taken out of any total for it.
+
+* **What the overlap figures are for.** None of them is final and none of
+  them needs to be; they will move as the mapping is finished. What they
+  report is that clan boundaries overlap each other widely, and that the
+  overlaps are for the clans concerned to settle between themselves. The
+  report now says so where the figures are given.
+
 ## 1.20 — 6 November 2026
 
 * **Abuankol and Ambunkol are one clan on one map.** Peter Awako recorded

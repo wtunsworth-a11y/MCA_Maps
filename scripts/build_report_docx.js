@@ -174,6 +174,7 @@ body.push(note("Read with care: most boundaries rest on inferred closures, so so
 body.push(p("Overlaps are recorded exactly as mapped. They are not reconciled, and clans are never merged.", {size:21}));
 body.push(h("What an overlap here is not", HeadingLevel.HEADING_3));
 body.push(p("An overlap in these figures is a statement about two surveys, not about two clans. Most boundaries here are incomplete — a quarter of the outline drawn around the mapped areas is straight line nobody walked — and where a survey is unfinished, the area attributed to it is bounded by those straight lines rather than by anything anyone walked or said.", {size:21}));
+body.push(p("None of these numbers is final, and none of them needs to be. They will move as the mapping is finished, and they would move again if the lines were measured a different way. That is not what is being reported here. What is being reported is that clan boundaries in the Managalas overlap each other, widely and repeatedly, and that the overlaps are for the clans concerned to settle between themselves. No figure in this document settles anything, and none of it is offered as the answer to where a boundary runs.", {size:21}));
 body.push(p("So an overlap between two unfinished surveys is first of all a sign that both need finishing. It is recorded because it is what the data shows, and because the pattern across the whole area is the point; it is not evidence that anybody disputes anything, and nothing in this document should be read as saying so.", {size:21}));
 
 body.push(img("output/summary_map.png", 640, 580));
@@ -214,7 +215,7 @@ body.push(table(["Zone","Clans named","Mapped so far","Still to hear from"],
   ros.zones.map(z=>[z.zone, money(z.on_roster), money(z.mapped), money(z.awaiting)])
     .concat([["All zones", money(ros.on_roster), money(ros.mapped), money(ros.awaiting)]]),
   [4,3,3,4]));
-body.push(note("Mapped means a survey has come in under exactly the name on this list. Where a survey came in under a different spelling of the same name, it is counted as still to hear from until the clan says the two names are one — see the last table in this section."));
+body.push(note("Mapped means a survey has come in under this name, or under a spelling of it that has been looked at and accepted one clan at a time. Nothing is matched by resemblance, and where the pairing is not clear it is left open — see the last tables in this section."));
 
 body.push(h("Clans still to be heard from", HeadingLevel.HEADING_2));
 body.push(p("By zone and village, as the forum recorded them. A clan that sees its own name here, or does not see it and should, is the right person to say so.", {size:21}));
@@ -228,7 +229,7 @@ if (ros.unmatched && ros.unmatched.length) {
     near[q.survey].push(q.roster_clan + (q.roster_taken && q.roster_taken.length ? " (already mapped)" : ""));
   }
   body.push(h("Names in the surveys that are not on the list", HeadingLevel.HEADING_2));
-  body.push(p(`${money(ros.unmatched.length)} of the ${money(sum.surveys)} surveys came in under a name that is not on the forum's list. Most are the same name spelled differently. Some may be a sub-clan that mapped its own ground while the forum was still separating major clan from sub-clan. Nothing has been decided here, and no two names have been treated as one: each is a question for the clan concerned.`, {size:21}));
+  body.push(p(`${money(ros.unmatched.length)} of the ${money(sum.surveys)} surveys came in under a name that is not on the forum's list and has not been paired with one. Some may be a sub-clan that mapped its own ground while the forum was still separating major clan from sub-clan. Nothing is decided here and no two names are treated as one by resemblance: each is a question for the clan concerned or for the zone staff.`, {size:21}));
   body.push(table(["Zone","Name in the survey","Nearest name on the list"],
     ros.unmatched.map(u=>[u.zone, u.clan, (near[u.unit]||[]).join(", ") || "— nothing close"]),
     [3,4,5]));
@@ -261,7 +262,7 @@ if (ros.sub_clans && ros.sub_clans.length) {
     .filter(c=>c && c.area_ha).map(c=>c.area_ha);
   if (scHa.length) {
     body.push(note("A sub-clan's ground lies inside a major clan's. "
-      + money(scHa.reduce((a,b)=>a+b,0)) + " ha of mapped area in this document belongs to a sub-clan survey, and it is still counted in the zone figures and in the conservation area footprint. If that ground is also inside the major clan it belongs to, those totals carry it twice. Nothing has been taken out, because which major clan it sits within has not been stated — once it is, the double count can be removed."));
+      + money(scHa.reduce((a,b)=>a+b,0)) + " ha of mapped area here belongs to a sub-clan survey, and it stands as a mapped boundary like any other. When the major clan maps its own boundary, this ground will sit inside it. The land does not disappear and nothing is taken out of any total for it."));
   } else {
     body.push(note("A sub-clan's ground lies inside a major clan's, so no area from a sub-clan survey is added to the zone or footprint totals. None of the sub-clan surveys here gives an area."));
   }
