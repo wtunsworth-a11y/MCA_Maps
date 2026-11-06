@@ -282,6 +282,13 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     merged = dataio.combine(sources)
+    # One clan spelled two ways becomes one clan here, once, before
+    # anything is measured. The raw files keep whatever the steward
+    # typed; everything derived from this point -- survey units,
+    # polygons, overlaps, the lines neighbours share -- reads the
+    # forum's spelling, so a clan cannot end up overlapping itself or
+    # sharing a boundary with itself under its other name.
+    merged.gdf["clan"] = dataio.standard_clan(merged.gdf)
     metric = merged.gdf.to_crs(dataio.METRIC_CRS)
     metric["geometry"] = metric.geometry.map(drop_z)
 

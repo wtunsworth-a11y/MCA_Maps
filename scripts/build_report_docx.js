@@ -233,7 +233,14 @@ if (ros.unmatched && ros.unmatched.length) {
     ros.unmatched.map(u=>[u.zone, u.clan, (near[u.unit]||[]).join(", ") || "— nothing close"]),
     [3,4,5]));
   body.push(note("“Already mapped” means another survey has come in under that name on the list. Two surveys against one name is either two Clan Stewards of the same clan, or a sub-clan holding ground of its own — the clan says which."));
-  body.push(note("The forum's list names Settlers twice: in Zone 7A at Road 3 & 7, and in Zone 7B at Blocks 1 & 2. The two Land Settlement blocks in this document are Road 3 & 4 in Zone 7A and Block 1 in Zone 7B. Whether each is the entry on the list is a question, and Road 3 & 7 and Road 3 & 4 are not the same words."));
+  if (ros.held && ros.held.length) {
+    body.push(p("Names that go back to the zone staff", {bold:true, size:21}));
+    body.push(p(`${money(ros.held.length)} of these are not a question the data can answer. Each is two surveys against two similar names on the list, crossed, so choosing one pairing chooses the other — and choosing wrongly puts one clan's walking on another clan's page. They are held until the zone staff say which is which.`, {size:21}));
+    body.push(table(["Zone","Surveys","Names on the list"],
+      ros.held.map(q=>[q.zone, q.surveys.map(u=>u.split(" — ")[0]).join(" and "),
+                       q.on_the_list.join(" and ")]), [3,5,4]));
+  }
+  body.push(note("The forum's list names Settlers twice, in Zone 7A and in Zone 7B, and the two Land Settlement blocks in this document are one in each. They are paired by zone: the list calls them Road 3 & 7 and Blocks 1 & 2, the surveys are Road 3 & 4 and Block 1, and the zone is what decides."));
 }
 if (ros.sub_clans && ros.sub_clans.length) {
   body.push(h("Sub-clans that mapped their own ground", HeadingLevel.HEADING_2));

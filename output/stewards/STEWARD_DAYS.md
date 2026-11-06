@@ -64,7 +64,7 @@ Dates are taken from the GPS record, not from file names.
 | Moses Garui | Zone 7B | Binunkol | 10 | 5 | 0 | 2026-05-23 | 2026-06-16 | 17.81 | 17.81 | 3.56 |
 | Nelson Runage | Zone 7B | Wohukol | 4 | 2 | 0 | 2025-11-06 | 2025-11-10 | 17.81 | 17.81 | 8.91 |
 | Newton Giwai | Zone 7B | Jariji | 3 | 2 | 0 | 2025-11-06 | 2025-11-09 | 13.66 | 13.66 | 6.83 |
-| Peter Awako | Zone 7B | Ambunkol | 1 | 1 | 0 | 2025-10-28 | 2025-10-28 | 18.6 | 18.6 | 18.6 |
+| Peter Awako | Zone 7B | Abuankol | 1 | 1 | 0 | 2025-10-28 | 2025-10-28 | 18.6 | 18.6 | 18.6 |
 | Ruth Makisa | Zone 7B |  | 1 | 1 | 0 | 2026-06-22 | 2026-06-22 | 6.28 | 0.0 | 6.28 |
 | Simeon Pasip | Zone 7B | Abuankol | 4 | 3 | 0 | 2025-10-21 | 2025-10-28 | 0.51 | 0.51 | 0.17 |
 | Stafford Gidiri | Zone 7B | Natang | 2 | 1 | 0 | 2025-11-10 | 2025-11-10 | 46.5 | 46.5 | 46.5 |
@@ -307,7 +307,7 @@ The steward comes from the file name, which for most surveys is the only place i
 | Paul Digori | Zone 7A |  | 2026-06-03 | 1 | 0.24 |
 | Paul Digori | Zone 7A |  | 2026-06-07 | 1 | 1.01 |
 | Paul Digori | Zone 7A |  | 2026-06-15 | 1 | 0.38 |
-| Peter Awako | Zone 7B | Ambunkol | 2025-10-28 | 1 | 18.6 |
+| Peter Awako | Zone 7B | Abuankol | 2025-10-28 | 1 | 18.6 |
 | Philip Igai | Zone 8 | Gumuyude | 2025-05-19 | 1 | 0.25 |
 | Philip Igai | Zone 8 | Gumuyude | 2025-05-20 | 1 | 4.89 |
 | Philip Igai | Zone 8 | Gumuyude | 2025-05-21 | 1 | 2.12 |

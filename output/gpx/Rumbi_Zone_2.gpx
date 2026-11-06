@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Rumbi — clan land boundary</name>
-    <desc>Rumbi, Zone 2. 15.1 km walked; 9.9 km still to walk in 3 gaps</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Rumbi, Zone 2. 15.1 km walked; 9.9 km still to walk in 3 gaps No polygon and no closing. Of the 22.4 km line the solver drew, 9.18 km was ground nobody walked, against 15.1 km of walking in the file. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves. Nine recordings from Joel Mamata, 15.1 km.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1786600" lon="148.3121333">
     <name>GAP 1 OF 3 START</name>

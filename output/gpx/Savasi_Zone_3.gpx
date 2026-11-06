@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Savasi — clan land boundary</name>
-    <desc>Savasi, Zone 3. 4.0 km walked; 5.1 km still to walk in 3 gaps The eastern border of Savasi's clan land is along the Baraje river. The mapping is not finished: the northern and southern ends have yet to be closed off.</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Savasi, Zone 3. 4.0 km walked; 5.1 km still to walk in 3 gaps No polygon and no closing. Of the 8.9 km line the solver drew, 4.89 km was ground nobody walked — more drawn than walked. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves. Three recordings from Oscar Isuni, 5.3 km: one 4,900 m walk and two short ones. A 207 m recording is captioned 'Oscar isuni savasi clan' and 'Church boundary'. That is the only church boundary in the dataset, and it is a different kind of thing from a clan edge. Reproduce as written. The eastern border of Savasi's clan land is along the Baraje river. The mapping is not finished: the northern and southern ends have yet to be closed off.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1107927" lon="148.2859755">
     <name>GAP 1 OF 3 START</name>

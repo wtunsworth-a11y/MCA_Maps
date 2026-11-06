@@ -1,3 +1,27 @@
+## 1.20 — 6 November 2026
+
+* **Abuankol and Ambunkol are one clan on one map.** Peter Awako recorded
+  under one spelling and Simeon Pasip under the other; their lines touch
+  and were walked the same morning, 76 minutes apart. The two pages are
+  now one page, both stewards' recordings in one image, under the forum's
+  spelling. Not one segment moved: 16.51 km walked, 2.75 km still to
+  walk, 662.4 ha, as settled on 15 October.
+
+* **The western corner goes to the clan, not to the reviewer.** Simeon
+  walked a loop of about 300 m there that leaves the boundary and returns
+  to the same point, enclosing roughly half a hectare outside the line.
+  Whether that ground is boundary is the clan's to say, and it is asked
+  on their page rather than answered here.
+
+* **The settler blocks are paired by zone**, the list's wording kept in
+  the reasoning and the zone doing the deciding.
+
+* **Two name queries go to the zone staff.** Zone 2's Majanko and Manoko
+  against Manoiko and Mazanko, and Zone 6's Nupa Ora and Pina Ora against
+  Nupa'Ora and Pena'Ora. Each is two surveys against two similar names,
+  crossed, so choosing one pairing chooses the other. Nothing is linked
+  and nothing is renamed until they answer.
+
 ## 1.19 — 5 November 2026
 
 * **Murai is recorded as a sub-clan.** The forum's list is the list of

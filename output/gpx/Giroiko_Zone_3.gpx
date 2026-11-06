@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Giroiko — clan land boundary</name>
-    <desc>Giroiko, Zone 3. 5.4 km walked; 1.3 km still to walk in 2 gaps</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Giroiko, Zone 3. 5.4 km walked; 1.3 km still to walk in 2 gaps No polygon and no closing. The solver enclosed only 5.6 ha off 6.7 km of walking — it closed a small loop and left most of the walking outside it. Removed by the reviewer on 2026-10-16; it goes into the report as the recordings themselves. Three recordings from Mark Samba and Eddie Sioro, 6.7 km. None carries any text at all.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1170908" lon="148.2990472">
     <name>GAP 1 OF 2 START</name>

@@ -4,7 +4,7 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 ## Code
 
-- **Commit:** `57c6018a47cf85bec35d1d9f76323f44e8b29366`
+- **Commit:** `e0d3eaa476c6a209c67e64bbd2cbc4d149540864`
 - **Branch:** `claude/create-maps-86nf12`
 - **Working tree clean:** False
 
@@ -12,21 +12,19 @@ What produced the current results. Regenerated on every pipeline run — no date
 
 | Component | Version |
 | --- | --- |
-| python | 3.11.15 |
-| platform | Linux-6.18.44-fc-v114-x86_64-with-glibc2.39 |
+| python | 3.13.18 |
+| platform | Linux-6.18.44-fc-v242-x86_64-with-glibc2.39 |
 | geopandas | 1.2.0 |
-| shapely | 2.1.2 |
+| shapely | 2.2.0 |
 | pyogrio | 0.13.0 |
-| rasterio | 1.4.4 |
-| pysheds | 0.5 |
-| numpy | 2.4.6 |
-| pandas | 3.0.6 |
+| rasterio | 1.5.2 |
+| numpy | 2.5.3 |
+| pandas | 3.0.5 |
 | matplotlib | 3.11.2 |
 | folium | 0.20.0 |
-| scipy | 1.17.1 |
 | contextily | 1.7.1 |
-| geos | 3.13.1 |
-| gdal | 3.10.3 |
+| geos | 3.14.1 |
+| gdal | 3.12.2 |
 
 ## Input archives
 
@@ -63,14 +61,14 @@ If a figure changes between runs, compare these digests first: they say immediat
 | --- | --- |
 | surveys | 72 |
 | tracks | 610 |
-| clans | 49 |
+| clans | 48 |
 | stewards | 70 |
 | zones | Zone 2, Zone 3, Zone 6, Zone 7A, Zone 7B, Zone 8 |
 | smoothed_km | 1139.9 |
 | polygons | 36 |
-| polygons_surveyed | 9 |
-| area_ha_total | 28305.0 |
-| area_ha_surveyed | 6103.1 |
+| polygons_surveyed | 6 |
+| area_ha_total | 29160.7 |
+| area_ha_surveyed | 4455.5 |
 
 ## Data sources
 

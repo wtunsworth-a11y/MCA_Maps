@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Duribip — clan land boundary</name>
-    <desc>Duribip, Zone 8. 4.5 km walked; 5.9 km still to walk in 3 gaps</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Duribip, Zone 8. 4.5 km walked; 5.9 km still to walk in 3 gaps No polygon and no closing — not enough to work with. Of the 9.65 km line the solver drew, 5.68 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves. Four recordings from Beven Naive, 4.5 km. Two of them — 121 m and 296 m — lie 2.2 km from the body of the survey, which is one 3,444 m walk and one of 1,346 m. His own words, reproduced as written: 'Benven duribip Clan' and 'Land boundary map'.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1357050" lon="148.4563833">
     <name>GAP 1 OF 3 START</name>

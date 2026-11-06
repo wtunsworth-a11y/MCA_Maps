@@ -1,20 +1,20 @@
 # Boundary closure
 
-51 surveys, parts joined at 25 m, near-closure threshold 10%.
+50 surveys, parts joined at 25 m, near-closure threshold 10%.
 
 - **Closed polygons:** 9
 - **Near closure:** 7
-- **Open:** 35
+- **Open:** 34
 - **Fragmented:** 0
 
 ## Sensitivity to joining tolerance
 
 | tolerance_m | closed | near | open | fragmented |
 | --- | --- | --- | --- | --- |
-| 10.0 | 1.0 | 8.0 | 42.0 | 0.0 |
-| 25.0 | 9.0 | 7.0 | 35.0 | 0.0 |
-| 50.0 | 8.0 | 7.0 | 36.0 | 0.0 |
-| 100.0 | 12.0 | 3.0 | 36.0 | 0.0 |
+| 10.0 | 1.0 | 7.0 | 42.0 | 0.0 |
+| 25.0 | 9.0 | 7.0 | 34.0 | 0.0 |
+| 50.0 | 9.0 | 6.0 | 35.0 | 0.0 |
+| 100.0 | 11.0 | 3.0 | 36.0 | 0.0 |
 
 ## Every survey
 
@@ -51,16 +51,15 @@
 | Zone 7A | Borori | Hagahi Semo, John Saini | 2 | Borori — Zone 7A | 64 | 32.69 | 0.0 | 6721.7 | 22.8 |  | 10 | open | 10 disconnected pieces |
 | Zone 7A | Darekikol | Garex Sevesi, George Kopoi | 2 | Darekikol — Zone 7A | 56 | 28.76 | 0.0 | 6485.3 | 24.9 |  | 7 | open | 7 disconnected pieces |
 | Zone 7B |  | Ruth Makisa | 1 | ruth_makisa_land_steward_block_1_land_boundary | 28 | 6.28 | 0.0 | 1191.6 | 20.6 |  | 6 | open | 6 disconnected pieces |
-| Zone 7B | Abuankol | Simeon Pasip | 1 | Abuankol — Zone 7B | 7 | 0.51 | 0.0 | 1167.4 | 227.5 |  | 3 | open | 3 disconnected pieces |
-| Zone 7B | Ambunkol | Peter Awako | 1 | Ambunkol — Zone 7B | 37 | 18.6 | 0.0 | 3545.3 | 20.5 |  | 6 | open | 6 disconnected pieces |
+| Zone 7B | Abuankol | Peter Awako, Simeon Pasip | 2 | Abuankol — Zone 7B | 44 | 19.11 | 0.0 | 4373.0 | 25.4 |  | 7 | open | 7 disconnected pieces |
 | Zone 7B | Binunkol | Moses Garui | 1 | Binunkol — Zone 7B | 45 | 17.81 | 0.0 | 6412.9 | 40.0 |  | 19 | open | 19 disconnected pieces |
 | Zone 7B | Ginangi | Job Mokondo, Joshua Mokondo | 2 | Ginangi — Zone 7B | 45 | 36.73 | 0.0 | 10564.1 | 31.3 |  | 7 | open | 7 disconnected pieces |
-| Zone 7B | Jariji | Clement Viri, Newton Giwai | 2 | Jariji — Zone 7B | 73 | 27.47 | 0.0 | 9935.5 | 40.2 |  | 6 | open | 6 disconnected pieces |
+| Zone 7B | Jariji | Clement Viri, Newton Giwai | 2 | Jariji — Zone 7B | 73 | 27.47 | 0.0 | 9675.5 | 66.4 |  | 6 | open | 6 disconnected pieces |
 | Zone 7B | Manang | Kelly Wahamo | 1 | Manang — Zone 7B | 2 | 7.13 | 0.0 | 1788.3 | 25.1 |  | 1 | open |  |
 | Zone 7B | Marang | Henry Manderi | 1 | Marang — Zone 7B | 15 | 8.27 | 0.0 | 5056.2 | 61.4 |  | 2 | open | 2 disconnected pieces |
 | Zone 7B | Marijabimkol | Japhet Nagura | 1 | Marijabimkol — Zone 7B | 21 | 10.97 | 0.0 | 6085.0 | 61.1 |  | 4 | open | 4 disconnected pieces |
 | Zone 7B | Murai (Z7B) | James Iroti | 1 | Murai (Z7B) — Zone 7B | 27 | 12.35 | 0.0 | 7134.8 | 63.7 |  | 5 | open | 5 disconnected pieces |
-| Zone 7B | Natang | Dickson Hoe, Stafford Gidiri | 2 | Natang — Zone 7B | 93 | 77.25 | 0.0 | 0.0 | 0.0 | 48.8 | 2 | closed |  |
+| Zone 7B | Natang | Dickson Hoe, Stafford Gidiri | 2 | Natang — Zone 7B | 93 | 77.25 | 0.78 | 0.0 | 0.0 | 1177.4 | 3 | closed |  |
 | Zone 7B | Sugulkol | Chris Idua, Emmanuel Fufus | 2 | Sugulkol — Zone 7B | 62 | 23.99 | 0.0 | 7031.7 | 31.0 |  | 6 | open | 6 disconnected pieces |
 | Zone 7B | Wohukol | Darline Walele, Nelson Runage | 2 | Wohukol — Zone 7B | 27 | 34.91 | 0.0 | 6927.5 | 21.0 |  | 4 | open | 4 disconnected pieces |
 | Zone 8 | Duribip | Beven Naive | 1 | Duribip — Zone 8 | 4 | 4.46 | 0.0 | 5900.3 | 139.2 |  | 3 | open | 3 disconnected pieces |

@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Zambiko — clan land boundary</name>
-    <desc>Zambiko, Zone 2. 5.7 km walked; 21.6 km still to walk in 5 gaps</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Zambiko, Zone 2. 5.7 km walked; 21.6 km still to walk in 5 gaps No polygon and no closing — not enough to work with. Of the 25.6 km line the solver drew, 21.17 km was ground nobody walked, against 5.7 km of walking in the file. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves. Eight recordings from Sylvester Anai, 5.7 km. Five of them lie 3.5-4.1 km from the body of the survey: four short ones at 4.1 km and one of 1,322 m at 3.5 km. This is a short walk plus a scatter of separate visits, not one circuit.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1744017" lon="148.2905717">
     <name>GAP 1 OF 5 START</name>

@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Gumuri — clan land boundary</name>
-    <desc>Gumuri, Zone 3. 6.8 km walked; 5.5 km still to walk in 1 gap</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Gumuri, Zone 3. 6.8 km walked; 5.5 km still to walk in 1 gap No polygon and no closing. Of the 11.6 km line the solver drew, 5.15 km was ground nobody walked, enclosing 80.8 ha. Removed by the reviewer on 2026-10-15; it goes into the report as the recordings themselves. Two recordings only: Gray Saui's 8,469 m walk and Monty Stanford's 25 m marker. Monty Stanford's words on the marker, as written: 'Monty Stanford Gumuri clan. Guivom mountain,up in the hill.. still border with doikal clan'. That names Guivom mountain and a shared border with Doikal clan. Doikal is not among the 51 surveys in this dataset — there is no Doikal survey to compare against.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1352846" lon="148.3016943">
     <name>GAP 1 OF 1 START</name>

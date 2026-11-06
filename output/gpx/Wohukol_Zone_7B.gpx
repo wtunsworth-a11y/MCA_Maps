@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Wohukol — clan land boundary</name>
-    <desc>Wohukol, Zone 7B. 34.9 km walked; 6.9 km still to walk in 4 gaps</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Wohukol, Zone 7B. 34.9 km walked; 6.9 km still to walk in 4 gaps Reproduce the stewards' own wording in the report as it stands; the reviewer did not interpret it. Nelson Runage, 6 Nov 2025 09:31, on a 1,934 m recording: 'Korokoro village border with Jariji'. Nelson Runage, 6 Nov 2025 11:40, on a 1,958 m recording: 'Bakijak mount road go to Toma'. Darling Walele, 25 Oct 2025 09:19, on a 52 m recording: 'Wuhukol clan boundary'. Nothing in the nine recordings carries sacred or tambu wording. Jariji is also Zone 7B and not yet reviewed. The shared edge Nelson names is to be measured when Jariji comes round, not inferred now.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1425417" lon="148.3906717">
     <name>GAP 1 OF 4 START</name>

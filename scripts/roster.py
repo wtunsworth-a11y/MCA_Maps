@@ -246,7 +246,21 @@ def for_report(records: list) -> dict:
                       for i in state["sub_clans"]],
         "questions": questions(state),
         "links": len(links()),
+        # Name queries the reviewer has put to the zone staff rather than
+        # settle here. Each is two surveys against two similar names on
+        # the list, crossed.
+        "held": held_queries(),
     }
+
+
+def held_queries() -> list:
+    """Name queries that are not the reviewer's to settle."""
+    where = SUB_CLANS.parent / "clan_spellings.json"
+    try:
+        book = json.loads(where.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    return (book.get("held") or {}).get("queries") or []
 
 
 def record_link(zone: str, clan: str, units: list, why: str = "") -> dict:

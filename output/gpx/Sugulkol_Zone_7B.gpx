@@ -5,8 +5,8 @@
      xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>Sugulkol — clan land boundary</name>
-    <desc>Sugulkol, Zone 7B. 24.0 km walked; 7.0 km still to walk in 5 gaps. 1 join(s) under the marking threshold are not shown.</desc>
-    <time>2026-10-12T00:00:00Z</time>
+    <desc>Sugulkol, Zone 7B. 24.0 km walked; 7.0 km still to walk in 5 gaps. 1 join(s) under the marking threshold are not shown. No polygon and no closing. The reviewer judged on 2026-10-13 that there is too much guessing in it: of the 10.2 km line the solver drew, 4.71 km was ground nobody walked. It goes into the report as the recordings themselves. Twelve recordings from Chris Idua and Emmanuel Fufus. Emmanuel Fufus's own words, reproduced as written: 'Truck road (main highway)', 'Truck road or main highway', 'AFORE Community village', 'Community water supply Mapping', 'Wari creek'. Nothing in the twelve recordings carries sacred or tambu wording.</desc>
+    <time>2026-11-06T00:00:00Z</time>
   </metadata>
   <wpt lat="-9.1470767" lon="148.3965933">
     <name>GAP 1 OF 5 START</name>

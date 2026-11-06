@@ -1024,12 +1024,12 @@
     "pct": 2.1
    },
    {
-    "with": "Gariniko",
+    "with": "Asingi",
     "km": 0.62,
     "pct": 1.5
    },
    {
-    "with": "Murai (Z2)",
+    "with": "Gariniko",
     "km": 0.62,
     "pct": 1.5
    },
@@ -1039,7 +1039,7 @@
     "pct": 1.5
    },
    {
-    "with": "Asingi",
+    "with": "Murai (Z2)",
     "km": 0.62,
     "pct": 1.5
    }
@@ -1682,12 +1682,12 @@
     "pct": 6.4
    },
    {
-    "with": "Tuoko",
+    "with": "Murai (Z2)",
     "km": 0.36,
     "pct": 6.4
    },
    {
-    "with": "Murai (Z2)",
+    "with": "Tuoko",
     "km": 0.36,
     "pct": 6.4
    },
@@ -3181,6 +3181,15 @@
   "zone": "Zone 7B",
   "stewards": [
    {
+    "steward": "Peter Awako",
+    "tracks": 1,
+    "km": 18.6,
+    "days": 1,
+    "first": "2025-10-28",
+    "last": "2025-10-28",
+    "type": "Land Boundary"
+   },
+   {
     "steward": "Simeon Pasip",
     "tracks": 4,
     "km": 0.51,
@@ -3190,151 +3199,40 @@
     "type": "Land Boundary"
    }
   ],
-  "n_stewards": 1,
-  "walked_km": 0.51,
-  "spur_km": 0.0,
-  "status": "open",
-  "chains": 3,
-  "gap_km": null,
-  "gap_pct": null,
-  "area_ha": null,
-  "basis": null,
-  "parcels": null,
-  "bridges": null,
-  "overlaps": [],
-  "shared_lines": [
-   {
-    "with": "Sugulkol",
-    "km": 1.78,
-    "pct": 100.0
-   },
-   {
-    "with": "Murai (Z7B)",
-    "km": 1.03,
-    "pct": 100.0
-   },
-   {
-    "with": "Wohukol",
-    "km": 0.51,
-    "pct": 100.0
-   },
-   {
-    "with": "Ambunkol",
-    "km": 0.53,
-    "pct": 58.0
-   },
-   {
-    "with": "Jariji",
-    "km": 0.34,
-    "pct": 58.0
-   },
-   {
-    "with": "Binunkol",
-    "km": 0.4,
-    "pct": 42.0
-   },
-   {
-    "with": "Ginangi",
-    "km": 0.35,
-    "pct": 42.0
-   },
-   {
-    "with": "Marijabimkol",
-    "km": 0.22,
-    "pct": 42.0
-   },
-   {
-    "with": "Natang",
-    "km": 0.03,
-    "pct": 1.8
-   }
-  ],
-  "join_sep_ha": 0.0,
-  "join_joined_ha": 0.0,
-  "map": "Abuankol_Zone_7B.png",
-  "ready": {
-   "round": 1,
-   "on": "2026-10-14",
-   "map": "output/rounds/round1/abuankol_r1.png",
-   "name": null,
-   "lines_only": true,
-   "withhold_area": false,
-   "why": [
-    "Ready for the report as the recordings themselves. No polygon,",
-    "no chords and no area: the reviewer judged the line the solver",
-    "drew was mostly ground nobody walked, and removed it.",
-    "",
-    "No polygon and no closing \u2014 not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves."
-   ]
-  },
-  "clan_equivalent": false,
-  "stored": null,
-  "sacred": {
-   "tagged": 0,
-   "internal": 0,
-   "internal_ha": 0.0,
-   "named": []
-  },
-  "field_notes": [
-   "No polygon and no closing \u2014 not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
-   "Simeon Pasip's own words, reproduced as written: 'Mamure Area' and 'Abuankol Clan Bandry'."
-  ],
-  "field_source": null,
-  "river_boundary": false,
-  "gpx": "Abuankol_Zone_7B.gpx",
-  "gpx_gaps": 2,
-  "lines_only": true,
-  "withhold_area": false
- },
- {
-  "unit": "Ambunkol \u2014 Zone 7B",
-  "clan": "Ambunkol",
-  "zone": "Zone 7B",
-  "stewards": [
-   {
-    "steward": "Peter Awako",
-    "tracks": 1,
-    "km": 18.6,
-    "days": 1,
-    "first": "2025-10-28",
-    "last": "2025-10-28",
-    "type": "Land Boundary"
-   }
-  ],
-  "n_stewards": 1,
+  "n_stewards": 2,
   "walked_km": 16.51,
-  "spur_km": 4.03,
+  "spur_km": 4.74,
   "status": "open",
-  "chains": 6,
+  "chains": 7,
   "gap_km": 2.75,
   "gap_pct": 16.7,
   "area_ha": 662.4,
   "basis": "implied",
-  "parcels": 1,
+  "parcels": 2,
   "bridges": null,
   "overlaps": [
    {
     "with": "Natang",
-    "ha": 63.1,
-    "pct": 9.5,
-    "beyond_tol_ha": 58.9,
-    "beyond_tol_pct": 8.9,
+    "ha": 33.8,
+    "pct": 9.4,
+    "beyond_tol_ha": 30.1,
+    "beyond_tol_pct": 8.4,
     "verdict": "overlap"
    },
    {
     "with": "Sugulkol",
-    "ha": 9.6,
-    "pct": 1.4,
-    "beyond_tol_ha": 9.1,
-    "beyond_tol_pct": 1.4,
+    "ha": 13.9,
+    "pct": 3.9,
+    "beyond_tol_ha": 10.8,
+    "beyond_tol_pct": 3.0,
     "verdict": "overlap"
    },
    {
     "with": "Wohukol",
     "ha": 4.0,
-    "pct": 0.6,
+    "pct": 1.1,
     "beyond_tol_ha": 1.4,
-    "beyond_tol_pct": 0.2,
+    "beyond_tol_pct": 0.4,
     "verdict": "overlap"
    },
    {
@@ -3350,56 +3248,78 @@
    {
     "with": "Natang",
     "km": 20.29,
-    "pct": 59.2
+    "pct": 57.7
    },
    {
     "with": "Sugulkol",
-    "km": 5.86,
-    "pct": 15.1
+    "km": 6.41,
+    "pct": 17.4
    },
    {
     "with": "Wohukol",
-    "km": 2.15,
-    "pct": 9.4
+    "km": 2.26,
+    "pct": 11.8
    },
    {
     "with": "Murai (Z7B)",
-    "km": 1.0,
-    "pct": 3.9
-   },
-   {
-    "with": "Abuankol",
-    "km": 0.53,
-    "pct": 2.9
+    "km": 1.24,
+    "pct": 6.5
    },
    {
     "with": "Jariji",
+    "km": 0.63,
+    "pct": 3.3
+   },
+   {
+    "with": "Binunkol",
+    "km": 0.4,
+    "pct": 1.1
+   },
+   {
+    "with": "Ginangi",
     "km": 0.35,
-    "pct": 1.8
+    "pct": 1.1
+   },
+   {
+    "with": "Marijabimkol",
+    "km": 0.22,
+    "pct": 1.1
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 662.5,
-  "map": "Ambunkol_Zone_7B.png",
+  "join_joined_ha": 358.3,
+  "map": "Abuankol_Zone_7B.png",
   "ready": {
-   "round": 1,
-   "on": "2026-10-15",
-   "map": "output/rounds/round1/ambunkol_r1.png",
-   "name": null,
+   "round": 2,
+   "on": "2026-11-05",
+   "map": "output/rounds/round2/abuankol_r2.png",
+   "name": "Abuankol",
    "lines_only": false,
    "withhold_area": false,
    "why": [
-    "The reviewer's decision, given on the map: 's2 and s10 are",
-    "unfixable at this time and must go back to the clan.' That settles",
-    "the survey; it goes into the report with those two as the clan's",
-    "question.",
+    "One clan, two Clan Stewards, one survey, one map. Peter Awako",
+    "recorded under the spelling Ambunkol and Simeon Pasip under",
+    "Abuankol; their lines touch, and were walked the same morning 76",
+    "minutes apart. The forum's list names Abuankol in Zone 7B, so that",
+    "is the spelling. Both stewards' recordings are on the map above.",
     "",
-    "12 segments, 16.51 km walked, 2.75 km still to walk in s2 (1,860 m)",
-    "and s10 (890 m), 0.17 km implied in s17 and s20, 662.4 ha.",
+    "12 segments, 16.51 km walked, 2.75 km still to walk in s2",
+    "(1,860 m) and s10 (890 m), 0.17 km implied, 662.4 ha. Not one",
+    "segment moved in the joining.",
     "",
-    "The question for the clan is the detached 727 m western loop that",
-    "s2 and s10 bracket: is that ground Ambunkol's? The answer decides",
-    "what those two stretches are. Nobody is sent to walk them first."
+    "For the clan to say:",
+    "",
+    "1. Is this one clan? The map is both stewards' walking together.",
+    "",
+    "2. At the western corner, Simeon Pasip walked a loop of about",
+    "   300 m that leaves the boundary and comes back to the same",
+    "   point, enclosing roughly half a hectare outside the line. Is",
+    "   that ground part of this boundary, or is it something else \u2014",
+    "   a garden, a house site? Three more short pieces of his, 32, 59",
+    "   and 125 m, sit about 600 m inside the boundary and are not",
+    "   boundary either.",
+    "",
+    "3. s2 and s10 remain as they were: real gaps, to be walked."
    ]
   },
   "clan_equivalent": false,
@@ -3423,12 +3343,15 @@
    "PRIORITY: two real gaps, 2.75 km between them, both on the western side. They need walking, not inferring, and nothing here should be closed by editing.",
    "s2 \u2014 1,860 m, the northern of the two. s10 \u2014 890 m, the southern. Between them hangs a 727 m loop of walked line that touches nothing else, sits 658 m from the rest of the survey and encloses nothing. Peter Awako walked it; it is not joined to anything he walked before or after.",
    "The question for the clan is the loop: is that ground Ambunkol's, and does the boundary run out to it and back, or does the line run straight past it? The answer decides what the two gaps actually are. Ask before anyone is sent to walk them.",
-   "Both stretches are in output/gpx/ambunkol_to_walk.gpx for the device. The rest of the boundary is settled: 16.51 km walked by Peter Awako, 0.17 km implied, 662.4 ha."
+   "Both stretches are in output/gpx/ambunkol_to_walk.gpx for the device. The rest of the boundary is settled: 16.51 km walked by Peter Awako, 0.17 km implied, 662.4 ha.",
+   "Recorded under the spelling Ambunkol by Peter Awako and Abuankol by Simeon Pasip; joined as one clan on 2026-11-05.",
+   "No polygon and no closing \u2014 not enough to work with. Four recordings from Simeon Pasip carrying 0.5 km in all; of the 1.39 km line the solver drew, 1.04 km was ground nobody walked. Removed by the reviewer on 2026-10-13; the survey goes into the report as the recordings themselves.",
+   "Simeon Pasip's own words, reproduced as written: 'Mamure Area' and 'Abuankol Clan Bandry'."
   ],
   "field_source": null,
   "river_boundary": false,
-  "gpx": "Ambunkol_Zone_7B.gpx",
-  "gpx_gaps": 4,
+  "gpx": "Abuankol_Zone_7B.gpx",
+  "gpx_gaps": 5,
   "lines_only": false,
   "withhold_area": false
  },
@@ -3560,12 +3483,12 @@
     "pct": 2.2
    },
    {
-    "with": "Nui",
+    "with": "Deari",
     "km": 0.19,
     "pct": 1.0
    },
    {
-    "with": "Deari",
+    "with": "Nui",
     "km": 0.19,
     "pct": 1.0
    }
@@ -3829,13 +3752,8 @@
     "pct": 2.5
    },
    {
-    "with": "Ambunkol",
-    "km": 0.35,
-    "pct": 1.6
-   },
-   {
     "with": "Abuankol",
-    "km": 0.34,
+    "km": 0.63,
     "pct": 1.6
    },
    {
@@ -3850,7 +3768,7 @@
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 519.3,
+  "join_joined_ha": 536.9,
   "map": "Jariji_Zone_7B.png",
   "ready": {
    "round": 1,
@@ -4307,6 +4225,11 @@
     "pct": 14.1
    },
    {
+    "with": "Abuankol",
+    "km": 1.24,
+    "pct": 9.8
+   },
+   {
     "with": "Wohukol",
     "km": 1.15,
     "pct": 9.3
@@ -4315,16 +4238,6 @@
     "with": "Marijabimkol",
     "km": 1.26,
     "pct": 8.9
-   },
-   {
-    "with": "Abuankol",
-    "km": 1.03,
-    "pct": 8.4
-   },
-   {
-    "with": "Ambunkol",
-    "km": 1.0,
-    "pct": 8.1
    },
    {
     "with": "Binunkol",
@@ -4429,11 +4342,11 @@
   "bridges": 0,
   "overlaps": [
    {
-    "with": "Ambunkol",
-    "ha": 63.1,
-    "pct": 5.3,
-    "beyond_tol_ha": 58.9,
-    "beyond_tol_pct": 4.9,
+    "with": "Abuankol",
+    "ha": 33.8,
+    "pct": 2.8,
+    "beyond_tol_ha": 30.1,
+    "beyond_tol_pct": 2.5,
     "verdict": "overlap"
    },
    {
@@ -4455,7 +4368,7 @@
   ],
   "shared_lines": [
    {
-    "with": "Ambunkol",
+    "with": "Abuankol",
     "km": 20.29,
     "pct": 37.6
    },
@@ -4478,15 +4391,10 @@
     "with": "Jariji",
     "km": 0.18,
     "pct": 0.3
-   },
-   {
-    "with": "Abuankol",
-    "km": 0.03,
-    "pct": 0.0
    }
   ],
   "join_sep_ha": 0.0,
-  "join_joined_ha": 48.8,
+  "join_joined_ha": 1191.1,
   "map": "Natang_Zone_7B.png",
   "ready": {
    "round": 1,
@@ -4523,7 +4431,7 @@
   "field_source": null,
   "river_boundary": false,
   "gpx": "Natang_Zone_7B.gpx",
-  "gpx_gaps": 0,
+  "gpx_gaps": 2,
   "lines_only": false,
   "withhold_area": false
  },
@@ -4565,9 +4473,9 @@
   "overlaps": [],
   "shared_lines": [
    {
-    "with": "Ambunkol",
-    "km": 5.86,
-    "pct": 24.4
+    "with": "Abuankol",
+    "km": 6.41,
+    "pct": 26.7
    },
    {
     "with": "Natang",
@@ -4588,11 +4496,6 @@
     "with": "Jariji",
     "km": 2.17,
     "pct": 9.1
-   },
-   {
-    "with": "Abuankol",
-    "km": 1.78,
-    "pct": 7.4
    },
    {
     "with": "Manang",
@@ -4715,7 +4618,7 @@
     "verdict": "overlap"
    },
    {
-    "with": "Ambunkol",
+    "with": "Abuankol",
     "ha": 4.0,
     "pct": 0.8,
     "beyond_tol_ha": 1.4,
@@ -4751,8 +4654,8 @@
     "pct": 24.6
    },
    {
-    "with": "Ambunkol",
-    "km": 2.15,
+    "with": "Abuankol",
+    "km": 2.26,
     "pct": 6.2
    },
    {
@@ -4764,11 +4667,6 @@
     "with": "Murai (Z7B)",
     "km": 1.15,
     "pct": 1.6
-   },
-   {
-    "with": "Abuankol",
-    "km": 0.51,
-    "pct": 0.9
    },
    {
     "with": "Binunkol",

@@ -490,6 +490,22 @@ def clan_spellings() -> dict:
     return _SPELLINGS
 
 
+def standard_clan(gdf: gpd.GeoDataFrame) -> pd.Series:
+    """The clan column with the forum's spelling put in place.
+
+    Applied once, where the merged recordings are first written down.
+    Everything measured afterwards reads one name per clan.
+    """
+    clan = gdf["clan"].astype(str).str.strip()
+    zone = gdf["zone"].astype(str).str.strip()
+    spellings = clan_spellings()
+    if not spellings:
+        return clan
+    standard = (zone + "|" + clan).map(
+        lambda pair: (spellings.get(pair) or {}).get("standard"))
+    return standard.where(standard.notna(), clan)
+
+
 def survey_group(gdf: gpd.GeoDataFrame) -> pd.Series:
     """The unit a boundary is assessed as: one clan's walk within one zone.
 
@@ -502,13 +518,8 @@ def survey_group(gdf: gpd.GeoDataFrame) -> pd.Series:
     different stewards in places far apart, and joining those would invent a
     boundary spanning both. Anything without a clan name stays on its own.
     """
-    clan = gdf["clan"].astype(str).str.strip()
+    clan = standard_clan(gdf)
     zone = gdf["zone"].astype(str).str.strip()
-    spellings = clan_spellings()
-    if spellings:
-        standard = (zone + "|" + clan).map(
-            lambda pair: (spellings.get(pair) or {}).get("standard"))
-        clan = standard.where(standard.notna(), clan)
     joined = clan + " — " + zone
     return joined.where(clan != "", gdf["source_name"])
 

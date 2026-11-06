@@ -6,7 +6,7 @@
   "git": {
     "branch": "claude/create-maps-86nf12",
     "clean": false,
-    "commit": "57c6018a47cf85bec35d1d9f76323f44e8b29366"
+    "commit": "e0d3eaa476c6a209c67e64bbd2cbc4d149540864"
   },
   "inputs": [
     {
@@ -72,11 +72,11 @@
     "storage_crs": "EPSG:4326"
   },
   "results": {
-    "area_ha_surveyed": 6103.1,
-    "area_ha_total": 28305.0,
-    "clans": 49,
+    "area_ha_surveyed": 4455.5,
+    "area_ha_total": 29160.7,
+    "clans": 48,
     "polygons": 36,
-    "polygons_surveyed": 9,
+    "polygons_surveyed": 6,
     "smoothed_km": 1139.9,
     "stewards": 70,
     "surveys": 72,
@@ -116,18 +116,18 @@
   "versions": {
     "contextily": "1.7.1",
     "folium": "0.20.0",
-    "gdal": "3.10.3",
+    "gdal": "3.12.2",
     "geopandas": "1.2.0",
-    "geos": "3.13.1",
+    "geos": "3.14.1",
     "matplotlib": "3.11.2",
-    "numpy": "2.4.6",
-    "pandas": "3.0.6",
-    "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "platform": "Linux-6.18.44-fc-v242-x86_64-with-glibc2.39",
     "pyogrio": "0.13.0",
-    "pysheds": "0.5",
-    "python": "3.11.15",
-    "rasterio": "1.4.4",
-    "scipy": "1.17.1",
-    "shapely": "2.1.2"
+    "pysheds": null,
+    "python": "3.13.18",
+    "rasterio": "1.5.2",
+    "scipy": null,
+    "shapely": "2.2.0"
   }
 }
